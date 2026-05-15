@@ -1879,14 +1879,14 @@ header.page::after{
   <div class="entry" data-date="2026-05-15" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">checkkinataorder &mdash; 12:00 MYT scheduled run: 3 To Process S$88.83 (2 with 15:00 SGT cutoff TIGHT) + 1 Risk-of-Late ne_bce1d28 S$27.40 (failed pickup) + carry-over OK (15/5)</span>
-      <span class="entry-meta">2026-05-15 MYT &middot; profile 70 (k1b44nvg) fallback &middot; k1asxln6 12th-day blocked &middot; To Ship 22 (3 ToProcess + 19 Processed) &middot; Shipping 206 (-30 to Completed) &middot; R/R/C 1 (-8) &middot; WhatsApp SKIPPED per task</span>
+      <span class="entry-title">checkkinataorder &mdash; 12:00 + 16:30 MYT scheduled runs: ALL 3 AM ToProcess SHIPPED on tight 15:00 SGT cutoff (S$88.83 saved) + ne_bce1d28 failed-pickup RECOVERED + 1 NEW PM ToProcess (S$35.74) + 2 Processed clean (15/5)</span>
+      <span class="entry-meta">2026-05-15 MYT &middot; profile 70 (k1b44nvg) fallback (8th day) &middot; k1asxln6 13th-day blocked &middot; AM 22 ToShip (3 ToProcess + 19 Processed) &rarr; PM 3 ToShip (1 ToProcess + 2 Processed) &middot; Shipping 206 &rarr; 223 (+17 picked up) &middot; R/R/C 1 (1 new buyer-cancel) &middot; WhatsApp SKIPPED per task</span>
       <span class="tag">checkkinataorder</span>
       <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
-      <p><strong>Brief:</strong> Scheduled 12:00 MYT Kinata SG order check via AdsPower. k1asxln6 still password-gated (12th consecutive day) so switched to profile 70 (k1b44nvg, kmall:patricia, 7th-day working fallback). Pulled 3 To Process with Order History timestamps from order detail pages + scanned 19 Processed for Risk-of-Late + verified 14/5 PM carry-over.</p>
-      <div class="field"><strong>Trigger:</strong> Scheduled daily 12:00 MYT checkkinataorder run.</div>
+      <p><strong>Brief:</strong> Two scheduled Kinata SG order checks today (12:00 AM + 16:30 PM) via AdsPower. k1asxln6 still password-gated (13th consecutive day &mdash; overdue) so both runs used profile 70 (k1b44nvg, kmall:patricia, 8th-day working fallback). AM run surfaced 3 To Process (2 with TIGHT 15:00 SGT cutoff) + 1 Risk-of-Late (failed pickup ne_bce1d28). PM run confirmed warehouse executed flawlessly: ALL 3 ToProcess shipped on time (cutoff met) AND failed-pickup ne_bce1d28 RECOVERED on retry. Combined S$115.83 revenue preserved.</p>
+      <div class="field"><strong>Trigger:</strong> Scheduled daily 12:00 MYT + 16:30 MYT checkkinataorder runs.</div>
       <div class="field"><strong>To Process (3 orders, S$88.83):</strong>
         <ul>
           <li><strong>sivalalli &middot; 260515F1BP716E &middot; 15/05 12:01 SGT &middot; S$5.34</strong> &mdash; iPhone 17 Screen Protector Full Privacy / 17 Pro Max. NDD COT EOD pickup 15/05 15:00. TIGHT (~3h to cutoff).</li>
@@ -1904,15 +1904,40 @@ header.page::after{
       </div>
       <div class="field"><strong>Tab counts (12:14 MYT):</strong> To Ship 22 (3 ToProcess + 19 Processed) / Shipping 206 (-30 vs 14/5 PM = 30 to Completed overnight) / Return-Refund-Cancel 1 (-8 = healthy clearance) / Completed (untracked).</div>
       <div class="field"><strong>Login status:</strong> k1asxln6 (kmall:patricia) 12th consecutive day bounce to <code>accounts.shopee.com.my/seller/login</code> with no error toast. Profile 70 (k1b44nvg, same master account, 29 sub-shops incl Kinata SG) 7th-day working fallback. Operator QR re-login still pending. WhatsApp send SKIPPED per task instruction.</div>
-      <div class="field"><strong>Action items:</strong>
+      <div class="field"><strong>=== PM 16:30 MYT update (carry-over outcome) ===</strong></div>
+      <div class="field"><strong>PM tab counts (16:40 MYT):</strong> To Ship 3 (1 ToProcess + 2 Processed) / Shipping 223 (+17 vs AM = morning Processed lot picked up) / R/R/C 1 (1 in / 1 out &mdash; new buyer-cancel).</div>
+      <div class="field"><strong>AM ToProcess carry-over (ALL 3 SHIPPED &mdash; S$88.83 preserved):</strong>
         <ul>
-          <li>WAREHOUSE IMMEDIATE: arrange pickup sivalalli + _zdwqjbuxq (S$78.33 combined) before 15:00 SGT today.</li>
-          <li>WAREHOUSE TODAY: stage ne_bce1d28 Laundry Basket before next courier visit (first pickup failed 11:12).</li>
-          <li>WAREHOUSE EOD: shni_priya blouse to SPX locker.</li>
-          <li>OPERATOR: k1asxln6 QR re-login overdue (12th day).</li>
+          <li><strong>sivalalli 260515F1BP716E S$5.34</strong> &mdash; AM <code>To Process</code> (TIGHT 15:00 cutoff) &rarr; PM <code>Shipped</code> SPXSG063419484445. <strong>15:00 SGT cutoff MET.</strong></li>
+          <li><strong>_zdwqjbuxq 260515F0X83V7A S$72.99</strong> &mdash; AM <code>To Process</code> (TIGHT 15:00 cutoff) &rarr; PM <code>Shipped</code> SPXSG062935625305. <strong>15:00 SGT cutoff MET</strong> (S$72.99 the biggest carry-over save).</li>
+          <li><strong>shni_priya 260515EX21EMDF S$10.50</strong> &mdash; AM <code>To Process</code> (EOD locker) &rarr; PM <code>Shipped</code> SPXSG064672933535. Handled mid-afternoon.</li>
         </ul>
       </div>
-      <div class="field"><strong>Result:</strong> ok &mdash; 3 To Process surfaced (2 same-day tight, 1 EOD); 1 Risk-of-Late surfaced (failed pickup); 14/5 carry-over verified clean. Report saved to <code>C:\Users\tessf\Documents\kinata-reports\kinata-report-2026-05-15.md</code>.</div>
+      <div class="field"><strong>AM AT-RISK Processed carry-over (RECOVERED):</strong>
+        <ul>
+          <li><strong>ne_bce1d28 260514DNAFRK7G S$27.40 Laundry Basket</strong> &mdash; AM flagged <code>Risk of Late shipment</code> (first pickup failed 11:12, parcel not ready) &rarr; PM <code>Shipped</code> SPXSG061332905685. <strong>Pickup retry SUCCEEDED</strong> &mdash; warehouse staged parcel before afternoon courier visit. No revenue loss.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>NEW PM ToProcess (1, S$35.74):</strong>
+        <ul>
+          <li><strong>sg.goodstuff &middot; 260515FGNB2FG7 &middot; 15/05 16:34 SGT &middot; S$35.74</strong> &mdash; Soap Flower Bouquet 33 Stalks Dark Red (CUST-FLWR-BOUQUET-33P-RED-BLK-SG). SPX Pick Lockers / Drop off-Pick up, next-day cutoff 16/05 (comfortable margin).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>PM Processed (2, S$99.43 &mdash; both clean, 0 risk flags):</strong>
+        <ul>
+          <li><strong>247_fitness_sg &middot; 260515FGCHQS52 &middot; S$85.90</strong> &mdash; Commercial Dustbin Bullet 58L Blk-Silvr (BHD-58L-BLK-SLV-RING-SG). NDD COT EOD, SPXSG063218643305, pickup 16/05/2026.</li>
+          <li><strong>louis202122 &middot; 260515FF9AGFXH &middot; S$13.53</strong> &mdash; Screen Protectors x3 (Full Privacy + Anti Bluelight + Clear, all iPhone 16 Pro Max). Collection Points, SPXSG062407450065, pickup 16/05/2026.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>R/R/C (1 new):</strong> vmyi82b6fo 260515F2AM3YM7 S$10.95 Casual Blazer Black S &mdash; cancelled by buyer. No CS action needed.</div>
+      <div class="field"><strong>Login status (PM):</strong> k1asxln6 13th-day blocked (overdue). Profile 70 8th-day working fallback. QR re-login still pending.</div>
+      <div class="field"><strong>Action items (PM update):</strong>
+        <ul>
+          <li>WAREHOUSE 16/05: pickup sg.goodstuff Soap Flower Bouquet (locker, comfortable) + 2 Processed parcels (247_fitness_sg $85.90 + louis202122 $13.53) on scheduled 16/05 courier.</li>
+          <li>OPERATOR: k1asxln6 QR re-login 13th-day overdue (nearly 2 weeks degraded).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Result:</strong> ok &mdash; AM run flagged 3 ToProcess (2 tight) + 1 Risk-of-Late. PM run confirmed warehouse executed ALL 4 carry-overs successfully (S$115.83 preserved; both 15:00 SGT cutoffs met; failed-pickup recovered on retry). 1 fresh PM ToProcess + 2 clean Processed for 16/05. 1 new buyer-cancel (S$10.95, info only). Report saved to <code>C:\Users\tessf\Documents\kinata-reports\kinata-report-2026-05-15.md</code>.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-15" data-shops="TT Adelmar,TT MurahYa,TT KarlMobel,TT JagerHelmet,Lazada MurahYa" data-platform="TikTok,Lazada" data-result="ok">
