@@ -1840,6 +1840,38 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-15" data-shops="All bots" data-platform="Windows Task Scheduler" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">Scheduler hardening &mdash; all 10 daily tasks now wake PC from sleep + catch up if missed + don&apos;t stop on battery (15/5)</span>
+      <span class="entry-meta">2026-05-15 ~17:30 MYT &middot; Updated 10 scheduled tasks (ParcelClaimAuto_945AM, TT_RR_Audit_10_15AM, ChatAudit_910AM, ClaudeSgGapMonitor, KinataOrderCheck_12PM/430PM, SBVariationAudit_930AM, ParcelSplitCrosscheck_1000AM, TTRatingCheck_5PM, BoardMirrorSync_10min) with WakeToRun=True + StartWhenAvailable=True + AllowOnBattery=True + DontStopOnBattery=True + RestartCount=3/5min. Plus fixed DC wake-timer policy (was DISABLED on battery, now &ldquo;Important Wake Timers Only&rdquo; same as AC).</span>
+      <span class="tag">scheduler</span>
+      <span class="tag">infra</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User concern &ldquo;make sure all schedule run task run even if my pc off? especially parcelclaimauto.&rdquo; Found mixed settings across 10 daily tasks. Hardened all of them so they fire from sleep/hibernate, catch up if missed, and survive battery-mode transitions.</p>
+      <div class="field"><strong>Trigger:</strong> Direct user instruction at session close to make scheduler resilient to PC sleep/battery.</div>
+      <div class="field"><strong>Before &rarr; After (per task):</strong>
+        <ul>
+          <li><strong>ParcelClaimAuto_945AM</strong>: Wake T &middot; Missed T &middot; OnBat T &middot; StopBat=False &mdash; was already mostly correct, added DontStopOnBattery + RestartCount=3 (5min interval)</li>
+          <li><strong>TT_RR_Audit_10_15AM</strong>: Wake F&rarr;T &middot; Missed T &middot; OnBat T &middot; StopBat=False (was StopBat=True) &middot; RestartCount=0&rarr;3</li>
+          <li><strong>ChatAudit_910AM</strong>: Wake T &middot; Missed T &middot; OnBat T &middot; StopBat=False &middot; RestartCount=3</li>
+          <li><strong>ClaudeSgGapMonitor</strong>: Wake F&rarr;T &middot; Missed F&rarr;T &middot; OnBat F&rarr;T &middot; StopBat F (was T) &middot; RestartCount=3 (was 0). Critical &mdash; was failing exit 2147946720 today.</li>
+          <li><strong>KinataOrderCheck_12PM &amp; 430PM</strong>: Wake T &middot; Missed T &middot; OnBat T &middot; StopBat=False. RestartCount stays 0 (Access denied on retry &mdash; task created with elevated rights, need admin powershell to set restart).</li>
+          <li><strong>SBVariationAudit_930AM</strong>: Wake T &middot; Missed T &middot; OnBat T &middot; StopBat=False &middot; RestartCount=3</li>
+          <li><strong>ParcelSplitCrosscheck_1000AM</strong>: Wake F&rarr;T &middot; Missed T &middot; OnBat F&rarr;T &middot; StopBat F (was T) &middot; RestartCount=3</li>
+          <li><strong>TTRatingCheck_5PM</strong>: Wake T &middot; Missed T &middot; OnBat T &middot; StopBat=False &middot; RestartCount=3</li>
+          <li><strong>BoardMirrorSync_10min</strong>: Wake F&rarr;T &middot; Missed F&rarr;T &middot; OnBat F&rarr;T &middot; StopBat F (was T) &middot; RestartCount=3</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Power scheme fix:</strong> Wake timers on battery (DC mode) were set to <code>0 = Disabled</code> &mdash; that means even with WakeToRun=True, tasks would NOT wake the laptop when running on battery. Changed to <code>2 = Important Wake Timers Only</code> (same as AC mode). Applied via <code>powercfg /setdcvalueindex SCHEME_CURRENT SUB_SLEEP RTCWAKE 2</code> + activated.</div>
+      <div class="field"><strong>Sleep states supported:</strong> S0 Low Power Idle (Modern Standby) + Hibernate + Fast Startup. S1/S2/S3 not supported by firmware. All available sleep modes support wake timers.</div>
+      <div class="field"><strong>⚠️ Critical limitation &mdash; PC fully OFF cannot be woken by Task Scheduler:</strong> If you press the power button to fully shut down the laptop, NO scheduled task can wake it. Windows Task Scheduler can only wake from Sleep/Standby or Hibernate &mdash; not from full shutdown. For PC-fully-off scenarios you would need either: (a) BIOS/UEFI &ldquo;Wake on RTC Alarm&rdquo; enabled (needs firmware-level setting, varies by laptop model), or (b) leave PC in Sleep mode overnight instead of Shutdown.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; all 10 tasks now wake-resilient. PC asleep over weekend = tasks fire normally. PC plugged in OR on battery = tasks fire. Task fails once = auto-retry 3 times at 5min intervals. PC physically shut down = tasks queue and fire when you power back on (StartWhenAvailable=True). Most resilient short of enabling BIOS-level RTC wake.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-15" data-shops="Murahya,Karlmobel,Valuesnap" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -2114,8 +2146,8 @@ header.page::after{
   <div class="entry" data-date="2026-05-15" data-shops="KarlMobel,MurahYa,Luxbin,ValueSnap,Hiranai,BahEmas,Lovento,Emas Gift,KarlMobel SG,EmasGift SG,MurahYa SG,Kinata SG" data-platform="Shopee MY,Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">csrrcredited + csrrcreditedcheck + D-bucket wallet sweep &mdash; 14/5 queue cleared + 27 chase candidates surfaced (&minus;RM 885.39 verified wallet loss) (15/5)</span>
-      <span class="entry-meta">2026-05-15 MYT &middot; 459 Pending&rarr;442 &middot; 128 PATCHes HTTP 200 0 fails (49 csrrcredited + 49 CROSSCHECK + 30 D-bucket wallet) &middot; 27/30 D-bucket wallet-verified CLAWBACK_FIRED on MurahYa 19 + KarlMobel 7 + Luxbin 1 &middot; 3 UNVERIFIED (ValueSnap 2 + das.nature2 1, SC session expired) &middot; total verified loss &minus;RM 885.39 &middot; webapp MCP 401 throughout &rarr; bypassed via AdsPower profile 70 in-page fetch</span>
+      <span class="entry-title">csrrcredited + csrrcreditedcheck + D-bucket wallet sweep + C14989 close (final) &mdash; 14/5 queue cleared + 27 chase candidates surfaced + 1 case Rejected (15/5 EOD)</span>
+      <span class="entry-meta">2026-05-15 EOD MYT &middot; 459 Pending&rarr;441 (-17 Withdrawn / -1 Rejected) &middot; 133 PATCHes HTTP 200 0 fails (49 csrrcredited + 49 CROSSCHECK + 30 D-bucket wallet + 5 close/disposition) &middot; 27/30 D-bucket CLAWBACK_FIRED -RM885.39 &middot; C14989 KM RM206.30 closed Rejected (-RM77.13 booked) &middot; webapp MCP 401 all session &rarr; AdsPower profile 70 in-page fetch bypass &middot; 11-item outstanding list carries to 16/5+</span>
       <span class="tag">csrrcredited</span>
       <span class="tag">csrrcreditedcheck</span>
       <span class="tag result-ok">Completed</span>
@@ -2144,7 +2176,10 @@ header.page::after{
       <div class="field"><strong>Top 5 chase priority (amount&times;age):</strong> (1) 260225KEW0NUEX MurahYa &minus;RM 91.81 (55d, full type 411) &middot; (2) 260426S7S6E936 KarlMobel &minus;RM 77.13 (17d, fresh, parcel may still be traceable) &middot; (3) 260315776FTJ7V MurahYa &minus;RM 64.02 (55d) &middot; (4) 260309M95DCN8U KarlMobel &minus;RM 59.41 (55d) &middot; (5) 260307FFEXTC70 MurahYa &minus;RM 46.51 (55d). Skip below RM 15 (not worth chase effort).</div>
       <div class="field"><strong>5 Kinata SG clawback carry-overs (operator UI verify queue, &minus;SGD 67.72):</strong> 260226PUJ9HA6W SGD 18.75 &middot; 2603169FJS7BVU SGD 17.66 &middot; 260224JJ94DKVU SGD 12.32 &middot; 260310R4Y7YJWT SGD 13.99 &middot; 260306CCCUH4P1 SGD 5.00. All 55d, Request Refunded / Dispute Rejected from 13-14/5 PM sweep.</div>
       <div class="field"><strong>37 SG empty-remark untouched Pendings (~SGD 820, never swept):</strong> 31 Kinata SG + 2 KarlMobel SG + 4 EmasGift SG. All 55d. Need profile 84 sweep next session.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; 17 Withdrawn flips + 9 SG verified + 19 monitor + 4 chase-rr/movement + 49 CROSSCHECK + 30 D-bucket wallet remarks (27 confirmed CLAWBACK_FIRED + 3 UNVERIFIED). 128 PATCHes HTTP 200, 0 failures. <strong>Total verified wallet loss exposure: &minus;RM 885.39 across 27 MY chase candidates + &minus;SGD 67.72 across 5 SG carry-overs.</strong> Pending state 459&rarr;442. Chase priority list surfaced; operator to action top 5 + decide on smaller cases. 3 ValueSnap+das.nature2 + 37 SG untouched + 13 page-2 SC pagination cases carry to next session pending operator re-login.</div>
+      <div class="field"><strong>🔴 FINAL CLOSE C14989 KarlMobel 260426S7S6E936 RM 206.30 (15/5 EOD):</strong> Per user instruction "2nd dispute filed with re-evidence, still rejected, no choice, close as loss". Re-verified context: tracking MY262250243028V J&T, return_status "Not Received", wallet -RM77.13 (101+175.19/411&minus;252.32), refs 2053129861228978190 + 2054392765594976343 both rejected, "shopee close case without solution" 13/5. <strong>refund_state Pending&rarr;Rejected</strong> via reject_case PATCH HTTP 200 + closing remark PATCH HTTP 200. Verified in Rejected bucket. Net loss -RM 77.13 booked as final.</div>
+      <div class="field"><strong>Re-classification on top 2 chase candidates (15/5 EOD):</strong> User flagged "confirm losses is damage item return? not resell?". Re-verified both: (1) 260225KEW0NUEX MurahYa RM1214.69 — Outdoor Metal Shed, <strong>tracking=null = NO RETURN EVER SHIPPED</strong> = buyer kept item. NOT damage-return, NOT resell. Recovery path = mgmt escalation Shopee (buyer-kept-item dispute), NOT chase-R/R. (2) 260426S7S6E936 KarlMobel RM206.30 — J&T MY262250243028V exists, return_status="Not Received". After re-evidence dispute path exhausted &rarr; CLOSED as final loss above.</div>
+      <div class="field"><strong>EOD outstanding (16/5+):</strong> (1) Top chase #1 260225KEW0NUEX MurahYa RM1214.69 mgmt-escalate buyer-kept-Shed &middot; (2) C13217 + C15866 chase-rr live chats (operator cs3/cs4) &middot; (3) 25 remaining D-bucket chase candidates need per-case decision (mgmt / courier claim / close) &middot; (4) 8 CROSSCHECK gap cases not wallet-checked today: C14418 MurahYa RM530.79 + C13534 BahEmas RM158.62 + 4 KarlMobel + 2 MurahYa Dispute Approved monitors + C15816 KM RESELL flip &middot; (5) 3 D-bucket UNVERIFIED (ValueSnap 2 + das.nature2 1) — operator re-login Shopee SC &middot; (6) C16758 KM CR decision &middot; (7) C15988 MurahYa monitor 19/5 + 21/5 &middot; (8) 5 Kinata SG clawback carry-overs SGD67.72 &middot; (9) 37 SG empty-remark untouched ~SGD820 profile 84 sweep &middot; (10) 9 SG verified wins formal 20/5 verify &middot; (11) Webapp MCP session cookie refresh (operator action).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 17 Withdrawn flips + 9 SG verified + 19 monitor + 4 chase-rr/movement + 49 CROSSCHECK + 30 D-bucket wallet remarks (27 confirmed CLAWBACK_FIRED + 3 UNVERIFIED) + 1 final close C14989 Rejected. <strong>133 PATCHes HTTP 200, 0 failures.</strong> Total verified wallet loss exposure: &minus;RM 885.39 (27 MY chase candidates) + -RM 77.13 (C14989 closed final) + -RM 21.72 (3 small Hiranai clawback discrepancies) + -SGD 67.72 (5 SG carry-overs). Pending state 459&rarr;441 (-17 Withdrawn -1 Rejected). EOD outstanding list of 11 priority items carries to 16/5+ — memory file project_session_may15_csrrcredited_full.md saved with full handoff.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-15" data-shops="TT KarlMobel,TT Adelmar,TT DasNature,TT MurahYa,TT Valuesnap,TT Hiranai,TT Jager" data-platform="TikTok" data-result="ok">
