@@ -1840,6 +1840,42 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-15" data-shops="All TT MY,All CS chat shops" data-platform="TikTok,Shopee MY,Shopee SG" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">Skill updates &mdash; tiktokrraudit MANDATORY FD sweep + chataudit MANDATORY deep-review EVERY chat (15/5)</span>
+      <span class="entry-meta">2026-05-15 ~16:30 MYT &middot; User pushback 2x today &middot; tiktokrraudit skill: added ABSOLUTE RULE for FD sweep every run + PHASE 1c instructions + bat runtime prompt &middot; chataudit skill: added ABSOLUTE RULE deep-review EVERY chat (not just classifier flags) + 6-category Q&amp;A framework + bat RULE #0 + TOMORROW_PROMPT.md update &middot; 2 feedback memories saved &middot; MEMORY.md index updated</span>
+      <span class="tag">tiktokrraudit</span>
+      <span class="tag">chataudit</span>
+      <span class="tag">skill-update</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User pushback today on 2 recurring failures: (1) tiktokrraudit not checking Failed Delivery cases automatically &mdash; "why u are not checking for FD cases and everytime need me to ask, can u fix it and update to the skills? like everytime everyday!" (2) chataudit only deep-reviewing classifier flags (26 today) instead of ALL in-window chats (332 today) &mdash; "this also mentioned many many many times already, but keep doing the same mistakes when i ask, how should i rely u on this, if CS reply wrongly, no sales or scold customer how??" Permanent fixes applied to skills + bat prompts + memory.</p>
+      <div class="field"><strong>Trigger:</strong> User asked for both fixes after this morning&apos;s tiktokrraudit re-run missed FD context + this morning&apos;s chataudit only deep-reviewed 26 candidates of 332 in-window.</div>
+      <div class="field"><strong>tiktokrraudit skill update (before → after):</strong>
+        <ul>
+          <li><code>C:\Users\tessf\.claude\skills\tiktokrraudit\SKILL.md</code> — added new ABSOLUTE RULE section near top (after the two existing ABSOLUTE rules) titled "MANDATORY FAILED DELIVERY (FD) SWEEP EVERY RUN" with PHASE 1c (FD FOLLOW-UP) and PHASE 2c (FD NEW) procedures. Includes direct API URL <code>POST /api/fulfillment/order/list?fp=&lt;token&gt;&amp;aid=4068</code> with <code>abnormal_pkg_tag: ALL_FAIL_DELIVERY</code> (aid=4068 is REQUIRED). Categories: NEW LOGGED TODAY / NOT IN WEBAPP / STUCK &gt;7d / DELIVERED BACK NOT INSPECTED / RESOLD or WRITTEN OFF. Report MUST have FD section even if 0 cases.</li>
+          <li><code>C:\Users\tessf\scripts\tiktokrraudit.bat</code> — added PHASE 1c block to runtime prompt with mandatory FD sweep procedure and user pushback quote for context.</li>
+          <li><code>feedback_tiktokrraudit_mandatory_fd_sweep.md</code> memory file created.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>chataudit skill update (before → after):</strong>
+        <ul>
+          <li><code>C:\Users\tessf\.claude\skills\chataudit.md</code> — added new ABSOLUTE RULE — DEEP-REVIEW EVERY CHAT section at top (before the 4-Q pre-flag filter). Defines 7 issue categories beyond missed-reply: Wrong info, Tone problem, Q&amp;A semantic mismatch, Promise-no-followup, No-sales lost, Partial answer, plus the classifier-caught missed reply. Master summary report MUST show DEEP-REVIEWED count = In-window count; if less, run is INCOMPLETE and may NOT be published as clean.</li>
+          <li><code>C:\Users\tessf\.claude\skills\chataudit\TOMORROW_PROMPT.md</code> — added "MANDATORY: DEEP-REVIEW EVERY CHAT IN WINDOW" block immediately after the BATCH JS CLICK METHOD reference; updated post-completion logic so "0 misses with &lt; In-window deep-reviewed = NOT clean = INCOMPLETE."</li>
+          <li><code>C:\Users\tessf\scripts\chataudit.bat</code> — inserted RULE #0 at start of runtime prompt: DEEP-REVIEW EVERY CHAT IN WINDOW, with 6-category framework and DEEP-REVIEWED=In-window requirement.</li>
+          <li><code>feedback_chataudit_deep_review_every_chat_15may.md</code> memory file created.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>MEMORY.md index:</strong> 2 new entries added at top (feedback_chataudit_deep_review_every_chat_15may + feedback_tiktokrraudit_mandatory_fd_sweep) so future sessions load these rules automatically.</div>
+      <div class="field"><strong>Shops affected:</strong> All 11 TT MY shops (Adelmar/DasNature/Hiranai/HiranaiMY/Jager/JagerArmor/JagerSafety/KarlMobel/Lovento/MurahYa/Valuesnap) for tiktokrraudit FD; all chat shops (ValueSnap/MasonGym/BahEmas/das.nature/das.nature2/Hiranai/KarlMobel/Lovento/Luxbin/KEDAI GARDEN/MurahYa/Emas Gift/Kinata SG) for chataudit deep-review.</div>
+      <div class="field"><strong>Platforms:</strong> TikTok (FD sweep) + Shopee MY/SG (chat audit).</div>
+      <div class="field"><strong>Reason:</strong> User reinforced both rules for the 3rd+ time today. Skills must enforce these automatically going forward so user does NOT need to ask. If skipped, runs fail audit credibility test.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; both skills updated, both bat prompts updated, 2 feedback memories saved, MEMORY.md index updated. Tomorrow&apos;s 10:15 + 09:10 scheduled runs will execute with new rules.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-15" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
