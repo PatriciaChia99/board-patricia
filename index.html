@@ -1840,6 +1840,43 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-15" data-shops="Murahya,Karlmobel,Valuesnap" data-platform="Shopee MY" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checkfbsclaims &mdash; FBS Claim sheet H column updated for 103 pending rows (15/5)</span>
+      <span class="entry-meta">2026-05-15 ~10:30 MYT &middot; FBS Claim sheet 1_-YmjGYiC... 3 tabs (Murahya/Karlmobel/Valuesnap Claim Progress) &middot; 16+41+46=103 active pending rows cross-checked vs 14/5 wallet aggregate (14,633 FBS orders) &middot; H column rebuilt with verdict tags (should-close / QC-monitor only / ESCALATE / investigate) &middot; 3 paste ops via myrsya profile, all aligned, 103/103 verified match</span>
+      <span class="tag">checkfbsclaims</span>
+      <span class="tag">fbs-verification</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Continued yesterday&apos;s FBS work. User clarified actual job = &ldquo;based on the GOOGLE SHEET and check through MY BALANCE TAB whether we received back our money or not&rdquo; (verification, not filing). Pulled all 103 pending rows from FBS Claim sheet (status = Pending RR / QC In progress / BD Level), cross-checked each against yesterday&apos;s wallet aggregate (Patricia browser kept closing, fresh wallet pull blocked). Built per-tab full H columns preserving non-active row values, pasted via myrsya profile (signed-out Google but link-shared edit access), verified 100&percnt; match across all 103 active rows.</p>
+      <div class="field"><strong>Trigger:</strong> User &ldquo;can u continue the FBS CHECK MONEY CLAIM WHERE WE STOP YTESTERDAY?&rdquo; &mdash; misread initially as filing task, user re-aligned: &ldquo;WE ONLY CAN BASED ON THE GOOGLE SHEET AND CHECK THROUGH MY BALANCE TAB WHETHER WE RECEIVED BACK OUR MONEY OR NOT&rdquo;.</div>
+      <div class="field"><strong>Cross-check verdicts (103 pending rows):</strong>
+        <ul>
+          <li>YES_RECEIVED 57 rows (RM +4,977.68 net comp) &mdash; sheet-lag, candidates to flip Closed (48 of these can flip per QC-monitor rule, 22 are QC-In-progress and stay open)</li>
+          <li>PARTIAL (comp + clawback, net positive) 8 rows (RM -93.70 clawback bite)</li>
+          <li>NEGATIVE_CLAWBACK_ONLY 9 rows (RM -460.60 to chase &mdash; biggest is KM 2504136H9YN5Q5 -RM 49.88 from 411 -228.79)</li>
+          <li>NO_NEVER_RECEIVED 15 rows (refund out, no comp ever &mdash; needs filing/escalation)</li>
+          <li>AMBIGUOUS (income only, no R/R wallet activity) 9 rows</li>
+          <li>NO_WALLET_ENTRY (out-of-window) 5 rows incl 2 KM + 3 VS</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Per-tab paste ops (before &rarr; after):</strong>
+        <ul>
+          <li>Murahya Claim Progress &mdash; 16 active updated, 47 preserved as-is (full 63-row H column rewritten H2:H64 via clip.exe + Ctrl+V at H2)</li>
+          <li>Karlmobel Claim Progress &mdash; 41 active updated, 47 preserved (88-row H column H2:H89)</li>
+          <li>Valuesnap Claim Progress &mdash; 46 active updated, 71 preserved (117-row H column H2:H118)</li>
+          <li>Verification &mdash; pulled live H via gviz, compared all 103 expected vs actual, 103/103 match, 0 mismatch</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Spot-check 5/5:</strong> User verified 4 random YES_RECEIVED rows (260212GUBU0XMM RM 337.20 / 250615J03DKVSR RM 10.39 / 260221A85GB3E2 RM 27.34 / 251010PN1AD6FX RM 192.11 / 251209TPHEJ1EY RM 35.74) match wallet UI &mdash; small differences attributed to shipping fee. User added rule: &ldquo;if QC in progress, dont close, but keep monitor, because it means shopee not yet update us whether to pay us or cannot pay us&rdquo;. Applied as KEEP_MONITORING action filter (22 rows excluded from CANDIDATE_FLIP_CLOSED).</div>
+      <div class="field"><strong>Caveat:</strong> Wallet cache is from 14/5 ~21:15 MYT (~13h stale). Patricia profile (k1b44nvg / kmall:patricia) auto-redirects every Shopee &amp; docs.google.com page to <code>employee.awesomeree.com.my</code> within ~2-5s and browser closes mid-call. Tried open-and-fast-fire approach 3x, only first wallet API call succeeded. Switched to myrsya profile (k1bh4lmm) for sheet edit (link-shared anonymous edit OK) but myrsya has NO Shopee MY wallet permission (redirected to login on /portal/finance/wallet/shopeepay). Wallet figures used are from 14/5 cache.</div>
+      <div class="field"><strong>Files written (verify_15may/):</strong> pending_sheet_rows_15may.json (103 rows) / crosscheck_results_15may.json / actions_15may.json / H_FULL_{Murahya,Karlmobel,Valuesnap}.tsv (pasted) / CLAIMS_TO_FILE_35.tsv (35 claims for manual filing RM 490.19, generated earlier in session before scope re-aligned).</div>
+      <div class="field"><strong>Outstanding:</strong> F status flip for 48 CANDIDATE_FLIP_CLOSED rows deferred &mdash; awaiting user instruction (low-risk H-text-only paste done first per safety preference). 19 ESCALATION rows need chasing via Shopee CS chat or Seller Support. 11 REVIEW rows ambiguous (income only, probably wrong sheet status). 3 NO_WALLET rows need refresh or older wallet pull. Luxbin Claim Progress tab (4th tab in sheet, exists but not in today&apos;s scope) not analyzed. Patricia profile redirect root cause not investigated &mdash; blocks all Patricia-required automation.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; H column updated and verified across all 3 tabs. F status flip + escalation chasing pending user instruction.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-15" data-shops="All TT MY,All CS chat shops" data-platform="TikTok,Shopee MY,Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
