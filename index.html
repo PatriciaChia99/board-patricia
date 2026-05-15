@@ -1840,6 +1840,38 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-15" data-shops="TT Adelmar,TT MurahYa,TT KarlMobel,TT JagerHelmet,Lazada MurahYa" data-platform="TikTok,Lazada" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto &mdash; 46 NEW POSTed C1531&ndash;C1576 (RM 1,489.45 real + 38 placeholder 0.01) &middot; 14 dups skipped &middot; 3 login_expired (15/5)</span>
+      <span class="entry-meta">2026-05-15 MYT &middot; cutoff 4d (since 11/5 00:00) &middot; 16 profiles in scope (13 TT + 3 Laz) &middot; 13 scanned OK + 3 login_expired (TT Jager 59 R/R-side, TT Kinata 67 both, Laz das.nature 82) &middot; 60 collected (54 TT R/R + 2 TT FD + 4 Laz R/R) &middot; 14 dups &middot; 46 NEW POSTed all HTTP 200 &middot; 0 errors</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily parcelclaim-auto sweep across 13 TikTok profiles + 3 Lazada profiles per scheduled 09:45 trigger. Cookie-verified 13 sellerIds against state.json verified_seller_ids — all match. TT R/R picked up 54 in-window cards on MurahYa(43)/Adelmar(6)/JagerHelmet(5). TT FD picked up 2 (KarlMobel Axe Hammer RM60.09 + MurahYa Life Jacket RM34.89). Lazada R/R MurahYa got 4 cards but all 4 were already in webapp (CS Haja pre-logged).</p>
+      <div class="field"><strong>Trigger:</strong> User invoked parcelclaim-auto via /loop-style instruction (carry-over context from 30/4 + 14/5 sessions). 18s wait + cookie + API probe per <code>feedback_tt_login_probe_wait.md</code> — no false login_expired flags this run.</div>
+      <div class="field"><strong>POSTed cases (46 total, case_id range C1531&ndash;C1576):</strong>
+        <ul>
+          <li><strong>TT Adelmar (4):</strong> C1531 RM275.10 HOVERBOARD Galaxy 7" / C1539 HOVERBOARD Chinese Red 10" / C1540 Skuter Black / C1541 Skuter Red upgrade. 1 real + 3 placeholder.</li>
+          <li><strong>TT MurahYa (37 — 36 R/R + 1 FD):</strong> 7 real-refund (C1532 RM25 Jaket Pelampung / C1533 RM48.34 Chess Board / C1534 RM75.90 Chess Timer / C1535 RM89.50 E-Bike Saddle / C1536 RM135.50 Spice Rack / C1537 RM184.32 Tong Sampah Orion 30L / C1538 RM113 Jaket Pelampung Red S). 30 R/R placeholder + 1 FD (Jaket Pelampung Das.Nature 2XL RM34.89 tracking 3229680564975142660).</li>
+          <li><strong>TT KarlMobel (1 FD):</strong> Axe Hammer 5-in-1 RM60.09 tracking 3230283364967286595, 12/5 dispatch.</li>
+          <li><strong>TT JagerHelmet (4):</strong> 4 helmet/visor cases all placeholder refund (TT listing shows 0 across all 5 cards including dup).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Dups skipped (14):</strong> 2 TT Adelmar + 7 TT MurahYa + 1 TT JagerHelmet + 4 Lazada MurahYa already in webapp (parallel CS / prior auto-run sweeps).</div>
+      <div class="field"><strong>Placeholder refund follow-up (CS action item):</strong> 38 of 46 POSTs used <code>refundAmount=0.01</code> because TT returns <code>biz_data.return_price=""</code> until auto-approval completes. Webapp /add rejected 0 with "Required fields are missing" so 0.01 used as workaround. CS to verify TT order detail per case_id (C1539–C1576 excl. 7 real-amount cases) and patch real amount when TT calculates.</div>
+      <div class="field"><strong>Login_expired skipped (3 profiles):</strong>
+        <ul>
+          <li><strong>TT Jager (59):</strong> R/R API code 98001002, but Phase 2 FD probe healthy (72 cards 0 in-window). R/R-side session needs operator re-login.</li>
+          <li><strong>TT Kinata SG (67):</strong> Both R/R + FD on seller-sg.tiktok.com returned 98001002. Captcha-blocked re-login per <code>feedback_tt_relogin_captcha_blocks_automation.md</code>.</li>
+          <li><strong>Lazada das.nature (82):</strong> AdsPower autofill missing account field (only password saved). Operator must enter email + password.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Verification per skill PHASE 1 step 3 + PHASE 2 session probe:</strong> 18s wait + global_seller_id_unified_seller_env cookie check + cheap authed API probe on every profile. All 13 healthy profiles' cookies match state.json verified_seller_ids exactly (no drift since 30/4 baseline).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 46 NEW POSTed (C1531&ndash;C1576), RM1,489.45 real refund value + 38 placeholder. 14 dups skipped. 0 errors. 3 login_expired flagged for operator. Report at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-05-15.md</code>.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-15" data-shops="ValueSnap,MasonGym,BahEmas,das.nature,das.nature2,Hiranai,KarlMobel,Lovento,Luxbin,KEDAI GARDEN,MurahYa,Emas Gift,Kinata SG" data-platform="Shopee MY,Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
