@@ -1843,8 +1843,8 @@ header.page::after{
   <div class="entry" data-date="2026-05-15" data-shops="Murahya,Karlmobel,Valuesnap" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">checkfbsclaims &mdash; FBS Claim sheet H column updated for 103 pending rows (15/5)</span>
-      <span class="entry-meta">2026-05-15 ~10:30 MYT &middot; FBS Claim sheet 1_-YmjGYiC... 3 tabs (Murahya/Karlmobel/Valuesnap Claim Progress) &middot; 16+41+46=103 active pending rows cross-checked vs 14/5 wallet aggregate (14,633 FBS orders) &middot; H column rebuilt with verdict tags (should-close / QC-monitor only / ESCALATE / investigate) &middot; 3 paste ops via myrsya profile, all aligned, 103/103 verified match</span>
+      <span class="entry-title">checkfbsclaims &mdash; FBS Claim sheet 4-tab H column update + 48 F-status flips to Closed (15/5)</span>
+      <span class="entry-meta">2026-05-15 ~10:30-11:30 MYT &middot; FBS Claim sheet 1_-YmjGYiC... 4 tabs (Murahya/Karlmobel/Valuesnap/Luxbin Claim Progress) &middot; 16+41+46=103 active pending rows + 6 Luxbin rows cross-checked vs 14/5 wallet aggregate (14,633 FBS orders + 247 LX) &middot; H column rebuilt with verdict tags &middot; 4 H paste ops + 3 F flip paste ops via myrsya profile, all aligned, 103/103 H + 48/48 F verified match</span>
       <span class="tag">checkfbsclaims</span>
       <span class="tag">fbs-verification</span>
       <span class="tag result-ok">Completed</span>
@@ -1862,19 +1862,29 @@ header.page::after{
           <li>NO_WALLET_ENTRY (out-of-window) 5 rows incl 2 KM + 3 VS</li>
         </ul>
       </div>
-      <div class="field"><strong>Per-tab paste ops (before &rarr; after):</strong>
+      <div class="field"><strong>Per-tab H column paste ops (before &rarr; after):</strong>
         <ul>
           <li>Murahya Claim Progress &mdash; 16 active updated, 47 preserved as-is (full 63-row H column rewritten H2:H64 via clip.exe + Ctrl+V at H2)</li>
           <li>Karlmobel Claim Progress &mdash; 41 active updated, 47 preserved (88-row H column H2:H89)</li>
           <li>Valuesnap Claim Progress &mdash; 46 active updated, 71 preserved (117-row H column H2:H118)</li>
+          <li>Luxbin Claim Progress &mdash; 6 rows H column written H2:H7 (3 unique orders: 26042703FKS78B comp +RM 297.83 should-close; 260503DDKEQQ81 no wallet; 260425QU014E6B WRONG-SHOP attribution to sabirbrothers wallet)</li>
           <li>Verification &mdash; pulled live H via gviz, compared all 103 expected vs actual, 103/103 match, 0 mismatch</li>
+        </ul>
+      </div>
+      <div class="field"><strong>F-status flips to Closed (per user GO directive):</strong>
+        <ul>
+          <li>Murahya &mdash; 10 rows flipped Pending RR &rarr; Closed (3 was Closed &rarr; 13 Closed; 11 Pending RR &rarr; 1)</li>
+          <li>Karlmobel &mdash; 26 rows flipped (10 was Closed &rarr; 36; 32 Pending RR &rarr; 6)</li>
+          <li>Valuesnap &mdash; 12 rows flipped (13 was Closed &rarr; 25; 29 Pending RR &rarr; 17)</li>
+          <li>Total 48 flips &mdash; all 22 QC-In-progress rows preserved per &ldquo;monitor only&rdquo; rule</li>
+          <li>Verification 48/48 match, 0 mismatch</li>
         </ul>
       </div>
       <div class="field"><strong>Spot-check 5/5:</strong> User verified 4 random YES_RECEIVED rows (260212GUBU0XMM RM 337.20 / 250615J03DKVSR RM 10.39 / 260221A85GB3E2 RM 27.34 / 251010PN1AD6FX RM 192.11 / 251209TPHEJ1EY RM 35.74) match wallet UI &mdash; small differences attributed to shipping fee. User added rule: &ldquo;if QC in progress, dont close, but keep monitor, because it means shopee not yet update us whether to pay us or cannot pay us&rdquo;. Applied as KEEP_MONITORING action filter (22 rows excluded from CANDIDATE_FLIP_CLOSED).</div>
       <div class="field"><strong>Caveat:</strong> Wallet cache is from 14/5 ~21:15 MYT (~13h stale). Patricia profile (k1b44nvg / kmall:patricia) auto-redirects every Shopee &amp; docs.google.com page to <code>employee.awesomeree.com.my</code> within ~2-5s and browser closes mid-call. Tried open-and-fast-fire approach 3x, only first wallet API call succeeded. Switched to myrsya profile (k1bh4lmm) for sheet edit (link-shared anonymous edit OK) but myrsya has NO Shopee MY wallet permission (redirected to login on /portal/finance/wallet/shopeepay). Wallet figures used are from 14/5 cache.</div>
-      <div class="field"><strong>Files written (verify_15may/):</strong> pending_sheet_rows_15may.json (103 rows) / crosscheck_results_15may.json / actions_15may.json / H_FULL_{Murahya,Karlmobel,Valuesnap}.tsv (pasted) / CLAIMS_TO_FILE_35.tsv (35 claims for manual filing RM 490.19, generated earlier in session before scope re-aligned).</div>
-      <div class="field"><strong>Outstanding:</strong> F status flip for 48 CANDIDATE_FLIP_CLOSED rows deferred &mdash; awaiting user instruction (low-risk H-text-only paste done first per safety preference). 19 ESCALATION rows need chasing via Shopee CS chat or Seller Support. 11 REVIEW rows ambiguous (income only, probably wrong sheet status). 3 NO_WALLET rows need refresh or older wallet pull. Luxbin Claim Progress tab (4th tab in sheet, exists but not in today&apos;s scope) not analyzed. Patricia profile redirect root cause not investigated &mdash; blocks all Patricia-required automation.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; H column updated and verified across all 3 tabs. F status flip + escalation chasing pending user instruction.</div>
+      <div class="field"><strong>Files written (verify_15may/):</strong> pending_sheet_rows_15may.json (103 rows) / crosscheck_results_15may.json / actions_15may.json / lx_pending_15may.json / H_FULL_{Murahya,Karlmobel,Valuesnap,Luxbin}.tsv (pasted) / F_FULL_{Murahya,Karlmobel,Valuesnap}_v2.tsv (pasted) / CLAIMS_TO_FILE_35.tsv (35 claims for manual filing RM 490.19, generated earlier in session before scope re-aligned).</div>
+      <div class="field"><strong>Outstanding:</strong> 19 ESCALATION rows (clawback netloss / clawback only / no-comp) &mdash; user said SKIP, has internal contact via WhatsApp. 11 REVIEW rows ambiguous (income only). 3 NO_WALLET rows out-of-window. Patricia profile redirect root cause not investigated &mdash; blocks future Patricia-required automation. Luxbin row 4/6 has WRONG-SHOP wallet attribution (260425QU014E6B in sabirbrothers wallet) &mdash; sheet attribution may be wrong, flagged for user review.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; H column updated 4 tabs, F status flipped to Closed for 48 rows, all verified 100&percnt;. Escalation chasing handed off to user (WhatsApp).</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-15" data-shops="All TT MY,All CS chat shops" data-platform="TikTok,Shopee MY,Shopee SG" data-result="ok">
