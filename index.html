@@ -1840,6 +1840,57 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-18" data-shops="all 27 Shopee MY shops" data-platform="Shopee MY + SiteGiant" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">shop-activity-check &mdash; ad-hoc: 18 SiteGiant-LINKED Shopee MY shops all active in past 60d; 7/9 UNLINKED shops dormant (18/5)</span>
+      <span class="entry-meta">2026-05-18 MYT &middot; Profile 70 (kmall:patricia) &middot; Scope: which Shopee MY shops have no sales in past 1-2 months AND are linked to SiteGiant &middot; Method: get_sig switch + /portal/sale/order DOM scrape for latest Order ID prefix (YYMMDD) per shop &middot; LINKED (18 shops): all have at least 1 order within past 25 days &mdash; 0 dormant. Lowest activity = encikplastic (latest 2026-04-23, 25d ago, only 5 orders in 60d out of 2885 all-time) &middot; UNLINKED (9 shops): 7 dormant for past 60d (chairsy 1431 all-time/last 260211, dutchgaming 0, flashree 39/last 240903, solaree2024 7/last 240718, gameniture 0, atlusrack 6/last 260214, fynnkoffer 428/last 260307); 2 still active (stationarylah 2 in 60d, KEDAI GARDEN 4 in 60d) &middot; Read-only audit, no PATCHes</span>
+      <span class="tag">shop-activity-check</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Ad-hoc audit triggered by user question. Cross-referenced Shopee SC shop list (29 total: 27 MY + 2 SG) against SiteGiant integration baseline (18 linked / 9 unlinked) and per-shop order activity (latest Order ID date + visible recent orders).</p>
+      <div class="field"><strong>Linked shops (18, all active &mdash; 0 dormant in past 60d):</strong>
+        <ul>
+          <li>lenza_eyewear &mdash; latest 2026-04-13 (35d ago), 29 orders in 60d filter</li>
+          <li>lovento &mdash; latest 2026-05-18 (today), ~2094 visible</li>
+          <li>jagerhelmet &mdash; latest 2026-05-17 (1d)</li>
+          <li>adelmarmy &mdash; latest 2026-05-16 (2d), 7 visible</li>
+          <li>wilmermobel &mdash; latest 2026-05-16 (2d), 6 visible</li>
+          <li>luxbiin &mdash; latest 2026-05-17 (1d), 3245 visible</li>
+          <li>das.nature2 &mdash; latest 2026-05-18 (today)</li>
+          <li>hiranai &mdash; latest 2026-05-18 (today)</li>
+          <li>secretracer &mdash; latest 2026-05-15 (3d), 441 visible</li>
+          <li>valuesnap &mdash; latest 2026-05-18 (today)</li>
+          <li>encikplastic &mdash; latest 2026-04-23 (25d), only 5 orders in 60d (2885 all-time) &mdash; 🟡 LOWEST activity</li>
+          <li>das.nature &mdash; latest 2026-05-18 (today)</li>
+          <li>masongym &mdash; latest 2026-05-18 (today)</li>
+          <li>bidarimu &mdash; latest 2026-05-12 (6d)</li>
+          <li>karlmobel &mdash; latest 2026-05-18 (today)</li>
+          <li>emasgift &mdash; latest 2026-05-18 (today), 11586 all-time (top performer)</li>
+          <li>murahya &mdash; latest 2026-05-18 (today)</li>
+          <li>bahemas &mdash; latest 2026-05-18 (today)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Unlinked shops (9 &mdash; 7 dormant, 2 still active):</strong>
+        <ul>
+          <li>🔴 dutchgaming &mdash; 0 all-time (empty shop)</li>
+          <li>🔴 gameniture &mdash; 0 all-time (empty shop)</li>
+          <li>🔴 solaree2024 &mdash; 7 all-time, latest 2024-07-18 (~22 months ago)</li>
+          <li>🔴 flashree &mdash; 39 all-time, latest 2024-09-03 (~21 months ago)</li>
+          <li>🔴 atlusrack &mdash; 6 all-time, latest 2026-02-14 (93d ago)</li>
+          <li>🔴 chairsy &mdash; 1431 all-time, latest 2026-02-11 (96d ago)</li>
+          <li>🔴 fynnkoffer &mdash; 428 all-time, latest 2026-03-07 (72d ago)</li>
+          <li>🟡 stationarylah &mdash; 20 all-time, 2 orders in past 60d (260414, 260412)</li>
+          <li>🟢 KEDAI GARDEN (garden.mall) &mdash; 185 all-time, 4 orders in past 60d (260514, 260512, 260501, 260327)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Why:</strong> User asked which SiteGiant-linked Shopee MY shops on profile 70 have had no sales in past 1-2 months. Answer: none. Follow-up extended to the 9 unlinked shops for completeness.</div>
+      <div class="field"><strong>Reason &amp; trigger:</strong> Ad-hoc user request. No SiteGiant inventory action triggered; result is informational only (encikplastic is borderline-low but still has 5 orders in 60d). Dormant shops are all UNLINKED so no inventory-desync risk.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 27 Shopee MY shops scanned via get_sig switch + DOM read (~10 sec per shop), 0 PATCHes, read-only audit.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-18" data-shops="KarlMobel,MurahYa,Hiranai,ValueSnap,Luxbin,BahEmas,das.nature,das.nature2,Murahya,Emas Gift" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
