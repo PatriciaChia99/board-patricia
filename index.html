@@ -1840,27 +1840,71 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-18" data-shops="multiple" data-platform="TT + Lazada" data-result="fail">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto &mdash; scheduled auto-run FAILED, manual re-run needed (18/5)</span>
+      <span class="entry-meta">2026-05-18 09:45 MYT &middot; bat exited non-zero &middot; check schedule-log.txt</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-fail">Failed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Scheduled 09:45 MYT parcelclaim-auto run failed; bat exited non-zero (likely Claude crashed, AdsPower not ready, or report file missing). No POSTs made this run.</p>
+      <div class="field"><strong>Failure mode:</strong> bat exited with non-zero exit code (Claude crashed or AdsPower not ready or report file missing).</div>
+      <div class="field"><strong>Local log:</strong> <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\schedule-log.txt</code></div>
+      <div class="field"><strong>Shop(s):</strong> multiple (13 TT MY + 3 Lazada profiles in scope)</div>
+      <div class="field"><strong>Platform(s):</strong> TT + Lazada</div>
+      <div class="field"><strong>Reason:</strong> Scheduled pre-run failure &mdash; environment not ready (Claude harness, AdsPower kernel, or report directory).</div>
+      <div class="field"><strong>Action needed:</strong> Open Claude Code manually + re-run <code>parcelclaim-auto</code> skill to recover today&apos;s sweep.</div>
+      <div class="field"><strong>Result:</strong> fail &mdash; manual re-run required; no claims posted this cycle.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-date="2026-05-18" data-shops="das.nature2,Hiranai,Murahya,Karlmobel,Luxbin,Bidarimu,ValueSnap,Emas Gift,MasonGym,KEDAI GARDEN,TT DasNature,Laz MurahYa,Kinata SG,KarlMobel SG,DasNatureSG2" data-platform="Shopee MY+SG+TT+Laz" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation &mdash; 16 NEW + 14/14 MY bot 100% + 6-PIECE-CANDLE HARD K RESOLVED + 2 LOST SALES (TT/Laz) + 2 NEW Light K (18/5)</span>
+      <span class="entry-meta">2026-05-18 MYT &middot; 196 cases in 49d pool (-3 net since 5/15) &middot; 16 NEW (14 MY + 2 TT Cat E) &middot; 13 terminal flips &middot; 99 awaiting buyer &middot; 49 SiteGiant verifications via /api/inventory-families fallback</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily SB Variation audit. 196 cases in rolling 49d window (was 199 on 5/15; 16 NEW &minus; 6 purged &minus; 13 terminal = &minus;3 net). 14/14 MY bot success across 3-day weekend window (5/15-5/17) &mdash; <strong>GRBT/152 fix sustained 11 consecutive days at 100%</strong>. 2 NEW TT Cat E (101031 + 101038 DasNature, both sku=[]/pn=null) routed to CS Manual Action awaiting per-run user authorization. <strong>HARD K RESOLVED:</strong> 6-PIECE-PREMIUM-CANDLE-ROSE-GOLD (100997 Emas Gift) SoH refreshed 0&rarr;95 on 5/18 &mdash; Patricia 5/13 "genuine 95 per WH" claim CONFIRMED. Dropped from watchlist. <strong>2 LOST SALES confirmed:</strong> 100888 (TT DasNature 583733178171425806) + 100890 (Laz MurahYa 505504546526329) &mdash; both buyerDecision=Cancelled since 5/15 (were 7TH DAY DEFERRED on 5/15 at 15.8d). Process gap: TT/Laz buyer-reply chase needs to fire by Day 7-10, not Day 15. <strong>5 NEW Accept terminals:</strong> 101032 das.nature2, 101035 Hiranai, 101037 das.nature2, 101022 Luxbin, 101013 Murahya. <strong>1 NEW Cancel (Shopee MY):</strong> 101034 Murahya. <strong>2 NEW LIGHT K mismatches:</strong> KIDS-PLAY-TUNNEL-BLUE-GREN-PRPLE Sellable=2 (3 concurrent ValueSnap orders 101044/45/46), MW-BLK Sellable=3 (3 concurrent Murahya orders 101033/34/39). <strong>2 HEAVY K surfaced for re-engagement:</strong> CFS-GREEN Sellable=68 (5/2 buyers 100918+100919) + BTAOCPRM Sellable=87 (5/2 buyers 100917+100920+100923) &mdash; restocks landed AFTER buyer told OOS. <strong>S5kgdumbell DAY 11:</strong> SoH=0 TRUE this time (5/15's 202 was /api/inventory-families lag), 38 reserved orders cannot ship &mdash; IT investigate FBS reservation leak. <strong>1 NEW GOT_STOCK_RECOVERY pending:</strong> 100951 Murahya CAKE-TURNTABLE-GREY-10INCH (csR="got stock already"). 101025 + 101027 already sent 5/15. <strong>2 "Other" buyerDecisions:</strong> 100967 Kinata SG (NEW since 5/15), 101016 das.nature2 carry. Sub-stale: 1 (100874 ValueSnap, Patricia "just close"). <strong>No Jira filings.</strong> No customer messages sent this run.</p>
+      <div class="field"><strong>NEW Shopee MY (14, 100% bot success):</strong> 101032 das.nature2 OC HCS-SILVER&rarr;TYPE-B (Accept) &middot; 101033 Murahya OC MW-BLK&rarr;MW-WHT &middot; 101034 Murahya NS MW-BLK (Cancelled) &middot; 101035 Hiranai OC A-LINE-SKIRT (Accept BLUE-L) &middot; 101036 Hiranai NS THIN-KNIT-CARDIGAN-OATMEAL multi-item &middot; 101037 das.nature2 OC CAMPING-SOFT-MAT (Accept BLACK-V2) &middot; 101039 Murahya NS MW-BLK &middot; 101041 Hiranai OC WOMEN-BOOTS-37 &middot; 101042 Karlmobel NS GARBAGE-BAG-TYPE-B &middot; 101043 Hiranai OC TRAVEL-PURSE-WHITE (Inc=0 concerning) &middot; 101044/45/46 ValueSnap OC KIDS-PLAY-TUNNEL (3 concurrent, Sellable=2 Light K) &middot; 101047 das.nature2 NS MCP-CVR-BEIGE</div>
+      <div class="field"><strong>NEW TikTok (2, Cat E_TT_LAZ always manual):</strong> 101031 TT DasNature OC 584031450634225615 (suggested HCS-SILVER-TYPE-B) &middot; 101038 TT DasNature NS 584021378866120508 &mdash; both sku=[]/pn=null. Awaiting per-run authorization for productName lookup + TT_OFFER_CHANGE/TT_NO_STOCK send (TT profile 55 DasNature).</div>
+      <div class="field"><strong>Terminal flips since 5/15 (13):</strong> 5 Accept (101032, 101035, 101037, 101022, 101013) + 1 Shopee MY Cancel (101034) + 2 LOST SALES (100888 TT DasNature, 100890 Laz MurahYa &mdash; both 7TH DAY DEFERRED 5/15) + 5 other carry Cancels (101000 Kinata SG, 100998 TT Hiranai, 100989 TT DasNature, 100969, 100962, 100938, 100936, 100934, 100933, 100932 various).</div>
+      <div class="field"><strong>Watchlist drift (5/15 &rarr; 5/18) via /api/inventory-families (1990 families):</strong> 6-PIECE-CANDLE-ROSE-GOLD RESOLVED (SoH 0&rarr;95 matches Patricia 5/13 WH claim) &middot; 4 expired-resolved dropped (CirclePB, OFFICE-CHAIR, POOL-SLIDE, RSB-WHTPRPL-41) &middot; GARBAGE-BAG-TYPE-A expires 5/19 with 95 restock landed &middot; S5kgdumbell DAY 11 Sellable=0 SoH=0 (true) Reserved=38 IT investigate &middot; SPORTS-TAPE-PINK-3.8CM Cat M DAY 5 -1 auto-clears on Inc=20 &middot; 2 NEW LIGHT K added (KIDS-PLAY-TUNNEL + MW-BLK) &middot; 2 HEAVY K surfaced (CFS-GREEN 68 sellable, BTAOCPRM 87 sellable &mdash; restocks landed)</div>
+      <div class="field"><strong>SiteGiant verification:</strong> 49 watchlist iSKUs verified via internal /api/inventory-families fallback (sitegiant.co session expired since 5/15). All NEW today iSKUs verified: MCP-CVR-BEIGE 0/0, GARBAGE-BAG-TYPE-B 0/0, WOMEN-BOOTS-BLACK-37 0/0, THIN-KNIT-CARDIGAN-OATMEAL 0/0, TRAVEL-PURSE-WHITE 0/0, A-LINE-SKIRT-BLUE-M 0/0, CAMPING-SOFT-MAT-WHITE-V2 0/0, HCS-SILVER 0/0 (all match WH OOS). KIDS-PLAY-TUNNEL 2/2 Light K. MW-BLK 3/3 Light K. RND-CHAIR-FULL-BLK 9/121 carry Light K + restock 545 inc. CTP-BLK-3M-1PC 11/11 Light K. CT-OUTER-LAYER-BLACK-5-8P 2/2 stable. HCS-BLUE 0/0 cleared.</div>
+      <div class="field"><strong>Jira:</strong> Drafts #3 LuxbinTM (closed-stable) + #5 GRBT/152 regression (resolved/superseded) both confirmed cleared. No new tickets. GRBT/152 fix sustained 11 days at 100% MY bot success.</div>
+      <div class="field"><strong>Carry-over (99 still pending buyer reply):</strong> Shopee MY 72 &middot; TikTok 21 &middot; Shopee SG 3 (KarlMobel SG, Kinata SG, DasNatureSG2) &middot; Lazada 3 (Laz MurahYa: 101029 NEW, 101007, 100910). TT/Laz cohort 8.7-16.77d past TT 24h SLA &mdash; bulk cancel-check sweep still pending.</div>
+      <div class="field"><strong>Pending CS authorization:</strong> (1) Send SHOPEE_MY_GOT_STOCK_RECOVERY for 100951 Murahya CAKE-TURNTABLE (cs4 profile 52); (2) 101031 + 101038 TT DasNature productName lookup + send (TT profile 55); (3) TT/Laz/SG bulk cancel-check sweep (21 TT + 3 SG + 3 Laz); (4) CFS-GREEN + BTAOCPRM proactive restock re-engagement for 5 carry buyers; (5) 100874 ValueSnap dashboard close; (6) 100967 Kinata SG "Other" investigate; (7) 101017 Bidarimu Cat N cancel/refund.</div>
+      <div class="field"><strong>Workaround note:</strong> AdsPower profile k1b44nvg auto-redirects to seller.shopee.sg / sitegiant.co within 1-3 seconds of loading employee.awesomeree.com.my pages. Workaround used: navigate + IMMEDIATE single-script fetch+process+return in same eval call. localStorage doesn't persist across origin switches. state.json write also failed (permission denied), so this report + tomorrow's fresh API pull serve as carry-over reference.</div>
+      <div class="field"><strong>Report:</strong> C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-05-18.md (full 11-section structured report with detailed watchlist re-scan, NEW SiteGiant verifications, action list by owner, risks/patterns).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 196 cases audited &middot; 14/14 MY bot 100% &middot; 13 terminal flips (incl 2 LOST SALES carry) &middot; 6-PIECE-CANDLE HARD K naturally resolved &middot; 49 SiteGiant verifications &middot; 2 NEW Light K added + 2 HEAVY K surfaced for re-engagement &middot; 0 Jira filings &middot; 0 customer messages sent (all per-run auth pending).</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-18" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">checkkinataorder &mdash; scheduled morning run, 0 To Process / 82 Processed / 0 Risk-of-Late (18/5)</span>
-      <span class="entry-meta">2026-05-18 ~09:25 MYT &middot; kinatasg (kmall:patricia, profile 70 fallback day 11) &middot; To Process 0 &middot; Processed 82 (8 today + 52 Sun + 22 Sat) &middot; Shipping 164 &middot; R/R/C 1 new auto-cancel yjrd21 S$38.90 Metal Shelf &middot; 0 Risk-of-Late across all 3 Processed pages &middot; carry-over 15/5 sg.goodstuff S$35.74 + 247_fitness_sg S$85.90 + louis202122 S$13.53 = S$135.17 ALL Delivered &middot; k1asxln6 16th-day blocked</span>
+      <span class="entry-title">checkkinataorder &mdash; scheduled morning run, 1 To Process / 82 Processed / 0 Risk-of-Late (18/5)</span>
+      <span class="entry-meta">2026-05-18 ~AM MYT &middot; kinatasg (kmall:patricia, profile 70 fallback day 11) &middot; To Process 1 (sqi8ehx5yp S$6.50 Cake Box 8&quot; 3L, 18/5 same-day cutoff) &middot; Processed 82 (8 today + 52 Sun + 22 Sat) &middot; Shipping 164 &middot; R/R/C 1 new auto-cancel yjrd21 S$38.90 Metal Shelf &middot; 0 Risk-of-Late across all 3 Processed pages &middot; carry-over 15/5 sg.goodstuff S$35.74 + 247_fitness_sg S$85.90 + louis202122 S$13.53 = S$135.17 ALL Delivered &middot; k1asxln6 16th-day blocked</span>
       <span class="tag">checkkinataorder</span>
       <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
-      <p><strong>Brief:</strong> Daily morning Kinata SG order audit. k1asxln6 still blocked (16th consecutive day, accounts.shopee.com.my/seller/login bounce, no toast). Fell back to profile 70 (kmall:patricia, 11th day fallback) &mdash; Patricia internal-webapp auto-redirect tab-thrashing mitigated by opening seller.shopee.sg via open-new-page + immediate inline DOM/fetch collection. Kinatasg confirmed in nav header. To Process tab empty (0), Processed 82 all clean (0 Risk-of-Late / 0 Cancel-in across 3 pages), Shipping 164, R/R/C 1 new auto-cancel.</p>
+      <p><strong>Brief:</strong> Daily morning Kinata SG order audit. k1asxln6 still blocked (16th consecutive day, accounts.shopee.com.my/seller/login bounce, no toast). Fell back to profile 70 (kmall:patricia, 11th day fallback) &mdash; Patricia internal-webapp auto-redirect tab-thrashing mitigated by opening seller.shopee.sg via open-new-page + immediate inline DOM/fetch collection. Kinatasg confirmed in nav header. To Process tab has 1 new (sqi8ehx5yp 260518PAJ0HC2E S$6.50 Cake Box 8&quot; 3 Layer, ordered today 09:34 SGT, same-day cutoff today ~13h margin). Processed 82 all clean (0 Risk-of-Late / 0 Cancel-in across 3 pages), Shipping 164, R/R/C 1 new auto-cancel.</p>
       <div class="field"><strong>Trigger:</strong> Scheduled daily checkkinataorder run (KinataOrderCheck_12PM Windows Task, invoked early at 09:14 MYT this run).</div>
       <div class="field"><strong>Tab counts (before 15/5 PM &rarr; after 18/5 AM):</strong>
         <ul>
           <li>To Ship total: 3 &rarr; <strong>82</strong> (weekend volume + Monday backlog)</li>
-          <li>To Process: 1 &rarr; <strong>0</strong> (warehouse fully caught up)</li>
+          <li>To Process: 1 &rarr; <strong>1</strong> (15/5 carry-over cleared; 1 NEW same-day order sqi8ehx5yp S$6.50 ordered 09:34 SGT)</li>
           <li>Processed: 2 &rarr; <strong>82</strong> (8 today + 52 Sun + 22 Sat)</li>
           <li>Shipping: 223 &rarr; <strong>164</strong> (Sat+Sun pickups delivered)</li>
           <li>Return/Refund/Cancel: 1 &rarr; <strong>1</strong> (different case)</li>
         </ul>
       </div>
       <div class="field"><strong>Risk scan (all 82 Processed):</strong> 0 Risk-of-Late, 0 Cancelled-in-X-day across pages 1 (40) + 2 (40) + 3 (2) = 82 confirmed total matches counter. Clean queue.</div>
+      <div class="field"><strong>To Process detail (1, S$6.50):</strong> sqi8ehx5yp 260518PAJ0HC2E S$6.50 Transparent Cake Box Plastic Packaging &mdash; 8 Inch 3 Layer (CLEAR-CAKE-PACKAGING-BOX-8IN-3L-SG) x1, Credit/Debit Card, Doorstep Delivery / SPX Express / Drop off-Pickup, ordered 18/05 09:34 SGT, cutoff today 18/05 (~13h margin). Low-value same-day-cutoff &mdash; arrange within working hours today.</div>
       <div class="field"><strong>R/R/Cancel new (1):</strong> yjrd21 260517MJNMFJPX S$38.90 Metal Shelf Rack 3-Tier 70cm (FLOOR-STANDING-STORAGE-RACK-3L-70CM-SG), Credit/Debit Card &mdash; &ldquo;Cancelled automatically by Shopee&apos;s system&rdquo; (payment-verification / anti-fraud trigger, not warehouse-side). No CS action unless buyer follows up.</div>
       <div class="field"><strong>Carry-over verification (15/5 PM &rarr; 18/5 AM):</strong>
         <ul>
@@ -1875,12 +1919,12 @@ header.page::after{
       <div class="field"><strong>Files:</strong> Report saved at C:\Users\tessf\Documents\kinata-reports\kinata-report-2026-05-18.md.</div>
       <div class="field"><strong>Action items:</strong>
         <ul>
-          <li>WAREHOUSE today (18/5) &mdash; pick up the 82 Processed parcels per scheduled courier. No urgent flagged orders.</li>
+          <li>WAREHOUSE today (18/5) &mdash; arrange shipment for sqi8ehx5yp S$6.50 Cake Box (same-day cutoff today, ~13h margin), then continue Mon courier pickup for 82 Processed parcels. No Risk-of-Late flagged.</li>
           <li>CS info only &mdash; yjrd21 S$38.90 auto-cancel by Shopee system. No action unless buyer contacts.</li>
           <li>OPERATOR escalate (16th day) &mdash; k1asxln6 QR re-login 2+ weeks overdue. WhatsApp send impossible from this profile until resolved.</li>
         </ul>
       </div>
-      <div class="field"><strong>Result:</strong> ok &mdash; clean morning audit, no Risk-of-Late, all 15/5 carry-overs delivered, profile-70 fallback held via tab-thrash workaround. WhatsApp send SKIPPED per task instruction.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; clean morning audit, 1 new To Process flagged (sqi8ehx5yp S$6.50, same-day cutoff today), no Risk-of-Late, all 15/5 carry-overs Delivered (S$135.17 secured), profile-70 fallback held via tab-thrash workaround. WhatsApp send SKIPPED per task instruction.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-18" data-shops="Chairsy,dutchgaming,Flashree,Solaree,Gameniture,Atlusrack,Stationarylah,KEDAI GARDEN,FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
