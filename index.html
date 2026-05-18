@@ -1840,6 +1840,63 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-18" data-shops="KarlMobel,MurahYa,Hiranai,ValueSnap,Luxbin,BahEmas,das.nature,das.nature2,Murahya,Emas Gift" data-platform="Shopee MY" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">csrrcredited + csrrcreditedcheck &mdash; 16 WH_RESELL flips Pending&rarr;Withdrawn + C14989 REOPEN per user + 8 chase remarks; SC wallet sweep BLOCKED (profile 70 + 84 login expired) (18/5)</span>
+      <span class="entry-meta">2026-05-18 MYT &middot; 442 Pending pulled &middot; 16/16 WH_RESELL flipped Withdrawn (HTTP 200 + crosscheck 16/16 CONFIRMED) &middot; C14989 reopened per user (Rejected&rarr;Pending, due 25/5) &middot; 8 high-value aging remarks (~RM 2,069) &middot; Phase B wallet sweep BLOCKED (Shopee SC session expired both profiles) &middot; 35 APPROVED + REJECTED_CLAWBACK cases (RM 3,607) deferred &middot; 41 PATCHes HTTP 200 0 fails</span>
+      <span class="tag">csrrcredited</span>
+      <span class="tag">csrrcreditedcheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Full Pending sweep across all 18 shops per user "all shops not specific shops only". Webapp MCP 401 throughout &mdash; bypassed via AdsPower profile 70 in-page fetch (same pattern as 15/5). User asked for csrrcredited + asked why 260426S7S6E936 was closed on 15/5 + instructed reopen. Phase A (WH_RESELL flips via /api/returns cross-check) completed 16/16. Phase B (wallet sweep on APPROVED + REJECTED_CLAWBACK) BLOCKED &mdash; profile 70 Shopee SC session expired (redirect to login), profile 84 not opened. Per memory captcha blocks auto-OTP, operator must re-log. Phase C SG sweep blocked same reason. Phase D crosscheck 16/16 CONFIRMED.</p>
+      <div class="field"><strong>User question answered &mdash; why 260426S7S6E936 was closed on 15/5:</strong> C14989 KarlMobel RM 206.30. 2 disputes both rejected (1st ref 2053129861228978190 9/5; 2nd ref 2054392765594976343 13/5 "close case without solution"). Wallet clawback fired NET -RM 77.13 (101/+175.19 + 411/-252.32). Warehouse NOT_FOUND in /api/returns &mdash; no resell recovery path. User instructed close as final loss during 15/5 session.</div>
+      <div class="field"><strong>C14989 REOPEN per user 18/5:</strong> refund_state Rejected&rarr;Pending (reopen_case PATCH) &middot; due_dt 2026-05-04&rarr;2026-05-25 &middot; action_needed Closed&rarr;WH Evidence &middot; reopen remark added explaining mgmt escalation context.</div>
+      <div class="field"><strong>Phase A &mdash; 16 WH_RESELL flips Pending&rarr;Withdrawn (HTTP 200 + crosscheck 16/16 OK):</strong>
+        <ul>
+          <li>C16957 260429433S4E0N das.nature RM 4.21 (MY267409019062H)</li>
+          <li>C17319 2605126845E475 Murahya RM 0 (MYSP0001959905)</li>
+          <li>C16799 260504GC3RM84T das.nature2 RM 122.85 (MYSP0001977944)</li>
+          <li>C15831 2603169KP7VX37 Luxbin RM 38.19 (MY268124072613G) [also D-bucket clawback -RM 1.30 from 15/5 &mdash; resell offset]</li>
+          <li>C17203 260513A524RNBH ValueSnap RM 19.70 (MY268985426322H)</li>
+          <li>C16758 2604280XQXRXF0 KarlMobel RM 100.00 (MY2627134390211) [carry-over from 15/5 P4 list]</li>
+          <li>C16635 260503E39FV2EJ Hiranai RM 16.19 (MY263663946850U) [carry-over from 15/5 monitor]</li>
+          <li>C17245 260508TP8XS5ES BahEmas RM 100.80 (MY260200367741V)</li>
+          <li>C17121 2605102JQSDMR0 das.nature2 RM 29.97 (MY263075133921J)</li>
+          <li>C16533 260504GC7W8R6S Hiranai RM 19.99 (MY269391567413P)</li>
+          <li>C16709 260506N7GD2JGU MurahYa RM 128.07 (MY262455938199G)</li>
+          <li>C17008 26051152EARP22 das.nature2 RM 19.50 (MY261859755842J)</li>
+          <li>C16913 260509UY3TC95P ValueSnap RM 34.26 (MY2672628049570)</li>
+          <li>C16034 260324VQJS9KMR Hiranai RM 46.29 (MY260854558834R)</li>
+          <li>C16199 2603240P7YFD3R MurahYa RM 12.59 (MY269937366710Y)</li>
+          <li>C16158 2603278KXJN6DH MurahYa RM 22.68 (MY262071682508H)</li>
+        </ul>
+        Total RM 715.29 recovered via resell path (Pending&rarr;Withdrawn, no chase needed).
+      </div>
+      <div class="field"><strong>Phase B+C BLOCKED &mdash; SC re-login needed:</strong> Profile 70 (k1b44nvg MY+SG-via-get_sig) redirected to accounts.shopee.com.my/seller/login on first wallet probe. Profile 84 (k1bpp0sl SG subaccount) Status=Inactive. Per memory feedback_tt_relogin_captcha_blocks_automation.md, re-login flow is email+password (autofilled) &rarr; slider puzzle captcha (blocks OTP send) &rarr; email OTP. Operator must drag captcha (~30 sec/profile) before automation can resume. 35 cases deferred: 13 APPROVED (RM 804.68) + 22 REJECTED_CLAWBACK (RM 2,802.27).</div>
+      <div class="field"><strong>8 aging/escalation remarks added (HTTP 200, operator chase list):</strong>
+        <ul>
+          <li>C13217 260319HQKFCT0U KarlMobel RM 724.94 / 38d &mdash; per 16/5 remark, re-chase Shopee 22/5</li>
+          <li>C15461 260502A73QUUXA KarlMobel RM 375.98 / 13d &mdash; Shopee promised 5WD wallet credit on 17/5, verify by 22-23/5</li>
+          <li>C16053 2603241JGBQKXA MurahYa RM 247.28 / 52d &mdash; Shopee promised 3-5WD on 15/5, verify by 20-22/5</li>
+          <li>C13893 260403TXKEJTEW BahEmas RM 224.28 / 30d &mdash; 3 reopens (8/5, 13/5, 14/5), ESCALATE MGMT</li>
+          <li>C14188 260409C6NVWCNH MurahYa RM 220.84 / 27d &mdash; 9/5 clawback threat if no ship-back, confirm warehouse shipment status</li>
+          <li>C16518 260503F0KSDM17 KarlMobel RM 93.61 / 13d &mdash; 13/5 reopen ref 2054406987650494469, verify next session</li>
+          <li>C15413 26050196X1DP6H MurahYa RM 155.88 / 15d &mdash; 3 reopens (8/5, 12/5, 13/5 ref 2054039865730347039), ESCALATE MGMT</li>
+          <li>C13072 2604076HRXDE9S KarlMobel RM 68.14 / 40d &mdash; 13/5 confirmed clawback -RM 70.62, ESCALATE MGMT (loss booked)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Pending classification snapshot (442 total):</strong> APPROVED 13 (RM 804.68) &middot; REJECTED_CLAWBACK 22 (RM 2,802.27) &middot; REQ_CANCEL 6 (RM 1,092.43) &middot; WFR_OLD&gt;14d 6 (RM 810.59) &middot; EMPTY remark 213 (RM 21,070) &middot; OTHER 166 &middot; Total exposure ~RM 48,337.</div>
+      <div class="field"><strong>Shop(s):</strong> KarlMobel, MurahYa, Hiranai, ValueSnap, Luxbin, BahEmas, das.nature, das.nature2, Murahya, Emas Gift (MY); Kinata SG / KarlMobel SG / EmasGift SG / DasNature SG NOT swept (profile 84 inactive).</div>
+      <div class="field"><strong>Platform(s):</strong> Shopee MY (Shopee SG deferred &mdash; profile 84 not opened).</div>
+      <div class="field"><strong>Reason for changes:</strong> User invoked csrrcredited 18/5 + asked why C14989 was closed + instructed reopen + asked for all-shops sweep.</div>
+      <div class="field"><strong>Total PATCHes:</strong> 41 HTTP 200 / 0 fails &mdash; 1 reopen + 1 due_date + 1 reopen-remark + 15 status flips + 16 resell remarks (Phase A) + 8 aging remarks (chase). Crosscheck 16/16 CONFIRMED on resell flips. C14989 reopen state verified Pending/WH Evidence/25-05 due.</div>
+      <div class="field"><strong>Carry-over to 19/5+:</strong> (1) Wallet sweep on 13 APPROVED + 22 REJECTED_CLAWBACK after SC re-login; (2) SG sweep on Kinata SG 36 + KarlMobel SG 2 + EmasGift SG 4 (profile 84); (3) chase-rr P0: C13217, 260225KEW0NUEX MurahYa RM 1,214.69 mgmt escalate, C15866 MurahYa RM 343.71 courier comp; (4) 19/5 monitor C15988 MurahYa RM 625.81 Paula ref ETA window; (5) C14989 reopen mgmt-escalation path; (6) 213 EMPTY remark Pendings (RM 21,070) backlog &mdash; need shop-by-shop SC sweep to classify; (7) 3 D-bucket UNVERIFIED from 15/5 (ValueSnap x2 + das.nature2).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 16 RESELL recovered + C14989 reopened per user + 8 chase remarks queued for operator + crosscheck 100% clean. Wallet sweep + SG sweep deferred due to Shopee SC session expiry on both profiles.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-18" data-shops="multiple" data-platform="TT + Lazada" data-result="fail">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -1880,7 +1937,8 @@ header.page::after{
       <div class="field"><strong>Pending CS authorization:</strong> (1) Send SHOPEE_MY_GOT_STOCK_RECOVERY for 100951 Murahya CAKE-TURNTABLE (cs4 profile 52); (2) 101031 + 101038 TT DasNature productName lookup + send (TT profile 55); (3) TT/Laz/SG bulk cancel-check sweep (21 TT + 3 SG + 3 Laz); (4) CFS-GREEN + BTAOCPRM proactive restock re-engagement for 5 carry buyers; (5) 100874 ValueSnap dashboard close; (6) 100967 Kinata SG "Other" investigate; (7) 101017 Bidarimu Cat N cancel/refund.</div>
       <div class="field"><strong>Workaround note:</strong> AdsPower profile k1b44nvg auto-redirects to seller.shopee.sg / sitegiant.co within 1-3 seconds of loading employee.awesomeree.com.my pages. Workaround used: navigate + IMMEDIATE single-script fetch+process+return in same eval call. localStorage doesn't persist across origin switches. state.json write also failed (permission denied), so this report + tomorrow's fresh API pull serve as carry-over reference.</div>
       <div class="field"><strong>Report:</strong> C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-05-18.md (full 11-section structured report with detailed watchlist re-scan, NEW SiteGiant verifications, action list by owner, risks/patterns).</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; 196 cases audited &middot; 14/14 MY bot 100% &middot; 13 terminal flips (incl 2 LOST SALES carry) &middot; 6-PIECE-CANDLE HARD K naturally resolved &middot; 49 SiteGiant verifications &middot; 2 NEW Light K added + 2 HEAVY K surfaced for re-engagement &middot; 0 Jira filings &middot; 0 customer messages sent (all per-run auth pending).</div>
+      <div class="field"><strong>User-invoked re-run @ MYT afternoon (delta only, no duplicate audit):</strong> Same 196-case pool, no new cases since morning. <strong>state.json successfully written this time</strong> (morning run was permission-gated). 4 direct sitegiant.co iSKU re-verifications via profile 70 (before Patricia auto-redirect kicked in): KIDS-PLAY-TUNNEL-BLUE-GREN-PRPLE SoH=2 Sellable=0 OOS (matches WH); MW-BLK SoH=18 Allocated=4 Sellable=0 OnHold=4 OOS (matches WH); GARBAGE-BAG-TYPE-B-50PCS-100L SoH=6 Sellable=0 OOS (light K signature SoH&gt;0); <strong>RND-CHAIR-FULL-BLK SoH=82 Sellable=14 OnHold=9 status OOS</strong> &mdash; flagged as <strong>NEW 5-case Karlmobel cluster K-candidate</strong> (101018+101019+101020+101021+101028 all flagged OOS warehouse-side within 4 days while SiteGiant Sellable still 14). Added to watchlist TTL 2026-06-01. THIN-KNIT-CARDIGAN-OATMEAL re-check blocked &mdash; profile 70 redirected to /customer-service/parcel-claim mid-navigation (Patricia auto-redirect, same root cause as sg-gap-monitor entry today). Watchlist housekeeping: 9 iSKUs dropped to Resolved (CirclePB, OFFICE-CHAIR-HR-WHLS-BLK, POOL-UPGRADED-BRACKET-SLIDE, HANGER WHITE, 6-PIECE-CANDLE, WORKOUT-HANDLE, S5kgdumbell, NDC-WOOD-COLOR-GREY-SET, GRY-CROPPED-LONGSLEEVE-L) + 2 NEW added (RND-CHAIR-FULL-BLK + GARBAGE-BAG-TYPE-B-50PCS-100L). Carry-over auto-Cancelled at source confirmed for 5 cases (101000 Kinata SG, 100998 TT Hiranai, 100989 TT DasNature, 100888 TT DasNature, 100890 Laz MurahYa). 0 customer messages sent. 0 stock adjustments. 0 Jira. Same conclusion: 28/30 NEW MY bot-OK + 2 TT manual operator action pending (101031, 101038 TT DasNature, profile 55).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 196 cases audited &middot; 14/14 MY bot 100% &middot; 13 terminal flips (incl 2 LOST SALES carry) &middot; 6-PIECE-CANDLE HARD K naturally resolved &middot; 49 SiteGiant verifications + 4 direct sitegiant.co re-verifications &middot; 9 watchlist iSKUs dropped + 2 NEW added (RND-CHAIR-FULL-BLK 5-case cluster + GARBAGE-BAG-TYPE-B) &middot; state.json now WRITTEN (morning was gated) &middot; 0 Jira filings &middot; 0 customer messages sent (all per-run auth pending).</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-18" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
