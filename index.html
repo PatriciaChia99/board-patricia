@@ -1840,14 +1840,14 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
-  <div class="entry" data-date="2026-05-18" data-shops="KEDAI GARDEN,Chairsy,FynnKoffer,Stationarylah,Atlusrack,Flashree,Solaree,Gameniture,dutchgaming" data-platform="Shopee MY + SiteGiant" data-result="warn">
+  <div class="entry" data-date="2026-05-18" data-shops="KEDAI GARDEN,Chairsy,FynnKoffer,Stationarylah,Atlusrack,Flashree,Solaree,Gameniture,dutchgaming" data-platform="Shopee MY + SiteGiant" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">stock-reconcile-unlinked &mdash; NEW SKILL designed + discovery proven: KEDAI GARDEN Pink Pot Hanger drift +20 (OVERSELL RISK) caught, full 9-shop sweep blocked on Shopee MY session re-login (18/5)</span>
-      <span class="entry-meta">2026-05-18 ~16:00 MYT &middot; Profile 70 (kmall:patricia) &middot; SG master pulled 14,015 items via inventoryapi2.sitegiant.io/api/v1/items (Bearer JWT capture) &middot; KEDAI GARDEN partial: 9 HANGER SKUs reconciled &middot; 🚨 1 OVERSELL_RISK (HANGER PINK SG=11 vs shop=31, +20 oversell exposure) &middot; 🟡 2 STUCK_STOCK (HANGER BLK -24, HANGER GREEN -13 = 37 units of lost sales) &middot; ✅ 4 IN_SYNC &middot; Full sweep (other 8 shops + remaining 338 KEDAI SKUs) DEFERRED &mdash; needs operator Shopee MY re-login first</span>
+      <span class="entry-title">stock-reconcile-unlinked &mdash; NEW SKILL built + FULL 9-shop sweep completed: 🚨 122 OVERSELL_RISK / 🟡 165 STUCK_STOCK / ✅ 411 IN_SYNC / 863 SHOP_ONLY across all 9 unlinked Shopee MY shops (18/5)</span>
+      <span class="entry-meta">2026-05-18 ~16:00 MYT discovery + ~17:00 MYT full sweep (after operator re-login) &middot; Profile 70 (kmall:patricia) &middot; SG master 14,015 items &middot; 9 shops pulled = 1,561 SKUs &middot; 1,098 reconciled against SG master (711 unique iSKU pairs) &middot; Worst: Chairsy NGC-GREY-WOLR Gaming Chair SG=2 vs shop=78 (+76 oversell) / FC-BLK-CHNUP SG=98 vs shop=153 (+55) / RND-CHAIR-GRY-SILVER STUCK SG=291 vs shop=48 (-243 lost-sales)</span>
       <span class="tag">stock-reconcile-unlinked</span>
       <span class="tag">discovery</span>
-      <span class="tag result-warn">Partial</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> User concern (after sg-gap-monitor PM re-run): &ldquo;is the stock level tally with Shopee Seller Centre vs SiteGiant? cause im afraid if not tally, it will happened the same issue again.&rdquo; Designed + built NEW skill <code>stock-reconcile-unlinked</code> &mdash; for the 9 Shopee MY shops NOT integrated to SiteGiant, find every iSKU that exists in BOTH systems and report stock-level drift (OVERSELL_RISK / STUCK_STOCK / IN_SYNC / SHOP_ONLY). Discovery proved end-to-end via KEDAI GARDEN Pink Pot Hanger: real silent-desync caught (+20 units oversell exposure). Full 9-shop sweep launched but profile 70 Shopee MY session bounced mid-sweep after KEDAI GARDEN (rapid get_sig session-cliff); needs manual re-login to complete.</p>
@@ -1882,8 +1882,60 @@ header.page::after{
       <div class="field"><strong>Blocker for full 9-shop sweep:</strong> Profile 70 Shopee MY session bounced to <code>accounts.shopee.com.my/seller/login</code> mid-sweep after KEDAI GARDEN. Likely cause: 9 rapid <code>get_sig</code> shop-switches stressed the master_merchant cookie and triggered Shopee&rsquo;s session-lockout. Per memory (<code>feedback_tt_relogin_captcha_blocks_automation.md</code>) Shopee re-login needs human action (slider captcha + email OTP can&rsquo;t be auto-solved). Profile 78/85 are different users (not Patricia master, no access to unlinked shop sub-accounts via get_sig).</div>
       <div class="field"><strong>Operator action for full sweep:</strong> (1) Re-login Shopee MY on profile 70 at <code>seller.shopee.com.my</code>. (2) Run <code>python C:\Users\tessf\Documents\stock-reconcile-reports\pull_shops_cdp.py</code>. (3) Run <code>python C:\Users\tessf\Documents\stock-reconcile-reports\reconcile.py</code>. (4) Review drift-report-YYYY-MM-DD.md for OVERSELL_RISK rows &rarr; manually decrement SiteGiant master OR drop shop listing qty to match warehouse truth.</div>
       <div class="field"><strong>Immediate manual action (don&rsquo;t wait for full sweep):</strong> For KEDAI GARDEN Pink Pot Hanger, either: (a) Drop KEDAI shop listing qty from 31 &rarr; 11 to match warehouse, OR (b) Increase SiteGiant master via stock-in if warehouse actually has more (warehouse PIC to verify). Don&rsquo;t leave +20 oversell exposure open &mdash; that&rsquo;s the same scenario that caused past customer-impact issues.</div>
-      <div class="field"><strong>v2 backlog:</strong> (1) Schedule weekly Monday 10:00 MYT once session-cliff workaround is figured out (insert ~3 sec pause between shops + re-validate session every 3 shops). (2) History tracking &mdash; compare current run to prior to flag newly-emerged drift vs old PIC-known drift. (3) Fuzzy iSKU matching for SHOP_ONLY false negatives (different naming conventions for same physical product).</div>
-      <div class="field"><strong>Result:</strong> partial &mdash; skill designed + 100% validated on Pink Pot Hanger (real OVERSELL_RISK +20 caught), SG master fully pulled, 1/9 shop partially reconciled. Full sweep deferred until Shopee MY profile 70 re-login. Read-only audit, no customer-facing messages sent.</div>
+      <div class="field"><strong>FULL SWEEP (after operator re-login, ~17:00 MYT):</strong> 3-sec inter-shop pause + every-3-shops session-validate held the session for all 9 shops. KEDAI GARDEN first save crashed on Unicode lone-surrogate (🔅 emoji), re-pulled with <code>ensure_ascii=True</code>. All 9 saved cleanly.</div>
+      <div class="field"><strong>Cross-shop totals (1,561 SKUs scanned across 9 shops):</strong>
+        <ul>
+          <li>🚨 <strong>OVERSELL_RISK: 122</strong> (Shopee shop advertises more than SG warehouse master &mdash; oversell risk if orders come in)</li>
+          <li>🟡 STUCK_STOCK: 165 (warehouse master has it, shop listing lower &mdash; lost sales)</li>
+          <li>✅ IN_SYNC: 411</li>
+          <li>SHOP_ONLY (not in SG master, no audit possible): 863</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Per-shop tally:</strong>
+        <ul>
+          <li><strong>Chairsy:</strong> 267 SKUs &mdash; 🚨 62 OVERSELL / 🟡 38 STUCK / ✅ 46 IN_SYNC / 121 SHOP_ONLY (biggest risk &mdash; gaming chairs + folding chairs)</li>
+          <li><strong>FynnKoffer:</strong> 495 SKUs &mdash; 🚨 45 OVERSELL / 🟡 95 STUCK / ✅ 218 IN_SYNC / 137 SHOP_ONLY</li>
+          <li><strong>KEDAI GARDEN:</strong> 347 SKUs &mdash; 🚨 1 OVERSELL (HANGER PINK +20) / 🟡 18 STUCK / ✅ 34 IN_SYNC / 294 SHOP_ONLY</li>
+          <li><strong>Atlusrack:</strong> 88 SKUs &mdash; 🚨 9 OVERSELL (ALL audited SKUs oversell &mdash; storage racks +29/+28/+27) / 0 STUCK / 0 IN_SYNC / 79 SHOP_ONLY</li>
+          <li><strong>Flashree:</strong> 171 SKUs &mdash; 🚨 0 OVERSELL / 🟡 9 STUCK / ✅ 71 IN_SYNC / 91 SHOP_ONLY</li>
+          <li><strong>Solaree:</strong> 9 SKUs &mdash; 🚨 5 OVERSELL / 🟡 1 STUCK / ✅ 3 IN_SYNC / 0 SHOP_ONLY</li>
+          <li><strong>Stationarylah:</strong> 130 SKUs &mdash; 🚨 0 OVERSELL / 🟡 4 STUCK / ✅ 11 IN_SYNC / 115 SHOP_ONLY</li>
+          <li><strong>dutchgaming:</strong> 44 SKUs &mdash; 🚨 0 OVERSELL / 0 STUCK / ✅ 28 IN_SYNC / 16 SHOP_ONLY</li>
+          <li><strong>Gameniture:</strong> 10 SKUs &mdash; 🚨 0 OVERSELL / 0 STUCK / 0 IN_SYNC / 10 SHOP_ONLY (entirely shop-only)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>🚨 TOP 10 OVERSELL_RISK across all shops (biggest cancellation exposure):</strong>
+        <ul>
+          <li><code>NGC-GREY-WOLR</code> Aeronn Grey Gaming Chair (Chairsy) &mdash; SG=2 vs shop=78 &rarr; <strong>+76</strong></li>
+          <li><code>NGC-BLK-WLR</code> Aeronn Black With Leg Rest (Chairsy) &mdash; SG=0 vs shop=63 &rarr; <strong>+63</strong> (selling chairs warehouse has ZERO of)</li>
+          <li><code>NGC-PINK-WOLR</code> Aeronn Pink Without Leg Rest (Chairsy) &mdash; SG=20 vs shop=83 &rarr; <strong>+63</strong></li>
+          <li><code>FC-WHTM-CHNUP</code> White Mesh Cushion Folding Chair (Chairsy) &mdash; SG=20 vs shop=77 &rarr; <strong>+57</strong></li>
+          <li><code>FC-BLK-CHNUP</code> Black Cushion Folding Chair (Chairsy) &mdash; SG=98 vs shop=153 &rarr; <strong>+55</strong></li>
+          <li><code>NGC-PINK-WLR</code> Aeronn Pink With Leg Rest (Chairsy) &mdash; SG=1 vs shop=45 &rarr; <strong>+44</strong></li>
+          <li><code>NGC-BLK-WOLR</code> Aeronn Black Without Leg Rest (Chairsy) &mdash; SG=0 vs shop=43 &rarr; <strong>+43</strong></li>
+          <li><code>RACK 100KG BLUE 35x35x150</code> (Atlusrack) &mdash; SG=21 vs shop=50 &rarr; <strong>+29</strong></li>
+          <li><code>RACK 100KG BLUE 35x90x150</code> (Atlusrack) &mdash; SG=22 vs shop=50 &rarr; <strong>+28</strong></li>
+          <li><code>RACK 100KG BLUE 35x60x150</code> (Atlusrack) &mdash; SG=23 vs shop=50 &rarr; <strong>+27</strong></li>
+        </ul>
+      </div>
+      <div class="field"><strong>🟡 TOP STUCK_STOCK examples (biggest lost-sales exposure):</strong>
+        <ul>
+          <li><code>RND-CHAIR-GRY-SILVER</code> Solat Chair Grey Silver (Chairsy) &mdash; SG=291 vs shop=48 &rarr; <strong>-243 units sitting unsold</strong></li>
+          <li><code>RND-CHAIR-BLU-BLK</code> Solat Chair Blue Black (Chairsy) &mdash; SG=106 vs shop=1 &rarr; <strong>-105</strong></li>
+          <li><code>RND-CHAIR-RED-BLK</code> Solat Chair Red Black (Chairsy) &mdash; SG=101 vs shop=23 &rarr; <strong>-78</strong></li>
+          <li><code>NGC-RED-WOLR</code> Aeronn Red Gaming Chair (Chairsy) &mdash; SG=42 vs shop=0 &rarr; <strong>-42</strong> (listing shows 0, warehouse has 42)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Files saved (full sweep):</strong>
+        <ul>
+          <li>Drift report (full 271 lines): <code>C:\Users\tessf\Documents\stock-reconcile-reports\drift-report-2026-05-18.md</code></li>
+          <li>9 per-shop JSONs: <code>shop-atlusrack.json</code>, <code>shop-chairsy.json</code>, <code>shop-dutch_gaming.json</code>, <code>shop-flashree.json</code>, <code>shop-fynnkoffer.json</code>, <code>shop-gameniture.json</code>, <code>shop-garden_mall.json</code>, <code>shop-solaree2024.json</code>, <code>shop-stationarylah.json</code></li>
+          <li>New helper: <code>pull_one_shop.py</code> (single-shop re-pull with ascii-safe encoding, used after KEDAI GARDEN Unicode crash)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Action items for PIC / operator:</strong> (1) <strong>URGENT</strong> &mdash; address Chairsy gaming chairs (NGC-* SKUs): warehouse has near-zero stock but Shopee shows 60-80+ units. Either drop shop listing qty to warehouse truth OR stock-in to SG master if warehouse actually has more. (2) Atlusrack ALL 9 SKUs oversell: same fix. (3) Chairsy lost-sales recovery: bump RND-CHAIR-GRY-SILVER listing from 48 &rarr; 291 (243 units sitting unsold). (4) Review the 863 SHOP_ONLY SKUs for missing SiteGiant master entries &mdash; especially across high-velocity shops (Chairsy 121, KEDAI 294, FynnKoffer 137). (5) Schedule this skill weekly Monday 10:00 MYT going forward.</div>
+      <div class="field"><strong>v2 backlog:</strong> (1) History tracking &mdash; compare current run to prior to flag newly-emerged drift vs old PIC-known drift. (2) Fuzzy iSKU matching for SHOP_ONLY false negatives (different naming conventions for same physical product). (3) Auto-WhatsApp top-10 OVERSELL_RISK to warehouse PIC after each run.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; FULL 9-shop sweep completed cleanly. NEW skill <code>stock-reconcile-unlinked</code> built + saved + validated end-to-end. 122 OVERSELL_RISK + 165 STUCK_STOCK surfaced for operator action &mdash; the exact &ldquo;same issue&rdquo; pattern user feared, now made visible. Read-only audit, no customer-facing messages sent.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-18" data-shops="13 TT shops" data-platform="Internal" data-result="ok">
