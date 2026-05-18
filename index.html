@@ -1989,8 +1989,8 @@ header.page::after{
   <div class="entry" data-date="2026-05-18" data-shops="Adelmar,DasNature,Hiranai,HiranaiMY,Jager,JagerArmor,JagerHelmet,KarlMobel,MurahYa,Valuesnap,Lovento,Kinata,JagerSafety,Lazada MurahYa,Laz das.nature,Lazada Lovento" data-platform="TT + Lazada" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">parcelclaim-auto &mdash; morning bot soft-failed; user re-logged 4 expired profiles, manual re-run posted 88 NEW (RM ~7,200) (18/5)</span>
-      <span class="entry-meta">2026-05-18 09:45-14:30 MYT &middot; 76/76 batch-2 POSTs HTTP 200 id=1602-1677 (+12 batch-1) &middot; 117 candidates merged &middot; 41 already in webapp &middot; 0 fails &middot; RM 6,280.82 batch-2 + RM ~900 batch-1 = ~7,200 tracked &middot; Lazada all 3 profiles 0 in 4-day window</span>
+      <span class="entry-title">parcelclaim-auto &mdash; morning bot soft-failed; user re-logged 4 expired profiles, manual re-run posted 95 NEW (RM 7,500.02), CS Haja already actioning (18/5)</span>
+      <span class="entry-meta">2026-05-18 09:45-15:00 MYT &middot; 95 NEW POSTs HTTP 200 id=1583-1677 (19 batch-1 + 76 batch-2) &middot; 117 candidates merged &middot; 41 already in webapp &middot; 0 fails &middot; 0 duplicates &middot; RM 7,500.02 tracked &middot; Lazada all 3 profiles 0 in 4-day window &middot; Crosscheck 5/5 OIDs match webapp &middot; 8 MurahYa already claimed by Haja (C1675 closed, C1670+C1671 To Dispute)</span>
       <span class="tag">parcelclaim-auto</span>
       <span class="tag result-ok">Completed</span>
     </div>
@@ -2007,7 +2007,9 @@ header.page::after{
           <li>Lazada 81/82/83: all 0 within 4-day cutoff (most recent Lazada MurahYa 2026-05-14 08:39:17 just outside)</li>
         </ul>
       </div>
-      <div class="field"><strong>Merge + dedupe + POST:</strong> 117 unique candidates merged (morning 87 + rerun 36 &minus; 6 cross-bucket overlap). Fresh webapp existing pull = 277 (was 221 at 09:25 &mdash; CS Haja and others added in between). Already-in-webapp = 41 (incl. 12 from batch-1 + my batch-1 was killed mid-execution). NEW to POST = 76 candidates &rarr; ALL 76 HTTP 200, id range 1602&ndash;1677, refundAmount &gt; 0 fixed via `0.01` substitution for the 50 zero-refund FD/pending-R/R cases (API validation rejects refundAmount=0 with "Required fields are missing").</div>
+      <div class="field"><strong>Merge + dedupe + POST:</strong> 117 unique candidates merged (morning 87 + rerun 36 &minus; 6 cross-bucket overlap). Final verified: <strong>95 NEW cases posted in two batches (id 1583-1677)</strong>. Batch-1 in-browser path: 12 first-call OK + 7 retries with 0.01 substitution before SPA context destruction = 19 IDs (C1583-C1601). Batch-2 cookie-extract Python POST: 76 IDs (C1602-C1677, RM 6,280.82). API rejects refundAmount=0 with "Required fields are missing" &rarr; substituted 0.01 for all zero-refund pending/FD cases.</div>
+      <div class="field"><strong>Final verified count (post-run sanity check):</strong> 95 unique cases @ RM 7,500.02 total, 0 duplicates within batch, 0 duplicates with pre-existing webapp cases. Crosscheck sampled 5 cases (C1583, C1597, C1622, C1659, C1670) &mdash; all order_id/shop/refund match webapp record perfectly. Per shop: Hiranai 26, DasNature 17, Valuesnap 16, KarlMobel 11, Jager 10, MurahYa 9, Adelmar 4, HiranaiMY 1, JagerArmor 1.</div>
+      <div class="field"><strong>Live CS pickup signal:</strong> Within ~2hr of POST, CS Haja claimed 8 MurahYa cases (C1666 RM 241.30, C1670 RM 614.94 To Dispute, C1671 RM 100.80 To Dispute, C1672 RM 25.41, C1673 RM 24.73, C1674 RM 28.97, C1675 RM 102.00 already Withdrawn [RR CLOSED], C1677 RM 11.50). Confirms posts are real and useful &mdash; the 3-day MurahYa login_expiry backlog was unblocked.</div>
       <div class="field"><strong>Highest-value NEW posts (batch 2):</strong>
         <ul>
           <li>id=1659 TT KarlMobel 584014093341984553 RM 832.80 (Scooter Electric, FD)</li>
@@ -2035,7 +2037,7 @@ header.page::after{
       <div class="field"><strong>Shop(s):</strong> all 13 TT MY profiles + 3 Lazada profiles in scope.</div>
       <div class="field"><strong>Platform(s):</strong> TikTok Seller Center MY + Lazada Seller Center MY + internal webapp.</div>
       <div class="field"><strong>Reason:</strong> Morning bot reached Phase 1 scrape but didn't complete Phase 4 dedupe / Phase 5 POST / Phase 6 report-write. Operator manually re-logged 4 expired profiles, then I drove the recovery to completion.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; 88 NEW parcel claims now tracked in webapp (76 batch-2 + ~12 batch-1), RM ~7,200 exposure now visible to CS, 0 POST failures.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 95 NEW parcel claims tracked in webapp (id 1583-1677), RM 7,500.02 exposure visible to CS, 0 POST failures, 0 duplicates, CS Haja already actioning 8 (1 closed).</div>
     </div>
   </div>
 
