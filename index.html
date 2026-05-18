@@ -1840,6 +1840,52 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-18" data-shops="KEDAI GARDEN,Chairsy,FynnKoffer,Stationarylah,Atlusrack,Flashree,Solaree,Gameniture,dutchgaming" data-platform="Shopee MY + SiteGiant" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">stock-reconcile-unlinked &mdash; NEW SKILL designed + discovery proven: KEDAI GARDEN Pink Pot Hanger drift +20 (OVERSELL RISK) caught, full 9-shop sweep blocked on Shopee MY session re-login (18/5)</span>
+      <span class="entry-meta">2026-05-18 ~16:00 MYT &middot; Profile 70 (kmall:patricia) &middot; SG master pulled 14,015 items via inventoryapi2.sitegiant.io/api/v1/items (Bearer JWT capture) &middot; KEDAI GARDEN partial: 9 HANGER SKUs reconciled &middot; 🚨 1 OVERSELL_RISK (HANGER PINK SG=11 vs shop=31, +20 oversell exposure) &middot; 🟡 2 STUCK_STOCK (HANGER BLK -24, HANGER GREEN -13 = 37 units of lost sales) &middot; ✅ 4 IN_SYNC &middot; Full sweep (other 8 shops + remaining 338 KEDAI SKUs) DEFERRED &mdash; needs operator Shopee MY re-login first</span>
+      <span class="tag">stock-reconcile-unlinked</span>
+      <span class="tag">discovery</span>
+      <span class="tag result-warn">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User concern (after sg-gap-monitor PM re-run): &ldquo;is the stock level tally with Shopee Seller Centre vs SiteGiant? cause im afraid if not tally, it will happened the same issue again.&rdquo; Designed + built NEW skill <code>stock-reconcile-unlinked</code> &mdash; for the 9 Shopee MY shops NOT integrated to SiteGiant, find every iSKU that exists in BOTH systems and report stock-level drift (OVERSELL_RISK / STUCK_STOCK / IN_SYNC / SHOP_ONLY). Discovery proved end-to-end via KEDAI GARDEN Pink Pot Hanger: real silent-desync caught (+20 units oversell exposure). Full 9-shop sweep launched but profile 70 Shopee MY session bounced mid-sweep after KEDAI GARDEN (rapid get_sig session-cliff); needs manual re-login to complete.</p>
+      <div class="field"><strong>Trigger:</strong> User direct request after sg-gap-monitor 18/5 PM re-run answered &ldquo;sg-gap-monitor only checks the GAP (which shops missing from SiteGiant), not stock-level reconciliation per SKU.&rdquo;</div>
+      <div class="field"><strong>Discovery validated (all 3 unknowns resolved):</strong>
+        <ul>
+          <li>SiteGiant master inventory API &rarr; <code>inventoryapi2.sitegiant.io/api/v1/items?page=N&amp;limit=500&amp;filter[store_id]=2676</code>. Auth = Bearer JWT (captured from SPA via XHR monkey-patch + pagination click; valid ~7 days). 14,015 master items pulled, saved to <code>C:\Users\tessf\Documents\stock-reconcile-reports\sg-master.json</code>. Per-item fields: <code>isku, available_stock, sellable_stock, allocated_stock, reserved_stock, total_connected_marketplace, item_warehouse_inventory</code>.</li>
+          <li>Shopee SC per-shop product API &rarr; <code>/api/v3/opt/mpsku/list/v2/search_product_list?SPC_CDS=&lt;csrf&gt;&amp;page_size=48&amp;list_type=all</code>. Cursor-paginated. Leaf-accurate via <code>product.model_list[].stock_detail.total_seller_stock</code>. Do NOT use <code>/api/inventory-families</code> (inflates &mdash; confirmed 4 times on 14/5).</li>
+          <li>iSKU matching = exact string. SiteGiant <code>HANGER PINK</code> = KEDAI GARDEN variation_sku <code>HANGER PINK</code>. No fuzzy match needed.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>KEDAI GARDEN HANGER reconciliation (Pink Pot Hanger family, partial proof):</strong>
+        <ul>
+          <li>🚨 <strong>HANGER PINK</strong>: SiteGiant=11, KEDAI=31 &rarr; <strong>+20 OVERSELL_RISK</strong>. Shop advertises 20 Pink Pot Hangers warehouse doesn&rsquo;t have. If 11+ orders come in, oversell &rarr; cancellations.</li>
+          <li>🟡 HANGER BLK: SG=24, KEDAI=0 &rarr; -24 STUCK_STOCK (warehouse has 24, shop listing shows 0 &rarr; lost sales).</li>
+          <li>🟡 HANGER GREEN: SG=13, KEDAI=0 &rarr; -13 STUCK_STOCK.</li>
+          <li>✅ HANGER TRANS (103), HANGER YELLOW (6), HANGER PURPLE (1), HANGER WHITE (0) all IN_SYNC.</li>
+          <li>HANGER RED + HANGER BROWN listed on KEDAI but not in SG master (shop-only SKUs, no audit possible).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Files saved:</strong>
+        <ul>
+          <li>Skill: <code>C:\Users\tessf\.claude\skills\stock-reconcile-unlinked.md</code> (full PROCEDURE, auth pattern, helper scripts ref, escape hatch, known limitations)</li>
+          <li>SG master JSON: <code>C:\Users\tessf\Documents\stock-reconcile-reports\sg-master.json</code> (14,015 items, ~2.1 MB)</li>
+          <li>KEDAI GARDEN partial: <code>shop-garden_mall.json</code> (9 HANGER SKUs only)</li>
+          <li>Helper: <code>sg_pull.py</code> (Python wrapper around inventoryapi2, takes Bearer token as arg)</li>
+          <li>Helper: <code>pull_shops_cdp.py</code> (raw CDP per-shop pull when MCP bridge dies)</li>
+          <li>Helper: <code>reconcile.py</code> (joins SG + shop JSONs &rarr; drift report MD)</li>
+          <li>Report: <code>drift-report-2026-05-18.md</code> (KEDAI GARDEN HANGER only, partial proof)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Blocker for full 9-shop sweep:</strong> Profile 70 Shopee MY session bounced to <code>accounts.shopee.com.my/seller/login</code> mid-sweep after KEDAI GARDEN. Likely cause: 9 rapid <code>get_sig</code> shop-switches stressed the master_merchant cookie and triggered Shopee&rsquo;s session-lockout. Per memory (<code>feedback_tt_relogin_captcha_blocks_automation.md</code>) Shopee re-login needs human action (slider captcha + email OTP can&rsquo;t be auto-solved). Profile 78/85 are different users (not Patricia master, no access to unlinked shop sub-accounts via get_sig).</div>
+      <div class="field"><strong>Operator action for full sweep:</strong> (1) Re-login Shopee MY on profile 70 at <code>seller.shopee.com.my</code>. (2) Run <code>python C:\Users\tessf\Documents\stock-reconcile-reports\pull_shops_cdp.py</code>. (3) Run <code>python C:\Users\tessf\Documents\stock-reconcile-reports\reconcile.py</code>. (4) Review drift-report-YYYY-MM-DD.md for OVERSELL_RISK rows &rarr; manually decrement SiteGiant master OR drop shop listing qty to match warehouse truth.</div>
+      <div class="field"><strong>Immediate manual action (don&rsquo;t wait for full sweep):</strong> For KEDAI GARDEN Pink Pot Hanger, either: (a) Drop KEDAI shop listing qty from 31 &rarr; 11 to match warehouse, OR (b) Increase SiteGiant master via stock-in if warehouse actually has more (warehouse PIC to verify). Don&rsquo;t leave +20 oversell exposure open &mdash; that&rsquo;s the same scenario that caused past customer-impact issues.</div>
+      <div class="field"><strong>v2 backlog:</strong> (1) Schedule weekly Monday 10:00 MYT once session-cliff workaround is figured out (insert ~3 sec pause between shops + re-validate session every 3 shops). (2) History tracking &mdash; compare current run to prior to flag newly-emerged drift vs old PIC-known drift. (3) Fuzzy iSKU matching for SHOP_ONLY false negatives (different naming conventions for same physical product).</div>
+      <div class="field"><strong>Result:</strong> partial &mdash; skill designed + 100% validated on Pink Pot Hanger (real OVERSELL_RISK +20 caught), SG master fully pulled, 1/9 shop partially reconciled. Full sweep deferred until Shopee MY profile 70 re-login. Read-only audit, no customer-facing messages sent.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-18" data-shops="13 TT shops" data-platform="Internal" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
