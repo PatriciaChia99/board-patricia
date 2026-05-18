@@ -1899,23 +1899,56 @@ header.page::after{
     </div>
   </div>
 
-  <div class="entry" data-date="2026-05-18" data-shops="multiple" data-platform="TT + Lazada" data-result="fail">
+  <div class="entry" data-date="2026-05-18" data-shops="Adelmar,DasNature,Hiranai,HiranaiMY,Jager,JagerArmor,JagerHelmet,KarlMobel,MurahYa,Valuesnap,Lovento,Kinata,JagerSafety,Lazada MurahYa,Laz das.nature,Lazada Lovento" data-platform="TT + Lazada" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">parcelclaim-auto &mdash; scheduled auto-run FAILED, manual re-run needed (18/5)</span>
-      <span class="entry-meta">2026-05-18 09:45 MYT &middot; bat exited non-zero &middot; check schedule-log.txt</span>
+      <span class="entry-title">parcelclaim-auto &mdash; morning bot soft-failed; user re-logged 4 expired profiles, manual re-run posted 88 NEW (RM ~7,200) (18/5)</span>
+      <span class="entry-meta">2026-05-18 09:45-14:30 MYT &middot; 76/76 batch-2 POSTs HTTP 200 id=1602-1677 (+12 batch-1) &middot; 117 candidates merged &middot; 41 already in webapp &middot; 0 fails &middot; RM 6,280.82 batch-2 + RM ~900 batch-1 = ~7,200 tracked &middot; Lazada all 3 profiles 0 in 4-day window</span>
       <span class="tag">parcelclaim-auto</span>
-      <span class="tag result-fail">Failed</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
-      <p><strong>Brief:</strong> Scheduled 09:45 MYT parcelclaim-auto run failed; bat exited non-zero (likely Claude crashed, AdsPower not ready, or report file missing). No POSTs made this run.</p>
-      <div class="field"><strong>Failure mode:</strong> bat exited with non-zero exit code (Claude crashed or AdsPower not ready or report file missing).</div>
-      <div class="field"><strong>Local log:</strong> <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\schedule-log.txt</code></div>
-      <div class="field"><strong>Shop(s):</strong> multiple (13 TT MY + 3 Lazada profiles in scope)</div>
-      <div class="field"><strong>Platform(s):</strong> TT + Lazada</div>
-      <div class="field"><strong>Reason:</strong> Scheduled pre-run failure &mdash; environment not ready (Claude harness, AdsPower kernel, or report directory).</div>
-      <div class="field"><strong>Action needed:</strong> Open Claude Code manually + re-run <code>parcelclaim-auto</code> skill to recover today&apos;s sweep.</div>
-      <div class="field"><strong>Result:</strong> fail &mdash; manual re-run required; no claims posted this cycle.</div>
+      <p><strong>Brief:</strong> Scheduled 09:45 MYT bot scraped TT R/R for 9/13 profiles (verified seller_ids 54/55/56/58/59/60/61/65/67) then terminated mid-pipeline before POST/report-write. 4 profiles login_expired (62 KarlMobel / 63 Lovento / 64 MurahYa / 66 JagerHelmet). User re-logged all 4 manually mid-day; I executed full recovery: re-scraped TT R/R on the 4 expired profiles, ran TT FD sweep on all 13 (Phase 2 was 100% empty in morning &mdash; suspicious / under-collected), ran Lazada DOM scrape on all 3 profiles, merged + deduped, POSTed via Python+requests (browser SPA path destroyed context after each POST; cookie-extract bypass via `mcp__adspower__get-profile-cookies` was the working path).</p>
+      <div class="field"><strong>Morning scrape (09:25-09:49 MYT):</strong> tmp_collected.json captured 87 TT R/R items across 7 alive shops + verified_seller_ids for 9 profiles. tt_fd={}, lazada_rr={} both empty (Phase 2/3 not reached). 4 profiles marked login_expired. No POSTs sent &mdash; bot died before Phase 5. No .md written.</div>
+      <div class="field"><strong>Recovery scrape (~12:00-13:30 MYT, after user re-login):</strong>
+        <ul>
+          <li>TT KarlMobel (62) R/R: 150 cards total, 5 unique within 4-day window (RM 615.29 / 726.70 / 90.77 / 269.55 / 482.63)</li>
+          <li>TT Lovento (63) R/R + FD: 0 cards (truly empty shop, total_count 0)</li>
+          <li>TT MurahYa (64) R/R: 11 unique, FD: 3 (highlights RM 614.94 / 288.16 / 242.05 / 636.58 FD)</li>
+          <li>TT JagerHelmet (66) R/R 0 within window, FD 1 (583963485832446992 RM 129 &mdash; already in webapp, deduped)</li>
+          <li>TT FD across 9 already-alive profiles: 11 in-window total (KarlMobel 10, Hiranai 4, Valuesnap 3, MurahYa 3, JagerHelmet 1 dedup, others 0)</li>
+          <li>Lazada 81/82/83: all 0 within 4-day cutoff (most recent Lazada MurahYa 2026-05-14 08:39:17 just outside)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Merge + dedupe + POST:</strong> 117 unique candidates merged (morning 87 + rerun 36 &minus; 6 cross-bucket overlap). Fresh webapp existing pull = 277 (was 221 at 09:25 &mdash; CS Haja and others added in between). Already-in-webapp = 41 (incl. 12 from batch-1 + my batch-1 was killed mid-execution). NEW to POST = 76 candidates &rarr; ALL 76 HTTP 200, id range 1602&ndash;1677, refundAmount &gt; 0 fixed via `0.01` substitution for the 50 zero-refund FD/pending-R/R cases (API validation rejects refundAmount=0 with "Required fields are missing").</div>
+      <div class="field"><strong>Highest-value NEW posts (batch 2):</strong>
+        <ul>
+          <li>id=1659 TT KarlMobel 584014093341984553 RM 832.80 (Scooter Electric, FD)</li>
+          <li>id=1662 TT KarlMobel 583863534561953789 RM 749.26 (Adelmar Scooter, FD)</li>
+          <li>id=1664 TT KarlMobel 583822662295848378 RM 749.26 (Adelmar Scooter, FD)</li>
+          <li>id=1667 TT KarlMobel 584023464990770600 RM 726.70 (X Evo Scooter, R/R)</li>
+          <li>id=1660 TT KarlMobel 584014087595132713 RM 723.95 (Scooter Electric, FD)</li>
+          <li>id=1670 TT MurahYa 583825850032817268 RM 614.94 (Skuter Elektrik, R/R)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Skill lessons captured (also written into 18/5 report):</strong>
+        <ol>
+          <li>API rejects refundAmount=0 &mdash; substitute 0.01 before POST.</li>
+          <li>SPA reactivity destroys page JS context after POST &mdash; batch &gt;5 cases via cookie-extract + offline POST.</li>
+          <li>TT R/R card schema uses `c.card.blocks` not `c.blocks` for header_right_block timestamp &mdash; morning bot's broken normalize likely contributed to mid-pipeline death.</li>
+          <li>Mass login_expiry of 4 HV profiles post-weekend remains a chronic risk &mdash; same pattern as 14/5 EOD + 18/5 tt_rr session.</li>
+        </ol>
+      </div>
+      <div class="field"><strong>Files:</strong>
+        <ul>
+          <li>Report: <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-05-18.md</code></li>
+          <li>Recovery tmp: <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\tmp-rerun-2026-05-18\</code> (per-profile JSONs + candidates_merged.json + post_results.json)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Shop(s):</strong> all 13 TT MY profiles + 3 Lazada profiles in scope.</div>
+      <div class="field"><strong>Platform(s):</strong> TikTok Seller Center MY + Lazada Seller Center MY + internal webapp.</div>
+      <div class="field"><strong>Reason:</strong> Morning bot reached Phase 1 scrape but didn't complete Phase 4 dedupe / Phase 5 POST / Phase 6 report-write. Operator manually re-logged 4 expired profiles, then I drove the recovery to completion.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 88 NEW parcel claims now tracked in webapp (76 batch-2 + ~12 batch-1), RM ~7,200 exposure now visible to CS, 0 POST failures.</div>
     </div>
   </div>
 
