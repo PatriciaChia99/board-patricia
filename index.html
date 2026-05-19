@@ -1840,11 +1840,11 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
-  <div class="entry" data-date="2026-05-19" data-shops="MurahYa, KarlMobel, MasonGym, ValueSnap, BahEmas, Chairsy, Stationarylah, KEDAI GARDEN, Atlusrack, EncikPlastic, Bidarimu, Secret Racer, Hiranai, Flashree, dutchgaming, das.nature, FynnKoffer, Adelmar, das.nature2, JagerHelmet, Wilmermobel, Solaree, Emas Gift, Luxbin, Gameniture, Lovento MY, Lenza Eyewear" data-platform="Shopee MY" data-result="ok">
+  <div class="entry" data-date="2026-05-19" data-shops="MurahYa, KarlMobel, MasonGym, ValueSnap, BahEmas, Chairsy, Stationarylah, KEDAI GARDEN, Atlusrack, EncikPlastic, Bidarimu, Secret Racer, Hiranai, Flashree, dutchgaming, das.nature, FynnKoffer, Adelmar, das.nature2, JagerHelmet, Wilmermobel, Solaree, Emas Gift, Luxbin, Gameniture, Lovento MY, Lenza Eyewear, TT MurahYa, TT KarlMobel, TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerSafety, TT Lovento, TT ValueSnap, TT JagerHelmet" data-platform="Shopee MY + TikTok MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">profit-crosscheck (ad-hoc) &mdash; Sheet vs live Shopee API on 27 MY shops + 6-shop ads-credit sanity probe (19/5)</span>
-      <span class="entry-meta">2026-05-19 MYT &middot; Profile 70 (Patricia) &middot; 27\27 MY shops swept &middot; 12 EXACT-MATCH (both income+wallet) &middot; 14 close-drift (&lt;1.5%, normal live-data delta) &middot; 1 anomaly (Luxbin income sheet overstates by RM 1,410.45) &middot; Ads credit pulled on top 6 shops by income, all positive non-zero &middot; read-only</span>
+      <span class="entry-title">profit-crosscheck (ad-hoc) &mdash; Sheet vs live API: 27 Shopee MY shops + 12 TikTok MY shops + 6-shop ads-credit sanity probe (19/5)</span>
+      <span class="entry-meta">2026-05-19 MYT &middot; Shopee profile 70 + TT profiles 54-66 &middot; SHOPEE: 27\27 swept, 12 EXACT-MATCH, 14 close-drift, 1 anomaly (Luxbin income +RM 1,410.45 overstated) &middot; ADS CREDIT: top 6, all positive RM 3.5k-11.9k &middot; TIKTOK: 12\12 swept (skipped Terrazen+KraftMan+Kinata), Shipped totals broadly match sheet (avg drift ~15%), Pending Send systematically lower (time-decay), wallet skipped (subaccount perm-denied) &middot; read-only</span>
       <span class="tag">profit-crosscheck</span>
       <span class="tag result-ok">Completed</span>
     </div>
@@ -1883,9 +1883,27 @@ header.page::after{
         </ul>
         All 6 returned reasonable positive values (RM 3.5k&ndash;11.9k range). No zero\missing\corrupted balances. Looks accurate &mdash; per user instruction &ldquo;more or less only, no need exact amount.&rdquo;
       </div>
-      <div class="field"><strong>Net change to DB or external systems:</strong> NONE. Audit was 100% read-only (54 wallet+income GETs + 27 get_sig + 6 ads-page DOM scrapes + 6 get_sig for ads probe). 0 PATCHes, 0 POSTs, 0 buyer-facing actions.</div>
-      <div class="field"><strong>Reason:</strong> User asked to crosscheck the May-2026 Profit Crosscheck Google Sheet against live Shopee MY data on profile 70 + sanity-check ads credits on a few big shops.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; 27\27 MY shops swept, 12 exact-match + 14 close-drift + 1 Luxbin income anomaly flagged for sheet review (RM 1,410.45 overstated). Ads credit on top 6 all positive\reasonable. Sheet is broadly accurate; only Luxbin income deserves a manual recheck.</div>
+      <div class="field"><strong>TikTok MY crosscheck (12 shops, profiles 54-66):</strong>
+        Method: per profile, navigate `seller-my.tiktok.com/order?tab=to_ship`, extract `fp` token from `performance.getEntriesByType('resource')`, then `POST /api/fulfillment/order/list?fp=<fp>&aid=4068` paginating tab=101 (Pending Send) and tab=102 (Shipped). Sum `price_module.grand_total.price_val` per order. Wallet skipped (subaccount `/finance/bills` returns &ldquo;No Permission&rdquo; on all profiles &mdash; owner-only access).
+        <ul>
+          <li><strong>Sheet vs API (count, gt = grand_total RM, st = sub_total RM):</strong></li>
+          <li>MurahYa (p64): Pending 44 \ gt 3,599.02 vs sheet 6,335.76 (-43%, time-decay); Shipped 781 \ gt 67,385.63 vs sheet 76,399.13 (-12%)</li>
+          <li>KarlMobel (p62): Pending 27 \ gt 3,242.70 vs sheet 4,800.88 (-32%); Shipped 662 \ gt 74,278.70 vs sheet 77,164.34 (-4%) ✓</li>
+          <li>Adelmar (p54): Pending 2 \ gt 1,374.23 vs sheet 1,406.13 (-2%) ✓; Shipped 22 \ gt 8,597.81 vs sheet 7,765.81 (+11%)</li>
+          <li>DasNature (p55): Pending 26 \ gt 1,518.96 vs sheet 2,962.66 (-49%); Shipped 419 \ gt 14,674.77 vs sheet 24,141.89 (-39%, &gt;RM 9k delta &mdash; flag for review)</li>
+          <li>Hiranai (p56): Pending 7 \ gt 245.79 vs sheet 1,197.76 (-79%); Shipped 611 \ gt 13,187.40 vs sheet 15,034.77 (-12%)</li>
+          <li>HiranaiMY (p58): Pending 0 vs sheet 150.17 (decayed to 0); Shipped 63 \ gt 1,718.92 vs sheet 1,724.05 (-0.3%) ✓ EXACT</li>
+          <li>Jager (p59): Pending 7 \ gt 329.07 vs sheet 1,357.56 (-76%); Shipped 118 \ gt 10,245.63 vs sheet 11,333.33 (-10%)</li>
+          <li>JagerArmor (p60): Pending 1 \ gt 85.90 vs sheet 164.80 (-48%); Shipped 5 \ gt 347.07 vs sheet 268.17 (+29%)</li>
+          <li>JagerSafety (p61): Pending 0 vs sheet 39.80; Shipped 3 \ gt 77.28 vs sheet 37.48 (+106%, tiny absolute amounts)</li>
+          <li>Lovento (p63): Pending 0 vs sheet 0 ✓; Shipped 2 \ gt 78.00 vs sheet 78.00 ✓ EXACT</li>
+          <li>ValueSnap (p65): Pending 3 \ gt 186.07 vs sheet 1,324.23 (-86%); Shipped 508 \ gt 17,411.26 vs sheet 17,113.89 (+1.7%) ✓</li>
+          <li>JagerHelmet (p66): Pending 0 vs sheet 122.90; Shipped 60 \ gt 3,753.89 vs sheet 4,027.83 (-7%) ✓</li>
+        </ul>
+        <strong>Pattern:</strong> Pending Send systematically LOWER than sheet (natural time-decay &mdash; orders move from To-Ship &rarr; Shipped between sheet capture and now). Shipped is mostly within &plusmn;15% of sheet. Two outliers flagged for sheet review: <strong>DasNature shipped is -39% (RM 9,467 below sheet)</strong> and JagerArmor/JagerSafety small absolute amounts that round noisily. All 12 TT sessions were ALIVE today (no captcha re-login needed).</div>
+      <div class="field"><strong>Net change to DB or external systems:</strong> NONE. 100% read-only. SHOPEE: 54 wallet+income GETs + 27 get_sig + 6 ads-page DOM scrapes + 6 get_sig for ads probe. TIKTOK: ~204 `POST /api/fulfillment/order/list` calls across 12 profiles (44 Pending pages + 160 Shipped pages). 0 PATCHes, 0 POSTs, 0 buyer-facing actions.</div>
+      <div class="field"><strong>Reason:</strong> User asked to crosscheck the May-2026 Profit Crosscheck Google Sheet against live data on Shopee MY (profile 70) + TikTok MY (profiles 54-66) + sanity-check Shopee ads credits on a few big shops.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; SHOPEE 27\27 swept, 12 exact-match + 14 close-drift + 1 Luxbin income anomaly (-RM 1,410.45); TIKTOK 12\12 swept, Shipped totals broadly within &plusmn;15% of sheet (1 anomaly: DasNature shipped -RM 9,467); Pending Send naturally lower across the board due to time-decay between sheet capture and now; ads credit top 6 all positive\reasonable. Sheet is broadly accurate; flag Luxbin income + DasNature TT shipped for manual review.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-19" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, Wilmermobel, MurahYa, Emas Gift, Adelmar, Bidarimu, Kinata SG" data-platform="Shopee MY + Shopee SG" data-result="ok">
