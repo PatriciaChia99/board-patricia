@@ -1840,6 +1840,48 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-19" data-shops="MurahYa, KarlMobel, Laz MurahYa, multiple" data-platform="Shopee MY+SG+TT+Laz" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck &mdash; clean run #8, no in-scope cases / 0 mismatch (19/5)</span>
+      <span class="entry-meta">2026-05-19 10:00 MYT scheduled &middot; 2115 total API (+8 since 5/18) &middot; 1777 shipped &middot; 338 out-of-window &middot; 0 in 7-day carry-over (5/12&ndash;5/18) &middot; 0 pass &middot; 0 mismatch &middot; 0 manual &middot; 12 prior tracked IDs all still shipped+unchanged &middot; DOM sample: first 20 rows LIT, 0 DARK &middot; read-only</span>
+      <span class="tag">parcelsplit-contact-crosscheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily 10:00 MYT crosscheck of the orange Contact phone icon (<code>isContacted</code>) vs collected evidence on <code>/customer-service/parcel-split</code>. Verifies that for every parcel-split case in the 7-day carry-over window (today00:00MYT &gt; date &ge; today-7days), the icon-LIT system record (proving the bot sent the phone-ask message) matches reality. MISMATCH only when icon DARK + phone collected, OR icon DARK + csNotes mentions phone-ask. Read-only.</p>
+      <div class="field"><strong>Trigger:</strong> User invocation in chat (skill <code>parcelsplit-contact-crosscheck</code>). Scheduled task ParcelSplitCrosscheck_1000AM also fires daily 10:00 MYT.</div>
+      <div class="field"><strong>Data sources:</strong> <code>/api/parcel-split</code> webapp via in-page fetch+credentials (profile 70 Patricia, k1b44nvg); DOM sanity sample from rendered table.</div>
+      <div class="field"><strong>Scope (today 2026-05-19, window 2026-05-12 &rarr; 2026-05-18):</strong>
+        <ul>
+          <li>Total API rows: 2107 (5/18 baseline) &rarr; 2115 (5/19, +8)</li>
+          <li>Skipped &mdash; shipped: 1777</li>
+          <li>Skipped &mdash; out of 7-day window (older than 2026-05-12): 338</li>
+          <li>Skipped &mdash; today's newly-added (2026-05-19): 0</li>
+          <li>In-scope: 0</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Tier-1 results:</strong> pass=0 / mismatch=0 / manual=0 (no in-scope cases this run).</div>
+      <div class="field"><strong>Window-date breakdown (all shipped):</strong> 5/12=5 &middot; 5/13=4 &middot; 5/14=7 &middot; 5/15=2 &middot; 5/16=2 &middot; 5/17=0 &middot; 5/18=8 &middot; 5/19 (today, skipped per rule)=0. Total 28 rows in window, all already shipped.</div>
+      <div class="field"><strong>Carry-over flag flips vs 5/18 snapshot (12 prior tracked IDs):</strong>
+        <ul>
+          <li>11 Shopee MY (MurahYa &times; 9 + KarlMobel &times; 2): all still LIT + shipped, unchanged &mdash; out-of-scope (drop).</li>
+          <li>1 Laz MurahYa (505997958423209): still DARK + shipped, unchanged &mdash; out-of-scope (drop); Lazada bot-handling gap, known pattern, not a mismatch.</li>
+          <li>0 flag flips since 5/18.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>DOM sanity sample (parcel-split page, 20 rows):</strong> Direct nav to <code>/customer-service/parcel-split</code> succeeded; no Patricia auto-redirect this run. 234 SVG icons rendered (52 LIT <code>text-brand-orange</code> + 39 DARK <code>text-foreground</code>/<code>text-muted</code>, mostly header/action-bar). 23 LIT inline spans in <code>tbody tr</code> first 20 rows, 0 DARK inline spans. Per-row id&rarr;icon mapping not extractable via simple text traversal (virtualized grid) &mdash; acceptable when in-scope=0.</div>
+      <div class="field"><strong>Reports + state:</strong>
+        <ul>
+          <li>Report: <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-05-19.md</code> (saved).</li>
+          <li>Canonical state.json: <code>C:\Users\tessf\.claude\skills\parcelsplit-contact-crosscheck\state.json</code> &mdash; <strong>write blocked by harness permission gate</strong> (5th consecutive recurrence per 13/5, 14/5, 15/5, 18/5, 19/5 entries). Snapshot mirrored to <code>C:\Users\tessf\Documents\parcelsplit-reports\state-2026-05-19.json</code> so tomorrow's run can read prior baseline. Result: partial (deferred, non-blocking).</li>
+          <li>0 DB PATCHes, 0 webapp POSTs, 0 customer messages (read-only skill).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Why:</strong> Bot adoption confidence &mdash; <code>isContacted=true</code> IS the system record that proves the parcel-split contact bot sent the phone-ask message; without periodic crosscheck a silent flip (icon LIT but bot never sent) would never be caught.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; clean run #8 in a row, read-only audit, no customer-facing messages sent. Canonical state.json write remains gated (deferred).</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-19" data-shops="Murahya, das.nature2, MasonGym, Hiranai, ValueSnap, Karlmobel, Luxbin, Bidarimu, Emas Gift, BahEmas, das.nature, KEDAI GARDEN, DasNatureSG2, KarlMobel SG, Kinata SG, TT DasNature, TT Murahya, TT KarlMobel, TT ValueSnap, TT Adelmar, Laz MurahYa" data-platform="Shopee MY/SG + TikTok + Lazada + internal" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
