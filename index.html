@@ -1840,6 +1840,71 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-19" data-shops="Murahya, das.nature2, MasonGym, Hiranai, ValueSnap, Karlmobel, Luxbin, Bidarimu, Emas Gift, BahEmas, das.nature, KEDAI GARDEN, DasNatureSG2, KarlMobel SG, Kinata SG, TT DasNature, TT Murahya, TT KarlMobel, TT ValueSnap, TT Adelmar, Laz MurahYa" data-platform="Shopee MY/SG + TikTok + Lazada + internal" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation &mdash; 195 cases ingested, 161 open, P0 RND-CHAIR-FULL-BLK redo + TT 101038 auto-cancel monitor (19/5)</span>
+      <span class="entry-meta">2026-05-19 09:30 MYT &middot; API total 196&rarr;195 (-1) &middot; MY open 125 (Accept 22 + Awaiting 103) &middot; SG 7 &middot; TT 25 &middot; Laz 4 &middot; A-J ladder A=71 B=3 C=2 D=3 E=4 F=18 G=0 H=2 &middot; 0 new Jira drafts &middot; 5 approval-gated actions queued &middot; read-only (no DOM mutations, no PATCHes, no buyer messages)</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Scheduled 09:30 MYT daily SB Variation audit. Ingested 195 cases from <code>/api/sb-variation</code> via AdsPower profile k1b44nvg (Kmall:Patricia / profile_no 70). Classified open cases per A-J ladder and platform routing. No new Jira draft this run (all bot-fail candidates are today's age=0 &mdash; HARD RULE 6 defers escalation pending overnight bot run). Three P0/P1 carry-over items from 18/5 EOD remain unresolved and surface in APPROVAL REQUIRED. One TT case (101038 kecaqnasi RM-NoStock) auto-cancels tonight 23:59 MYT if no buyer reply.</p>
+      <div class="field"><strong>Trigger:</strong> Scheduled daily run (09:30 MYT) via SBVariationAudit task.</div>
+      <div class="field"><strong>Data sources:</strong> <code>/api/sb-variation</code> webapp (read-only fetch). No SiteGiant DOM scrape this run (deferred to per-action approval flow).</div>
+      <div class="field"><strong>Headline counts &mdash; before (18/5 EOD) &rarr; after (19/5 AM):</strong>
+        <ul>
+          <li>API total: 196 &rarr; 195 (1 case dropped, likely terminal flip)</li>
+          <li>Open MY Accept Change: 22 &rarr; 22 (unchanged)</li>
+          <li>Open MY Awaiting Buyer: ~96 &rarr; 103 (+7 from new ingest)</li>
+          <li>Open SG: 7 &rarr; 7</li>
+          <li>Open TT: 25 &rarr; 25</li>
+          <li>Open Laz: 4 &rarr; 4</li>
+        </ul>
+      </div>
+      <div class="field"><strong>A-J ladder for Shopee MY Awaiting Buyer (103 cases):</strong>
+        <ul>
+          <li>A BOT_OK: 71 (bot fired OOS + sent contact)</li>
+          <li>B BOT_FAILED_PARSE: 3 (sku=[] + productName=null) &mdash; 100986 terminal, 100913 stale 16d, 100861 stale 26d</li>
+          <li>C BOT_NOT_FIRED: 2 (today's: 101055 Murahya FC-BLUE-CHNUP + 101049 Hiranai TS-SLIPPER) &mdash; re-check tomorrow</li>
+          <li>D BOT_PARTIAL: 3 (today's: 101053, 101052; 101017 Bidarimu Cat N pending CS cancel)</li>
+          <li>E Got Stock Recovery: 4 (terminal-leaning)</li>
+          <li>F cancellation_check=true: 18 (15 stale w/ inferred dispositions; 1 today 101051 MasonGym DONUT-YOGA-BALL)</li>
+          <li>G Not Required: 0</li>
+          <li>H Adjusted: 2 (101027 das.nature2 + 100959 KEDAI GARDEN SA-17979)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Carry-over P0/P1/P2 from 18/5 EOD (still unresolved):</strong>
+        <ul>
+          <li>P0 RND-CHAIR-FULL-BLK SiteGiant -23 SILENT FAIL on 18/5 (SA-18186 was Abram entry). SoH 23/Sellable 9 unchanged. Multi-rack Edit modal redo required. Linked cases 101018 + 101020 Karlmobel.</li>
+          <li>P0 TT 101038 kecaqnasi auto-cancel deadline TONIGHT 19/5 23:59 MYT (TT DasNature 584021378866120508 CTP-SVER-2.3M-2PC-BG).</li>
+          <li>P1 HCS-PURPLE-TYPE-B +1 short (current SoH=1, target=2 from Patricia 18/5 restock). Single +1 SG adjust pending.</li>
+          <li>P2 SS50LSQ-C.GOLD -3 blocked by 3 Reserved orders. Must identify and clear 3 Reserved first.</li>
+          <li>P2 TT 101031 uisehinaaduhal auto-cancel deadline 20/5 23:59 MYT.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>APPROVAL REQUIRED queue (Patricia confirm before action):</strong>
+        <ul>
+          <li>RND-CHAIR-FULL-BLK -23 SG redo via multi-rack Edit modal (Rack 3A2-1 = 0, Rack 2 FLOOR = 23)</li>
+          <li>HCS-PURPLE-TYPE-B +1 SG restock</li>
+          <li>7 stale F-bucket cases pending warehouse re-fill OR CS cancel/refund (100902 BahEmas data-entry error / 100887 MasonGym empty / 100892 Hiranai LONG-DRESS / 100896-97 das.nature HCS / 100877 Hiranai SMS / 100875 Emas Gift KETTLE)</li>
+          <li>4 TT BLOCKED retry via Manage Orders dropdown Path A (101006, 101001, 101004, 100958)</li>
+          <li>101017 Bidarimu TN44FA4 Cat N cancel/refund (Patricia 14/5 directive)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Watchlist deltas:</strong> 67/67 carry-over cases from state.json re-verified open. 1 watchlist iSKU expired today (PV-HANGER-PINK-10PCS firstFlagged 30/4, TTL 14d). 3 watchlist iSKUs still K_OPEN/PARTIAL_DONE/BLOCKED (RND-CHAIR-FULL-BLK, HCS-PURPLE-TYPE-B, SS50LSQ-C.GOLD). No new Category L (Bounce-Back) detected (deferred SG deep-scan to per-action).</div>
+      <div class="field"><strong>Jira:</strong> No new draft. Existing GRBT/form/152 (submitted 29/4, ~22 days pending IT response) &mdash; follow-up due 22/5 if no resolution.</div>
+      <div class="field"><strong>Mutations performed:</strong> NONE (read-only audit). No SiteGiant DOM mutations. No webapp PATCHes. No customer messages sent. No WhatsApp send (QR-blocker per skill).</div>
+      <div class="field"><strong>Artifacts:</strong>
+        <ul>
+          <li>Report: <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-05-19.md</code></li>
+          <li>state.json update: BLOCKED (permission denial during write) &mdash; today's deltas in report only; will retry tomorrow with carry-over hand-merge.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Outstanding for 20/5:</strong> RND-CHAIR redo if not done today; TT 101031 auto-cancel monitor; HCS-PURPLE +1; SS50LSQ-C.GOLD -3; re-check overnight bot fire on 101055/101049/101053/101052/101051 (escalate Jira #2 if still stuck); stale F-bucket disposition decisions.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; full audit complete, report saved, board logged. State.json write blocked (non-blocking; report has full deltas).</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-19" data-shops="KEDAI GARDEN, Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
