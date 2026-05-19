@@ -1840,6 +1840,55 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-19" data-shops="KEDAI GARDEN, Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked, 1 shop with new activity, 0 actively shipping (19/5)</span>
+      <span class="entry-meta">2026-05-19 09:30 MYT &middot; Shopee MY shops=27 &middot; SiteGiant ShopeeMY=18 &middot; gap=9 (unchanged since 13/5) &middot; KEDAI GARDEN flagged 260517N1MUJ9Y9 (SPayLater auto-cancel, monitor-only) &middot; 0 active stock-desync risk RIGHT NOW</span>
+      <span class="tag">sg-gap-monitor</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Scheduled 09:30 MYT daily SiteGiant integration-gap audit. Profile 70 (kmall:patricia). Re-derived gap by diffing Shopee SC shop list (27 MY) vs SiteGiant ShopeeMY channel list (18). Gap unchanged at 9 unlinked shops since 13/5 baseline. Per-shop activity scan via get_sig API across all 9 unlinked shops (all/toship/shipping tabs). One new order surfaced on KEDAI GARDEN; PHASE 4.5 carve-out applied. Zero active stock-desync risk right now.</p>
+      <div class="field"><strong>Trigger:</strong> User-invoked sg-gap-monitor skill run (19/5 morning).</div>
+      <div class="field"><strong>Data sources used:</strong> Shopee SC <code>/api/selleraccount/subaccount/get_shop_list/</code> page_size=64 single-fetch (page_index=2 cursor invalidated whether search_content kept or stripped &mdash; bumped page_size from 16 to 64 on signed URL, returned all 27 MY shops); SiteGiant <code>sitegiant.co/marketplaces/shopee/all</code> DOM scrape (18 ShopeeMY channels: AdelmarMY, BahEmas, BidariMu, das.nature, das.nature2, EmasGift, EncikPlastic, Hiranai, JagerHelmet, KarlMobel, Lenza_Eyewear, Lovento, Luxbiin, MasonGym, Murahya, SecretRacer, ValueSnap, WilmerMobel); per-shop scan via <code>/api/selleraccount/subaccount/get_sig/?target_shop_id=&lt;id&gt;</code> &rarr; navigate sig URL &rarr; read 3 order tabs (all/toship/shipping).</div>
+      <div class="field"><strong>Gap (9 unlinked, unchanged since 13/5):</strong> Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer. No PIC integration progress.</div>
+      <div class="field"><strong>Per-shop result &mdash; before &rarr; after lastSeenOrderId:</strong>
+        <ul>
+          <li>Gameniture / gameniture: 0 all / 0 toship / 0 shipping &rarr; lastSeenOrderId stays <code>null</code></li>
+          <li>Atlusrack / atlusrack: latest <code>260214NUX1Y8BX</code> (Cancelled by Shopee) &rarr; unchanged from baseline / 0 toship / 0 shipping</li>
+          <li>Stationarylah / stationarylah: latest <code>260414QW1M81CQ</code> (Cancelled by Shopee) &rarr; unchanged / 0 toship / 0 shipping</li>
+          <li><strong>KEDAI GARDEN / garden.mall</strong>: latest changed <code>260514C6H83XTG</code> &rarr; <code>260517N1MUJ9Y9</code> (NEW 17/5, kedaibarutmama2 SPayLater 50CM Pink/OCTO Pot Hanger x10 RM 4.84 &mdash; <strong>Cancelled automatically by Shopee's system</strong>) / 0 toship / 0 shipping. Yesterday's 1 To Ship dropped to 0 &mdash; same loop auto-cancelled too.</li>
+          <li>FynnKoffer / fynnkoffer: latest <code>260307GC8213CQ</code> (Completed) &rarr; unchanged / 0 toship / 0 shipping</li>
+          <li>Solaree / solaree2024: latest <code>240718V5H3A1KA</code> (Completed) &rarr; unchanged / 0 toship / 0 shipping</li>
+          <li>Flashree / flashree: latest <code>2409031DJJWV7T</code> (Completed) &rarr; unchanged / 0 toship / 0 shipping</li>
+          <li>dutchgaming / dutch_gaming: 0 all / 0 toship / 0 shipping &rarr; lastSeenOrderId stays <code>null</code></li>
+          <li>Chairsy / chairsy: latest <code>260211F1FRUFAH</code> (Completed) &rarr; unchanged / 0 toship / 0 shipping</li>
+        </ul>
+      </div>
+      <div class="field"><strong>PHASE 4.5 KEDAI GARDEN special-case applied:</strong> 260517N1MUJ9Y9 matches the recurring kedaibarutmama2 + 50CM Pink/OCTO Plastic Flower Pot Hanger + SPayLater pattern (3rd same-SKU same-buyer SPayLater auto-cancel since 12/5: 2605128F5QB3SS &middot; 260514C6H83XTG &middot; 260517N1MUJ9Y9). Status: Cancelled automatically by Shopee's system. <strong>Verdict: monitor-only &mdash; NO manual SiteGiant decrement required.</strong> Buyer appears unable to complete SPayLater payment on this SKU for 7 days running.</div>
+      <div class="field"><strong>Active stock-desync risk RIGHT NOW:</strong> NONE. All 9 unlinked shops have 0 To Ship and 0 Shipping.</div>
+      <div class="field"><strong>Newly-linked shops (auto-detected):</strong> NONE. Gap unchanged at 9 since 13/5 baseline.</div>
+      <div class="field"><strong>Reason for each change:</strong>
+        <ul>
+          <li>KEDAI GARDEN lastSeenOrderId 260514C6H83XTG &rarr; 260517N1MUJ9Y9 &mdash; new SPayLater auto-cancel order surfaced since 14/5; PHASE 4.5 carve-out flags as monitor-only.</li>
+          <li>All other 8 unlinked shops &mdash; no change since 14/5 baseline (no trickle, no new shipments).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>State.json update BLOCKED:</strong> Write/Edit on <code>C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json</code> hit permission gate this session (interactive). Intended values that SHOULD have been written:
+        <ul>
+          <li><code>lastRunId</code>: <code>2026-05-19T09:30:00+08:00</code> (was <code>2026-05-18T14:30:00+08:00</code>)</li>
+          <li><code>lastRunTime</code>: <code>2026-05-19T09:30:00+08:00</code> (was <code>2026-05-18T14:30:00+08:00</code>)</li>
+          <li><code>previousRunId</code>: <code>2026-05-18T14:30:00+08:00</code> (was <code>2026-05-14T10:37:30+08:00</code>)</li>
+          <li><code>lastSeenOrderId.garden.mall</code>: <code>260514C6H83XTG</code> &rarr; <code>260517N1MUJ9Y9</code> (only key with new value &mdash; all other 8 shop entries identical to 18/5 snapshot)</li>
+          <li>Add new key <code>perShop_2026_05_19</code> mirroring 18/5 snapshot structure with today's results (garden.mall all_orders_visible=40 to_ship=0 shipping=0 latest=260517N1MUJ9Y9 Cancelled SPayLater; all other 8 shops to_ship=0 shipping=0 latest unchanged).</li>
+          <li>Update <code>notes</code> field to reflect 19/5 run summary + page_size=64 PHASE 1 workaround.</li>
+        </ul>
+        Without this patch, tomorrow's run will re-flag 260517N1MUJ9Y9 as "new" (false-positive, noisy but not harmful). Long-term fix: add <code>.claude/skills/sg-gap-monitor/state.json</code> to scheduled-run-allowed write paths in <code>settings.local.json</code>.</div>
+      <div class="field"><strong>Report saved:</strong> <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-05-19.md</code></div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 9/9 shops scanned, 1 new activity flagged (KEDAI GARDEN auto-cancel monitor-only per PHASE 4.5), 0 active stock-desync risk, gap unchanged at 9. State.json write blocked but intended values documented above for manual patch.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-18" data-shops="Internal HR" data-platform="Internal" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
