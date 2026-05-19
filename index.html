@@ -1840,6 +1840,24 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-19" data-shops="Adelmar, DasNature, Hiranai, HiranaiMY, JagerArmor, JagerHelmet, KarlMobel, MurahYa, Valuesnap" data-platform="TikTok MY" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto &mdash; 104 NEW POSTed (RM 14,213.80, C1680&ndash;C1783) across 8 TT shops, 0 fails (19/5)</span>
+      <span class="entry-meta">2026-05-19 MYT &middot; 16/16 profiles scanned (1 TT Jager login_expired) &middot; 209 collected / 101 dedupe / 104 NEW &middot; 95 R/R + 9 FD &middot; cookie-verified seller_ids for all 13 TT</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily parcelclaim-auto run swept 13 TT (R/R + FD) + 3 Lazada profiles (4-day cutoff). Collected 209 cases in window; deduped 101 against existing webapp + 4 intra-batch; POSTed 104 NEW (95 R/R + 9 FD) to <code>/api/new-parcel-claims-tiktok/add</code>, all HTTP 200. Webapp grew 350&rarr;454. Approximate case_id range C1680&ndash;C1783. TT Jager (59) login_expired (operator slider captcha needed). Lazada all alive but 0 in window (most recent return 5/14, before 5/15 cutoff).</p>
+      <div class="field"><strong>POST totals by shop:</strong> TT KarlMobel 33 (29 R/R + 4 FD) ~RM 7,030 &middot; TT MurahYa 53 (49 R/R + 4 FD) ~RM 4,930 &middot; TT Hiranai 6 (5 R/R + 1 FD) ~RM 150 &middot; TT Adelmar 3 R/R ~RM 870 &middot; TT Valuesnap 4 R/R ~RM 110 &middot; TT JagerHelmet 1 R/R RM 116.10 &middot; TT HiranaiMY 2 R/R ~RM 50 &middot; TT DasNature 2 R/R ~RM 67.</div>
+      <div class="field"><strong>Before&rarr;after:</strong> webapp <code>/api/new-parcel-claims-tiktok</code> total 350 &rarr; 454. Max case_id pre-run ~C1679 &rarr; post-run C1783. Pending state.json run_history append (permission gate).</div>
+      <div class="field"><strong>Skill bug + lessons (re-confirmed):</strong> (1) R/R API <code>search_condition:{order_sort_comp:{...UPDATE_TIME_DESC}}</code> silently suppresses results on TT Adelmar (1034 total, sort=0, empty=7). Skill should default to empty <code>search_condition:{}</code>. (2) Pinned-old R/R card on page 0 (e.g. 2025-06-08 first card on DasNature even with sort param) means break-on-oldest is WRONG &mdash; scan all <code>maxPages</code> regardless. (3) Probe code <code>98001001</code> is a transient warm-up race &mdash; retry once after 5s, only flag <code>98001002</code> / <code>401</code> / <code>403</code> as login_expired. (4) Profile 70 Patricia auto-redirect destroys puppeteer connection mid-session &mdash; reopen + navigate explicitly before each call.</div>
+      <div class="field"><strong>Verified seller_ids per profile (cookie + API code 0):</strong> 54 Adelmar=7495045783304768313, 55 DasNature=7495515500486036165, 56 Hiranai=7495272871425509894, 58 HiranaiMY=7495464660669074271, 59 Jager=7495053096333641815 (probe 98001002), 60 JagerArmor=7495053138331667228, 61 JagerSafety=7495053153754253964, 62 KarlMobel=7495002863841610732, 63 Lovento=7495772722914101938 (0 in window), 64 MurahYa=7494613237803355026, 65 Valuesnap=7495874398509500630, 66 JagerHelmet=7495053121509361674, 67 Kinata=7494277583606416861 (0 total).</div>
+      <div class="field"><strong>Carry-over for next session:</strong> (a) Operator must do manual TT Jager re-login (slider captcha + OTP); next run picks up backlog. (b) Recommend skill code change to default empty <code>search_condition</code> and never break-on-oldest. (c) state.json run_history not appended this run due to permission prompt &mdash; tomorrow's dedupe still safe (relies on live webapp fetch).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 104 POSTs / 104 HTTP 200, 0 failures, RM 14,213.80 logged, daily report saved to <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-05-19.md</code>.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-19" data-shops="MurahYa, KarlMobel, Laz MurahYa, multiple" data-platform="Shopee MY+SG+TT+Laz" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
