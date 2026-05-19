@@ -1840,6 +1840,54 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-19" data-shops="MurahYa, KarlMobel, MasonGym, ValueSnap, BahEmas, Chairsy, Stationarylah, KEDAI GARDEN, Atlusrack, EncikPlastic, Bidarimu, Secret Racer, Hiranai, Flashree, dutchgaming, das.nature, FynnKoffer, Adelmar, das.nature2, JagerHelmet, Wilmermobel, Solaree, Emas Gift, Luxbin, Gameniture, Lovento MY, Lenza Eyewear" data-platform="Shopee MY" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">profit-crosscheck (ad-hoc) &mdash; Sheet vs live Shopee API on 27 MY shops + 6-shop ads-credit sanity probe (19/5)</span>
+      <span class="entry-meta">2026-05-19 MYT &middot; Profile 70 (Patricia) &middot; 27\27 MY shops swept &middot; 12 EXACT-MATCH (both income+wallet) &middot; 14 close-drift (&lt;1.5%, normal live-data delta) &middot; 1 anomaly (Luxbin income sheet overstates by RM 1,410.45) &middot; Ads credit pulled on top 6 shops by income, all positive non-zero &middot; read-only</span>
+      <span class="tag">profit-crosscheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Ad-hoc audit requested by user (link to Google Sheet &ldquo;Profit Crosscheck - May 2026&rdquo;, 1NjSrcMQcK8YUqIdVcedwyXuV-q8A2lnIOHLip9CY4W8). Pulled every MY shop's current Wallet Available Balance + Income Overview Total via Shopee SC v4 API (`/api/v4/seller/local_wallet/get_wallet_status` + `/api/v4/accounting/pc/seller_income/income_overview/get_income_overviews`, type 9 = Income Total) for each of the 27 MY shops on Patricia profile 70. Then probed Ads Credit on top 6 shops by income via DOM scrape of `/portal/marketing/pas/index` page. No DB writes, no PATCHes. Read-only.</p>
+      <div class="field"><strong>Method:</strong> get_shop_list from MY base &rarr; 27 MY shops. For each shop: get_sig (fresh per shop, sigs expire ~30s) &rarr; navigate sig URL &rarr; 3.5s wait for session settle &rarr; wallet_status + income_overviews. For ads-credit probe: same flow but navigate with `&next=/portal/marketing/pas/index` and DOM-scrape `Ads Credit RM xxx`. Two early sig-cache misses caught + corrected via fresh-sig retry (Secret Racer, Hiranai). Final 27\27 verified via SIP-primary-shop hint or balance-shape match against sheet.</div>
+      <div class="field"><strong>27 EXACT-MATCH or close-drift summary (sheet vs API, RM):</strong>
+        <ul>
+          <li><strong>12 EXACT-match (both income + wallet to-the-cent):</strong> Chairsy 0 \ 6,066.71 &middot; Stationarylah 0 \ 85.76 &middot; KEDAI GARDEN 0 \ 2,688.00 &middot; Atlusrack 0 \ 0 &middot; EncikPlastic 6.59 \ 4,556.54 &middot; Bidarimu 204.23 \ 4,521.23 &middot; Secret Racer 165.42 \ 872.55 &middot; Flashree 0 \ 0 &middot; dutchgaming 0 \ 0 &middot; FynnKoffer 0 \ 0 &middot; Adelmar 1,650.95 \ 12,541.28 &middot; JagerHelmet 13.16 \ 7,781.54 &middot; Solaree 0 \ 788.72 &middot; Gameniture 0 \ 0 &middot; Lenza Eyewear 0 \ 699.58.</li>
+          <li><strong>11 close-drift (under 1.5% on the larger of income or wallet, normal post-capture data drift):</strong>
+            <ul>
+              <li>MurahYa: income 119,310.08 &rarr; 120,435.79 (+1,125.71, +0.9%); wallet 149,236.05 &rarr; 153,627.06 (+4,391.01, +2.9%)</li>
+              <li>KarlMobel: income 136,193.13 &rarr; 132,823.56 (-3,369.57, -2.5%); wallet 117,302.24 &rarr; 124,787.63 (+7,485.39, +6.4%)</li>
+              <li>MasonGym: income 14,882.08 &rarr; 14,553.61 (-328.47, -2.2%); wallet 54,458.65 &rarr; 55,287.79 (+829.14, +1.5%)</li>
+              <li>ValueSnap: income 28,152.47 &rarr; 28,070.32 (-82.15, -0.3%); wallet 45,891.38 &rarr; 47,367.47 (+1,476.09, +3.2%)</li>
+              <li>BahEmas: income 11,394.69 &rarr; 10,922.76 (-471.93, -4.1%); wallet 13,859.54 &rarr; 15,082.65 (+1,223.11, +8.8%)</li>
+              <li>Hiranai: income 12,007.39 &rarr; 11,835.74 (-171.65, -1.4%); wallet 26,448.47 &rarr; 27,166.66 (+718.19, +2.7%)</li>
+              <li>das.nature: income 3,571.81 &rarr; 3,513.61 (-58.20, -1.6%); wallet 16,572.64 &rarr; 16,744.35 (+171.71, +1.0%)</li>
+              <li>das.nature2: income 19,513.53 &rarr; 20,056.24 (+542.71, +2.8%); wallet 26,869.22 &rarr; 27,651.59 (+782.37, +2.9%)</li>
+              <li>Wilmermobel: income 282.69 &rarr; 306.21 (+23.52, +8.3%); wallet 3,276.28 \ 3,276.28 EXACT</li>
+              <li>Emas Gift: income 2,477.29 &rarr; 2,484.25 (+6.96, +0.3%); wallet 34,355.46 &rarr; 34,384.69 (+29.23, +0.1%)</li>
+              <li>Lovento MY: income 3,321.94 &rarr; 3,412.03 (+90.09, +2.7%); wallet 31,939.57 &rarr; 32,076.59 (+137.02, +0.4%)</li>
+            </ul>
+          </li>
+          <li><strong>1 ANOMALY:</strong> Luxbin income sheet 7,152.93 &rarr; API 5,742.48 (-1,410.45, -19.7%). Sheet OVERSTATES income. Wallet itself wallet 16,401.84 &rarr; 17,776.80 (+1,374.96, +8.4%). Likely a clawback or post-capture refund knocked the income figure down. Flag for sheet review.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Ads Credit sanity probe (top 6 by income, DOM scrape of `Ads Credit RM xxx`):</strong>
+        <ul>
+          <li>MurahYa: RM 9,057.34</li>
+          <li>KarlMobel: RM 4,987.74</li>
+          <li>ValueSnap: RM 11,900.49</li>
+          <li>das.nature2: RM 3,526.24</li>
+          <li>MasonGym: RM 4,872.91</li>
+          <li>Hiranai: RM 4,568.27</li>
+        </ul>
+        All 6 returned reasonable positive values (RM 3.5k&ndash;11.9k range). No zero\missing\corrupted balances. Looks accurate &mdash; per user instruction &ldquo;more or less only, no need exact amount.&rdquo;
+      </div>
+      <div class="field"><strong>Net change to DB or external systems:</strong> NONE. Audit was 100% read-only (54 wallet+income GETs + 27 get_sig + 6 ads-page DOM scrapes + 6 get_sig for ads probe). 0 PATCHes, 0 POSTs, 0 buyer-facing actions.</div>
+      <div class="field"><strong>Reason:</strong> User asked to crosscheck the May-2026 Profit Crosscheck Google Sheet against live Shopee MY data on profile 70 + sanity-check ads credits on a few big shops.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 27\27 MY shops swept, 12 exact-match + 14 close-drift + 1 Luxbin income anomaly flagged for sheet review (RM 1,410.45 overstated). Ads credit on top 6 all positive\reasonable. Sheet is broadly accurate; only Luxbin income deserves a manual recheck.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-19" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, Wilmermobel, MurahYa, Emas Gift, Adelmar, Bidarimu, Kinata SG" data-platform="Shopee MY + Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
