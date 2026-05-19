@@ -1971,8 +1971,8 @@ header.page::after{
   <div class="entry" data-date="2026-05-19" data-shops="multiple" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">shopee-shipping-fee-claim &mdash; new skill built (monthly 15th @ 10:30 MYT, profile 70, max 10 IDs/batch, auto-submit) (19/5)</span>
-      <span class="entry-meta">2026-05-19 MYT &middot; skill + config + state + bat + scheduler setup &middot; first run 15 Jun 2026 (special 2-cycle) &middot; dry_run default</span>
+      <span class="entry-title">shopee-shipping-fee-claim &mdash; skill built + dry-run Phase 0/1/2/5a validated (27 MY shops, 35 IDs MurahYa Apr15-May14, webform mapped) (19/5)</span>
+      <span class="entry-meta">2026-05-19 MYT &middot; skill + config + state + bat + scheduler setup &middot; dry-run sampled MurahYa (1059 R/R → 35 COM matches) &middot; webform DOM mapped end-to-end &middot; 7 spec corrections applied</span>
       <span class="tag">shopee-shipping-fee-claim</span>
       <span class="tag result-ok">Completed</span>
     </div>
@@ -1990,14 +1990,37 @@ header.page::after{
       <div class="field"><strong>Hard rules baked in:</strong> max 10 Request IDs per webform submission; reason filter must literal-match (char-for-char); continue-on-error per shop; no auto-retry within same run (avoid double-submit); session-dead → STOP not silent-relogin; first_run_override gated by <code>config.first_run_override=true AND today=2026-06-15</code>, flips state.first_run_done after firing once.</div>
       <div class="field"><strong>Date logic:</strong> normal cycle = previous-month-15 → this-month-14. <strong>Special 15 Jun 2026 first run = TWO cycles</strong> (Apr 15-May 14 label 2026-04, May 15-Jun 14 label 2026-05) because last month was skipped.</div>
       <div class="field"><strong>CLAUDE.md updated:</strong> skill #26 added to numbered registry (after sg-gap-monitor).</div>
-      <div class="field"><strong>Next steps for operator:</strong>
+      <div class="field"><strong>Dry-run results (19/5 same session):</strong> Phase 0 ok &mdash; profile 70 launched (port 58095) + get_shop_list ok (29 shops, <strong>27 MY</strong>). Phase 1 ok &mdash; DOM cascader dance failed (React refused synthesized events 3x) so PIVOTED to direct API + client-side text filter (no numeric reason_id exposed in cards anyway). Phase 2 smoke ok &mdash; MurahYa Apr15-May14 yielded <strong>35 COM-Return-Refund matches in 1,059 R/R cases (3.3% hit rate, 27 pages × 40)</strong>. Phase 5a ok &mdash; webform DOM mapped: 10 fixed numbered slots with per-slot Shopee modal (input + Cancel + Confirm disabled-until-filled), claim-month text input at top (format "Apr 2026"), Submit at bottom. <strong>No live submissions (dry_run mode).</strong></div>
+      <div class="field"><strong>7 spec corrections applied to skill .md (19/5):</strong>
         <ol>
-          <li>Run <code>setup_shopee_shipping_claim_schedule.bat</code> as Administrator ONCE to register the scheduled task (verify with <code>schtasks /query /tn ClaudeShopeeShippingClaim /v /fo LIST</code>).</li>
-          <li>Optional: manually fire a <strong>dry_run</strong> ahead of 15 Jun 2026 to capture the <code>reason_id</code> + webform selectors (Phase 1 of the skill — currently TBD placeholders in config.json).</li>
-          <li>Flip <code>config.mode</code> from <code>dry_run</code> to <code>live</code> after one clean dry-run report has been reviewed.</li>
+          <li><strong>get_shop_list response shape</strong> is <code>j.shops[]</code> (root) not <code>j.data.shops[]</code>; region field is <code>country</code> lowercase <code>"my"</code> not <code>region</code>.</li>
+          <li><strong>No numeric reason_id</strong> exists in card schema &mdash; only <code>request_reason_text</code> (bilingual EN/MS). Strategy switched to CLIENT-SIDE text filter (<code>startsWith("I want to return item in original / sealed condition")</code> + <code>request_solution_text === "Return Refund"</code>).</li>
+          <li><strong>Webform expects <code>order_sn</code> (14-char), NOT <code>return_sn</code> (15-char).</strong> Placeholder explicitly says "Please Input an 14 digit order SN". Form's "Return ID" label is misleading Shopee jargon. Data model corrected: <code>row_request_id_field = "order_sn"</code>.</li>
+          <li><strong>Webform is NOT bulk-paste textarea</strong> &mdash; it's 10 fixed slots, each with a per-slot Shopee modal workflow (click "Manual input order SN" → modal → fill → Confirm × 10 → Submit).</li>
+          <li><strong>No shop selector on the webform</strong> &mdash; one batch CAN mix order_sns from multiple shops.</li>
+          <li><strong>Webform title is "RIOC &amp; ITRR"</strong> (dual-purpose). For now we submit ONLY COM/RIOC cases per user spec; ITRR explicitly out-of-scope.</li>
+          <li><strong><code>order_sn.slice(0,6)</code> decodes as YYMMDD</strong> of order creation &mdash; useful for cycle-bucket sanity check (same for <code>return_sn.slice(0,6)</code>).</li>
         </ol>
       </div>
-      <div class="field"><strong>Result:</strong> ok &mdash; skill ready for first-run capture + dry-run validation before 15 Jun 2026 live fire.</div>
+      <div class="field"><strong>Projected 15 Jun 2026 first-run volume:</strong> 27 shops × ~35 COM (MurahYa rate, upper bound) ≈ ~950 IDs per cycle × 2 cycles (Apr+May) = ~1,900 IDs ÷ 10 per batch = ~190 batches. At ~25 sec/batch + 7s pacing + ~30 min scrape = <strong>~2 hours total runtime</strong> (fits the bat's 2-hour ExecutionTimeLimit).</div>
+      <div class="field"><strong>Files updated 19/5 dry-run:</strong>
+        <ul>
+          <li>skill .md (PHASE 0/1/2/5 prose + data model + LESSONS LEARNED 12 entries)</li>
+          <li>config.json &mdash; 27-shop verified list, real API path/body, client-side filter strategy, webform selectors (claim_month + modal input + Cancel/Confirm)</li>
+          <li>state.json &mdash; verified_shop_list populated, reason_id_cache strategy marker, run_history dry-run entry</li>
+          <li>Documents/shopee-shipping-claim-reports/shopee-shipping-claim-report-2026-05-19.md (full 8-section dry-run report)</li>
+          <li>3 memory files saved: project_session_may19_shopee_shipping_fee_claim_dryrun + feedback_adspower_mcp_quirks_19may + feedback_shopee_my_get_shop_list_response_shape</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Operator action queue (refined):</strong>
+        <ol>
+          <li>Run <code>setup_shopee_shipping_claim_schedule.bat</code> as Administrator (register the monthly task).</li>
+          <li>Optional: one more dry-run sweeping ALL 27 shops to estimate true volume.</li>
+          <li>Optional: one LIVE submission of a single 1-ID batch to prove the Confirm/Submit DOM path on a real ID before 15 Jun.</li>
+          <li>Flip <code>config.mode</code> from <code>dry_run</code> to <code>live</code> after step 3.</li>
+        </ol>
+      </div>
+      <div class="field"><strong>Result:</strong> ok &mdash; build + dry-run validation both complete in one session. Skill ready for operator review and optional pre-fire smoke tests before 15 Jun 2026 live cycle.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-19" data-shops="Adelmar, DasNature, Hiranai, HiranaiMY, JagerArmor, JagerHelmet, KarlMobel, MurahYa, Valuesnap" data-platform="TikTok MY" data-result="ok">
