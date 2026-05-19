@@ -1840,68 +1840,6 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
-  <div class="entry" data-date="2026-05-19" data-shops="DasNatureSG2, Kinata SG" data-platform="Shopee SG" data-result="ok">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation manual SG send sweep &mdash; 2 NO_STOCK templates dispatched + 1 dedupe Lucy-pre-sent, 3/3 icons orange-verified (19/5)</span>
-      <span class="entry-meta">2026-05-19 ~21:49 MYT &middot; 3 SG cases swept &middot; 2 sent (101057 + 101059 Kinata SG via cs5 profile 53) &middot; 1 dedupe (101048 DasNatureSG2 Lucy pre-sent 15:29 SGT free-form) &middot; 3/3 PATCH HTTP 200 contactSent:false&rarr;true + csRemarks &middot; 3/3 UI icons verified <code>text-brand-orange</code></span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag">manual-send</span>
-      <span class="tag result-ok">Completed</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Patricia requested manual send sweep for all SG cases with <code>contactSent=false</code> AND age &le; 5d (Phase 4 routing, bot does not cover SG). Identified 3 eligible: 101048 DasNatureSG2 (Offer Change), 101057 + 101059 Kinata SG (both No Stock). Pre-send chat audit caught a Lucy pre-send on 101048 (no duplicate fired). 2 Kinata sends dispatched via cs5 webchat using locked SHOPEE_MY_NO_STOCK template (reused for SG per 21/4 user policy). 3/3 PATCHed + UI orange-verified per HARD RULE 6b.</p>
-      <div class="field"><strong>Trigger:</strong> User in-chat request "send the manual text need to be send first" + "SEND" approval after draft preview + "send both" final approval after Kinata draft preview.</div>
-      <div class="field"><strong>Eligibility filter:</strong> All 3 are Shopee SG (Phase 4 manual routing &mdash; bot doesn't cover). All have ageDays &le; 5 (created 18/5 12:30 SGT and 19/5 16:23 MYT respectively). All buyerDecision=null (non-terminal). Cases 101048 = Offer Change w/ suggestedSku=WhitePBX; 101057+101059 = No Stock no alt. Today's Shopee MY new cases (101049-101058) deferred to overnight bot per HARD RULE 6.</div>
-      <div class="field"><strong>101048 DasNatureSG2 / mahregene / order 260517MD0TGCVK &mdash; DEDUPE (no send):</strong>
-        <ul>
-          <li><em>Pre-send chat audit on Shopee SG webchat (profile 84 HiranaiSG:main &rarr; DasNatureSG2 via get_sig bridge):</em> Lucy already sent OOS offer at 15:29 SGT today, free-form (NOT the locked template): &ldquo;Hi boss, Lucy here, as i check your variation ordered already out of stock, is it okey if we send you white color instead&rdquo;. Buyer responded [Sticker] at 18:43 SGT.</li>
-          <li><em>Action taken:</em> Skipped send (would have duplicated Lucy's offer + confused buyer). PATCH <code>/api/sb-variation/101048</code> body <code>{ contactSent: true, csRemarks: "Sent by Lucy 2026-05-19 15:29 SGT via DasNatureSG2 webchat (free-form, not locked template): Picnic Basket Rattan Wicker &mdash; Classic Red x Cover OOS &rarr; offered White Color. Buyer sticker response 18:43 SGT; awaiting concrete accept/reject. ..." }</code>. HTTP 200, affectedRows 1. Icon verified <code>text-brand-orange</code> (orange).</li>
-          <li><em>Why dedupe:</em> Skill rule "Skip previously-sent cases" + duplicate send would have confused buyer. Skill flagged contactSent=false because Lucy did not flip the DB icon after sending.</li>
-          <li><em>Variation context:</em> ordered Classic Red x Cover [PicnicBasket RedPBX]; warehouse offers WhitePBX (Classic White x Cover) alt. Risk-of-Late, waybill SG260931710906O issued, pickup missed 18/5.</li>
-        </ul>
-      </div>
-      <div class="field"><strong>101057 Kinata SG / nsmeylo / order 260517M2WPRQ3S &mdash; SENT:</strong>
-        <ul>
-          <li><em>Pre-send chat audit (cs5 profile 53 k1arw890 on Kinata SG webchat):</em> No prior chat with buyer (empty thread, customer profile panel only).</li>
-          <li><em>Template:</em> <code>SHOPEE_MY_NO_STOCK</code> (verbatim, reused for SG per user 21/4/2026; no alt offered since suggestedSkus=null).</li>
-          <li><em>Final message dispatched:</em> "Hi Boss, Sweater Woman Long Sleeve Top Women Knitted Casual Top Sweatshirt Women Striped Knit Ladies Top Pullover Knitwear Restock is estimated in about 1 month. If you're okay to wait, reply WAIT and we'll ship once it's available. If you'd like to change to another variation, just let us know and we'll help arrange it. Otherwise, please manage the order from your Order Details. Once a request comes through, I'll handle it immediately." &mdash; sent ~21:49 MYT via Enter-key on cs5 webchat composer. Banned-words check passed (no cancel/cancellation/batal).</li>
-          <li><em>Order context:</em> Classic - Gray Free Size [WOMEN-STRIPE-KNIT-SWEATER-GRY-FREE-SG], $12.99 PayNow, Risk-of-Late, waybill SPXSG062973694655 pickup attempt failed 19/5 10:47 SGT &ldquo;Parcel not ready for collection&rdquo; (warehouse OOS confirmed via 16:23 SB Var submission).</li>
-          <li><em>PATCH result:</em> <code>/api/sb-variation/101057</code> body <code>{ contactSent: true, csRemarks: "Sent SHOPEE_MY_NO_STOCK ... at 2026-05-19 21:49:18 MYT via Kinata SG webchat profile 53 cs5 ..." }</code>. HTTP 200, affectedRows 1. Icon verified <code>text-brand-orange</code>.</li>
-        </ul>
-      </div>
-      <div class="field"><strong>101059 Kinata SG / tzoztm4lh4 / order 260516HST9A9T6 &mdash; SENT:</strong>
-        <ul>
-          <li><em>Pre-send chat audit (cs5 profile 53):</em> No prior chat with buyer (empty thread).</li>
-          <li><em>Template:</em> <code>SHOPEE_MY_NO_STOCK</code> (verbatim).</li>
-          <li><em>Final message dispatched:</em> "Hi Boss, Sleeping Bag Camping Thick Blanket Single Sleeping Mat Pad Camping Equipment Essentials Outdoor Hiking Lightweight Restock is estimated in about 1 month. If you're okay to wait, reply WAIT and we'll ship once it's available. If you'd like to change to another variation, just let us know and we'll help arrange it. Otherwise, please manage the order from your Order Details. Once a request comes through, I'll handle it immediately." &mdash; sent ~21:49 MYT via Enter-key on cs5 webchat composer.</li>
-          <li><em>Order context:</em> Navy Blue - 1.6KG [ADULT-EMERGENCY-SLEEP-BAG-TEAL-1-6KG-SG], $18.80 PayNow, Risk-of-Late, waybill SPXSG064229805075 pickup also missed.</li>
-          <li><em>PATCH result:</em> HTTP 200, affectedRows 1. Icon verified <code>text-brand-orange</code>.</li>
-        </ul>
-      </div>
-      <div class="field"><strong>NEW skill-learning to record:</strong> (a) Lucy was sending OOS offers from CS sub-account without flipping <code>contactSent</code> in webapp DB &mdash; SB Var skill kept flagging cases as "needs first send" when they were actually already-sent. Recommend coaching CS team to PATCH the DB or use the toggle button after every send. (b) Patricia profile 70 master_merchant has ONLY 2 SG sub-shops (Kinata SG + ValueSnap SG); other SG shops (DasNatureSG2, KarlMobel SG, HiranaiSG, MurahYa SG, e_masgift.sg, DasNature SG) live under profile 84 HiranaiSG:main 6-shop list. Memory updated. (c) Patricia profile 70 does NOT have Webchat permission on Kinata SG sub-shop &mdash; must use cs5 profile 53 (k1arw890) for Kinata SG chat. (d) Shopee SG webchat composer is <code>textarea.E2MWg3w8y6</code> with placeholder "Type a message here"; Enter (no Shift) sends; chat row click target is the outer <code>.SW7LUhQFDH</code> conversation card.</div>
-      <div class="field"><strong>Mutations summary:</strong>
-        <ul>
-          <li>101048 contactSent: false &rarr; true (DB)</li>
-          <li>101048 csRemarks: null &rarr; "Sent by Lucy 2026-05-19 15:29 SGT via DasNatureSG2 webchat ..." (DB)</li>
-          <li>101057 contactSent: false &rarr; true (DB) + buyer received SHOPEE_MY_NO_STOCK message</li>
-          <li>101057 csRemarks: null &rarr; "Sent SHOPEE_MY_NO_STOCK ... 21:49 MYT ..." (DB)</li>
-          <li>101059 contactSent: false &rarr; true (DB) + buyer received SHOPEE_MY_NO_STOCK message</li>
-          <li>101059 csRemarks: null &rarr; "Sent SHOPEE_MY_NO_STOCK ... 21:49 MYT ..." (DB)</li>
-          <li>2 buyer-facing messages dispatched (Shopee SG webchat) &mdash; 0 messages dispatched for 101048 (Lucy pre-sent).</li>
-        </ul>
-      </div>
-      <div class="field"><strong>Reason:</strong> Patricia in-chat directive to clear Phase 4 manual-send queue for SG cases. Skill HARD RULE 6 (5-day age window) honored; HARD RULE 6a (PATCH csRemarks at send time, not "CS to backfill later") honored; HARD RULE 6b (visually verify orange icon, do NOT trust API claim alone) honored &mdash; reloaded webapp + re-grepped SVG class for each row; HARD RULE 5.f (show final composed text once more before send) honored; HARD RULE on duplicate prevention honored (101048 dedupe).</div>
-      <div class="field"><strong>Outstanding:</strong>
-        <ul>
-          <li>Monitor buyer replies on 101057 + 101059 &mdash; if WAIT, hold; if alt variation requested, arrange swap; if "manage from Order Details" / cancel-via-Shopee path, the active waybills (SPXSG062973694655 + SPXSG064229805075) will auto-void when buyer cancels.</li>
-          <li>Monitor 101048 &mdash; buyer sticker response 18:43 SGT to Lucy's offer is ambiguous; if no concrete reply by EOD 19/5, Lucy/Sofia should follow up with a yes/no question for the White swap.</li>
-          <li>Coach CS team: flip <code>contactSent</code> via toggle OR PATCH after every manual buyer message, even when sending from CS sub-account. Otherwise SB Var skill keeps re-flagging "needs first send" on already-handled cases.</li>
-        </ul>
-      </div>
-      <div class="field"><strong>Result:</strong> ok &mdash; 3/3 SG cases resolved (1 dedupe + 2 sent), 3/3 contactSent=true confirmed in DB + UI icons verified orange per HARD RULE 6b, 2 buyers received the locked NO_STOCK template, 0 duplicate sends, 0 banned-word violations, 0 HTTP failures.</div>
-    </div>
-  </div>
   <div class="entry" data-date="2026-05-19" data-shops="n/a" data-platform="Jira (GRBT space)" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -2343,15 +2281,26 @@ header.page::after{
       </div>
       <div class="field"><strong>Watchlist deltas:</strong> 67/67 carry-over cases from state.json re-verified open. 1 watchlist iSKU expired today (PV-HANGER-PINK-10PCS firstFlagged 30/4, TTL 14d). 3 watchlist iSKUs still K_OPEN/PARTIAL_DONE/BLOCKED (RND-CHAIR-FULL-BLK, HCS-PURPLE-TYPE-B, SS50LSQ-C.GOLD). No new Category L (Bounce-Back) detected (deferred SG deep-scan to per-action).</div>
       <div class="field"><strong>Jira:</strong> No new draft. Existing GRBT/form/152 (submitted 29/4, ~22 days pending IT response) &mdash; follow-up due 22/5 if no resolution.</div>
-      <div class="field"><strong>Mutations performed:</strong> NONE (read-only audit). No SiteGiant DOM mutations. No webapp PATCHes. No customer messages sent. No WhatsApp send (QR-blocker per skill).</div>
+      <div class="field"><strong>Mutations performed (AM audit):</strong> NONE (read-only audit). No SiteGiant DOM mutations. No webapp PATCHes. No customer messages sent. No WhatsApp send (QR-blocker per skill). <em>(See PM follow-up below for actions taken later in the session.)</em></div>
       <div class="field"><strong>Artifacts:</strong>
         <ul>
           <li>Report: <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-05-19.md</code></li>
           <li>state.json update: BLOCKED (permission denial during write) &mdash; today's deltas in report only; will retry tomorrow with carry-over hand-merge.</li>
         </ul>
       </div>
-      <div class="field"><strong>Outstanding for 20/5:</strong> RND-CHAIR redo if not done today; TT 101031 auto-cancel monitor; HCS-PURPLE +1; SS50LSQ-C.GOLD -3; re-check overnight bot fire on 101055/101049/101053/101052/101051 (escalate Jira #2 if still stuck); stale F-bucket disposition decisions.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; full audit complete, report saved, board logged. State.json write blocked (non-blocking; report has full deltas).</div>
+      <div class="field"><strong>PM follow-up &mdash; Manual SG send sweep (~21:49 MYT) per Patricia in-chat directive:</strong>
+        <ul>
+          <li><strong>Eligibility:</strong> All Shopee SG cases with <code>contactSent=false</code> AND age &le; 5d (Phase 4 routing). 3 eligible identified post-AM-run: 101048 DasNatureSG2 (Offer Change, age 1d), 101057 + 101059 Kinata SG (both No Stock, age 0.12d &mdash; created today 16:23 MYT after the AM run). Shopee MY today's-cases (101049-101058) deferred to overnight bot per HARD RULE 6.</li>
+          <li><strong>101048 DasNatureSG2 / mahregene / order 260517MD0TGCVK &mdash; DEDUPE (no send):</strong> Pre-send chat audit on Shopee SG webchat (profile 84 HiranaiSG:main &rarr; DasNatureSG2 via get_sig bridge) caught Lucy already sent OOS offer at 15:29 SGT today, free-form (NOT the locked template): &ldquo;Hi boss, Lucy here, as i check your variation ordered already out of stock, is it okey if we send you white color instead&rdquo;. Buyer [Sticker] response 18:43 SGT. <em>Action:</em> skipped duplicate send. PATCH <code>/api/sb-variation/101048</code> body <code>{ contactSent: false&rarr;true, csRemarks: null&rarr;"Sent by Lucy 2026-05-19 15:29 SGT via DasNatureSG2 webchat (free-form, not locked template): Picnic Basket Rattan Wicker &mdash; Classic Red x Cover OOS &rarr; offered White Color. Buyer sticker response 18:43 SGT; awaiting concrete accept/reject. ..." }</code>. HTTP 200, affectedRows 1. Icon verified <code>text-brand-orange</code>. Order context: Risk-of-Late, waybill SG260931710906O issued, pickup missed 18/5.</li>
+          <li><strong>101057 Kinata SG / nsmeylo / order 260517M2WPRQ3S &mdash; SENT:</strong> Pre-send audit (cs5 profile 53 k1arw890 on Kinata SG webchat) confirmed no prior chat. Sent <code>SHOPEE_MY_NO_STOCK</code> template (verbatim, reused for SG per 21/4 policy; no alt since suggestedSkus=null) via Enter-key on cs5 composer at ~21:49 MYT: "Hi Boss, Sweater Woman Long Sleeve Top Women Knitted Casual Top Sweatshirt Women Striped Knit Ladies Top Pullover Knitwear Restock is estimated in about 1 month. If you're okay to wait, reply WAIT and we'll ship once it's available. If you'd like to change to another variation, just let us know and we'll help arrange it. Otherwise, please manage the order from your Order Details. Once a request comes through, I'll handle it immediately." Banned-words check passed. PATCH <code>contactSent: false&rarr;true</code> + csRemarks recording the send (HTTP 200, affectedRows 1). Icon verified <code>text-brand-orange</code>. Order context: Classic - Gray Free Size, $12.99 PayNow, Risk-of-Late, waybill SPXSG062973694655 pickup attempt failed 19/5 10:47 SGT &ldquo;Parcel not ready for collection&rdquo;.</li>
+          <li><strong>101059 Kinata SG / tzoztm4lh4 / order 260516HST9A9T6 &mdash; SENT:</strong> Pre-send audit confirmed no prior chat. Sent <code>SHOPEE_MY_NO_STOCK</code> template via cs5 composer at ~21:49 MYT: "Hi Boss, Sleeping Bag Camping Thick Blanket Single Sleeping Mat Pad Camping Equipment Essentials Outdoor Hiking Lightweight Restock is estimated in about 1 month. If you're okay to wait, reply WAIT and we'll ship once it's available. If you'd like to change to another variation, just let us know and we'll help arrange it. Otherwise, please manage the order from your Order Details. Once a request comes through, I'll handle it immediately." PATCH <code>contactSent: false&rarr;true</code> + csRemarks (HTTP 200, affectedRows 1). Icon verified <code>text-brand-orange</code>. Order context: Navy Blue - 1.6KG, $18.80 PayNow, Risk-of-Late, waybill SPXSG064229805075 pickup also missed.</li>
+          <li><strong>NEW skill-learning to record:</strong> (a) Lucy was sending OOS offers from CS sub-account without flipping <code>contactSent</code> in webapp DB &mdash; SB Var skill kept flagging cases as "needs first send" when they were already-sent. Coach CS team to PATCH or toggle after every send. (b) Patricia profile 70 master_merchant has ONLY 2 SG sub-shops (Kinata SG + ValueSnap SG); other SG shops (DasNatureSG2, KarlMobel SG, HiranaiSG, MurahYa SG, e_masgift.sg, DasNature SG) live under profile 84 HiranaiSG:main 6-shop list. (c) Patricia profile 70 lacks Webchat permission on Kinata SG sub-shop &mdash; MUST use cs5 profile 53 for Kinata SG chat. (d) Shopee SG webchat composer is <code>textarea.E2MWg3w8y6</code> placeholder "Type a message here"; Enter (no Shift) sends; chat row click target is the outer <code>.SW7LUhQFDH</code> conversation card.</li>
+          <li><strong>PM mutations summary:</strong> 3 webapp PATCHes (all HTTP 200, all icons verified <code>text-brand-orange</code>); 2 buyer-facing messages dispatched (Shopee SG webchat). 0 duplicate sends, 0 banned-word violations, 0 HTTP failures.</li>
+          <li><strong>PM outstanding (for 20/5+):</strong> Monitor buyer replies on 101057 + 101059 (WAIT / alt-variation / cancel paths); active waybills auto-void on buyer cancel. Monitor 101048 &mdash; buyer sticker ambiguous, Lucy/Sofia should follow up with yes/no for the White swap if no concrete reply by EOD 19/5. Coach CS team on contactSent-flip discipline.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Outstanding for 20/5:</strong> RND-CHAIR redo if not done today; TT 101031 auto-cancel monitor; HCS-PURPLE +1; SS50LSQ-C.GOLD -3; re-check overnight bot fire on 101055/101049/101053/101052/101051 (escalate Jira #2 if still stuck); stale F-bucket disposition decisions; PM-send follow-ups above (101048 / 101057 / 101059 monitoring).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; (AM) full read-only audit complete, report saved. (PM) 3/3 SG manual-send queue resolved (1 dedupe + 2 sent), 3/3 contactSent=true confirmed in DB + UI icons orange-verified per HARD RULE 6b, 2 buyers received the locked NO_STOCK template, 0 duplicate sends / 0 banned-words / 0 HTTP failures. State.json write blocked (non-blocking).</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-19" data-shops="KEDAI GARDEN, Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
