@@ -2330,8 +2330,37 @@ header.page::after{
           <li><strong>PM outstanding (for 20/5+):</strong> Monitor buyer replies on 101057 + 101059 (WAIT / alt-variation / cancel paths); active waybills auto-void on buyer cancel. Monitor 101048 &mdash; buyer sticker ambiguous, Lucy/Sofia should follow up with yes/no for the White swap if no concrete reply by EOD 19/5. Coach CS team on contactSent-flip discipline.</li>
         </ul>
       </div>
-      <div class="field"><strong>Outstanding for 20/5:</strong> RND-CHAIR redo if not done today; TT 101031 auto-cancel monitor; HCS-PURPLE +1; SS50LSQ-C.GOLD -3; re-check overnight bot fire on 101055/101049/101053/101052/101051 (escalate Jira #2 if still stuck); stale F-bucket disposition decisions; PM-send follow-ups above (101048 / 101057 / 101059 monitoring).</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; (AM) full read-only audit complete, report saved. (PM) 3/3 SG manual-send queue resolved (1 dedupe + 2 sent), 3/3 contactSent=true confirmed in DB + UI icons orange-verified per HARD RULE 6b, 2 buyers received the locked NO_STOCK template, 0 duplicate sends / 0 banned-words / 0 HTTP failures. State.json write blocked (non-blocking).</div>
+      <div class="field"><strong>Evening follow-up (~22:00 MYT, post-WH-side pre-audit) &mdash; HOLD: webapp down, zero PATCHes:</strong>
+        <ul>
+          <li><strong>Status:</strong> Pre-audit complete on 7 in-scope cases for tonight + carry-over. Webapp went down at session close; no stockAdjustmentStatus / whConfirmStatus / contactSent PATCHes possible. All work deferred to 20/5 morning. Memory file <code>project_session_may19_sbvariation_pending.md</code> saved with full state for cold-start continuation.</li>
+          <li><strong>Group A (SAFE alt-deducts &mdash; execute FIRST once webapp confirmed up):</strong>
+            <ul>
+              <li>Case <code>100960</code> &rarr; <strong>GXTSTARL-BLUE-M &minus;1</strong></li>
+              <li>Case <code>100972</code> &rarr; <strong>GBN10 &minus;1</strong></li>
+              <li>Cases <code>101044</code> + <code>101045</code> &rarr; <strong>KIDS-PLAY-TUNNEL-PRPLE-PINK &minus;2</strong> (combined)</li>
+            </ul>
+          </li>
+          <li><strong>Group B (needs WH physical recount BEFORE zero-out):</strong> SG still shows stock, WH reports OOS &mdash; will zero only after WH confirms physical 0.
+            <ul>
+              <li><strong>GXTSTARL-GREY-M</strong> &mdash; SG Sellable now 11 &rarr; if 0 confirmed, deduct &minus;11</li>
+              <li><strong>PMH10</strong> &mdash; SG Sellable now 1 &rarr; if 0 confirmed, deduct &minus;1</li>
+              <li><strong>KIDS-PLAY-TUNNEL-BLUE-GREN-PRPLE</strong> &mdash; SG Sellable now 2 &rarr; if 0 confirmed, deduct &minus;2</li>
+            </ul>
+          </li>
+          <li><strong>Group C (carry-over from 18/5 night):</strong> RND-CHAIR-FULL-BLK &minus;23 multi-rack Edit modal redo (Rack 3A2-1=0, Rack 2 FLOOR=23) &mdash; affects cases 101018 + 101020 still OUTSTANDING. Same as the P0 already listed in carry-over above; surfaced here for explicit night-of-19/5 traceability.</li>
+          <li><strong>WH-clarification needed (cannot proceed without input):</strong>
+            <ul>
+              <li>Case <code>100988</code> MasonGym &mdash; original AGILITY-LADDER-4M-8RUNG vs alt offered DONUT-YOGA-BALL-PINK-BALL-ONLY. Completely different product (Agility Ladder vs Yoga Ball). Likely SB Var form data error. WH must clarify intended alt OR cancel.</li>
+              <li>Case <code>100980</code> Karlmobel FBIKE-GRAY-20 &mdash; alt iSKU itself <strong>Sellable=0</strong> (also OOS). Cannot fulfill swap. WH must pick different alt or cancel.</li>
+            </ul>
+          </li>
+          <li><strong>Last night 18/5 completion summary (cross-ref):</strong> 8 cases done via me &mdash; 101012 / 101018 / 101020 / 101022 / 101024 / 101032 / 101035 / 101037. Clean: 101012, 101022, 101024, 101032, 101035, 101037. Outstanding: 101018 + 101020 (both blocked on the same RND-CHAIR-FULL-BLK &minus;23 zero-out fail).</li>
+          <li><strong>20/5 morning action order:</strong> (1) confirm webapp back up; (2) ask WH for physical recount on Group B 3 iSKUs + clarification on 100988 + 100980; (3) execute Group A (3 alt-deducts + 4 case PATCHes, two-step PATCH whConfirm &rarr; stockAdjustmentStatus="Adjusted" + stockId + stockUrl); (4) execute Group B per WH confirm; (5) execute Group C RND-CHAIR-FULL-BLK redo; (6) execute 100988 / 100980 per WH decision.</li>
+          <li><strong>Mutations performed this evening:</strong> NONE. Zero SiteGiant DOM mutations, zero webapp PATCHes, zero buyer messages, zero state.json writes. Pure pre-audit + hand-off save.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Outstanding for 20/5:</strong> RND-CHAIR-FULL-BLK redo (now also surfaced in evening Group C above); Group A 3 alt-deducts (100960 / 100972 / 101044+101045); Group B 3 zero-outs pending WH recount; 100988 + 100980 WH-clarification; TT 101031 auto-cancel monitor; HCS-PURPLE +1; SS50LSQ-C.GOLD -3; re-check overnight bot fire on 101055/101049/101053/101052/101051 (escalate Jira #2 if still stuck); stale F-bucket disposition decisions; PM-send follow-ups (101048 / 101057 / 101059 monitoring).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; (AM) full read-only audit complete, report saved. (PM) 3/3 SG manual-send queue resolved (1 dedupe + 2 sent), 3/3 contactSent=true confirmed in DB + UI icons orange-verified per HARD RULE 6b, 2 buyers received the locked NO_STOCK template, 0 duplicate sends / 0 banned-words / 0 HTTP failures. (Evening) Pre-audit complete on 7 in-scope cases + carry-over; webapp down forced HOLD on all writes; full state preserved in memory + this board entry for 20/5 morning cold-start. State.json write blocked (non-blocking).</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-19" data-shops="KEDAI GARDEN, Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
