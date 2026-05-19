@@ -2002,7 +2002,15 @@ header.page::after{
           <li><strong><code>order_sn.slice(0,6)</code> decodes as YYMMDD</strong> of order creation &mdash; useful for cycle-bucket sanity check (same for <code>return_sn.slice(0,6)</code>).</li>
         </ol>
       </div>
-      <div class="field"><strong>Projected 15 Jun 2026 first-run volume:</strong> 27 shops × ~35 COM (MurahYa rate, upper bound) ≈ ~950 IDs per cycle × 2 cycles (Apr+May) = ~1,900 IDs ÷ 10 per batch = ~190 batches. At ~25 sec/batch + 7s pacing + ~30 min scrape = <strong>~2 hours total runtime</strong> (fits the bat's 2-hour ExecutionTimeLimit).</div>
+      <div class="field"><strong>Full 27-shop sweep (Apr 15-May 14, 0 errors):</strong> All 27 shops swept successfully. <strong>270 raw COM Request IDs / ~259 unique after order_sn dedupe / RM 16,248.04 total claim value.</strong> Top contributors: Hiranai 101 IDs (RM 2,442.52), KarlMobel 40 IDs (RM 5,115.39), MurahYa 35 IDs (RM 3,463.10), ValueSnap 35 IDs (RM 1,432.58) &mdash; these 4 carry 78% of volume. 16/27 shops had 0 eligible. Highest single claim: KarlMobel order_sn 260426TQ2WE23V &mdash; RM 907.99. Full per-shop breakdown in <code>shopee-shipping-claim-fullsweep-2026-05-19.md</code>.</div>
+      <div class="field"><strong>Real 15 Jun 2026 first-run projection (refined):</strong> 259 unique × 2 cycles = ~518 IDs ÷ 10/batch = ~52 batches. @ ~25 sec/batch + 7s pacing + ~15 min sweep = <strong>~45 min total runtime</strong> (was ~2hr upper-bound; actual is much faster). Fits bat's 2-hour ExecutionTimeLimit comfortably.</div>
+      <div class="field"><strong>3 tuning improvements added 19/5 (skill .md PHASE 2/3):</strong>
+        <ol>
+          <li><strong>Inter-page sleep 350ms &rarr; 500ms</strong> + exponential-backoff retry (2s/3.5s/5s) on <code>error: 10004</code> rate-limit. Without pacing, KarlMobel silently truncated at page 9 of 29 (lost 70% of data) on first attempt.</li>
+          <li><strong>Early-exit when page-1 <code>total === 0</code></strong> &mdash; 13 of 27 shops had 0 R/R in cycle. Skipping pagination on those saves ~40s/run.</li>
+          <li><strong>Within-cycle dedupe by <code>order_sn</code></strong> before batching &mdash; 11 of 270 raw IDs are duplicates (multi-product orders generate multiple R/R cards with same order_sn). Without dedupe, webform slots get wasted.</li>
+        </ol>
+      </div>
       <div class="field"><strong>Files updated 19/5 dry-run:</strong>
         <ul>
           <li>skill .md (PHASE 0/1/2/5 prose + data model + LESSONS LEARNED 12 entries)</li>
@@ -2020,7 +2028,7 @@ header.page::after{
           <li>Flip <code>config.mode</code> from <code>dry_run</code> to <code>live</code> after step 3.</li>
         </ol>
       </div>
-      <div class="field"><strong>Result:</strong> ok &mdash; build + dry-run validation both complete in one session. Skill ready for operator review and optional pre-fire smoke tests before 15 Jun 2026 live cycle.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; build + dry-run + FULL 27-shop sweep all complete in one session. 0 errors across 27 shops, 159 pages, 5,766 R/R cases scanned. Skill validated end-to-end against real data. Ready for operator scheduler-register + flip to live mode before 15 Jun.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-19" data-shops="Adelmar, DasNature, Hiranai, HiranaiMY, JagerArmor, JagerHelmet, KarlMobel, MurahYa, Valuesnap" data-platform="TikTok MY" data-result="ok">
