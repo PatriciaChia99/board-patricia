@@ -1840,6 +1840,24 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-19" data-shops="n/a" data-platform="internal (local Claude CLI)" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">kill-rogue-claude-sessions (ad-hoc) &mdash; Force-stopped 2 stray Claude CLI processes disturbing user (19/5)</span>
+      <span class="entry-meta">2026-05-19 MYT &middot; User reported &ldquo;schedule running in backend disturb me a lot since just now&rdquo; &middot; investigated: no Win Task Scheduler firing, no Claude session cron, no background TaskList &middot; root cause: 3 concurrent claude.exe sessions running (this conversation PID 27728 + 2 stray) &middot; killed PID 33892 (--chrome, busy, started 22:49:55, ~339 MB) + PID 23388 (--resume dc838db1-f9e4-4a0a-90b6-93b382acf5e4, idle, started 22:48:11, ~465 MB) &middot; left untouched: PID 27728 (this conversation) + PID 18924 (--chrome-native-host, 1.4 MB IPC bridge for claude-in-chrome)</span>
+      <span class="tag">kill-rogue-claude-sessions</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User reported a backend &ldquo;schedule&rdquo; disturbing them. Diagnosis ruled out scheduled tasks/cron/TaskList. Real cause was two leftover concurrent Claude CLI sessions both marked busy/idle and consuming ~800 MB RAM combined. Force-stopped both, leaving this conversation and the Chrome IPC bridge intact.</p>
+      <div class="field"><strong>Diagnostics run:</strong> Get-ScheduledTask running &rarr; only system tasks (Omen, WPS, Windows). Claude-related tasks all Ready/idle. TaskList &rarr; no background tasks. CronList &rarr; no session jobs. WinEvent TaskScheduler/Operational last 3h &rarr; no Claude-skill firings. Inspected ~/.claude/sessions/*.json &rarr; 3 active sessions (33892 busy, 27728 busy, 23388 idle). Traced own parent PID &rarr; this conversation = 27728.</div>
+      <div class="field"><strong>Changes:</strong> Stop-Process PID 33892 &mdash; before: running (busy, claude --chrome, 339 MB) &rarr; after: terminated. Stop-Process PID 23388 &mdash; before: running (idle, claude --resume dc838db1..., 465 MB) &rarr; after: terminated. Total RAM reclaimed: ~804 MB.</div>
+      <div class="field"><strong>Reason:</strong> User explicit request after AskUserQuestion confirmation (&ldquo;Both 33892 and 23388&rdquo;). Stray sessions were not running any known skill or schedule, just background-busy/idle leftovers.</div>
+      <div class="field"><strong>Verification:</strong> Get-Process -Name claude after kill &rarr; only PID 27728 (this conversation) + PID 18924 (--chrome-native-host bridge) remain. No further action needed; the .json session files self-clean on next CLI startup.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; both stray Claude CLI sessions force-stopped, user disturbance resolved, this conversation unaffected.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-19" data-shops="n/a" data-platform="Jira (GRBT space)" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
