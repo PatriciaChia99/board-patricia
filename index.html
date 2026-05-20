@@ -1840,6 +1840,76 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-20" data-shops="MurahYa, KarlMobel, Laz MurahYa" data-platform="Shopee MY + Lazada" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck &mdash; clean run #9, no in-scope cases / 0 mismatch (20/5)</span>
+      <span class="entry-meta">2026-05-20 10:00 MYT &middot; 2117 totalApi / 1779 shipped / 25 in-window (all shipped) / 0 in-scope &middot; 0 PASS / 0 MISMATCH / 0 manual &middot; 12 prior carry-over IDs all unchanged &middot; read-only audit</span>
+      <span class="tag">parcelsplit-contact-crosscheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily 10:00 MYT crosscheck of the orange Contact phone icon (<code>isContacted</code>) on <code>/customer-service/parcel-split</code> vs collected evidence (<code>phoneNumbers</code>, <code>csNotes</code>). Decision: PASS when <code>isContacted=true</code> (system record proves bot sent); MISMATCH only when icon DARK + phone collected OR icon DARK + csNotes mentions phone-ask (regex <code>/phone|nombor|wa(?!rehouse)|whatsapp|hubungi|contact (details|number)|nombor tel|tel(efon)?|tlf/i</code>); skip today's newly-added (bot runs at night). 7-day carry-over window. Read-only.</p>
+      <div class="field"><strong>Trigger:</strong> User invocation in chat (skill <code>parcelsplit-contact-crosscheck</code>). Scheduled task ParcelSplitCrosscheck_1000AM also fires daily 10:00 MYT.</div>
+      <div class="field"><strong>Scope:</strong> 7-day window 2026-05-13 to 2026-05-19 (today's cutoff 2026-05-20 00:00 MYT, today's newly-added skipped per skill rule). Profile 70 (Kmall:Patricia, <code>k1b44nvg</code>); webapp <code>employee.awesomeree.com.my</code>.</div>
+      <div class="field"><strong>API totals:</strong>
+        <ul>
+          <li>totalApi: <strong>2117 rows</strong> (vs 2107 on 5/18 baseline &rarr; +10 new; all 10 already shipped before reaching window)</li>
+          <li>shipped: <strong>1779</strong></li>
+          <li>skippedTodayNewlyAdded: <strong>0</strong> (no rows dated 2026-05-20 yet)</li>
+          <li>outOfWindow: <strong>2092</strong></li>
+          <li>inScope (unshipped + in window): <strong>0</strong></li>
+        </ul>
+      </div>
+      <div class="field"><strong>Window breakdown (all in-window rows are shipped):</strong>
+        <ul>
+          <li>2026-05-13: 4 total / 4 shipped / 0 unshipped</li>
+          <li>2026-05-14: 7 total / 7 shipped / 0 unshipped</li>
+          <li>2026-05-15: 2 total / 2 shipped / 0 unshipped</li>
+          <li>2026-05-16: 2 total / 2 shipped / 0 unshipped</li>
+          <li>2026-05-17: 0 total</li>
+          <li>2026-05-18: 8 total / 8 shipped / 0 unshipped</li>
+          <li>2026-05-19: 2 total / 2 shipped / 0 unshipped</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Tier 1 evaluation:</strong> 0 in-scope &rarr; nothing to evaluate. 0 PASS, 0 MISMATCH, 0 NEED MANUAL CHECK.</div>
+      <div class="field"><strong>Tier 2 (chat scrape):</strong> not invoked (no ambiguous cases).</div>
+      <div class="field"><strong>Carry-over flag-flips (12 prior IDs from 5/18 snapshot, before &rarr; after):</strong>
+        <ul>
+          <li>260505HUM84M21 MurahYa (Shopee MY): LIT + shipped &rarr; LIT + shipped (phoneN 0) &mdash; unchanged, drop</li>
+          <li>260504HCQK2A10 KarlMobel (Shopee MY): LIT + shipped &rarr; LIT + shipped (phoneN 0) &mdash; unchanged, drop</li>
+          <li>260504GPU3XMUE MurahYa (Shopee MY): LIT + shipped &rarr; LIT + shipped (phoneN 0) &mdash; unchanged, drop</li>
+          <li>260503ESN3J326 KarlMobel (Shopee MY): LIT + shipped &rarr; LIT + shipped (phoneN 0) &mdash; unchanged, drop</li>
+          <li>260502B7HRBJ2G MurahYa (Shopee MY): LIT + shipped &rarr; LIT + shipped (phoneN 0) &mdash; unchanged, drop</li>
+          <li>2605019E14D9AW MurahYa (Shopee MY): LIT + shipped &rarr; LIT + shipped (phoneN 0) &mdash; unchanged, drop</li>
+          <li>2605018AAYUDGM MurahYa (Shopee MY): LIT + shipped &rarr; LIT + shipped (phoneN 0) &mdash; unchanged, drop</li>
+          <li>260508TFQ9NVQR MurahYa (Shopee MY): LIT + shipped &rarr; LIT + shipped (phoneN 0) &mdash; unchanged, drop</li>
+          <li>260508UKCSBPQF MurahYa (Shopee MY): LIT + shipped &rarr; LIT + shipped (phoneN 0) &mdash; unchanged, drop</li>
+          <li>260508TFTJMG9B MurahYa (Shopee MY): LIT + shipped &rarr; LIT + shipped (phoneN 0) &mdash; unchanged, drop</li>
+          <li>260508TWVSRRM1 MurahYa (Shopee MY): LIT + shipped &rarr; LIT + shipped (phoneN 0) &mdash; unchanged, drop</li>
+          <li>505997958423209 Laz MurahYa (Lazada): DARK + shipped &rarr; DARK + shipped (phoneN 0) &mdash; unchanged, drop (Lazada gap pattern, not a mismatch)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>DOM sanity (page 1, 20 row-icons):</strong> 17 LIT (<code>text-brand-orange</code>) + 3 DARK (<code>text-warm-ink-disabled</code>) on rows; 17 additional <code>text-foreground</code> icons in header/action bar (unrelated). 21 row containers detected. 0 visible DOM-vs-API mismatch. Per-row id&rarr;icon mapping not extractable via simple text traversal (virtualized grid); acceptable when in-scope = 0.</div>
+      <div class="field"><strong>State persistence:</strong>
+        <ul>
+          <li>Report saved: <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-05-20.md</code> &mdash; ok</li>
+          <li>Snapshot mirror: <code>C:\Users\tessf\Documents\parcelsplit-reports\state-2026-05-20.json</code> &mdash; ok</li>
+          <li>Canonical state.json: <code>C:\Users\tessf\.claude\skills\parcelsplit-contact-crosscheck\state.json</code> &mdash; <strong>write blocked by harness permission gate</strong> (6th consecutive recurrence per 13/5, 14/5, 15/5, 18/5, 19/5 entries). Snapshot mirrored to Documents so tomorrow's run can read prior baseline if user copies it forward, otherwise next run will compare against 5/18 baseline. Result: partial (deferred, non-blocking).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Anything I might have missed:</strong>
+        <ul>
+          <li>Lazada DARK pattern (505997958423209) remains expected behaviour; if the bot is ever wired to Lazada, that row needs a re-baseline.</li>
+          <li>No bot send-attempt log field in <code>/api/parcel-split</code> &mdash; Tier 1.5 still not available; Tier 2 chat scrape is the only fallback if a contradiction surfaces.</li>
+          <li>Recommend an opportunistic Tier 2 chat-scrape spot-check next week (3-5 random <code>isContacted=true, phoneN=0</code> rows) to rule out reflexive LIT flips &mdash; not invoked today since in-scope = 0.</li>
+          <li>Per-row DOM&rarr;API mapping would need table scrolling on a virtualized grid; deferred until in-scope cases reappear.</li>
+          <li>Tomorrow 5/21: window slides to 5/14 &rarr; 5/20.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Result:</strong> ok &mdash; clean run #9 in a row; 0 in-scope cases; 0 mismatches; 0 manual checks; all 12 prior carry-over IDs unchanged; DOM sanity clean. Snapshot mirrored to Documents; canonical state.json write deferred (same gate as previous runs, non-blocking).</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-20" data-shops="Hiranai, MasonGym, das.nature2, Murahya, Karlmobel, ValueSnap, Luxbin, Kinata SG, DasNatureSG2, TT DasNature" data-platform="Shopee MY + SG + TikTok MY + Lazada" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
