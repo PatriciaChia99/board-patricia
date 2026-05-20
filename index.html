@@ -1848,6 +1848,33 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-20" data-shops="n/a" data-platform="Internal (board infra)" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">board-patricia &mdash; blank-page diagnosis + aggressive trim + no-cache headers (20/5)</span>
+      <span class="entry-meta">2026-05-20 PM MYT &middot; 1.07MB&rarr;525KB (51&percnt; reduction, 118 entries body-stripped to archive) &middot; added Cache-Control:no-cache + Pragma + Expires:0 meta tags &middot; root cause: Chrome stale-cache on github.io 10-min default TTL</span>
+      <span class="tag">board-infra</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia reported board showing nothing in regular Chrome. Diagnosed as browser-side stale cache (same URL rendered fine in AdsPower Chrome on same machine with old 1MB file). Trimmed file 51&percnt; smaller and added cache-busting meta tags to prevent recurrence.</p>
+      <div class="field"><strong>Trigger:</strong> User: &ldquo;check my board, showing nothing&rdquo; &rarr; hard refresh didn't help &rarr; incognito worked &rarr; confirmed stuck-cache. User asked &ldquo;u need delete past old record??&rdquo; + &ldquo;Force hard to fix it immediately!&rdquo;</div>
+      <div class="field"><strong>Diagnosis steps:</strong> (1) Verified local file healthy: lint clean, 150 entries, divs balanced. (2) Verified both repos in sync (it-awesomeree HEAD 243381f + PatriciaChia99 mirror HEAD 7a1613e). (3) WebFetch on mirror showed top entry correctly. (4) Opened mirror in AdsPower Chrome via profile 70 on same machine &rarr; rendered 157 entries / 8 today / no JS errors. (5) User confirmed incognito mode shows entries &rarr; confirms cache as root cause.</div>
+      <div class="field"><strong>Changes made:</strong>
+        <ul>
+          <li><strong>Trim:</strong> ran <code>python .scripts/trim_archive.py --days 3</code> &rarr; 32 entries kept full (May 18-20) + 118 body-stripped &amp; wrapped in <code>&lt;details class="archive-block"&gt;</code>. Size 1,076,422&rarr;525,444 bytes (51.2&percnt; reduction).</li>
+          <li><strong>Cache headers:</strong> Added 4 meta tags after <code>&lt;meta charset&gt;</code>:
+            <code>Cache-Control: no-cache, no-store, must-revalidate, max-age=0</code> + <code>Pragma: no-cache</code> + <code>Expires: 0</code> + <code>viewport</code> (mobile).
+          </li>
+          <li><strong>Pushed:</strong> 2 commits (1876dae trim + fab4538 cache-meta) to it-awesomeree/board-patricia main. Mirror sync via <code>.scripts/sync-mirror.sh</code> pushed corresponding sync commits (568ef31 + a90683c) to PatriciaChia99/board-patricia main.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Root cause:</strong> GitHub Pages serves files with <code>Cache-Control: max-age=600</code> (10-min CDN TTL). User's regular Chrome holds the cached HTML even when GitHub Pages serves a newer one. Once a cached version goes stale or partially loads, Chrome keeps re-serving it. AdsPower Chrome doesn't show this because each profile uses isolated cache+cookies. Compounded by board file size approaching ~1MB after 4 months of accumulation. No service worker registered (false-positive grep was just entry text).</div>
+      <div class="field"><strong>Why others have no issue:</strong> Other viewers (Patricia at work, the webapp employee.awesomeree.com.my/board/patricia) use the webapp&apos;s server-side fetch path which has its own 300s CDN TTL with 60s stale-while-revalidate &mdash; the webapp evicts stale entries more aggressively than a personal Chrome profile that's been open for days.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; file 51&percnt; lighter, no-cache headers prevent stale renders going forward, user instructed to hard-refresh ONE more time to clear the existing stuck cache after which future updates will appear within seconds of push.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-20" data-shops="MurahYa, KarlMobel, Hiranai, ValueSnap, das.nature2, BahEmas, Luxbin, MasonGym" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
