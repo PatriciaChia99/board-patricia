@@ -1840,6 +1840,41 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-20" data-shops="ValueSnap, BahEmas, MasonGym, das.nature MY, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, MurahYa, Emas Gift, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">chataudit &mdash; daily 5-cservice audit (20/5): 385/385 deep-reviewed, 3 in-window misses + 6 carry-over unactioned + 1 escalated TODAY</span>
+      <span class="entry-meta">2026-05-20 MYT &middot; window Mon 18/5 17:45 &rarr; Tue 19/5 17:45 &middot; cs1 67 / cs2 54 / cs3 139 / cs4 112 / cs5 13 = 385 in-window &middot; ALL deep-reviewed individually &middot; 3 confirmed misses + 6 cs4 backfill carry-over still unactioned + lindarosli2218 escalated today 09:02</span>
+      <span class="tag">chataudit</span>
+      <span class="tag result-warn">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily 09:10 MYT chataudit covering 5 cservice profiles. Audit window Mon 18/5 17:45 &rarr; Tue 19/5 17:45 (Tue shift). Per ABSOLUTE RULE every chat in window deep-reviewed individually (not just classifier flags). 4-Q pre-flag filter applied to every candidate. Classifier flagged 0 across all accounts; manual semantic Q&amp;A review of full panels surfaced 3 in-window misses + 6 backfill carry-over still unactioned + 1 carry-over monitor escalated today.</p>
+      <div class="field"><strong>Trigger:</strong> User invocation in chat (skill <code>chataudit</code> per <code>.claude/skills/chataudit.md</code>). Window per skill default: D-2 17:45 &rarr; D-1 17:45 MYT.</div>
+      <div class="field"><strong>Scope &amp; counts:</strong> cs1 (ValueSnap/BahEmas/MasonGym/das.nature MY) 250 loaded / 67 in-window / 67 deep-reviewed. cs2 (das.nature2/Hiranai) 201 / 54 / 54. cs3 (KarlMobel/Lovento/Luxbin) 400 / 139 / 139. cs4 (MurahYa/Emas Gift/Adelmar) 402 / 112 / 112. cs5 (Kinata SG) 100 / 13 / 13. Total 1353 / 385 / 385 (100% deep-review compliance).</div>
+      <div class="field"><strong>Confirmed misses (3 in-window):</strong>
+        <ul>
+          <li><strong>70zslpel2ka84irq_oc430e71jz8 (ValueSnap, 19/5 16:21)</strong> &mdash; Customer provided return address (Koh Yen How, 012-7705718, No.15 Jalan Penaga 10 Taman Perindustrian Kota Putri, 81750 Masai Johor). Bot only ack + auto-close 17:03 without agent confirmation/tracking. <em>Action: CS acknowledge address received + send tracking once dispatched.</em></li>
+          <li><strong>lieyafauzee (das.nature2, 19/5 07:16)</strong> &mdash; Customer sent image-only (no text visible, 3 imgs in panel) about order RM75.53 (2 items, ETA 22/5). Bot template + auto-close. 14:33 cservice2 rejoined and immediately closed without content. <em>Action: CS open chat, view image, address concern.</em></li>
+          <li><strong>lindarosli2218 (KarlMobel, ESCALATED 20/5 09:02)</strong> &mdash; Carry-over monitor from 18/5 (Sofia committed Sun to assign P1C, customer provided phone 0193567098 + self-pickup from Kuala Selangor). Mon 13:01 customer follow-up &ldquo;sy nk buat terus siap..sbb sy dtg dari kuala selangor&rdquo; got bot template only. Tue 19/5 window deadline missed. <strong>Today 20/5 09:02 customer escalated</strong> &ldquo;kenapa xde chat sy???&rdquo; + &ldquo;boleh repair ke x&rdquo; &mdash; bot template only, no agent reply. <em>Action: URGENT &mdash; Lucy/Sofia chat customer NOW, apologize, arrange pickup/repair for RM326.29 Hoverboard.</em></li>
+        </ul>
+      </div>
+      <div class="field"><strong>Carry-over status (10 from 18/5 backfill + 2 monitor):</strong>
+        <ul>
+          <li>RESOLVED in-window (4): hockpor (Lucy SIRIM Mon 14:50), jenhashim (Lucy 19/5 12:05 charging time), syu010317 (closed Mon evening), eymeymeym (Sofia 19/5 15:40 courier rearranged for pickup).</li>
+          <li>Already-closed pre-window (3): hassanabdulrahman992, adi7348, aobazw2eei.</li>
+          <li>NOT ACTIONED IN-WINDOW (6): janiechaeeun (MurahYa HIGH RM216.82 R/R, last 18/5 15:52), natasyaha89 (MurahYa HIGH refund + image 12+h, last 18/5 15:53), zackzickry (MurahYa MED same-day, last 18/5 16:44), khalid01 (MurahYa MED Adelmar X Evo bag, last 18/5 15:55), nabilnana12 (Emas Gift LOW container in, last 18/5 16:00), psksu35 (MurahYa LOW printer 1.5L bottle, last 18/5 16:01). <strong>4 days untouched.</strong></li>
+          <li>ESCALATED TODAY (1): lindarosli2218 (see above).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Awareness items (low confidence, image-only customer messages):</strong> faisal_fouzi (cs3 post-delivery scooter received), yapangela (cs3 image after order, fulfilled next day), amnisyam96 (cs3 Lucy answered original Q pre-window, follow-up content unclear), airinsharliza76 (cs4 pre-window Friday image, in-window Mon 21:51 silent rejoin/close), hapiji96 (cs1 generic packing reply to specific color-match request &mdash; PARTIAL not MISS).</div>
+      <div class="field"><strong>Patterns:</strong> Strong substantive engagement on cs1/cs2/cs3/cs5 (Sofia/Lucy/Haja). cs4 MurahYa backlog persists &mdash; 6 of 8 backfill carry-overs untouched 4 days later &mdash; Patricia/CS-lead escalation needed. cs3 monitor neglect (lindarosli2218) caused today's escalation. Bot SLA templates correctly applied to urgency Qs per Q3 rule (no over-flagging).</div>
+      <div class="field"><strong>Methodology:</strong> React state FORCE SCROLL-LOAD (&ge;5-iter height stable, stop before 17/5 00:00). BATCH JS CLICK METHOD (15-20 per batch, 20s pauses). Full-panel <code>innerText</code> extraction. MANDATORY DEEP-VERIFY PROTOCOL via search-box re-open on all candidates. 4-Q filter (substantive reply / customer self-retract / bot SLA to urgency / pre-window) applied to every flagged chat. 0 CAPTCHA encountered. cs4 first load required 18s wait for lazy-load.</div>
+      <div class="field"><strong>Files:</strong> Per-account reports + master summary at <code>C:\Users\tessf\Documents\chataudit-reports\chataudit-cs[1-5]-Wed-20-5.md</code> + <code>chataudit-summary-Wed-20-5.md</code>.</div>
+      <div class="field"><strong>Result:</strong> warn &mdash; 3 in-window misses (1 urgent today-escalation) + 6 backfill carry-over still unactioned across cs4 MurahYa. Audit methodology 100% compliant (385/385 deep-reviewed); the warn is from operational CS-side gaps that need same-day action, not from audit gaps.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-20" data-shops="MurahYa, KarlMobel, Laz MurahYa" data-platform="Shopee MY + Lazada" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
