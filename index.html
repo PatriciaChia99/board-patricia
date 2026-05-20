@@ -1840,6 +1840,49 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-20" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked, 1 shop with new activity (KEDAI GARDEN auto-cancelled SPayLater), 0 actively shipping (20/5)</span>
+      <span class="entry-meta">2026-05-20 09:30 MYT &middot; Shopee MY 27 shops &middot; SiteGiant ShopeeMY 18 channels &middot; gap 9 unchanged &middot; 1 NEW order on garden.mall (Cancelled auto by Shopee, PHASE 4.5 monitor-only) &middot; 0 To Ship + 0 Shipping across all 9 unlinked &middot; state.json write BLOCKED by permission gate (fallback: intended values listed below)</span>
+      <span class="tag">sg-gap-monitor</span>
+      <span class="tag result-warn">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Read-only daily diff of Shopee MY shops vs SiteGiant ShopeeMY channels on profile 70 (kmall:patricia). Per-shop activity scan via <code>/api/selleraccount/subaccount/get_sig/?target_shop_id=&lt;X&gt;</code> followed by All/To Ship/Shipping tab reads. Gap unchanged at 9 since 13/5 baseline. 1 NEW order surfaced on KEDAI GARDEN since 18/5 14:30 state &mdash; verified Cancelled auto by Shopee, no stock decrement needed.</p>
+      <div class="field"><strong>Shopee MY total:</strong> 27 shops (page_index=1 + page_index=2 replayed via captured get_shop_list URLs, page 2 stale <code>search_content=kmall:patricia</code> stripped before replay, filtered <code>country==='my'</code>)</div>
+      <div class="field"><strong>SiteGiant ShopeeMY total:</strong> 18 channels (AdelmarMY, BahEmas, BidariMu, das.nature, das.nature2, EmasGift, EncikPlastic, Hiranai, JagerHelmet, KarlMobel, Lenza_Eyewear, Lovento, Luxbiin, MasonGym, Murahya, SecretRacer, ValueSnap, WilmerMobel)</div>
+      <div class="field"><strong>Gap (9 unlinked):</strong> Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer &mdash; same 9 as 13/5 baseline, PIC has not integrated any since the skill started</div>
+      <div class="field"><strong>Per-shop scan (before &rarr; after):</strong>
+        <ul>
+          <li>Solaree (solaree2024 / 1156025778): latest 240718V5H3A1KA &rarr; 240718V5H3A1KA (unchanged) &middot; toship 0 &rarr; 0 &middot; shipping 0 &rarr; 0 &middot; All 7 &rarr; 6 (Shopee 2-year window drop, cosmetic)</li>
+          <li>Flashree (flashree / 738554401): latest 2409031DJJWV7T &rarr; 2409031DJJWV7T (unchanged) &middot; toship 0 &rarr; 0 &middot; shipping 0 &rarr; 0 &middot; All 39 &rarr; 1 (2-year window)</li>
+          <li>dutchgaming (dutch_gaming / 503721641): latest null &rarr; null (unchanged) &middot; toship 0 &rarr; 0 &middot; shipping 0 &rarr; 0 &middot; All 0 &rarr; 0</li>
+          <li>Chairsy (chairsy / 429078278): latest 260211F1FRUFAH &rarr; 260211F1FRUFAH (unchanged) &middot; toship 0 &rarr; 0 &middot; shipping 0 &rarr; 0 &middot; All 1431 &rarr; 1424 (2-year window)</li>
+          <li>Gameniture (gameniture / 373454740): latest null &rarr; null (unchanged) &middot; toship 0 &rarr; 0 &middot; shipping 0 &rarr; 0 &middot; All 0 &rarr; 0</li>
+          <li>Atlusrack (atlusrack / 336726327): latest 260214NUX1Y8BX &rarr; 260214NUX1Y8BX (unchanged, Cancelled) &middot; toship 0 &rarr; 0 &middot; shipping 0 &rarr; 0 &middot; All 6 &rarr; 6</li>
+          <li>Stationarylah (stationarylah / 321734518): latest 260414QW1M81CQ &rarr; 260414QW1M81CQ (unchanged, Cancelled) &middot; toship 0 &rarr; 0 &middot; shipping 0 &rarr; 0 &middot; All 20 &rarr; 20</li>
+          <li>KEDAI GARDEN (garden.mall / 289957447): latest <strong>260514C6H83XTG &rarr; 260517N1MUJ9Y9 (NEW)</strong> &middot; toship 1 &rarr; 0 (prev carry-over cancelled) &middot; shipping 0 &rarr; 0 &middot; All 185 &rarr; 185</li>
+          <li>FynnKoffer (fynnkoffer / 214632596): latest 260307GC8213CQ &rarr; 260307GC8213CQ (unchanged) &middot; toship 0 &rarr; 0 &middot; shipping 0 &rarr; 0 &middot; All 428 &rarr; 427 (2-year window)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>KEDAI GARDEN new order detail (PHASE 4.5 verdict):</strong> Order 260517N1MUJ9Y9 placed 17/05/2026 by buyer <code>keisiew</code> (NOT the prior loop buyer <code>kedaibarutmama2</code>). Product: 50CM OCTO PLASTIC FLOWER POT HANGER, Variation <code>Transparent [HANGER HANGER TRANS]</code>, qty x10, RM 4.84, SPayLater, SPX Express (NDD). Status <strong>Cancelled automatically by Shopee&rsquo;s system</strong>. Same SKU family + qty + payment + cancel signature as the kedaibarutmama2 SPayLater loop documented in PHASE 4.5 &mdash; only the buyer name is different. <strong>Monitor only &mdash; no manual SiteGiant master decrement required</strong> (stock never deducted because payment never settled). Also: previous carry-over 260514C6H83XTG (the 1 To Ship from 14/5 + 18/5 runs) is now <em>Cancelled by buyer</em> as expected, clearing the carry-over.</div>
+      <div class="field"><strong>Active stock-desync risk RIGHT NOW:</strong> NONE &mdash; all 9 unlinked shops have 0 pending shipments + 0 in-transit. No manual SiteGiant decrement required this run.</div>
+      <div class="field"><strong>Newly-linked shops this run:</strong> NONE &mdash; gap unchanged at 9. Reason: PIC has not added any of the 9 unlinked shops as SiteGiant ShopeeMY channels since the skill started 13/5.</div>
+      <div class="field"><strong>State.json update BLOCKED:</strong> Write to <code>C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json</code> hit permission gate. Intended values for an interactive patch:
+        <ul>
+          <li><code>lastRunId</code> / <code>lastRunTime</code>: <code>2026-05-20T09:30:00+08:00</code></li>
+          <li><code>previousRunId</code>: <code>2026-05-18T14:30:00+08:00</code></li>
+          <li><code>lastSeenOrderId.garden.mall</code>: <code>260514C6H83XTG</code> &rarr; <code>260517N1MUJ9Y9</code> (UPDATED)</li>
+          <li><code>lastSeenOrderId</code> for chairsy / dutch_gaming / flashree / solaree2024 / gameniture / atlusrack / stationarylah / fynnkoffer: unchanged</li>
+          <li><code>perShop_2026_05_20</code>: all 9 shops, snapshot per the report table above (toship/shipping = 0 across the board)</li>
+          <li>Without the patch, tomorrow&rsquo;s run will re-flag 260517N1MUJ9Y9 as &ldquo;new&rdquo; (false-positive flag, noisy not risky)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Reason for changes:</strong> Scheduled daily 09:00 MYT audit per skill v1.4. 1 NEW order surfaced &rarr; investigated against PHASE 4.5 SPayLater auto-cancel pattern &rarr; matched (SKU family + qty + payment + cancel-by-system signature) &rarr; classified monitor-only. No manual writes to Shopee/SiteGiant/webapp (read-only skill).</div>
+      <div class="field"><strong>Result:</strong> partial &mdash; audit completed end-to-end (Phase 1-5 all green), report saved to <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-05-20.md</code>. Phase 6 state.json write blocked by permission gate &mdash; intended values logged above for follow-up patch.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-19" data-shops="n/a" data-platform="internal (Windows Task Scheduler)" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
