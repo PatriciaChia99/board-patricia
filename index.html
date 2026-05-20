@@ -1927,6 +1927,19 @@ header.page::after{
       </div>
       <div class="field"><strong>🤝 chase-rr live agent C15988 MurahYa SUCCESS:</strong> Connected to Shopee Live Agent <strong>Rizha</strong> via cs4 profile 52 at 17:58 MYT for order 260311TEWCYMJM (RM 625.81). Initial response from SPX team: REJECTED claim citing 30-day window from end-terminal-date (last scan 29/3) — applied chase-rr HARD-RULE-5 push-back (Paula 13/5 ref 2054494222748754016 already cleared the window, you cannot reverse a promised payout). Rizha agreed to re-escalate to relevant team. <strong>NEW CASE REF: 2057040636136394821, ETA on/before 27/5/2026 (3-5 WD).</strong> Chat ended cleanly with "Good" rating. Transcript saved (8336 chars). Webapp PATCHed with new chase result. Next trigger: 28/5 wallet re-check — if no comp, re-engage live agent with both refs (2054494222748754016 + 2057040636136394821).</div>
       <div class="field"><strong>⏸️ chase-rr C16152 KarlMobel DEFERRED:</strong> Attempted live agent chase for partial recovery (~RM 197 remaining after RM 20 partial comp landed 1/5) via cs3 profile 51. Blocked by Sophie chatbot scheduled maintenance — "Chat with agent" button unresponsive even with React-event dispatch (panel stuck on maintenance message, no queue advancement). Deferred to next chase-rr session — fresh cs3 profile reload should clear the stuck UI state.</div>
+      <div class="field"><strong>✅ EOD LIVE VERIFICATION (post all PATCHes):</strong> Re-pulled <code>/api/new-parcel-claims?refund_state=Credited</code> + <code>?refund_state=Pending</code> from Patricia profile 70 after fresh open. <strong>39/39 flipped orders verified now in Credited bucket (0 remain in Pending).</strong> C15988 (260311TEWCYMJM) verified still Pending with last_remark containing new case ref <code>2057040636136394821</code> + ETA 27/5 + HARD-RULE-5 ALERT. Credited bucket total: 450. Pending bucket: 375 (down from 397 morning baseline by net 22 = 39 flips out + ~17 new Pending added via other CS actions during the day).</div>
+      <div class="field"><strong>EOD ARTIFACTS SAVED:</strong>
+        <ul>
+          <li>Memory EOD: <code>project_session_may20_csrr_chase_eod.md</code></li>
+          <li>HARD lesson 1: <code>feedback_chase_rr_rizha_pushback_30day_window.md</code></li>
+          <li>HARD lesson 2: <code>feedback_webapp_status_flip_uses_update_status_type.md</code></li>
+          <li>HARD lesson 3: <code>feedback_chataudit_verify_each_flag_against_live_state.md</code></li>
+          <li>Chase transcript: <code>Documents\chase-rr\transcripts\2026-05-20\C15988-MurahYa-260311TEWCYMJM-chase-2026-05-20.txt</code></li>
+          <li>csrrcredited report: <code>Documents\csrrcredited-reports\csrrcredited-report-2026-05-20.md</code></li>
+          <li>MEMORY.md index updated, bat hardened, state.json patched</li>
+          <li>Board commits this session: a82d17a → 5b7abf1 → 243381f → 43d0089 → (this final)</li>
+        </ul>
+      </div>
       <div class="field"><strong>Remaining / handed off:</strong>
         <ul>
           <li>C14989 KarlMobel reopen monitor active till 25/5 (Rejected→Pending due 25/5, wallet -RM 77.13 unchanged) &mdash; no action needed today, watch for outcome 25/5</li>
