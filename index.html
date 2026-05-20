@@ -1848,6 +1848,48 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-20" data-shops="Adelmar, Das Nature, Hiranai, HiranaiMY, Jager, JagerSafety, JagerArmor, JagerHelmet, KarlMobel, Murahya, Valuesnap, Kinata SG, Lovento" data-platform="TikTok MY/SG" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checkttrating &mdash; manual quick run, 13/13 TT shops captured + Google Sheet TIKTOK rows 368-380 + 10 red highlights (20/5)</span>
+      <span class="entry-meta">2026-05-20 PM MYT &middot; 13/13 shops scraped via AdsPower profiles 54-67 (headless) &middot; sheet 1je_Kt5jPEfkCAVd5f41uI6Ky4_DdNcKSLxKuEuoKvjI TIKTOK tab rows 368-380 paste at A368 &middot; 10 cells red-highlighted across 8 shops (R&amp;R, 12hr, AvgTime, ChatSat misses) &middot; date 20/05/2026 written in A368 with 13 shop rows below</span>
+      <span class="tag">checkttrating</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User requested quick manual run of checkttrating skill. Captured TT Shop Health service metrics (Seller-fault R&amp;R, 12-hour response, Avg response time, Chat satisfaction) for all 13 TT shops via AdsPower profiles 54-67, pasted into Google Sheet TIKTOK tab at rows 368-380, applied red fill to 10 cells failing thresholds. No shops session-expired today.</p>
+      <div class="field"><strong>Trigger:</strong> User: &ldquo;run checkttratings for today quickly&rdquo;</div>
+      <div class="field"><strong>Metrics captured (before &rarr; after sheet state):</strong> Sheet row 367 was last filled block (12/05/2026). After paste, rows 368-380 now hold today's 13 shops.
+        <ul>
+          <li>Adelmar (54): R&amp;R 0% / 12hr 93.33% / AvgTime 0.19 / ChatSat 100% &mdash; all PASS</li>
+          <li>Das Nature (55): 0.49% / 100% / 0.09 / 77.78% &mdash; all PASS</li>
+          <li>Hiranai (56): 0.72% / 97.78% / 0.25 / <strong>0%</strong> &mdash; ChatSat RED</li>
+          <li>HiranaiMY (58): 0% / 100% / <strong>1.57</strong> / 100% &mdash; AvgTime RED</li>
+          <li>Jager (59): 0% / 100% / <strong>1.06</strong> / 100% &mdash; AvgTime RED</li>
+          <li>JagerSafety (61): 0% / 100% / 0.07 / --% &mdash; all PASS (no chats)</li>
+          <li>JagerArmor (60): <strong>6.25%</strong> / 100% / 0.05 / <strong>0%</strong> &mdash; R&amp;R + ChatSat RED</li>
+          <li>JagerHelmet (66): <strong>1.85%</strong> / 100% / 0.07 / --% &mdash; R&amp;R RED</li>
+          <li>KarlMobel (62): 0.78% / 100% / 0.09 / 81.25% &mdash; all PASS</li>
+          <li>Murahya (64): 0.52% / 98.85% / 0.33 / <strong>68.18%</strong> &mdash; ChatSat RED</li>
+          <li>Valuesnap (65): 0.78% / 100% / 0.15 / <strong>42.86%</strong> &mdash; ChatSat RED</li>
+          <li>Kinata SG (67): --% / <strong>50%</strong> / <strong>2.82</strong> / 100% &mdash; 12hr + AvgTime RED</li>
+          <li>Lovento (63): 0% / 100% / 0.02 / --% &mdash; all PASS (Lovento in shop-adjustment period, direct /health-center URL worked)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Sheet edits (before &rarr; after):</strong>
+        <ul>
+          <li>A368 empty &rarr; <code>20/05/2026</code></li>
+          <li>B368-B380 empty &rarr; shop names in sheet order (Adelmar &hellip; Lovento)</li>
+          <li>C368-I380 empty &rarr; metric values (TSV paste, single Ctrl+V at A368 via clipboard writeText, 447 chars)</li>
+          <li>10 red fills applied via #t-cell-color &rarr; aria-label="red": I370, G371, G372, C374, I374, C375, I377, I378, E379, G379</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Reason for red highlights:</strong> Threshold rules from skill &mdash; R&amp;R&gt;1.5%, 12hr&lt;85%, AvgTime&ge;1, ChatSat&lt;70%.</div>
+      <div class="field"><strong>Platforms:</strong> TikTok MY (12 shops profiles 54-66) + TikTok SG (Kinata SG profile 67).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 13/13 captured, sheet updated rows 368-380, 10 red cells flagged for Patricia review. JagerArmor 6.25% R&amp;R is the highest risk; ChatSat misses on Hiranai/JagerArmor/Murahya/Valuesnap need CS coaching follow-up.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-20" data-shops="n/a" data-platform="Internal (board infra)" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
