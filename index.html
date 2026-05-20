@@ -1843,8 +1843,8 @@ header.page::after{
   <div class="entry" data-date="2026-05-20" data-shops="MurahYa, KarlMobel, Hiranai, ValueSnap, das.nature2, BahEmas, Luxbin, MasonGym" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">csrrcredited &mdash; manual recovery sweep + crosscheck (20/5): 76 cases probed / 76 PATCHes HTTP 200 / 38 WINs CONFIRMED 38/38 / NET +RM 1,807.70 + C14188 RM 194.35 carry (wrapper failed 9:15 AM, STEP 2 never reached)</span>
-      <span class="entry-meta">2026-05-20 PM &middot; 397 Pending total, scoped to 76 high-value (32 NEG + 44 APPROVED) / 257 UNCLASSIFIED pre-resolution deferred &middot; 8 shops: MurahYa 25 / KarlMobel 18 / Hiranai 15 / ValueSnap 5 / das.nature2 5 / BahEmas 3 / Luxbin 3 / MasonGym 2 &middot; 76 audit-trail remarks PATCHed 100&percnt; HTTP 200 &middot; csrrcreditedcheck fresh wallet re-probe 38/38 CONFIRMED 0 discrepancies 0 retractions &middot; refund_state flip endpoint NOT exposed in webapp API &mdash; CS must manually click Credited per "Recommend flip" remarks</span>
+      <span class="entry-title">csrrcredited &mdash; manual recovery sweep + crosscheck + 39 STATUS FLIPS (20/5): 76 cases probed / 76+39+3 = 118 PATCHes HTTP 200 / 38 WINs CONFIRMED 38/38 / 39 status flips Pending→Credited NET +RM 2,002.05 booked (wrapper failed 9:15 AM, STEP 2 never reached; bat hardened post-mortem)</span>
+      <span class="entry-meta">2026-05-20 PM &middot; 397 Pending total, scoped to 76 high-value (32 NEG + 44 APPROVED) / 257 UNCLASSIFIED pre-resolution deferred &middot; 8 shops: MurahYa 25 / KarlMobel 18 / Hiranai 15 / ValueSnap 5 / das.nature2 5 / BahEmas 3 / Luxbin 3 / MasonGym 2 &middot; 76 audit-trail remarks + 39 status flips + 3 escalation remarks all HTTP 200 &middot; csrrcreditedcheck fresh wallet re-probe 38/38 CONFIRMED 0 discrepancies 0 retractions &middot; status-flip endpoint discovered via JS bundle inspection: type=update_status (not refund_state)</span>
       <span class="tag">csrrcredited</span>
       <span class="tag result-ok">Completed</span>
     </div>
@@ -1880,22 +1880,26 @@ header.page::after{
           <li><strong>TOTAL: 38 WINs NET +RM 1,807.70 to flip + 1 candidate C14188 +RM 194.35 awaiting CS confirm = +RM 2,002.05 potential.</strong></li>
         </ul>
       </div>
-      <div class="field"><strong>refund_state flip blocker:</strong> Webapp PATCH endpoint /api/new-parcel-claims only supports type='remark' + type='action'; type='refund_state'/'status'/'credit'/'wallet_status' all reject "Unsupported update type". No alternate endpoint found (probed /api/new-parcel-claims/status, /credit, /flip, /update + /api/parcel-claim/status &mdash; all 404 or 500 multipart-only). Per 18/5 csrrcredited session memory (&ldquo;73 PATCHes HTTP 200&rdquo;) all prior runs were remark-based too &mdash; status flips happen via CS UI clicks. Probe noise on C14989: action field temporarily set to test/dash/CS_FOLLOW_UP during endpoint discovery, reverted to "—" neutral + explanatory remark added.</div>
+      <div class="field"><strong>Status-flip endpoint DISCOVERED + executed:</strong> Initial probe rejected type='refund_state'/'status'/'credit'/'wallet_status'. Inspected /_next/static/chunks/app/customer-service/parcel-claim/page-b8ccb7796fd47326.js bundle → found UI "Update Status" → Credited button calls PATCH /api/new-parcel-claims with body <code>{order_id, type:'update_status', value:'Credited'}</code> (key naming non-obvious — not 'refund_state' or 'status'). Validated on C16523 → flipped, then batched 37 remaining + C14188 = 38 → all HTTP 200 "Successfully updated update_status". Server-side this update also auto-sets action_needed='Closed' + refreshes scraped_dt. New HARD lesson saved to memory: type='update_status' is the correct PATCH type for Pending→Credited/Withdrawn flips on Shopee parcel-claim endpoint. (TT equivalent endpoint /api/new-parcel-claims-tiktok may follow same naming convention, untested.) Probe noise cleanup: C14989 action field temporarily set to test/dash/CS_FOLLOW_UP during endpoint discovery, reverted to "—" neutral + explanatory remark added.</div>
       <div class="field"><strong>HARD lesson applied (per 20/5 chataudit precision failure):</strong> Every WIN classification was re-verified against FRESH wallet pull in the crosscheck phase. Zero classifications retracted. Wallet-based audit precision today: 38/38 (100&percnt;) vs chataudit precision earlier: 0/9 — different reliability profiles for live-state vs DOM-snapshot data.</div>
       <div class="field"><strong>Wrapper failure root cause:</strong> ttrr_csrr_oneshot_20260520.bat called tiktokrraudit.bat (STEP 1) which spawned a Claude session via call claude.cmd. The Claude session ran &gt;3h (longer than scheduled task ExecutionTimeLimit), the OS killed the task at 12:15, STEP 2 csrrcredited.bat never fired. Daily TT_RR_Audit_10_15AM left in Disabled state (wrapper STEP 3 re-enable never reached). MANUAL FIX applied this session: Enable-ScheduledTask -TaskName 'TT_RR_Audit_10_15AM' &rarr; State: Disabled→Ready, NextRunTime: 21/5/2026 10:15 AM. Outstanding: harden wrapper with per-step timeout to prevent STEP 1 hang from blocking STEP 2 in future.</div>
-      <div class="field"><strong>Outstanding / handed off to CS:</strong>
+      <div class="field"><strong>✅ Executed end-of-session (after &ldquo;ok do it&rdquo; instruction):</strong>
         <ul>
-          <li>CS manually flip 38 confirmed WINs Pending→Credited via UI per remark recommendations</li>
-          <li>CS confirm C14188 MurahYa RM 194.35 "buyer invalid claim, item returned" &mdash; if final, flip Credited</li>
-          <li>CS escalate 2 NEW Hiranai clawbacks reclassified APP→NEG (C17280 -8.48 + C17122 -10.60) for 2nd dispute eligibility</li>
-          <li>C14989 KarlMobel reopen monitor active till 25/5 (Rejected→Pending due 25/5, wallet -RM 77.13 unchanged)</li>
-          <li>C15111 das.nature2 partial recovery monitor (-15.83→-3.27 via partial 406 +7.59, watch for full comp)</li>
-          <li>Kinata SG SG-side sweep (profile 84) skipped today &mdash; carry to next dedicated run</li>
-          <li>UNCLASSIFIED 257 Pending bucket needs sub-classification in next run (mostly pre-resolution but should re-screen)</li>
-          <li>Harden ttrr_csrr_oneshot wrapper to add per-step timeout</li>
+          <li><strong>39 status flips Pending→Credited</strong> all HTTP 200 (38 from crosscheck + C14188 MurahYa RM 194.35 confirmed final WIN via wallet evidence). Total recovery booked: <strong>+RM 2,002.05</strong>.</li>
+          <li><strong>2 Hiranai escalation remarks</strong> added (C17280 -RM 8.48 + C17122 -RM 10.60) flagging 2nd dispute window before 16-17/6/2026 + advising lost-parcel comp claim path for C17122.</li>
+          <li><strong>ttrr_csrr_oneshot_20260520.bat HARDENED</strong> with per-step PowerShell Start-Process + WaitForExit(timeoutMs): STEP 1 = 5400s (90 min), STEP 2 = 3600s (60 min). On timeout: kills child + orphan claude.exe, logs warning, CONTINUES to next step. STEP 3 (re-enable daily TT task) always runs regardless.</li>
         </ul>
       </div>
-      <div class="field"><strong>Result:</strong> ok &mdash; 76/76 PATCHes HTTP 200, 38/38 crosscheck CONFIRMED 0 retractions, +RM 2,002 potential recovery surfaced, daily TT_RR task re-enabled. Status flips deferred to CS manual UI clicks (no PATCH endpoint exposed). Wrapper failure root-caused for next-session hardening.</div>
+      <div class="field"><strong>Remaining / handed off:</strong>
+        <ul>
+          <li>C14989 KarlMobel reopen monitor active till 25/5 (Rejected→Pending due 25/5, wallet -RM 77.13 unchanged) &mdash; no action needed today, watch for outcome 25/5</li>
+          <li>C15111 das.nature2 partial recovery monitor (-15.83→-3.27 via partial 406 +7.59 landed 13/5, watch for full comp in next sweep)</li>
+          <li>Kinata SG SG-side sweep (profile 84) skipped today &mdash; carry to next dedicated run</li>
+          <li>UNCLASSIFIED 257 Pending bucket needs sub-classification in next run (mostly pre-resolution; ~50 may need wallet probe)</li>
+          <li>16 NEG clawbacks total (MurahYa 14 + KarlMobel 10 + ValueSnap 3 + das.nature2 1 partial = 28 cases ~RM 700+ aggregate loss) &mdash; chase-rr / 2nd dispute candidates per remarks already added</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 118 PATCHes HTTP 200 total (76 audit-trail remarks + 39 status flips + 3 escalations), 38/38 crosscheck CONFIRMED 0 retractions, <strong>+RM 2,002.05 booked Credited</strong>, daily TT_RR task re-enabled, wrapper bat hardened with per-step timeout. Status-flip endpoint discovery (type=update_status) added to skill knowledge.</div>
     </div>
   </div>
 
