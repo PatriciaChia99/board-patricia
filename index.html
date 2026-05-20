@@ -1840,6 +1840,24 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-19" data-shops="n/a" data-platform="internal (Windows Task Scheduler)" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">schedule-setup (ad-hoc) &mdash; One-time 9:15 AM 20/5 run wired up for tiktokrraudit + csrrcredited sequentially (19/5)</span>
+      <span class="entry-meta">2026-05-19 MYT &middot; User request: &ldquo;run ttrraudit and csrrcredited tomorrow morning schedule at 9.15am&rdquo; &middot; Created reusable csrrcredited.bat (was missing) + one-shot wrapper + Win task &middot; Disabled daily TT_RR_Audit_10_15AM for tomorrow only &middot; wrapper re-enables it after run &middot; NextRunTime confirmed: 20/5/2026 09:15:00</span>
+      <span class="tag">schedule-setup</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User asked for one-time 9:15 AM 2026-05-20 autonomous run of both tiktokrraudit and csrrcredited. After clarification chose: sequential (TT first, csrr second to avoid AdsPower collision), skip tomorrow's 10:15 daily TT run, csrrcredited one-time only (no recurring task yet). Built 3 artifacts and disabled 1 task.</p>
+      <div class="field"><strong>Files created:</strong> (1) C:\Users\tessf\scripts\csrrcredited.bat (9.2 KB, reusable daily-style bat mirroring tiktokrraudit.bat pattern &mdash; pre-checks AdsPower, calls claude.cmd with full skill-aware prompt referencing 8 carry-over memories, verifies report written, BurntToast notification, failure-fallback). (2) C:\Users\tessf\scripts\ttrr_csrr_oneshot_20260520.bat (3.5 KB, wrapper calling tiktokrraudit.bat then 30s cooldown then csrrcredited.bat, then re-enabling daily TT task at end).</div>
+      <div class="field"><strong>Windows Task Scheduler changes:</strong> Registered TTRR_CsrrCredited_915AM_OneShot_20260520 &mdash; before: did not exist &rarr; after: Ready, trigger 2026-05-20T09:15:00+08:00, EndBoundary 2026-05-20T23:59:00, ExecutionTimeLimit 3h, WakeToRun + StartWhenAvailable + AllowStartIfOnBatteries, principal Admin/Limited matching existing daily tasks. Disabled TT_RR_Audit_10_15AM &mdash; before: State=Ready (would fire 20/5 10:15) &rarr; after: State=Disabled (skips 20/5 10:15; wrapper bat re-enables at end of 9:15 run).</div>
+      <div class="field"><strong>Reason:</strong> Today's 10:15 TT_RR scheduled run returned LastTaskResult=255 (failed), and user wants both skills earlier tomorrow. Sequential prevents AdsPower profile collision between the two skills both using Patricia profile 70 + TT profiles 54-66. Daily-task disable + wrapper-re-enable pattern chosen over &ldquo;skip flag&rdquo; to avoid modifying tiktokrraudit.bat.</div>
+      <div class="field"><strong>Risks &amp; pre-conditions for tomorrow 9:15:</strong> (a) PC must be in Sleep (not Shutdown) for WakeToRun to work, per reference_local_task_scheduler_setup.md. (b) AdsPower must be running &mdash; the bat polls /status with 12 retries x 10s before aborting. (c) If wrapper crashes mid-run, daily TT_RR task stays Disabled &mdash; user can re-enable manually via Get-ScheduledTask -TaskName 'TT_RR_Audit_10_15AM' | Enable-ScheduledTask. (d) Wrapper logs to C:\Users\tessf\Documents\oneshot-20260520-log.txt for diagnosis.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; all 3 files + Win task verified present and Ready, daily TT task confirmed Disabled. NextRunTime = 20/5/2026 9:15:00 AM exactly as requested.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-19" data-shops="n/a" data-platform="internal (local Claude CLI)" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
