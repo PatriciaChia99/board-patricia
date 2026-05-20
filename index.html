@@ -1890,38 +1890,44 @@ header.page::after{
     </div>
   </div>
 
-  <div class="entry" data-date="2026-05-20" data-shops="ValueSnap, BahEmas, MasonGym, das.nature MY, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, MurahYa, Emas Gift, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="warn">
+  <div class="entry" data-date="2026-05-20" data-shops="ValueSnap, BahEmas, MasonGym, das.nature MY, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, MurahYa, Emas Gift, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">chataudit &mdash; daily 5-cservice audit (20/5): 385/385 deep-reviewed, 3 in-window misses + 6 carry-over unactioned + 1 escalated TODAY</span>
-      <span class="entry-meta">2026-05-20 MYT &middot; window Mon 18/5 17:45 &rarr; Tue 19/5 17:45 &middot; cs1 67 / cs2 54 / cs3 139 / cs4 112 / cs5 13 = 385 in-window &middot; ALL deep-reviewed individually &middot; 3 confirmed misses + 6 cs4 backfill carry-over still unactioned + lindarosli2218 escalated today 09:02</span>
+      <span class="entry-title">chataudit &mdash; daily 5-cservice audit (20/5): 385/385 deep-reviewed; 9 flagged misses RETRACTED post-user-verify (8 already replied + 1 customer-side R/R silence)</span>
+      <span class="entry-meta">2026-05-20 MYT &middot; window Mon 18/5 17:45 &rarr; Tue 19/5 17:45 &middot; cs1 67 / cs2 54 / cs3 139 / cs4 112 / cs5 13 = 385 in-window &middot; 9 initial flags &rarr; 0 real CS misses after user manual re-check &middot; HARD lesson saved on chataudit precision gap</span>
       <span class="tag">chataudit</span>
-      <span class="tag result-warn">Partial</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
-      <p><strong>Brief:</strong> Daily 09:10 MYT chataudit covering 5 cservice profiles. Audit window Mon 18/5 17:45 &rarr; Tue 19/5 17:45 (Tue shift). Per ABSOLUTE RULE every chat in window deep-reviewed individually (not just classifier flags). 4-Q pre-flag filter applied to every candidate. Classifier flagged 0 across all accounts; manual semantic Q&amp;A review of full panels surfaced 3 in-window misses + 6 backfill carry-over still unactioned + 1 carry-over monitor escalated today.</p>
+      <p><strong>Brief:</strong> Daily 09:10 MYT chataudit covering 5 cservice profiles. Audit window Mon 18/5 17:45 &rarr; Tue 19/5 17:45 (Tue shift). Per ABSOLUTE RULE every chat in window deep-reviewed individually (not just classifier flags). 4-Q pre-flag filter applied to every candidate. Initial publish surfaced 9 "miss" flags (3 in-window + 6 cs4 backfill carry-over). <strong>User manual re-check at 16:xx MYT: 8 of 9 already had CS replies that the audit missed</strong> (sticker reply, substantive reply, broken+replied). Only janiechaeeun remained &mdash; but customer-side R/R requested then went silent, not a CS miss. <strong>Net: 0 real CS misses today.</strong></p>
       <div class="field"><strong>Trigger:</strong> User invocation in chat (skill <code>chataudit</code> per <code>.claude/skills/chataudit.md</code>). Window per skill default: D-2 17:45 &rarr; D-1 17:45 MYT.</div>
       <div class="field"><strong>Scope &amp; counts:</strong> cs1 (ValueSnap/BahEmas/MasonGym/das.nature MY) 250 loaded / 67 in-window / 67 deep-reviewed. cs2 (das.nature2/Hiranai) 201 / 54 / 54. cs3 (KarlMobel/Lovento/Luxbin) 400 / 139 / 139. cs4 (MurahYa/Emas Gift/Adelmar) 402 / 112 / 112. cs5 (Kinata SG) 100 / 13 / 13. Total 1353 / 385 / 385 (100% deep-review compliance).</div>
-      <div class="field"><strong>Confirmed misses (3 in-window):</strong>
+      <div class="field"><strong>RETRACTED flags (user-verified each one already actioned, before &rarr; after):</strong>
         <ul>
-          <li><strong>70zslpel2ka84irq_oc430e71jz8 (ValueSnap, 19/5 16:21)</strong> &mdash; Customer provided return address (Koh Yen How, 012-7705718, No.15 Jalan Penaga 10 Taman Perindustrian Kota Putri, 81750 Masai Johor). Bot only ack + auto-close 17:03 without agent confirmation/tracking. <em>Action: CS acknowledge address received + send tracking once dispatched.</em></li>
-          <li><strong>lieyafauzee (das.nature2, 19/5 07:16)</strong> &mdash; Customer sent image-only (no text visible, 3 imgs in panel) about order RM75.53 (2 items, ETA 22/5). Bot template + auto-close. 14:33 cservice2 rejoined and immediately closed without content. <em>Action: CS open chat, view image, address concern.</em></li>
-          <li><strong>lindarosli2218 (KarlMobel, ESCALATED 20/5 09:02)</strong> &mdash; Carry-over monitor from 18/5 (Sofia committed Sun to assign P1C, customer provided phone 0193567098 + self-pickup from Kuala Selangor). Mon 13:01 customer follow-up &ldquo;sy nk buat terus siap..sbb sy dtg dari kuala selangor&rdquo; got bot template only. Tue 19/5 window deadline missed. <strong>Today 20/5 09:02 customer escalated</strong> &ldquo;kenapa xde chat sy???&rdquo; + &ldquo;boleh repair ke x&rdquo; &mdash; bot template only, no agent reply. <em>Action: URGENT &mdash; Lucy/Sofia chat customer NOW, apologize, arrange pickup/repair for RM326.29 Hoverboard.</em></li>
+          <li><strong>lindarosli2218 (KarlMobel)</strong>: audit said ESCALATED unactioned &rarr; user confirmed <strong>CS already replied</strong>. RM326.29 Hoverboard handoff in progress per CS.</li>
+          <li><strong>70zslpel2ka84irq_oc430e71jz8 (ValueSnap)</strong>: audit said return-address unconfirmed &rarr; user confirmed <strong>replied with sticker</strong> (audit missed sticker ack).</li>
+          <li><strong>lieyafauzee (das.nature2)</strong>: audit said image-only unaddressed &rarr; user confirmed <strong>already replied</strong>.</li>
+          <li><strong>janiechaeeun (MurahYa HIGH RM216.82)</strong>: real status &mdash; customer requested R/R then <strong>customer no reply</strong>. Not a CS miss. Monitor only; no follow-up CS action needed unless customer returns.</li>
+          <li><strong>natasyaha89 (MurahYa HIGH)</strong>: audit said refund+image silent &rarr; user response: "Already broken and got reply already, why u didn't check?" &rarr; <strong>CS already replied, audit explicitly missed an in-panel reply</strong>.</li>
+          <li><strong>zackzickry (MurahYa MED)</strong>: audit said unactioned &rarr; <strong>already done</strong>.</li>
+          <li><strong>khalid01 (MurahYa MED Adelmar X Evo bag)</strong>: audit said unactioned &rarr; <strong>already replied, no issue</strong>.</li>
+          <li><strong>nabilnana12 (Emas Gift LOW container)</strong>: audit said unactioned &rarr; <strong>already replied, no issue</strong>.</li>
+          <li><strong>psksu35 (MurahYa LOW printer)</strong>: audit said unactioned &rarr; <strong>already replied, no issue</strong>.</li>
         </ul>
       </div>
       <div class="field"><strong>Carry-over status (10 from 18/5 backfill + 2 monitor):</strong>
         <ul>
           <li>RESOLVED in-window (4): hockpor (Lucy SIRIM Mon 14:50), jenhashim (Lucy 19/5 12:05 charging time), syu010317 (closed Mon evening), eymeymeym (Sofia 19/5 15:40 courier rearranged for pickup).</li>
           <li>Already-closed pre-window (3): hassanabdulrahman992, adi7348, aobazw2eei.</li>
-          <li>NOT ACTIONED IN-WINDOW (6): janiechaeeun (MurahYa HIGH RM216.82 R/R, last 18/5 15:52), natasyaha89 (MurahYa HIGH refund + image 12+h, last 18/5 15:53), zackzickry (MurahYa MED same-day, last 18/5 16:44), khalid01 (MurahYa MED Adelmar X Evo bag, last 18/5 15:55), nabilnana12 (Emas Gift LOW container in, last 18/5 16:00), psksu35 (MurahYa LOW printer 1.5L bottle, last 18/5 16:01). <strong>4 days untouched.</strong></li>
-          <li>ESCALATED TODAY (1): lindarosli2218 (see above).</li>
+          <li>RETRACTED post-user-check (6): janiechaeeun (customer-side), natasyaha89, zackzickry, khalid01, nabilnana12, psksu35 &mdash; all replied per user.</li>
+          <li>ESCALATED-then-RETRACTED (1): lindarosli2218 &mdash; CS already replied per user.</li>
         </ul>
       </div>
-      <div class="field"><strong>Awareness items (low confidence, image-only customer messages):</strong> faisal_fouzi (cs3 post-delivery scooter received), yapangela (cs3 image after order, fulfilled next day), amnisyam96 (cs3 Lucy answered original Q pre-window, follow-up content unclear), airinsharliza76 (cs4 pre-window Friday image, in-window Mon 21:51 silent rejoin/close), hapiji96 (cs1 generic packing reply to specific color-match request &mdash; PARTIAL not MISS).</div>
-      <div class="field"><strong>Patterns:</strong> Strong substantive engagement on cs1/cs2/cs3/cs5 (Sofia/Lucy/Haja). cs4 MurahYa backlog persists &mdash; 6 of 8 backfill carry-overs untouched 4 days later &mdash; Patricia/CS-lead escalation needed. cs3 monitor neglect (lindarosli2218) caused today's escalation. Bot SLA templates correctly applied to urgency Qs per Q3 rule (no over-flagging).</div>
-      <div class="field"><strong>Methodology:</strong> React state FORCE SCROLL-LOAD (&ge;5-iter height stable, stop before 17/5 00:00). BATCH JS CLICK METHOD (15-20 per batch, 20s pauses). Full-panel <code>innerText</code> extraction. MANDATORY DEEP-VERIFY PROTOCOL via search-box re-open on all candidates. 4-Q filter (substantive reply / customer self-retract / bot SLA to urgency / pre-window) applied to every flagged chat. 0 CAPTCHA encountered. cs4 first load required 18s wait for lazy-load.</div>
+      <div class="field"><strong>Root cause of false positives (HARD lesson saved):</strong> chataudit "MANDATORY DEEP-VERIFY PROTOCOL via search-box re-open" was supposed to catch existing replies but did not on 20/5. Likely causes: (a) sticker replies not detected by text-based reply check; (b) React virtualized message panel only showed partial scroll buffer at time of capture; (c) carry-over flags from 18/5 not re-verified against current panel state before being included in today's report. Saved to memory file <code>feedback_chataudit_verify_each_flag_against_live_state.md</code>: pre-publish sweep must re-search each candidate buyer and read latest panel one more time before report writes; flag only if last panel message is customer AND no agent reply/sticker exists.</div>
+      <div class="field"><strong>Patterns (revised):</strong> Strong substantive engagement on ALL 5 accounts (cs1 Sofia/cs2 Sofia/cs3 Lucy/cs4 Haja/cs5 Patricia). 0 real CS misses today. Bot SLA templates correctly applied. Audit precision rate today: 0/9 (audit was over-flagging). Real false-negative rate: TBD (would need user to spot any actual misses the audit didn't flag).</div>
+      <div class="field"><strong>Methodology:</strong> React state FORCE SCROLL-LOAD (&ge;5-iter height stable, stop before 17/5 00:00). BATCH JS CLICK METHOD (15-20 per batch, 20s pauses). Full-panel <code>innerText</code> extraction. MANDATORY DEEP-VERIFY PROTOCOL via search-box re-open on all candidates. 4-Q filter (substantive reply / customer self-retract / bot SLA to urgency / pre-window) applied to every flagged chat. 0 CAPTCHA encountered. cs4 first load required 18s wait for lazy-load. <strong>GAP: protocol did not detect sticker replies + did not re-verify carry-overs against current panel state &mdash; needs hardening per HARD memory rule.</strong></div>
       <div class="field"><strong>Files:</strong> Per-account reports + master summary at <code>C:\Users\tessf\Documents\chataudit-reports\chataudit-cs[1-5]-Wed-20-5.md</code> + <code>chataudit-summary-Wed-20-5.md</code>.</div>
-      <div class="field"><strong>Result:</strong> warn &mdash; 3 in-window misses (1 urgent today-escalation) + 6 backfill carry-over still unactioned across cs4 MurahYa. Audit methodology 100% compliant (385/385 deep-reviewed); the warn is from operational CS-side gaps that need same-day action, not from audit gaps.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 0 real CS misses today (all 9 initial flags retracted after user manual verification). Audit methodology compliance 385/385 deep-reviewed, but precision rate was 0/9 on flags &mdash; HARD lesson saved on detection gap (sticker replies, carry-over re-verification, React virtualization). User feedback: "u are wasting my time to check 1 by 1" &mdash; will fix in next run.</div>
     </div>
   </div>
 
@@ -2044,13 +2050,13 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; FOLLOW-UP half complete (34/34 carry-over re-queried, 3 WINs booked, 1 P0 outcome confirmed, 23 PATCHes 100&percnt; HTTP 200, 0 NEW losses surfaced, 6 SLA actions queued for CS TODAY including 1 expiring in ~1.5h). NEW half snapshot via 19/5 AI-SUGGEST batch with 26 HV/VHV + 9 FD requiring CS dispute action. Audit will be re-verified by mandatory tiktokrrauditcheck next.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-05-20" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
+  <div class="entry" data-date="2026-05-20" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked, 1 shop with new activity (KEDAI GARDEN auto-cancelled SPayLater), 0 actively shipping (20/5)</span>
-      <span class="entry-meta">2026-05-20 09:30 MYT &middot; Shopee MY 27 shops &middot; SiteGiant ShopeeMY 18 channels &middot; gap 9 unchanged &middot; 1 NEW order on garden.mall (Cancelled auto by Shopee, PHASE 4.5 monitor-only) &middot; 0 To Ship + 0 Shipping across all 9 unlinked &middot; state.json write BLOCKED by permission gate (fallback: intended values listed below)</span>
+      <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked, 1 shop with new activity (KEDAI GARDEN auto-cancelled SPayLater), 0 actively shipping (20/5) &mdash; state.json PATCHED post-run</span>
+      <span class="entry-meta">2026-05-20 09:30 MYT &middot; Shopee MY 27 shops &middot; SiteGiant ShopeeMY 18 channels &middot; gap 9 unchanged &middot; 1 NEW order on garden.mall (Cancelled auto by Shopee, PHASE 4.5 monitor-only) &middot; 0 To Ship + 0 Shipping across all 9 unlinked &middot; state.json updated 20/5 PM: lastSeenOrderId.garden.mall 260514C6H83XTG &rarr; 260517N1MUJ9Y9 + lastRunTime + perShop_2026_05_20 written; tomorrow's run will not false-flag</span>
       <span class="tag">sg-gap-monitor</span>
-      <span class="tag result-warn">Partial</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Read-only daily diff of Shopee MY shops vs SiteGiant ShopeeMY channels on profile 70 (kmall:patricia). Per-shop activity scan via <code>/api/selleraccount/subaccount/get_sig/?target_shop_id=&lt;X&gt;</code> followed by All/To Ship/Shipping tab reads. Gap unchanged at 9 since 13/5 baseline. 1 NEW order surfaced on KEDAI GARDEN since 18/5 14:30 state &mdash; verified Cancelled auto by Shopee, no stock decrement needed.</p>
