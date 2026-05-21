@@ -1848,6 +1848,33 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-21" data-shops="Karlmobel, Murahya, ValueSnap, Hiranai, das.nature, das.nature2, MasonGym, TT DasNature, TT Hiranai, Laz MurahYa, Kinata SG, DasNatureSG2" data-platform="Shopee MY + Shopee SG + TikTok MY + Lazada MY + SiteGiant" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation &mdash; 21/5 AM run: 202 cases (open 169), 4 overnight bot-fires verified, 13 PATCHes from 20/5 intact, watchlist HCS-SILVER-TYPE-B holding 0/0 OOS (21/5)</span>
+      <span class="entry-meta">2026-05-21 09:55 MYT &middot; total 202 (+4 vs 20/5) &middot; open 169 (MY 130 / SG 8 / TT 26 / Laz 5) &middot; A-BOT_OK 89 / H-adjusted 16 / F-canc 18 &middot; 0 SG SA-# this run &middot; 0 webapp PATCH this run &middot; 3 approvals pending &middot; TT-side cancel verification STILL blocked by API 98001004 for 101031+101038</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily 09:30 MYT checksbvariation audit. Fetched <code>/api/sb-variation</code> on profile 70 (k1b44nvg / Kmall:Patricia). 202 cases total (+4 since 20/5 AM). Verified all 13 PATCHes from 20/5 afternoon session still intact in API response. Verified 4 yesterday-not-fired bot cases (101063/101062/101061/101060) all fired overnight (contactSent=true + stockSetOos=true). Re-checked watchlist WL-2026-05-20-001 HCS-SILVER-TYPE-B on SiteGiant &mdash; still SoH=0 Sellable=0 Out Of Stock (no bounce-back; TT 101031 order still uncancelled per webapp). Re-checked TS-SLIPPER-9CM-WHT-36-37 on SiteGiant for 101049 Hiranai Accept Change &mdash; alt has SoH=9 Sellable=9 Available (-1 deduct feasible). Surfaced 3 approval-required action items to Patricia.</p>
+      <div class="field"><strong>Before &rarr; After values (PATCHes / SG SAs):</strong> None this run &mdash; 0 webapp PATCH, 0 SiteGiant SA-# created. Read-only audit + report generation only.</div>
+      <div class="field"><strong>Carry-over verified (20/5):</strong> 4 bot-not-fired cases now A-BOT_OK (101063 FAMILY-STOOL-PACK das.nature2, 101062 FAMILY-STOOL-PACK das.nature2, 101061 CAMPING-SOFT-MAT-BLACK-V2 das.nature2, 101060 CS-FOREST-GREEN-HIGH das.nature). 13 PATCHes intact: 260503EMUFCRRQ Karlmobel SA-18247 Adjusted / 260505JMYF7CP6 Murahya SA-18248 Adjusted / 260516JEAQTFNG ValueSnap SA-18249 Adjusted / 260516HSXNFXN4 ValueSnap SA-18249 Adjusted / 2605116390JU84 Karlmobel SA-18250 csR set / 2605115U68SS33 Karlmobel SA-18250 csR set / 260516HCDU8THW Karlmobel SA-18255 Cancelled terminal / 260514DHSDJ2HC Hiranai SA-18257 Cancelled terminal / 260515E4CFGK1S Hiranai SA-18255 awaiting buyer / 260516HH5FJ7FE das.nature2 SA-18255 awaiting buyer / 260514CUDJ9CPX Murahya SA-18257 awaiting buyer / 260513ASBVTGWP Murahya SA-18257+SA-18285 awaiting buyer / 260518PR5YV77U das.nature2 SA-18258 awaiting buyer.</div>
+      <div class="field"><strong>NEW today (created 20/5 MYT, all bot-OK awaiting buyer):</strong> 260519SM0XEUWU das.nature HCS-SILVER-TYPE-B Offer Change; 260520UG36E2HN ValueSnap TRAMPOLINE-UPGRADE-YELLOW Offer Change; 260519TB5M3FA8 das.nature2 CS-GREEN-HIGH No Stock; 260518QFWAJ5FC Murahya ADLMR-BLK Offer Change; 260519R22H370A ValueSnap 13-FILM-GALAXY-PROJECTOR-BLK-WHT Offer Change. No action this run (monitor).</div>
+      <div class="field"><strong>Approvals pending (presented to Patricia in chat):</strong>
+        <ul>
+          <li>Order 260517MXBAM8Q2 (Hiranai, Shopee MY) &mdash; Accept Change OOS TS-SLIPPER-9CM-KHAKI-36-37 &rarr; alt TS-SLIPPER-9CM-WHT-36-37 (SG SoH 9, Sellable 9 Available). Action: SG -1 + Step B PATCH stockAdjustmentStatus Adjusted + stockId. <em>Awaiting Patricia approval to execute.</em></li>
+          <li>Order 584104634091275501 (TT Hiranai, TikTok MY) &mdash; sku=[] productName=null. Action: lookup product on profile 56, send TT_NO_STOCK template via TT chat. <em>Awaiting Patricia per-run authorization.</em></li>
+          <li>Order 503529409153157 (Laz MurahYa, Lazada MY) &mdash; sku=[] productName=null. Action: lookup product on profile 81, send LAZADA_NO_STOCK template via Lazada IM. <em>Awaiting Patricia per-run authorization.</em></li>
+        </ul>
+      </div>
+      <div class="field"><strong>P0 still blocked (TT-side cancel verification):</strong> Order 584031450634225615 TT DasNature HCS-SILVER &rarr; HCS-SILVER-TYPE-B (auto-cancel deadline was 20/5 23:59 MYT) and Order 584021378866120508 TT DasNature CTP-SVER-2.3M-2PC-BG (deadline 19/5 23:59 LAPSED). Both webapp <code>buyerDecision=null</code>. Scripted TT POST /api/v1/reverse/component/orders/list still blocked by API 98001004 (signature header requirement). Workaround: manual Seller-Center inspection on profile 55 still required. Watchlist WL-2026-05-20-001 status preserved.</div>
+      <div class="field"><strong>Stale bucket:</strong> 142 cases &gt;5d not surfaced in chat (count only per HARD RULE 20/5 recency filter). Saved in full report file at <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-05-21.md</code>.</div>
+      <div class="field"><strong>State.json write:</strong> BLOCKED by permission gate (same class as sg-gap-monitor). Run-summary preserved in report file under "Run state (state.json target)" block. Next-run idempotency unaffected (skill re-classifies live each run).</div>
+      <div class="field"><strong>Reason:</strong> Scheduled daily 09:30 MYT audit per skill spec. No customer-facing sends executed (per HARD RULE 5 &mdash; require per-run Patricia authorization). No SG stock adjustments executed (per HARD RULE 9 &mdash; require explicit "adjust stock X to N" command).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; carry-over fully verified, 4 overnight bot-fires confirmed, 13 PATCHes intact, watchlist holding, 3 approval items + 2 TT-side blocked items surfaced for next action. 0 PATCHes / 0 SAs this run.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-21" data-shops="FynnKoffer, KEDAI GARDEN, Stationarylah, Atlusrack, Gameniture, Chairsy, dutchgaming, Flashree, Solaree" data-platform="Shopee MY + SiteGiant" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
