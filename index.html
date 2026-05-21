@@ -1848,6 +1848,76 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-21" data-shops="Luxbin" data-platform="Shopee MY" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">csrrcredited + csrrcreditedcheck &mdash; Shipping Fee Reimbursement leg detection added (skill patch, no DB writes) (21/5)</span>
+      <span class="entry-meta">2026-05-21 MYT &middot; bug surfaced via 260425NQ4GM32Y Luxbin (refund RM 42.30, bot Credited 13/5 on +RM 9.30 type-406 = shipping leg only, missed product comp; user opened new dispute 2057335135231721485 today) &middot; skill files patched: Step 3.5 SHIPPING_ONLY_PARTIAL classifier + Step 6a gate + Step 7 reverse-audit + Error 8 entry + checklist updates &middot; csrrcreditedcheck CHECK 1 verdict matrix row + auto-revert path + Error 3 entry &middot; HARD memory saved &middot; backfill scan to run next csrrcreditedcheck cycle</span>
+      <span class="tag">csrrcredited</span>
+      <span class="tag">csrrcreditedcheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User raised that wallet "Wallet Adjustment due to Shipping Fee Reimbursement" tagline means only the shipping leg credited &mdash; product comp is a separate 2nd adjustment. Asked if csrrcredited could detect and NOT close as Credited. Confirmed gap, ran live probe on 260425NQ4GM32Y to find exact wallet JSON field, patched both skills.</p>
+      <div class="field"><strong>Canonical case (live probe 21/5 PM):</strong>
+        <ul>
+          <li>Order 260425NQ4GM32Y &mdash; shop Luxbin (shop_id 741350502) &mdash; refund_amount RM 42.30</li>
+          <li>Txn 1: type 102 amount -14.84 (1/5) &mdash; refund out to buyer, reason="" empty</li>
+          <li>Txn 2: type 406 amount +9.30 (11/5) &mdash; <code>reason="Wallet Adjustment due to Shipping Fee Reimbursement | Order ID 260425NQ4GM32Y"</code></li>
+          <li>NET = -14.84 + 9.30 = <strong>-RM 5.54</strong> (real loss). Bot saw +9.30 alone &rarr; flipped Credited 13/5 with remark "SPX courier comp credited"</li>
+          <li>User caught 21/5 &rarr; opened new dispute case 2057335135231721485 &rarr; remark "need to open case, credited shiipping fee only, compensation for item not credited yet"</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Wallet API field reference (confirmed live 21/5):</strong>
+        <ul>
+          <li>Memo field name = <code>reason</code> (NOT description, NOT comment, NOT txn_type_desc)</li>
+          <li>Memo format on MY wallet = <code>"Wallet Adjustment due to &lt;CATEGORY&gt; | Order ID &lt;ORDER_SN&gt;"</code></li>
+          <li>Categories observed in 21/5 sample: <code>Shipping Fee Reimbursement</code> (shipping leg &mdash; bug trigger), <code>Damaged Item</code> (real product comp &check;)</li>
+          <li>SHIPPING_REASON_RX = <code>/shipping fee reimbursement|return shipping (fee|cost|reimburs)|refund of shipping|courier (fee|cost) (refund|reimburs)/i</code></li>
+        </ul>
+      </div>
+      <div class="field"><strong>Changes to csrrcredited.md (before &rarr; after):</strong>
+        <ul>
+          <li>Step 3 "Wallet Verification": added MANDATORY capture of <code>reason</code> field on every txn (was: amount + type only)</li>
+          <li>NEW Step 3.5 "SHIPPING_ONLY_PARTIAL classifier": 4-bucket decision table (SHIPPING_ONLY_PARTIAL / FULL_WIN / PARTIAL_WIN / LOSS_OR_CLAWBACK) gated on SHIPPING_REASON_RX + NET vs refund_amount_rm comparison &mdash; canonical bug example baked in</li>
+          <li>Step 4 "Update DB": split single "Wallet confirmed &rarr; Credited" path into 4 outcome paths matching the new buckets &mdash; SHIPPING_ONLY_PARTIAL stays Pending with &#9203; remark</li>
+          <li>Step 6a "MANDATORY R/R-API sweep": "positive adj &rarr; WIN auto-flip" replaced with "CANDIDATE WIN &mdash; gate through Step 3.5 first; only flip Credited when non-shipping positive txn AND NET &ge; refund_amount_rm"</li>
+          <li>Step 7 "Reverse-Audit Credited": added SHIPPING_REASON_RX check on positives &mdash; ALL-shipping AND NET &lt; refund &rarr; PREMATURE_CREDITED_SHIPPING_ONLY retract to Pending</li>
+          <li>NEW Error 8 entry: full root-cause + fix log of the 260425NQ4GM32Y case (Luxbin)</li>
+          <li>Checklist: 3 new boxes (capture reason / run SHIPPING_REASON_RX / compare NET vs refund_amount)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Changes to csrrcreditedcheck.md (before &rarr; after):</strong>
+        <ul>
+          <li>CHECK 1 interpretation table: added SHIPPING_ONLY_PARTIAL row (ALL positive reasons match RX AND NET &lt; refund) &amp; PARTIAL_WIN row; NET_POSITIVE now requires "non-shipping reason present AND NET &ge; refund_amount"</li>
+          <li>Verdict matrix: added "marked Credited + SHIPPING_ONLY_PARTIAL &rarr; AUTO-REVERT to Pending" row + "reopened/Pending + SHIPPING_ONLY_PARTIAL &rarr; &check; confirm" row</li>
+          <li>NEW Error 3 entry: root cause + fix log for 260425NQ4GM32Y (crosscheck 13/5 mis-CONFIRMED the same flip)</li>
+          <li>Notes section: explicit "Shipping Fee Reimbursement on its own &ne; win" rule</li>
+          <li>Checklist: 2 new boxes (inspect reason field / NET &ge; refund + non-shipping reason required)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Memory + index:</strong> Wrote <code>feedback_csrr_shipping_only_partial_detection.md</code> (full rule + why + how-to-apply + cross-skill scope + memory backlinks) &middot; added one-line entry to <code>MEMORY.md</code> index above 21/5 canceled-sweep entry.</div>
+      <div class="field"><strong>Live probe ops (no DB writes this session):</strong>
+        <ul>
+          <li>AdsPower profile 70 (k1b44nvg) already connected &rarr; reused</li>
+          <li>Webapp GET /api/new-parcel-claims/260425NQ4GM32Y (via in-page fetch, webapp MCP 401) &rarr; identified shop=Luxbin, refund_amount=42.30, current credited_to_wallet=Yes/Closed</li>
+          <li>get_sig?target_shop_id=741350502 (Luxbin) &rarr; navigated sig URL &rarr; SPC_CDS active</li>
+          <li>POST /api/v4/seller/local_wallet/get_wallet_transactions {wallet_provider:0, order_sn:'260425NQ4GM32Y'} &rarr; 2 txns confirmed shipping memo &rarr; field name = reason</li>
+          <li>Secondary sweep on Luxbin + MurahYa for 30-90d type-406 memo enumeration &rarr; API capped at 20 txns/call; collected 1 additional category ("Damaged Item") &rarr; regex finalised based on observed shipping pattern + 3 anticipated synonyms</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Cross-skill implications (not patched this session, flagged for follow-up):</strong>
+        <ul>
+          <li>tiktokrraudit &mdash; TT has analogous "Return Shipping Refund" vs product comp split &mdash; same memo-aware classifier needed next iteration</li>
+          <li>parcelclaim-auto + parcelclaim-1..4 &mdash; ingest cases but don't flip Credited; lower risk but worth memo-aware AI-SUGGEST v0.2 enrichment</li>
+          <li>incomewalletcheck &mdash; reads same wallet types; verify it doesn't double-count shipping reimbursement as income</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Reason for changes:</strong> User flagged real customer escalation pattern &mdash; the 260425NQ4GM32Y Luxbin case is a live financial loss masked by a Credited flag, and user explicitly asked "anything I missed". Patch closes the root-cause gap (no memo field inspection) instead of bandaging individual cases. Backfill scan on next csrrcreditedcheck run will surface the historical impact.</div>
+      <div class="field"><strong>Backfill plan (next csrrcreditedcheck run):</strong> Apply new CHECK 1 SHIPPING_ONLY_PARTIAL rule to rolling 7-day Bucket B (Credited rows updated 14&ndash;21 May) &mdash; expected to surface multiple PREMATURE Credited flips for retroactive reopen + remark. Estimated 5&ndash;15% of 379 Credited rows likely affected. 260425NQ4GM32Y itself: leave Closed/Credited as-is per existing remark trail (user has already opened follow-up dispute 2057335135231721485) &mdash; will be re-evaluated at next sweep.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; both skill files patched, memory saved, board logged. No DB writes this session (skill-design change, not a sweep). Backfill scan deferred to next csrrcreditedcheck cycle.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-21" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -1909,7 +1979,11 @@ header.page::after{
       <div class="field"><strong>State:</strong> state.json updated &mdash; last_run=2026-05-21T11:45+08:00, seen +2 (C1820/C1821), run_history +1 entry, verified_seller_ids refreshed for 6 alive profiles + retained for 7 stale.</div>
       <div class="field"><strong>Reason for run:</strong> Daily scheduled obligation (manual invocation today per user request). Continues 28/4-19/5 cadence.</div>
       <div class="field"><strong>Operator handoff (CORRECTED + COMPLETED):</strong> All 7 sessions verified alive (no re-login needed). Skill classifier patched. Backfill re-run completed for 55/56/58/60/61/65/66 &mdash; 3 NEW POSTs (C1822/C1823/C1824) RM 78.56 recovered. Tomorrow's 09:45 auto-run will use the patched classifier and should produce zero 98001004-driven false-positives.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; AM run 2 POSTs + PM backfill 3 POSTs = 5 POSTs HTTP 200 / 0 errors / 0 dupes-as-NEW. RM 506.95 total recovered for the day. Skill classifier patched, ERROR LOG appended, HARD memory saved. Report at C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-05-21.md</div>
+      <div class="field"><strong>CANCEL-SWEEP (21/5 PM, user-triggered):</strong> User flagged 584108612183622817 + 584096701972645696 as CANCELED orders leaked into webapp Pending. Root cause: 20/5 09:45 AM bot ran BEFORE the Request-closed filter (added 20/5 PM), and even that filter doesn't catch order-level cancellations (those show as <code>reverseType: 4</code> + empty status_block, because TT auto-resolves the R/R when the order is canceled). DISCOVERY: <code>POST /api/fulfillment/order/list?fp=&lt;fp&gt;&amp;aid=4068</code> with <code>search_condition.condition_list.main_order_id.value=[oids]</code> (chunks &le;30) returns <code>order_status_module[0].main_order_status</code>. Codes: 102=shipping, 103=delivered, <strong>104=Canceled</strong>. SCOPE (3 alive TT shops): TT MurahYa 65/77 = 84% noise &middot; TT KarlMobel 41/46 = 89% &middot; TT Jager 5/8 = 63% &middot; <strong>Total 111/131 (85%) Pending = CANCELED. RM 20,030.99 nominal flipped to Withdrawn &mdash; ZERO actual loss (no parcel ever shipped).</strong></div>
+      <div class="field"><strong>PATCH executed (111 cases, HTTP 200, 0 failures):</strong> Per case &mdash; (a) prepend remark <code>[[CANCEL-ORDER 21/5 &mdash; TT order_status=104. Order canceled before shipment. No parcel, no refund out. Auto-flip Pending&rarr;Withdrawn.]]</code> + (b) <code>PATCH /api/new-parcel-claims-tiktok</code> with <code>type:'refund_state'</code>, <code>value:'Withdrawn'</code>. Before: refund_state=Pending. After: refund_state=Withdrawn. 85 PATCHes completed before Patricia profile 70 auto-redirected mid-run; remaining 26 done via fresh <code>open-new-page</code>. Webapp Pending: 156 &rarr; 45 (111 dropped). Spot-check confirmed: C1808 (584108612183622817) Pending&rarr;Withdrawn ✅ &middot; C1810 (584096701972645696) Pending&rarr;Withdrawn ✅.</div>
+      <div class="field"><strong>Cancel-sweep SKIPPED (login_expired on 21/5):</strong> Profiles 54 Adelmar (1 Pending) / 55 DasNature (5) / 56 Hiranai (10) / 58 HiranaiMY (3) / 60 JagerArmor (0) / 61 JagerSafety (1) / 65 Valuesnap (4) / 66 JagerHelmet (1) &mdash; ~25 cancellations queued for 22/5 once operator restores sessions. Same procedure: batch-query manage-orders API, drop main_order_status=104.</div>
+      <div class="field"><strong>Skill patch #2 (cancel filter, 21/5 PM):</strong> Added PHASE 1 step 5b to <code>parcelclaim-auto.md</code> &mdash; pre-flight batch call to <code>/api/fulfillment/order/list</code>; drop cards where <code>main_order_status === 104</code>. Fallback heuristic when fp unobtainable: drop <code>reverseType === 4 &amp;&amp; status === null</code>. Field map updated (102/103/104 enum). Report PHASE 6 template adds "Canceled-order (skipped): N" counter. ERROR LOG appended. Memory: <code>feedback_skip_canceled_order_rr.md</code> (HARD) + <code>project_session_may21_canceled_sweep.md</code> (handoff). Tomorrow's 09:45 run uses new filter &mdash; expected 70-85% intake drop on alive shops.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; AM run 2 POSTs + PM backfill 3 POSTs + PM cancel-sweep 111 PATCHes = 116 HTTP 200 ops / 0 errors. RM 506.95 NEW recovered + RM 20,030.99 nominal cleared from Pending. Two skill patches (98001004 classifier + cancel-order filter). Two HARD memory rules saved. Two ERROR LOG entries appended.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-21" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Luxbin, Lovento MY, MurahYa, JagerHelmet, Emas Gift, Kinata SG, ValueSnap SG" data-platform="Shopee MY + Shopee SG" data-result="ok">
