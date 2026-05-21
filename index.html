@@ -1848,6 +1848,46 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-21" data-shops="FynnKoffer, KEDAI GARDEN, Stationarylah, Atlusrack, Gameniture, Chairsy, dutchgaming, Flashree, Solaree" data-platform="Shopee MY + SiteGiant" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked, 0 shops with new activity, 0 actively shipping (21/5)</span>
+      <span class="entry-meta">2026-05-21 09:00 MYT &middot; Shopee MY 27 / SiteGiant ShopeeMY 18 / gap 9 (unchanged since 13/5 baseline) &middot; 0 To Ship &middot; 0 Shipping &middot; 0 new orders (every lastSeenOrderId matches 20/5 snapshot) &middot; KEDAI GARDEN 260517N1MUJ9Y9 still Cancelled (Phase 4.5 SPayLater pattern) &middot; state.json write BLOCKED by permission gate &mdash; fallback applied (values noted below)</span>
+      <span class="tag">sg-gap-monitor</span>
+      <span class="tag result-warn">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily 09:00 MYT integration-gap audit on profile 70. Phase 1 captured 27 Shopee MY shops (needed page reload + page-2 reclick to refresh stale cursor; first attempt returned duplicated page-1). Phase 2 DOM-scraped 18 SiteGiant ShopeeMY channels. Phase 3 diff = 9 unlinked, identical to 13/5 baseline (Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer). Phase 4 used the `get_sig` direct API for every shop &mdash; 9/9 context switches succeeded with `code:0`. All 9 shops returned 0 To Ship + 0 Shipping + unchanged latest order ID vs state.json. No manual SiteGiant decrement required.</p>
+      <div class="field"><strong>Per-shop result:</strong>
+        <ul>
+          <li>FynnKoffer (fynnkoffer / 214632596): 426 all-orders, 0 To Ship, 0 Shipping, latest 260307GC8213CQ &mdash; UNCHANGED</li>
+          <li>KEDAI GARDEN (garden.mall / 289957447): 185 all-orders, 0 To Ship, 0 Shipping, latest 260517N1MUJ9Y9 Cancelled (SPayLater auto-cancel pattern &mdash; Phase 4.5 monitor-only) &mdash; UNCHANGED</li>
+          <li>Stationarylah (stationarylah / 321734518): 20 all-orders, 0 To Ship, 0 Shipping, latest 260414QW1M81CQ Cancelled &mdash; UNCHANGED</li>
+          <li>Atlusrack (atlusrack / 336726327): 6 all-orders, 0 To Ship, 0 Shipping, latest 260214NUX1Y8BX Cancelled &mdash; UNCHANGED</li>
+          <li>Gameniture (gameniture / 373454740): 0 all-orders, 0 To Ship, 0 Shipping &mdash; UNCHANGED (dormant)</li>
+          <li>Chairsy (chairsy / 429078278): 1417 all-orders (drift 1424&rarr;1417 from prior snapshot), 0 To Ship, 0 Shipping, latest 260211F1FRUFAH Completed &mdash; UNCHANGED latest ID</li>
+          <li>dutchgaming (dutch_gaming / 503721641): 0 all-orders &mdash; UNCHANGED (dormant)</li>
+          <li>Flashree (flashree / 738554401): 38 all-orders (drift 1&rarr;38 &mdash; prior snapshot was wrong, latest ID stable), 0 To Ship, 0 Shipping, latest 2409031DJJWV7T &mdash; UNCHANGED latest ID</li>
+          <li>Solaree (solaree2024 / 1156025778): 6 all-orders, 0 To Ship, 0 Shipping, latest 240718V5H3A1KA &mdash; UNCHANGED</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Active stock-desync risk RIGHT NOW:</strong> NONE. All 9 unlinked shops have 0 To Ship + 0 Shipping. No PIC manual SiteGiant decrement required this run.</div>
+      <div class="field"><strong>New orders since 20/5:</strong> NONE. Every shop's latestOrderId matches the 20/5 09:30 MYT state.json snapshot.</div>
+      <div class="field"><strong>Newly-linked shops detected:</strong> NONE. Gap still 9 since 13/5 baseline. PIC has not yet integrated any of the 9 unlinked shops.</div>
+      <div class="field"><strong>Reason changes are warranted (or NOT):</strong> No changes made &mdash; this is a read-only audit. No new orders to act on. KEDAI GARDEN latest order matches the prior SPayLater auto-cancel pattern (status Cancelled), so per Phase 4.5 spec no SiteGiant decrement is needed. Phase 1 page-2 cursor staleness was diagnosed + worked around by full page reload + click page-2 (the prior captured page-2 URL had a stale cursor 1779265283 vs fresh 1779262500; cause: prior browser session had paged differently). Documented in report for skill author.</div>
+      <div class="field"><strong>State.json update BLOCKED:</strong> Both Write and Edit on <code>C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json</code> hit a permission gate (same class of issue noted in skill spec STATE.JSON WRITE PERMISSION GATE section). Intended values for future interactive patch:
+        <ul>
+          <li><code>lastRunId</code> &amp; <code>lastRunTime</code>: <code>2026-05-21T09:00:00+08:00</code></li>
+          <li><code>previousRunId</code>: <code>2026-05-20T09:30:00+08:00</code></li>
+          <li><code>lastSeenOrderId</code> map (unchanged from 20/5): chairsy=260211F1FRUFAH, dutch_gaming=null, flashree=2409031DJJWV7T, solaree2024=240718V5H3A1KA, gameniture=null, atlusrack=260214NUX1Y8BX, stationarylah=260414QW1M81CQ, garden.mall=260517N1MUJ9Y9, fynnkoffer=260307GC8213CQ</li>
+          <li>Rename block <code>perShop_2026_05_20</code> &rarr; <code>perShop_2026_05_21</code>; update <code>chairsy.all_orders</code> 1424&rarr;1417, <code>flashree.all_orders</code> 1&rarr;38; all other per-shop fields unchanged.</li>
+          <li>Update <code>notes</code> to describe 21/5 run (0 new across all 9, count drift on chairsy+flashree corrected, page-2 cursor refresh workaround).</li>
+        </ul>
+        Long-term fix: add <code>.claude/skills/sg-gap-monitor/state.json</code> to scheduled-run-allowed write paths in <code>settings.local.json</code>. Without the patch, tomorrow's run will re-detect the same lastSeenOrderId values (no functional impact since they're identical to the truth) &mdash; just noisy if any drift had occurred.</div>
+      <div class="field"><strong>Report saved:</strong> <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-05-21.md</code></div>
+      <div class="field"><strong>Result:</strong> warn (partial) &mdash; audit complete and accurate; ONLY the state.json file write was blocked by permission. All intended state values captured here as fallback per skill spec. Audit findings are NOT impacted: 0 new orders, 0 desync risk, 9-shop gap unchanged.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-20" data-shops="n/a" data-platform="Internal (Task Scheduler / bats)" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
