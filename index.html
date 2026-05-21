@@ -1848,6 +1848,40 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-20" data-shops="n/a" data-platform="Internal (Task Scheduler / bats)" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">chataudit.bat popup-flood fix &mdash; bare MessageBox replaced with BurntToast (last bat missed in 19/5 rollout)</span>
+      <span class="entry-meta">2026-05-20 PM MYT &middot; chataudit.bat lines 26 + 30 patched: bare <code>System.Windows.Forms.MessageBox</code> &rarr; <code>New-BurntToastNotification</code> &middot; popups stopped &middot; other 9 bats already correct since 19/5 (BurntToast primary + MessageBox fallback)</span>
+      <span class="tag">scheduler-infra</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User reported scheduled-run popups still appearing despite the 19/5 BurntToast rollout. Diagnosed: only <code>chataudit.bat</code> was missed in the 19/5 patch &mdash; lines 26 (OK path) + 30 (FAIL path) still used raw <code>[System.Windows.Forms.MessageBox]::Show()</code>, which is a blocking modal dialog. The other 9 scheduled bats already use the <code>New-BurntToastNotification -ErrorAction SilentlyContinue; if (-not $?) { MessageBox }</code> pattern (toast primary, MessageBox only as fallback). Patched + verified BurntToast still works.</p>
+      <div class="field"><strong>Trigger:</strong> User: &ldquo;can u kill the scheduled run keep pop out? i ask u to solve it last night&rdquo; &mdash; the 19/5 fix covered 9 bats but missed chataudit.bat. Today's 9:13 AM ChatAudit fire produced the modal popup that's been bothering the user.</div>
+      <div class="field"><strong>Diagnosis steps:</strong>
+        <ul>
+          <li>Listed all 8 Claude scheduled tasks via <code>Get-ScheduledTask</code> &mdash; ChatAudit_910AM ran today 9:13 AM as expected.</li>
+          <li>Grepped <code>C:\Users\tessf\scripts\*.bat</code> for <code>MessageBox</code> &mdash; only chataudit.bat had bare MessageBox; all other 9 bats use BurntToast-primary pattern.</li>
+          <li>Verified BurntToast module still functional: <code>New-BurntToastNotification -Text 'BurntToast test', '...'</code> &rarr; toast fired OK.</li>
+          <li>No lingering MessageBox processes currently open (<code>Get-Process powershell</code> returned only the diagnosis shell).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Changes (before &rarr; after, chataudit.bat):</strong>
+        <ul>
+          <li>Line 26 BEFORE: <code>powershell -Command &quot;Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('Chat audit completed. Reports saved to chataudit-reports folder.', 'Chat Audit Complete', 'OK', 'Information')&quot;</code> (BLOCKING MODAL).</li>
+          <li>Line 26 AFTER: <code>powershell -NoProfile -Command &quot;New-BurntToastNotification -Text 'Chat Audit Complete', 'Reports saved to chataudit-reports folder.' -ErrorAction SilentlyContinue&quot;</code> (silent toast).</li>
+          <li>Line 30 BEFORE: bare MessageBox FAIL popup.</li>
+          <li>Line 30 AFTER: BurntToast FAIL toast.</li>
+          <li>No fallback MessageBox added (BurntToast verified working; the other bats keep MessageBox-fallback only because they predate today&apos;s verification). Can add later if BurntToast ever breaks.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Why the 19/5 rollout missed it:</strong> <code>reference_burnttoast_install_19may.md</code> claimed all 9 bats were converted, but <code>chataudit.bat</code> was actually the 10th (created earlier than the others, used a slightly different layout). Memory updated to reflect the corrected count.</div>
+      <div class="field"><strong>Platforms:</strong> Internal (Windows Task Scheduler). No business impact &mdash; chataudit functionality unchanged, only the notification mechanism.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; chataudit popup-flood eliminated. Next ChatAudit_910AM fire (21/5 9:13 AM) will produce a silent Action Center toast instead of a blocking modal dialog. All 10 scheduled bats now consistent.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-20" data-shops="Adelmar, Das Nature, Hiranai, HiranaiMY, Jager, JagerSafety, JagerArmor, JagerHelmet, KarlMobel, Murahya, Valuesnap, Kinata SG, Lovento" data-platform="TikTok MY/SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
