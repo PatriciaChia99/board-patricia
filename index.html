@@ -1848,13 +1848,16 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
-  <div class="entry" data-date="2026-05-21" data-shops="Luxbin" data-platform="Shopee MY" data-result="ok">
+  <div class="entry" data-date="2026-05-21" data-shops="Luxbin, MurahYa, KarlMobel, Hiranai" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">csrrcredited + csrrcreditedcheck &mdash; Shipping Fee Reimbursement leg detection added (skill patch, no DB writes) (21/5)</span>
-      <span class="entry-meta">2026-05-21 MYT &middot; bug surfaced via 260425NQ4GM32Y Luxbin (refund RM 42.30, bot Credited 13/5 on +RM 9.30 type-406 = shipping leg only, missed product comp; user opened new dispute 2057335135231721485 today) &middot; skill files patched: Step 3.5 SHIPPING_ONLY_PARTIAL classifier + Step 6a gate + Step 7 reverse-audit + Error 8 entry + checklist updates &middot; csrrcreditedcheck CHECK 1 verdict matrix row + auto-revert path + Error 3 entry &middot; HARD memory saved &middot; backfill scan to run next csrrcreditedcheck cycle</span>
+      <span class="entry-title">csrrcredited + csrrcreditedcheck &mdash; Shipping Fee Reimbursement leg detection + 413-case backfill: 13 PREMATURE Credited retracted RM 779.97 NET shortfall (21/5)</span>
+      <span class="entry-meta">2026-05-21 MYT &middot; bug surfaced via 260425NQ4GM32Y Luxbin (refund RM 42.30, bot Credited 13/5 on +RM 9.30 type-406 = shipping leg only, missed product comp; user opened new dispute 2057335135231721485 today) &middot; skill files patched: csrrcredited Step 3.5 SHIPPING_ONLY_PARTIAL + Step 6a gate + Step 7 reverse-audit + Error 8 + checklist &middot; csrrcreditedcheck CHECK 1 verdict matrix + auto-revert + Error 3 &middot; tiktokrraudit + parcelclaim-auto + incomewalletcheck preventative NOTEs &middot; HARD memory saved &middot; **BACKFILL: 413 Credited cases swept across 11 shops, 14 flags, 13 actionable (C14924 excluded since user already opened follow-up), 13/13 reopened to Pending HTTP 200, 13/13 reconciled credited_to_wallet=Pending + remark present**</span>
       <span class="tag">csrrcredited</span>
       <span class="tag">csrrcreditedcheck</span>
+      <span class="tag">tiktokrraudit</span>
+      <span class="tag">incomewalletcheck</span>
+      <span class="tag">parcelclaim-auto</span>
       <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
@@ -1914,8 +1917,41 @@ header.page::after{
         </ul>
       </div>
       <div class="field"><strong>Reason for changes:</strong> User flagged real customer escalation pattern &mdash; the 260425NQ4GM32Y Luxbin case is a live financial loss masked by a Credited flag, and user explicitly asked "anything I missed". Patch closes the root-cause gap (no memo field inspection) instead of bandaging individual cases. Backfill scan on next csrrcreditedcheck run will surface the historical impact.</div>
-      <div class="field"><strong>Backfill plan (next csrrcreditedcheck run):</strong> Apply new CHECK 1 SHIPPING_ONLY_PARTIAL rule to rolling 7-day Bucket B (Credited rows updated 14&ndash;21 May) &mdash; expected to surface multiple PREMATURE Credited flips for retroactive reopen + remark. Estimated 5&ndash;15% of 379 Credited rows likely affected. 260425NQ4GM32Y itself: leave Closed/Credited as-is per existing remark trail (user has already opened follow-up dispute 2057335135231721485) &mdash; will be re-evaluated at next sweep.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; both skill files patched, memory saved, board logged. No DB writes this session (skill-design change, not a sweep). Backfill scan deferred to next csrrcreditedcheck cycle.</div>
+      <div class="field"><strong>Backfill scan (executed same session, full coverage all 11 MY shops):</strong>
+        <ul>
+          <li>Pulled 453 Credited cases from /api/new-parcel-claims (refund_state=Credited), normalised shop-name case variants, dropped zero-refund cases &rarr; 413 in-scope cases swept</li>
+          <li>Per-shop wallet sweep via get_sig bridge from seller.shopee.sg &rarr; navigate to MY sig URL &rarr; loop direct order_sn wallet lookup &rarr; apply SHIPPING_REASON_RX to positive txns &rarr; flag when ALL positives are shipping AND NET &lt; refund_amount</li>
+          <li>Per-shop hit count: Luxbin 2/25 &middot; MurahYa 3/104 &middot; KarlMobel 3/111 &middot; ValueSnap 0/52 &middot; Hiranai <strong>6/40 (highest density)</strong> &middot; das.nature2 0/35 &middot; BahEmas 0/17 &middot; MasonGym 0/11 &middot; Emas Gift 0/13 &middot; Lovento MY 0/3 &middot; das.nature 0/2 &mdash; total <strong>14 flags / 413 swept = 3.4% hit rate</strong></li>
+          <li>Endpoint discovery: status flip Credited&rarr;Pending uses <code>PATCH /api/new-parcel-claims {order_id, type:'reopen_case', value:''}</code> (HTTP 200, webapp auto-sets credited_to_wallet=Pending + action=WAIT_SHOPEE). The naive <code>type:'update_status' value:'Pending'</code> returns 400 &mdash; reopen_case is the canonical reverse. Confirmed via test on C16127 before bulk apply</li>
+        </ul>
+      </div>
+      <div class="field"><strong>13 PREMATURE Credited cases retracted (Credited &rarr; Pending, both PATCHes HTTP 200, all reconciled):</strong>
+        <ul>
+          <li>C16072 / <code>2603241KT0WBJ0</code> Luxbin RM 128.43 &mdash; shipping +20.00 / NET -0.35 / shortfall RM 128.78</li>
+          <li>C16057 / <code>2603265VJSJYM7</code> MurahYa RM 61.70 &mdash; shipping +18.34 / NET 0 / shortfall RM 61.70</li>
+          <li>C16189 / <code>260328BTEGAPFU</code> MurahYa RM 13.63 &mdash; shipping +10.38 / NET 0 / shortfall RM 13.63</li>
+          <li>C16155 / <code>260328BABU99VR</code> MurahYa RM 246.82 &mdash; shipping +20.00 / NET +16.23 / shortfall RM 230.59 (biggest)</li>
+          <li>C16127 / <code>260325264YK88A</code> KarlMobel RM 18.27 &mdash; shipping +5.19 / NET 0 / shortfall RM 18.27</li>
+          <li>C16068 / <code>2603254CVAAXVW</code> KarlMobel RM 202.62 &mdash; shipping +12.72 / NET 0 / shortfall RM 202.62</li>
+          <li>C16130 / <code>2603254E4HS3AP</code> KarlMobel RM 35.41 &mdash; shipping +6.68 / NET 0 / shortfall RM 35.41</li>
+          <li>C16003 / <code>260318F71FMT3C</code> Hiranai RM 16.03 &mdash; shipping +5.19 / NET 0 / shortfall RM 16.03</li>
+          <li>C16010 / <code>260319J4V9XTSG</code> Hiranai RM 22.60 &mdash; shipping +10.38 / NET 0 / shortfall RM 22.60</li>
+          <li>C16052 / <code>260319J9951HH1</code> Hiranai RM 21.58 &mdash; shipping +10.38 / NET 0 / shortfall RM 21.58</li>
+          <li>C16021 / <code>260320MR32VURT</code> Hiranai RM 10.00 &mdash; shipping +10.38 / NET 0 / shortfall RM 10.00</li>
+          <li>C16117 / <code>260328AQMGURQ9</code> Hiranai RM 6.56 &mdash; shipping +10.38 / NET 0 / shortfall RM 6.56</li>
+          <li>C16194 / <code>260331HW2AKAHX</code> Hiranai RM 12.00 &mdash; shipping +5.19 / NET 0 / shortfall RM 12.00</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Total exposure recovered for chase-rr follow-up:</strong> <strong>RM 779.97</strong> NET shortfall across 13 cases &middot; sum of refund_amount = RM 795.65 &middot; most cases are Mar/early-Apr orders (likely outside Shopee's 30-day dispute window, but flipping to Pending lets CS decide per-case whether to open new disputes or accept as bad-debt) &middot; Hiranai dominates with 6/13 flags (small-RM but high frequency) &middot; biggest single-case recovery target = C16155 MurahYa RM 230.59</div>
+      <div class="field"><strong>14th flag (excluded from retract per existing remark trail):</strong> C14924 / <code>260425NQ4GM32Y</code> Luxbin RM 42.30 &mdash; this is the canonical bug case. User already opened new dispute 2057335135231721485 manually 21/5 AM. Webapp record stays Closed/Credited as-is, will be re-evaluated by next csrrcredited run when 2nd adjustment arrives (or doesn't).</div>
+      <div class="field"><strong>Cross-skill preventative NOTEs added (no DB impact):</strong>
+        <ul>
+          <li><code>tiktokrraudit/SKILL.md</code> &mdash; added section warning that any future TT csrrcredited-analog must apply SHIPPING_REASON_RX to TT escrow adjustments. Currently no TT auto-flip exists so bug not manifesting</li>
+          <li><code>incomewalletcheck.md</code> &mdash; NOTE that Shopee `get_income_overviews` type 9 Income Total includes positive type-406 shipping reimbursements (RM 50-300/mo per active shop) &mdash; sheet reconciliation is correct as-is but "true product profit" calculation should subtract these</li>
+          <li><code>parcelclaim-auto.md</code> &mdash; NOTE that this skill is ingest-only (no Credited flip), bug doesn't manifest here, but if AI-SUGGEST classifier ever reads wallet it MUST apply the RX gate</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Result:</strong> ok &mdash; both csrrcredited skill files patched + 3 cross-skill preventative NOTEs added + memory saved + 13 PREMATURE Credited cases retracted to Pending with explanatory remarks + RM 779.97 NET shortfall surfaced for chase-rr follow-up + board logged. Original task complete.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-21" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
