@@ -1951,7 +1951,33 @@ header.page::after{
           <li><code>parcelclaim-auto.md</code> &mdash; NOTE that this skill is ingest-only (no Credited flip), bug doesn't manifest here, but if AI-SUGGEST classifier ever reads wallet it MUST apply the RX gate</li>
         </ul>
       </div>
-      <div class="field"><strong>Result:</strong> ok &mdash; both csrrcredited skill files patched + 3 cross-skill preventative NOTEs added + memory saved + 13 PREMATURE Credited cases retracted to Pending with explanatory remarks + RM 779.97 NET shortfall surfaced for chase-rr follow-up + board logged. Original task complete.</div>
+      <div class="field"><strong>SG sweep (added 21/5 PM, full coverage):</strong>
+        <ul>
+          <li>SG endpoint discovery: <code>/api/new-parcel-claims-sg?limit=2000</code> returns 205 SG cases (29 Credited across 8 shops). Webapp endpoint authed only on profile 70 cookies (.awesomeree.com.my domain), NOT profile 84/53 Shopee SG sessions.</li>
+          <li>Profile 84 (k1bpp0sl HiranaiSG:main, 6 SG shops): HiranaiSG 0/1 &middot; KarlMobel SG 0/3 &middot; MurahYa SG 0/2 &middot; DasNature SG 0/1 &middot; DasNatureSG2 0/1 &middot; EmasGift SG 0/1 = <strong>9 swept, 0 flags</strong></li>
+          <li>Profile 53 (k1arw890 KinataSG dedicated): kinata SG 0/20 SHIPPING_ONLY flags, but 4 PARTIAL_WIN reviewables surfaced (different bug class &mdash; real comp received as "Damage"/"Wrong item"/"lost parcel" but NET still &lt; refund_amount). NOT auto-retracted per user scope (shipping-only only)</li>
+          <li><strong>Key finding: SG memo format DIFFERS from MY.</strong> MY uses <code>"Wallet Adjustment due to &lt;CATEGORY&gt; | Order ID &lt;sn&gt;"</code>. SG/Kinata uses <code>"(MP) Refund (Return &amp; Refund) for order &lt;sn&gt; ; &lt;CATEGORY&gt;"</code> &middot; OR <code>"(MP) This is a refund (lost parcel) for order ID &lt;sn&gt;"</code>. SHIPPING_REASON_RX covers "shipping" keyword so will catch SG shipping-only memos if/when they appear, but no SG shipping-reimbursement memos observed in this sweep</li>
+          <li>SG sweep TOTAL: <strong>29 cases, 0 shipping-only flags, 4 PARTIAL_WIN reviewables (logged for manual review, not auto-retracted)</strong>. Bug appears MY-specific in this data window.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>4 SG PARTIAL_WIN reviewables (NOT retracted, manual review):</strong>
+        <ul>
+          <li>C295039 / <code>2605019J2XN69E</code> kinata SG refund S$17.20 NET S$14.42 (S$2.78 short) &mdash; Damaged Item comp +21.55</li>
+          <li>C289454 / <code>260421C5M0K2CA</code> kinata SG refund S$6.31 NET S$3.57 (S$2.74 short) &mdash; Wrong item comp +8.14</li>
+          <li>C196775 / <code>26032536HAM67J</code> kinata SG refund S$27.99 NET S$9.53 (S$18.46 short) &mdash; Damaged Item comp +14.67 (biggest SG shortfall)</li>
+          <li>C198565 / <code>260331KA5M2XNE</code> kinata SG refund S$17.99 NET S$16.94 (S$1.05 short) &mdash; lost parcel comp +25.13</li>
+        </ul>
+      </div>
+      <div class="field"><strong>csrrcreditedcheck (independent CROSSCHECK on all 13 MY retractions):</strong>
+        <ul>
+          <li>Fresh wallet probe per case (no remark parsing) via fresh get_sig + navigate per shop &middot; Luxbin C16072 + MurahYa 3 + KarlMobel 3 + Hiranai 6 = 13/13 re-verified</li>
+          <li>Result: <strong>13/13 CONFIRMED PREMATURE_CREDITED_SHIPPING_ONLY &middot; 0 RECLASSIFIED &middot; 0 RETRACTED</strong>. Every retract-to-Pending stands.</li>
+          <li>CROSSCHECK remarks posted via PATCH /api/new-parcel-claims (13/13 HTTP 200) in canonical format: <code>"🤖 CROSSCHECK 21/5 LIVE WALLET ({shop}): {txn summary}. ALL positives match SHIPPING_REASON_RX, NET RM {N} &lt; refund_amount RM {R}. CONFIRMED PREMATURE_CREDITED_SHIPPING_ONLY → retract-to-Pending stands."</code></li>
+          <li>0 discrepancies between original sweep verdict and independent re-verify &mdash; bug is mechanical/deterministic (positive type-406 with shipping memo + NET &lt; refund), no flaky cases</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Final tally (gaps closed):</strong> 442 total Credited swept (413 MY + 29 SG) &middot; 13 actionable retractions (all MY) &middot; 13/13 reopened to Pending HTTP 200 &middot; 13/13 reconciled credited_to_wallet=Pending + ⏳ PREMATURE remark + 🤖 CROSSCHECK remark &middot; <strong>RM 779.97 NET shortfall</strong> surfaced for chase-rr follow-up &middot; 4 SG PARTIAL_WIN reviewables surfaced (different bug class, S$25.03 combined shortfall &mdash; manual review queue, not retracted)</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; both csrrcredited skill files patched + 3 cross-skill preventative NOTEs added + memory saved + 442 Credited cases swept across MY + SG + 13 PREMATURE Credited retracted with explanatory remarks + 13/13 independent CROSSCHECK CONFIRMED + RM 779.97 NET shortfall surfaced + 4 SG PARTIAL_WIN flagged for manual review + board logged. All 3 user-requested gaps closed (skill patch, retraction sweep, SG coverage, independent crosscheck).</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-21" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
