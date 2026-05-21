@@ -1984,7 +1984,27 @@ header.page::after{
           <li><strong>Live-agent autonomous chase ATTEMPTED 2x but blocked by API breakage (NEW FINDING).</strong> First attempt blocked by profile 70 instability (4 disconnects). Second attempt on the correct cs4 profile k1arw4x4 (per chase-rr.md docs) hit a worse blocker: <strong>chase-rr's documented `window.CsChat.openCsChatWindow()` API NO LONGER EXISTS on Shopee MY SC</strong> as of 21/5. `CsChat` is now just a `{React, ReactDOM, ChatbotUI}` bundle object; `.shopee-cs-chat-panel` exists in DOM but `offsetParent === null` and force-show CSS doesn't override the parent-chain display:none; clicking `#shopee-cs-chat-icon-container` (the visible CS phone icon) does nothing visible. <strong>CRITICAL IMPLICATION: tomorrow's scheduled 10AM chase-rr daily run will likely fail too &mdash; chase queue will silently grow until skill is patched.</strong> HARD memory saved as <code>feedback_chase_rr_csschat_api_broken_21may.md</code>. Pivoted to drafting CHASE-PREP appeal text + posting to webapp as the higher-success-rate path (mirrors the 260425NQ4GM32Y manual appeal that worked today for user).</li>
         </ul>
       </div>
-      <div class="field"><strong>Result:</strong> ok &mdash; both csrrcredited skill files patched + 3 cross-skill preventative NOTEs added + memory saved + 442 Credited cases swept across MY + SG + 13 PREMATURE Credited retracted with explanatory remarks + 13/13 independent CROSSCHECK CONFIRMED + RM 779.97 NET shortfall surfaced + 4 SG PARTIAL_WIN flagged for manual review + 3 biggest cases prep'd for manual appeal with paste-ready argument text + 10 smaller marked as bad-debt with chase-rr SKIP signal + board logged. Open action item: Patricia to manually submit the 3 prepped appeals via Shopee R/R interface (same path as 260425NQ4GM32Y today).</div>
+      <div class="field"><strong>EOD crosscheck (21/5 final pass) &mdash; bugs found in my own patches + fixed:</strong>
+        <ul>
+          <li>Bug 1: <code>csrrcredited.md Step 7</code> originally wrote <code>set update_status: "Pending"</code> for the retract-Credited path &mdash; but that returns HTTP 400 (discovered during the 13-case backfill today). Fixed to use <code>PATCH /api/new-parcel-claims {type:'reopen_case', value:''}</code> with the documented HTTP 200 + auto-flip details.</li>
+          <li>Bug 2: <code>csrrcreditedcheck.md Step 4</code> had ambiguous <code>update_status: "Pending" (reopen_case)</code> wording &mdash; clarified to explicit <code>reopen_case</code> with the HTTP 400 warning for the naive form.</li>
+          <li>chase-rr.md: 🚨 prepended top-of-file warning that the skill's documented <code>window.CsChat.openCsChatWindow()</code> API is BROKEN as of 21/5 &mdash; daily 10AM scheduled run will silently fail until skill patched.</li>
+          <li>NEW HARD memory: <code>feedback_parcelclaim_reopen_case_endpoint.md</code> (full whitelist of supported PATCH types + reopen_case discovery).</li>
+          <li>NEW HARD memory: <code>project_session_may21_csrr_shipping_only.md</code> (full session handoff for 22/5 continuation, with P1-P6 outstanding queue).</li>
+          <li>MEMORY.md index: 2 more entries added (session handoff + reopen_case endpoint), 4 total today.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Final outstanding queue (22/5 continuation):</strong>
+        <ul>
+          <li><strong>P1 USER MANUAL action</strong> &mdash; submit 3 Shopee R/R Appeals for the 3 biggest prepped cases (RM 562 total) using CHASE-PREP text already in webapp remarks. Path: same as today's 260425NQ4GM32Y &rarr; ref 2057335135231721485.</li>
+          <li><strong>P1 chase-rr fix</strong> &mdash; daily 10AM bot will fail; either disable scheduled task OR re-derive new chat-open trigger.</li>
+          <li>P2 4 SG PARTIAL_WIN reviewables flagged for separate-bug decision (S$25.03 combined shortfall &mdash; not retracted today, out of shipping-only scope).</li>
+          <li>P3 Monitor C14924 / 260425NQ4GM32Y for 2nd adjustment (user's dispute 2057335135231721485 pending Shopee response 3-7 WD).</li>
+          <li>P4 TT + Lazada NOT scanned for equivalent pattern (preventative NOTEs only; no current bug as those skills don't auto-flip Credited).</li>
+          <li>P5 SHIPPING_REASON_RX confirmed against 1 live MY variant; expand as new variants encountered.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Result:</strong> ok &mdash; both csrrcredited skill files patched + 3 cross-skill preventative NOTEs added + chase-rr top-of-file warning + 4 HARD memories saved + 442 Credited cases swept across MY + SG + 13 PREMATURE Credited retracted with explanatory remarks + 13/13 independent CROSSCHECK CONFIRMED + RM 779.97 NET shortfall surfaced + 4 SG PARTIAL_WIN flagged for manual review + 3 biggest cases prep'd for manual appeal + 10 smaller marked as bad-debt with chase-rr SKIP signal + own-patch bugs found and fixed during EOD crosscheck + board logged. Open user action: submit 3 manual R/R appeals tomorrow.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-21" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
