@@ -1876,15 +1876,16 @@ header.page::after{
   <div class="entry" data-date="2026-05-21" data-shops="TT Adelmar, TT Jager, TT KarlMobel, TT MurahYa, TT Lovento, TT Kinata SG, Laz MurahYa, Laz das.nature, Laz Lovento" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">parcelclaim-auto &mdash; 2 NEW FD posted RM 428.39 (21/5)</span>
-      <span class="entry-meta">2026-05-21 MYT &middot; 30 collected / 28 dupes / 2 NEW &middot; 644 Request closed filtered at intake &middot; 6/13 TT alive, 7 login_expired &middot; 3/3 Lazada healthy (0 in-window) &middot; C1820 + C1821</span>
+      <span class="entry-title">parcelclaim-auto &mdash; 2 NEW FD posted RM 428.39 + 7 false-positive login_expired flags (CORRECTION 21/5)</span>
+      <span class="entry-meta">2026-05-21 MYT &middot; 30 collected / 28 dupes / 2 NEW &middot; 644 Request closed filtered at intake &middot; 6/13 paginated, 7 SKIPPED on false-positive (user-driven re-probe confirmed ALL 7 ALIVE) &middot; 3/3 Lazada healthy &middot; C1820 + C1821 &middot; backfill re-run needed</span>
       <span class="tag">parcelclaim-auto</span>
       <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Daily auto-bot run (manual, 21/5 PM). Sweeps TT Manage Returns + TT Failed Delivery across 13 TT profiles + Lazada Returns across 3 Lazada profiles. Dedupes against existing webapp records, POSTs NEW cases. Request-closed filter (v.20/5) dropped 644 buyer-cancelled R/R cards at intake — avoided downstream CS manual cleanup.</p>
       <div class="field"><strong>Mode:</strong> live</div>
-      <div class="field"><strong>Coverage:</strong> 6/13 TT profiles alive (54 Adelmar / 59 Jager / 62 KarlMobel / 63 Lovento / 64 MurahYa / 67 Kinata SG); 7 TT login_expired (55 DasNature / 56 Hiranai / 58 HiranaiMY / 60 JagerArmor / 61 JagerSafety / 65 Valuesnap / 66 JagerHelmet). 3/3 Lazada healthy (81 MurahYa / 82 das.nature / 83 Lovento).</div>
+      <div class="field"><strong>Coverage (CORRECTED 21/5 PM):</strong> 6/13 TT profiles paginated (54 Adelmar / 59 Jager / 62 KarlMobel / 63 Lovento / 64 MurahYa / 67 Kinata SG). 7 TT profiles SKIPPED on false-positive login_expired flag (55 DasNature / 56 Hiranai / 58 HiranaiMY / 60 JagerArmor / 61 JagerSafety / 65 Valuesnap / 66 JagerHelmet) &mdash; user-driven hard re-probe (open + navigate to <code>/order/return?tab=100</code> + check Seller Center shell) confirmed <strong>all 7 ALIVE</strong> with full signed-in shell rendered, 0 redirects to login. Root cause: skill mis-maps API code <code>98001004</code> ("You have filled out a field incorrectly" &mdash; signature-header block) to login_expired. Real login_expired = <code>98001002</code> / HTTP 401 / HTTP 403 / login-redirect only. 3/3 Lazada healthy (81 MurahYa / 82 das.nature / 83 Lovento).</div>
+      <div class="field"><strong>Backfill required:</strong> 7 falsely-skipped TT profiles likely contain unposted R/R + FD cases (high-volume shops like JagerArmor/ValueSnap/JagerHelmet/Hiranai not paginated today). Skill-classifier fix required before re-run.</div>
       <div class="field"><strong>Collected:</strong> 30 cases in 4-day window (15 TT R/R + 15 TT FD + 0 Lazada). Skipped 644 "Request closed" cards (buyer self-cancelled R/R) at intake per v.20/5 filter.</div>
       <div class="field"><strong>NEW POSTs (2):</strong>
         <ul>
@@ -1898,7 +1899,7 @@ header.page::after{
       <div class="field"><strong>Lazada:</strong> 81 MurahYa 401 items (most recent 2026-05-14 = pre-cutoff). 82 das.nature 6 items pre-cutoff. 83 Lovento 1 item pre-cutoff. All sessions auto-recovered without operator action.</div>
       <div class="field"><strong>State:</strong> state.json updated &mdash; last_run=2026-05-21T11:45+08:00, seen +2 (C1820/C1821), run_history +1 entry, verified_seller_ids refreshed for 6 alive profiles + retained for 7 stale.</div>
       <div class="field"><strong>Reason for run:</strong> Daily scheduled obligation (manual invocation today per user request). Continues 28/4-19/5 cadence.</div>
-      <div class="field"><strong>Operator handoff:</strong> 7 TT profiles need manual re-login before next auto-run (55, 56, 58, 60, 61, 65, 66). Open AdsPower per profile_no, navigate https://seller-my.tiktok.com/order/return?tab=100, log in. Without these, daily bot misses ~50% of TT shop coverage.</div>
+      <div class="field"><strong>Operator handoff (CORRECTED):</strong> No re-login required &mdash; all 7 sessions verified alive. Required action is to PATCH the parcelclaim-auto skill classifier so 98001004 no longer triggers login_expired bail-out (per [[feedback-parcelclaim-auto-98001004-false-positive]]), then schedule a backfill re-run for shops 55/56/58/60/61/65/66 to recover today's missed cases.</div>
       <div class="field"><strong>Result:</strong> ok &mdash; 2 POSTs HTTP 200, 0 errors, 0 false login_expired (18s+cookie+API probe held). Report at C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-05-21.md</div>
     </div>
   </div>
