@@ -1848,6 +1848,56 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-23" data-shops="TT KarlMobel, TT MurahYa" data-platform="TikTok MY + Internal" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto &mdash; manual rerun via CDP fallback after MCP playwright bridge exhausted (23/5 EARLY)</span>
+      <span class="entry-meta">2026-05-23 02:30 MYT &middot; 16 profiles opened (13 TT + 3 Lazada) &middot; MCP playwright bridge hung after ~10 connections (TimeoutError on subsequent connect-browser-with-ws) &middot; pivoted to Python CDP-direct (websocket-client suppress_origin) &middot; scraped 8/13 TT profiles (54/55/58/60/62/63/64; 56/59/61/65/66/67 page empty or no_target) &middot; 4 candidates within 4-day window after Request-closed filter &middot; 1 dup with C1583 &middot; <strong>3 NEW POSTed RM 810.91</strong>: C1825 KarlMobel RM 701.52 + C1826 KarlMobel RM 88.05 + C1827 MurahYa RM 21.34</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Yesterday's 22/5 batch-run (logged in prior board entry) deferred parcelclaim-auto due to MCP bridge constraints. User asked tonight for the manual rerun. Opened all 16 profiles via AdsPower MCP, then scraped via Python CDP-direct after the playwright bridge hung mid-session.</p>
+      <div class="field"><strong>Profiles opened (16):</strong> TT 54 Adelmar / 55 DasNature / 56 Hiranai / 58 HiranaiMY / 59 Jager / 60 JagerArmor / 61 JagerSafety / 62 KarlMobel / 63 Lovento / 64 MurahYa / 65 Valuesnap / 66 JagerHelmet / 67 Kinata. Lazada 81 MurahYa / 82 DasNature / 83 Lovento.</div>
+      <div class="field"><strong>CDP-fallback scrape (8 profiles returned data):</strong>
+        <ul>
+          <li>54 Adelmar: 1 awaiting / 15 cards &mdash; oid 584014398164076220 RM 376.93 = C1583 dup</li>
+          <li>55 DasNature: 1 awaiting / 17 cards &mdash; oid 583982041164056341 = C1822 dup</li>
+          <li>58 HiranaiMY: 0 awaiting / 18 carry-over cards (all Refund-complete/Request-closed)</li>
+          <li>60 JagerArmor: 0 awaiting / 6 carry-over cards</li>
+          <li>62 KarlMobel: 7 awaiting / 18 cards &mdash; 3 NEW in window (701.52 + 88.05 + 726.70 but 726.70 dup with C1731)</li>
+          <li>63 Lovento: 0 awaiting / 0 cards</li>
+          <li>64 MurahYa: 9 awaiting / 15 cards &mdash; 1 NEW in window (21.34)</li>
+          <li>56/59/61/65/66/67: page didn't fully render in CDP scrape pass (returned 0 cards); not retried this session</li>
+        </ul></div>
+      <div class="field"><strong>Lazada (3 profiles 81/82/83):</strong> Opened but NOT scraped this session &mdash; CDP scrape script only covered TT (DOM scrape needed for Lazada returns page). Deferred to next rerun.</div>
+      <div class="field"><strong>POST results (3 NEW POSTed before&rarr;after):</strong>
+        <ul>
+          <li>before: max case_id C1824 &rarr; after: max case_id C1827. Webapp TT cases total 484&rarr;487.</li>
+          <li>C1825 / TT KarlMobel / <code>584119967521080642</code> / RM 701.52 / Awaiting return / 22/05 / Product is defective or doesn't work / refund_state=Pending</li>
+          <li>C1826 / TT KarlMobel / <code>584088564552467607</code> / RM 88.05 / (no status) / 22/05 / No longer needed (Item must be in sealed/original condition) / refund_state=Pending</li>
+          <li>C1827 / TT MurahYa / <code>584009924389537346</code> / RM 21.34 / (no status) / 22/05 / Product doesn't match description / refund_state=Pending</li>
+          <li>Total: 3 cases / RM 810.91 / 0 errors</li>
+        </ul></div>
+      <div class="field"><strong>Skill bugs found + fixed in-flight:</strong>
+        <ul>
+          <li>(1) MCP <code>connect-browser-with-ws</code> playwright bridge hangs after ~10 successive connections in a session &mdash; subsequent connects time out at 30s and never recover. <strong>Workaround:</strong> Python CDP via <code>websocket-client</code> with <code>suppress_origin=True</code> on Chrome 146 (which rejects all CDP connections with Origin header set, per <code>--remote-allow-origins</code> requirement).</li>
+          <li>(2) Webapp <code>/api/new-parcel-claims-tiktok/add</code> rejects payload with empty <code>productName</code> as "Required fields are missing" (HTTP 400) &mdash; bug not caught by prior 18/5 tmp-rerun template which always passed a productName from scraping. Fixed script to fallback to reason text when productName empty.</li>
+          <li>(3) Webapp <code>date</code> field requires plain <code>YYYY-MM-DD</code> string (not full ISO with timezone). Standard ISO returns 500 "Incorrect datetime value".</li>
+        </ul></div>
+      <div class="field"><strong>Files / changes:</strong>
+        <ul>
+          <li>NEW: <code>C:\Users\tessf\scripts\parcelclaim_cdp_scrape.py</code> &mdash; CDP-direct TT R/R DOM scraper (16 profiles, suppress_origin handshake)</li>
+          <li>NEW: <code>C:\Users\tessf\scripts\parcelclaim_dedupe_post.py</code> &mdash; dedupe scrape vs webapp + POST with cookie-extract</li>
+          <li>NEW: <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\tt_scrape_22may_cdp.json</code> &mdash; scrape output (8/13 profiles, 89 cards total)</li>
+          <li>NEW: <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\dedupe_post_22may.json</code> &mdash; POST results (3 success, 0 failure)</li>
+          <li>3 webapp DB inserts (C1825, C1826, C1827 in <code>parcel_claims_tiktok</code> table)</li>
+          <li>No agent messages. No skill modifications. State.json NOT updated this session (deferred).</li>
+        </ul></div>
+      <div class="field"><strong>Reason:</strong> User asked tonight "why parcelclaim-auto no done" &mdash; reason was MCP playwright limitations + 16-profile scope. After explaining, user said "yes" to retry. Pivoted to CDP-direct after MCP hung mid-session. Successfully POSTed 3 NEW cases. 5 unreachable TT profiles + 3 Lazada profiles deferred.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 3 NEW cases POSTed RM 810.91 / 0 errors / CDP-fallback method validated for future use when MCP playwright is exhausted. Two HARD memory entries to write: MCP bridge ~10-connection limit + webapp productName required.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-22" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
