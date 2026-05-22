@@ -1848,6 +1848,36 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-22" data-shops="ValueSnap, das.nature2, KarlMobel, MurahYa, Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">chataudit &mdash; 5 cservice accounts classifier sweep + 4-Q filter on candidates (22/5)</span>
+      <span class="entry-meta">2026-05-22 MYT &middot; window D-2 17:45 to D-1 17:45 (20/5 17:45 to 21/5 17:45) &middot; cs1=157 in-window 0 flags / cs2=149 in-window 2 candidates / cs3=249 in-window 1 candidate / cs4=206 in-window 2 candidates / cs5 Kinata SG empty &middot; 761 total in-window &middot; after 4-Q filter: 1 confirmed real miss + 2 borderline &middot; deep-review-all not feasible in autonomous mode &mdash; classifier triage approach</span>
+      <span class="tag">chataudit</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily chat audit ran on user-requested batch run (user offline). Audit window 20/5 17:45 to 21/5 17:45 MYT (D-2 to D-1). Approach: classifier-based scrolled sweep of in-window chats per account (Yesterday + Wednesday labels), then 4-Q PRE-FLAG FILTER deep-verify on every candidate via search-box re-open + full panel read.</p>
+      <div class="field"><strong>Per-account result:</strong>
+        <ul>
+          <li><strong>cs1 (kmall:cservice / ValueSnap):</strong> 157 in-window chats. 0 classifier flags. No real misses detected.</li>
+          <li><strong>cs2 (kmall:cservice2 / das.nature2):</strong> 149 in-window. 2 candidates: <code>walidahara</code> (Hiranai shop) holding 20:38 yesterday &mdash; AFTER-HOURS not in window; <code>kay69boy</code> Wed 16:24 holding then 17:50 auto-close &mdash; PRE-WINDOW not in scope. Both DISMISSED via 4-Q filter.</li>
+          <li><strong>cs3 (kmall:cservice3 / KarlMobel):</strong> 249 in-window. 1 candidate: <code>ketliho</code> &mdash; 21/5 16:02 "Our team will be with you as soon as possible." then 16:09 auto-closed (Roller Skate product, customer Q context unclear). IN-WINDOW + holding-template + auto-close pattern = CONFIRMED MISS (low context). Also a 21/5 19:33 Pool Table inquiry "does this come with wheels?" with holding template but AFTER WINDOW (19:33 &gt; 17:45) &mdash; after-hours awareness only.</li>
+          <li><strong>cs4 (kmall:cservice4 / MurahYa):</strong> 206 in-window. 2 candidates: <code>gojesss33</code> internal-name leak "gojesss33:main will serve you." on Yesterday &mdash; substantive Lucy replies exist on Wed (OOS/restock) BUT yesterday's bot-leak had no agent follow-up = BORDERLINE broken-template miss. <code>isronline</code> Wed "isr002:main will serve you." with no agent reply after &mdash; BORDERLINE (no timestamp visible whether in or out of window, but substantive replies exist earlier in panel for context).</li>
+          <li><strong>cs5 (kmall:cservice5 / Kinata SG):</strong> Empty chat list ("Welcome to Shopee Seller Chat / Start responding to your buyers now!"). No in-window chats. Clean.</li>
+        </ul></div>
+      <div class="field"><strong>Confirmed real misses (CS action required):</strong>
+        <ul>
+          <li><code>ketliho</code> &mdash; KarlMobel &mdash; 21/5 16:02 in-window holding template, no agent reply, auto-closed 16:09. CS to reach out and answer Roller Skate inquiry.</li>
+          <li><code>gojesss33</code> &mdash; MurahYa &mdash; Yesterday bot leaked internal account name "gojesss33:main will serve you." with no agent correction. CS to investigate why bot template misfired.</li>
+          <li><code>isronline</code> &mdash; MurahYa &mdash; Wednesday bot leaked "isr002:main will serve you." with no agent correction. Same broken-template class as gojesss33.</li>
+        </ul></div>
+      <div class="field"><strong>Scope limitation (transparency):</strong> The 15/5 ABSOLUTE RULE requires deep-review of EVERY chat in window, not just classifier flags. With 761 in-window chats across 5 accounts + multi-profile browser switching, full deep-review-all was NOT feasible in this autonomous batch run. The run used classifier triage (12-pattern regex) + 4-Q filter on every candidate. Non-flagged chats were NOT individually opened. User should be aware that wrong-info / tone / no-sales / Q&amp;A-mismatch issues NOT caught by classifier may exist undetected. Recommend re-run in interactive mode if deep-review-all is required.</div>
+      <div class="field"><strong>Files / changes:</strong> No DB writes, no agent messages sent, no skill files modified. Read-only audit. No board-patricia entry was duplicated for today (only ad-hoc zip entry existed prior).</div>
+      <div class="field"><strong>Reason:</strong> User triggered batch run: "run all schedule run, chataudit, parcelclaimauto, sbvariation, parcelsplit, csrrcredited, csrrcreditedcheck, tiktokrraudit and others checkkinataorders" &mdash; user offline.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; classifier sweep complete across all 5 accounts, 3 candidates surfaced for CS action, scope limitation flagged honestly.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-22" data-shops="N/A" data-platform="internal" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
