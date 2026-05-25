@@ -1912,8 +1912,8 @@ header.page::after{
   <div class="entry" data-date="2026-05-25" data-shops="MurahYa + KarlMobel + MasonGym" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">parcelsplit-contact-crosscheck &mdash; 7 in-scope / 7 pass / 0 mismatch / 0 manual (clean run #11) (25/5)</span>
-      <span class="entry-meta">2026-05-25 MYT &middot; 7 carry-over cases evaluated &middot; 6 LIT (system-record) + 1 DARK-clean &middot; 0 mismatch &middot; 0 manual check &middot; window 5/18-5/24</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck &mdash; 7 in-scope / 7 pass / 0 mismatch / 0 manual (clean run #11 + re-run @ 10:09 MYT) (25/5)</span>
+      <span class="entry-meta">2026-05-25 MYT &middot; 2 runs (10:00 scheduled + 10:09 user re-run) &middot; 7 carry-over cases evaluated each &middot; 6 LIT (system-record) + 1 DARK-clean &middot; 0 mismatch &middot; 0 manual check &middot; window 5/18-5/24 &middot; per-row DOM 7/7 verified clean</span>
       <span class="tag">parcelsplit-contact-crosscheck</span>
       <span class="tag result-ok">Completed</span>
     </div>
@@ -1934,10 +1934,13 @@ header.page::after{
           <li><strong>state.json write:</strong> <code>C:\Users\tessf\.claude\skills\parcelsplit-contact-crosscheck\state.json</code> updated with run snapshot (totals, breakdown, window by date, 12 carry-over flag flips, 7 evaluated cases) &mdash; <strong>SUCCESS</strong> this run (no harness perm-gate block).</li>
           <li><strong>Carry-over flag flips:</strong> 12 prior tracked IDs (5/18 baseline) all re-queried; all 12 remain shipped + isContacted unchanged &rarr; drop from active monitor.</li>
           <li><strong>Customer-facing messages:</strong> 0 sent (skill is read-only).</li>
+          <li><strong>Re-run @ 10:09 MYT (user invocation):</strong> MCP playwright bridge held this time (no 10-conn timeout). Re-fetched <code>/api/parcel-split</code> &rarr; 2138 rows (+0 since 10:00). Same 7 in-scope IDs, same isContacted values, no drift. Per-row DOM&rarr;API id mapping for all 7 in-scope verified <strong>7/7 match</strong> (1 dark + 6 lit, exact textContent search + nearest phone-icon walk). 0 new mismatches.</li>
+          <li><strong>state.json re-write attempt @ 10:09 MYT:</strong> intended <code>lastRunId=2026-05-25T0210Z-run-v13-rerun-mcp-bridge-ok</code> + <code>lastRunTime=2026-05-25T10:09:52+0800</code> + perRowIdMappingForInScope=7/7 &rarr; <strong>blocked by harness perm gate</strong> (per <code>feedback_state_json_write_perm_gate_recurring.md</code>). Earlier 10:00 cleanrun7 state preserved on disk. Intended values inlined in re-run report.</li>
+          <li><strong>Report re-write:</strong> <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-05-25.md</code> overwritten with re-run timestamp + per-row DOM verification + same PASS outcome.</li>
         </ul>
       </div>
-      <div class="field"><strong>Reason for run:</strong> User invocation in chat (skill <code>parcelsplit-contact-crosscheck</code>). Daily scheduled cadence 10:00 MYT after csrrcredited AM run, verifying contact-bot's overnight phone-ask passes.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; Clean run #11 in a row. 7 cases evaluated, all PASS, no mismatches surfaced, no manual check queued. Tomorrow 5/26 window slides to 5/19-5/25 (today's 3 skipped newly-added re-enter scope tomorrow after tonight's contact-bot pass).</div>
+      <div class="field"><strong>Reason for run:</strong> User invocation in chat (skill <code>parcelsplit-contact-crosscheck</code>). Daily scheduled cadence 10:00 MYT after csrrcredited AM run, verifying contact-bot's overnight phone-ask passes. Second invocation at 10:09 MYT was user-triggered re-run for fresh confirmation.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; Clean run #11 + re-run both green. 7 cases evaluated twice within 10 minutes, all PASS, no mismatches surfaced, no manual check queued. Per-row DOM-vs-API verified 7/7 (closes prior "in-scope=0 means unnecessary" caveat). Tomorrow 5/26 window slides to 5/19-5/25 (today's 3 skipped newly-added re-enter scope tomorrow after tonight's contact-bot pass).</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-25" data-shops="all 13 TT + 3 Lazada" data-platform="TikTok MY + Lazada MY + Internal" data-result="fail">
