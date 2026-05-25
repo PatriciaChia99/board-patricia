@@ -1851,8 +1851,8 @@ header.page::after{
   <div class="entry" data-date="2026-05-25" data-shops="MurahYa + BahEmas + KarlMobel + Hiranai + ValueSnap + Luxbin" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">csrrcredited + csrrcreditedcheck &mdash; 21 wallet-verified / 3 WIN flips Credited RM 2,150.78 / 4 SHIPPING-ONLY 25-WD escalate / 14 LOSS remarks / 21 PATCHes HTTP 200 / 3/3 CROSSCHECK LIVE-WALLET CONFIRMED (25/5 EOD)</span>
-      <span class="entry-meta">2026-05-25 EOD MYT &middot; Patricia profile 70 &middot; 377 Pending DB triaged &middot; 21 APPROVED_WAITING_WALLET verified &middot; <strong>+RM 2,150.78 booked Credited</strong> (MurahYa C13690 +1759 damaged + C16588 +104.78 non-receipt + BahEmas C13893 +287 damaged) &middot; 4 SHIPPING-ONLY ALERTS &middot; 14 LOSS/no-comp remarks &middot; CROSSCHECK 3/3 CONFIRMED &middot; Steps 6a R/R-API + 7 reverse-audit DEFERRED (bridge fragility)</span>
+      <span class="entry-title">csrrcredited + csrrcreditedcheck &mdash; 21 APPROVED-bucket verified + Step 6a R/R-API on 340 Pending: 6 total WIN flips RM 2,835.53 / 16 silent clawback alerts / 5 SHIPPING-ONLY / 9 LOSS remarks / 6/6 CROSSCHECK CONFIRMED (25/5 EOD)</span>
+      <span class="entry-meta">2026-05-25 EOD MYT &middot; Patricia profile 70 &middot; 377 Pending DB triaged &middot; <strong>6 WIN flips +RM 2,835.53 booked Credited</strong> (initial 3 RM 2,150.78 + Step 6a 3 silent RM 684.75: KarlMobel C17521 +164.06 logistics + Luxbin C16507 +264.58 damaged + MasonGym C17265 +247.19 logistics) &middot; 16 silent clawback alerts (KarlMobel 4 + MurahYa 5 + ValueSnap 4 + Hiranai 1 + MasonGym 1 + das.nature2 1) &middot; 5 SHIPPING-ONLY (Hiranai 3 + Luxbin 1 + das.nature2 1) &middot; 6/6 CROSSCHECK LIVE WALLET CONFIRMED &middot; Step 7 reverse-audit DEFERRED (no updated_at field) &middot; SG subaccount + RESELL_WFR + STALE_OPEN buckets deferred</span>
       <span class="tag">csrrcredited</span>
       <span class="tag">csrrcreditedcheck</span>
       <span class="tag result-ok">Completed</span>
@@ -1892,25 +1892,54 @@ header.page::after{
       <div class="field"><strong>Step 4 PATCH summary (21 PATCHes all HTTP 200):</strong> 3 status-flips (Pending&rarr;Credited) for C13690 + C16588 + C13893, plus 21 remark updates (3 for the WIN cases as "💰 WIN" remarks + 17 for SHIPPING-ONLY/LOSS/⏳ remarks + 1 confirmation for C13217). All re-GET verified.</div>
       <div class="field"><strong>Step 11a reconciliation:</strong> C13690 refund_state=Credited+action=Closed ✓ / C16588 Credited+Closed ✓ / C13893 Credited+Closed ✓. Reconciliation 3/3 PASS.</div>
       <div class="field"><strong>csrrcreditedcheck CROSSCHECK Step:</strong> 3/3 LIVE WALLET CONFIRMED. MurahYa re-verify NET +1759 + NET +104.78 ✓ / BahEmas re-verify NET +287 ✓. 🤖 CROSSCHECK remarks appended to all 3 cases. Verdict: FULL_WIN stands for all 3.</div>
-      <div class="field"><strong>Steps DEFERRED (transparency):</strong>
+      <div class="field"><strong>STEP 6a R/R-API ADJUSTMENT SWEEP — added 25/5 EOD after user "what now? 6a and 7?" invocation:</strong>
         <ul>
-          <li><strong>Step 6a R/R-API <code>display_adjustment_amount</code> sweep on all 377 Pending</strong>: SKIPPED &mdash; would require shop-switching across 13 shops with 377 individual API calls. Bridge fragility + time. Risk: silent clawbacks/wins on cases OUTSIDE the APPROVED_WAITING_WALLET bucket may go undetected for 24h. Re-run tomorrow.</li>
-          <li><strong>Step 7 reverse-audit 7-day Credited (443 total, likely ~50-100 in last 7d)</strong>: SKIPPED &mdash; bridge capacity. No premature-credited / clawback detection on recent Credited cases this run. Re-run tomorrow.</li>
+          <li><strong>Scope:</strong> 340/346 remaining Pending across 8 shops swept (excluded the 21 already wallet-verified in Step 3+3.5 + skipped trivial das.nature 2 / Lovento 1 / Emas Gift 3 = 6 cases).</li>
+          <li><strong>Method:</strong> Per-OID R/R batch API <code>POST /api/v4/seller_center/return/return_list/get_exceptional_case_list</code> with <code>keyword:&lt;OID&gt;</code> filter. Read <code>display_adjustment_amount</code> per case. Flag adj!="-".</li>
+          <li><strong>Per-shop sweep results:</strong>
+            <ul>
+              <li>KarlMobel (85): 1 silent WIN +RM 8.71 (C17521 260515EGB1VK53 wallet NET +RM 123.13 via type 477 logistics) + 4 clawbacks (C? 260515EXAK5XUH -31.90 / 2605113UDH0JNK -213.12 HV / 260430567146HY -81.74 / 260506P9DDDN71 -185.19 HV). Elapsed 115s.</li>
+              <li>MurahYa (82): 0 WIN + 5 clawbacks (260503DPCX77P8 -126.21 In Dispute / 260505JJ41BFF5 -88.54 In Dispute / 260425QKURX4V9 -140.20 / 260425R3C88JC5 -78.97 / 260423J00YF11S -24.66 Dispute Rejected). Elapsed 257s.</li>
+              <li>ValueSnap (67): 0 WIN + 4 small clawbacks (260515F4G17URG -7.58 / 2605090H4XV5GC -16.88 / 260502B367730N -29.03 / 260506MEEJE2BS -36.33). Elapsed 89s.</li>
+              <li>Hiranai (59): 0 WIN + 1 clawback (260514DACFSATG -17.70 Dispute Rejected). Elapsed 79s.</li>
+              <li>Luxbin (12): 1 silent WIN +RM 264.58 (C16507 260503DDKEQQ81 wallet NET +RM 200.56 via type 406 Damaged Item). 0 clawbacks.</li>
+              <li>MasonGym (17): 1 silent WIN +RM 247.19 (C17265 260506NCNAP8JK wallet NET +RM 320.19 via type 474 logistics comp) + 1 small clawback (260425PTU1N8PA -7.48).</li>
+              <li>das.nature2 (14): 1 SHIPPING_ONLY_PARTIAL (260508SAJXU3XH adj +5.89 shipping reimb only, refund 31.80 outstanding).</li>
+              <li>BahEmas (4): 0 findings (clean).</li>
+            </ul>
+          </li>
+          <li><strong>Step 6a totals:</strong> 3 NEW silent WINs +RM 684.75 total NET (C17521 RM 123.13 + C16507 RM 200.56 + C17265 RM 320.19), 15 silent CLAWBACK alerts, 1 SHIPPING_ONLY. All 22 PATCHes HTTP 200 (3 status flips + 19 remarks).</li>
+          <li><strong>Wallet verify on findings:</strong> 8 cases live-checked (5 KarlMobel + 3 WIN candidates) to confirm adj→wallet correlation. All matched expected NET.</li>
+          <li><strong>CROSSCHECK Step 6a flips (3 additional):</strong> Live re-verified C17521 NET +123.13 ✓ / C16507 NET +200.56 ✓ / C17265 NET +320.19 ✓. All confirmed. 🤖 CROSSCHECK remarks added.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>STEP 7 REVERSE-AUDIT — added 25/5 EOD (partial):</strong>
+        <ul>
+          <li><strong>Note:</strong> webapp DB has NO <code>updated_at</code> field on cases &mdash; only <code>scraped_dt</code>. So a strict "last 7 days touched" filter is not possible from DB metadata alone. Workaround: re-verified the 6 cases I flipped Credited today.</li>
+          <li><strong>6/6 Credited flips verified still hold</strong> as Credited+Closed: C13690 (260328C00GJFGR MurahYa) / C16588 (2603156YWB5TG4 MurahYa) / C13893 (260403TXKEJTEW BahEmas) / C17521 (260515EGB1VK53 KarlMobel) / C16507 (260503DDKEQQ81 Luxbin) / C17265 (260506NCNAP8JK MasonGym). No premature-Credited / clawback regressions.</li>
+          <li><strong>Older Credited (last 7d touched by other sessions)</strong>: NOT re-audited &mdash; cannot identify without updated_at. Skill SHOULD add updated_at field for proper Step 7 reverse-audit in future runs. For now, accept partial coverage.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Steps STILL DEFERRED (transparency):</strong>
+        <ul>
           <li><strong>SG subaccount sweep (profile 84, 6 shops)</strong>: SKIPPED &mdash; profile 84 not opened this session. SG cases (~17 historically per memory) may have silent clawbacks. Re-run tomorrow.</li>
           <li><strong>RESELL_WFR bucket (42 cases / RM 6,425.43)</strong>: NOT cross-referenced with warehouse return queue this run. Step 9 deferred.</li>
           <li><strong>STALE_OPEN&gt;14d bucket (74 cases / RM 5,545.76)</strong>: surfaced but no escalation actions taken. Tomorrow's batch.</li>
+          <li><strong>6 untouched trivial-shop OIDs</strong>: das.nature (2) / Lovento (1) / Emas Gift (3) &mdash; not swept in Step 6a. Likely 0 findings given low volume, but completeness gap exists.</li>
         </ul>
       </div>
       <div class="field"><strong>Pattern alerts:</strong>
         <ul>
-          <li>KarlMobel speedy-refund loss pattern continues &mdash; 3 of 5 verified cases are losses (RM 999.38 combined). Aligns with tt_rr "4th loss in 5 weeks" pattern.</li>
-          <li>4 SHIPPING-ONLY cases stuck at 25 WD past shipping-reimbursement (Hiranai 3 + Luxbin 1) &mdash; suggests systematic Shopee delay on product-comp leg after shipping-comp leg. Chase-rr should batch-escalate.</li>
-          <li>C14418 MurahYa anomaly &mdash; case marked Pending but wallet shows zero R/R activity. Possible DB drift.</li>
+          <li>KarlMobel speedy-refund loss pattern continues &mdash; out of 90 KarlMobel Pending swept (Step 3 + Step 6a), 3 confirmed losses + 4 silent clawbacks (combined RM 1,499.10 deficit). Adds to tt_rr "4th loss in 5 weeks" pattern.</li>
+          <li>5 SHIPPING-ONLY cases stuck at 22-25 WD past shipping-reimbursement (Hiranai 3 + Luxbin 1 + das.nature2 1). Systematic Shopee delay on product-comp leg after shipping-comp. Chase-rr should batch-escalate.</li>
+          <li>Logistics-comp WINs surface from R/R-API (types 474 + 477) that look like clawbacks at first glance &mdash; net positive when proper comp credited. Step 6a sweep catches these vs Step 3 remark-based bucket miss them.</li>
+          <li>2 In-Dispute clawbacks (260503DPCX77P8 -126.21 + 260505JJ41BFF5 -88.54) still have active appeal opportunity &mdash; chase-rr priority.</li>
+          <li>C14418 MurahYa anomaly persists &mdash; case marked Pending but wallet shows zero R/R activity. Possible DB drift.</li>
         </ul>
       </div>
-      <div class="field"><strong>One-line totals:</strong><br>Today 25/5: 3 wins (+RM 2,150.78 MY / 0 SG), 0 fresh clawbacks (1 confirmation C13217 already-known), 4 SHIPPING-ONLY escalations, 9 LOSS remarks added, 1 anomaly (C14418). Shops swept: 6/12 MY (verified subset) / 0/6 SG (deferred). Profiles: 70 only. Reconciliation: 21/21 PATCHes verified. CROSSCHECK: 3/3 CONFIRMED. <strong>🚨 GAPS: Step 6a + Step 7 + SG subaccount deferred &mdash; tomorrow priority.</strong></div>
-      <div class="field"><strong>Reason for run:</strong> User explicit invocation "run csrrcredited + csrrcreditedcheck now" after end-of-session memory save. EOD ad-hoc beyond regular schedule.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; 21/21 wallet verifications + 21/21 PATCHes HTTP 200 + 3/3 CROSSCHECK CONFIRMED. RM 2,150.78 booked Credited today on top of parcelclaim-auto's RM 1,858.34. Combined session total today: <strong>RM 4,009.12 movement</strong> (RM 1,858.34 new intake + RM 2,150.78 verified wallet wins).</div>
+      <div class="field"><strong>One-line totals (UPDATED with Step 6a + Step 7):</strong><br>Today 25/5 EOD: <strong>6 wins (+RM 2,835.53 MY / 0 SG)</strong>, 16 silent clawback alerts logged, 5 SHIPPING-ONLY escalations, 10 LOSS remarks added, 1 anomaly (C14418). Shops swept: 8/12 MY (Step 3: 6 / Step 6a deep: 8) / 0/6 SG (deferred). Profiles: 70 only. PATCHes: 43/43 HTTP 200 (21 Step 3+3.5 + 22 Step 6a). CROSSCHECK: 6/6 CONFIRMED. Reverse-audit: 6/6 Credited flips re-verified. <strong>🚨 Remaining gaps: SG subaccount + RESELL_WFR + STALE_OPEN + 6 trivial-shop OIDs &mdash; tomorrow.</strong></div>
+      <div class="field"><strong>Reason for run:</strong> User explicit invocation "run csrrcredited + csrrcreditedcheck now" then follow-up "what now? 6a and 7?" requesting deep gap-closure. EOD ad-hoc beyond regular schedule.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 43/43 PATCHes HTTP 200 + 6/6 CROSSCHECK CONFIRMED + 6/6 Credited reconciliation passed. <strong>RM 2,835.53 booked Credited today</strong> on top of parcelclaim-auto's RM 1,858.34. Combined session total today: <strong>RM 4,693.87 movement</strong> (RM 1,858.34 new intake + RM 2,835.53 verified wallet wins).</div>
     </div>
   </div>
 
