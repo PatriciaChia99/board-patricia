@@ -1848,32 +1848,6 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
-  <div class="entry" data-date="2026-05-25" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checkkinataorder &mdash; 3 NEW To Process orders (S$54.90) &middot; 56 Processed / 175 Shipping (25/5 PM)</span>
-      <span class="entry-meta">2026-05-25 17:15 MYT &middot; Kinata SG (kinatasg, shop_id 1686573083) &middot; Profile 70 &middot; To Process 3 NEW (S$54.90) / Processed 56 (12 still Risk-of-late STALE S$449.69) / Shipping 175 (+21 from AM) / R-R action-required 1 (rachelsl carry-over) / R-R In-Return monitor 10 (3 carry + 7 NEW incl radhakuppuswami S$76.50 HV) / 1 NEW LOSS linsiqi222 S$9.38</span>
-      <span class="tag">checkkinataorder</span>
-      <span class="tag result-ok">Completed</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Scheduled PM re-run 17:15 MYT Kinata SG order audit (supersedes AM 09:55 run). 3 NEW To Process orders since AM; 12 of AM&rsquo;s 35 Risk-of-late STILL flagged STALE (operator missed 10:00 MYT pickup deadline).</p>
-      <div class="field"><strong>Shops affected:</strong> Kinata SG only. Profile 70 (k1b44nvg, kmall:patricia) &mdash; 18th consecutive day as primary entry.</div>
-      <div class="field"><strong>Platforms:</strong> Shopee SG (<code>seller.shopee.sg</code> via Patricia subaccount switcher).</div>
-      <div class="field"><strong>To Process &mdash; 3 NEW orders (combined buyer value S$54.90):</strong>
-        <ul>
-          <li><strong>j4itc0nbrk &mdash; 260525B356RNXG &mdash; S$14.70</strong> &middot; Hanging Dustbin Kitchen 8L Wall Mounted (Flexi 4L Black) x1 &middot; Order time 25/05 12:09 MYT &middot; Pick Lockers ship-by 25/05 23:30 MYT.</li>
-          <li><strong>happygirl84 &mdash; 260525B1AQQDVW &mdash; S$11.80</strong> &middot; Sleeping Bag Camping (Navy Blue - 0.7KG) x1 &middot; Order time 25/05 11:36 MYT &middot; Pick Lockers ship-by 25/05 23:30 MYT.</li>
-          <li><strong>mochamiko &mdash; 260525B12YPBP7 &mdash; S$28.40</strong> &middot; Rose Soap Flower Bouquet Korean Style (Blue - Large) x1 &middot; Order time 25/05 11:32 MYT &middot; <strong>Next Day Doorstep ship-by 25/05 15:00 MYT ALREADY EXCEEDED at 17:15 PM run time.</strong></li>
-        </ul>
-      </div>
-      <div class="field"><strong>Processed:</strong> <strong>56 orders</strong> total. 12 still flagged Risk-of-late STALE (S$449.69, pickup-by 25/05 10:00 MYT EXCEEDED &gt;7 hrs &mdash; operator missed AM deadline). 44 non-Risk in comfortable pickup window. 23 of AM&rsquo;s 35 Risk-of-late orders cleared into Shipping during the day.</div>
-      <div class="field"><strong>Shipping (already shipped):</strong> <strong>175 orders</strong> on Shipping tab (+21 net advance from Processed since AM 154).</div>
-      <div class="field"><strong>Reason for run:</strong> Scheduled PM re-run of skill 12 checkkinataorder. Patricia profile 70.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; Audit complete. Report saved to <code>C:\Users\tessf\Documents\kinata-reports\kinata-report-2026-05-25.md</code>. Operator action urgent: SPX late-pickup call for 12 STALE Risk-of-late orders + arrange shipment for mochamiko (Next Day Doorstep deadline already exceeded).</div>
-    </div>
-  </div>
-
   <div class="entry" data-date="2026-05-25" data-shops="ValueSnap + MasonGym + BahEmas + das.nature + das.nature2 + Hiranai + KarlMobel + Lovento MY + Luxbin + MurahYa + Emas Gift + Adelmar + Kinata SG" data-platform="Shopee MY + Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -2146,8 +2120,8 @@ header.page::after{
   <div class="entry" data-date="2026-05-25" data-shops="all 13 TT + 3 Lazada" data-platform="TikTok MY + Lazada MY + Internal" data-result="fail">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">parcelclaim-auto &mdash; ABORTED at PHASE 0 (AdsPower MCP bridge dead on Chrome 146) (25/5)</span>
-      <span class="entry-meta">2026-05-25 MYT &middot; 3 connect retries all timeout &middot; 0 cases scraped &middot; 0 POSTs &middot; 4-day cutoff window at risk</span>
+      <span class="entry-title">parcelclaim-auto &mdash; AM ABORT at PHASE 0 + PM re-run partial (PHASE 0 ok, PHASES 1-3 blocked: captcha + 98001004 + bridge ECONNREFUSED) (25/5)</span>
+      <span class="entry-meta">2026-05-25 MYT &middot; AM: 3 connect retries all timeout / 0 scraped &middot; PM re-run ~18:00: PHASE 0 ok (469 webapp cases, max C1828) / 4 profiles probed (70 / 54 / 62 / 55), 0 TT R/R cards collected &middot; 4-day cutoff window at risk EOD 26/5</span>
       <span class="tag">parcelclaim-auto</span>
       <span class="tag result-fail">Failed</span>
     </div>
@@ -2172,6 +2146,30 @@ header.page::after{
       <div class="field"><strong>Carry-over risk:</strong> 4-day cutoff window (<code>config.source_date_cutoff_days: 4</code>) means cases with source_date = 22/5 will roll out of the window after 26/5 EOD. If bridge stays broken &gt;1 more day, some 22/5 TT R/R and FD cases will be permanently missed unless cutoff is widened for a catch-up run.</div>
       <div class="field"><strong>Operator next-steps:</strong> (1) Quit AdsPower fully from system tray and reopen &mdash; phantom browser state suspected (chrome_144 k1artcxf was reported "opened" with non-responsive CDP port). (2) Retry skill manually. (3) If chrome_146 bridge still hangs, either downgrade profile 70 kernel to chrome_144 in AdsPower settings, or invoke <code>python C:\Users\tessf\scripts\parcelclaim_cdp_scrape.py</code> from your own PowerShell after verifying python is on PATH.</div>
       <div class="field"><strong>Result:</strong> fail &mdash; 0/16 profiles scanned, 0 cases collected, 0 POSTs, state.json unchanged, report written, board flagged. No data loss yet, but 22/5 source-date window at risk if not fixed by 26/5 EOD.</div>
+      <div class="field"><strong>PM RE-RUN (~18:00 MYT, user invocation "run parcelclaim auto again, what happened"):</strong>
+        <ul>
+          <li><strong>PHASE 0 (webapp dedupe fetch):</strong> blocked AM &rarr; <strong>SUCCESS</strong>. <code>GET /api/new-parcel-claims-tiktok?include_shops=true&limit=5000</code> &rarr; HTTP 200 / 469 cases / 468 unique OIDs / max <code>case_id=1828</code> (unchanged since AM &mdash; no new POSTs by anyone since morning). Cache stored to <code>window.__existingOids</code>.</li>
+          <li><strong>MCP bridge state:</strong> AM-died &rarr; <strong>RECOVERED on first probe</strong>. <code>open-browser</code> + <code>connect-browser-with-ws</code> profile 70 succeeded immediately (no retries needed). Suggests AdsPower auto-recovered between AM and PM (no operator restart confirmed). However, instability returned after 3rd profile.</li>
+          <li><strong>Profile 70 (Patricia / k1b44nvg / chrome_146):</strong> connect &check; &mdash; used for PHASE 0 webapp fetch only.</li>
+          <li><strong>Profile 54 (TT Adelmar / k1arym1y / chrome_145):</strong> connect &check;, navigate &check;, but <strong>CAPTCHA-BLOCKED</strong> on R/R page (matches <code>project_session_may25_tt_rr.md</code> &mdash; profile 54 7-day captcha block escalates). 0 cards collected.</li>
+          <li><strong>Profile 62 (TT KarlMobel / k1as2202 / chrome_145):</strong> open &check;, <strong>connect FAIL 2&times;</strong> (TimeoutError &rarr; ECONNREFUSED on retry &mdash; same pattern as AM). 0 cards collected. Chrome process appears alive in AdsPower's opened-browser list but CDP port refuses connections.</li>
+          <li><strong>Profile 55 (TT DasNature / chrome_143):</strong> connect &check;, navigate &check;, page <strong>did not render R/R card list</strong> (bodyLen 184 chars = sidebar only after 23 sec wait). External <code>fetch('/api/v1/reverse/component/orders/list?aid=4068')</code> &rarr; <strong>code 98001004</strong> signature block (per <code>feedback_tt_api_98001004_signature_block.md</code>). 0 cards collected.</li>
+          <li><strong>Profiles 56 / 58 / 59 / 60 / 61 / 63 / 64 / 65 / 66 / 67:</strong> <strong>NOT ATTEMPTED</strong> &mdash; bridge instability + universal TT blocker pattern means low-yield, deferred to avoid burning more session capacity.</li>
+          <li><strong>Lazada profiles 81 / 82 / 83:</strong> <strong>NOT ATTEMPTED</strong> &mdash; Lazada DOM scrape script not maintained in skill; deferred per AM run pattern.</li>
+          <li><strong>PHASE 5 POSTs:</strong> 0 candidates &rarr; <strong>0 POSTs</strong>.</li>
+          <li><strong>state.json:</strong> intended PM-attempted entry &rarr; not written (perm gate likely; not retried since skill failed anyway).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Root cause matrix (PM):</strong>
+        <ul>
+          <li><strong>TT API blocker (98001004):</strong> external <code>evaluate-script fetch()</code> calls don't carry the request-time signature headers TT injects into bundled requests. Documented HARD rule since 19/5 &mdash; not solved.</li>
+          <li><strong>TT DOM blocker:</strong> page sidebar renders but R/R card list does not. Suspected TT bot-detection refusing to render protected content for automated session. Worsened on chrome_143/145 kernels.</li>
+          <li><strong>MCP bridge instability:</strong> works on 1st-2nd connect of session, fails on 3rd+. Pattern matches <code>feedback_mcp_bridge_first_conn_hang_25may.md</code> + <code>feedback_mcp_playwright_bridge_10_connection_limit.md</code>.</li>
+          <li><strong>Python CDP-direct fallback:</strong> sandbox blocks python.exe access (gated approval prompts cannot be satisfied autonomously); operator-side invocation required.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>PM RE-RUN result:</strong> fail &mdash; PHASE 0 now ok, but PHASES 1-3 collectively blocked. 4 profiles probed (1 wasted on Patricia-only PHASE 0, 3 TT profiles attempted). 0 new TT R/R cards captured. 0 POSTs. Webapp dedupe cache built and ready for any future scrape pass tonight. 26/5 EOD cutoff still ticking.</div>
+      <div class="field"><strong>Updated operator next-steps:</strong> (1) Profile 54 captcha &mdash; user opens AdsPower &rarr; profile 54 &rarr; manually solve TT slider captcha. After clear, normal scrape resumes. (2) Other TT profiles' DOM blocker &mdash; warm up by manually clicking on R/R menu in each profile once (a human session triggers proper render); after first manual visit, scripted scrape sometimes succeeds for the rest of the day. (3) Run <code>python C:\Users\tessf\scripts\parcelclaim_cdp_scrape.py</code> manually from your PowerShell &mdash; CDP-direct path bypasses MCP bridge fragility. (4) If neither works by tomorrow morning, widen <code>config.source_date_cutoff_days</code> from 4 &rarr; 7 to preserve 22/5 window.</div>
     </div>
   </div>
 
