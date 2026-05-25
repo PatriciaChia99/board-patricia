@@ -1907,8 +1907,8 @@ header.page::after{
   <div class="entry" data-date="2026-05-25" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">checkkinataorder &mdash; AM + PM runs &middot; 39 ToP cleared / 12 Risk STALE (S$449.69) / 7 new R/R In-Return / 1 NEW LOSS S$9.38 (25/5)</span>
-      <span class="entry-meta">2026-05-25 09:55 MYT (AM) + 17:15 MYT (PM re-run) &middot; AM: CDP-direct fallback / 74 to-ship backlog (39 ToP + 35 Processed ALL Risk-of-Late) &middot; PM: MCP available / 39 AM-ToP cleared 100% / 12 of 35 Risk STILL flagged (operator missed 10:00 MYT pickup, S$449.69 stale) / 23 advanced to Shipping / 3 NEW ToP (S$54.90) / 7 NEW R/R In-Return (incl. radhakuppuswami S$76.50 HV damage) / 1 NEW LOSS linsiqi222 26052367DGM3Y6 S$9.38 seller-late-ship &middot; WhatsApp skipped (QR)</span>
+      <span class="entry-title">checkkinataorder &mdash; AM + PM + EVE runs &middot; 12 Risk STALE&rarr;0 cleared (S$449.69) / R/R action 1&rarr;3 / hypertorque RESOLVED &check; / joswen89 NEW S$31.87 (25/5)</span>
+      <span class="entry-meta">2026-05-25 09:55 (AM) + 17:15 (PM) + 19:30 (EVE) MYT &middot; AM: CDP-direct fallback / 74 to-ship backlog (39 ToP + 35 Processed ALL Risk-of-Late) &middot; PM: MCP available / 39 AM-ToP cleared 100% / 12 of 35 Risk STILL flagged (S$449.69 stale) / 3 NEW ToP / 7 NEW R/R In-Return (radhakuppuswami S$76.50 HV) / linsiqi222 S$9.38 LOSS &middot; EVE: MY session expired &rarr; SG direct nav OK / ALL 12 Risk-of-Late STALE advanced to Shipping (S$449.69 cleared) / All 3 PM ToP advanced / 5 new Processed 260525B* zero-risk / R/R Action 1&rarr;3 (sahilsehaj + kiraan11 flipped from In-Return) / hypertorque.sg S$32.85 RESOLVED &check; / joswen89 260520TH1UHVKH S$31.87 Joycon wrong item NEW In-Return &middot; WhatsApp skipped (QR)</span>
       <span class="tag">checkkinataorder</span>
       <span class="tag result-ok">Completed</span>
     </div>
@@ -1975,8 +1975,48 @@ header.page::after{
           <li><strong>P1 OPS &mdash; audit linsiqi222 26052367DGM3Y6 root cause</strong> S$9.38 seller-late-ship loss today; possible link to Risk-of-late backlog.</li>
         </ul>
       </div>
+      <div class="field"><strong>EVE RE-RUN (19:30 MYT) findings:</strong>
+        <ul>
+          <li><strong>Session path:</strong> Patricia MY session expired between PM and EVE (bounced to <code>/seller/login</code>). FALLBACK: navigated <code>seller.shopee.sg/portal/sale/order</code> directly &mdash; SG-side cookies still valid, no MY shop-switcher / get_sig needed. SPC_CDS preserved.</li>
+          <li><strong>Tab counts (PM &rarr; EVE):</strong> To Ship 59&rarr;<strong>5</strong>, To Process 3&rarr;<strong>0</strong>, Processed 56&rarr;<strong>5</strong>, Risk-of-Late 12&rarr;<strong>0</strong>, Shipping 175&rarr;<strong>235</strong> (+60 net), R/R action 1&rarr;<strong>3</strong>, R/R In-Return 10&rarr;<strong>9</strong>, R/R total 561&rarr;<strong>562</strong>.</li>
+          <li><strong>12 STALE Risk-of-Late: ALL CLEARED to Shipping</strong> &mdash; S$449.69 advanced over the afternoon/evening (weiming2k S$39.74 + missesjoanna S$27.03 + elainelow9077 S$72.52 + pyteo0910 S$13.98 + alexw33 S$49.79 + d2muyw1sky S$19.14 + koifishh S$25.41 + janessalau S$28.87 + aidanboulter S$92.61 + py8dtpooo5 S$19.14 + jiaying933 S$37.72 + ruthiebells S$23.31). Operator completed late SPX pickup.</li>
+          <li><strong>3 PM new To-Process: ALL ADVANCED to Shipping</strong> &mdash; j4itc0nbrk 260525B356RNXG S$14.70 + happygirl84 260525B1AQQDVW S$11.80 + mochamiko 260525B12YPBP7 S$28.40 (despite Next Day Doorstep 15:00 deadline being past at PM scrape, still shipped by EVE).</li>
+          <li><strong>5 new Processed orders this evening</strong> (S$101.75 combined, all 260525B* IDs, zero Risk-of-Late):
+            <ul>
+              <li>misliahmansor 260525BFAYUMY6 S$9.49 Clear Cake Box 6"-4L &mdash; pickup 26/05 SPX Express Doorstep SPXSG065713390905</li>
+              <li>felizblue_sg 260525BDGW53EY S$29.30 Laundry Basket Ivory 3 Bags &mdash; pickup 26/05 Next Day Doorstep COT EOD SPXSG061319752775</li>
+              <li>yik.theresa71 260525B945XSHG S$11.50 Cardigan Pink Gingham &mdash; pickup 25/05 Pick Lockers SPXSG063649381475</li>
+              <li>hihihilululu 260525B7D5FG50 S$38.50 Retro Game Console R36S White 64GB &mdash; pickup 25/05 SPX Express Doorstep SPXSG069140295335</li>
+              <li>matchalove2 260525B6Y0FEAU S$12.96 Maxi Skirt Blue XL &mdash; pickup 25/05 Collection Points SPXSG062522704795</li>
+            </ul>
+          </li>
+          <li><strong>R/R Action Required 1 &rarr; 3</strong> (combined S$46.23):
+            <ul>
+              <li>rachelsl 260506NBYPAEB2 S$8.05 Laptop Bag &mdash; In Validation <strong>due 26/05 (Due in 1 day)</strong> &mdash; unchanged from PM, carry-over.</li>
+              <li>sahilsehaj 260519S8TENQX5 <strong>S$25.22</strong> Soap Flower sig-diff &mdash; FLIPPED In-Return &rarr; <strong>In Validation due 28/05</strong> (return delivered to warehouse 25/05 SPXSG061401936065).</li>
+              <li>kiraan11 26052236NQQVHY <strong>S$12.96</strong> Maxi Skirt sig-diff &mdash; FLIPPED In-Return &rarr; <strong>In Validation due 28/05</strong> (return delivered to warehouse 25/05 Pick Locker SPXSG064977578085).</li>
+            </ul>
+          </li>
+          <li><strong>R/R RESOLVED since PM (1):</strong> hypertorque.sg 260518P8QXS3H8 <strong>S$32.85</strong> Soap Flower sig-diff &mdash; was PM Action Required In Validation due 25/05 &rarr; <strong>Request Refunded</strong> (auto-refunded after deadline or seller-approved).</li>
+          <li><strong>R/R NEW since PM (1):</strong> joswen89 260520TH1UHVKH <strong>S$31.87</strong> Joycon Nintendo Switch Controller Splatoon variation &mdash; reason "Seller sent wrong item". Buyer to return by 30/05. Preparing SPXSG064963165285.</li>
+          <li><strong>R/R In-Return monitor advanced statuses:</strong> haiyato 2605211APVF4AH S$13.03 Pick Up Done 25/05 (was Preparing); bhumikadadbhawala 260517K135G2P5 S$12.09 Pick Up Done 25/05 (was Preparing); radhakuppuswami 260506PAM2D3V6 S$76.50 waybill changed PM SPXSG061183267925 &rarr; EVE SPXSG061796757025 (same case, buyer switched return logistic).</li>
+          <li><strong>NO new seller-fault losses tonight</strong> &mdash; only linsiqi222 S$9.38 (already PM-counted).</li>
+          <li><strong>Khaki OS Sweater unchanged</strong> &mdash; 4 jesslyneaxinjie cancellations from 19/05 still cumulative S$50.86; no new today (8+ days open).</li>
+          <li><strong>Report:</strong> <code>C:\Users\tessf\Documents\kinata-reports\kinata-report-2026-05-25.md</code> overwritten with merged AM + PM + EVE state and full carry-over chain.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Top EVE exposures (priority):</strong>
+        <ul>
+          <li><strong>P0 CS &mdash; rachelsl validation TOMORROW (26/05):</strong> S$8.05 Laptop Bag wrong item.</li>
+          <li><strong>P0 CS &mdash; radhakuppuswami HIGH VALUE</strong> S$76.50 Washing Machine Rack damage; return ETA 28/05 (waybill changed to SPXSG061796757025).</li>
+          <li><strong>P1 CS &mdash; sahilsehaj + kiraan11 validation by 28/05:</strong> S$38.18 combined; both returns delivered to warehouse 25/05.</li>
+          <li><strong>P1 CS &mdash; joswen89 wrong item dispute prep:</strong> S$31.87 Joycon Splatoon; buyer return by 30/05.</li>
+          <li><strong>P1 OPS &mdash; linsiqi222 root cause</strong> S$9.38 PM loss; possible link to today's earlier Risk-of-Late backlog &mdash; investigate when bandwidth.</li>
+          <li><strong>P2 WAREHOUSE &mdash; Khaki OS Sweater (8+ days open)</strong> S$50.86 cumulative; reconcile or mark OOS.</li>
+        </ul>
+      </div>
       <div class="field"><strong>Reason for run:</strong> Scheduled daily 09:55 MYT (skill 12 checkkinataorder). Patricia profile 70 18th day primary. Carry-over from 22/5 PM (last report) loaded &mdash; 2 Processed + 9 R/R cases tracked through weekend.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; Audit-complete. CDP-direct fallback now production-ready for kinata (reusable scripts at <code>C:\Users\tessf\scripts\kinata_cdp_scrape.py</code> + <code>build_report.py</code>). 22/5 carry-over 100% advance verified. Major weekend operator gap surfaced (35 Risk-of-Late). 1 R/R refund loss S$32.85 booked (hypertorque). R/R queue drained 9&rarr;1.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; AM + PM + EVE audit complete. CDP-direct fallback proven; EVE fell back to direct seller.shopee.sg navigation (MY session expired). End-of-day state: 12 PM STALE Risk-of-Late ALL advanced (S$449.69 cleared); 3 PM new ToP advanced; 5 new EVE Processed 260525B* zero-risk; R/R Action 1&rarr;3 (sahilsehaj S$25.22 + kiraan11 S$12.96 returns delivered to warehouse, flipped from In-Return); 1 R/R RESOLVED (hypertorque.sg S$32.85 Request Refunded); 1 NEW In-Return joswen89 S$31.87 Joycon wrong-item. Day's only seller-fault loss remains linsiqi222 S$9.38 (PM-counted). Khaki OS Sweater 8+ days open (S$50.86 cumulative).</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-25" data-shops="Chairsy + dutchgaming + Flashree + Solaree + Gameniture + Atlusrack + Stationarylah + KEDAI GARDEN + FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
@@ -2206,7 +2246,51 @@ header.page::after{
           <li>4-day cutoff window risk: <strong>resolved</strong> for 9 alive TT shops + all 3 Lazada. Still applies to 4 login_expired TT shops &mdash; if not re-logged before 26/5 EOD, source_date=22/5 cases on those 4 will be missed.</li>
         </ul>
       </div>
-      <div class="field"><strong>Result:</strong> ok &mdash; 10/10 POSTs HTTP 200, RM 447.34 booked. AM failure superseded by PM2 success. Operator re-login required for KarlMobel + Lovento + MurahYa + Valuesnap before next 09:45 run.</div>
+      <div class="field"><strong>PM3 RECOVERED RUN (~19:30 MYT, user explicitly logged in 62/64/65 and asked &ldquo;already, pls check again and run it now&rdquo;):</strong>
+        <ul>
+          <li><strong>Operator action confirmed before run:</strong> user manually re-authenticated 62 KarlMobel + 64 MurahYa + 65 Valuesnap in AdsPower. 63 Lovento also LOGGED_IN at re-probe (no R/R queue, dormant).</li>
+          <li><strong>Login re-probe (all 13 TT):</strong> 13/13 LOGGED_IN confirmed. Profile 54 captcha cleared by AdsPower restart, 62/64/65 cleared by manual re-login. Profile 63 Lovento has 0 R/R cases. Profile 67 KinataSG hits SG instance not MY.</li>
+          <li><strong>DOM-render breakthrough:</strong> R/R card list NOW renders on /order/return after navigating to /homepage FIRST (warms the SC bundle, registers JS heap), THEN clicking sidebar &ldquo;Manage returns&rdquo; link OR navigating direct to <code>/order/return?order_sort_comp=OrderSort_UPADTE_TIME_DESC&amp;tab=100</code>. URL changed from old <code>/order/return-and-refund</code> to new <code>/order/return?tab=100</code>. Fixes the &ldquo;page renders sidebar only&rdquo; blocker that defeated AM + PM runs.</li>
+          <li><strong>PHASE 1 TT R/R scrape (per-profile body.innerText regex on Order ID/buyer/MM-or-DD-formatted-date/Reason/Paid/Refund):</strong>
+            <ul>
+              <li>54 Adelmar: 20 cards, 1 in-window (584060003684287702 mfird898 24/5 RM 343.75 defective &mdash; NEW HV)</li>
+              <li>55 DasNature: 20 cards, 0 in-window (latest 20/5 out)</li>
+              <li>56 Hiranai: 12 cards, 4 in-window (all dups vs C1829&ndash;C1832)</li>
+              <li>58 HiranaiMY: 0 cards</li>
+              <li>59 Jager: 20 cards, 2 in-window (both dups vs C1835/C1836)</li>
+              <li>60 JagerArmor: 6 cards, 0 in-window</li>
+              <li>61 JagerSafety: 20 cards, 0 in-window</li>
+              <li>62 KarlMobel: 20 cards, 2 in-window (both dups vs C1825/C1826)</li>
+              <li>63 Lovento: 0 cards</li>
+              <li>64 MurahYa: 20 cards, 3 in-window (C1827 dup + 584091862173582385 ahgie04 24/5 RM 102.00 NEW + 584074144457131283 dup C1805)</li>
+              <li>65 Valuesnap: 20 cards, 2 in-window (584108289039828408 dup C1828 + 584106809307137180 hafiz.rijoe 21/5 RM 35.00 NEW)</li>
+              <li>66 JagerHelmet: 17 cards, 0 in-window</li>
+              <li>67 KinataSG: 0 cards</li>
+            </ul>
+          </li>
+          <li><strong>PHASE 0 webapp dedupe (re-fetched live):</strong> 479 cases / max <code>case_id=1838</code>. PM2 batch (C1829&ndash;C1838) confirmed persisted. 11 in-window OIDs checked: 8 already exist, 3 NEW.</li>
+          <li><strong>PHASE 5 POSTs (camelCase payload per <code>parcelclaim_dedupe_post.py</code> template: <code>date / shop / orderId / trackingId / productName / refundAmount / requestedBy</code>):</strong>
+            <ul>
+              <li>C1839 TT Adelmar 584060003684287702 RM 343.75 / Product is defective or doesn&rsquo;t work</li>
+              <li>C1840 TT MurahYa 584091862173582385 RM 102.00 / Product doesn&rsquo;t match description</li>
+              <li>C1841 TT Valuesnap 584106809307137180 RM 35.00 / No longer needed (sealed/original condition)</li>
+            </ul>
+          </li>
+          <li><strong>Schema bug found + worked around:</strong> initial 3 POSTs failed HTTP 400 &ldquo;Required fields are missing&rdquo; with snake_case payload (<code>order_id</code>, <code>shop_name</code>, <code>refund_amount_rm</code>, <code>product_name</code>). Worked on retry with camelCase (<code>orderId</code>, <code>shop</code>, <code>refundAmount</code>, <code>productName</code>) per the documented Python template. <strong>HARD memory:</strong> webapp <code>/api/new-parcel-claims-tiktok/add</code> requires camelCase write-payload despite snake_case read-payload field names &mdash; do NOT use schema field names returned by GET as write keys.</li>
+          <li><strong>PHASE 2 FD + PHASE 3 Lazada:</strong> NOT scanned this run (PM2 already covered Lazada; FD deferred &mdash; bridge capacity preservation).</li>
+          <li><strong>Patricia profile auto-redirect quirk:</strong> employee.awesomeree.com.my keeps bouncing to seller.shopee.sg/portal on profile 70 due to active SG subaccount. Workaround: open a fresh tab (<code>open-new-page</code>) then navigate to webapp URL &mdash; the new tab keeps the webapp origin without redirect.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Cumulative PM2+PM3 outcome (overall 25/5):</strong>
+        <ul>
+          <li>before AM: 469 webapp cases, max C1828 &rarr; after PM3: 482 webapp cases, max C1841</li>
+          <li>NEW RM booked into Pending pipeline today: <strong>RM 928.09</strong> (PM2 RM 447.34 + PM3 RM 480.75)</li>
+          <li>PM3 NEW breakdown: Adelmar RM 343.75 + MurahYa RM 102.00 + Valuesnap RM 35.00 = 3 cases / 1 HV (Adelmar 343.75) / 2 LV</li>
+          <li>Login_expired carry-over: <strong>RESOLVED</strong> for 62/64/65 (user re-logged). 63 Lovento still active. All 13 TT now operational for tomorrow&rsquo;s 09:45 scheduled run.</li>
+          <li>4-day cutoff risk: <strong>fully resolved</strong> &mdash; all 13 TT + 3 Laz scanned this 25/5. 22/5-source cases captured before 26/5 EOD rollover.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 13/13 POSTs HTTP 200 cumulative (PM2 10 + PM3 3), RM 928.09 booked today, all 13 TT profiles + 3 Lazada profiles operational and re-verified for tomorrow&rsquo;s scheduled run. AM/PM blockers (AdsPower crash + login_expired + DOM blocker) all overcome via operator AdsPower restart + manual re-login + homepage-warmup-then-sidebar-click pattern.</div>
     </div>
   </div>
 
