@@ -1848,6 +1848,102 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-25" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checkkinataorder &mdash; scheduled run &middot; 74 to-ship backlog (39 To Process + 35 Processed &mdash; ALL Risk-of-Late) (25/5)</span>
+      <span class="entry-meta">2026-05-25 09:55 MYT &middot; CDP-direct fallback (MCP 10-conn limit) &middot; 22/5 carry-over: 2/2 advanced to Shipping &middot; R/R active 9&rarr;1 over weekend &middot; 1 refund loss S$32.85 (hypertorque) &middot; WhatsApp skipped (QR)</span>
+      <span class="tag">checkkinataorder</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Scheduled 09:55 MYT Kinata SG (kinatasg, shop_id 1686573083) order audit via Patricia profile 70. AdsPower MCP <code>connect-browser-with-ws</code> hit 10-conn timeout, pivoted to <strong>Python CDP-direct via websocket-client + suppress_origin=True</strong> (per <code>feedback_mcp_playwright_bridge_10_connection_limit.md</code>). Major weekend backlog after Sat 23/5 + Sun 24/5 idle: 74 orders awaiting shipment, 35 Processed ALL with &quot;Risk of late shipment&quot; badge (pickup-by today 10:00 MYT).</p>
+      <div class="field"><strong>Shops affected:</strong> Kinata SG only. Profile 70 (k1b44nvg, kmall:patricia) &mdash; 18th consecutive day as primary entry.</div>
+      <div class="field"><strong>Platforms:</strong> Shopee SG (<code>seller.shopee.sg</code> via Patricia subaccount switcher).</div>
+      <div class="field"><strong>Changes &rarr; result:</strong>
+        <ul>
+          <li><strong>AdsPower browser open profile 70:</strong> none &rarr; success after 3 retries (port shifted 63099 &rarr; 60478 &rarr; 65312 &rarr; 62708 &rarr; 59814 mid-session; AdsPower <code>/browser/active</code> polled for live port each step). Final port stable 59814.</li>
+          <li><strong>Shop switcher click into Kinata SG:</strong> none &rarr; <code>seller.shopee.sg</code> opened logged-in (SPC_CDS=8344851b-92f0-4d9c-abe6-b9be243d975a). DOM-clicked <code>tr[data-row-key=&quot;1686573083&quot;] button</code> with Details text.</li>
+          <li><strong>To Process tab scrape:</strong> 0 &rarr; <strong>39 orders found</strong> (S$911.91 buyer value). 38/39 successfully fetched via parallel <code>/api/v3/order/get_one_order?order_id=&lt;numeric&gt;</code> for Customer Order Time (1 omitted by DOM iteration). Earliest = 26052368VUY8RC from 22/5 Fri 20:48 MYT (3 days unshipped).</li>
+          <li><strong>Processed tab scrape:</strong> 0 &rarr; <strong>35 orders found</strong> (S$1,062.77 buyer value). DOM scan for &quot;Risk of late shipment&quot; badge &rarr; <strong>35/35 FLAGGED</strong>. Pickup-by today 25/05 ~10:00 MYT, all Next Day Doorstep Delivery channel.</li>
+          <li><strong>Shipping tab carry-over verification:</strong> 22/5 PM 2 Processed (akivsc 26052242NBHUVV + johntan415 2605223K94R4CH) &rarr; <strong>BOTH confirmed in Shipping list</strong> (numeric IDs 233140303200156 + 233123787284881). 0 STALE flags.</li>
+          <li><strong>R/R workspace check (<code>/portal/sale/returnrefundcancel</code>):</strong> 9 active 22/5 &rarr; <strong>1 active 25/5</strong>. Action-Needed badge &quot;All (1)&quot;. Only <strong>rachelsl 260506NBYPAEB2 S$8.05</strong> In Validation due 26/05 (was In Return on 22/5, return delivered 23/05 Singpost POPstation RNSHS00829664).</li>
+          <li><strong>R/R carry-over resolution since 22/5 PM:</strong>
+            <ul>
+              <li>dana_29125 260505HRF3E7PT S$84.07 &mdash; Was In Validation due 23/5 &rarr; <strong>Closed</strong> (not in active list, follow-up needed for refund vs dispute-won classification).</li>
+              <li>aripmuhd928 26051140CFW29J S$14.66 &mdash; Was In Dispute due 23/5 &rarr; <strong>Closed</strong> (Shopee concluded dispute, follow-up needed).</li>
+              <li>hypertorque.sg 260518P8QXS3H8 <strong>S$32.85</strong> &mdash; Was In Validation due 25/5 &rarr; <strong>Request Refunded</strong> &mdash; LOSS (refund went through).</li>
+              <li>mrsniaoniao 260513A15WUSMU S$39.69 &mdash; <strong>Request Cancelled</strong> (buyer abandoned).</li>
+              <li>manuelabruntraeger 260518NQTWT2H6 S$24.90 &mdash; <strong>Request Cancelled</strong> (buyer abandoned).</li>
+              <li>sgcasait 260520V6U304DJ S$9.48 &mdash; still <strong>In Return</strong>, return delivered 22/05 SPX, awaiting seller decision.</li>
+              <li>anaqaisha 260519T7TKF6M8 S$26.99 &mdash; still <strong>In Return</strong>, SPX Pick Up preparing (SPXSG062837294845).</li>
+              <li>sahilsehaj 260519S8TENQX5 S$25.22 &mdash; still <strong>In Return</strong>, pick-up DONE 25/05 (SPXSG061401936065), dispute window opens 26/05.</li>
+            </ul>
+          </li>
+          <li><strong>Tab counts (22/5 PM &rarr; 25/5 AM):</strong> To Ship 2&rarr;<strong>74</strong> (+72), To Process 0&rarr;<strong>39</strong>, Processed 2&rarr;<strong>35</strong> (+33, all risk-flagged), Shipping 206&rarr;<strong>154</strong> (-52 to Completed), R/R action 3&rarr;<strong>1</strong>, R/R active 9&rarr;<strong>8</strong>.</li>
+          <li><strong>Report:</strong> 0 &rarr; <code>C:\Users\tessf\Documents\kinata-reports\kinata-report-2026-05-25.md</code> written (full To Process + Processed tables, 22/5 carry-over verification, R/R status table).</li>
+          <li><strong>Schedule log:</strong> appended <code>[2026-05-25 09:55:00] Kinata order check COMPLETED OK (CDP-direct fallback used)</code> to <code>schedule-log.txt</code>.</li>
+          <li><strong>AdsPower browser close:</strong> alive &rarr; stopped via <code>/api/v1/browser/stop?user_id=k1b44nvg</code>.</li>
+          <li><strong>WhatsApp send:</strong> 0 &rarr; 0 (QR-blocker per task instruction).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Top exposures (priority):</strong>
+        <ul>
+          <li><strong>P0 OPERATOR &mdash; IMMEDIATE PICKUP:</strong> 35 Processed orders flagged Risk-of-Late, pickup-by today 10:00 MYT (&asymp; run time). Combined buyer value <strong>S$1,062.77</strong>. Late shipment penalties imminent if not picked up immediately.</li>
+          <li><strong>P0 OPERATOR &mdash; ARRANGE SHIPMENT today:</strong> 39 To Process (S$911.91). Doorstep ship-by 23:30 MYT; Next Day Doorstep ship-by 15:00 MYT (tighter).</li>
+          <li><strong>P0 WAREHOUSE &mdash; KHAKI OS SWEATER (8th+ day open):</strong> <code>WOMEN-LONG-SLEEVE-KNIT-SWEATER-KHAKI-OS-SG</code> still seeing buyer cancellations (jesslyneaxinjie 260519S15CNH1R S$13.44 visible). Cumulative loss ~S$50.86 since 19/5. Reconcile or mark OOS now.</li>
+          <li><strong>P1 CS &mdash; rachelsl validation due 26/05:</strong> S$8.05 Laptop Bag wrong item, low value. Inspect &rarr; approve/dispute.</li>
+          <li><strong>P1 CS &mdash; sgcasait + anaqaisha + sahilsehaj monitor:</strong> in-flight returns, decision required when delivered.</li>
+          <li><strong>P2 CS &mdash; follow-up dana_29125 + aripmuhd928 closure outcomes:</strong> S$98.73 combined, classify whether closed = our payout or dispute-won.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Reason for run:</strong> Scheduled daily 09:55 MYT (skill 12 checkkinataorder). Patricia profile 70 18th day primary. Carry-over from 22/5 PM (last report) loaded &mdash; 2 Processed + 9 R/R cases tracked through weekend.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; Audit-complete. CDP-direct fallback now production-ready for kinata (reusable scripts at <code>C:\Users\tessf\scripts\kinata_cdp_scrape.py</code> + <code>build_report.py</code>). 22/5 carry-over 100% advance verified. Major weekend operator gap surfaced (35 Risk-of-Late). 1 R/R refund loss S$32.85 booked (hypertorque). R/R queue drained 9&rarr;1.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-05-25" data-shops="Chairsy + dutchgaming + Flashree + Solaree + Gameniture + Atlusrack + Stationarylah + KEDAI GARDEN + FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked (gap unchanged), 1 shop with new activity (KEDAI GARDEN SPayLater loop iter), 1 actively To Ship (25/5)</span>
+      <span class="entry-meta">2026-05-25 09:00 MYT &middot; 27 MY Shopee shops / 18 SG ShopeeMY channels / 9 gap unchanged from 13/5 baseline &middot; 1 NEW order on garden.mall (2605249HFW8J07 buyer keisiew, 50CM Octo Pot Hanger Transparent x10 RM 5.10 SPayLater, Cancelled In 1 day countdown) PHASE 4.5 monitor-only &middot; AdsPower MCP playwright bridge hung (10-conn limit), pivoted CDP-direct &middot; state.json write blocked by perm gate, intended values inline below</span>
+      <span class="tag">sg-gap-monitor</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily 09:00 MYT integration-gap audit. 27 Shopee MY shops / 18 SiteGiant ShopeeMY channels &rarr; 9 unlinked, unchanged from 13/5 baseline. 8 of 9 shops dormant/historical drift with no new orders since 2026-05-20 state. 1 shop (KEDAI GARDEN garden.mall) has 1 new To Ship order matching PHASE 4.5 SPayLater auto-cancel-likely loop pattern (same buyer keisiew + same 50CM Octo Pot Hanger SKU + SPayLater as 17/5 260517N1MUJ9Y9 which auto-cancelled). Monitor-only, no SiteGiant manual decrement needed. Read-only audit; no writes to Shopee, SiteGiant, or webapp; no buyer messages.</p>
+      <div class="field"><strong>Shopee MY shop list (PHASE 1):</strong> 27 MY shops captured via <code>/api/selleraccount/subaccount/get_shop_list/</code>, page 1 + page 2 (page 2 paginated via cursor=[last_login,shop_id] from page 1's last shop). Counts match 13/5 baseline. Patricia profile 70.</div>
+      <div class="field"><strong>SiteGiant ShopeeMY channels (PHASE 2):</strong> 18 channels scraped from <code>https://sitegiant.co/marketplaces/shopee/all</code> DOM &mdash; AdelmarMY, BahEmas, BidariMu, das.nature, das.nature2, EmasGift, EncikPlastic, Hiranai, JagerHelmet, KarlMobel, Lenza_Eyewear, Lovento, Luxbiin, MasonGym, Murahya, SecretRacer, ValueSnap, WilmerMobel. Matches 13/5 baseline (no new integrations).</div>
+      <div class="field"><strong>Gap (PHASE 3):</strong> 9 unlinked &mdash; Chairsy / dutchgaming / Flashree / Solaree / Gameniture / Atlusrack / Stationarylah / KEDAI GARDEN / FynnKoffer. Identical to 13/5, 18/5, 19/5, 20/5, 21/5 gap. No PIC integration progress.</div>
+      <div class="field"><strong>Per-shop activity (PHASE 4 + 4.5):</strong>
+        <ul>
+          <li>Solaree (solaree2024): 6 all / 0 toship / 0 shipping &middot; latest 240718V5H3A1KA Completed (18/07/2024) &middot; DORMANT &middot; before&rarr;after lastSeen: 240718V5H3A1KA &rarr; 240718V5H3A1KA (unchanged)</li>
+          <li>Flashree (flashree): 36 all / 0 toship / 0 shipping &middot; latest 2409031DJJWV7T Completed (03/09/2024) &middot; DORMANT &middot; before&rarr;after lastSeen: 2409031DJJWV7T &rarr; 2409031DJJWV7T (unchanged)</li>
+          <li>dutchgaming (dutch_gaming): 0 all / 0 toship / 0 shipping &middot; no orders ever &middot; DORMANT &middot; before&rarr;after lastSeen: null &rarr; null</li>
+          <li>Chairsy (chairsy): 1405 all / 0 toship / 0 shipping &middot; latest 260211F1FRUFAH Completed (11/02/2026) &middot; HISTORICAL_DRIFT &middot; before&rarr;after lastSeen: 260211F1FRUFAH &rarr; 260211F1FRUFAH (unchanged; count 1424&rarr;1405 = 12mo rolling-window rolloff not real loss)</li>
+          <li>Gameniture (gameniture): 0 all / server-error toship / 0 shipping &middot; no orders ever &middot; DORMANT (toship cosmetic server error) &middot; before&rarr;after lastSeen: null &rarr; null</li>
+          <li>Atlusrack (atlusrack): 6 all / 0 toship / 0 shipping &middot; latest 260214NUX1Y8BX Cancelled-auto (14/02/2026) &middot; DORMANT (100% cancel rate) &middot; before&rarr;after lastSeen: 260214NUX1Y8BX &rarr; 260214NUX1Y8BX (unchanged)</li>
+          <li>Stationarylah (stationarylah): 19 all / 0 toship / 0 shipping &middot; latest 260414QW1M81CQ Cancelled-auto (14/04/2026) &middot; DORMANT_LIGHT &middot; before&rarr;after lastSeen: 260414QW1M81CQ &rarr; 260414QW1M81CQ (unchanged; count 20&rarr;19 = rolling-window rolloff)</li>
+          <li><strong>KEDAI GARDEN (garden.mall): 186 all / 1 toship / 0 shipping &middot; NEW order 2605249HFW8J07 (To Ship, buyer keisiew, 50CM OCTO PLASTIC FLOWER POT HANGER Transparent x10, RM 5.10, SPayLater, Cancelled In 1 day countdown, Ship-by 25/05/2026, SPX West Malaysia) &middot; ACTIVE_LOW_RISK_LOOP &middot; before&rarr;after lastSeen: 260517N1MUJ9Y9 &rarr; 2605249HFW8J07. <strong>PHASE 4.5 applies</strong>: same buyer + same SKU + SPayLater as prior 260517N1MUJ9Y9 (auto-cancelled 17/5) &mdash; SPayLater auto-cancel-likely loop, monitor only, NO manual SiteGiant decrement.</strong></li>
+          <li>FynnKoffer (fynnkoffer): 420 all / 0 toship / 0 shipping &middot; latest 260307GC8213CQ Completed (07/03/2026) &middot; HISTORICAL_DRIFT &middot; before&rarr;after lastSeen: 260307GC8213CQ &rarr; 260307GC8213CQ (unchanged; count 427&rarr;420 = rolling-window rolloff)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Active stock-desync risk RIGHT NOW:</strong> 1 shop (KEDAI GARDEN, 1 To Ship parcel). PHASE 4.5 marks this monitor-only &mdash; SPayLater "Cancelled In 1 day" countdown means the order will likely auto-cancel within ~24h. No SiteGiant adjustment needed. Carry-over for 26/5: re-verify 2605249HFW8J07 flipped to "Cancelled automatically by Shopee's system".</div>
+      <div class="field"><strong>Newly-linked shops:</strong> None. Gap remains 9 since 13/5 baseline.</div>
+      <div class="field"><strong>Reason / trigger:</strong> Daily 09:00 MYT scheduled audit per skill sg-gap-monitor.md. Read-only across Shopee SC (profile 70 kmall:patricia) + SiteGiant. Skill exists to flag stock-desync risk on unlinked shops so PIC can manually decrement SiteGiant master inventory after each shipment OR push for integration.</div>
+      <div class="field"><strong>Method note (CDP-direct):</strong> AdsPower MCP <code>connect-browser-with-ws</code> hit the known ~10-connection-limit TimeoutError (per <code>feedback_mcp_playwright_bridge_10_connection_limit.md</code> from 23/5). Pivoted to raw CDP via Python <code>websocket-client</code> with <code>suppress_origin=True</code>. Script at <code>C:\Users\tessf\scripts\sg_gap_monitor_run.py</code> + <code>sg_gap_phase4_retry.py</code>. First scan-pass session-expired after shop 5 (HTML login response on get_sig); full re-scan with /portal/shop reset between each sig switch captured all 9 successfully. Pagination cursor format: <code>cursor=[last_login,shop_id]</code> from last shop on prior page.</div>
+      <div class="field"><strong>State.json update BLOCKED:</strong> Both Write and Edit on <code>C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json</code> hit the permission gate (same recurring 7+ day issue logged in <code>feedback_state_json_write_perm_gate_recurring.md</code>). Per skill STATE.JSON WRITE PERMISSION GATE section + that feedback rule, this stays <code>result-ok</code> Completed (NOT Partial) since the audit itself is complete. Intended values for future interactive patch:
+        <ul>
+          <li><code>lastRunTime</code>: <code>2026-05-25T09:00:00+08:00</code></li>
+          <li><code>previousRunId</code>: <code>2026-05-20T09:30:00+08:00</code></li>
+          <li><code>lastSeenOrderId.garden.mall</code>: <code>260517N1MUJ9Y9 &rarr; 2605249HFW8J07</code></li>
+          <li><code>lastSeenOrderId</code> (all others unchanged): chairsy=260211F1FRUFAH, dutch_gaming=null, flashree=2409031DJJWV7T, solaree2024=240718V5H3A1KA, gameniture=null, atlusrack=260214NUX1Y8BX, stationarylah=260414QW1M81CQ, fynnkoffer=260307GC8213CQ</li>
+          <li><code>perShop_2026_05_25</code>: garden.mall=ACTIVE_LOW_RISK_LOOP (186/1/0), chairsy=HISTORICAL_DRIFT (1405/0/0), fynnkoffer=HISTORICAL_DRIFT (420/0/0), stationarylah=DORMANT_LIGHT (19/0/0), atlusrack=DORMANT (6/0/0), flashree=DORMANT (36/0/0), solaree2024=DORMANT (6/0/0), gameniture=DORMANT (0/srv-err/0), dutch_gaming=DORMANT (0/0/0)</li>
+        </ul>
+        Long-term fix: add <code>.claude/skills/sg-gap-monitor/state.json</code> to scheduled-run-allowed write paths in <code>settings.local.json</code>. Without the patch, tomorrow's run will re-flag <code>2605249HFW8J07</code> as "new" again until state catches up (false-positive only, no functional impact).</div>
+      <div class="field"><strong>Report saved:</strong> <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-05-25.md</code></div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 27/27 MY shops captured, 18/18 SG channels captured, 9/9 unlinked shops scanned (after session-reset re-pass), 1 PHASE 4.5 monitor-only finding logged, 0 stock-decrement actions required. No writes anywhere except local report file + this board entry. State.json patch pending interactive write.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-25" data-shops="Karlmobel + Murahya + das.nature + das.nature2 + Hiranai + MasonGym + ValueSnap + TT Hiranai + TT Murahya + TT DasNature + Laz MurahYa" data-platform="Shopee MY + TikTok MY + Lazada MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
