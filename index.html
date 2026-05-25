@@ -1848,6 +1848,83 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-25" data-shops="Karlmobel + Murahya + das.nature + das.nature2 + Hiranai + MasonGym + ValueSnap + TT Hiranai + TT Murahya + TT DasNature + Laz MurahYa" data-platform="Shopee MY + TikTok MY + Lazada MY" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation &mdash; 208 total / 23 recent / 3 P0 auto-resolved / 5 TT bot regressions surfaced (25/5)</span>
+      <span class="entry-meta">2026-05-25 MYT &middot; 4-day gap since 21/5 &middot; CDP-direct fallback (MCP 10-conn limit) &middot; 0 PATCHes 0 SG 0 WhatsApp per mandate &middot; 13/13 20/5 PATCHes intact</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Ad-hoc 25/5 AM run after 4-day scheduled gap (22/5, 23/5, 24/5 no reports &mdash; verify Task Scheduler). Fetched <code>/api/sb-variation</code> via Python CDP-direct (MCP playwright bridge hit 10-conn timeout, pivoted per <code>feedback_mcp_playwright_bridge_10_connection_limit.md</code>). 208 cases (vs 21/5 202, +6). 23 recent &le;5d (Shopee MY 18 + TikTok MY 5). 154 stale. Audit-only run per user mandate &mdash; zero PATCHes / SG adjusts / WhatsApp sends. 13 approvals surfaced.</p>
+      <div class="field"><strong>Shops affected:</strong> Shopee MY 137 open (Karlmobel, Murahya, MurahYa, das.nature, das.nature2, Hiranai, MasonGym, ValueSnap, Luxbin, Emas Gift, KEDAI GARDEN, Bidarimu); TikTok MY 28 (TT DasNature, TT Hiranai, TT Murahya, TT Adelmar, TT KarlMobel, TT ValueSnap); Shopee SG 8; Lazada MY 4.</div>
+      <div class="field"><strong>Platforms:</strong> Shopee MY (internal webapp <code>/api/sb-variation</code>), TikTok MY, Lazada MY, Shopee SG (cross-reference only).</div>
+      <div class="field"><strong>Changes &rarr; result:</strong>
+        <ul>
+          <li><strong>API fetch:</strong> 0 &rarr; <strong>208 cases</strong> (185,602 chars raw JSON). HTTP 200 via CDP-direct Runtime.evaluate.</li>
+          <li><strong>P0 carry-over flips (verified NOT actioned by this run &mdash; natural TT/Laz auto-cancel):</strong>
+            <ul>
+              <li>101031 TT DasNature 584031450634225615 HCS-SILVER &rarr; HCS-SILVER-TYPE-B: buyerDecision=null &rarr; <strong>Cancelled</strong> (TT auto-cancel; 20/5 23:59 deadline lapsed).</li>
+              <li>101038 TT DasNature 584021378866120508 CTP-SVER-2.3M-2PC-BG: buyerDecision=null &rarr; <strong>Cancelled</strong> (TT auto-cancel; 19/5 23:59 deadline lapsed).</li>
+              <li>101064 Laz MurahYa 503529409153157: buyerDecision=null &rarr; <strong>Cancelled</strong> (Laz auto-cancel).</li>
+              <li>101065 TT Hiranai 584104634091275501: sku=[] pn=null &rarr; <strong>unchanged</strong> (still B-ParseFail at age 4.7d). Carry-over P0.</li>
+            </ul>
+          </li>
+          <li><strong>20/5 PATCHes integrity check:</strong> 13/13 still correct (sas/stockId/terminal as expected). 100960/100972/101044/101045/101018/101020 Adjusted &check;; 101042/101036 Cancelled terminal &check;; 5 awaiting-buyer cases drifted to stale bucket (no buyer reply across 4-day gap).</li>
+          <li><strong>NEW recent (&le;5d) action items surfaced (0 actioned, all APPROVAL REQUIRED):</strong>
+            <ul>
+              <li>P0 5-case TT bot SKU-extraction regression suspect: 101089/101081/101080/101079/101071 (sku=[] pn=null pattern, 21/5-24/5 window, TT Hiranai + TT Murahya). DRAFT Jira parked.</li>
+              <li>P0 101087 Karlmobel CSGS-KHAKI-STOVE-BAG-PAN bot-NOT-fired (contactSent=false stockSetOos=false at age 1.0d).</li>
+              <li>P0 101074 das.nature2 + 101073 MurahYa half-state ParseFail (stockSetOos=true but contactSent=false).</li>
+              <li>P1 101049 Hiranai TS-SLIPPER-9CM-WHT-36-37 SG -1 deduct: whConfirm pending 8+ days &mdash; chase WH or proceed unilaterally?</li>
+              <li>P1 101075 Karlmobel KLJ-RED-3XL SG check + deduct (created 22/5).</li>
+              <li>P1 101085 das.nature SH-BLACK D-Partial stockSetOos verify.</li>
+              <li>P1 Cat K cancel-closure verification for 2 TT cancelled cases (HCS-SILVER-TYPE-B + CTP-SVER-2.3M-2PC-BG).</li>
+              <li>P1 Watchlist WL-2026-05-20-001 HCS-SILVER-TYPE-B bounce-back check (101031 now cancelled &rarr; phantom alloc may bounce SoH 0&rarr;1; pre-auth -1 SA on standby).</li>
+            </ul>
+          </li>
+          <li><strong>Report:</strong> 0 &rarr; <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-05-25.md</code> written (full headline numbers, ladder breakdown, recent table with Order ID-first leading column, stale bucket count-only per HARD recency rule).</li>
+          <li><strong>state.json write:</strong> intended Pending&rarr;updated entry &rarr; <strong>blocked by harness perm gate</strong> (per <code>feedback_state_json_write_perm_gate_recurring.md</code>) &mdash; intended values documented inline in report's Run state block.</li>
+          <li><strong>SG checks / PATCHes / WhatsApp:</strong> 0 attempted &rarr; <strong>0 executed</strong> (per user mandate &mdash; audit-only, surface as approval required).</li>
+          <li><strong>WhatsApp send:</strong> 0 &rarr; 0 (QR-blocker per user instruction).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Reason for run:</strong> User invocation in chat with explicit carry-over context loaded (project_session_may20_sbvariation_full + 5 HARD feedback rules). Daily scheduled cadence 09:30 MYT &mdash; not fired 22-24/5, ad-hoc 25/5 to bridge gap. P0 verification of TT 101031+101038+Laz 101064 cancel status was high priority per 21/5 carry-over.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; Audit-complete, 3 of 4 P0 items auto-resolved naturally during 4-day gap (TT/Laz auto-cancelled). 13 new approvals surfaced under APPROVAL REQUIRED (0 actioned). 20/5 PATCH integrity 13/13 verified clean. 1 NEW Jira draft candidate (TT bot SKU regression) parked DRAFT_APPROVAL_REQUIRED. CDP-direct fallback pattern now production-ready for sbvariation (reusable script at <code>C:\Users\tessf\scripts\sbvariation_cdp_fetch.py</code> + classify).</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-05-25" data-shops="MurahYa + KarlMobel + MasonGym" data-platform="Shopee MY" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck &mdash; 7 in-scope / 7 pass / 0 mismatch / 0 manual (clean run #11) (25/5)</span>
+      <span class="entry-meta">2026-05-25 MYT &middot; 7 carry-over cases evaluated &middot; 6 LIT (system-record) + 1 DARK-clean &middot; 0 mismatch &middot; 0 manual check &middot; window 5/18-5/24</span>
+      <span class="tag">parcelsplit-contact-crosscheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily Parcel Split Contact Icon crosscheck. Pulled <code>/api/parcel-split</code> (2138 rows total), filtered to 7 in-scope (carry-over window 5/18 00:00 MYT &le; date &lt; 5/25 00:00 MYT AND isShipped=false). Decision table applied: 6 LIT (system record proves bot sent phone request) + 1 DARK-clean (no phone, no phone-ask in csNotes) &rarr; all 7 PASS. 0 mismatch, 0 manual check needed.</p>
+      <div class="field"><strong>Shops affected:</strong> MurahYa (5 in-scope: 26052365DKXM5Y / 2605248EVPC18W / 260523758UJ60H / 2605235YPDPPKV LIT; MasonGym 1 DARK-clean 2605236V8NH0VU), KarlMobel (2 LIT: 26052361TGTDAN / 2605236HJHBJW3). All Shopee MY. Carry-over baseline 12 IDs (5/18) all remain shipped+unchanged &rarr; dropped from active monitor.</div>
+      <div class="field"><strong>Platforms:</strong> Shopee MY (internal webapp <code>employee.awesomeree.com.my/customer-service/parcel-split</code>).</div>
+      <div class="field"><strong>Changes &rarr; result:</strong>
+        <ul>
+          <li><strong>AdsPower MCP open-browser k1b44nvg:</strong> none &rarr; success (port 62859, then port shifted 62708 mid-run). OK.</li>
+          <li><strong>MCP connect-browser-with-ws bridge:</strong> none &rarr; <strong>TIMEOUT</strong> (~10-connection limit per <code>feedback_mcp_playwright_bridge_10_connection_limit.md</code>). Pivoted to <strong>Python CDP-direct via websocket-client + suppress_origin=True</strong> (Chrome 146 path per <code>reference_cdp_fallback_when_adspower_mcp_unavailable.md</code>). New script <code>C:\Users\tessf\scripts\parcelsplit_cdp_fetch.py</code> + <code>parcelsplit_analyze.py</code> built &amp; validated.</li>
+          <li><strong>Page.navigate via CDP:</strong> first attempt &rarr; Patricia auto-redirect bounced to <code>seller.shopee.com.my/portal/shop</code>; retry &rarr; landed on <code>employee.awesomeree.com.my/customer-service/parcel-split</code>. OK on 2nd try.</li>
+          <li><strong>Fetch <code>/api/parcel-split</code>:</strong> none &rarr; <strong>2138 rows</strong> (vs 2107 on 5/18 = +31 new). HTTP 200.</li>
+          <li><strong>Scope filter:</strong> 2138 raw &rarr; 1790 shipped + 3 skipped today (newly-added) + 338 out-of-window + <strong>7 in-scope</strong>.</li>
+          <li><strong>Tier 1 evaluation:</strong> 7 rows &rarr; 7 PASS (6 LIT-system-record + 1 DARK-clean) / 0 MISMATCH / 0 NEED MANUAL CHECK.</li>
+          <li><strong>DOM sanity sample:</strong> 40 phone icons rendered, sampled 20 (16 LIT + 4 DARK class). 0 DOM-vs-API disagreement.</li>
+          <li><strong>Report:</strong> <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-05-25.md</code> written.</li>
+          <li><strong>state.json write:</strong> <code>C:\Users\tessf\.claude\skills\parcelsplit-contact-crosscheck\state.json</code> updated with run snapshot (totals, breakdown, window by date, 12 carry-over flag flips, 7 evaluated cases) &mdash; <strong>SUCCESS</strong> this run (no harness perm-gate block).</li>
+          <li><strong>Carry-over flag flips:</strong> 12 prior tracked IDs (5/18 baseline) all re-queried; all 12 remain shipped + isContacted unchanged &rarr; drop from active monitor.</li>
+          <li><strong>Customer-facing messages:</strong> 0 sent (skill is read-only).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Reason for run:</strong> User invocation in chat (skill <code>parcelsplit-contact-crosscheck</code>). Daily scheduled cadence 10:00 MYT after csrrcredited AM run, verifying contact-bot's overnight phone-ask passes.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; Clean run #11 in a row. 7 cases evaluated, all PASS, no mismatches surfaced, no manual check queued. Tomorrow 5/26 window slides to 5/19-5/25 (today's 3 skipped newly-added re-enter scope tomorrow after tonight's contact-bot pass).</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-25" data-shops="all 13 TT + 3 Lazada" data-platform="TikTok MY + Lazada MY + Internal" data-result="fail">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
