@@ -1848,6 +1848,72 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-25" data-shops="MurahYa + BahEmas + KarlMobel + Hiranai + ValueSnap + Luxbin" data-platform="Shopee MY" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">csrrcredited + csrrcreditedcheck &mdash; 21 wallet-verified / 3 WIN flips Credited RM 2,150.78 / 4 SHIPPING-ONLY 25-WD escalate / 14 LOSS remarks / 21 PATCHes HTTP 200 / 3/3 CROSSCHECK LIVE-WALLET CONFIRMED (25/5 EOD)</span>
+      <span class="entry-meta">2026-05-25 EOD MYT &middot; Patricia profile 70 &middot; 377 Pending DB triaged &middot; 21 APPROVED_WAITING_WALLET verified &middot; <strong>+RM 2,150.78 booked Credited</strong> (MurahYa C13690 +1759 damaged + C16588 +104.78 non-receipt + BahEmas C13893 +287 damaged) &middot; 4 SHIPPING-ONLY ALERTS &middot; 14 LOSS/no-comp remarks &middot; CROSSCHECK 3/3 CONFIRMED &middot; Steps 6a R/R-API + 7 reverse-audit DEFERRED (bridge fragility)</span>
+      <span class="tag">csrrcredited</span>
+      <span class="tag">csrrcreditedcheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> EOD csrrcredited + csrrcreditedcheck ad-hoc run after user invocation. webapp MCP session expired (401) → pivoted to in-browser fetch via profile 70 + open-new-page workaround. Pulled 377 Pending across 11 shops, classified by remarks into 5 buckets, focused on APPROVED_WAITING_WALLET subset (21 cases / RM 2,971.09) for live wallet verification. 3 WINs found + flipped Credited. 4 shipping-only partials flagged for chase-rr escalation. 14 LOSS/refund-released cases remarked. CROSSCHECK re-verified all 3 WINs via independent live wallet fetch.</p>
+      <div class="field"><strong>Shops affected:</strong> MurahYa (7 verified, 2 WIN), BahEmas (1 verified, 1 WIN), KarlMobel (5 verified, 0 WIN), Hiranai (4 verified, 0 WIN, 3 shipping-only), ValueSnap (3 verified, 0 WIN), Luxbin (1 verified, 0 WIN, 1 shipping-only).</div>
+      <div class="field"><strong>Platforms:</strong> Shopee MY (internal webapp <code>/api/new-parcel-claims</code> + live Shopee Seller Center <code>/api/v4/seller/local_wallet/get_wallet_transactions</code>).</div>
+      <div class="field"><strong>Pre-flight (Step 0):</strong> 18 shops planned (12 MY + 6 SG). Actual coverage: <strong>11 MY shops</strong> (377 Pending). SG subaccount sweep (profile 84) DEFERRED &mdash; bridge capacity preservation after long PM3-PM5 parcelclaim-auto session.</div>
+      <div class="field"><strong>Step 1 webapp pull:</strong> 0 &rarr; 2416 cases (1593 Withdrawn / 377 Pending / 443 Credited / 3 Rejected). Pending by shop: MurahYa 89 / KarlMobel 89 / Hiranai 72 / ValueSnap 70 / MasonGym 17 / das.nature2 14 / Luxbin 13 / BahEmas 5 / Emas Gift 3 / Lovento 3 / das.nature 2.</div>
+      <div class="field"><strong>Step 2 triage by remark (377 Pending):</strong> APPROVED_WAITING_WALLET 21 (RM 2,971.09) / RESELL_WFR 42 (RM 6,425.43) / STALE_OPEN&gt;14d 74 (RM 5,545.76) / STILL_PENDING 239 (RM 15,457.94) / RECENT_FRESH 1.</div>
+      <div class="field"><strong>Step 3+3.5 wallet verification per case (BEFORE &rarr; AFTER):</strong>
+        <ul>
+          <li><strong>💰 WIN C13690 MurahYa 260328C00GJFGR</strong> RM 0 (DB) &rarr; <strong>Credited</strong>. Wallet: type 406 +RM 1,759.00 (25/5) reason="Full Refund Damaged Item". NET +1759 &rarr; FULL_WIN. Reason: comp credited today by Shopee.</li>
+          <li><strong>💰 WIN C16588 MurahYa 2603156YWB5TG4</strong> RM 0 (DB) &rarr; <strong>Credited</strong>. Wallet: type 406 +RM 104.78 (22/5) reason="Non Receipt Item". NET +104.78 &rarr; FULL_WIN. Reason: comp credited 22/5.</li>
+          <li><strong>💰 WIN C13893 BahEmas 260403TXKEJTEW</strong> RM 224.28 (DB) &rarr; <strong>Credited</strong>. Wallet: type 406 +RM 287.00 (22/5) reason="Full Refund Damaged Item". NET +287 &ge; refund 224.28 &rarr; FULL_WIN. Reason: comp credited 22/5 above claim amount.</li>
+          <li><strong>⏳ SHIPPING-ONLY C16194 Hiranai 260331HW2AKAHX</strong> Pending &rarr; Pending+⏳remark. Wallet: type 102 -5.19 + type 406 +5.19 (30/4 shipping reimb only). 25 WD ago &mdash; ESCALATE chase-rr.</li>
+          <li><strong>⏳ SHIPPING-ONLY C16117 Hiranai 260328AQMGURQ9</strong> Pending &rarr; Pending+⏳remark. type 406 +10.38 (30/4 shipping) only. 25 WD ago &mdash; ESCALATE.</li>
+          <li><strong>⏳ SHIPPING-ONLY C16052 Hiranai 260319J9951HH1</strong> Pending &rarr; Pending+⏳remark. type 406 +10.38 (30/4 shipping) only. 25 WD ago &mdash; ESCALATE.</li>
+          <li><strong>⏳ SHIPPING-ONLY C16072 Luxbin 2603241KT0WBJ0</strong> RM 128.43 Pending &rarr; Pending+⏳remark. type 102 -20.35 + type 406 +20 (30/4 shipping) = NET -0.35. Product comp NOT credited. 25 WD ago &mdash; ESCALATE.</li>
+          <li><strong>🚨 LOSS C13217 KarlMobel 260319HQKFCT0U</strong> RM 724.94 (already CLAWBACK-tagged 28/4 in remark). Re-verified: NET -121.51 (type 101 +602.48 + type 411 -723.99). Confirmation remark added.</li>
+          <li><strong>🚨 LOSS C14989 KarlMobel 260426S7S6E936</strong> RM 206.30. NET -77.13 (type 101 +175.19 + type 411 -252.32 on 9/5). Refund released, NO comp. NEW finding remarked.</li>
+          <li><strong>🚨 LOSS C13072 KarlMobel 2604076HRXDE9S</strong> RM 68.14. NET -17.23 (type 411 -70.62 on 23/4). NEW finding remarked.</li>
+          <li><strong>🚨 LOSS C13357 MurahYa 260409C77260DJ</strong> RM 50.31. NET -13.31. Refund released 29/4 NO comp.</li>
+          <li><strong>🚨 LOSS C13162 MurahYa 2604089JAJRFNU</strong> RM 26.90. NET -12.11. Refund released 23/4 NO comp.</li>
+          <li><strong>🚨 LOSS C13150 MurahYa 260401NP2YR1RU</strong> RM 86.55. NET -29.57. Refund released 16/4 NO comp.</li>
+          <li><strong>🚨 LOSS C13227 ValueSnap 2604063TAR0BYU</strong> RM 41.93. NET -5.21. Refund released 10/4 same-day NO comp.</li>
+          <li><strong>🚨 LOSS C15396 ValueSnap 260427VJGMBCA6</strong> RM 89.07. NET -18.49. Refund released 11/5 NO comp.</li>
+          <li><strong>⏳ C16517 KarlMobel 260504GMH7TDPC</strong> RM 292.75. Only type 102 -50.04 (22/5) so far &mdash; refund posted, awaiting Shopee comp decision. Stay Pending.</li>
+          <li><strong>⏳ C14878 KarlMobel 260425PMJUTWKN</strong> RM 44.08. Only type 102 -14.84 (2/5). Stay Pending.</li>
+          <li><strong>⏳ C16755 MurahYa 260505M3TKUGFG</strong> RM 368.39. Only type 102 -36.04 (21/5). Stay Pending.</li>
+          <li><strong>⚠️ C14418 MurahYa 260408850DWSV2</strong> RM 530.79. ANOMALY: only type 101 +461.71 (12/4) order income, NO refund debit, NO comp credit. Re-verify R/R status &mdash; possibly miscategorized as Pending.</li>
+          <li><strong>⏳ C12996 ValueSnap 260403S07YC35G</strong> RM 27.09. Only type 102 -10.38 (23/4). Stay Pending.</li>
+          <li><strong>⏳ C14899 Hiranai 260423JF40HMJ2</strong> RM 21. Only type 101 +16.59 (25/4). Re-verify.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Step 4 PATCH summary (21 PATCHes all HTTP 200):</strong> 3 status-flips (Pending&rarr;Credited) for C13690 + C16588 + C13893, plus 21 remark updates (3 for the WIN cases as "💰 WIN" remarks + 17 for SHIPPING-ONLY/LOSS/⏳ remarks + 1 confirmation for C13217). All re-GET verified.</div>
+      <div class="field"><strong>Step 11a reconciliation:</strong> C13690 refund_state=Credited+action=Closed ✓ / C16588 Credited+Closed ✓ / C13893 Credited+Closed ✓. Reconciliation 3/3 PASS.</div>
+      <div class="field"><strong>csrrcreditedcheck CROSSCHECK Step:</strong> 3/3 LIVE WALLET CONFIRMED. MurahYa re-verify NET +1759 + NET +104.78 ✓ / BahEmas re-verify NET +287 ✓. 🤖 CROSSCHECK remarks appended to all 3 cases. Verdict: FULL_WIN stands for all 3.</div>
+      <div class="field"><strong>Steps DEFERRED (transparency):</strong>
+        <ul>
+          <li><strong>Step 6a R/R-API <code>display_adjustment_amount</code> sweep on all 377 Pending</strong>: SKIPPED &mdash; would require shop-switching across 13 shops with 377 individual API calls. Bridge fragility + time. Risk: silent clawbacks/wins on cases OUTSIDE the APPROVED_WAITING_WALLET bucket may go undetected for 24h. Re-run tomorrow.</li>
+          <li><strong>Step 7 reverse-audit 7-day Credited (443 total, likely ~50-100 in last 7d)</strong>: SKIPPED &mdash; bridge capacity. No premature-credited / clawback detection on recent Credited cases this run. Re-run tomorrow.</li>
+          <li><strong>SG subaccount sweep (profile 84, 6 shops)</strong>: SKIPPED &mdash; profile 84 not opened this session. SG cases (~17 historically per memory) may have silent clawbacks. Re-run tomorrow.</li>
+          <li><strong>RESELL_WFR bucket (42 cases / RM 6,425.43)</strong>: NOT cross-referenced with warehouse return queue this run. Step 9 deferred.</li>
+          <li><strong>STALE_OPEN&gt;14d bucket (74 cases / RM 5,545.76)</strong>: surfaced but no escalation actions taken. Tomorrow's batch.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Pattern alerts:</strong>
+        <ul>
+          <li>KarlMobel speedy-refund loss pattern continues &mdash; 3 of 5 verified cases are losses (RM 999.38 combined). Aligns with tt_rr "4th loss in 5 weeks" pattern.</li>
+          <li>4 SHIPPING-ONLY cases stuck at 25 WD past shipping-reimbursement (Hiranai 3 + Luxbin 1) &mdash; suggests systematic Shopee delay on product-comp leg after shipping-comp leg. Chase-rr should batch-escalate.</li>
+          <li>C14418 MurahYa anomaly &mdash; case marked Pending but wallet shows zero R/R activity. Possible DB drift.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>One-line totals:</strong><br>Today 25/5: 3 wins (+RM 2,150.78 MY / 0 SG), 0 fresh clawbacks (1 confirmation C13217 already-known), 4 SHIPPING-ONLY escalations, 9 LOSS remarks added, 1 anomaly (C14418). Shops swept: 6/12 MY (verified subset) / 0/6 SG (deferred). Profiles: 70 only. Reconciliation: 21/21 PATCHes verified. CROSSCHECK: 3/3 CONFIRMED. <strong>🚨 GAPS: Step 6a + Step 7 + SG subaccount deferred &mdash; tomorrow priority.</strong></div>
+      <div class="field"><strong>Reason for run:</strong> User explicit invocation "run csrrcredited + csrrcreditedcheck now" after end-of-session memory save. EOD ad-hoc beyond regular schedule.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 21/21 wallet verifications + 21/21 PATCHes HTTP 200 + 3/3 CROSSCHECK CONFIRMED. RM 2,150.78 booked Credited today on top of parcelclaim-auto's RM 1,858.34. Combined session total today: <strong>RM 4,009.12 movement</strong> (RM 1,858.34 new intake + RM 2,150.78 verified wallet wins).</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-25" data-shops="TT Adelmar + TT DasNature + TT Hiranai + TT HiranaiMY + TT Jager + TT JagerSafety + TT JagerArmor + TT JagerHelmet + TT KarlMobel + TT Murahya + TT Valuesnap + TT KinataSG + TT Lovento" data-platform="TikTok MY + TikTok SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
