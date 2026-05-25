@@ -1848,6 +1848,62 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-25" data-shops="TT Adelmar + TT DasNature + TT Hiranai + TT HiranaiMY + TT Jager + TT JagerSafety + TT JagerArmor + TT JagerHelmet + TT KarlMobel + TT Murahya + TT Valuesnap + TT KinataSG + TT Lovento" data-platform="TikTok MY + TikTok SG" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checkttrating &mdash; manual recovery (5pm bat fail) &middot; 11/13 captured &middot; 5 red flags (Hiranai ChatSat 25% / HiranaiMY AvgTime 1.26h / JagerArmor R&amp;R 7.14% / JagerHelmet R&amp;R 1.89% / Valuesnap ChatSat 66.67%) (25/5)</span>
+      <span class="entry-meta">2026-05-25 20:30&ndash;20:50 MYT &middot; Sheet rows 381&ndash;393 populated &middot; 5/5 red-fill applied via click-element &middot; Lovento + KinataSG BLANK (shop_adjustment_period) &middot; MCP bridge 3 retries needed (chrome_145 first-conn-hang on profiles 56/62/64) &middot; scheduled TTRatingCheck_5PM still broken (LastTaskResult=1, only STARTED logged)</span>
+      <span class="tag">checkttrating</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Manual recovery run after today's 17:01:49 scheduled TTRatingCheck_5PM auto-fire FAILED (Task Scheduler LastTaskResult=1; `schedule-log.txt` shows STARTED + AdsPower ready then nothing &mdash; same silent-fail pattern as pre-18/5 bug per <code>feedback_ttrating_bat_fixes_18may.md</code>). Manual run 20:30&ndash;20:50 MYT swept 13 TT profiles via AdsPower MCP, pulled Service metrics from each Shop Health page, wrote 13 rows to Google Sheet TIKTOK tab at rows 381&ndash;393, red-filled 5 below-target cells, no PATCHes / WhatsApp / customer-facing actions (read-only audit).</p>
+      <div class="field"><strong>Shops covered:</strong> 13 TT profiles &mdash; Adelmar (54), DasNature (55), Hiranai (56), HiranaiMY (58), Jager (59), JagerSafety (61), JagerArmor (60), JagerHelmet (66), KarlMobel (62), Murahya (64), Valuesnap (65), KinataSG (67), Lovento (63). 11 captured with data, 2 left blank (shop adjustment period landing).</div>
+      <div class="field"><strong>Platforms:</strong> TikTok MY (seller-my.tiktok.com/account/health) + TikTok SG (seller-sg.tiktok.com for Kinata SG profile 67) + Google Sheets (sheet 1je_Kt5jPEfkCAVd5f41uI6Ky4_DdNcKSLxKuEuoKvjI TIKTOK tab).</div>
+      <div class="field"><strong>Changes &rarr; result:</strong>
+        <ul>
+          <li><strong>Profile 54 Adelmar:</strong> empty &rarr; R&amp;R 0% / 12hr 92.31% / AvgTime 0.20h / ChatSat 100% &mdash; ALL GREEN.</li>
+          <li><strong>Profile 55 DasNature:</strong> empty &rarr; R&amp;R 0.48% / 12hr 100% / AvgTime 0.10h / ChatSat 90% &mdash; ALL GREEN.</li>
+          <li><strong>Profile 56 Hiranai:</strong> empty &rarr; R&amp;R 0.28% / 12hr 98.04% / AvgTime 0.22h / ChatSat <strong>25%</strong> &mdash; 🔴 ChatSat 45pp below 70% target.</li>
+          <li><strong>Profile 58 HiranaiMY:</strong> empty &rarr; R&amp;R 0% / 12hr 100% / AvgTime <strong>1.26h</strong> / ChatSat 100% &mdash; 🔴 AvgTime 0.26h over 1h target.</li>
+          <li><strong>Profile 59 Jager:</strong> empty &rarr; R&amp;R 0% / 12hr 100% / AvgTime 0.60h / ChatSat 100% &mdash; ALL GREEN.</li>
+          <li><strong>Profile 61 JagerSafety:</strong> empty &rarr; R&amp;R 0% / 12hr 100% / AvgTime 0.07h / ChatSat --% &mdash; GREEN (ChatSat no data).</li>
+          <li><strong>Profile 60 JagerArmor:</strong> empty &rarr; R&amp;R <strong>7.14%</strong> / 12hr 100% / AvgTime 0.05h / ChatSat --% &mdash; 🔴 R&amp;R 4.76&times; over 1.5% target. CRITICAL.</li>
+          <li><strong>Profile 66 JagerHelmet:</strong> empty &rarr; R&amp;R <strong>1.89%</strong> / 12hr 100% / AvgTime 0.07h / ChatSat 100% &mdash; 🔴 R&amp;R 0.39pp over target.</li>
+          <li><strong>Profile 62 KarlMobel:</strong> empty &rarr; R&amp;R 0.65% / 12hr 100% / AvgTime 0.09h / ChatSat 73.68% &mdash; ALL GREEN (ChatSat just above floor).</li>
+          <li><strong>Profile 64 Murahya:</strong> empty &rarr; R&amp;R 0.56% / 12hr 98.86% / AvgTime 0.37h / ChatSat 71.43% &mdash; ALL GREEN (ChatSat just above floor).</li>
+          <li><strong>Profile 65 Valuesnap:</strong> empty &rarr; R&amp;R 0.35% / 12hr 100% / AvgTime 0.15h / ChatSat <strong>66.67%</strong> &mdash; 🔴 ChatSat 3.33pp below 70% target.</li>
+          <li><strong>Profile 67 KinataSG:</strong> shop_adjustment_period &rarr; row 392 LEFT BLANK. Per skill: growth/coaching shop, expected behaviour.</li>
+          <li><strong>Profile 63 Lovento:</strong> shop_adjustment_period homepage &rarr; row 393 LEFT BLANK. Per skill v1 special case Lovento DOES have metrics via sidebar nav (Account health &rarr; Shop health) but sidebar nav NOT executed this run; TODO tomorrow.</li>
+          <li><strong>Sheet writes:</strong> empty rows 381&ndash;393 &rarr; A381=25/05/2026, B381&ndash;B393=shop names, C/E/G/I=metric values (per skill column mapping). Targets in D/F/H/J left untouched. Single TSV paste via <code>navigator.clipboard.writeText</code> &rarr; <code>Ctrl+V</code>.</li>
+          <li><strong>Red fill applied:</strong> 5 cells (I383 / G384 / C387 / C388 / I391) one-by-one via <code>#t-cell-color</code> &rarr; <code>[aria-label=&quot;red&quot;].docs-material-colorpalette-cell</code> click-element (per <code>feedback_gsheets_fill_color_click_element_required.md</code> &mdash; evaluate-script <code>.click()</code> silently fails). Multi-cell selection via name-box "I383,G384,..." collapsed to last cell, so individual loop used.</li>
+          <li><strong>Schedule log:</strong> appended <code>[2026-05-25 20:50:00] TT Rating check MANUAL_RECOVERY COMPLETED OK</code> to <code>C:\Users\tessf\Documents\ttrating-reports\schedule-log.txt</code>.</li>
+          <li><strong>WhatsApp / PATCH / SG / DB writes:</strong> 0 attempted &rarr; 0 executed (read-only audit).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Issues hit:</strong>
+        <ul>
+          <li><strong>MCP bridge instability (chrome_145):</strong> Profiles 56 / 62 / 64 first <code>connect-browser-with-ws</code> attempt FAILED (TimeoutError, then ECONNREFUSED on retry on same phantom port). All RECOVERED on 2nd open after AdsPower issued fresh port. Pattern matches <code>feedback_mcp_bridge_first_conn_hang_25may.md</code>.</li>
+          <li><strong>Profile 70 (chrome_146):</strong> connected first try OK.</li>
+          <li><strong>TTRatingCheck_5PM scheduled task BROKEN:</strong> LastTaskResult=1 at 17:01:49. Bat logs only STARTED + AdsPower ready, never COMPLETED. 18/5 patches not preventing today's failure &mdash; ROOT CAUSE not diagnosed this run. Recommend reading <code>C:\Users\tessf\.claude\skills\checkttrating.bat</code> tomorrow + comparing against the 18/5 fix list in <code>feedback_ttrating_bat_fixes_18may.md</code>.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Top exposures (priority):</strong>
+        <ul>
+          <li><strong>P0 R&amp;R spike &mdash; JagerArmor 7.14%</strong> (vs &le;1.5% target, 4.76&times; over). Investigate top 10 returns this week. Possible product-quality / fulfillment issue on JagerArmor catalogue.</li>
+          <li><strong>P0 ChatSat collapse &mdash; Hiranai 25%</strong> (vs &ge;70% target). Major regression. Recommend chat audit specifically on Hiranai TT this week to find which buyers drove score down.</li>
+          <li><strong>P1 R&amp;R &mdash; JagerHelmet 1.89%</strong> over by 0.39pp. Investigate which SKUs.</li>
+          <li><strong>P1 ChatSat &mdash; Valuesnap 66.67%</strong> 3.33pp below target. Borderline.</li>
+          <li><strong>P1 AvgTime &mdash; HiranaiMY 1.26h</strong> over by 0.26h. Bot may be lagging on this account; check CS queue.</li>
+          <li><strong>P2 Lovento data gap.</strong> Row 393 blank; rerun with sidebar nav tomorrow if metrics needed.</li>
+          <li><strong>P2 TTRatingCheck_5PM bat broken.</strong> Manual run will be needed daily until bat diagnosed + fixed.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Reason for run:</strong> User asked to fix scheduled tasks that failed/partial today after <code>#5</code> and <code>#7</code> were marked DONE. Of today's 9 scheduled tasks, 3 failed (ParcelClaimAuto_945AM = already recovered #7, TT_RR_Audit_10_15AM = already recovered #2, TTRatingCheck_5PM = not yet recovered). This run closes the gap.</div>
+      <div class="field"><strong>Files saved:</strong> <code>C:\Users\tessf\Documents\ttrating-reports\ttrating-2026-05-25-manual.md</code> + Google Sheet rows 381-393 + schedule-log.txt append.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 11/13 shops captured with full 4 metrics, 5/5 red flags applied, sheet rows 381-393 populated, Kinata SG + Lovento blank (shop adjustment landing pages, Lovento sidebar nav deferred). Scheduled bat root-cause for 17:01 fail NOT yet diagnosed &mdash; carry-over for 26/5.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-25" data-shops="ValueSnap + MasonGym + BahEmas + das.nature + das.nature2 + Hiranai + KarlMobel + Lovento MY + Luxbin + MurahYa + Emas Gift + Adelmar + Kinata SG" data-platform="Shopee MY + Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
