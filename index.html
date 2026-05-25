@@ -1851,7 +1851,7 @@ header.page::after{
   <div class="entry" data-date="2026-05-25" data-shops="Karlmobel + Murahya + das.nature + das.nature2 + Hiranai + MasonGym + ValueSnap + TT Hiranai + TT Murahya + TT DasNature + Laz MurahYa" data-platform="Shopee MY + TikTok MY + Lazada MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation &mdash; 208 total / 23 recent / 3 P0 auto-resolved / 5 TT bot regressions surfaced (25/5)</span>
+      <span class="entry-title">checksbvariation &mdash; 101 contacted / 6 failed / 17 routed-CS &middot; 3 P0 auto-resolved &middot; 5 TT bot regressions (25/5)</span>
       <span class="entry-meta">2026-05-25 MYT &middot; 4-day gap since 21/5 &middot; CDP-direct fallback (MCP 10-conn limit) &middot; 0 PATCHes 0 SG 0 WhatsApp per mandate &middot; 13/13 20/5 PATCHes intact</span>
       <span class="tag">checksbvariation</span>
       <span class="tag result-ok">Completed</span>
@@ -1890,6 +1890,21 @@ header.page::after{
           <li><strong>WhatsApp send:</strong> 0 &rarr; 0 (QR-blocker per user instruction).</li>
         </ul>
       </div>
+      <div class="field"><strong>Category breakdown (Shopee MY 137 open):</strong>
+        <ul>
+          <li>A-BOT_OK: <strong>101</strong> (contacted, awaiting buyer decision)</li>
+          <li>H-Adjusted: <strong>12</strong> (SG-deducted, awaiting shipment)</li>
+          <li>F-cancellation_check=true: <strong>17</strong> (routed to CS for cancel/refund &mdash; all &ge;19d, stale bucket)</li>
+          <li>B-Parse fail: <strong>4</strong> (sku=[] + productName=null)</li>
+          <li>D-Partial: <strong>1</strong> (bot fired but stockSetOos=false)</li>
+          <li>C-Not fired: <strong>1</strong> (bot did not fire at all)</li>
+          <li>I-Other: <strong>1</strong> (edge case)</li>
+        </ul>
+        Cross-platform open: Shopee MY 137 + TikTok MY 28 + Shopee SG 8 + Lazada MY 4 = <strong>177</strong> open / 31 terminal / <strong>208 total</strong>.
+      </div>
+      <div class="field"><strong>Top failing shops (recent &le;5d bot failures, 9 cases):</strong> TT Murahya 4 ParseFail (101081 / 101080 / 101079 / 101071) &middot; TT Hiranai 2 ParseFail (101089 + 101065 carry-over P0 aged 4.7d) &middot; das.nature2 1 ParseFail (101074) &middot; MurahYa Shopee 1 ParseFail (101073) &middot; Karlmobel 1 Not Fired (101087) &middot; das.nature 1 Partial (101085). Pattern: 5 TT cases sku=[] pn=null in 4 days = TT bot SKU-extraction regression suspect.</div>
+      <div class="field"><strong>SLA breaches:</strong> 101065 TT Hiranai sku=[]+pn=null aged 4.7d since 20/5 (single P0 carry-over not auto-resolved) &middot; 101049 Hiranai TS-SLIPPER whConfirm pending 8+ days (WH chase decision required) &middot; 154 stale cases &gt;5d in CS cleanup backlog (count-only per recency rule) &middot; 4-day scheduled run gap 22-24/5 (verify Task Scheduler tomorrow).</div>
+      <div class="field"><strong>Pending Jira approvals (count = 2):</strong> 1 NEW DRAFT candidate parked &mdash; TT bot SKU-extraction regression cluster (5 cases 101089 / 101081 / 101080 / 101079 / 101071), APPROVAL REQUIRED to file. + 1 OLD parked &mdash; 18/5 regression draft #2 (4 cases 101049 / 101052 / 101053 / 101055), recommend close-without-filing, Patricia confirmation pending.</div>
       <div class="field"><strong>Reason for run:</strong> User invocation in chat with explicit carry-over context loaded (project_session_may20_sbvariation_full + 5 HARD feedback rules). Daily scheduled cadence 09:30 MYT &mdash; not fired 22-24/5, ad-hoc 25/5 to bridge gap. P0 verification of TT 101031+101038+Laz 101064 cancel status was high priority per 21/5 carry-over.</div>
       <div class="field"><strong>Result:</strong> ok &mdash; Audit-complete, 3 of 4 P0 items auto-resolved naturally during 4-day gap (TT/Laz auto-cancelled). 13 new approvals surfaced under APPROVAL REQUIRED (0 actioned). 20/5 PATCH integrity 13/13 verified clean. 1 NEW Jira draft candidate (TT bot SKU regression) parked DRAFT_APPROVAL_REQUIRED. CDP-direct fallback pattern now production-ready for sbvariation (reusable script at <code>C:\Users\tessf\scripts\sbvariation_cdp_fetch.py</code> + classify).</div>
     </div>
