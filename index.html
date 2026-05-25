@@ -1848,6 +1848,38 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-25" data-shops="all 13 TT + 3 Lazada" data-platform="TikTok MY + Lazada MY + Internal" data-result="fail">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto &mdash; ABORTED at PHASE 0 (AdsPower MCP bridge dead on Chrome 146) (25/5)</span>
+      <span class="entry-meta">2026-05-25 MYT &middot; 3 connect retries all timeout &middot; 0 cases scraped &middot; 0 POSTs &middot; 4-day cutoff window at risk</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-fail">Failed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily parcelclaim-auto manual run could not proceed past PHASE 0. <code>mcp__adspower__check-status</code> = success and <code>open-browser</code> for profile 70 (k1b44nvg, destination, Chrome 146 kernel) returned puppeteer ws URLs cleanly, but every <code>connect-browser-with-ws</code> call ended in either <code>TimeoutError: connectOverCDP 30000ms exceeded</code> or <code>ECONNREFUSED 127.0.0.1:&lt;port&gt;</code>. Same outcome on chrome_144 phantom browser k1artcxf:50023. Without bridge, <code>evaluate-script</code> returned "Browser not connected, please connect browser first". Documented Python CDP-direct fallback (per <code>feedback_mcp_playwright_bridge_10_connection_limit.md</code>, validated 23/5) unreachable from sandbox: python.exe not on PATH, <code>where.exe</code>/<code>curl.exe</code> calls gated by approval prompts the agent cannot satisfy autonomously.</p>
+      <div class="field"><strong>Shops affected:</strong> all 13 TT (Adelmar, DasNature, Hiranai, HiranaiMY, Jager, JagerArmor, JagerSafety, KarlMobel, Lovento, MurahYa, Valuesnap, JagerHelmet, Kinata) + 3 Lazada (MurahYa, das.nature, Lovento). 0 of 16 in-scope profiles scanned.</div>
+      <div class="field"><strong>Platforms:</strong> TikTok MY (Manage Returns + Failed Delivery), Lazada MY (Returns), Internal (webapp <code>/api/new-parcel-claims-tiktok/add</code>).</div>
+      <div class="field"><strong>Changes attempted &rarr; result:</strong>
+        <ul>
+          <li><strong>AdsPower MCP open-browser k1b44nvg:</strong> none &rarr; success 3&times; (ports 63099, 65312, 60521). OK.</li>
+          <li><strong>MCP connect-browser-with-ws bridge:</strong> none &rarr; <strong>FAIL 3&times;</strong> (TimeoutError / ECONNREFUSED).</li>
+          <li><strong>PHASE 0 GET <code>/api/new-parcel-claims-tiktok?include_shops=true&limit=5000</code>:</strong> existingInWebapp set &rarr; <strong>not fetched</strong>.</li>
+          <li><strong>PHASE 1 TT R/R sweep:</strong> 13 profiles &rarr; <strong>0 profiles touched</strong>.</li>
+          <li><strong>PHASE 2 TT Failed Delivery sweep:</strong> 13 profiles &rarr; <strong>0 profiles touched</strong>.</li>
+          <li><strong>PHASE 3 Lazada Returns sweep:</strong> 2 profiles &rarr; <strong>0 profiles touched</strong>.</li>
+          <li><strong>PHASE 5 POSTs:</strong> 0 attempted &rarr; <strong>0 new case_ids minted</strong>.</li>
+          <li><strong>state.json write:</strong> intended Pending&rarr;ABORTED&nbsp;PHASE&nbsp;0 entry &rarr; <strong>blocked by harness perm gate</strong> (per <code>feedback_state_json_write_perm_gate_recurring.md</code>) &mdash; intended values documented in today's report instead.</li>
+          <li><strong>Daily report file:</strong> none &rarr; <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-05-25.md</code> written with full diagnosis + operator next-steps.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Reason:</strong> Chrome 146 kernel triggers documented Playwright <code>connectOverCDP</code> handshake failure in MCP bridge (per <code>feedback_mcp_playwright_bridge_10_connection_limit.md</code> &mdash; previously this manifested after &gt;10 successive connections, today it triggered on the very first call of the session). Compounded by sandbox not exposing python.exe/curl.exe for the documented CDP-direct fallback.</div>
+      <div class="field"><strong>Carry-over risk:</strong> 4-day cutoff window (<code>config.source_date_cutoff_days: 4</code>) means cases with source_date = 22/5 will roll out of the window after 26/5 EOD. If bridge stays broken &gt;1 more day, some 22/5 TT R/R and FD cases will be permanently missed unless cutoff is widened for a catch-up run.</div>
+      <div class="field"><strong>Operator next-steps:</strong> (1) Quit AdsPower fully from system tray and reopen &mdash; phantom browser state suspected (chrome_144 k1artcxf was reported "opened" with non-responsive CDP port). (2) Retry skill manually. (3) If chrome_146 bridge still hangs, either downgrade profile 70 kernel to chrome_144 in AdsPower settings, or invoke <code>python C:\Users\tessf\scripts\parcelclaim_cdp_scrape.py</code> from your own PowerShell after verifying python is on PATH.</div>
+      <div class="field"><strong>Result:</strong> fail &mdash; 0/16 profiles scanned, 0 cases collected, 0 POSTs, state.json unchanged, report written, board flagged. No data loss yet, but 22/5 source-date window at risk if not fixed by 26/5 EOD.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-23" data-shops="TT KarlMobel, TT MurahYa" data-platform="TikTok MY + Internal" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
