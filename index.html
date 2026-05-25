@@ -2117,13 +2117,13 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; Clean run #11 + re-run both green. 7 cases evaluated twice within 10 minutes, all PASS, no mismatches surfaced, no manual check queued. Per-row DOM-vs-API verified 7/7 (closes prior "in-scope=0 means unnecessary" caveat). Tomorrow 5/26 window slides to 5/19-5/25 (today's 3 skipped newly-added re-enter scope tomorrow after tonight's contact-bot pass).</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-05-25" data-shops="all 13 TT + 3 Lazada" data-platform="TikTok MY + Lazada MY + Internal" data-result="fail">
+  <div class="entry" data-date="2026-05-25" data-shops="TT Hiranai + TT Jager + Lazada MurahYa + (4 TT login_expired: KarlMobel/Lovento/MurahYa/Valuesnap)" data-platform="TikTok MY + Lazada MY + Internal" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">parcelclaim-auto &mdash; AM ABORT at PHASE 0 + PM re-run partial (PHASE 0 ok, PHASES 1-3 blocked: captcha + 98001004 + bridge ECONNREFUSED) (25/5)</span>
-      <span class="entry-meta">2026-05-25 MYT &middot; AM: 3 connect retries all timeout / 0 scraped &middot; PM re-run ~18:00: PHASE 0 ok (469 webapp cases, max C1828) / 4 profiles probed (70 / 54 / 62 / 55), 0 TT R/R cards collected &middot; 4-day cutoff window at risk EOD 26/5</span>
+      <span class="entry-title">parcelclaim-auto &mdash; AM abort &rarr; PM partial &rarr; PM2 RECOVERED: 10 NEW POSTed C1829-C1838 RM 447.34 (25/5)</span>
+      <span class="entry-meta">2026-05-25 MYT &middot; 12/16 profiles alive (9 TT + 3 Laz) / 4 TT login_expired (62/63/64/65) &middot; 10 NEW: Hiranai x6 RM 120.54 + Jager x2 RM 131.78 + Laz MurahYa x2 RM 195.02 &middot; 10/10 POSTs HTTP 200 &middot; 75 Request closed filtered &middot; AdsPower API crashed once mid-Kinata, recovered after 60s</span>
       <span class="tag">parcelclaim-auto</span>
-      <span class="tag result-fail">Failed</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Daily parcelclaim-auto manual run could not proceed past PHASE 0. <code>mcp__adspower__check-status</code> = success and <code>open-browser</code> for profile 70 (k1b44nvg, destination, Chrome 146 kernel) returned puppeteer ws URLs cleanly, but every <code>connect-browser-with-ws</code> call ended in either <code>TimeoutError: connectOverCDP 30000ms exceeded</code> or <code>ECONNREFUSED 127.0.0.1:&lt;port&gt;</code>. Same outcome on chrome_144 phantom browser k1artcxf:50023. Without bridge, <code>evaluate-script</code> returned "Browser not connected, please connect browser first". Documented Python CDP-direct fallback (per <code>feedback_mcp_playwright_bridge_10_connection_limit.md</code>, validated 23/5) unreachable from sandbox: python.exe not on PATH, <code>where.exe</code>/<code>curl.exe</code> calls gated by approval prompts the agent cannot satisfy autonomously.</p>
@@ -2170,6 +2170,43 @@ header.page::after{
       </div>
       <div class="field"><strong>PM RE-RUN result:</strong> fail &mdash; PHASE 0 now ok, but PHASES 1-3 collectively blocked. 4 profiles probed (1 wasted on Patricia-only PHASE 0, 3 TT profiles attempted). 0 new TT R/R cards captured. 0 POSTs. Webapp dedupe cache built and ready for any future scrape pass tonight. 26/5 EOD cutoff still ticking.</div>
       <div class="field"><strong>Updated operator next-steps:</strong> (1) Profile 54 captcha &mdash; user opens AdsPower &rarr; profile 54 &rarr; manually solve TT slider captcha. After clear, normal scrape resumes. (2) Other TT profiles' DOM blocker &mdash; warm up by manually clicking on R/R menu in each profile once (a human session triggers proper render); after first manual visit, scripted scrape sometimes succeeds for the rest of the day. (3) Run <code>python C:\Users\tessf\scripts\parcelclaim_cdp_scrape.py</code> manually from your PowerShell &mdash; CDP-direct path bypasses MCP bridge fragility. (4) If neither works by tomorrow morning, widen <code>config.source_date_cutoff_days</code> from 4 &rarr; 7 to preserve 22/5 window.</div>
+      <div class="field"><strong>PM2 RECOVERED RUN (~17:00 MYT, user re-invocation with carry-over briefing):</strong>
+        <ul>
+          <li><strong>MCP bridge:</strong> healthy on first connect this session (chrome_146 destination + chrome_143/144/145 source profiles all attached cleanly via <code>connect-browser-with-ws</code>). Operator may have restarted AdsPower between PM and PM2 &mdash; not confirmed but plausible.</li>
+          <li><strong>PHASE 0 webapp baseline:</strong> 469 cases / 12 shops in dropdown / 43 Pending / max <code>case_id=1828</code>. Same snapshot as PM (no CS posts between PM and PM2).</li>
+          <li><strong>PHASE 1+2 TT scrape (combined per-profile, 18s wait + cookie + 98001002 probe):</strong> 9/13 alive (54 Adelmar / 55 DasNature / 56 Hiranai / 58 HiranaiMY / 59 Jager / 60 JagerArmor / 61 JagerSafety / 66 JagerHelmet / 67 Kinata). 4/13 login_expired confirmed via URL redirect to <code>/account/login</code> AND probe code <code>98001002</code> (NOT false-positive 98001004): 62 KarlMobel / 63 Lovento / 64 MurahYa / 65 Valuesnap.</li>
+          <li><strong>R/R in-window collected:</strong> 8 cases &mdash; Hiranai 7 raw (1 dup oid for multi-line order 584051471812691814) &rarr; 6 unique + Jager 2. <strong>Request closed dropped at intake (per HARD rule 5a):</strong> 75 cards across the 6 alive TT shops with RC.</li>
+          <li><strong>FD in-window collected:</strong> 0 cases (all alive shops returned 0&ndash;50 out-of-window FD orders, none with create_time within 4-day cutoff). FD field paths corrected mid-run: <code>mo.trade_order_module.create_time</code> (string unix s), <code>mo.sku_module[0].product_name</code>, <code>mo.price_module.grand_total.price_val</code> &mdash; earlier code's <code>mo.create_time</code> was always 0 &rarr; false-positive matches.</li>
+          <li><strong>PHASE 3 Lazada:</strong> all 3 profiles alive after single-click auto-relogin on saved password. MurahYa 2 in-window (1 today's Return Initiated RM 177.42 + 1 yesterday's Return Closed RM 17.60). das.nature 0 (only 6 historical Jan/Mar entries). Lovento 0 (1 historical Mar entry). Lazada product-name extraction <strong>fixed</strong> &mdash; innerText uses <code>\n</code> separators (not <code>|</code> like rows).</li>
+          <li><strong>PHASE 4 dedupe:</strong> 10 unique candidates vs 469 existing &rarr; <strong>0 already-in-webapp, 10 NEW</strong>.</li>
+          <li><strong>PHASE 5 POSTs:</strong> 10/10 HTTP 200 in 3 sec. Case IDs minted C1829&ndash;C1838:
+            <ul>
+              <li>C1829 Hiranai 584116666741983072 RM 11.16 / Refund complete</li>
+              <li>C1830 Hiranai 584017879549380549 RM 12.88 / Refund complete</li>
+              <li>C1831 Hiranai 584119949190006643 RM 33.00 / Refund complete</li>
+              <li>C1832 Hiranai 584121095258015246 RM 18.86 / Refund complete</li>
+              <li>C1833 Hiranai 584051471812691814 RM 28.50 / Awaiting customer return</li>
+              <li>C1834 Hiranai 584103061990245780 RM 16.14 / Awaiting customer return</li>
+              <li>C1835 Jager 584032811139106761 RM 116.10 / Refund complete</li>
+              <li>C1836 Jager 584098628063757921 RM 15.68 / Refund complete</li>
+              <li>C1837 Lazada MurahYa 503590472120363 RM 177.42 / Return Initiated</li>
+              <li>C1838 Lazada MurahYa 503595245811988 RM 17.60 / Return Closed</li>
+            </ul>
+          </li>
+          <li><strong>AdsPower stability incident:</strong> Local API died once mid-run (port 50325 ECONNREFUSED) after Kinata's first navigate timed out. Recovered after ~60s wait &mdash; reopened Kinata, scraped 0/0 cleanly. Same instability class as [[feedback_mcp_bridge_first_conn_hang_25may]].</li>
+          <li><strong>state.json:</strong> intended PM2-recovered entry (10 new <code>seen[]</code> keys + run_history append + verified_seller_ids for all 9 alive TT profiles) &rarr; <strong>blocked by harness perm gate</strong> (per <code>feedback_state_json_write_perm_gate_recurring.md</code>). Intended values fully documented in <code>parcelclaim-auto-report-2026-05-25.md</code> for next-run reconciliation.</li>
+          <li><strong>Daily report:</strong> overwrote earlier AM-fail draft with full PM2 success summary at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-05-25.md</code>.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Final outcome (overall 25/5 run):</strong>
+        <ul>
+          <li>before: 469 webapp cases, max C1828 &rarr; after: 479 webapp cases, max C1838</li>
+          <li>NEW RM booked into Pending pipeline: <strong>RM 447.34</strong> (Hiranai RM 120.54 + Jager RM 131.78 + Lazada MurahYa RM 195.02)</li>
+          <li>Login_expired profiles unchanged: still 62/63/64/65 awaiting operator re-login</li>
+          <li>4-day cutoff window risk: <strong>resolved</strong> for 9 alive TT shops + all 3 Lazada. Still applies to 4 login_expired TT shops &mdash; if not re-logged before 26/5 EOD, source_date=22/5 cases on those 4 will be missed.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 10/10 POSTs HTTP 200, RM 447.34 booked. AM failure superseded by PM2 success. Operator re-login required for KarlMobel + Lovento + MurahYa + Valuesnap before next 09:45 run.</div>
     </div>
   </div>
 
