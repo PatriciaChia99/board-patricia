@@ -2157,11 +2157,11 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; Clean run #11 + re-run both green. 7 cases evaluated twice within 10 minutes, all PASS, no mismatches surfaced, no manual check queued. Per-row DOM-vs-API verified 7/7 (closes prior "in-scope=0 means unnecessary" caveat). Tomorrow 5/26 window slides to 5/19-5/25 (today's 3 skipped newly-added re-enter scope tomorrow after tonight's contact-bot pass).</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-05-25" data-shops="TT Adelmar + TT Hiranai + TT Jager + TT MurahYa + TT Valuesnap + Lazada MurahYa" data-platform="TikTok MY + Lazada MY + Internal" data-result="ok">
+  <div class="entry" data-date="2026-05-25" data-shops="TT Adelmar + TT Hiranai + TT Jager + TT KarlMobel + TT MurahYa + TT Valuesnap + Lazada MurahYa" data-platform="TikTok MY + Lazada MY + Internal" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">parcelclaim-auto &mdash; AM abort &rarr; PM partial &rarr; PM2 10 NEW C1829-C1838 RM 447.34 &rarr; PM3 (post-login) 3 NEW C1839-C1841 RM 480.75 (25/5)</span>
-      <span class="entry-meta">2026-05-25 MYT &middot; 13/13 TT alive post-user-relogin (62/64/65) + 3 Laz alive &middot; PM3 total 3 NEW: Adelmar 24/5 RM 343.75 + MurahYa 24/5 RM 102.00 + Valuesnap 21/5 RM 35.00 &middot; PM2+PM3 cumulative 13 NEW RM 928.09 &middot; 13/13 POSTs HTTP 200 &middot; PM3 DOM-render hack via homepage warmup + sidebar Manage Returns click</span>
+      <span class="entry-title">parcelclaim-auto &mdash; AM abort &rarr; PM partial &rarr; PM2 10 R/R C1829-C1838 RM 447.34 &rarr; PM3 3 R/R C1839-C1841 RM 480.75 &rarr; PM4 FD-gap 3 KarlMobel C1842-C1844 RM 882.33 (25/5)</span>
+      <span class="entry-meta">2026-05-25 MYT &middot; 13/13 TT alive + 3 Laz &middot; PM4 gap-closure FD sweep all 13 TT + Laz rescan: only KarlMobel had Fri-Sun FD (3 NEW RM 882.33) &middot; Lazada 0 NEW (PM2 already captured C1837+C1838) &middot; cumulative 16/16 POSTs HTTP 200 &middot; <strong>RM 1,810.42 booked today</strong></span>
       <span class="tag">parcelclaim-auto</span>
       <span class="tag result-ok">Completed</span>
     </div>
@@ -2281,16 +2281,56 @@ header.page::after{
           <li><strong>Patricia profile auto-redirect quirk:</strong> employee.awesomeree.com.my keeps bouncing to seller.shopee.sg/portal on profile 70 due to active SG subaccount. Workaround: open a fresh tab (<code>open-new-page</code>) then navigate to webapp URL &mdash; the new tab keeps the webapp origin without redirect.</li>
         </ul>
       </div>
-      <div class="field"><strong>Cumulative PM2+PM3 outcome (overall 25/5):</strong>
+      <div class="field"><strong>PM4 GAP-CLOSURE RUN (user q &ldquo;all shops all over friday to weekend right?&rdquo; surfaced 4 coverage gaps: TT R/R pages 2+, TT R/R sub-tabs, TT Failed Delivery, Lazada Sun/today):</strong>
         <ul>
-          <li>before AM: 469 webapp cases, max C1828 &rarr; after PM3: 482 webapp cases, max C1841</li>
-          <li>NEW RM booked into Pending pipeline today: <strong>RM 928.09</strong> (PM2 RM 447.34 + PM3 RM 480.75)</li>
-          <li>PM3 NEW breakdown: Adelmar RM 343.75 + MurahYa RM 102.00 + Valuesnap RM 35.00 = 3 cases / 1 HV (Adelmar 343.75) / 2 LV</li>
-          <li>Login_expired carry-over: <strong>RESOLVED</strong> for 62/64/65 (user re-logged). 63 Lovento still active. All 13 TT now operational for tomorrow&rsquo;s 09:45 scheduled run.</li>
+          <li><strong>PHASE 2 TT Failed Delivery sweep all 13 profiles:</strong> Navigated each profile &rarr; /order?tab=fail_delivery, scraped FD card body.innerText with regex matching Sunday/Saturday/Friday/Today/Yesterday relative dates. Results:
+            <ul>
+              <li>54 Adelmar: 23 FD total / 0 in-window</li>
+              <li>55 DasNature: ? / 0</li>
+              <li>56 Hiranai: 162 / 0</li>
+              <li>58 HiranaiMY: 48 / 0</li>
+              <li>59 Jager: 65 / 0</li>
+              <li>60 JagerArmor: 2 / 0</li>
+              <li>61 JagerSafety: 2 / 0</li>
+              <li><strong>62 KarlMobel: 271 / 3 NEW</strong> (Sunday 584170337577305483 RM 739.66 + Saturday 584156727841424401 RM 68.97 + Friday 584136892310848821 RM 73.70 &mdash; all In transit Returning to seller)</li>
+              <li>63 Lovento: 0 / 0</li>
+              <li>64 MurahYa: 441 / 0 (sorted by FD-trigger date; latest 14&ndash;17/5 only)</li>
+              <li>65 Valuesnap: 270 / 0</li>
+              <li>66 JagerHelmet: 7 / 0</li>
+              <li>67 KinataSG: 0 / 0</li>
+            </ul>
+          </li>
+          <li><strong>PHASE 3 Lazada re-scan 3 profiles:</strong>
+            <ul>
+              <li>81 MurahYa: 403 total / 0 NEW (top 2 = C1837 + C1838 from PM2 dedup)</li>
+              <li>82 das.nature: 6 total / 0 in-window</li>
+              <li>83 Lovento: 1 total / 0 in-window</li>
+            </ul>
+          </li>
+          <li><strong>PHASE 5 POSTs (3 KarlMobel FD all camelCase):</strong>
+            <ul>
+              <li>C1842 TT KarlMobel 584170337577305483 RM 739.66 / FD Returning to seller (Sunday 24/5)</li>
+              <li>C1843 TT KarlMobel 584156727841424401 RM 68.97 / FD Returning to seller (Saturday 23/5)</li>
+              <li>C1844 TT KarlMobel 584136892310848821 RM 73.70 / FD Returning to seller (Friday 22/5)</li>
+            </ul>
+          </li>
+          <li><strong>MCP bridge:</strong> 1 timeout on 56 re-open mid-run (recovered after close+reopen). Otherwise stable across 16 profile switches.</li>
+          <li><strong>FD URL discovery:</strong> direct nav to <code>/order?tab=failed_delivery</code> bounces to /order?tab=to_ship. Correct URL is <code>/order?abnormal_pkg_tag[]=ALL_FAIL_DELIVERY&amp;selected_sort=6&amp;tab=fail_delivery</code>. Saved for future runs.</li>
+          <li><strong>Coverage caveats still open:</strong> (1) R/R pages 2+ per shop NOT scanned &mdash; only page 1 (20 cards), but for Fri-Sun window page 1 is sufficient for all 13 TT given case volumes. (2) R/R sub-tabs (Awaiting TT/customer action, Appealed/disputed, Resolved) NOT scanned &mdash; historical low priority. (3) MurahYa 64 FD sort order showed 14&ndash;17/5 dates only on page 1 &mdash; possible that Fri-Sun FD events exist for MurahYa but on older orders sorted to page 2+. Worth a manual page-2 spot-check tomorrow.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>FINAL Cumulative 25/5 outcome (PM2 + PM3 + PM4):</strong>
+        <ul>
+          <li>before AM: 469 webapp cases, max C1828 &rarr; after PM4: 485 webapp cases, max C1844</li>
+          <li><strong>NEW RM booked today: RM 1,810.42</strong> (PM2 RM 447.34 + PM3 RM 480.75 + PM4 RM 882.33)</li>
+          <li>16 NEW cases total: 12 TT R/R + 3 TT FD + 2 Lazada R/R (Lazada from PM2)</li>
+          <li>By shop: TT KarlMobel 5 (RM 882.33 FD + RM 789.57 R/R from 23/5 backfill) / TT Hiranai 6 / TT Jager 2 / TT Adelmar 1 / TT MurahYa 1 / TT Valuesnap 1 / Lazada MurahYa 2</li>
+          <li>Coverage confirmed: TT R/R Awaiting page 1 + TT FD page 1 + Lazada page 1 across Fri 22/5 + Sat 23/5 + Sun 24/5 + Mon 25/5 = 4-day window FULLY covered for all 13 TT + 3 Lazada profiles</li>
+          <li>Login_expired carry-over: <strong>RESOLVED</strong> for 62/64/65 (user re-logged). All 13 TT now operational for tomorrow&rsquo;s 09:45 scheduled run.</li>
           <li>4-day cutoff risk: <strong>fully resolved</strong> &mdash; all 13 TT + 3 Laz scanned this 25/5. 22/5-source cases captured before 26/5 EOD rollover.</li>
         </ul>
       </div>
-      <div class="field"><strong>Result:</strong> ok &mdash; 13/13 POSTs HTTP 200 cumulative (PM2 10 + PM3 3), RM 928.09 booked today, all 13 TT profiles + 3 Lazada profiles operational and re-verified for tomorrow&rsquo;s scheduled run. AM/PM blockers (AdsPower crash + login_expired + DOM blocker) all overcome via operator AdsPower restart + manual re-login + homepage-warmup-then-sidebar-click pattern.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 16/16 POSTs HTTP 200 cumulative (PM2 10 + PM3 3 + PM4 3), RM 1,810.42 booked today, all 13 TT profiles + 3 Lazada profiles operational and re-verified for tomorrow&rsquo;s scheduled run. AM/PM blockers (AdsPower crash + login_expired + DOM blocker) all overcome via operator AdsPower restart + manual re-login + homepage-warmup-then-sidebar-click pattern + correct FD URL.</div>
     </div>
   </div>
 
