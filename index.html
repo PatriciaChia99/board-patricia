@@ -576,6 +576,38 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-26" data-shops="MasonGym, KarlMobel, MurahYa, TT KarlMobel" data-platform="Shopee MY + TikTok + internal" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck &mdash; CATCH-UP run after AM SSL cert fail &middot; 0 in-scope (5/19-5/25 window fully cleared overnight) &middot; 7 carry-overs graduated &middot; 1 today skipped (26/5)</span>
+      <span class="entry-meta">2026-05-26 ~16:00 MYT &middot; totalApi 2145 (+7) &middot; shipped 1806 &middot; unshipped 339 (1 today + 338 pre-5/19 stale) &middot; inScope 0 / pass 0 / mismatch 0 / manual 0 &middot; AM scheduled 10:04 fired but failed (LastTaskResult=1, AdsPower SSL cert blocker) &middot; PM manual catch-up after operator tray-restart 11:11</span>
+      <span class="tag">parcelsplit-contact-crosscheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily 10:00 MYT scheduled run failed with same AdsPower SSL cert blocker that took out sg-gap-monitor 09:09, checksbvariation 09:30, parcelclaim-auto 09:45, tiktokrraudit ~10:00. Operator restart cleared it 11:11 MYT but this skill was missed from the PM sequential re-fire batch &mdash; user flagged the gap, ran manually now. Read-only: pulled <code>/api/parcel-split</code> fresh (2145 cases total, 339 unshipped), applied Tier 1 decision table over the 5/19-5/25 window. Zero in-scope cases &mdash; the 7 carry-overs from 5/25 (MasonGym + KarlMobel ×2 + MurahYa ×4, all dated 5/24) all shipped between 5/25 10:00 and 5/26 16:00. 1 today's newly-added case correctly skipped (TT KarlMobel 584204748229805423) per the "bot runs at night" rule.</p>
+      <div class="field"><strong>Carry-over re-verification (7 IDs tracked from 5/25 baseline):</strong>
+        <ul>
+          <li><code>2605236V8NH0VU</code> MasonGym: DARK + unshipped &rarr; DARK + shipped (unchanged isContacted, graduated)</li>
+          <li><code>26052361TGTDAN</code> KarlMobel: LIT + unshipped &rarr; LIT + shipped (unchanged isContacted, graduated)</li>
+          <li><code>2605236HJHBJW3</code> KarlMobel: LIT + unshipped &rarr; LIT + shipped (unchanged isContacted, graduated)</li>
+          <li><code>26052365DKXM5Y</code> MurahYa: LIT + 1 phone + unshipped &rarr; LIT + 1 phone + shipped (unchanged, graduated)</li>
+          <li><code>2605248EVPC18W</code> MurahYa: LIT + unshipped &rarr; LIT + shipped (unchanged, graduated)</li>
+          <li><code>260523758UJ60H</code> MurahYa: LIT + unshipped &rarr; LIT + shipped (unchanged, graduated)</li>
+          <li><code>2605235YPDPPKV</code> MurahYa: LIT + unshipped &rarr; LIT + shipped (unchanged, graduated)</li>
+        </ul></div>
+      <div class="field"><strong>Window 5/19-5/25 scan:</strong> 0 unshipped cases in entire window. 5/24 contributed 7 cases that all shipped overnight. All other dates (5/19-5/23, 5/25) contributed 0 unshipped each.</div>
+      <div class="field"><strong>Today's skipped (per rule):</strong> 1 case &mdash; <code>584204748229805423</code> TT KarlMobel (KC-GRY-160CM-RT-STV, Best Cargo, dated 16:14:12 MYT). Re-enters scope tomorrow 5/27 after tonight's contact-bot pass.</div>
+      <div class="field"><strong>Mismatches / manual checks:</strong> 0 / 0. Zero discrepancies surfaced.</div>
+      <div class="field"><strong>DOM sanity (first-page render):</strong> 13 LIT + 7 DARK icons visible = 20 sampled, 0 mismatches. With in-scope=0 today, per-row id&rarr;icon mapping unnecessary.</div>
+      <div class="field"><strong>Stale carry-over backlog (out of 7-day active window):</strong> 338 unshipped cases pre-5/19 remain &mdash; mostly March/April-dated MurahYa/KarlMobel. Outside this skill's daily scope but worth surfacing as a longer-tail backlog signal.</div>
+      <div class="field"><strong>Reason / trigger:</strong> Scheduled task <code>ParcelSplitCrosscheck_1000AM</code> fired 10:04:45 AM but exited LastTaskResult=1 (AdsPower SSL cert blocker). User asked at ~16:00 MYT why no board entry yet; ran manually after sg-gap-monitor catch-up confirmed AdsPower healthy.</div>
+      <div class="field"><strong>State.json update:</strong> WRITTEN to <code>C:\Users\tessf\.claude\skills\parcelsplit-contact-crosscheck\state.json</code> (perm gate cleared in interactive mode) &mdash; lastRunTime=2026-05-26T16:00+0800, all 7 carry-over flag flips recorded with shipped graduation result.</div>
+      <div class="field"><strong>Report saved:</strong> <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-05-26.md</code></div>
+      <div class="field"><strong>Hardening DONE post-run:</strong> AdsPower SSL cert canary added to <code>parcelsplit-contact-crosscheck.bat</code> + <code>sg-gap-monitor.bat</code> &mdash; probe upgraded from <code>/status</code> &rarr; <code>/api/v1/user/list?page_size=1</code> with cert-error branch (exit code 2 &rarr; ABORT + log "SSL cert blocker detected, operator must restart AdsPower tray"). Matches the canary that already protected chataudit/checksbvariation/parcelclaim-auto/tt_rr bats from 26/5 EOD hardening. Smoke-test against live AdsPower returned exit=0 (HEALTHY). Tomorrow's 09:00 + 10:00 scheduled fires now protected.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; cleanest run on record. 0 in-scope evaluated / 7 carry-overs graduated / 1 today correctly skipped / 0 mismatches / 0 manual checks / state.json written / report saved / no writes to webapp or customer-facing / scheduled-task bat hardened against next SSL cert flip.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-26" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -606,8 +638,8 @@ header.page::after{
       <div class="field"><strong>Reason / trigger:</strong> Scheduled task <code>ClaudeSgGapMonitor</code> fired at 09:09:05 AM but exited LastTaskResult=1 (AdsPower SSL cert blocker). User asked at ~16:00 MYT why no board entry yet; ran manually after confirming AdsPower healthy post-operator-restart.</div>
       <div class="field"><strong>State.json update:</strong> WRITTEN to <code>C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json</code> (perm gate cleared in interactive mode) &mdash; lastRunTime=2026-05-26T16:00:00+08:00, perShop_2026_05_26 snapshot saved, lastSeenOrderId map unchanged (garden.mall 2605249HFW8J07 carries to 27/5 as Cancelled).</div>
       <div class="field"><strong>Report saved:</strong> <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-05-26.md</code></div>
-      <div class="field"><strong>Recommendation:</strong> Add AdsPower SSL cert canary to <code>sg-gap-monitor.bat</code> and <code>parcelsplit-contact-crosscheck.bat</code> &mdash; the 26/5 EOD hardening covered only chataudit/checksbvariation/parcelclaim-auto/tt_rr bats. Without canary, both will silently fail next time AdsPower cert flips.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; 27/27 MY shops captured / 18/18 SG channels captured / 9/9 unlinked shops scanned / 1 PHASE 4.5 carry-over verified resolved / 0 stock-decrement actions required / state.json written / report saved / no writes to Shopee, SiteGiant, or webapp.</div>
+      <div class="field"><strong>Hardening DONE post-run:</strong> AdsPower SSL cert canary added to <code>sg-gap-monitor.bat</code> + <code>parcelsplit-contact-crosscheck.bat</code> &mdash; probe upgraded from <code>/status</code> &rarr; <code>/api/v1/user/list?page_size=1</code> with cert-error branch (exit code 2 &rarr; ABORT + log "SSL cert blocker detected, operator must restart AdsPower tray"). Matches the canary that already protected chataudit/checksbvariation/parcelclaim-auto/tt_rr bats from 26/5 EOD hardening. Smoke-test against live AdsPower returned exit=0 (HEALTHY, code=0). Tomorrow's 09:00 + 10:00 scheduled fires now protected.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 27/27 MY shops captured / 18/18 SG channels captured / 9/9 unlinked shops scanned / 1 PHASE 4.5 carry-over verified resolved / 0 stock-decrement actions required / state.json written / report saved / no writes to Shopee, SiteGiant, or webapp / scheduled-task bat hardened against next SSL cert flip.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-26" data-shops="N/A (internal)" data-platform="internal (Windows Task Scheduler)" data-result="ok">
