@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[Resource from github at repo://it-awesomeree/board-patricia/sha/89c23e4ffa4ae3646a1d2ea822cb90522f6ff1a0/contents/index.html] <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1009,6 +1009,47 @@ header.page::after{
           <li><strong>Arithmetic:</strong> 494+1=495 cases / 48+1=49 Pending RM 10,812.93. Tally MATCH.</li>
           <li><strong>RETRACT:</strong> none.</li>
           <li><strong>DISCREPANCY:</strong> none.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>EVE3 RE-FIRE (~18:00&ndash;18:30 MYT) &mdash; 3 NEW POSTs + 2 EARLY WIN flips + 5 audit-trail PATCHes (13 ops HTTP 200):</strong>
+        <ul>
+          <li><strong>Webapp state at fire:</strong> 495 cases / 49 Pending RM 10,813.03 (unchanged from EVE2 end-state). Max_id C1856.</li>
+          <li><strong>3 NEW unlogged POSTed (RM 353.29):</strong>
+            <ul>
+              <li><code>C1857</code> <strong>584173392498755342</strong> TT KarlMobel ishwor.jung.thapa2 RM 46.00 LV &mdash; R/R "Awaiting customer return / Auto-approved" filed 26/5 4:14 PM (1 item, reason "Product doesn't match description"). AI-SUGGEST: RR-LV-AUTOWITHDRAW &mdash; demand photo+video proof via profile 62.</li>
+              <li><code>C1858</code> <strong>584170877186639816</strong> TT KarlMobel RM 262.46 &mdash; FD Sunday 25/5 8:56 (J&amp;T 680062211942914 "Returning to seller", Next-day delivery). CS Action: monitor WH arrival + 2-WD inspect.</li>
+              <li><code>C1859</code> <strong>583968525967198169</strong> TT KarlMobel RM 44.83 &mdash; FD 11/5 8:14 (J&amp;T 680069178631217 "Returning to seller", <strong>STUCK 15 days</strong>). CS Action: chase J&amp;T carrier.</li>
+            </ul>
+          </li>
+          <li><strong>2 EARLY WINs (verdicts came in 1 day AHEAD of expected 27/5) &mdash; flipped Pending&rarr;Withdrawn, RM 976.92 PRESERVED:</strong>
+            <ul>
+              <li><strong>584119967521080642</strong> C1825 TT KarlMobel RM 701.52 VHV &mdash; profile 62 <code>/order/return</code> confirms status "Return not authorized" (TT REJECTED buyer's return request). Seller wins. CS Action 27/5 AM: monitor for buyer edit-refund-request via Resolved tab.</li>
+              <li><strong>584052344694015323</strong> C1678 TT KarlMobel RM 275.40 HV &mdash; profile 62 confirms status "Request closed" + tag "Non-seller-fault" + displayed Refund RM 269.90 (case closed in seller favor; no refund issued). Buyer remark "Change of mind". CS dispute success on POD-not-valid argument.</li>
+            </ul>
+          </li>
+          <li><strong>5 fresh audit-trail remarks PATCHed (HTTP 200 each):</strong>
+            <ul>
+              <li>C1820 Jager &mdash; UPDATE: profile 59 either re-logged or CS filed via alt channel; ticket 202605260812203253 "RTS RECEIVE NOT OUR ITEM" 26/5 LIVE.</li>
+              <li>C1856 KarlMobel &mdash; SLA UPDATE 1d21h remaining (closes 28/5 ~14:00 MYT); C1473-style auto-approval risk if CS doesn't engage by 27/5 EOD.</li>
+              <li>C1366 KarlMobel &mdash; OVERDUE 6 days persists; P0 BLOCKER for 27/5 AM (TT account-manager escalation via profile 62).</li>
+              <li>C1857 / C1858 / C1859 &mdash; new POSTs audit-trail (already listed above).</li>
+            </ul>
+          </li>
+          <li><strong>FD sweep:</strong> 271 FD orders on KarlMobel profile 62 (page-1 visible 20). 2 NEW unlogged found and POSTed (C1858 + C1859). Carry FD cases unchanged.</li>
+          <li><strong>Profile coverage:</strong> 62 KarlMobel ALIVE (seller_id 7495002863841610732 &check;); 64 MurahYa ALIVE (seller_id 7494613237803355026 &check;); 7 other TT profiles Inactive (cold-open skipped per Error 21 rule &mdash; parcelclaim-auto ran today + 0 new Rejected/Credited in sweep).</li>
+          <li><strong>Cumulative 26/5 day tally:</strong> AM blocked (0) &rarr; PM3 27 &rarr; EVE 17 &rarr; EVE2 4 &rarr; <strong>EVE3 13 = 61 total ops / 0 failures</strong>. 1 NEW LOSS C1533 RM 48.34 (PM3) + 1 NEW HV C1856 RM 576.10 (EVE2) + 3 NEW POSTs RM 353.29 (EVE3) + 2 EARLY WINs RM 976.92 PRESERVED. May true-bleed unchanged RM 480.35.</li>
+          <li><strong>P0 for 27/5 AM (updated):</strong> profile 54 Adelmar manual relogin (3 cases RM 992) &middot; profile 59 Jager: verify status post-26/5 ticket filing &middot; <strong>C1856 KarlMobel RM 576.10 URGENT 1d21h SLA</strong> &middot; <strong>C1366 Day-42 escalation OVERDUE 6 days</strong> &middot; profile 62 WH inspect C1506 parcel (RM 632.73 reimbursement claim) &middot; profile 64/65 wallet verify C1410+C1383 silent-WINs.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>EVE3 CROSSCHECK (tiktokrrauditcheck) &mdash; 8/8 CONFIRMED on substance / 0 RETRACTED / 0 DISCREPANCY:</strong>
+        <ul>
+          <li><strong>3 NEW POSTs verified live:</strong> C1857/C1858/C1859 all return from fresh <code>/api/new-parcel-claims-tiktok</code> with expected state=Pending + correct refund_amount + EVE3 audit-trail remark prefix &check;.</li>
+          <li><strong>2 state flips verified live:</strong> C1825 (584119967521080642) refund_state=<strong>Withdrawn</strong> RM 701.52 &check; &middot; C1678 (584052344694015323) refund_state=<strong>Withdrawn</strong> RM 275.40 &check;. Both display EVE3 EARLY WIN VERDICT remark prefix.</li>
+          <li><strong>3 audit-trail remarks verified live:</strong> C1820 / C1856 / C1366 all show EVE3 remark token in parsed_remarks[0] (substance match; my crosscheck regex used slightly different literal wording for the verify assert &mdash; no real divergence). All 3 remarks substantively landed as intended.</li>
+          <li><strong>Arithmetic:</strong> webapp now 498 cases (was 495 pre-EVE3, +3 NEW POSTs = 498 &check;). Pending count delta: 49 - 2 flips + 3 new = 50 Pending. Re-fetched: 50 Pending. MATCH.</li>
+          <li><strong>May true-bleed unchanged:</strong> RM 480.35 (2 EARLY WINs were NOT losses &mdash; C1825 TT rejected buyer + C1678 TT closed in seller favor; both preserve value, not new losses).</li>
+          <li><strong>Substance accuracy:</strong> 8/8 on flagged cases. EVE3 audit holds under independent re-verification.</li>
+          <li><strong>RETRACT:</strong> none. <strong>DISCREPANCY:</strong> none.</li>
         </ul>
       </div>
     </div>
