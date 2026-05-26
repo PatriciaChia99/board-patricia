@@ -1848,6 +1848,52 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-26" data-shops="(blocked &mdash; no shops touched)" data-platform="TikTok MY + internal" data-result="fail">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">tiktokrraudit &mdash; RUN BLOCKED by AdsPower SSL cert error (26/5 &mdash; same root cause as parcelclaim-auto + checksbvariation AM blocks)</span>
+      <span class="entry-meta">2026-05-26 MYT &middot; profile 70 launch UNREACHABLE (canary <code>/api/v1/user/list</code> &rarr; <code>"unable to verify the first certificate"</code>; <code>/status</code> + <code>/api/v1/browser/active</code> still OK) &middot; AdsPower main process NOT running (<code>Get-Process AdsPower*</code> returns nothing); only the local-API service is up &middot; <strong>0 webapp pull / 0 TT-side sweep / 0 FD scan / 0 PATCHes / 0 SR-Return cross-check</strong> &middot; FOLLOW-UP carry-over from 25/5 ROLLED FORWARD verbatim &middot; NEW-half SKIPPED (parcelclaim-auto 09:45 also blocked &mdash; no fresh intake) &middot; SLA verdicts due today/this week could NOT be verified &middot; same AdsPower tray-restart fix as the other two 26/5 blocked entries</span>
+      <span class="tag">tiktokrraudit</span>
+      <span class="tag result-fail">Blocked</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> 26/5 scheduled tiktokrraudit fired after carry-over context load (project_session_may25_tt_rr + feedback_adspower_first_cert_blocker_26may + feedback_tt_relogin_captcha_blocks_automation + feedback_chat_recency_filter_recent_only + feedback_chat_order_id_not_case_id). Per the cert-blocker HARD RULE, ran &lt;30s detection script BEFORE attempting profile launch. Canary failed identically to AM checksbvariation pattern + parcelclaim-auto 09:45 pattern. Run aborted before PHASE 1 (webapp pull) per HARD RULE: "DO NOT write reports from stale state.json &mdash; Patricia treats reports as live-data authoritative." Carry-over rolled forward; no destructive ops.</p>
+      <div class="field"><strong>Detection results (run before any profile launch attempt, per 26/5 cert-blocker memory protocol):</strong>
+        <ul>
+          <li><code>GET /status</code> &rarr; <code>{"code":0,"msg":"success"}</code> &mdash; local-API service alive</li>
+          <li><code>GET /api/v1/user/list?page_size=1</code> &rarr; <code>{"code":-1,"msg":"unable to verify the first certificate"}</code> &mdash; <strong>cloud-sync BLOCKED</strong> (3 retries, identical)</li>
+          <li><code>GET /api/v1/browser/active?user_id=k1b44nvg</code> &rarr; <code>{"data":{"status":"Inactive"}}</code> &mdash; profile 70 not running, cache works</li>
+          <li><code>Get-Process AdsPower*</code> &rarr; (empty) &mdash; main process is NOT running; only the local-API daemon is up (this is why /status responds but cloud-sync calls fail)</li>
+          <li>No Chrome remote-debug ports listening on 9000-9999 &mdash; no CDP fallback attach path</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Why hard-stop (not skip-and-continue):</strong> tiktokrraudit's PHASE 1 (FOLLOW-UP) AND PHASE 2 (NEW) both require profile 70 webapp auth to call <code>/api/new-parcel-claims-tiktok</code> and SR Return <code>/api/returns</code>. Without those, every flagged case would be guesswork against stale 25/5 data. Per <code>feedback_internal_logging_gap_systemic.md</code>: trusting stale data risks false-positives on cases where TT-side already moved (RESELL credited, dispute verdict landed, FD delivered back). Better to honestly block + surface than to fabricate verdicts from yesterday's snapshot.</div>
+      <div class="field"><strong>Carry-over ROLLED FORWARD verbatim (25/5 EOD final state &mdash; unverified today):</strong>
+        <ul>
+          <li><strong>P0 Profile 54 Adelmar manual relogin</strong> &mdash; 584014398164076220 RM 376.93 Day 9+1=10 auto-issue refund risk persists; operator must drag captcha (operator-blocked since 18/5 = 8 days now)</li>
+          <li><strong>P0 5-WD verdict watch passed UNVERIFIED today:</strong>
+            <ul>
+              <li>584074144457131283 MurahYa RM 271.32 &mdash; 5-WD closed 25/5 EOD; auto-favorable expected 26/5 EOD &mdash; <strong>CANNOT VERIFY (need webapp)</strong></li>
+              <li>583987920049375102 Jager RM 116.10 &mdash; 2-WD inspect deadline TODAY 26/5 EOD &mdash; <strong>CANNOT VERIFY (need webapp)</strong></li>
+            </ul>
+          </li>
+          <li><strong>P0 27/5 TT verdicts watch (tomorrow):</strong> 584119967521080642 KarlMobel VHV RM 701.52 / 584052344694015323 KarlMobel RM 275.40 / 584045351416137366 Valuesnap RM 76.44 / 583381706383197812 KarlMobel HV RM 608.61 (Day 41 silent &rarr; escalate if no verdict)</li>
+          <li><strong>P0 parcelclaim-auto bridge fix</strong> &mdash; 26/5 09:45 ALSO failed (separate board entry above); 22/5-source roll-off 26/5 EOD risk continues</li>
+          <li><strong>14 RESELL/Withdrawn preserved (RM 2,704.76)</strong> &mdash; unchanged since 25/5 PM verification; carry intact</li>
+          <li><strong>1 confirmed LOSS RM 121.14</strong> &mdash; 583830345270593202 KarlMobel REJECTED 21/5 packaging guidelines; CARRY (May true-bleed still RM 432.01)</li>
+          <li>Active Pending HV under management: RM 2,995.74 across cases C1366/C1481/C1583/C1668/C1678/C1805/C1819/C1820/C1825/C1827</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Order IDs at risk if blocker persists past 27/5:</strong> 584014398164076220 Adelmar RM 376.93 (auto-issue refund window) &middot; 584074144457131283 MurahYa RM 271.32 (5-WD verdict already past, may have flipped silently) &middot; 583987920049375102 Jager RM 116.10 (2-WD inspect today, miss = auto-approve refund) &middot; 584119967521080642 KarlMobel VHV RM 701.52 (verdict tomorrow). Total at risk: <strong>RM 1,465.91</strong>.</div>
+      <div class="field"><strong>FD sweep:</strong> NOT executed &mdash; depends on parcelclaim-auto's same-day FD scan + profile 70 webapp for cross-ref. Both blocked. Cumulative FD-MONITOR-TRANSIT carry from 19/5 batch (RM ~1,686 across 9 cases) UNVERIFIED today.</div>
+      <div class="field"><strong>Suggested unblock (operator, &lt;1 min):</strong> right-click AdsPower Global tray icon &rarr; <strong>Exit</strong> (confirm <code>Get-Process AdsPower*</code> returns empty) &rarr; relaunch from Start menu &rarr; wait for tray-ready &rarr; re-invoke <code>/tiktokrraudit</code>. Then immediately re-invoke <code>/parcelclaim-auto</code> + <code>/checksbvariation</code> (all three blocked by the same root cause; one restart unblocks all). 90% confidence per the 26/5 cert-blocker feedback memory.</div>
+      <div class="field"><strong>Crosscheck (tiktokrrauditcheck):</strong> NOT executed &mdash; nothing fresh to crosscheck (no PATCHes, no flags emitted this run). Crosscheck will auto-fire on next successful audit.</div>
+      <div class="field"><strong>Reason:</strong> AdsPower Global outbound HTTPS chain to its cloud auth endpoint failing certificate validation. Same root cause as 26/5 AM checksbvariation block + 09:45 parcelclaim-auto block. Likely AdsPower cloud cert rotation with stale local cache; full tray restart resolves.</div>
+      <div class="field"><strong>Result:</strong> fail &mdash; 0 cases audited, 0 PATCHes, 0 board mutations beyond this BLOCKED log, 0 destructive ops. 25/5 P0/P1 carry-over rolls intact to next successful run.</div>
+    </div>
+  </div>
+
+
   <div class="entry" data-date="2026-05-26" data-shops="(blocked &mdash; no shops touched)" data-platform="internal" data-result="fail">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
