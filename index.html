@@ -576,6 +576,49 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-26" data-shops="ValueSnap, das.nature MY, MasonGym, BahEmas, das.nature2, Hiranai, MurahYa, Emas Gift, Adelmar, EncikPlastic, Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">chataudit &mdash; 318 in-window chats deep-reviewed cs1/2/4/5; 1 conditional flag m2m2605 promise-no-followup; cs3 SESSION EXPIRED (manual login pending) (26/5)</span>
+      <span class="entry-meta">2026-05-26 MYT &middot; window 24/5 17:45&rarr;25/5 17:45 &middot; cs1 108 / cs2 75 / cs4 121 / cs5 14 = 318 deep-reviewed &middot; 3 raw SYSTEM_FLAGGED retracted after 4-Q (pre-window or substantive in-window reply) &middot; cs3 login-expired &middot; 0 CAPTCHA &middot; read-only</span>
+      <span class="tag">chataudit</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily 5-cservice scheduled chataudit (window day-before-yesterday 17:45 to yesterday 17:45 MYT). 4 of 5 accounts (cs1+cs2+cs4+cs5) deep-reviewed via BATCH JS CLICK METHOD; classifier ran agent-presence regex (dash-signoff + body-name + greet patterns) and holding-template detection against full panel innerText on every chat in window. 4-Q pre-flag filter applied per feedback_chataudit_over_flagging_pattern.md. Sample-verify on 5 random OK chats in cs1 to confirm substantive Haja replies. cs3 (k1arw2cs) session expired &mdash; redirected to login page, programmatic auto-login rejected by anti-bot; operator alerted via BurntToast, account marked INCOMPLETE per skill protocol.</p>
+      <div class="field"><strong>Per-account verdict:</strong>
+        <ul>
+          <li>cs1 (k1artcxf, ValueSnap+das.nature+MasonGym+BahEmas): 108 in-window / 108 deep-reviewed / 3 raw SYSTEM_FLAGGED &mdash; ALL retracted; 1 conditional flag m2m2605 promise-no-followup.</li>
+          <li>cs2 (k1arvrqs, das.nature2+Hiranai): 75 in-window / 75 deep-reviewed / 0 raw flags / 0 confirmed.</li>
+          <li>cs3 (k1arw2cs, KarlMobel+Lovento+Luxbin): SESSION EXPIRED &mdash; 0 audited. Deferred to next run.</li>
+          <li>cs4 (k1arw4x4, MurahYa+Emas Gift+Adelmar+EncikPlastic): 121 in-window / 121 deep-reviewed / 0 raw flags / 0 confirmed.</li>
+          <li>cs5 (k1arw890, Kinata SG): 14 in-window / 14 deep-reviewed / 0 raw flags / 0 confirmed.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Confirmed flag (conditional, 1):</strong>
+        <ul>
+          <li><strong>m2m2605 / MasonGym / cs1</strong> &mdash; 24/5 18:37 Haja said &quot;Sofia will get back to you by tomorrow ya&quot;. Customer accepted &quot;Ok. Tq2&quot; + &quot;Will wait for Sofia reply tomorrow&quot;. No Sofia reply visible up to 25/5 17:45 (window end). Customer Q itself was in FAQ History (not in panel) &mdash; original topic not captured. Action: Sofia (MasonGym) to deliver promised reply / verify if Sofia replied via separate thread. Conditional pending crosscheck.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Retracted SYSTEM_FLAGGED (3) after 4-Q + deep-verify:</strong>
+        <ul>
+          <li>bazookaapollo (MasonGym): flag was 23/5 pre-window; Haja in-window 25/5 10:47 substantively replied on pricing policy. Q4 + Q1 satisfied &rarr; NOT a miss.</li>
+          <li>cikatieyyusuf (ValueSnap): system flag for inappropriate closer was pre-window; Haja in-window 24/5 18:58 escalated &quot;I already forward to relevant team to check on this&quot;. Q1 satisfied &rarr; NOT a miss.</li>
+          <li>anabellaabas (MasonGym): pre-window system flag + Sofia leet-speak escalation; customer already accepted &quot;Ok tq&quot; pre-window; Haja extra reassurance in-window 24/5 18:56. Q1 + Q2 satisfied &rarr; NOT a miss.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Sample-verify cs1 (5 random OK chats):</strong> jennifer01200624 (tutorial video reply OK), sufyan61 (Shopee CS redirect OK), lowxinhao (honest courier policy reply OK), nasrulnasrul167 (escalation w/ evidence request OK), seajay.yue (escalation for spec OK). All 5 have substantive Haja replies.</div>
+      <div class="field"><strong>Carry-over status from 30/4 + earlier:</strong> mahmoudsaeed081 (cs4) / stardustc + paulinesosman (cs1) / 4 awaiting-customer cs4 &mdash; none in current in-window, all auto-resolved/CLOSED. jeff9599 (cs3) CLOSED 4/5. watashiwahanzdes + fatimahhhh_100 (2 awaiting-customer cs3) DEFERRED due to cs3 session expiry.</div>
+      <div class="field"><strong>Issues encountered:</strong>
+        <ul>
+          <li>cs3 (k1arw2cs) SESSION EXPIRED &mdash; webchat redirected to login page; auto-fill credentials rejected with &quot;Login failed&quot; (anti-bot); &quot;Login with Main/Sub Account&quot; link not programmatically clickable (React onClick handler). Operator alerted via BurntToast. ~80-130 cs3 chats unaudited this run.</li>
+          <li>0 CAPTCHA across all 4 audited accounts.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Files:</strong> C:\Users\tessf\Documents\chataudit-reports\chataudit-{cs1,cs2,cs3,cs4,cs5,summary}-Tue-26-5.md</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 318/318 in-window chats deep-reviewed across 4 accounts. 1 conditional flag (m2m2605) needs Sofia follow-up verification. 3 SYSTEM_FLAGGED retracted per 4-Q filter. cs3 manual re-login required before next scheduled run.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-26" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
