@@ -1848,6 +1848,52 @@ header.page::after{
     </div>
 
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-26" data-shops="(blocked &mdash; no shops touched)" data-platform="internal" data-result="fail">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation &mdash; RUN BLOCKED by AdsPower SSL cert error on profile k1b44nvg open (26/5)</span>
+      <span class="entry-meta">2026-05-26 AM MYT &middot; profile 70 launch FAILED &middot; AdsPower local API returned <code>"unable to verify the first certificate"</code> on every <code>/api/v1/browser/start</code> attempt (3 retries) &middot; 9 AdsPower Global processes alive but profile stays Inactive &middot; no Chrome CDP debug port listening (no fallback attach path) &middot; <strong>0 cases audited / 0 PATCHes / 0 SG adjusts / 0 sends</strong> &middot; carry-over from 25/5 untouched (P0.1 TT 101065 ParseFail / P0.2 TT 5-case ParseFail cluster / P0.3 101087 KarlMobel bot-not-fired / P0.4 101074+101073 half-state / WL-2026-05-20-001 HCS-SILVER-TYPE-B bounce-back / 101049 TS-SLIPPER SG deduct / 101075 KLJ-RED SG check / Cat K cancel-closure verification still pending)</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-fail">Blocked</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> 26/5 AM scheduled checksbvariation invocation attempted. AdsPower MCP <code>open-browser</code> and direct local API <code>/api/v1/browser/start?user_id=k1b44nvg</code> both rejected with <code>{"code":-1,"msg":"unable to verify the first certificate"}</code>. Read-only endpoints (<code>/status</code>, <code>/api/v1/browser/active</code>) work; any endpoint requiring cloud-sync (browser start, user list, group list) blocked. Suggests AdsPower Global app's outbound SSL chain to its cloud auth endpoint is failing &mdash; likely needs full app restart from tray (Exit &rarr; relaunch) to re-pull cert chain. No CDP fallback available because no Chrome instance is running (no listening port in 9000-10000 range).</p>
+      <div class="field"><strong>Attempts (each failed identically):</strong>
+        <ul>
+          <li>MCP <code>mcp__adspower__open-browser(profile_id=k1b44nvg)</code> &rarr; <code>Failed to open browser: unable to verify the first certificate</code></li>
+          <li>MCP <code>mcp__adspower__open-browser(profile_no=70)</code> &rarr; same error</li>
+          <li>HTTP <code>GET local.adspower.net:50325/api/v1/browser/start?user_id=k1b44nvg</code> &rarr; same error</li>
+          <li>HTTP <code>GET local.adspower.net:50325/api/v1/browser/start?user_id=k1b44nvg&launch_args=...</code> with disable-password-check flag &rarr; same error</li>
+          <li>HTTP <code>GET /api/v2/browser-profile/start?profile_id=k1b44nvg</code> &rarr; <code>Not Found</code> (v2 endpoints not supported)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Read-only endpoints that DID respond (rules out total AdsPower outage):</strong>
+        <ul>
+          <li><code>GET /status</code> &rarr; <code>{"code":0,"msg":"success"}</code></li>
+          <li><code>GET /api/v1/browser/active?user_id=k1b44nvg</code> &rarr; <code>{"code":0,"msg":"success","data":{"status":"Inactive"}}</code></li>
+        </ul>
+      </div>
+      <div class="field"><strong>Carry-over items NOT touched today (rolled to 27/5):</strong>
+        <ul>
+          <li>P0.1 TT 101065 Hiranai 584104634091275501 ParseFail (sku=[] pn=null since 20/5)</li>
+          <li>P0.2 TT 5-case ParseFail cluster &mdash; 101089/101081/101080/101079/101071 (suspected TT bot SKU-extraction regression)</li>
+          <li>P0.3 ShopeeMY 101087 KarlMobel CSGS-KHAKI-STOVE-BAG-PAN bot-not-fired (created 24/5)</li>
+          <li>P0.4 ShopeeMY 101074 das.nature2 + 101073 MurahYa half-state ParseFail (stockSetOos=true but contactSent=false)</li>
+          <li>WL-2026-05-20-001 HCS-SILVER-TYPE-B bounce-back check (TT 101031 cancelled 25/5)</li>
+          <li>P1 101049 Hiranai TS-SLIPPER SG -1 deduct (WH whConfirm pending 8+ days)</li>
+          <li>P1 101075 Karlmobel KLJ-RED-3XL SG check + deduct if approved</li>
+          <li>P1 Cat K cancel-closure verify on 101031 + 101038 (TT DasNature, both Cancelled 25/5)</li>
+          <li>P1 101085 das.nature SH-BLACK Partial verify</li>
+          <li>P2 22-24/5 Task Scheduler gap check (4-day silent miss)</li>
+          <li>P2 18/5 Jira draft #2 close-without-filing approval</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Suggested unblock (Patricia/Tess action, &lt;1 min):</strong> right-click AdsPower Global tray icon &rarr; <strong>Exit</strong> (kill all 9 processes) &rarr; relaunch from Start menu &rarr; re-prompt assistant with same run instruction. If still fails: check Windows clock (<code>w32tm /query /status</code>) and refresh root certs (<code>certutil -generateSSTFromWU roots.sst</code>).</div>
+      <div class="field"><strong>Reason:</strong> AdsPower Global's outbound HTTPS chain to its own cloud auth endpoint is failing certificate validation. Read-only local endpoints unaffected because they don't hit the cloud. Most common cause: AdsPower cloud rotated its TLS cert and the local app's cached chain is stale until restart.</div>
+      <div class="field"><strong>Result:</strong> fail &mdash; 0 cases audited, 0 PATCHes, 0 sends. No regression introduced (no destructive ops attempted). All 25/5 P0/P1 items roll over to 27/5 untouched.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-25" data-shops="MurahYa + BahEmas + KarlMobel + Hiranai + ValueSnap + Luxbin" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
