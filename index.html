@@ -1851,6 +1851,40 @@ header.page::after{
   <div class="entry" data-date="2026-05-26" data-shops="(blocked &mdash; no shops touched)" data-platform="internal" data-result="fail">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto &mdash; RUN BLOCKED by AdsPower SSL cert error (26/5 same root cause as AM checksbvariation block)</span>
+      <span class="entry-meta">2026-05-26 MYT &middot; profile 70 launch path UNREACHABLE &middot; AdsPower local API still returning <code>{"code":-1,"msg":"unable to verify the first certificate"}</code> on every cloud-sync endpoint (<code>/api/v1/user/list</code>, <code>/api/v1/group/list</code>, <code>/api/v1/browser/start</code>) &middot; read-only endpoints (<code>/status</code>, <code>/api/v1/browser/active</code>) still respond OK &middot; <strong>0 TT profiles scanned / 0 Laz profiles scanned / 0 cases collected / 0 POSTs / 0 deferred IDs touched</strong> &middot; same AdsPower restart fix as AM checksbvariation block applies; needs operator action before retry</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-fail">Blocked</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> 26/5 manual invocation of parcelclaim-auto attempted after carry-over context load (project_session_apr30_parcelclaim_auto.md + feedback_tt_login_probe_wait.md + feedback_adspower_first_cert_blocker_26may.md). Per HARD RULE in the 26/5 cert-blocker memory, ran 30s detection script BEFORE attempting profile launch &mdash; canary failed identically to AM checksbvariation pattern. Run aborted at PHASE 0 step 3 (AdsPower MCP online check) per HARD RULE 5 (continue-on-error per profile, but global AdsPower outage = hard exit). No profiles opened, no API calls made, no state.json mutated.</p>
+      <div class="field"><strong>Detection results (run before any profile launch attempt, per cert-blocker memory protocol):</strong>
+        <ul>
+          <li><code>GET /status</code> &rarr; <code>{"code":0,"msg":"success"}</code> &mdash; AdsPower app process is alive</li>
+          <li><code>GET /api/v1/user/list?page_size=1</code> &rarr; <code>{"code":-1,"msg":"unable to verify the first certificate"}</code> &mdash; <strong>cloud-sync BLOCKED</strong></li>
+          <li><code>GET /api/v1/group/list?page_size=1</code> &rarr; same SSL error &mdash; confirms blocker is global, not endpoint-specific</li>
+          <li><code>GET /api/v1/browser/active?user_id=k1b44nvg</code> &rarr; <code>{"code":0,"msg":"success","data":{"status":"Inactive"}}</code> &mdash; read-only cache works, profile 70 not running</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Why this is a hard exit (not skip-and-continue):</strong> the skill cannot fulfil PHASE 0 step 3 (open destination profile 70 + fetch webapp dedupe index). Without the dedupe index there is no safe way to enter PHASE 1/2/3 (would risk duplicate POSTs to webapp). The cert-blocker affects ALL profile launches, not just one shop &mdash; this is the global AdsPower SSL chain, not a per-profile auth issue.</div>
+      <div class="field"><strong>Carry-over items NOT touched today (rolled to next successful run):</strong>
+        <ul>
+          <li>13 TT profiles (54/55/56/58/59/60/61/62/63/64/65/66/67) &mdash; tab=100 R/R scan + tab=fail_delivery FD scan, both 4-day cutoff window</li>
+          <li>3 Lazada profiles (81/82/83) &mdash; <code>/apps/order/reverse?tab=All</code> DOM scrape, both 4-day cutoff window</li>
+          <li>Cookie-cross-check vs state.json <code>verified_seller_ids</code> table (last refreshed 21/5 PM)</li>
+          <li>Any new cases that arrived 23/5 - 26/5 in the 4-day window (cumulative source date window from cutoff_days=4)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Suggested unblock (operator action, &lt;1 min &mdash; identical to AM checksbvariation entry):</strong> right-click AdsPower Global tray icon &rarr; <strong>Exit</strong> (confirm <code>Get-Process AdsPower*</code> returns nothing) &rarr; relaunch from Start menu &rarr; wait for tray ready &rarr; re-invoke parcelclaim-auto skill. Resolves ~90% of first-cert errors per the 26/5 feedback memory.</div>
+      <div class="field"><strong>Why I did NOT proceed despite carry-over pressure:</strong> per <code>feedback_adspower_first_cert_blocker_26may.md</code> HARD RULE: "DO NOT write reports from stale state.json &mdash; Patricia treats reports as live-data authoritative." Writing a fake "0 new cases" report would mask any genuine cases that arrived 23/5-26/5 and create false confidence the bot ran clean. Better to honestly block + surface than to silently lie.</div>
+      <div class="field"><strong>Reason:</strong> AdsPower Global's outbound HTTPS chain to its cloud auth endpoint is failing certificate validation. Same root cause as 26/5 AM checksbvariation block. Most common: AdsPower cloud rotated its TLS cert and local app's cached chain is stale. Fix path: full app restart.</div>
+      <div class="field"><strong>Result:</strong> fail &mdash; 0 cases collected, 0 POSTs, 0 state.json writes, 0 board entries beyond this BLOCKED log. No destructive ops attempted. All carry-over items roll forward intact to next successful run after AdsPower restart.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-date="2026-05-26" data-shops="(blocked &mdash; no shops touched)" data-platform="internal" data-result="fail">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
       <span class="entry-title">checksbvariation &mdash; RUN BLOCKED by AdsPower SSL cert error on profile k1b44nvg open (26/5)</span>
       <span class="entry-meta">2026-05-26 AM MYT &middot; profile 70 launch FAILED &middot; AdsPower local API returned <code>"unable to verify the first certificate"</code> on every <code>/api/v1/browser/start</code> attempt (3 retries) &middot; 9 AdsPower Global processes alive but profile stays Inactive &middot; no Chrome CDP debug port listening (no fallback attach path) &middot; <strong>0 cases audited / 0 PATCHes / 0 SG adjusts / 0 sends</strong> &middot; carry-over from 25/5 untouched (P0.1 TT 101065 ParseFail / P0.2 TT 5-case ParseFail cluster / P0.3 101087 KarlMobel bot-not-fired / P0.4 101074+101073 half-state / WL-2026-05-20-001 HCS-SILVER-TYPE-B bounce-back / 101049 TS-SLIPPER SG deduct / 101075 KLJ-RED SG check / Cat K cancel-closure verification still pending)</span>
       <span class="tag">checksbvariation</span>
