@@ -576,6 +576,28 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-26" data-shops="N/A (internal)" data-platform="internal (Windows Task Scheduler)" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">scheduled-task-fix &mdash; BoardMirrorSync_10min CMD-window pop-up suppressed via VBS hidden launcher (26/5)</span>
+      <span class="entry-meta">2026-05-26 MYT &middot; user reported recurring "pops out awhile then gone" every ~10 min &middot; root cause: scheduled task ran sync-mirror.bat directly with LogonType=Interactive + Hidden=False &middot; fix verified by manual trigger</span>
+      <span class="tag">scheduled-task-fix</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User reported a recurring window pop-up that "pops out awhile then gone already". Diagnosed as BoardMirrorSync_10min &mdash; the only scheduled task firing every 10 min (all others are once-a-day). It invoked sync-mirror.bat directly under cmd.exe, which flashed a console window each run. Fix: introduce a VBScript launcher that runs the .bat with WindowStyle=0 (hidden), then repoint the scheduled task action to wscript.exe + the VBS. Underlying sync-mirror.bat / sync-mirror.sh logic unchanged (still pulls origin/main, runs the bash sync, appends tick to %TEMP%\sync-mirror.log).</p>
+      <div class="field"><strong>Changes:</strong>
+        <ul>
+          <li>NEW file: <code>C:\Users\tessf\board-patricia\.scripts\run-sync-hidden.vbs</code> &mdash; 4-line VBS wrapper using <code>WshShell.Run "...sync-mirror.bat", 0, False</code> (bWindowStyle=0 = hidden). Result: ok.</li>
+          <li>Scheduled task <code>BoardMirrorSync_10min</code> Action: <strong>before</strong> <code>Execute=C:\Users\tessf\board-patricia\.scripts\sync-mirror.bat, Arguments=</code> &rarr; <strong>after</strong> <code>Execute=wscript.exe, Arguments="C:\Users\tessf\board-patricia\.scripts\run-sync-hidden.vbs"</code>. Trigger / repetition / principal unchanged. Result: ok.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Verification:</strong> Manually fired <code>Start-ScheduledTask -TaskName 'BoardMirrorSync_10min'</code> at 21:54 MYT. LastTaskResult=0. Log advanced by 184 bytes with fresh <code>[Tue 26/05/2026 21:54:08.70] sync-mirror tick</code> entry and <code>[sync-mirror] no changes to push</code>. NO console window appeared during the run. Sync functionality preserved.</div>
+      <div class="field"><strong>Shop(s) / Platform:</strong> N/A &mdash; internal Windows scheduled task; affects only the local board public-mirror sync job.</div>
+      <div class="field"><strong>Reason:</strong> User said the pop-up was disturbing them constantly. The 10-min cadence + brief-flash pattern fingerprinted as BoardMirrorSync_10min (registered 14/5 21:05 per memory).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; CMD pop-up eliminated; mirror sync still functional; no schedule / no principal / no repetition changes.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-26" data-shops="KarlMobel, MurahYa, ValueSnap, Hiranai, MasonGym, das.nature2, Luxbin, BahEmas, EmasGift, Kinata SG, KarlMobel SG, MurahYa SG, Emasgift SG, DasNatureSG2" data-platform="Shopee MY + SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
