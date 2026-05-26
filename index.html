@@ -576,6 +576,40 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-26" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">sg-gap-monitor &mdash; CATCH-UP run after AM SSL cert fail &middot; 9 unlinked unchanged &middot; 0 actively shipping &middot; KEDAI GARDEN PHASE 4.5 carry-over auto-cancelled as predicted (26/5)</span>
+      <span class="entry-meta">2026-05-26 ~16:00 MYT &middot; 27 MY Shopee shops / 18 SG ShopeeMY channels / 9 gap unchanged from 13/5 baseline &middot; AM scheduled 09:09 fired but failed (LastTaskResult=1, AdsPower SSL cert blocker) &middot; PM manual catch-up after operator tray-restart 11:11 &middot; garden.mall 2605249HFW8J07 flipped To Ship&rarr;Cancelled automatically by Shopee's system (PHASE 4.5 SPayLater loop prediction verified)</span>
+      <span class="tag">sg-gap-monitor</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily 09:00 MYT scheduled run failed with AdsPower outbound HTTPS cert blocker (same root cause that took out checksbvariation 09:30, parcelclaim-auto 09:45, tiktokrraudit ~10:00). Operator tray-restarted AdsPower at 11:11 MYT but sg-gap-monitor was missed from the PM sequential re-fire batch &mdash; user flagged the gap, ran manually now. Read-only across Shopee SC + SiteGiant. 27/27 MY shops + 18/18 SG channels captured cleanly; 9/9 unlinked shops scanned via get_sig context-switch. Zero new orders, zero actively shipping. Garden.mall carry-over 2605249HFW8J07 (SPayLater "Cancelled In 1 day" countdown 25/5) confirmed auto-cancelled today &mdash; PHASE 4.5 prediction verified.</p>
+      <div class="field"><strong>Shopee MY shop list (authoritative):</strong> 27 shops via <code>/api/selleraccount/subaccount/get_shop_list</code> page_index 1+2 replay (16+13 raw, filter country=my &rarr; 27). Matches 13/5 baseline.</div>
+      <div class="field"><strong>SiteGiant ShopeeMY channel list:</strong> 18 channels via DOM scrape of <code>sitegiant.co/marketplaces/shopee/all</code>: AdelmarMY / BahEmas / BidariMu / das.nature / das.nature2 / EmasGift / EncikPlastic / Hiranai / JagerHelmet / KarlMobel / Lenza_Eyewear / Lovento / Luxbiin / MasonGym / Murahya / SecretRacer / ValueSnap / WilmerMobel. Matches 13/5 baseline.</div>
+      <div class="field"><strong>Gap (unlinked Shopee MY shops):</strong> 9 unchanged from baseline &mdash; Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer. No PIC integration progress since 13/5.</div>
+      <div class="field"><strong>Per-shop activity (delta vs 25/5):</strong>
+        <ul>
+          <li><strong>KEDAI GARDEN garden.mall</strong>: All=186 (unchanged) &middot; To Ship 1&rarr;<strong>0</strong> &middot; Shipping=0 &middot; latest <code>2605249HFW8J07</code> unchanged &middot; <strong>status flipped: To Ship (SPayLater Cancelled In 1 day) &rarr; "Cancelled automatically by Shopee's system"</strong> &mdash; PHASE 4.5 SPayLater auto-cancel loop prediction VERIFIED. Zero stock impact.</li>
+          <li><strong>Chairsy chairsy</strong>: All 1405&rarr;1403 (window rolloff) &middot; To Ship=0 &middot; Shipping=0 &middot; latest <code>260211F1FRUFAH</code> unchanged.</li>
+          <li><strong>Stationarylah stationarylah</strong>: All 19&rarr;18 (window rolloff) &middot; To Ship=0 &middot; Shipping=0 &middot; latest <code>260414QW1M81CQ</code> unchanged.</li>
+          <li><strong>FynnKoffer fynnkoffer</strong>: All=420 (unchanged) &middot; To Ship=0 &middot; Shipping=0 &middot; latest <code>260307GC8213CQ</code> unchanged.</li>
+          <li><strong>Solaree solaree2024</strong>: All=6 (unchanged) &middot; latest <code>240718V5H3A1KA</code> unchanged.</li>
+          <li><strong>Flashree flashree</strong>: All=36 (unchanged) &middot; latest <code>2409031DJJWV7T</code> unchanged.</li>
+          <li><strong>Atlusrack atlusrack</strong>: All=6 (unchanged) &middot; latest <code>260214NUX1Y8BX</code> unchanged.</li>
+          <li><strong>Gameniture gameniture</strong>: 0 orders (unchanged).</li>
+          <li><strong>dutchgaming dutch_gaming</strong>: 0 orders (unchanged).</li>
+        </ul></div>
+      <div class="field"><strong>Active stock-desync risk RIGHT NOW:</strong> NONE. All 9 unlinked shops have 0 To Ship + 0 Shipping. No manual SiteGiant decrement required.</div>
+      <div class="field"><strong>Newly-linked shops:</strong> None. Gap unchanged from 13/5 baseline.</div>
+      <div class="field"><strong>Reason / trigger:</strong> Scheduled task <code>ClaudeSgGapMonitor</code> fired at 09:09:05 AM but exited LastTaskResult=1 (AdsPower SSL cert blocker). User asked at ~16:00 MYT why no board entry yet; ran manually after confirming AdsPower healthy post-operator-restart.</div>
+      <div class="field"><strong>State.json update:</strong> WRITTEN to <code>C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json</code> (perm gate cleared in interactive mode) &mdash; lastRunTime=2026-05-26T16:00:00+08:00, perShop_2026_05_26 snapshot saved, lastSeenOrderId map unchanged (garden.mall 2605249HFW8J07 carries to 27/5 as Cancelled).</div>
+      <div class="field"><strong>Report saved:</strong> <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-05-26.md</code></div>
+      <div class="field"><strong>Recommendation:</strong> Add AdsPower SSL cert canary to <code>sg-gap-monitor.bat</code> and <code>parcelsplit-contact-crosscheck.bat</code> &mdash; the 26/5 EOD hardening covered only chataudit/checksbvariation/parcelclaim-auto/tt_rr bats. Without canary, both will silently fail next time AdsPower cert flips.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 27/27 MY shops captured / 18/18 SG channels captured / 9/9 unlinked shops scanned / 1 PHASE 4.5 carry-over verified resolved / 0 stock-decrement actions required / state.json written / report saved / no writes to Shopee, SiteGiant, or webapp.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-26" data-shops="N/A (internal)" data-platform="internal (Windows Task Scheduler)" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
