@@ -890,6 +890,31 @@ header.page::after{
           <li><strong>Substance accuracy:</strong> 100% on flagged cases. All 3 critical flags (C1533 loss / C1506 hidden-loss-risk / C1410 silent-WIN) hold under independent re-verification.</li>
         </ul>
       </div>
+      <div class="field"><strong>EVE RE-AUDIT (post-17:20 PM3, ~3-4h later) &mdash; minor drift detected, 17 follow-up PATCHes HTTP 200:</strong>
+        <ul>
+          <li><strong>Webapp drift:</strong> 495 cases &rarr; 494 (1 net flip); 61 Pending RM 10,928.44 &rarr; <strong>59 Pending RM 10,649.80</strong> (delta &minus;2 cases / &minus;RM 278.64). 0 new POSTs (max_id stable at C1855).</li>
+          <li><strong>NEW SILENT-WIN drift catch:</strong> <strong>583757326205879605</strong> C1383 TT Valuesnap RM 11.92 flipped Pending &rarr; <strong>Withdrawn</strong> with new <code>[APPROVED AND CREDITED 26/5]</code> token + <code>comp_amount_rm=17.77</code> set. Likely should be <strong>Credited</strong> not Withdrawn (TT booked comp today). Audit-trail PATCH added flagging state mismatch &mdash; CS verify Valuesnap wallet profile 65 + flip refund_state=Credited.</li>
+          <li><strong>Status-discrepancy scan rerun:</strong> 4 regex hits, but only <strong>1 confirmed</strong> (C1506 still &mdash; unchanged hidden-loss risk). 3 false-positives (C1509/C1475/C1580) caught "auto-approved" inside historical audit narrative text, not as a real state token &mdash; these are active disputes (C1509 IN DISPUTE 26/5, C1475 IN DISPUTE 24/5, C1580 WFR 24/5).</li>
+          <li><strong>Silent-WIN scan rerun:</strong> 1 hit (C1410 unchanged from PM3) &mdash; still Pending despite "APPROVED AND CREDITED 25/5".</li>
+          <li><strong>Carry-over P0 state UNCHANGED since 17:20 PM3:</strong> C1825 RM 701.52 + C1678 RM 275.40 + C1819 RM 76.44 verdict-watch holding for 27/5 &middot; C1366 Day 42 still OVERDUE 6 days &middot; C1583/C1839/C1847 Adelmar still operator-blocked (Day 8 slider captcha) &middot; C1820 Jager still LOGIN_EXPIRED (2-WD inspect lapsed 26/5 EOD).</li>
+          <li><strong>17 PATCHes pushed (all HTTP 200, 0 failures):</strong> 1 NEW (C1383 silent-WIN-state-mismatch) + 11 carry-over re-confirmations (C1825/C1678/C1819/C1366/C1583/C1839/C1847/C1820/C1506/C1410/C1805) + 5 top VHV/HV reminders (C1850/C1842/C1667/C1851/C1697).</li>
+          <li><strong>Cumulative 26/5 day tally:</strong> AM blocked (0 ops) &rarr; PM3 27 PATCHes &rarr; PM3 crosscheck (read-only) &rarr; <strong>EVE 17 PATCHes = 44 total HTTP 200 / 0 failures</strong>. 1 NEW LOSS booked C1533 RM 48.34. May true-bleed RM 480.35 (unchanged). Hidden-loss risk RM 632.73 STILL UNVERIFIED operator-side. Silent-WIN RM 20.50 + RM 11.92 both STILL UNVERIFIED operator-side.</li>
+          <li><strong>P0 for 27/5 AM (operator action):</strong> profile 54 Adelmar manual relogin (3 cases RM 992 at risk Day 8) &middot; profile 59 Jager manual relogin (1 case RM 116 at risk + 4 others Day 1+) &middot; profile 62 KarlMobel verify ticket 202605180612203740 (C1506 RM 632.73 hidden-loss) &middot; profile 64 MurahYa + profile 65 Valuesnap wallet verify (C1410 RM 20.50 + C1383 RM 17.77 silent-WINs) &middot; TT verdict pull for C1825 + C1678 + C1819 expected today.</li>
+          <li><strong>FD sweep:</strong> parcelclaim-auto PM3 already covered 4-day window across 12 alive profiles (10 NEW POSTed C1846-C1855). No fresh FD inflow since 17:20 &mdash; net-zero today PM-EVE.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>EVE CROSSCHECK (tiktokrrauditcheck) &mdash; 21/21 CONFIRMED / 1 RECLASSIFY / 0 RETRACTED / 0 DISCREPANCY / arithmetic MATCH:</strong>
+        <ul>
+          <li><strong>CONFIRMED (21/21)</strong> &mdash; every EVE PATCH landed live via fresh <code>/api/new-parcel-claims-tiktok</code> re-fetch. New CS activity observed since 17:20 on 3 cases: <strong>584119967521080642</strong> C1825 KarlMobel added "REFUND NOT AUTHORIZE TO CUST, REJECT RETURN - 26/5 MONITOR IF CUST EDIT REFUND REQ" &middot; <strong>584045351416137366</strong> C1819 Valuesnap added "RTS ITEM DAMAGE, IN DISPUTE 26/5" &middot; <strong>584023464990770600</strong> C1667 KarlMobel added "IN DISPUTE 26/5". CS push activity confirms verdict-watch flags are well-targeted.</li>
+          <li><strong>RECLASSIFY 1 &mdash; C1410 silent-WIN signal stronger than PM3:</strong> <strong>583715652997252216</strong> MurahYa <code>comp_amount_rm</code> field has flipped <strong>0 &rarr; 20.50</strong> since PM3 audit (someone set the comp value today). Combined with "APPROVED AND CREDITED 25/5" remark + Pending state, the case is increasingly likely a true silent-WIN. Recommend PATCH refund_state=Credited even before wallet verify if comp_amount_rm was set by CS &mdash; verify intent via profile 64.</li>
+          <li><strong>Status-discrepancy false-positives RE-CONFIRMED false:</strong> C1509 last remark "IN DISPUTE 26/5" (active) &middot; C1475 last "IN DISPUTE 24/5" (active) &middot; C1580 last "WFR 24/5" (active). EVE re-audit's interpretation correct &mdash; these are NOT hidden losses.</li>
+          <li><strong>C1506 hidden-loss-risk RE-CONFIRMED real:</strong> parsed_remarks still shows literal "REJECTED" token between IN DISPUTE 20/5 + 21/5 REVERT. action_needed="Closed" but refund_state="Pending" &mdash; the discrepancy is real, CS needs to flip after TT verification.</li>
+          <li><strong>Arithmetic tally MATCH:</strong> audit reported 59 Pending RM 10,649.80 / 2 Rejected RM 169.48 / 18 Credited / 415 Withdrawn / 494 total / max_id C1855. Crosscheck re-fetch: identical (delta &lt;RM 0.10).</li>
+          <li><strong>Substance accuracy:</strong> 100% on EVE flag substance. The one reclassification is a strengthening of an existing flag (more evidence for silent-WIN), not a substance error.</li>
+          <li><strong>RETRACT:</strong> none.</li>
+          <li><strong>DISCREPANCY:</strong> none.</li>
+        </ul>
+      </div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-26" data-shops="TT Adelmar, TT Hiranai, TT KarlMobel, TT MurahYa, TT Valuesnap, Lazada MurahYa, Laz das.nature" data-platform="TikTok MY + Lazada MY + internal" data-result="ok">
