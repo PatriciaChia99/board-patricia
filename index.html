@@ -1,1852 +1,566 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
-
 <meta http-equiv="Pragma" content="no-cache">
-
 <meta http-equiv="Expires" content="0">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Patricia &middot; Activity Board</title>
-
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 :root{
-
-  --bg-deep:#f6f1e6;
-
-  --bg-mid:#fdfaf2;
-
-  --panel:rgba(45,55,90,.82);
-
-  --panel-strong:rgba(45,55,90,.95);
-
-  --panel-hover:rgba(30,41,70,.9);
-
-  --border:rgba(99,102,241,.2);
-
-  --border-strong:rgba(148,163,255,.42);
-
-  --border-bright:rgba(34,211,238,.55);
-
-  --text:#e2e8f0;
-
-  --text-bright:#f8fafc;
-
-  --muted:#8892b8;
-
-  --dim:#64748b;
-
-  --cyan:#22d3ee;
-
-  --purple:#a855f7;
-
-  --pink:#f0abfc;
-
-  --magenta:#ec4899;
-
-  --glow-cyan:rgba(34,211,238,.45);
-
-  --glow-purple:rgba(168,85,247,.45);
-
-  --glow-pink:rgba(236,72,153,.35);
-
-  --success:#10f3a0;
-
-  --success-glow:rgba(16,243,160,.28);
-
+  --bg-deep:#f6f4fb;
+  --bg-mid:#fbfaff;
+  --panel:rgba(255,255,255,.78);
+  --panel-strong:rgba(255,255,255,.92);
+  --panel-hover:rgba(255,255,255,.88);
+  --border:rgba(168,170,215,.28);
+  --border-strong:rgba(140,150,210,.42);
+  --border-bright:rgba(125,211,252,.55);
+  --text:#3f4866;
+  --text-bright:#1f2638;
+  --muted:#8590ad;
+  --dim:#a5acc4;
+  --sky:#60a5fa;
+  --lavender:#a78bfa;
+  --rose:#f0abfc;
+  --peach:#fda4af;
+  --glow-sky:rgba(125,211,252,.32);
+  --glow-lav:rgba(167,139,250,.32);
+  --glow-rose:rgba(244,114,182,.24);
+  --success:#34d399;
+  --success-glow:rgba(52,211,153,.22);
   --warn:#fbbf24;
-
-  --warn-glow:rgba(251,191,36,.28);
-
+  --warn-glow:rgba(251,191,36,.2);
   --danger:#fb7185;
-
-  --danger-glow:rgba(251,113,133,.28);
-
-  --shadow:0 10px 40px rgba(0,0,0,.42);
-
-  --shadow-sm:0 4px 16px rgba(0,0,0,.28);
-
+  --danger-glow:rgba(251,113,133,.2);
+  --shadow:0 8px 28px rgba(120,130,180,.14);
+  --shadow-sm:0 3px 10px rgba(120,130,180,.1);
 }
-
 *{box-sizing:border-box}
-
 html,body{height:100%}
-
 body{
-
   margin:0;
-
   font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
-
   background:var(--bg-deep);
-
   color:var(--text);
-
-  font-size:14px;
-
+  font-size:13.5px;
   line-height:1.6;
-
   min-height:100vh;
-
   overflow-x:hidden;
-
   position:relative;
-
   -webkit-font-smoothing:antialiased;
-
 }
-
 body::before{
-
   content:'';
-
-  position:fixed;
-
-  inset:0;
-
+  position:fixed;inset:0;z-index:-2;
   background:
-
-    radial-gradient(ellipse 80% 60% at 20% 0%,rgba(168,85,247,.22),transparent 55%),
-
-    radial-gradient(ellipse 70% 50% at 85% 12%,rgba(34,211,238,.18),transparent 58%),
-
-    radial-gradient(ellipse 90% 55% at 50% 100%,rgba(236,72,153,.14),transparent 62%),
-
+    radial-gradient(ellipse 70% 50% at 18% 0%,rgba(167,139,250,.18),transparent 55%),
+    radial-gradient(ellipse 65% 45% at 85% 12%,rgba(125,211,252,.18),transparent 58%),
+    radial-gradient(ellipse 85% 50% at 50% 100%,rgba(244,114,182,.12),transparent 62%),
     linear-gradient(180deg,var(--bg-deep) 0%,var(--bg-mid) 100%);
-
-  z-index:-2;
-
-  animation:aurora 24s ease-in-out infinite alternate;
-
+  animation:aurora 28s ease-in-out infinite alternate;
 }
-
 body::after{
-
   content:'';
-
-  position:fixed;
-
-  inset:0;
-
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
   background-image:
-
-    linear-gradient(rgba(148,163,255,.06) 1px,transparent 1px),
-
-    linear-gradient(90deg,rgba(148,163,255,.06) 1px,transparent 1px);
-
-  background-size:60px 60px;
-
-  z-index:-1;
-
-  pointer-events:none;
-
-  -webkit-mask-image:radial-gradient(ellipse at center,black 30%,transparent 100%);
-
-  mask-image:radial-gradient(ellipse at center,black 30%,transparent 100%);
-
+    linear-gradient(rgba(140,150,200,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(140,150,200,.06) 1px,transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(ellipse at center,black 28%,transparent 100%);
+  mask-image:radial-gradient(ellipse at center,black 28%,transparent 100%);
 }
-
-@keyframes aurora{
-
-  0%{filter:hue-rotate(0deg) saturate(1)}
-
-  100%{filter:hue-rotate(28deg) saturate(1.15)}
-
-}
-
-.wrapper{max-width:1280px;margin:0 auto;padding:28px 28px 100px;position:relative}
-
-/* ============ HEADER ============ */
-
+@keyframes aurora{0%{filter:hue-rotate(0deg) saturate(1)}100%{filter:hue-rotate(22deg) saturate(1.08)}}
+.wrapper{max-width:1240px;margin:0 auto;padding:22px 22px 80px;position:relative}
 header.page{
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:20px;
-
-  padding:18px 22px;
-
-  margin-bottom:16px;
-
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:14px 18px;margin-bottom:14px;
   background:var(--panel);
-
-  backdrop-filter:blur(16px);
-
-  -webkit-backdrop-filter:blur(16px);
-
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
   border:1px solid var(--border);
-
-  border-radius:16px;
-
+  border-radius:14px;
   box-shadow:var(--shadow);
-
-  position:relative;
-
-  overflow:hidden;
-
+  position:relative;overflow:hidden;
 }
-
 header.page::before{
-
-  content:'';
-
-  position:absolute;
-
-  top:0;left:0;right:0;
-
-  height:2px;
-
-  background:linear-gradient(90deg,transparent,var(--cyan),var(--purple),var(--pink),transparent);
-
-  opacity:.85;
-
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--sky),var(--lavender),var(--rose),transparent);
+  opacity:.7;
 }
-
 header.page::after{
-
-  content:'';
-
-  position:absolute;
-
-  inset:-60% -30% auto auto;
-
-  width:260px;height:260px;
-
-  background:radial-gradient(circle,var(--glow-cyan),transparent 60%);
-
-  filter:blur(32px);
-
-  pointer-events:none;
-
+  content:'';position:absolute;inset:-60% -30% auto auto;width:220px;height:220px;
+  background:radial-gradient(circle,var(--glow-lav),transparent 60%);
+  filter:blur(36px);pointer-events:none;
 }
-
-.brand{display:flex;align-items:center;gap:14px;min-width:0;flex:1}
-
+.brand{display:flex;align-items:center;gap:12px;min-width:0;flex:1}
 .brand-mark{
-
-  width:44px;height:44px;
-
-  border-radius:11px;
-
-  background:linear-gradient(135deg,var(--cyan),var(--purple),var(--pink));
-
+  width:40px;height:40px;border-radius:11px;
+  background:linear-gradient(135deg,var(--sky),var(--lavender),var(--rose));
   display:grid;place-items:center;
-
-  font-family:'Space Grotesk',sans-serif;
-
-  font-weight:700;
-
-  font-size:17px;
-
-  color:#0a0f1e;
-
-  box-shadow:0 0 24px var(--glow-cyan),0 0 48px var(--glow-purple);
-
-  flex-shrink:0;
-
-  position:relative;
-
-  letter-spacing:-.5px;
-
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:#fff;
+  box-shadow:0 0 18px var(--glow-sky),0 0 30px var(--glow-lav);
+  flex-shrink:0;position:relative;letter-spacing:-.5px;
 }
-
 .brand-mark::after{
-
-  content:'';
-
-  position:absolute;
-
-  inset:-3px;
-
-  border-radius:13px;
-
-  border:1px solid rgba(255,255,255,.2);
-
-  pointer-events:none;
-
+  content:'';position:absolute;inset:-3px;border-radius:13px;
+  border:1px solid rgba(255,255,255,.6);pointer-events:none;
 }
-
 .brand-text{min-width:0}
-
 .brand-text h1{
-
-  margin:0;
-
-  font-family:'Space Grotesk',sans-serif;
-
-  font-size:22px;
-
-  font-weight:700;
-
-  letter-spacing:-.3px;
-
-  background:linear-gradient(135deg,var(--text-bright) 0%,#c7d2fe 50%,var(--cyan) 100%);
-
-  -webkit-background-clip:text;
-
-  background-clip:text;
-
-  -webkit-text-fill-color:transparent;
-
-  color:transparent;
-
-  line-height:1.1;
-
+  margin:0;font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;letter-spacing:-.3px;
+  background:linear-gradient(135deg,#3f4866 0%,#7a86b8 55%,var(--sky) 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;line-height:1.1;
 }
-
-.brand-text h1 .slash{color:var(--purple);-webkit-text-fill-color:var(--purple);margin:0 4px;opacity:.7}
-
+.brand-text h1 .slash{color:var(--lavender);-webkit-text-fill-color:var(--lavender);margin:0 4px;opacity:.75}
 .brand-text p{
-
-  margin:4px 0 0;
-
-  color:#c7d2fe;
-
-  font-family:'JetBrains Mono',monospace;
-
-  font-size:10.5px;
-
-  letter-spacing:.8px;
-
-  text-transform:uppercase;
-
+  margin:3px 0 0;color:#7a86b8;font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:.8px;text-transform:uppercase;
 }
-
 .brand-text p::before{
-
-  content:'\25CF';
-
-  color:var(--success);
-
-  margin-right:6px;
-
+  content:'\25CF';color:var(--success);margin-right:6px;
   animation:pulse 2s ease-in-out infinite;
-
-  filter:drop-shadow(0 0 6px var(--success));
-
-  font-size:8px;
-
-  vertical-align:1px;
-
+  filter:drop-shadow(0 0 6px var(--success));font-size:8px;vertical-align:1px;
 }
-
-@keyframes pulse{
-
-  0%,100%{opacity:1;transform:scale(1)}
-
-  50%{opacity:.4;transform:scale(.85)}
-
-}
-
-.quick-stats{
-
-  display:flex;
-
-  gap:10px;
-
-  flex-shrink:0;
-
-  position:relative;
-
-  z-index:1;
-
-}
-
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.85)}}
+.quick-stats{display:flex;gap:8px;flex-shrink:0;position:relative;z-index:1}
 .stat-chip{
-
-  padding:8px 14px;
-
-  border-radius:11px;
-
-  background:rgba(45,55,90,.62);
-
+  padding:7px 12px;border-radius:11px;
+  background:rgba(255,255,255,.6);
   border:1px solid var(--border);
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  gap:2px;
-
-  min-width:70px;
-
-  transition:all .25s;
-
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  min-width:66px;transition:all .25s;
 }
-
 .stat-chip:hover{
-
-  border-color:var(--border-strong);
-
-  transform:translateY(-2px);
-
-  box-shadow:0 6px 24px rgba(99,102,241,.24);
-
+  border-color:var(--border-strong);transform:translateY(-2px);
+  box-shadow:0 5px 18px rgba(140,150,210,.18);background:rgba(255,255,255,.85);
 }
-
-.stat-chip .num{
-
-  font-family:'Space Grotesk',sans-serif;
-
-  font-size:19px;
-
-  font-weight:700;
-
-  line-height:1;
-
-}
-
+.stat-chip .num{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;line-height:1}
 .stat-chip .lbl{
-
-  font-family:'JetBrains Mono',monospace;
-
-  font-size:9px;
-
-  color:var(--muted);
-
-  letter-spacing:1.2px;
-
-  text-transform:uppercase;
-
+  font-family:'JetBrains Mono',monospace;font-size:8.5px;
+  color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;
 }
-
-.stat-chip.today .num{color:var(--cyan);text-shadow:0 0 16px var(--glow-cyan)}
-
-.stat-chip.week .num{color:var(--purple);text-shadow:0 0 16px var(--glow-purple)}
-
-.stat-chip.total .num{color:var(--pink);text-shadow:0 0 16px var(--glow-pink)}
-
-/* ============ NOW SHOWING CARD ============ */
-
+.stat-chip.today .num{color:var(--sky);text-shadow:0 0 12px var(--glow-sky)}
+.stat-chip.week .num{color:var(--lavender);text-shadow:0 0 12px var(--glow-lav)}
+.stat-chip.total .num{color:#f472b6;text-shadow:0 0 12px var(--glow-rose)}
 .now-showing{
-
   position:relative;
-
-  background:linear-gradient(135deg,rgba(34,211,238,.12) 0%,rgba(168,85,247,.12) 50%,rgba(236,72,153,.1) 100%);
-
-  backdrop-filter:blur(20px);
-
-  -webkit-backdrop-filter:blur(20px);
-
+  background:linear-gradient(135deg,rgba(125,211,252,.14) 0%,rgba(167,139,250,.14) 50%,rgba(244,114,182,.1) 100%);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
   border:1px solid var(--border-strong);
-
-  border-radius:14px;
-
-  padding:14px 20px;
-
-  margin-bottom:16px;
-
-  display:flex;
-
-  align-items:center;
-
-  gap:16px;
-
-  overflow:hidden;
-
-  box-shadow:var(--shadow-sm);
-
+  border-radius:13px;
+  padding:12px 18px;margin-bottom:14px;
+  display:flex;align-items:center;gap:14px;
+  overflow:hidden;box-shadow:var(--shadow-sm);
 }
-
 .now-showing::before{
-
-  content:'';
-
-  position:absolute;
-
-  inset:0;
-
-  background:radial-gradient(circle at 85% 50%,rgba(168,85,247,.18),transparent 60%);
-
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 85% 50%,rgba(167,139,250,.16),transparent 60%);
   pointer-events:none;
-
 }
-
 .now-showing .label{
-
-  font-family:'JetBrains Mono',monospace;
-
-  font-size:10px;
-
-  color:var(--muted);
-
-  letter-spacing:1.5px;
-
-  text-transform:uppercase;
-
-  flex-shrink:0;
-
-  padding:4px 10px;
-
-  border-radius:6px;
-
-  background:rgba(45,55,90,.65);
-
+  font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--muted);
+  letter-spacing:1.5px;text-transform:uppercase;flex-shrink:0;
+  padding:3px 9px;border-radius:6px;background:rgba(255,255,255,.7);
   border:1px solid var(--border);
-
 }
-
 .now-showing .summary{
-
-  font-family:'Space Grotesk',sans-serif;
-
-  font-size:14.5px;
-
-  color:var(--text-bright);
-
-  flex:1;
-
-  min-width:0;
-
-  position:relative;
-
+  font-family:'Space Grotesk',sans-serif;font-size:13.5px;color:var(--text-bright);
+  flex:1;min-width:0;position:relative;
 }
-
 .now-showing .summary strong{
-
-  color:var(--cyan);
-
-  font-size:20px;
-
-  font-weight:700;
-
-  margin-right:4px;
-
-  text-shadow:0 0 14px var(--glow-cyan);
-
+  color:var(--sky);font-size:18px;font-weight:700;margin-right:4px;
+  text-shadow:0 0 10px var(--glow-sky);
 }
-
-/* ============ TAB BAR (SKILL FILTER) ============ */
-
-.tab-bar-wrap{
-
-  position:relative;
-
-  margin-bottom:14px;
-
-}
-
+.tab-bar-wrap{position:relative;margin-bottom:12px}
 .tab-bar-wrap::before{
-
-  content:'SKILLS';
-
-  position:absolute;
-
-  top:-9px;left:16px;
-
-  font-family:'JetBrains Mono',monospace;
-
-  font-size:9px;
-
-  color:var(--muted);
-
-  letter-spacing:1.8px;
-
-  background:var(--bg-deep);
-
-  padding:0 8px;
-
-  z-index:1;
-
+  content:'SKILLS';position:absolute;top:-8px;left:16px;
+  font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);
+  letter-spacing:1.8px;background:var(--bg-deep);padding:0 8px;z-index:1;
 }
-
 .tab-bar{
-
-  display:flex;
-
-  gap:6px;
-
-  padding:12px 12px;
-
+  display:flex;gap:5px;padding:10px 10px;
   background:var(--panel);
-
-  backdrop-filter:blur(16px);
-
-  -webkit-backdrop-filter:blur(16px);
-
-  border:1px solid var(--border);
-
-  border-radius:14px;
-
-  box-shadow:var(--shadow-sm);
-
-  overflow-x:auto;
-
-  scroll-behavior:smooth;
-
-  scrollbar-width:thin;
-
-  scrollbar-color:rgba(148,163,255,.25) transparent;
-
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid var(--border);border-radius:13px;box-shadow:var(--shadow-sm);
+  overflow-x:auto;scroll-behavior:smooth;
+  scrollbar-width:thin;scrollbar-color:rgba(140,150,210,.22) transparent;
 }
-
-.tab-bar::-webkit-scrollbar{height:6px}
-
+.tab-bar::-webkit-scrollbar{height:5px}
 .tab-bar::-webkit-scrollbar-track{background:transparent}
-
-.tab-bar::-webkit-scrollbar-thumb{background:rgba(148,163,255,.22);border-radius:3px}
-
+.tab-bar::-webkit-scrollbar-thumb{background:rgba(140,150,210,.22);border-radius:3px}
 .tab{
-
-  flex-shrink:0;
-
-  display:flex;
-
-  align-items:center;
-
-  gap:8px;
-
-  padding:8px 13px;
-
-  border-radius:10px;
-
-  border:1px solid transparent;
-
-  background:transparent;
-
-  color:var(--muted);
-
-  cursor:pointer;
-
-  font-family:'Inter',sans-serif;
-
-  font-size:13px;
-
-  font-weight:500;
-
-  transition:all .2s;
-
-  white-space:nowrap;
-
-  position:relative;
-
+  flex-shrink:0;display:flex;align-items:center;gap:7px;
+  padding:7px 12px;border-radius:10px;
+  border:1px solid transparent;background:transparent;color:var(--muted);
+  cursor:pointer;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;
+  transition:all .2s;white-space:nowrap;position:relative;
 }
-
 .tab .tab-glyph{
-
-  width:24px;height:24px;
-
-  border-radius:6px;
-
-  background:rgba(99,102,241,.16);
-
+  width:22px;height:22px;border-radius:6px;
+  background:rgba(167,139,250,.12);
   display:grid;place-items:center;
-
-  font-family:'JetBrains Mono',monospace;
-
-  font-size:10px;
-
-  font-weight:700;
-
-  color:var(--purple);
-
-  flex-shrink:0;
-
-  border:1px solid var(--border);
-
-  transition:all .2s;
-
+  font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;
+  color:var(--lavender);flex-shrink:0;
+  border:1px solid var(--border);transition:all .2s;
 }
-
 .tab .tab-count{
-
-  font-family:'JetBrains Mono',monospace;
-
-  font-size:10px;
-
-  background:rgba(148,163,255,.12);
-
-  color:var(--muted);
-
-  padding:2px 7px;
-
-  border-radius:10px;
-
-  min-width:22px;
-
-  text-align:center;
-
-  transition:all .2s;
-
+  font-family:'JetBrains Mono',monospace;font-size:9.5px;
+  background:rgba(140,150,210,.12);color:var(--muted);
+  padding:2px 7px;border-radius:10px;min-width:22px;text-align:center;transition:all .2s;
 }
-
-.tab:hover{
-
-  background:rgba(34,211,238,.08);
-
-  color:var(--text);
-
-  border-color:var(--border);
-
-}
-
-.tab:hover .tab-glyph{background:rgba(34,211,238,.2);color:var(--cyan);border-color:rgba(34,211,238,.32)}
-
+.tab:hover{background:rgba(125,211,252,.08);color:var(--text);border-color:var(--border)}
+.tab:hover .tab-glyph{background:rgba(125,211,252,.18);color:var(--sky);border-color:rgba(125,211,252,.32)}
 .tab.active{
-
-  background:linear-gradient(135deg,rgba(34,211,238,.2),rgba(168,85,247,.2));
-
-  color:var(--text-bright);
-
-  border-color:var(--border-bright);
-
-  box-shadow:0 0 22px rgba(34,211,238,.22),inset 0 0 18px rgba(168,85,247,.1);
-
+  background:linear-gradient(135deg,rgba(125,211,252,.18),rgba(167,139,250,.18));
+  color:var(--text-bright);border-color:var(--border-bright);
+  box-shadow:0 0 18px rgba(125,211,252,.18),inset 0 0 14px rgba(167,139,250,.08);
 }
-
 .tab.active .tab-glyph{
-
-  background:linear-gradient(135deg,var(--cyan),var(--purple));
-
-  color:#0a0f1e;
-
-  border-color:transparent;
-
-  box-shadow:0 0 12px var(--glow-cyan);
-
+  background:linear-gradient(135deg,var(--sky),var(--lavender));color:#fff;border-color:transparent;
+  box-shadow:0 0 10px var(--glow-sky);
 }
-
-.tab.active .tab-count{
-
-  background:rgba(34,211,238,.25);
-
-  color:var(--text-bright);
-
-}
-
-/* ============ FILTER BAR ============ */
-
+.tab.active .tab-count{background:rgba(125,211,252,.22);color:var(--text-bright)}
 .filter-bar{
-
-  display:flex;
-
-  gap:10px;
-
-  align-items:center;
-
-  margin-bottom:18px;
-
-  padding:10px 12px;
-
-  background:var(--panel);
-
-  backdrop-filter:blur(16px);
-
-  -webkit-backdrop-filter:blur(16px);
-
-  border:1px solid var(--border);
-
-  border-radius:14px;
-
-  box-shadow:var(--shadow-sm);
-
-  flex-wrap:wrap;
-
-  position:relative;
-
-  z-index:40;
-
+  display:flex;gap:8px;align-items:center;margin-bottom:16px;
+  padding:9px 11px;background:var(--panel);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid var(--border);border-radius:13px;box-shadow:var(--shadow-sm);
+  flex-wrap:wrap;position:relative;z-index:40;
 }
-
-.search-wrap{
-
-  position:relative;
-
-  flex:1 1 240px;
-
-  min-width:200px;
-
-}
-
+.search-wrap{position:relative;flex:1 1 220px;min-width:180px}
 .search-wrap::before{
-
-  content:'';
-
-  position:absolute;
-
-  left:12px;top:50%;
-
-  transform:translateY(-50%);
-
-  width:14px;height:14px;
-
-  border:1.5px solid var(--muted);
-
-  border-radius:50%;
-
-  pointer-events:none;
-
+  content:'';position:absolute;left:11px;top:50%;transform:translateY(-50%);
+  width:13px;height:13px;border:1.5px solid var(--muted);border-radius:50%;pointer-events:none;
 }
-
 .search-wrap::after{
-
-  content:'';
-
-  position:absolute;
-
-  left:22px;top:calc(50% + 4px);
-
-  width:6px;height:1.5px;
-
-  background:var(--muted);
-
-  transform:rotate(45deg);
-
-  pointer-events:none;
-
-  border-radius:2px;
-
+  content:'';position:absolute;left:20px;top:calc(50% + 4px);
+  width:6px;height:1.5px;background:var(--muted);transform:rotate(45deg);
+  pointer-events:none;border-radius:2px;
 }
-
 .search-wrap input{
-
-  width:100%;
-
-  background:rgba(45,55,90,.65);
-
-  border:1px solid var(--border);
-
-  border-radius:10px;
-
-  padding:10px 14px 10px 34px;
-
-  font-size:13px;
-
-  color:var(--text);
-
-  outline:none;
-
-  transition:all .2s;
-
-  font-family:inherit;
-
+  width:100%;background:rgba(255,255,255,.7);
+  border:1px solid var(--border);border-radius:10px;
+  padding:9px 13px 9px 32px;font-size:12.5px;color:var(--text);outline:none;
+  transition:all .2s;font-family:inherit;
 }
-
 .search-wrap input::placeholder{color:var(--muted)}
-
 .search-wrap input:focus{
-
-  border-color:var(--cyan);
-
-  box-shadow:0 0 0 3px rgba(34,211,238,.15),0 0 24px rgba(34,211,238,.2);
-
-  background:rgba(45,55,90,.85);
-
+  border-color:var(--sky);
+  box-shadow:0 0 0 3px rgba(125,211,252,.15),0 0 18px rgba(125,211,252,.18);
+  background:rgba(255,255,255,.95);
 }
-
 .filter-dropdown{position:relative}
-
 .filter-btn{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:8px;
-
-  padding:9px 13px;
-
-  background:rgba(45,55,90,.55);
-
-  border:1px solid var(--border);
-
-  border-radius:10px;
-
-  color:var(--text);
-
-  font-family:inherit;
-
-  font-size:13px;
-
-  cursor:pointer;
-
-  transition:all .2s;
-
-  white-space:nowrap;
-
-  min-width:150px;
-
+  display:flex;align-items:center;gap:7px;padding:8px 12px;
+  background:rgba(255,255,255,.6);
+  border:1px solid var(--border);border-radius:10px;
+  color:var(--text);font-family:inherit;font-size:12.5px;cursor:pointer;
+  transition:all .2s;white-space:nowrap;min-width:140px;
 }
-
-.filter-btn .btn-label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.8px;font-family:'JetBrains Mono',monospace}
-
+.filter-btn .btn-label{
+  color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.8px;
+  font-family:'JetBrains Mono',monospace;
+}
 .filter-btn .btn-value{color:var(--text-bright);flex:1;text-align:left;overflow:hidden;text-overflow:ellipsis}
-
-.filter-btn:hover{
-
-  border-color:var(--border-strong);
-
-  background:rgba(34,211,238,.08);
-
-}
-
-.filter-btn:hover .btn-value{color:var(--cyan)}
-
+.filter-btn:hover{border-color:var(--border-strong);background:rgba(125,211,252,.08)}
+.filter-btn:hover .btn-value{color:var(--sky)}
 .filter-btn.has-active{
-
   border-color:var(--border-bright);
-
-  background:rgba(34,211,238,.12);
-
-  box-shadow:0 0 16px rgba(34,211,238,.2);
-
+  background:rgba(125,211,252,.12);box-shadow:0 0 12px rgba(125,211,252,.18);
 }
-
-.filter-btn.has-active .btn-label{color:var(--cyan)}
-
+.filter-btn.has-active .btn-label{color:var(--sky)}
 .filter-btn.has-active .btn-value{color:var(--text-bright);font-weight:500}
-
-.filter-btn .chev{
-
-  margin-left:2px;
-
-  font-size:9px;
-
-  opacity:.6;
-
-  transition:transform .2s;
-
-  color:var(--muted);
-
-}
-
-.filter-dropdown.open .filter-btn .chev{transform:rotate(180deg);color:var(--cyan);opacity:1}
-
+.filter-btn .chev{margin-left:2px;font-size:9px;opacity:.5;transition:transform .2s;color:var(--muted)}
+.filter-dropdown.open .filter-btn .chev{transform:rotate(180deg);color:var(--sky);opacity:1}
 .dropdown-panel{
-
-  display:none;
-
-  position:absolute;
-
-  top:calc(100% + 8px);
-
-  left:0;
-
-  min-width:260px;
-
-  max-width:340px;
-
-  max-height:360px;
-
+  display:none;position:absolute;top:calc(100% + 6px);left:0;
+  min-width:240px;max-width:320px;max-height:340px;
   background:var(--panel-strong);
-
-  backdrop-filter:blur(24px);
-
-  -webkit-backdrop-filter:blur(24px);
-
-  border:1px solid var(--border-strong);
-
-  border-radius:12px;
-
-  box-shadow:var(--shadow),0 0 36px rgba(34,211,238,.15);
-
-  z-index:50;
-
-  overflow:hidden;
-
-  flex-direction:column;
-
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border:1px solid var(--border-strong);border-radius:12px;
+  box-shadow:var(--shadow),0 0 24px rgba(125,211,252,.12);
+  z-index:50;overflow:hidden;flex-direction:column;
 }
-
 .filter-dropdown.open .dropdown-panel{display:flex}
-
-.dropdown-search{
-
-  padding:10px;
-
-  border-bottom:1px solid var(--border);
-
-}
-
+.dropdown-search{padding:9px;border-bottom:1px solid var(--border)}
 .dropdown-search input{
-
-  width:100%;
-
-  background:rgba(45,55,90,.72);
-
-  border:1px solid var(--border);
-
-  border-radius:8px;
-
-  padding:7px 10px;
-
-  font-size:12px;
-
-  color:var(--text);
-
-  outline:none;
-
-  font-family:inherit;
-
+  width:100%;background:rgba(255,255,255,.7);
+  border:1px solid var(--border);border-radius:8px;padding:6px 10px;
+  font-size:11.5px;color:var(--text);outline:none;font-family:inherit;
 }
-
-.dropdown-search input:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(34,211,238,.15)}
-
+.dropdown-search input:focus{border-color:var(--sky);box-shadow:0 0 0 2px rgba(125,211,252,.15)}
 .dropdown-options{
-
-  overflow-y:auto;
-
-  padding:6px;
-
-  flex:1;
-
-  scrollbar-width:thin;
-
-  scrollbar-color:rgba(148,163,255,.25) transparent;
-
+  overflow-y:auto;padding:5px;flex:1;
+  scrollbar-width:thin;scrollbar-color:rgba(140,150,210,.22) transparent;
 }
-
-.dropdown-options::-webkit-scrollbar{width:6px}
-
-.dropdown-options::-webkit-scrollbar-thumb{background:rgba(148,163,255,.22);border-radius:3px}
-
+.dropdown-options::-webkit-scrollbar{width:5px}
+.dropdown-options::-webkit-scrollbar-thumb{background:rgba(140,150,210,.22);border-radius:3px}
 .dropdown-option{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:10px;
-
-  padding:8px 10px;
-
-  border-radius:7px;
-
-  cursor:pointer;
-
-  font-size:12.5px;
-
-  color:var(--text);
-
-  transition:background .15s;
-
+  display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:7px;
+  cursor:pointer;font-size:12px;color:var(--text);transition:background .15s;
 }
-
-.dropdown-option:hover{background:rgba(34,211,238,.1);color:var(--text-bright)}
-
+.dropdown-option:hover{background:rgba(125,211,252,.1);color:var(--text-bright)}
 .dropdown-option.active{
-
-  background:linear-gradient(90deg,rgba(34,211,238,.2),rgba(168,85,247,.18));
-
+  background:linear-gradient(90deg,rgba(125,211,252,.18),rgba(167,139,250,.16));
   color:var(--text-bright);
-
 }
-
 .dropdown-option .dot{
-
-  width:14px;height:14px;
-
-  border-radius:4px;
-
-  border:1.5px solid var(--border-strong);
-
-  flex-shrink:0;
-
-  transition:all .15s;
-
-  position:relative;
-
+  width:13px;height:13px;border-radius:4px;
+  border:1.5px solid var(--border-strong);flex-shrink:0;
+  transition:all .15s;position:relative;
 }
-
 .dropdown-option.active .dot{
-
-  background:linear-gradient(135deg,var(--cyan),var(--purple));
-
-  border-color:transparent;
-
-  box-shadow:0 0 10px var(--glow-cyan);
-
+  background:linear-gradient(135deg,var(--sky),var(--lavender));
+  border-color:transparent;box-shadow:0 0 8px var(--glow-sky);
 }
-
 .dropdown-option.active .dot::after{
-
-  content:'';
-
-  position:absolute;
-
-  left:4px;top:0;
-
-  width:3px;height:8px;
-
-  border:solid #0a0f1e;
-
-  border-width:0 2px 2px 0;
-
-  transform:rotate(45deg);
-
+  content:'';position:absolute;left:4px;top:0;
+  width:3px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);
 }
-
 .dropdown-option .opt-label{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-
 .dropdown-option .opt-count{
-
-  font-family:'JetBrains Mono',monospace;
-
-  font-size:10px;
-
-  color:var(--muted);
-
-  background:rgba(148,163,255,.1);
-
-  padding:1px 7px;
-
-  border-radius:8px;
-
+  font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--muted);
+  background:rgba(140,150,210,.1);padding:1px 7px;border-radius:8px;
 }
-
-.dropdown-option.active .opt-count{color:var(--cyan);background:rgba(34,211,238,.15)}
-
+.dropdown-option.active .opt-count{color:var(--sky);background:rgba(125,211,252,.15)}
 .clear-btn{
-
-  background:transparent;
-
-  border:1px solid transparent;
-
-  color:var(--muted);
-
-  font-size:11px;
-
-  cursor:pointer;
-
-  padding:8px 13px;
-
-  font-family:'JetBrains Mono',monospace;
-
-  text-transform:uppercase;
-
-  letter-spacing:1.2px;
-
-  border-radius:8px;
-
-  transition:all .2s;
-
-  margin-left:auto;
-
+  background:transparent;border:1px solid transparent;color:var(--muted);
+  font-size:10.5px;cursor:pointer;padding:7px 12px;
+  font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1.2px;
+  border-radius:8px;transition:all .2s;margin-left:auto;
 }
-
 .clear-btn:hover{
-
-  color:var(--danger);
-
-  border-color:rgba(251,113,133,.4);
-
-  background:rgba(251,113,133,.08);
-
-  box-shadow:0 0 14px rgba(251,113,133,.2);
-
+  color:var(--danger);border-color:rgba(251,113,133,.4);
+  background:rgba(251,113,133,.08);box-shadow:0 0 10px rgba(251,113,133,.16);
 }
-
-/* ============ DAY GROUPS ============ */
-
-.day-group{margin-bottom:24px}
-
+.day-group{margin-bottom:20px}
 .day-header{
-
-  position:sticky;
-
-  top:0;
-
-  z-index:5;
-
-  padding:12px 2px 10px;
-
-  margin-bottom:10px;
-
+  position:sticky;top:0;z-index:5;
+  padding:10px 2px 8px;margin-bottom:8px;
   border-bottom:1px solid var(--border);
-
-  display:flex;
-
-  align-items:baseline;
-
-  gap:12px;
-
-  background:linear-gradient(180deg,rgba(10,15,30,.94) 0%,rgba(10,15,30,.75) 100%);
-
-  backdrop-filter:blur(8px);
-
-  -webkit-backdrop-filter:blur(8px);
-
+  display:flex;align-items:baseline;gap:12px;
+  background:linear-gradient(180deg,rgba(246,244,251,.94) 0%,rgba(246,244,251,.75) 100%);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
 }
-
 .day-header .day-title{
-
-  font-family:'Space Grotesk',sans-serif;
-
-  font-size:13px;
-
-  font-weight:700;
-
-  color:var(--text-bright);
-
-  text-transform:uppercase;
-
-  letter-spacing:1.2px;
-
+  font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;
+  color:var(--text-bright);text-transform:uppercase;letter-spacing:1.2px;
 }
-
 .day-header .day-title::before{
-
-  content:'\25B8';
-
-  color:var(--purple);
-
-  margin-right:8px;
-
-  filter:drop-shadow(0 0 6px var(--glow-purple));
-
+  content:'\25B8';color:var(--lavender);margin-right:7px;
+  filter:drop-shadow(0 0 5px var(--glow-lav));
 }
-
 .day-header .day-count{
-
-  font-family:'JetBrains Mono',monospace;
-
-  font-size:10px;
-
-  color:var(--muted);
-
-  text-transform:uppercase;
-
-  letter-spacing:1px;
-
+  font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;
 }
-
-/* ============ ENTRY CARDS ============ */
-
 .entry{
-
   background:var(--panel);
-
-  backdrop-filter:blur(12px);
-
-  -webkit-backdrop-filter:blur(12px);
-
-  border:1px solid var(--border);
-
-  border-radius:12px;
-
-  margin-bottom:10px;
-
-  box-shadow:var(--shadow-sm);
-
-  overflow:hidden;
-
-  transition:all .25s;
-
-  position:relative;
-
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--border);border-radius:11px;
+  margin-bottom:7px;box-shadow:var(--shadow-sm);
+  overflow:hidden;transition:all .25s;position:relative;
 }
-
 .entry::before{
-
-  content:'';
-
-  position:absolute;
-
-  left:0;top:0;bottom:0;
-
-  width:3px;
-
-  background:linear-gradient(180deg,var(--cyan),var(--purple));
-
-  opacity:0;
-
-  transition:opacity .25s;
-
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--sky),var(--lavender));
+  opacity:0;transition:opacity .25s;
 }
-
 .entry:hover{
-
   border-color:var(--border-strong);
-
-  box-shadow:var(--shadow),0 0 26px rgba(99,102,241,.18);
-
-  transform:translateY(-1px);
-
-  background:var(--panel-hover);
-
+  box-shadow:var(--shadow),0 0 18px rgba(125,211,252,.14);
+  transform:translateY(-1px);background:var(--panel-hover);
 }
-
 .entry:hover::before{opacity:1}
-
 .entry.open{
-
   border-color:var(--border-strong);
-
-  box-shadow:var(--shadow),0 0 30px rgba(168,85,247,.22);
-
+  box-shadow:var(--shadow),0 0 22px rgba(167,139,250,.18);
 }
-
 .entry.open::before{opacity:1}
-
 .entry-summary{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:12px;
-
-  padding:13px 18px;
-
-  cursor:pointer;
-
-  user-select:none;
-
+  display:flex;align-items:center;gap:10px;
+  padding:10px 15px;cursor:pointer;user-select:none;
 }
-
 .entry-summary .chevron{
-
-  color:var(--cyan);
-
-  font-size:10px;
-
-  transition:transform .25s;
-
-  flex-shrink:0;
-
-  width:14px;
-
-  filter:drop-shadow(0 0 4px var(--glow-cyan));
-
+  color:var(--sky);font-size:9.5px;transition:transform .25s;
+  flex-shrink:0;width:13px;filter:drop-shadow(0 0 4px var(--glow-sky));
 }
-
 .entry.open .entry-summary .chevron{transform:rotate(90deg)}
-
 .skill-pill{
-
-  flex-shrink:0;
-
-  padding:4px 10px;
-
-  border-radius:7px;
-
-  font-family:'JetBrains Mono',monospace;
-
-  font-size:10.5px;
-
-  font-weight:600;
-
-  background:rgba(168,85,247,.28);
-
-  color:#e9d5ff;
-
-  border:1px solid rgba(168,85,247,.55);
-
-  text-transform:lowercase;
-
-  letter-spacing:.3px;
-
-  white-space:nowrap;
-
-  max-width:180px;
-
-  overflow:hidden;
-
-  text-overflow:ellipsis;
-
+  flex-shrink:0;padding:3px 9px;border-radius:7px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;
+  background:rgba(167,139,250,.18);color:#7c3aed;
+  border:1px solid rgba(167,139,250,.4);
+  text-transform:lowercase;letter-spacing:.3px;white-space:nowrap;
+  max-width:170px;overflow:hidden;text-overflow:ellipsis;
 }
-
 .entry-summary .entry-title{
-
-  font-weight:500;
-
-  font-size:14px;
-
-  color:var(--text-bright);
-
-  flex:1 1 240px;
-
-  min-width:200px;
-
-  overflow:hidden;
-
-  text-overflow:ellipsis;
-
-  white-space:nowrap;
-
+  font-weight:500;font-size:13px;color:var(--text-bright);
+  flex:1 1 220px;min-width:180px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
 }
-
 .entry-summary .entry-meta{
-
-  font-family:'JetBrains Mono',monospace;
-
-  font-size:11px;
-
-  color:var(--muted);
-
-  flex:0 1 auto;
-
-  min-width:0;
-
-  max-width:42%;
-
-  overflow:hidden;
-
-  text-overflow:ellipsis;
-
-  white-space:nowrap;
-
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);
+  flex:0 1 auto;min-width:0;max-width:42%;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
 }
-
-.entry-summary .entry-tags{
-
-  display:flex;
-
-  gap:5px;
-
-  flex-shrink:0;
-
-  flex-wrap:nowrap;
-
-}
-
+.entry-summary .entry-tags{display:flex;gap:4px;flex-shrink:0;flex-wrap:nowrap}
 .tag{
-
-  display:inline-block;
-
-  padding:3px 10px;
-
-  border-radius:8px;
-
-  font-size:11px;
-
-  font-family:'JetBrains Mono',monospace;
-
-  background:rgba(99,102,241,.26);
-
-  color:#ddd6fe;
-
-  font-weight:600;
-
-  white-space:nowrap;
-
-  border:1px solid rgba(168,85,247,.5);
-
-  letter-spacing:.3px;
-
+  display:inline-block;padding:3px 9px;border-radius:7px;
+  font-size:10.5px;font-family:'JetBrains Mono',monospace;
+  background:rgba(140,150,210,.16);color:#5b6494;
+  font-weight:600;white-space:nowrap;
+  border:1px solid rgba(140,150,210,.32);letter-spacing:.3px;
 }
-
-.tag.shop{
-
-  background:rgba(34,211,238,.22);
-
-  color:#cffafe;
-
-  border-color:rgba(34,211,238,.55);
-
-}
-
-.tag.platform{
-
-  background:rgba(251,191,36,.22);
-
-  color:#fef3c7;
-
-  border-color:rgba(251,191,36,.55);
-
-}
-
+.tag.shop{background:rgba(125,211,252,.16);color:#0369a1;border-color:rgba(125,211,252,.4)}
+.tag.platform{background:rgba(251,191,36,.16);color:#a16207;border-color:rgba(251,191,36,.4)}
 .tag.result-ok{
-
-  background:rgba(16,243,160,.22);
-
-  color:#bbf7d0;
-
-  border-color:rgba(16,243,160,.55);
-
-  box-shadow:0 0 10px var(--success-glow);
-
+  background:rgba(52,211,153,.16);color:#047857;border-color:rgba(52,211,153,.4);
+  box-shadow:0 0 8px var(--success-glow);
 }
-
 .tag.result-warn{
-
-  background:rgba(251,191,36,.22);
-
-  color:#fef3c7;
-
-  border-color:rgba(251,191,36,.55);
-
-  box-shadow:0 0 10px var(--warn-glow);
-
+  background:rgba(251,191,36,.18);color:#92400e;border-color:rgba(251,191,36,.42);
+  box-shadow:0 0 8px var(--warn-glow);
 }
-
 .tag.result-fail{
-
-  background:rgba(251,113,133,.22);
-
-  color:#fecdd3;
-
-  border-color:rgba(251,113,133,.55);
-
-  box-shadow:0 0 10px var(--danger-glow);
-
+  background:rgba(251,113,133,.16);color:#b91c1c;border-color:rgba(251,113,133,.4);
+  box-shadow:0 0 8px var(--danger-glow);
 }
-
-.entry-body{
-
-  display:none;
-
-  padding:6px 18px 18px 42px;
-
-  border-top:1px solid var(--border);
-
-}
-
+.entry-body{display:none;padding:6px 16px 16px 38px;border-top:1px solid var(--border)}
 .entry.open .entry-body{display:block}
-
-.full-tags{
-
-  display:flex;
-
-  gap:5px;
-
-  flex-wrap:wrap;
-
-  padding:12px 0 8px;
-
-}
-
+.full-tags{display:flex;gap:5px;flex-wrap:wrap;padding:10px 0 6px}
 .field{
-
-  display:grid;
-
-  grid-template-columns:120px 1fr;
-
-  gap:14px;
-
-  padding:8px 0;
-
-  border-top:1px solid var(--border);
-
+  display:grid;grid-template-columns:118px 1fr;gap:13px;
+  padding:7px 0;border-top:1px solid var(--border);
 }
-
 .field:first-of-type{border-top:none}
-
 .field-label{
-
-  color:var(--cyan);
-
-  font-size:10px;
-
-  font-family:'JetBrains Mono',monospace;
-
-  text-transform:uppercase;
-
-  letter-spacing:1px;
-
-  padding-top:3px;
-
-  opacity:.95;
-
+  color:var(--sky);font-size:9.5px;font-family:'JetBrains Mono',monospace;
+  text-transform:uppercase;letter-spacing:1px;padding-top:3px;opacity:.95;
 }
-
-.field-value{
-
-  color:var(--text);
-
-  font-size:13px;
-
-  line-height:1.65;
-
-}
-
+.field-value{color:var(--text);font-size:12.5px;line-height:1.65}
 .field-value code{
-
-  background:rgba(34,211,238,.1);
-
-  color:var(--cyan);
-
-  border:1px solid rgba(34,211,238,.22);
-
-  border-radius:4px;
-
-  padding:1px 6px;
-
-  font-family:'JetBrains Mono',monospace;
-
-  font-size:12px;
-
+  background:rgba(125,211,252,.1);color:#0369a1;
+  border:1px solid rgba(125,211,252,.22);border-radius:4px;
+  padding:1px 6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;
 }
-
 .field-value strong{color:var(--text-bright)}
-
 .changes{
-
-  margin-top:6px;
-
-  padding:12px 14px;
-
-  background:rgba(45,55,90,.55);
-
-  border-radius:8px;
-
-  border-left:2px solid var(--purple);
-
-  font-size:12px;
-
-  line-height:1.75;
-
-  font-family:'JetBrains Mono',monospace;
-
-  box-shadow:inset 0 0 24px rgba(168,85,247,.06);
-
+  margin-top:5px;padding:11px 13px;
+  background:rgba(247,245,255,.7);
+  border-radius:8px;border-left:2px solid var(--lavender);
+  font-size:11.5px;line-height:1.7;font-family:'JetBrains Mono',monospace;
+  box-shadow:inset 0 0 18px rgba(167,139,250,.05);
 }
-
 .changes .change-row{padding:3px 0}
-
-.changes .before{
-
-  color:var(--danger);
-
-  text-decoration:line-through;
-
-  opacity:.85;
-
-}
-
-.changes .arrow{
-
-  color:var(--cyan);
-
-  margin:0 8px;
-
-  text-shadow:0 0 6px var(--glow-cyan);
-
-}
-
-.changes .after{
-
-  color:var(--success);
-
-  font-weight:500;
-
-  text-shadow:0 0 6px var(--success-glow);
-
-}
-
+.changes .before{color:var(--danger);text-decoration:line-through;opacity:.85}
+.changes .arrow{color:var(--sky);margin:0 8px;text-shadow:0 0 5px var(--glow-sky)}
+.changes .after{color:#047857;font-weight:500;text-shadow:0 0 5px var(--success-glow)}
 .changes strong{color:var(--text-bright);font-weight:600}
-
 .empty-state{
-
-  text-align:center;
-
-  color:var(--muted);
-
-  padding:80px 20px;
-
-  font-size:13px;
-
-  font-family:'JetBrains Mono',monospace;
-
-  letter-spacing:.5px;
-
+  text-align:center;color:var(--muted);padding:70px 20px;font-size:12.5px;
+  font-family:'JetBrains Mono',monospace;letter-spacing:.5px;
 }
-
-::selection{background:rgba(168,85,247,.35);color:var(--text-bright)}
-
-/* ============ MOBILE ============ */
-
+::selection{background:rgba(167,139,250,.32);color:var(--text-bright)}
 @media(max-width:768px){
-
-  .wrapper{padding:20px 14px 80px}
-
-  header.page{flex-wrap:wrap;padding:14px 16px;gap:14px}
-
+  .wrapper{padding:16px 12px 60px}
+  header.page{flex-wrap:wrap;padding:12px 14px;gap:12px}
   .brand{flex:1 1 100%}
-
-  .brand-text h1{font-size:19px}
-
+  .brand-text h1{font-size:17px}
   .quick-stats{width:100%;justify-content:space-between}
-
   .stat-chip{flex:1;min-width:0;padding:6px 10px}
-
-  .stat-chip .num{font-size:17px}
-
-  .now-showing{padding:12px 14px;gap:10px;flex-wrap:wrap}
-
-  .now-showing .summary{font-size:13px}
-
-  .now-showing .summary strong{font-size:17px}
-
-  .filter-bar{flex-wrap:wrap;gap:8px}
-
+  .stat-chip .num{font-size:16px}
+  .now-showing{padding:10px 12px;gap:10px;flex-wrap:wrap}
+  .now-showing .summary{font-size:12.5px}
+  .now-showing .summary strong{font-size:16px}
+  .filter-bar{flex-wrap:wrap;gap:7px}
   .filter-dropdown{flex:1 1 calc(50% - 4px)}
-
   .filter-btn{width:100%;min-width:0}
-
-  .dropdown-panel{min-width:220px;left:auto;right:0}
-
+  .dropdown-panel{min-width:200px;left:auto;right:0}
   .clear-btn{flex:1 1 100%;text-align:center;margin-left:0}
-
   .entry-summary .entry-tags{display:none}
-
   .field{grid-template-columns:1fr;gap:4px}
-
   .field-label{padding-top:0}
-
-  .entry-summary{gap:8px;padding:12px 14px}
-
-  .skill-pill{padding:3px 8px;font-size:10px;max-width:110px}
-
-  .tab{padding:7px 11px;font-size:12px}
-
-  .tab-bar{padding:10px}
-
+  .entry-summary{gap:7px;padding:10px 12px}
+  .skill-pill{padding:3px 7px;font-size:9.5px;max-width:100px}
+  .tab{padding:6px 10px;font-size:11.5px}
+  .tab-bar{padding:8px}
 }
-
-/* === trim_archive.py compaction === */
-.archive-block { margin-top: 2rem; }
-.archive-block > summary { cursor: pointer; padding: .6rem .8rem; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 8px; font-size: .9rem; opacity: .8; }
-.archive-block > summary:hover { opacity: 1; }
-.archive-block[open] > summary { margin-bottom: 1rem; }
-.archive-block .entry { opacity: .72; }
-.archive-block .entry:hover { opacity: 1; }
-.entry { padding: .55rem .8rem !important; margin-bottom: .35rem !important; }
-.entry-summary { gap: .45rem !important; font-size: .92rem !important; }
-.entry-title { font-size: .92rem !important; }
-.entry-meta { font-size: .78rem !important; opacity: .68 !important; }
-.entry-body { padding-top: .5rem !important; font-size: .88rem !important; line-height: 1.4 !important; }
-.entry-body .field { margin-bottom: .35rem !important; }
+.archive-block{margin-top:1.5rem}
+.archive-block>summary{
+  cursor:pointer;padding:.55rem .8rem;background:rgba(255,255,255,.5);
+  border:1px solid var(--border);border-radius:8px;font-size:.86rem;
+  color:var(--muted);opacity:.85;
+}
+.archive-block>summary:hover{opacity:1;color:var(--text)}
+.archive-block[open]>summary{margin-bottom:.85rem}
+.archive-block .entry{opacity:.72}
+.archive-block .entry:hover{opacity:1}
 </style>
-
 </head>
-
 <body>
-
   <div class="wrapper">
-
     <header class="page">
-
       <div class="brand">
-
         <div class="brand-mark">PA</div>
-
         <div class="brand-text">
-
           <h1>PATRICIA<span class="slash">//</span>ACTIVITY BOARD</h1>
-
           <p>Auto-updated log of tasks completed by Claude Code</p>
-
         </div>
-
       </div>
-
       <div class="quick-stats">
-
         <div class="stat-chip today"><span class="num" id="statToday">0</span><span class="lbl">Today</span></div>
-
         <div class="stat-chip week"><span class="num" id="statWeek">0</span><span class="lbl">7 Days</span></div>
-
         <div class="stat-chip total"><span class="num" id="statTotal">0</span><span class="lbl">Total</span></div>
-
       </div>
-
     </header>
-
     <div class="now-showing" id="todayCard">
-
       <div class="label">Now</div>
-
       <div class="summary" id="todaySummary">No entries yet today.</div>
-
     </div>
-
     <div class="tab-bar-wrap">
-
       <div class="tab-bar" id="tabBar"></div>
-
     </div>
-
     <div class="filter-bar">
-
       <div class="search-wrap">
-
         <input type="text" id="searchInput" placeholder="Search tasks, shops, platforms, results&hellip;">
-
       </div>
-
       <div class="filter-dropdown">
-
         <button type="button" class="filter-btn" id="shopBtn" data-default-label="Any Shop">
-
           <span class="btn-label">Shop</span>
-
           <span class="btn-value">Any Shop</span>
-
           <span class="chev">&#9660;</span>
-
         </button>
-
         <div class="dropdown-panel" id="shopPanel">
-
           <div class="dropdown-search"><input type="text" id="shopSearch" placeholder="Search shops&hellip;"></div>
-
           <div class="dropdown-options" id="shopList"></div>
-
         </div>
-
       </div>
-
       <div class="filter-dropdown">
-
         <button type="button" class="filter-btn" id="platformBtn" data-default-label="Any Platform">
-
           <span class="btn-label">Platform</span>
-
           <span class="btn-value">Any Platform</span>
-
           <span class="chev">&#9660;</span>
-
         </button>
-
         <div class="dropdown-panel" id="platformPanel">
-
           <div class="dropdown-options" id="platformList"></div>
-
         </div>
-
       </div>
-
       <div class="filter-dropdown">
-
         <button type="button" class="filter-btn" id="resultBtn" data-default-label="Any Result">
-
           <span class="btn-label">Result</span>
-
           <span class="btn-value">Any Result</span>
-
           <span class="chev">&#9660;</span>
-
         </button>
-
         <div class="dropdown-panel" id="resultPanel">
-
           <div class="dropdown-options" id="resultList"></div>
-
         </div>
-
       </div>
-
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
-
     </div>
-
     <!-- ENTRIES_START -->
   <div class="entry" data-date="2026-05-26" data-shops="(blocked &mdash; no shops touched)" data-platform="TikTok MY + internal" data-result="fail">
     <div class="entry-summary">
@@ -1892,8 +606,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> fail &mdash; 0 cases audited, 0 PATCHes, 0 board mutations beyond this BLOCKED log, 0 destructive ops. 25/5 P0/P1 carry-over rolls intact to next successful run.</div>
     </div>
   </div>
-
-
   <div class="entry" data-date="2026-05-26" data-shops="(blocked &mdash; no shops touched)" data-platform="internal" data-result="fail">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -1928,7 +640,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> fail &mdash; 0 cases collected, 0 POSTs, 0 state.json writes, 0 board entries beyond this BLOCKED log. No destructive ops attempted. All carry-over items roll forward intact to next successful run after AdsPower restart. Both the AM manual attempt AND 09:45 scheduled bat affected.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-26" data-shops="(blocked &mdash; no shops touched)" data-platform="internal" data-result="fail">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -1974,7 +685,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> fail &mdash; 0 cases audited, 0 PATCHes, 0 sends. No regression introduced (no destructive ops attempted). All 25/5 P0/P1 items roll over to 27/5 untouched.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-25" data-shops="MurahYa + BahEmas + KarlMobel + Hiranai + ValueSnap + Luxbin" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -2069,7 +779,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; 43/43 PATCHes HTTP 200 + 6/6 CROSSCHECK CONFIRMED + 6/6 Credited reconciliation passed. <strong>RM 2,835.53 booked Credited today</strong> on top of parcelclaim-auto's RM 1,858.34. Combined session total today: <strong>RM 4,693.87 movement</strong> (RM 1,858.34 new intake + RM 2,835.53 verified wallet wins).</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-25" data-shops="TT Adelmar + TT DasNature + TT Hiranai + TT HiranaiMY + TT Jager + TT JagerSafety + TT JagerArmor + TT JagerHelmet + TT KarlMobel + TT Murahya + TT Valuesnap + TT KinataSG + TT Lovento" data-platform="TikTok MY + TikTok SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -2640,7 +1349,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; 17/17 POSTs HTTP 200 cumulative (PM2 10 + PM3 3 + PM4 3 + PM5 1), <strong>RM 1,858.34 booked today</strong>. Full Fri-Sun-Mon coverage across all 13 TT + 3 Lazada profiles, all R/R sub-tabs swept for top 5 high-yield shops, FD pages 2+ verified clean on top-volume shops, cancelled-no-tracking filter applied per user instruction.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-23" data-shops="TT KarlMobel, TT MurahYa" data-platform="TikTok MY + Internal" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -2985,7 +1693,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok (AM+PM) &mdash; both runs live data via profile 70. AM scheduled bat fired 12:00 MYT; PM ad-hoc run drove CDP directly (AdsPower MCP unavailable). Combined: 4 tab scans &times; 2 + 18 carry-over checks + 9 R/R cases classified + 4 NEW ToP details captured + 2 In-Validation auto-resolved verified. Losses: S$31.79 (NF Rate hit) booked at midnight. Net positive: 3 AM ToP shipped, 12 AM Processed advanced, R/R action badge dropped 4&rarr;3.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-21" data-shops="TT Adelmar, TT Jager, TT KarlMobel, TT MurahYa, TT Lovento, TT Kinata SG, Laz MurahYa, Laz das.nature, Laz Lovento" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -3244,7 +1951,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; chataudit popup-flood eliminated. Next ChatAudit_910AM fire (21/5 9:13 AM) will produce a silent Action Center toast instead of a blocking modal dialog. All 10 scheduled bats now consistent.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-20" data-shops="Adelmar, Das Nature, Hiranai, HiranaiMY, Jager, JagerSafety, JagerArmor, JagerHelmet, KarlMobel, Murahya, Valuesnap, Kinata SG, Lovento" data-platform="TikTok MY/SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -3287,7 +1993,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; 13/13 captured, sheet updated rows 368-380, 10 red cells flagged + VERIFIED red for Patricia review. JagerArmor 6.25% R&amp;R is the highest risk; ChatSat misses on Hiranai/JagerArmor/Murahya/Valuesnap need CS coaching follow-up.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-20" data-shops="n/a" data-platform="Internal (board infra)" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -3314,7 +2019,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; file 51&percnt; lighter, no-cache headers prevent stale renders going forward, user instructed to hard-refresh ONE more time to clear the existing stuck cache after which future updates will appear within seconds of push.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-20" data-shops="MurahYa, KarlMobel, Hiranai, ValueSnap, das.nature2, BahEmas, Luxbin, MasonGym" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -3392,7 +2096,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; 118 PATCHes HTTP 200 total (76 audit-trail remarks + 39 status flips + 3 escalations), 38/38 crosscheck CONFIRMED 0 retractions, <strong>+RM 2,002.05 booked Credited</strong>, daily TT_RR task re-enabled, wrapper bat hardened with per-step timeout. Status-flip endpoint discovery (type=update_status) added to skill knowledge.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-20" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -3425,7 +2128,6 @@ header.page::after{
       <div class="field"><strong>PM Result:</strong> ok &mdash; live data via profile 70, no broker / browser issues. 4 tab scans + 3 ToP detail-page click-ins + 2 stuck-parcel re-verify + 4 R/R/Cancel status checks all completed. Critical findings (4th-day stuck escalation unresolved + new HV R/R + cancellation still pending) re-surfaced for operator/CS urgent action.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-20" data-shops="TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT KarlMobel, TT MurahYa, TT Valuesnap" data-platform="TikTok MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -3452,7 +2154,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; 36/36 POSTs HTTP 200, 36/36 AI-SUGGEST PATCHes HTTP 200, 0 errors, 0 false login_expired, RM 7,021.47 of NEW R/R + FD inflow logged + auto-categorized for CS triage. 1 expected dedupe-drop at POST-time (already in webapp). PM follow-up: skill patched with Request-closed intake filter (PHASE 1 step 5a) + retro sweep across all 13 TT shops + <strong>5 cases flipped Pending&rarr;Withdrawn RM 2,024.45</strong> (C1399/C1506/C1667 KarlMobel + C1577/C1685 Hiranai), all PATCHes HTTP 200.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-20" data-shops="ValueSnap, BahEmas, MasonGym, das.nature MY, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, MurahYa, Emas Gift, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -3493,7 +2194,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; 0 real CS misses today (all 9 initial flags retracted after user manual verification). Audit methodology compliance 385/385 deep-reviewed, but precision rate was 0/9 on flags &mdash; HARD lesson saved on detection gap (sticker replies, carry-over re-verification, React virtualization). User feedback: "u are wasting my time to check 1 by 1" &mdash; will fix in next run.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-20" data-shops="MurahYa, KarlMobel, Laz MurahYa" data-platform="Shopee MY + Lazada" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -3677,7 +2377,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; all 3 files + Win task verified present and Ready, daily TT task confirmed Disabled. NextRunTime = 20/5/2026 9:15:00 AM exactly as requested.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-19" data-shops="n/a" data-platform="internal (local Claude CLI)" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -3695,7 +2394,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; both stray Claude CLI sessions force-stopped, user disturbance resolved, this conversation unaffected.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-19" data-shops="n/a" data-platform="Jira (GRBT space)" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -4472,7 +3170,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> partial &mdash; 2 of 3 bugs verified fixed via live timestamps in the log. 1 unresolved (claude.cmd exit 1 cause unknown, requires stderr capture). 1 NEW BUG discovered (bat fails to log its own failures). Both go into tomorrow's debug queue. Documented in <code>project_session_may18_ttrating_bat_fix.md</code> and the <code>TOMORROW_PROMPT_19MAY_TTRATING_KINATA_BAT_AUDIT.md</code> handoff &mdash; tomorrow's Task A is now "build a DEBUG variant with stderr capture + log-write probes, trigger manually, then apply the real fix" rather than "just wait for 17:00 fire".</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-18" data-shops="ALL" data-platform="Internal" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -4585,7 +3282,6 @@ header.page::after{
       <div class="field"><strong>Session end &mdash; memory saved:</strong> Full session handoff written to <code>C:\Users\tessf\.claude\projects\C--Users-tessf\memory\project_session_may18_tt_rr_pm2_pm3.md</code> with all PM2/PM3 work + P0-P11 outstanding queue for 19/5 morning. MEMORY.md index updated. Tomorrow's resume prompt drafted for both skills (tiktokrraudit + tiktokrrauditcheck).</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-18" data-shops="ValueSnap,MasonGym,BahEmas,das.nature,das.nature2,Hiranai,KarlMobel,Lovento,Luxbin,MurahYa,Emas Gift,Adelmar,Kinata SG,ValueSnap SG" data-platform="Shopee MY + SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -4691,7 +3387,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; 27 Shopee MY shops scanned via get_sig switch + DOM read (~10 sec per shop), 0 PATCHes, read-only audit.</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-18" data-shops="KarlMobel,MurahYa,Hiranai,ValueSnap,Luxbin,BahEmas,das.nature,das.nature2,Murahya,Emas Gift" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -4797,7 +3492,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; 16 RESELL recovered + C14989 reopened+monitored per user + 8 MY chase remarks + 6 SG NEUTRAL remarks + crosscheck 100% clean. MY wallet sweep still deferred (profile 70 SC re-login pending).</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-18" data-shops="Adelmar,DasNature,Hiranai,HiranaiMY,Jager,JagerArmor,JagerHelmet,KarlMobel,MurahYa,Valuesnap,Lovento,Kinata,JagerSafety,Lazada MurahYa,Laz das.nature,Lazada Lovento" data-platform="TT + Lazada" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -4852,7 +3546,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; 95 NEW parcel claims tracked in webapp (id 1583-1677), RM 7,500.02 exposure visible to CS, 0 POST failures, 0 duplicates, CS Haja already actioning 8 (1 closed).</div>
     </div>
   </div>
-
   <div class="entry" data-date="2026-05-18" data-shops="das.nature2,Hiranai,Murahya,Karlmobel,Luxbin,Bidarimu,ValueSnap,Emas Gift,MasonGym,KEDAI GARDEN,TT DasNature,Laz MurahYa,Kinata SG,KarlMobel SG,DasNatureSG2" data-platform="Shopee MY+SG+TT+Laz" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5113,7 +3806,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-15" data-shops="Murahya,Karlmobel,Valuesnap" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5137,7 +3829,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-15" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5179,7 +3870,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-15" data-shops="KarlMobel,MurahYa,Luxbin,ValueSnap,Hiranai,BahEmas,Lovento,Emas Gift,KarlMobel SG,EmasGift SG,MurahYa SG,Kinata SG" data-platform="Shopee MY,Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5202,7 +3892,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-15" data-shops="Karlmobel,das.nature2,Luxbin,Murahya,MasonGym,Bidarimu,Emas Gift,KEDAI GARDEN,ValueSnap,KarlMobel SG,TT DasNature,Laz MurahYa,Other MY shops" data-platform="Shopee MY,Shopee SG,TikTok,Lazada" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5284,7 +3973,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-14" data-shops="MurahYa,Karlmobel,ValueSnap,Luxbin,Hiranai,das.nature2,JagerHelmet,Lovento MY,BahEmas,das.nature,MasonGym" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5305,7 +3993,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-14" data-shops="MurahYa,KarlMobel,TT Murahya,Laz MurahYa" data-platform="Shopee MY + TikTok + Lazada" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5316,7 +4003,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-14" data-shops="ValueSnap,MasonGym,BahEmas,das.nature,das.nature2,Hiranai,KarlMobel,Lovento MY,Luxbin,Wilmermobel,Flashree,MurahYa,Emas Gift,Adelmar,Kinata SG" data-platform="Shopee MY + Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5327,7 +4013,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-14" data-shops="KarlMobel,Karlmobel,MurahYa,MasonGym,Bidarimu,LuxbinTM,das.nature2,Emas Gift,KEDAI GARDEN,ValueSnap,KarlMobel SG,Kinata SG,TT DasNature,TT Hiranai,Laz MurahYa" data-platform="Shopee MY + Shopee SG + TikTok + Lazada" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5545,7 +4230,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-11" data-shops="KarlMobel,MurahYa,ValueSnap,Luxbin" data-platform="Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5556,8 +4240,7 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
-    <div class="entry" data-date="2026-05-11" data-shops="board-patricia" data-platform="internal" data-result="ok">
+  <div class="entry" data-date="2026-05-11" data-shops="board-patricia" data-platform="internal" data-result="ok">
       <div class="entry-summary">
         <span class="chevron">&#9654;</span>
         <span class="entry-title">board cleanup &mdash; de-bloat + dedupe (AM 0af7c70) + alignment/title/tiktokrraudit fixes (PM 02a735d)</span>
@@ -5577,8 +4260,7 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
-<div class="entry" data-date="2026-05-11" data-shops="Murahya,Karlmobel,MasonGym,Emas Gift,Hiranai,KEDAI GARDEN,ValueSnap,KarlMobel,KarlMobel SG,Kinata SG,TT Murahya,TT DasNature,TT Hiranai,TT KarlMobel,TT Adelmar,TT ValueSnap,Laz MurahYa,DasNature SG,ValueSnap SG,BahEmas" data-platform="Shopee MY,Shopee SG,TikTok,Lazada,internal" data-result="ok">
+  <div class="entry" data-date="2026-05-11" data-shops="Murahya,Karlmobel,MasonGym,Emas Gift,Hiranai,KEDAI GARDEN,ValueSnap,KarlMobel,KarlMobel SG,Kinata SG,TT Murahya,TT DasNature,TT Hiranai,TT KarlMobel,TT Adelmar,TT ValueSnap,Laz MurahYa,DasNature SG,ValueSnap SG,BahEmas" data-platform="Shopee MY,Shopee SG,TikTok,Lazada,internal" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">checksbvariation &mdash; user-session run (12 NEW over 3-day window, 4/4 MY bot success, 1 Cat M cleared, 3 NEW K/M, 5 buyer-decision terminal, 5/11)</span>
@@ -5598,7 +4280,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-11" data-shops="MurahYa,KarlMobel,ValueSnap,DasNature,Adelmar" data-platform="TikTok" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5609,7 +4290,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-11" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5620,7 +4300,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-11" data-shops="MurahYa,KarlMobel,ValueSnap,Luxbin,Lovento,das.nature MY,Emas Gift,Kinata SG,Adelmar,DasNature" data-platform="Shopee MY+SG+TikTok+Lazada" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5631,7 +4310,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-08" data-shops="KarlMobel,MurahYa,ValueSnap,Luxbin" data-platform="Shopee MY" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5642,7 +4320,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-08" data-shops="MasonGym,Karlmobel,ValueSnap,Hiranai,Luxbin,MurahYa,Adelmar,Lovento,JagerHelmet,Kinata SG" data-platform="Shopee MY + SG + TikTok + Lazada" data-result="ok">
 
     <div class="entry-summary">
@@ -5662,7 +4339,6 @@ header.page::after{
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
   </div>
-
   <div class="entry" data-date="2026-05-08" data-shops="MurahYa,KarlMobel,Adelmar,JagerHelmet,Hiranai,ValueSnap,Luxbin,MasonGym,Lovento,das.nature MY,Emas Gift,Kinata SG" data-platform="Internal Webapp" data-result="ok">
 
     <div class="entry-summary">
@@ -5682,7 +4358,6 @@ header.page::after{
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
   </div>
-
   <div class="entry" data-date="2026-05-08" data-shops="TT Adelmar,TT Hiranai,TT Valuesnap,TT KarlMobel,TT MurahYa,TT DasNature,TT HiranaiMY,TT Jager,TT JagerArmor,TT JagerSafety,TT JagerHelmet,TT Lovento,TT Kinata SG,Lazada MurahYa,Laz das.nature,Lazada Lovento" data-platform="TikTok,Lazada,Internal Webapp" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5693,7 +4368,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-08" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5704,7 +4378,6 @@ header.page::after{
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-
   <div class="entry" data-date="2026-05-08" data-shops="ValueSnap,BahEmas,MasonGym,das.nature MY,das.nature2,Hiranai,HiranaiMY,KarlMobel,Lovento,Luxbin,MurahYa,Adelmar,JagerHelmet,Emas Gift,Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
 
     <div class="entry-summary">
@@ -5724,7 +4397,6 @@ header.page::after{
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
   </div>
-
   <div class="entry" data-date="2026-05-08" data-shops="KarlMobel,MurahYa,ValueSnap,DasNature,Adelmar,Hiranai,JagerSafety" data-platform="TikTok,Internal Webapp,Service Request Return" data-result="ok">
 
     <div class="entry-summary">
@@ -5765,8 +4437,7 @@ header.page::after{
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
   </div>
-
-<div class="entry" data-date="2026-05-07" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
+  <div class="entry" data-date="2026-05-07" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
 
   <div class="entry-summary">
 
@@ -5787,8 +4458,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-07" data-shops="KarlMobel,MurahYa,Kinata SG,TT KarlMobel,TT MurahYa,TT Lovento,TT Kinata,TT JagerHelmet" data-platform="Internal,Shopee MY,Shopee SG,TikTok" data-result="ok">
+  <div class="entry" data-date="2026-05-07" data-shops="KarlMobel,MurahYa,Kinata SG,TT KarlMobel,TT MurahYa,TT Lovento,TT Kinata,TT JagerHelmet" data-platform="Internal,Shopee MY,Shopee SG,TikTok" data-result="ok">
 
   <div class="entry-summary">
 
@@ -5809,8 +4479,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-07" data-shops="KarlMobel,MurahYa,ValueSnap,BahEmas,Luxbin,das.nature,das.nature2,Emas Gift,Hiranai,MasonGym,KarlMobel SG,DasNatureSG2,DasNature SG,MurahYa SG" data-platform="Shopee MY,Shopee SG,Internal Webapp" data-result="ok">
+  <div class="entry" data-date="2026-05-07" data-shops="KarlMobel,MurahYa,ValueSnap,BahEmas,Luxbin,das.nature,das.nature2,Emas Gift,Hiranai,MasonGym,KarlMobel SG,DasNatureSG2,DasNature SG,MurahYa SG" data-platform="Shopee MY,Shopee SG,Internal Webapp" data-result="ok">
 
   <div class="entry-summary">
 
@@ -5837,8 +4506,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-07" data-shops="ValueSnap,das.nature2,KarlMobel,MurahYa,Kinata SG" data-platform="Shopee MY + SG,Internal" data-result="ok">
+  <div class="entry" data-date="2026-05-07" data-shops="ValueSnap,das.nature2,KarlMobel,MurahYa,Kinata SG" data-platform="Shopee MY + SG,Internal" data-result="ok">
 
   <div class="entry-summary">
 
@@ -5859,8 +4527,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-07" data-shops="TT KarlMobel,TT MurahYa,TT Valuesnap,TT DasNature,TT Adelmar,TT Hiranai,TT HiranaiMY,TT Jager,TT JagerArmor,TT JagerSafety,TT JagerHelmet" data-platform="TikTok,internal" data-result="ok">
+  <div class="entry" data-date="2026-05-07" data-shops="TT KarlMobel,TT MurahYa,TT Valuesnap,TT DasNature,TT Adelmar,TT Hiranai,TT HiranaiMY,TT Jager,TT JagerArmor,TT JagerSafety,TT JagerHelmet" data-platform="TikTok,internal" data-result="ok">
 
   <div class="entry-summary">
 
@@ -5883,8 +4550,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-07" data-shops="TT Adelmar,TT DasNature,TT Hiranai,TT HiranaiMY,TT Jager,TT JagerArmor,TT JagerSafety,TT KarlMobel,TT MurahYa,TT Valuesnap,TT JagerHelmet,Lazada MurahYa,Laz das.nature" data-platform="TikTok,Lazada,Internal Webapp" data-result="ok">
+  <div class="entry" data-date="2026-05-07" data-shops="TT Adelmar,TT DasNature,TT Hiranai,TT HiranaiMY,TT Jager,TT JagerArmor,TT JagerSafety,TT KarlMobel,TT MurahYa,TT Valuesnap,TT JagerHelmet,Lazada MurahYa,Laz das.nature" data-platform="TikTok,Lazada,Internal Webapp" data-result="ok">
 
   <div class="entry-summary">
 
@@ -5901,8 +4567,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-07" data-shops="MurahYa,KarlMobel" data-platform="Shopee MY" data-result="ok">
+  <div class="entry" data-date="2026-05-07" data-shops="MurahYa,KarlMobel" data-platform="Shopee MY" data-result="ok">
 
   <div class="entry-summary">
 
@@ -5919,8 +4584,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-07" data-shops="Emas Gift,ValueSnap,Karlmobel,MasonGym,Murahya,Luxbin,KEDAI GARDEN,KarlMobel SG,Kinata SG,TT Adelmar,TT KarlMobel,Kinata SG (multi)" data-platform="Shopee MY,Shopee SG,TikTok,Lazada,Internal Webapp,SiteGiant" data-result="ok">
+  <div class="entry" data-date="2026-05-07" data-shops="Emas Gift,ValueSnap,Karlmobel,MasonGym,Murahya,Luxbin,KEDAI GARDEN,KarlMobel SG,Kinata SG,TT Adelmar,TT KarlMobel,Kinata SG (multi)" data-platform="Shopee MY,Shopee SG,TikTok,Lazada,Internal Webapp,SiteGiant" data-result="ok">
 
   <div class="entry-summary">
 
@@ -5937,8 +4601,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-06" data-shops="KarlMobel,MurahYa" data-platform="Shopee MY,Internal Webapp" data-result="ok">
+  <div class="entry" data-date="2026-05-06" data-shops="KarlMobel,MurahYa" data-platform="Shopee MY,Internal Webapp" data-result="ok">
 
   <div class="entry-summary">
 
@@ -5955,8 +4618,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-06" data-shops="KarlMobel,MurahYa,Luxbin,ValueSnap,Wilmermobel,Flashree,das.nature2,Hiranai,dutchgaming,Chairsy,Secret Racer,Gameniture,Atlusrack,EncikPlastic,das.nature,MasonGym,Stationarylah,KEDAI GARDEN,Bidarimu,FynnKoffer,Emas Gift,BahEmas" data-platform="Shopee MY,Internal Webapp" data-result="ok">
+  <div class="entry" data-date="2026-05-06" data-shops="KarlMobel,MurahYa,Luxbin,ValueSnap,Wilmermobel,Flashree,das.nature2,Hiranai,dutchgaming,Chairsy,Secret Racer,Gameniture,Atlusrack,EncikPlastic,das.nature,MasonGym,Stationarylah,KEDAI GARDEN,Bidarimu,FynnKoffer,Emas Gift,BahEmas" data-platform="Shopee MY,Internal Webapp" data-result="ok">
 
   <div class="entry-summary">
 
@@ -5973,8 +4635,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-06" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
+  <div class="entry" data-date="2026-05-06" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
 
   <div class="entry-summary">
 
@@ -5991,8 +4652,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-06" data-shops="KarlMobel,MurahYa" data-platform="Shopee MY,Internal Webapp" data-result="ok">
+  <div class="entry" data-date="2026-05-06" data-shops="KarlMobel,MurahYa" data-platform="Shopee MY,Internal Webapp" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6007,8 +4667,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-06" data-shops="KarlMobel,MurahYa,Valuesnap" data-platform="TikTok MY,Lazada MY,Internal Webapp" data-result="ok">
+  <div class="entry" data-date="2026-05-06" data-shops="KarlMobel,MurahYa,Valuesnap" data-platform="TikTok MY,Lazada MY,Internal Webapp" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6025,8 +4684,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-06" data-shops="KarlMobel,MurahYa,Valuesnap,Hiranai,Adelmar,Dasnature,Jager" data-platform="TikTok MY,Internal Webapp" data-result="ok">
+  <div class="entry" data-date="2026-05-06" data-shops="KarlMobel,MurahYa,Valuesnap,Hiranai,Adelmar,Dasnature,Jager" data-platform="TikTok MY,Internal Webapp" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6043,8 +4701,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-06" data-shops="ValueSnap,BahEmas,MasonGym,das.nature,das.nature2,Hiranai,KarlMobel,Lovento MY,Luxbin,KEDAI GARDEN,MurahYa,Emas Gift,JagerHelmet,Adelmar,Bidarimu,Kinata SG,ValueSnap SG" data-platform="Shopee MY,Shopee SG" data-result="ok">
+  <div class="entry" data-date="2026-05-06" data-shops="ValueSnap,BahEmas,MasonGym,das.nature,das.nature2,Hiranai,KarlMobel,Lovento MY,Luxbin,KEDAI GARDEN,MurahYa,Emas Gift,JagerHelmet,Adelmar,Bidarimu,Kinata SG,ValueSnap SG" data-platform="Shopee MY,Shopee SG" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6061,8 +4718,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-06" data-shops="KarlMobel,Murahya,ValueSnap,MasonGym,Hiranai,das.nature,das.nature2,KEDAI GARDEN,TT KarlMobel,TT Murahya,TT ValueSnap,TT Adelmar,TT DasNature,Kinata SG,KarlMobel SG,Laz MurahYa,Luxbin" data-platform="Shopee MY,Shopee SG,TikTok,Lazada,Internal" data-result="ok">
+  <div class="entry" data-date="2026-05-06" data-shops="KarlMobel,Murahya,ValueSnap,MasonGym,Hiranai,das.nature,das.nature2,KEDAI GARDEN,TT KarlMobel,TT Murahya,TT ValueSnap,TT Adelmar,TT DasNature,Kinata SG,KarlMobel SG,Laz MurahYa,Luxbin" data-platform="Shopee MY,Shopee SG,TikTok,Lazada,Internal" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6079,8 +4735,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-05" data-shops="MurahYa,KarlMobel,ValueSnap,Luxbin" data-platform="Shopee MY" data-result="ok">
+  <div class="entry" data-date="2026-05-05" data-shops="MurahYa,KarlMobel,ValueSnap,Luxbin" data-platform="Shopee MY" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6095,8 +4750,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-05" data-shops="MurahYa,KarlMobel,ValueSnap,BahEmas,Luxbin,das.nature,das.nature2,Hiranai,Emas Gift,Karlmobel" data-platform="Shopee MY" data-result="ok">
+  <div class="entry" data-date="2026-05-05" data-shops="MurahYa,KarlMobel,ValueSnap,BahEmas,Luxbin,das.nature,das.nature2,Hiranai,Emas Gift,Karlmobel" data-platform="Shopee MY" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6111,8 +4765,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-05" data-shops="MurahYa,KarlMobel" data-platform="Shopee MY" data-result="ok">
+  <div class="entry" data-date="2026-05-05" data-shops="MurahYa,KarlMobel" data-platform="Shopee MY" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6127,8 +4780,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-05" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
+  <div class="entry" data-date="2026-05-05" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6149,8 +4801,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-05" data-shops="TT Adelmar,TT DasNature,TT Hiranai,TT HiranaiMY,TT Jager,TT JagerArmor,TT JagerSafety,TT KarlMobel,TT MurahYa,TT Valuesnap,TT JagerHelmet,Lazada MurahYa,Laz das.nature" data-platform="TikTok,Lazada" data-result="ok">
+  <div class="entry" data-date="2026-05-05" data-shops="TT Adelmar,TT DasNature,TT Hiranai,TT HiranaiMY,TT Jager,TT JagerArmor,TT JagerSafety,TT KarlMobel,TT MurahYa,TT Valuesnap,TT JagerHelmet,Lazada MurahYa,Laz das.nature" data-platform="TikTok,Lazada" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6173,8 +4824,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-05" data-shops="ValueSnap,BahEmas,MasonGym,das.nature,das.nature2,Hiranai,KarlMobel,Lovento,Luxbin,Wilmermobel,MurahYa,Emas Gift,Kinata SG" data-platform="Shopee MY,Shopee SG" data-result="ok">
+  <div class="entry" data-date="2026-05-05" data-shops="ValueSnap,BahEmas,MasonGym,das.nature,das.nature2,Hiranai,KarlMobel,Lovento,Luxbin,Wilmermobel,MurahYa,Emas Gift,Kinata SG" data-platform="Shopee MY,Shopee SG" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6197,8 +4847,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-05" data-shops="MurahYa,ValueSnap,KarlMobel,Adelmar,kinata SG,KarlMobel SG,DasNatureSG2,MurahYa SG,Emasgift SG,TT MurahYa,TT KarlMobel,TT Valuesnap,TT Adelmar,Lazada MurahYa" data-platform="Shopee MY,Shopee SG,TikTok,Lazada" data-result="ok">
+  <div class="entry" data-date="2026-05-05" data-shops="MurahYa,ValueSnap,KarlMobel,Adelmar,kinata SG,KarlMobel SG,DasNatureSG2,MurahYa SG,Emasgift SG,TT MurahYa,TT KarlMobel,TT Valuesnap,TT Adelmar,Lazada MurahYa" data-platform="Shopee MY,Shopee SG,TikTok,Lazada" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6225,8 +4874,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-05" data-shops="KarlMobel,MurahYa,ValueSnap,Murahya,Karlmobel,TT KarlMobel,TT DasNature,TT ValueSnap,Luxbin,das.nature,das.nature2,Hiranai,MasonGym,BahEmas,Emas Gift,Kinata SG,Laz MurahYa" data-platform="Shopee MY,TikTok,Lazada,Shopee SG" data-result="ok">
+  <div class="entry" data-date="2026-05-05" data-shops="KarlMobel,MurahYa,ValueSnap,Murahya,Karlmobel,TT KarlMobel,TT DasNature,TT ValueSnap,Luxbin,das.nature,das.nature2,Hiranai,MasonGym,BahEmas,Emas Gift,Kinata SG,Laz MurahYa" data-platform="Shopee MY,TikTok,Lazada,Shopee SG" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6241,8 +4889,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-04" data-shops="KarlMobel,MurahYa,ValueSnap,Luxbin,BahEmas,das.nature,das.nature2" data-platform="Shopee MY" data-result="ok">
+  <div class="entry" data-date="2026-05-04" data-shops="KarlMobel,MurahYa,ValueSnap,Luxbin,BahEmas,das.nature,das.nature2" data-platform="Shopee MY" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6277,8 +4924,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-04" data-shops="Adelmar,DasNature,Hiranai,HiranaiMY,Jager,JagerSafety,JagerArmor,JagerHelmet,KarlMobel,Murahya,Valuesnap,KinataSG,Lovento" data-platform="TikTok" data-result="ok">
+  <div class="entry" data-date="2026-05-04" data-shops="Adelmar,DasNature,Hiranai,HiranaiMY,Jager,JagerSafety,JagerArmor,JagerHelmet,KarlMobel,Murahya,Valuesnap,KinataSG,Lovento" data-platform="TikTok" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6311,8 +4957,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-04" data-shops="KarlMobel,MurahYa" data-platform="Shopee MY" data-result="ok">
+  <div class="entry" data-date="2026-05-04" data-shops="KarlMobel,MurahYa" data-platform="Shopee MY" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6331,8 +4976,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-04" data-shops="TT Adelmar,TT Murahya,TT Karlmobel,TT Valuesnap,TT Hiranai,TT Dasnature,TT Jager,TT Jager Armor,TT Jager Safety,TT Jager Helmet,TT Hiranai MY,TT Lovento,Lazada Murahya" data-platform="TikTok,Lazada" data-result="ok">
+  <div class="entry" data-date="2026-05-04" data-shops="TT Adelmar,TT Murahya,TT Karlmobel,TT Valuesnap,TT Hiranai,TT Dasnature,TT Jager,TT Jager Armor,TT Jager Safety,TT Jager Helmet,TT Hiranai MY,TT Lovento,Lazada Murahya" data-platform="TikTok,Lazada" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6369,8 +5013,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-04" data-shops="ValueSnap,MasonGym,BahEmas,KarlMobel,Karlmobel,MurahYa,Murahya,das.nature,das.nature2,Hiranai,Emas Gift,TT KarlMobel,TT Murahya,TT DasNature,Laz MurahYa,Kinata SG,Luxbin" data-platform="Shopee MY,Shopee SG,TikTok,Lazada" data-result="ok">
+  <div class="entry" data-date="2026-05-04" data-shops="ValueSnap,MasonGym,BahEmas,KarlMobel,Karlmobel,MurahYa,Murahya,das.nature,das.nature2,Hiranai,Emas Gift,TT KarlMobel,TT Murahya,TT DasNature,Laz MurahYa,Kinata SG,Luxbin" data-platform="Shopee MY,Shopee SG,TikTok,Lazada" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6409,8 +5052,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-04" data-shops="Adelmar,KarlMobel,MurahYa,Valuesnap,JagerHelmet,Hiranai,Lazada MurahYa" data-platform="TikTok,Lazada" data-result="ok">
+  <div class="entry" data-date="2026-05-04" data-shops="Adelmar,KarlMobel,MurahYa,Valuesnap,JagerHelmet,Hiranai,Lazada MurahYa" data-platform="TikTok,Lazada" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6449,8 +5091,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-04" data-shops="ValueSnap,MasonGym,BahEmas,das.nature,das.nature2,Hiranai,KarlMobel,Luxbin,Lovento,MurahYa,Kinata SG,ValueSnap SG" data-platform="Shopee MY,Shopee SG" data-result="ok">
+  <div class="entry" data-date="2026-05-04" data-shops="ValueSnap,MasonGym,BahEmas,das.nature,das.nature2,Hiranai,KarlMobel,Luxbin,Lovento,MurahYa,Kinata SG,ValueSnap SG" data-platform="Shopee MY,Shopee SG" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6483,8 +5124,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-04" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
+  <div class="entry" data-date="2026-05-04" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6509,8 +5149,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-05-04" data-shops="MurahYa,JagerHelmet" data-platform="TikTok" data-result="ok">
+  <div class="entry" data-date="2026-05-04" data-shops="MurahYa,JagerHelmet" data-platform="TikTok" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6533,8 +5172,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-30" data-shops="11 TT shops" data-platform="Internal (.bat scripts)" data-result="ok">
+  <div class="entry" data-date="2026-04-30" data-shops="11 TT shops" data-platform="Internal (.bat scripts)" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6557,8 +5195,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-30" data-shops="Adelmar,DasNature,Hiranai,HiranaiMY,Jager,JagerSafety,JagerArmor,JagerHelmet,KarlMobel,Murahya,Valuesnap,Kinata SG,Lovento" data-platform="TikTok" data-result="ok">
+  <div class="entry" data-date="2026-04-30" data-shops="Adelmar,DasNature,Hiranai,HiranaiMY,Jager,JagerSafety,JagerArmor,JagerHelmet,KarlMobel,Murahya,Valuesnap,Kinata SG,Lovento" data-platform="TikTok" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6581,8 +5218,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-30" data-shops="11 TT shops" data-platform="TikTok" data-result="ok">
+  <div class="entry" data-date="2026-04-30" data-shops="11 TT shops" data-platform="TikTok" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6605,8 +5241,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-30" data-shops="KarlMobel/MurahYa/ValueSnap/Hiranai/das.nature2/BahEmas/Emas Gift/Luxbin/Kinata SG" data-platform="Shopee MY (+ SG monitor)" data-result="ok">
+  <div class="entry" data-date="2026-04-30" data-shops="KarlMobel/MurahYa/ValueSnap/Hiranai/das.nature2/BahEmas/Emas Gift/Luxbin/Kinata SG" data-platform="Shopee MY (+ SG monitor)" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6633,8 +5268,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-30" data-shops="13 TT shops" data-platform="Internal (.bat scripts)" data-result="ok">
+  <div class="entry" data-date="2026-04-30" data-shops="13 TT shops" data-platform="Internal (.bat scripts)" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6657,8 +5291,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-30" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
+  <div class="entry" data-date="2026-04-30" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6683,8 +5316,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-30" data-shops="ValueSnap,BahEmas,MasonGym,das.nature,das.nature2,Hiranai,KarlMobel,Lovento,Luxbin,MurahYa,Emas Gift,Adelmar,JagerHelmet,Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
+  <div class="entry" data-date="2026-04-30" data-shops="ValueSnap,BahEmas,MasonGym,das.nature,das.nature2,Hiranai,KarlMobel,Lovento,Luxbin,MurahYa,Emas Gift,Adelmar,JagerHelmet,Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6709,8 +5341,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-30" data-shops="das.nature,das.nature2,Hiranai,MasonGym,ValueSnap,MurahYa,BahEmas,Karlmobel,Emas Gift,TT DasNature,Kinata SG,Laz MurahYa" data-platform="Shopee MY + SG + TikTok + Lazada" data-result="ok">
+  <div class="entry" data-date="2026-04-30" data-shops="das.nature,das.nature2,Hiranai,MasonGym,ValueSnap,MurahYa,BahEmas,Karlmobel,Emas Gift,TT DasNature,Kinata SG,Laz MurahYa" data-platform="Shopee MY + SG + TikTok + Lazada" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6733,8 +5364,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-30" data-shops="KarlMobel,MurahYa,DasNature,Valuesnap" data-platform="TT + Lazada" data-result="ok">
+  <div class="entry" data-date="2026-04-30" data-shops="KarlMobel,MurahYa,DasNature,Valuesnap" data-platform="TT + Lazada" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6757,8 +5387,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-29" data-shops="KarlMobel,MurahYa,ValueSnap,Hiranai,DasNature2,DasNature,MasonGym,Luxbin,BahEmas,EmasGift,Lovento,Wilmermobel,KinataSG,KarlMobelSG,EmasGiftSG" data-platform="Shopee MY + SG" data-result="ok">
+  <div class="entry" data-date="2026-04-29" data-shops="KarlMobel,MurahYa,ValueSnap,Hiranai,DasNature2,DasNature,MasonGym,Luxbin,BahEmas,EmasGift,Lovento,Wilmermobel,KinataSG,KarlMobelSG,EmasGiftSG" data-platform="Shopee MY + SG" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6793,8 +5422,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-29" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
+  <div class="entry" data-date="2026-04-29" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6831,8 +5459,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-29" data-shops="ValueSnap,das.nature2,KarlMobel,MurahYa,Kinata SG,Lovento,Luxbin" data-platform="Shopee" data-result="ok">
+  <div class="entry" data-date="2026-04-29" data-shops="ValueSnap,das.nature2,KarlMobel,MurahYa,Kinata SG,Lovento,Luxbin" data-platform="Shopee" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6885,8 +5512,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-29" data-shops="board-patricia" data-platform="Internal" data-result="ok">
+  <div class="entry" data-date="2026-04-29" data-shops="board-patricia" data-platform="Internal" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6925,8 +5551,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-29" data-shops="TT-DasNature,TT-Hiranai,TT-KarlMobel,TT-MurahYa,Lazada-MurahYa,Lazada-DasNature" data-platform="TikTok,Lazada,Internal" data-result="ok">
+  <div class="entry" data-date="2026-04-29" data-shops="TT-DasNature,TT-Hiranai,TT-KarlMobel,TT-MurahYa,Lazada-MurahYa,Lazada-DasNature" data-platform="TikTok,Lazada,Internal" data-result="ok">
 
   <div class="entry-summary">
 
@@ -6967,8 +5592,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-29" data-shops="BahEmas,DasNature2,EmasGift,Hiranai,Karlmobel,Lovento,Luxbin,MasonGym,MurahYa,ValueSnap,TT-KarlMobel" data-platform="Shopee,TikTok" data-result="ok">
+  <div class="entry" data-date="2026-04-29" data-shops="BahEmas,DasNature2,EmasGift,Hiranai,Karlmobel,Lovento,Luxbin,MasonGym,MurahYa,ValueSnap,TT-KarlMobel" data-platform="Shopee,TikTok" data-result="ok">
 
   <div class="entry-summary">
 
@@ -7029,8 +5653,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-28" data-shops="BahEmas,DasNature2,EmasGift,Hiranai,KarlMobel,Lovento,Luxbin,MasonGym,MurahYa,ValueSnap,Kinata SG,ValueSnap SG" data-platform="Shopee MY + SG" data-result="ok">
+  <div class="entry" data-date="2026-04-28" data-shops="BahEmas,DasNature2,EmasGift,Hiranai,KarlMobel,Lovento,Luxbin,MasonGym,MurahYa,ValueSnap,Kinata SG,ValueSnap SG" data-platform="Shopee MY + SG" data-result="ok">
 
   <div class="entry-summary">
 
@@ -7073,8 +5696,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-28" data-shops="Adelmar,DasNature,Hiranai,HiranaiMY,Jager,JagerArmor,JagerSafety,KarlMobel,MurahYa,Valuesnap" data-platform="TikTok" data-result="ok">
+  <div class="entry" data-date="2026-04-28" data-shops="Adelmar,DasNature,Hiranai,HiranaiMY,Jager,JagerArmor,JagerSafety,KarlMobel,MurahYa,Valuesnap" data-platform="TikTok" data-result="ok">
 
   <div class="entry-summary">
 
@@ -7115,8 +5737,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-28" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
+  <div class="entry" data-date="2026-04-28" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
 
   <div class="entry-summary">
 
@@ -7149,8 +5770,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-28" data-shops="cs1,cs2,cs3,cs4,cs5 (Kinata SG)" data-platform="Shopee MY + SG" data-result="ok">
+  <div class="entry" data-date="2026-04-28" data-shops="cs1,cs2,cs3,cs4,cs5 (Kinata SG)" data-platform="Shopee MY + SG" data-result="ok">
 
   <div class="entry-summary">
 
@@ -7185,8 +5805,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-28" data-shops="MasonGym,KarlMobel,Karlmobel,ValueSnap,Murahya,MurahYa,BahEmas,Hiranai,TT KarlMobel,TT DasNature,KarlMobel SG,MurahYa SG,ValueSnap SG" data-platform="Shopee MY + SG + TikTok" data-result="ok">
+  <div class="entry" data-date="2026-04-28" data-shops="MasonGym,KarlMobel,Karlmobel,ValueSnap,Murahya,MurahYa,BahEmas,Hiranai,TT KarlMobel,TT DasNature,KarlMobel SG,MurahYa SG,ValueSnap SG" data-platform="Shopee MY + SG + TikTok" data-result="ok">
 
   <div class="entry-summary">
 
@@ -7223,8 +5842,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-28" data-shops="Hiranai,MurahYa,KarlMobel,Valuesnap,DasNature,Adelmar,Jager,JagerArmor,JagerSafety,JagerHelmet,HiranaiMY,Lazada MurahYa,Lazada DasNature" data-platform="TT + Lazada" data-result="ok">
+  <div class="entry" data-date="2026-04-28" data-shops="Hiranai,MurahYa,KarlMobel,Valuesnap,DasNature,Adelmar,Jager,JagerArmor,JagerSafety,JagerHelmet,HiranaiMY,Lazada MurahYa,Lazada DasNature" data-platform="TT + Lazada" data-result="ok">
 
   <div class="entry-summary">
 
@@ -7257,8 +5875,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-27" data-shops="MurahYa,KarlMobel,Valuesnap,DasNature,Hiranai,Jager" data-platform="TikTok" data-result="ok">
+  <div class="entry" data-date="2026-04-27" data-shops="MurahYa,KarlMobel,Valuesnap,DasNature,Hiranai,Jager" data-platform="TikTok" data-result="ok">
 
   <div class="entry-summary">
 
@@ -7289,8 +5906,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-27" data-shops="KarlMobel,MurahYa,Valuesnap,DasNature,Hiranai,Adelmar,Jager,JagerArmor,JagerSafety,JagerHelmet,Lovento,Lazada KarlMobel,Lazada MurahYa" data-platform="TT + Lazada" data-result="ok">
+  <div class="entry" data-date="2026-04-27" data-shops="KarlMobel,MurahYa,Valuesnap,DasNature,Hiranai,Adelmar,Jager,JagerArmor,JagerSafety,JagerHelmet,Lovento,Lazada KarlMobel,Lazada MurahYa" data-platform="TT + Lazada" data-result="ok">
 
   <div class="entry-summary">
 
@@ -7315,8 +5931,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-27" data-shops="Luxbin,KarlMobel,MurahYa,DasNature,ValueSnap" data-platform="Shopee MY" data-result="ok">
+  <div class="entry" data-date="2026-04-27" data-shops="Luxbin,KarlMobel,MurahYa,DasNature,ValueSnap" data-platform="Shopee MY" data-result="ok">
 
   <div class="entry-summary">
 
@@ -7341,8 +5956,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-27" data-shops="ValueSnap, das.nature2, KarlMobel, MurahYa, Kinata SG" data-platform="Shopee" data-result="ok">
+  <div class="entry" data-date="2026-04-27" data-shops="ValueSnap, das.nature2, KarlMobel, MurahYa, Kinata SG" data-platform="Shopee" data-result="ok">
 
   <div class="entry-summary">
 
@@ -7375,8 +5989,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-27" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
+  <div class="entry" data-date="2026-04-27" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
 
   <div class="entry-summary">
 
@@ -7403,8 +6016,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry" data-date="2026-04-27" data-shops="MurahYa,KarlMobel,ValueSnap,Hiranai,BahEmas,Emas Gift,das.nature2,MasonGym,Luxbin,Lovento,TT KarlMobel,TT Murahya" data-platform="Multi" data-result="ok">
+  <div class="entry" data-date="2026-04-27" data-shops="MurahYa,KarlMobel,ValueSnap,Hiranai,BahEmas,Emas Gift,das.nature2,MasonGym,Luxbin,Lovento,TT KarlMobel,TT Murahya" data-platform="Multi" data-result="ok">
 
   <div class="entry-summary">
 
@@ -7431,8 +6043,7 @@ header.page::after{
   <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
 
 </div>
-
-<div class="entry"
+  <div class="entry"
 
      data-date="2026-04-21"
 
@@ -7491,8 +6102,7 @@ header.page::after{
   </div>
 
 </div>
-
-    <div class="entry"
+  <div class="entry"
 
          data-date="2026-04-21"
 
@@ -7529,8 +6139,7 @@ header.page::after{
       </div>
 
     </div>
-
-<div class="entry"
+  <div class="entry"
 
      data-date="2026-04-21"
 
@@ -7605,8 +6214,7 @@ header.page::after{
   </div>
 
 </div>
-
-<div class="entry"
+  <div class="entry"
 
      data-date="2026-04-21"
 
@@ -7683,8 +6291,7 @@ header.page::after{
   </div>
 
 </div>
-
-<div class="entry"
+  <div class="entry"
 
      data-date="2026-04-21"
 
@@ -7737,8 +6344,7 @@ header.page::after{
   </div>
 
 </div>
-
-<div class="entry"
+  <div class="entry"
 
      data-date="2026-04-21"
 
@@ -7793,8 +6399,7 @@ header.page::after{
   </div>
 
 </div>
-
-<div class="entry"
+  <div class="entry"
 
      data-date="2026-04-21"
 
@@ -7873,562 +6478,282 @@ header.page::after{
 
 </details>
 <!-- ENTRIES_END -->
-
     <div class="empty-state" id="emptyState" style="display:none;">No entries match your filters.</div>
-
   </div>
-
 <script>
-
 (function(){
-
 var entries=Array.from(document.querySelectorAll('.entry'));
-
 var todayStr=new Date().toISOString().slice(0,10);
-
 var activeFilters={skill:null,shop:null,platform:null,result:null};
-
 var searchTerm='';
-
 var SKILL_PATTERNS=[
-
   {name:'chataudit_crosscheck',test:/chataudit[_\s-]?crosscheck/i,glyph:'CX'},
-
   {name:'chataudit',test:/chataudit|chat audit|daily chat audit/i,glyph:'CA'},
-
   {name:'csrrcreditedcheck',test:/csrrcreditedcheck/i,glyph:'C\u2713'},
-
   {name:'csrrcredited',test:/csrrcredited/i,glyph:'CR'},
-
   {name:'chase-rr',test:/chase[-\s]?rr/i,glyph:'CH'},
-
   {name:'trace-rr',test:/trace[-\s]?rr/i,glyph:'TR'},
-
   {name:'tiktokrraudit',test:/tiktokrraudit|tiktok\s*r[\/&]?r|tt\s*r[\/&]?r/i,glyph:'TT'},
-
   {name:'checkttrating',test:/checkttrating|tt rating/i,glyph:'TR'},
-
   {name:'checkttchats',test:/checkttchats|tt chat/i,glyph:'TC'},
-
   {name:'checkkinataorder',test:/checkkinataorder|kinata[^a-z]+(sg|my)?\s*order|kinata sg/i,glyph:'KO'},
-
   {name:'checkfbsclaims',test:/checkfbsclaims|fbs claim/i,glyph:'FC'},
-
   {name:'checkfbsstock',test:/checkfbsstock|fbs stock/i,glyph:'FS'},
-
   {name:'checkcskpi',test:/checkcskpi|cs kpi|kpi audit/i,glyph:'KP'},
-
   {name:'checkvideo',test:/checkvideo/i,glyph:'VD'},
-
   {name:'checkattendance',test:/checkattendance/i,glyph:'AT'},
-
   {name:'checksbvariation',test:/checksbvariation|sb variation|checkparcelsplit|parcel split/i,glyph:'SB'},
-
   {name:'check-rr',test:/\bcheck-rr\b/i,glyph:'RR'},
-
   {name:'parcelclaim',test:/parcelclaim[-\s]?\d?/i,glyph:'PC'}
-
 ];
-
 function detectSkill(entry){
-
   var title=entry.querySelector('.entry-title');
-
   var text=title?title.textContent:'';
-
   for(var i=0;i<SKILL_PATTERNS.length;i++){
-
     if(SKILL_PATTERNS[i].test.test(text))return SKILL_PATTERNS[i].name;
-
   }
-
   return 'other';
-
 }
-
 function getGlyph(skillName){
-
   for(var i=0;i<SKILL_PATTERNS.length;i++){
-
     if(SKILL_PATTERNS[i].name===skillName)return SKILL_PATTERNS[i].glyph;
-
   }
-
   return '\u25E6';
-
 }
-
 function shopsOf(e){
-
   return(e.dataset.shops||'').split(',').map(function(s){return s.trim()}).filter(Boolean);
-
 }
-
 entries.forEach(function(e){
-
   var skill=detectSkill(e);
-
   e.dataset.skill=skill;
-
   var summary=e.querySelector('.entry-summary');
-
   if(summary && !summary.querySelector('.skill-pill')){
-
     var pill=document.createElement('span');
-
     pill.className='skill-pill';
-
     pill.textContent=skill==='other'?'task':skill;
-
     var chev=summary.querySelector('.chevron');
-
     if(chev){chev.insertAdjacentElement('afterend',pill)}
-
     else{summary.insertBefore(pill,summary.firstChild)}
-
   }
-
 });
-
 function groupByDay(){
-
   document.querySelectorAll('.day-group').forEach(function(g){
-
     Array.from(g.querySelectorAll('.entry')).forEach(function(e){g.parentNode.insertBefore(e,g)});
-
     g.remove();
-
   });
-
   var sorted=entries.slice().sort(function(a,b){return(b.dataset.date||'').localeCompare(a.dataset.date||'')});
-
   var groups={};var order=[];
-
   sorted.forEach(function(e){
-
     var d=e.dataset.date||'Undated';
-
     if(!groups[d]){groups[d]=[];order.push(d)}
-
     groups[d].push(e);
-
   });
-
   var anchor=document.getElementById('emptyState');
-
   order.forEach(function(date){
-
     var group=document.createElement('div');group.className='day-group';group.dataset.date=date;
-
     var header=document.createElement('div');header.className='day-header';
-
     var title=document.createElement('span');title.className='day-title';title.textContent=friendlyDate(date);
-
     var count=document.createElement('span');count.className='day-count';
-
     count.textContent=groups[date].length+(groups[date].length===1?' entry':' entries');
-
     header.appendChild(title);header.appendChild(count);group.appendChild(header);
-
     groups[date].forEach(function(e){group.appendChild(e)});
-
     anchor.parentNode.insertBefore(group,anchor);
-
   });
-
 }
-
 function friendlyDate(d){
-
   if(d===todayStr)return'Today \u00b7 '+formatPretty(d);
-
   var y=new Date();y.setDate(y.getDate()-1);
-
   if(d===y.toISOString().slice(0,10))return'Yesterday \u00b7 '+formatPretty(d);
-
   return formatPretty(d);
-
 }
-
 function formatPretty(d){
-
   if(!d||d==='Undated')return'Undated';
-
   var p=d.split('-');
-
   var m=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-
   return parseInt(p[2],10)+' '+m[parseInt(p[1],10)-1]+' '+p[0];
-
 }
-
 function renderStats(){
-
   var todayN=entries.filter(function(e){return e.dataset.date===todayStr}).length;
-
   var weekAgo=new Date();weekAgo.setDate(weekAgo.getDate()-7);var weekStr=weekAgo.toISOString().slice(0,10);
-
   var weekN=entries.filter(function(e){return e.dataset.date>=weekStr}).length;
-
   document.getElementById('statToday').textContent=todayN;
-
   document.getElementById('statWeek').textContent=weekN;
-
   document.getElementById('statTotal').textContent=entries.length;
-
 }
-
 function renderTodaySummary(){
-
   var today=entries.filter(function(e){return e.dataset.date===todayStr});
-
   var sum=document.getElementById('todaySummary');
-
   if(today.length===0){sum.innerHTML='<strong>0</strong> tasks logged today yet';return}
-
   var ok=today.filter(function(e){return e.dataset.result==='ok'}).length;
-
   var warn=today.filter(function(e){return e.dataset.result==='warn'}).length;
-
   var fail=today.filter(function(e){return e.dataset.result==='fail'}).length;
-
   var bits=['<strong>'+today.length+'</strong> task'+(today.length===1?'':'s')+' today'];
-
   if(ok)bits.push(ok+' completed');
-
   if(warn)bits.push(warn+' partial');
-
   if(fail)bits.push(fail+' failed');
-
   sum.innerHTML=bits.join(' \u00b7 ');
-
 }
-
 function buildTabs(){
-
   var tabBar=document.getElementById('tabBar');
-
   tabBar.innerHTML='';
-
   var counts={};
-
   entries.forEach(function(e){var s=e.dataset.skill;counts[s]=(counts[s]||0)+1});
-
   var skillList=Object.keys(counts).sort(function(a,b){return counts[b]-counts[a]||a.localeCompare(b)});
-
   function makeTab(key,label,count,glyph){
-
     var tab=document.createElement('button');
-
     tab.type='button';
-
     tab.className='tab';
-
     tab.dataset.skillKey=key===null?'__all__':key;
-
     if((key===null&&activeFilters.skill===null)||key===activeFilters.skill)tab.classList.add('active');
-
     var g=document.createElement('span');g.className='tab-glyph';g.textContent=glyph;
-
     var l=document.createElement('span');l.textContent=label;
-
     var c=document.createElement('span');c.className='tab-count';c.textContent=count;
-
     tab.appendChild(g);tab.appendChild(l);tab.appendChild(c);
-
     tab.addEventListener('click',function(){
-
       activeFilters.skill=(activeFilters.skill===key)?null:key;
-
       updateTabStates();
-
       applyFilters();
-
     });
-
     return tab;
-
   }
-
   tabBar.appendChild(makeTab(null,'All Tasks',entries.length,'\u25A0'));
-
   skillList.forEach(function(s){
-
     tabBar.appendChild(makeTab(s,s,counts[s],getGlyph(s)));
-
   });
-
 }
-
 function updateTabStates(){
-
   document.querySelectorAll('.tab').forEach(function(t){
-
     var k=t.dataset.skillKey;
-
     var match=(k==='__all__')?(activeFilters.skill===null):(k===activeFilters.skill);
-
     if(match)t.classList.add('active');else t.classList.remove('active');
-
   });
-
 }
-
 function buildDropdown(btnId,panelId,searchId,listId,type,options){
-
   var btn=document.getElementById(btnId);
-
   var dropdown=btn.parentElement;
-
   var searchInput=searchId?document.getElementById(searchId):null;
-
   var list=document.getElementById(listId);
-
   btn.addEventListener('click',function(ev){
-
     ev.stopPropagation();
-
     document.querySelectorAll('.filter-dropdown.open').forEach(function(d){if(d!==dropdown)d.classList.remove('open')});
-
     dropdown.classList.toggle('open');
-
     if(dropdown.classList.contains('open')&&searchInput){setTimeout(function(){searchInput.focus()},30)}
-
   });
-
   function renderOpts(ft){
-
     list.innerHTML='';
-
     ft=(ft||'').toLowerCase();
-
     var any=false;
-
     options.forEach(function(opt){
-
       if(ft && opt.label.toLowerCase().indexOf(ft)===-1 && opt.key.toLowerCase().indexOf(ft)===-1)return;
-
       any=true;
-
       var row=document.createElement('div');
-
       row.className='dropdown-option'+(activeFilters[type]===opt.key?' active':'');
-
       var dot=document.createElement('span');dot.className='dot';
-
       var lbl=document.createElement('span');lbl.className='opt-label';lbl.textContent=opt.label;
-
       var cnt=document.createElement('span');cnt.className='opt-count';cnt.textContent=opt.count;
-
       row.appendChild(dot);row.appendChild(lbl);row.appendChild(cnt);
-
       row.addEventListener('click',function(){
-
         activeFilters[type]=(activeFilters[type]===opt.key)?null:opt.key;
-
         updateFilterButton(btn,type);
-
         renderOpts(searchInput?searchInput.value:'');
-
         applyFilters();
-
       });
-
       list.appendChild(row);
-
     });
-
     if(!any){var m=document.createElement('div');m.style.cssText='padding:12px;text-align:center;color:var(--muted);font-size:12px;font-family:JetBrains Mono,monospace';m.textContent='No matches';list.appendChild(m)}
-
   }
-
   if(searchInput){searchInput.addEventListener('input',function(){renderOpts(searchInput.value)})}
-
   renderOpts('');
-
   updateFilterButton(btn,type);
-
 }
-
 function updateFilterButton(btn,type){
-
   var valueSpan=btn.querySelector('.btn-value');
-
   if(activeFilters[type]){
-
     btn.classList.add('has-active');
-
     if(valueSpan){
-
       var v=activeFilters[type];
-
       if(type==='result'){v=({ok:'Completed',warn:'Partial',fail:'Failed'})[v]||v}
-
       valueSpan.textContent=v.length>18?v.slice(0,16)+'\u2026':v;
-
     }
-
   }else{
-
     btn.classList.remove('has-active');
-
     if(valueSpan)valueSpan.textContent=btn.dataset.defaultLabel||'Any';
-
   }
-
 }
-
 function buildFilters(){
-
   var shopCounts={};
-
   entries.forEach(function(e){shopsOf(e).forEach(function(s){shopCounts[s]=(shopCounts[s]||0)+1})});
-
   var shopOptions=Object.keys(shopCounts).sort(function(a,b){return shopCounts[b]-shopCounts[a]||a.localeCompare(b)}).map(function(s){return{key:s,label:s,count:shopCounts[s]}});
-
   var platCounts={};
-
   entries.forEach(function(e){if(e.dataset.platform)platCounts[e.dataset.platform]=(platCounts[e.dataset.platform]||0)+1});
-
   var platOptions=Object.keys(platCounts).sort(function(a,b){return platCounts[b]-platCounts[a]||a.localeCompare(b)}).map(function(p){return{key:p,label:p,count:platCounts[p]}});
-
   var resultOptions=[
-
     {key:'ok',label:'Completed',count:entries.filter(function(e){return e.dataset.result==='ok'}).length},
-
     {key:'warn',label:'Partial / Warning',count:entries.filter(function(e){return e.dataset.result==='warn'}).length},
-
     {key:'fail',label:'Failed',count:entries.filter(function(e){return e.dataset.result==='fail'}).length}
-
   ];
-
   buildDropdown('shopBtn','shopPanel','shopSearch','shopList','shop',shopOptions);
-
   buildDropdown('platformBtn','platformPanel',null,'platformList','platform',platOptions);
-
   buildDropdown('resultBtn','resultPanel',null,'resultList','result',resultOptions);
-
 }
-
 function applyFilters(){
-
   var anyVisible=false;
-
   entries.forEach(function(e){
-
     var match=true;
-
     if(activeFilters.skill && e.dataset.skill!==activeFilters.skill)match=false;
-
     if(activeFilters.shop&&shopsOf(e).indexOf(activeFilters.shop)===-1)match=false;
-
     if(activeFilters.platform&&e.dataset.platform!==activeFilters.platform)match=false;
-
     if(activeFilters.result&&e.dataset.result!==activeFilters.result)match=false;
-
     if(searchTerm){
-
       var text=e.textContent.toLowerCase();
-
       if(text.indexOf(searchTerm)===-1)match=false;
-
     }
-
     e.style.display=match?'':'none';
-
     if(match)anyVisible=true;
-
   });
-
   document.querySelectorAll('.day-group').forEach(function(g){
-
     var visible=Array.from(g.querySelectorAll('.entry')).some(function(e){return e.style.display!=='none'});
-
     g.style.display=visible?'':'none';
-
   });
-
   document.getElementById('emptyState').style.display=anyVisible?'none':'block';
-
 }
-
 function bindCollapsibles(){
-
   entries.forEach(function(e){
-
     var summary=e.querySelector('.entry-summary');
-
     summary.addEventListener('click',function(ev){
-
       if(ev.target.closest('.skill-pill'))return;
-
       e.classList.toggle('open');
-
     });
-
   });
-
 }
-
 document.addEventListener('click',function(ev){
-
   if(!ev.target.closest('.filter-dropdown')){
-
     document.querySelectorAll('.filter-dropdown.open').forEach(function(d){d.classList.remove('open')});
-
   }
-
 });
-
 document.getElementById('searchInput').addEventListener('input',function(ev){
-
   searchTerm=ev.target.value.trim().toLowerCase();
-
   applyFilters();
-
 });
-
 document.getElementById('clearBtn').addEventListener('click',function(){
-
   activeFilters={skill:null,shop:null,platform:null,result:null};
-
   searchTerm='';
-
   document.getElementById('searchInput').value='';
-
   updateTabStates();
-
   document.querySelectorAll('.filter-btn').forEach(function(b){
-
     b.classList.remove('has-active');
-
     var v=b.querySelector('.btn-value');if(v)v.textContent=b.dataset.defaultLabel||'Any';
-
   });
-
   document.querySelectorAll('.dropdown-option.active').forEach(function(o){o.classList.remove('active')});
-
   applyFilters();
-
 });
-
 groupByDay();
-
 renderStats();
-
 renderTodaySummary();
-
 buildTabs();
-
 buildFilters();
-
 bindCollapsibles();
-
 })();
-
 </script>
-
 </body>
-
 </html>
-
