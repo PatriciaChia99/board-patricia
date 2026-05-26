@@ -849,16 +849,59 @@ header.page::after{
       <div class="field"><strong>Result:</strong> fail &mdash; 0 cases audited, 0 PATCHes, 0 board mutations beyond this BLOCKED log, 0 destructive ops. 25/5 P0/P1 carry-over rolls intact to next successful run.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-05-26" data-shops="(blocked &mdash; no shops touched)" data-platform="internal" data-result="fail">
+  <div class="entry" data-date="2026-05-26" data-shops="TT Adelmar, TT Hiranai, TT KarlMobel, TT MurahYa, TT Valuesnap, Lazada MurahYa, Laz das.nature" data-platform="TikTok MY + Lazada MY + internal" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">parcelclaim-auto &mdash; RUN BLOCKED by AdsPower SSL cert error (26/5 same root cause as AM checksbvariation block)</span>
-      <span class="entry-meta">2026-05-26 MYT &middot; profile 70 launch path UNREACHABLE &middot; AdsPower local API still returning <code>{"code":-1,"msg":"unable to verify the first certificate"}</code> on every cloud-sync endpoint (<code>/api/v1/user/list</code>, <code>/api/v1/group/list</code>, <code>/api/v1/browser/start</code>) &middot; read-only endpoints (<code>/status</code>, <code>/api/v1/browser/active</code>) still respond OK &middot; <strong>0 TT profiles scanned / 0 Laz profiles scanned / 0 cases collected / 0 POSTs / 0 deferred IDs touched</strong> &middot; same AdsPower restart fix as AM checksbvariation block applies; needs operator action before retry</span>
+      <span class="entry-title">parcelclaim-auto &mdash; AM blocked by SSL cert / PM recovered &middot; 10 NEW POSTed C1846-C1855 RM 2,145.83 (26/5)</span>
+      <span class="entry-meta">2026-05-26 14:00&ndash;16:10 MYT (manual re-fire after AdsPower tray restart cleared the AM 09:45 SSL cert blocker) &middot; profile 70 launched clean WS first try &middot; <strong>12/16 profiles scanned OK</strong> (10 TT alive + 2 Laz alive) &middot; 1 TT login_expired (59 Jager, operator-blocked) &middot; 3 deferred (63/67/83, no webapp dropdown) &middot; <strong>26 cases collected in 4-day window / 15 already in webapp / 1 SKU dup / 10 NEW POSTed</strong> &middot; total <strong>RM 2,145.83</strong> across cases <code>C1846&ndash;C1855</code> &middot; 0 POST failures &middot; 443 Request-closed cards filtered at intake &middot; AM blocker fix path same as 26/5 tiktokrraudit + checksbvariation entries</span>
       <span class="tag">parcelclaim-auto</span>
-      <span class="tag result-fail">Blocked</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
-      <p><strong>Brief:</strong> 26/5 manual invocation of parcelclaim-auto attempted after carry-over context load (project_session_apr30_parcelclaim_auto.md + feedback_tt_login_probe_wait.md + feedback_adspower_first_cert_blocker_26may.md). Per HARD RULE in the 26/5 cert-blocker memory, ran 30s detection script BEFORE attempting profile launch &mdash; canary failed identically to AM checksbvariation pattern. Run aborted at PHASE 0 step 3 (AdsPower MCP online check) per HARD RULE 5 (continue-on-error per profile, but global AdsPower outage = hard exit). No profiles opened, no API calls made, no state.json mutated.</p>
+      <p><strong>Brief:</strong> Day-in-two-parts. <strong>AM (09:45 scheduled + manual re-fire):</strong> blocked at PHASE 0 by AdsPower local-API SSL "unable to verify the first certificate" on every cloud-sync endpoint. Pre-launch canary detected the blocker per HARD RULE; run aborted before any profile launch; 0 destructive ops. <strong>PM (14:00&ndash;16:10 manual re-fire after operator AdsPower tray restart):</strong> SSL blocker cleared; full sweep executed clean across 12 alive profiles; 10 NEW cases POSTed (<code>C1846&ndash;C1855</code>) totalling RM 2,145.83, 0 POST failures. Carry-over backlog from 22&ndash;26/5 window captured. Full report at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-05-26.md</code>.</p>
+      <div class="field"><strong>PM recovery results &mdash; 10 NEW POSTed (all HTTP 200, no retries):</strong>
+        <ul>
+          <li><code>C1846</code> TT Hiranai rr OID <code>584071034133448213</code> &mdash; RM 35.31 (25/5 11:03, Refund complete)</li>
+          <li><code>C1847</code> TT Adelmar fd OID <code>584134353779263084</code> &mdash; RM 271.32 (23/5 07:04, Skuter Elektrik 24V)</li>
+          <li><code>C1848</code> TT Hiranai fd OID <code>584007541457716241</code> &mdash; RM 35.60 (25/5 18:37, Stiletto 38)</li>
+          <li><code>C1849</code> TT Hiranai fd OID <code>583932694518465823</code> &mdash; RM 33.00 (23/5 15:06, Stiletto 37)</li>
+          <li><code>C1850</code> TT KarlMobel fd OID <code>584041773501547868</code> &mdash; <strong>RM 879.70 VHV (24/5 16:44, Adelmar Skuter 350W &mdash; 5th VHV-tier RTS for KarlMobel in 5 weeks)</strong></li>
+          <li><code>C1851</code> TT MurahYa fd OID <code>584150316795201488</code> &mdash; RM 683.09 HV (23/5 15:01, Adelmar M4 PRO 500W scooter)</li>
+          <li><code>C1852</code> TT MurahYa fd OID <code>584060463180842320</code> &mdash; RM 92.54 (26/5 13:22, GXT Helmet)</li>
+          <li><code>C1853</code> TT MurahYa fd OID <code>583991814997509171</code> &mdash; RM 75.00 (25/5 12:11, Life jacket)</li>
+          <li><code>C1854</code> TT MurahYa fd OID <code>583975623957448560</code> &mdash; RM 18.50 (24/5 18:22, Chess board)</li>
+          <li><code>C1855</code> TT Valuesnap fd OID <code>584080036866786748</code> &mdash; RM 21.77 (23/5 15:05, Star light projector)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Webapp before &rarr; after:</strong> 485 cases / top <code>C1845</code> &rarr; <strong>495 cases / top <code>C1855</code></strong>. Net +10. Dedupe size 484 &rarr; 494.</div>
+      <div class="field"><strong>Per-shop breakdown (PM):</strong>
+        <ul>
+          <li>TT KarlMobel: 1 case RM 879.70 (1 R/R + 4 FD in window; 3 FD already C1842/C1843/C1844; 1 R/R already C1845)</li>
+          <li>TT MurahYa: 4 cases RM 869.13 (1 R/R + 4 FD in window; 1 R/R already C1840)</li>
+          <li>TT Adelmar: 1 case RM 271.32 (1 R/R already C1839)</li>
+          <li>TT Hiranai: 3 cases RM 103.91 (7 R/R in window; 4 already from 25/5 batch; 1 SKU dup dropped)</li>
+          <li>TT Valuesnap: 1 case RM 21.77</li>
+          <li>Lazada MurahYa: 0 NEW (2 in window, both already C1837/C1838)</li>
+          <li>TT DasNature / HiranaiMY / JagerArmor / JagerSafety / JagerHelmet / Laz das.nature: 0 in window</li>
+        </ul>
+      </div>
+      <div class="field"><strong>AM detection results (run before any profile launch attempt, per cert-blocker memory protocol):</strong>
+        <ul>
+          <li><code>GET /status</code> &rarr; <code>{"code":0,"msg":"success"}</code> &mdash; AdsPower app process is alive</li>
+          <li><code>GET /api/v1/user/list?page_size=1</code> &rarr; <code>{"code":-1,"msg":"unable to verify the first certificate"}</code> &mdash; <strong>cloud-sync BLOCKED</strong></li>
+          <li><code>GET /api/v1/group/list?page_size=1</code> &rarr; same SSL error &mdash; confirms blocker is global, not endpoint-specific</li>
+          <li><code>GET /api/v1/browser/active?user_id=k1b44nvg</code> &rarr; <code>{"code":0,"msg":"success","data":{"status":"Inactive"}}</code> &mdash; read-only cache works, profile 70 not running</li>
+        </ul>
+      </div>
+      <div class="field"><strong>PM canary at re-fire (14:00):</strong> <code>GET /status</code> + <code>GET /api/v1/user/list</code> BOTH returned <code>{"code":0,"msg":"success"}</code>. Cloud-sync chain restored. Operator restarted AdsPower tray between AM block and PM re-fire (per cert-blocker memory protocol).</div>
+      <div class="field"><strong>Login matrix (PM verified, cookie + Seller Center shell):</strong>
+        <ul>
+          <li>ALIVE (10 TT): 54 Adelmar / 55 DasNature / 56 Hiranai / 58 HiranaiMY / 60 JagerArmor / 61 JagerSafety / 62 KarlMobel / 64 MurahYa / 65 Valuesnap / 66 JagerHelmet</li>
+          <li>ALIVE (2 Lazada): 81 MurahYa / 82 das.nature</li>
+          <li>LOGIN_EXPIRED (1 TT): <strong>59 TT Jager</strong> &mdash; cookie present but URL bounced to <code>/account/login</code> + Seller Center shell missing. Operator manual re-login required.</li>
+          <li>DEFERRED (3): 63 TT Lovento / 67 TT Kinata / 83 Lazada Lovento &mdash; webapp dropdown still missing these shop names; cannot POST even if cases collected.</li>
+        </ul>
+      </div>
       <div class="field"><strong>Detection results (run before any profile launch attempt, per cert-blocker memory protocol):</strong>
         <ul>
           <li><code>GET /status</code> &rarr; <code>{"code":0,"msg":"success"}</code> &mdash; AdsPower app process is alive</li>
@@ -879,8 +922,9 @@ header.page::after{
       <div class="field"><strong>Suggested unblock (operator action, &lt;1 min &mdash; identical to AM checksbvariation entry):</strong> right-click AdsPower Global tray icon &rarr; <strong>Exit</strong> (confirm <code>Get-Process AdsPower*</code> returns nothing) &rarr; relaunch from Start menu &rarr; wait for tray ready &rarr; re-invoke parcelclaim-auto skill. Resolves ~90% of first-cert errors per the 26/5 feedback memory.</div>
       <div class="field"><strong>Why I did NOT proceed despite carry-over pressure:</strong> per <code>feedback_adspower_first_cert_blocker_26may.md</code> HARD RULE: "DO NOT write reports from stale state.json &mdash; Patricia treats reports as live-data authoritative." Writing a fake "0 new cases" report would mask any genuine cases that arrived 23/5-26/5 and create false confidence the bot ran clean. Better to honestly block + surface than to silently lie.</div>
       <div class="field"><strong>Reason:</strong> AdsPower Global's outbound HTTPS chain to its cloud auth endpoint is failing certificate validation. Same root cause as 26/5 AM checksbvariation block. Most common: AdsPower cloud rotated its TLS cert and local app's cached chain is stale. Fix path: full app restart.</div>
-      <div class="field"><strong>Scheduled bat re-fire 09:45 MYT (Task Scheduler <code>ClaudeParcelClaimAuto_0945</code>):</strong> bat fired on schedule but <strong>wrote NO new line to <code>schedule-log.txt</code></strong> (last entry remains 2026-05-19 manual probe). Indicates the bat exited before reaching the log-write step &mdash; consistent with Claude not launching, AdsPower still cert-blocked (most likely &mdash; same SSL blocker as the manual attempt above), or report file generation failing silently. Local log: <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\schedule-log.txt</code>. <strong>Action needed:</strong> after AdsPower tray restart unblocks the SSL cert chain, open Claude Code manually + re-invoke parcelclaim-auto skill (same recovery path as morning block).</div>
-      <div class="field"><strong>Result:</strong> fail &mdash; 0 cases collected, 0 POSTs, 0 state.json writes, 0 board entries beyond this BLOCKED log. No destructive ops attempted. All carry-over items roll forward intact to next successful run after AdsPower restart. Both the AM manual attempt AND 09:45 scheduled bat affected.</div>
+      <div class="field"><strong>state.json:</strong> write blocked by harness perm-gate (per <code>feedback_state_json_write_perm_gate_recurring.md</code> &mdash; recurring 7+ days; affects parcelclaim-auto + sg-gap-monitor + checksbvariation + parcelsplit-contact-crosscheck). Webapp is canonical anyway (idempotent at order_id level); next run reads <code>existingInWebapp</code> from webapp not from state.json. Inline intended values: 10 new <code>seen</code> entries (C1846-C1855) + run_history append + verified_seller_ids refresh for the 10 alive TT profiles.</div>
+      <div class="field"><strong>Reason:</strong> AM &mdash; AdsPower Global's outbound HTTPS chain to its cloud auth endpoint failing certificate validation; same root cause as 26/5 AM checksbvariation + tiktokrraudit blocks; fixed by operator tray restart. PM &mdash; user-requested manual re-fire to recover the missed 09:45 window before the 22/5 source date rolls out of the 4-day cutoff (would lose visibility on Fri/Sat cases). Skill scope-driven via config.json; 13 TT + 3 Lazada profiles; 4-day window.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 10 NEW cases POSTed clean (RM 2,145.83, all HTTP 200), 0 failures, 26 cases collected from 12 alive profiles, 15 deduped against webapp, 1 SKU dup dropped, full 22-26/5 window captured before 22/5 cutoff roll-off. AM blocker fully resolved post-restart. 59 Jager + 3 deferred profiles roll to next run.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-26" data-shops="Karlmobel, das.nature, das.nature2, MurahYa, Murahya, MasonGym, Hiranai, ValueSnap, TT Murahya, TT Hiranai, TT KarlMobel, TT DasNature, Kinata SG, KarlMobel SG, DasNatureSG2, Laz MurahYa" data-platform="Shopee MY + SG + TikTok MY + Lazada MY + internal" data-result="ok">
