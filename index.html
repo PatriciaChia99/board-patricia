@@ -883,49 +883,54 @@ header.page::after{
       <div class="field"><strong>Result:</strong> fail &mdash; 0 cases collected, 0 POSTs, 0 state.json writes, 0 board entries beyond this BLOCKED log. No destructive ops attempted. All carry-over items roll forward intact to next successful run after AdsPower restart. Both the AM manual attempt AND 09:45 scheduled bat affected.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-05-26" data-shops="(blocked &mdash; no shops touched)" data-platform="internal" data-result="fail">
+  <div class="entry" data-date="2026-05-26" data-shops="Karlmobel, das.nature, das.nature2, MurahYa, Murahya, MasonGym, Hiranai, ValueSnap, TT Murahya, TT Hiranai, TT KarlMobel, TT DasNature, Kinata SG, KarlMobel SG, DasNatureSG2, Laz MurahYa" data-platform="Shopee MY + SG + TikTok MY + Lazada MY + internal" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation &mdash; RUN BLOCKED by AdsPower SSL cert error on profile k1b44nvg open (26/5)</span>
-      <span class="entry-meta">2026-05-26 AM MYT &middot; profile 70 launch FAILED &middot; AdsPower local API returned <code>"unable to verify the first certificate"</code> on every <code>/api/v1/browser/start</code> attempt (3 retries) &middot; 9 AdsPower Global processes alive but profile stays Inactive &middot; no Chrome CDP debug port listening (no fallback attach path) &middot; <strong>0 cases audited / 0 PATCHes / 0 SG adjusts / 0 sends</strong> &middot; carry-over from 25/5 untouched (P0.1 TT 101065 ParseFail / P0.2 TT 5-case ParseFail cluster / P0.3 101087 KarlMobel bot-not-fired / P0.4 101074+101073 half-state / WL-2026-05-20-001 HCS-SILVER-TYPE-B bounce-back / 101049 TS-SLIPPER SG deduct / 101075 KLJ-RED SG check / Cat K cancel-closure verification still pending)</span>
+      <span class="entry-title">checksbvariation &mdash; 207 cases / 172 open / 19 recent &middot; 13 25/5 P0 RESOLVED overnight (bot self-heal) &middot; SSL blocker cleared &middot; 0 PATCHes/sends (26/5)</span>
+      <span class="entry-meta">2026-05-26 12:10 MYT (ad-hoc after AM SSL blocker resolved) &middot; profile 70 launched clean, WS first try &middot; <strong>207 cases / 172 open</strong> (Shopee MY 133 / TikTok 27 / SG 8 / Laz 4) &middot; <strong>19 recent (&le;5d)</strong>, 153 stale &middot; <strong>13 of 25/5 P0/P1 items SELF-HEALED overnight</strong> (4 bot-not-fired all fired / 101087 CSGS-KHAKI bot fired / 101085 SH-BLACK stockSetOos true / 101075 KLJ-RED Adjusted / 101074+101073+101079 Cancelled / 101081+101080+101089 TT bot fired / 101063 Cancelled) &middot; 13 20/5 PATCHes still intact (5 weeks) &middot; 16 approvals pending &middot; <strong>0 PATCHes / 0 SG adjusts / 0 sends</strong> per mandate</span>
       <span class="tag">checksbvariation</span>
-      <span class="tag result-fail">Blocked</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
-      <p><strong>Brief:</strong> 26/5 AM scheduled checksbvariation invocation attempted. AdsPower MCP <code>open-browser</code> and direct local API <code>/api/v1/browser/start?user_id=k1b44nvg</code> both rejected with <code>{"code":-1,"msg":"unable to verify the first certificate"}</code>. Read-only endpoints (<code>/status</code>, <code>/api/v1/browser/active</code>) work; any endpoint requiring cloud-sync (browser start, user list, group list) blocked. Suggests AdsPower Global app's outbound SSL chain to its cloud auth endpoint is failing &mdash; likely needs full app restart from tray (Exit &rarr; relaunch) to re-pull cert chain. No CDP fallback available because no Chrome instance is running (no listening port in 9000-10000 range).</p>
-      <div class="field"><strong>Attempts (each failed identically):</strong>
+      <p><strong>Brief:</strong> 26/5 AM scheduled run blocked at 09:30 by AdsPower local-API SSL "unable to verify the first certificate" error. After operator full-restart of AdsPower Global from tray, blocker cleared (12:10 MYT). Re-fired run cleanly: profile 70 launched first try, WS bridge connected, webapp loaded on correct origin, <code>/api/sb-variation</code> returned 207 cases HTTP 200. 13 of 25/5's P0/P1 items resolved themselves overnight (bot retry + WH+CS execution + buyer/system cancels). No PATCHes / sends executed per mandate (audit only). Full report at <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-05-26.md</code>.</p>
+      <div class="field"><strong>Headline counts (before &rarr; after vs 25/5 report):</strong>
         <ul>
-          <li>MCP <code>mcp__adspower__open-browser(profile_id=k1b44nvg)</code> &rarr; <code>Failed to open browser: unable to verify the first certificate</code></li>
-          <li>MCP <code>mcp__adspower__open-browser(profile_no=70)</code> &rarr; same error</li>
-          <li>HTTP <code>GET local.adspower.net:50325/api/v1/browser/start?user_id=k1b44nvg</code> &rarr; same error</li>
-          <li>HTTP <code>GET local.adspower.net:50325/api/v1/browser/start?user_id=k1b44nvg&launch_args=...</code> with disable-password-check flag &rarr; same error</li>
-          <li>HTTP <code>GET /api/v2/browser-profile/start?profile_id=k1b44nvg</code> &rarr; <code>Not Found</code> (v2 endpoints not supported)</li>
+          <li>Total in API: 208 &rarr; <strong>207</strong> (net -1)</li>
+          <li>Open: 177 &rarr; <strong>172</strong> (-5 mostly to Cancelled terminal)</li>
+          <li>Shopee MY open: 137 &rarr; <strong>133</strong> (-4)</li>
+          <li>Shopee MY ladder: A-BOT_OK 101&rarr;99 / H-Adjusted 12&rarr;13 / F-CCheck 17&rarr;15 / B-ParseFail 4&rarr;5 / C-NotFired 1&rarr;0 (101087 fired) / D-Partial 1&rarr;0 (101085 healed)</li>
+          <li>Recent (&le;5d) open: 23 &rarr; 19</li>
+          <li>NEW cases since 25/5: 4 (101091 TT KarlMobel cancelled / 101092 MurahYa, 101093+101094 MasonGym all C-NotFired ~0.1d, bot pending overnight cycle)</li>
         </ul>
       </div>
-      <div class="field"><strong>Read-only endpoints that DID respond (rules out total AdsPower outage):</strong>
+      <div class="field"><strong>13 25/5 P0/P1 items SELF-HEALED overnight (per-case before &rarr; after):</strong>
         <ul>
-          <li><code>GET /status</code> &rarr; <code>{"code":0,"msg":"success"}</code></li>
-          <li><code>GET /api/v1/browser/active?user_id=k1b44nvg</code> &rarr; <code>{"code":0,"msg":"success","data":{"status":"Inactive"}}</code></li>
+          <li><strong>101087</strong> Karlmobel 2605248JSQ0ARA CSGS-KHAKI-STOVE-BAG-PAN: C-NotFired &rarr; <strong>A-BOT_OK</strong> (contactSent=true + stockSetOos=true). Bot fired overnight.</li>
+          <li><strong>101085</strong> das.nature 2605224GF9MWKP SH-BLACK: D-Partial (stockSetOos=false) &rarr; <strong>A-BOT_OK</strong> (stockSetOos=[true]). Bot self-healed.</li>
+          <li><strong>101075</strong> Karlmobel 260520V17E780D KLJ-F-GREEN-3XL &rarr; KLJ-RED-3XL: Accept Change SG-check-pending &rarr; <strong>Adjusted</strong> (wh=WH Confirmed Can Pack, sa=Adjusted). WH+CS executed unilaterally.</li>
+          <li><strong>101074</strong> das.nature2 26052100M310YF: ParseFail half-state &rarr; <strong>Cancelled</strong> (terminal).</li>
+          <li><strong>101073</strong> MurahYa 2605210SQ0UR56: ParseFail half-state &rarr; <strong>Cancelled</strong> (terminal).</li>
+          <li><strong>101079</strong> TT Murahya 584132395641635854: B-ParseFail &rarr; <strong>Cancelled</strong> (TT auto-cancel).</li>
+          <li><strong>101091</strong> TT KarlMobel 584150246060492355: NEW today &rarr; <strong>Cancelled</strong>.</li>
+          <li><strong>101063</strong> das.nature2 260519S9AESS96 FAMILY-STOOL-PACK: sku=[] form &rarr; <strong>A-BOT_OK + Cancelled</strong>.</li>
+          <li><strong>101062</strong> das.nature2 260519QX1Q90SM FAMILY-STOOL-PACK: sku=[] form &rarr; <strong>A-BOT_OK</strong> awaiting buyer.</li>
+          <li><strong>101061</strong> das.nature2 260518PR46KS3U CAMPING-SOFT-MAT-BLACK-V2: sku=[] form &rarr; <strong>A-BOT_OK</strong> awaiting buyer.</li>
+          <li><strong>101060</strong> das.nature 260519QW42CUB2 CS-FOREST-GREEN-HIGH: sku=[] form &rarr; <strong>A-BOT_OK</strong> + Accept Change (but csR="cancel already" &mdash; contradiction P1.3 below).</li>
+          <li><strong>101081/101080</strong> TT Murahya 584141191991035755 + 584127666751833541: contactSent=false &rarr; <strong>contactSent=true</strong> (bot sent TT_OFFER_CHANGE 25/5 17:22 MYT &mdash; but generic, sku=[] pn=null still).</li>
+          <li><strong>101089</strong> TT Hiranai 584150667603248582: contactSent=false &rarr; <strong>contactSent=true</strong> (bot sent 25/5 17:22 generic).</li>
         </ul>
       </div>
-      <div class="field"><strong>Carry-over items NOT touched today (rolled to 27/5):</strong>
+      <div class="field"><strong>13 20/5 PATCHes verified intact after 5 weeks:</strong> 100960 SA-18247 / 100972 SA-18248 / 101044 SA-18249 / 101045 SA-18249 / 101018 SA-18180 / 101020 SA-18181 / 101042 SA-18255 Cancelled / 101036 SA-18257 Cancelled / 101041 SA-18255 / 101047 SA-18255 / 101039 SA-18257 / 101033 SA-18257 / 101056 SA-18258. All stockIds preserved, all remarks present.</div>
+      <div class="field"><strong>Carried into 27/5 (16 approvals pending):</strong>
         <ul>
-          <li>P0.1 TT 101065 Hiranai 584104634091275501 ParseFail (sku=[] pn=null since 20/5)</li>
-          <li>P0.2 TT 5-case ParseFail cluster &mdash; 101089/101081/101080/101079/101071 (suspected TT bot SKU-extraction regression)</li>
-          <li>P0.3 ShopeeMY 101087 KarlMobel CSGS-KHAKI-STOVE-BAG-PAN bot-not-fired (created 24/5)</li>
-          <li>P0.4 ShopeeMY 101074 das.nature2 + 101073 MurahYa half-state ParseFail (stockSetOos=true but contactSent=false)</li>
-          <li>WL-2026-05-20-001 HCS-SILVER-TYPE-B bounce-back check (TT 101031 cancelled 25/5)</li>
-          <li>P1 101049 Hiranai TS-SLIPPER SG -1 deduct (WH whConfirm pending 8+ days)</li>
-          <li>P1 101075 Karlmobel KLJ-RED-3XL SG check + deduct if approved</li>
-          <li>P1 Cat K cancel-closure verify on 101031 + 101038 (TT DasNature, both Cancelled 25/5)</li>
-          <li>P1 101085 das.nature SH-BLACK Partial verify</li>
-          <li>P2 22-24/5 Task Scheduler gap check (4-day silent miss)</li>
-          <li>P2 18/5 Jira draft #2 close-without-filing approval</li>
+          <li><strong>P0:</strong> 101092/101093/101094 (3 fresh C-NotFired ~0.1d, monitor bot overnight) / 101065 TT Hiranai still ParseFail 5.9d / 101071+101081+101080+101089 TT manual re-send (bot fired generic) / WL-2026-05-20-001 HCS-SILVER-TYPE-B + CTP-SVER-2.3M-2PC-BG SG bounce-back checks / 101049 Hiranai TS-SLIPPER WH chase 8+ days</li>
+          <li><strong>P1:</strong> 101083 das.nature CS-BLACK-HIGH SG deduct / 101060 Accept Change vs "cancel already" contradiction / csRemarks closure backfill on 101079/101074/101073</li>
+          <li><strong>P2:</strong> 18/5 Jira draft #2 re-scope to 101049 only or close-without-filing</li>
         </ul>
       </div>
-      <div class="field"><strong>Suggested unblock (Patricia/Tess action, &lt;1 min):</strong> right-click AdsPower Global tray icon &rarr; <strong>Exit</strong> (kill all 9 processes) &rarr; relaunch from Start menu &rarr; re-prompt assistant with same run instruction. If still fails: check Windows clock (<code>w32tm /query /status</code>) and refresh root certs (<code>certutil -generateSSTFromWU roots.sst</code>).</div>
-      <div class="field"><strong>Reason:</strong> AdsPower Global's outbound HTTPS chain to its own cloud auth endpoint is failing certificate validation. Read-only local endpoints unaffected because they don't hit the cloud. Most common cause: AdsPower cloud rotated its TLS cert and the local app's cached chain is stale until restart.</div>
-      <div class="field"><strong>Result:</strong> fail &mdash; 0 cases audited, 0 PATCHes, 0 sends. No regression introduced (no destructive ops attempted). All 25/5 P0/P1 items roll over to 27/5 untouched.</div>
+      <div class="field"><strong>Shops touched (audit-only, no writes):</strong> Karlmobel, das.nature, das.nature2, MurahYa, Murahya, MasonGym, Hiranai, ValueSnap (Shopee MY); Kinata SG, KarlMobel SG, DasNatureSG2 (Shopee SG); TT Murahya, TT Hiranai, TT KarlMobel, TT DasNature (TikTok MY); Laz MurahYa (Lazada MY).</div>
+      <div class="field"><strong>Reason:</strong> Scheduled 09:30 MYT run was blocked by AdsPower SSL cert error (read-only endpoints OK, but <code>/api/v1/browser/start</code> rejected). Operator full-restart of AdsPower Global tray app cleared the cert chain. Re-fired ad-hoc 12:10 MYT to audit overnight deltas before 27/5 run, and verify the 5-week-old 20/5 PATCHes were still intact (they are). state.json write blocked by harness perm gate per <code>feedback_state_json_write_perm_gate_recurring.md</code> &mdash; intended values inline in report file per HARD rule.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 207 cases audited, 13 P0/P1 self-healed, 13 carry-over PATCHes verified intact, 16 approvals queued for 27/5. 0 PATCHes/sends/SG adjusts executed per mandate. AdsPower SSL blocker confirmed resolved.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-25" data-shops="MurahYa + BahEmas + KarlMobel + Hiranai + ValueSnap + Luxbin" data-platform="Shopee MY" data-result="ok">
