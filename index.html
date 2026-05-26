@@ -618,8 +618,8 @@ header.page::after{
   <div class="entry" data-date="2026-05-26" data-shops="ValueSnap, das.nature MY, MasonGym, BahEmas, das.nature2, Hiranai, MurahYa, Emas Gift, Adelmar, EncikPlastic, Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">chataudit &mdash; 318 in-window chats deep-reviewed cs1/2/4/5; 1 conditional flag m2m2605 promise-no-followup; cs3 SESSION EXPIRED (manual login pending) (26/5)</span>
-      <span class="entry-meta">2026-05-26 MYT &middot; window 24/5 17:45&rarr;25/5 17:45 &middot; cs1 108 / cs2 75 / cs4 121 / cs5 14 = 318 deep-reviewed &middot; 3 raw SYSTEM_FLAGGED retracted after 4-Q (pre-window or substantive in-window reply) &middot; cs3 login-expired &middot; 0 CAPTCHA &middot; read-only</span>
+      <span class="entry-title">chataudit &mdash; AM 318 chats cs1/2/4/5 + PM cs3 recovered 113 chats post-relogin = 431/431 deep-reviewed; 1 conditional flag m2m2605 (26/5)</span>
+      <span class="entry-meta">2026-05-26 MYT &middot; AM window 24/5 17:45&rarr;25/5 17:45 &middot; cs1 108 / cs2 75 / cs4 121 / cs5 14 = 318 deep-reviewed &middot; PM relogin re-run 16:15&ndash;16:56: cs3 113 chats (KarlMobel 104 / Lovento MY 6 / Luxbin 3) = 100% covered &middot; total 431/431 &middot; 5 raw SYSTEM_FLAGGED, 4 retracted + 1 conditional &middot; 0 CAPTCHA &middot; read-only</span>
       <span class="tag">chataudit</span>
       <span class="tag result-ok">Completed</span>
     </div>
@@ -629,7 +629,7 @@ header.page::after{
         <ul>
           <li>cs1 (k1artcxf, ValueSnap+das.nature+MasonGym+BahEmas): 108 in-window / 108 deep-reviewed / 3 raw SYSTEM_FLAGGED &mdash; ALL retracted; 1 conditional flag m2m2605 promise-no-followup.</li>
           <li>cs2 (k1arvrqs, das.nature2+Hiranai): 75 in-window / 75 deep-reviewed / 0 raw flags / 0 confirmed.</li>
-          <li>cs3 (k1arw2cs, KarlMobel+Lovento+Luxbin): SESSION EXPIRED &mdash; 0 audited. Deferred to next run.</li>
+          <li>cs3 (k1arw2cs, KarlMobel+Lovento+Luxbin): AM SESSION EXPIRED, PM 16:15&ndash;16:56 RECOVERED after operator manual relogin &mdash; 113 in-window / 113 deep-reviewed (KarlMobel 104 / Lovento MY 6 / Luxbin 3) / 2 raw SYSTEM_FLAGGED (shafiqadha + fahrieljembo) both retracted after 4-Q + deep-verify (substantive in-window replies + bot template-loop awareness only) / 0 confirmed misses.</li>
           <li>cs4 (k1arw4x4, MurahYa+Emas Gift+Adelmar+EncikPlastic): 121 in-window / 121 deep-reviewed / 0 raw flags / 0 confirmed.</li>
           <li>cs5 (k1arw890, Kinata SG): 14 in-window / 14 deep-reviewed / 0 raw flags / 0 confirmed.</li>
         </ul>
@@ -654,8 +654,18 @@ header.page::after{
           <li>0 CAPTCHA across all 4 audited accounts.</li>
         </ul>
       </div>
-      <div class="field"><strong>Files:</strong> C:\Users\tessf\Documents\chataudit-reports\chataudit-{cs1,cs2,cs3,cs4,cs5,summary}-Tue-26-5.md</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; 318/318 in-window chats deep-reviewed across 4 accounts. 1 conditional flag (m2m2605) needs Sofia follow-up verification. 3 SYSTEM_FLAGGED retracted per 4-Q filter. cs3 manual re-login required before next scheduled run.</div>
+      <div class="field"><strong>PM RECOVERY (16:15&ndash;16:56 MYT) &mdash; cs3 second pass after operator manual relogin:</strong>
+        <ul>
+          <li>Operator re-logged cservice3 (k1arw2cs) at user request; ChatAudit_910AM Task Scheduler task re-fired via Start-ScheduledTask.</li>
+          <li>cs3 swept clean: 402 convs loaded, 113 in-window (KarlMobel 104 / Lovento MY 6 / Luxbin 3), 113/113 deep-reviewed (100%).</li>
+          <li>2 raw SYSTEM_FLAGGED both retracted after 4-Q + deep-verify: <strong>shafiqadha (KarlMobel)</strong> bot holding-template at pre-window 24/5 00:12 triggered Shopee violation, BUT Sofia + Lucy substantively followed up in-window 25/5 11:33 + 12:35 &mdash; Q1 satisfied. <strong>fahrieljembo (Lovento MY)</strong> bot wish-card template fired 3&times; without contextual awareness, BUT Haja direct answer "Ya boss, ada - Haja" 24/5 20:24 &mdash; Q1 satisfied. Customer cancelled order 26052496WGAE1V (RM 41.79) before Haja replied (already-lost sale, not a chat-audit miss).</li>
+          <li>Awareness items (bot template issues, not agent misses): cs1 anabellaabas + bazookaapollo + cikatieyyusuf Pattern A2 closer firing without trigger; cs3 fahrieljembo wish-card template-loop; cs3 shafiqadha pre-window holding-template violation.</li>
+          <li>Carry-over watashiwahanzdes + fatimahhhh_100 (2 cs3 awaiting-customer): not in current cs3 in-window &mdash; auto-closed.</li>
+          <li>0 CAPTCHA. 0 confirmed misses across cs3.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Files:</strong> C:\Users\tessf\Documents\chataudit-reports\chataudit-{cs1,cs2,cs3,cs4,cs5,summary}-Tue-26-5.md (cs3 + summary regenerated at 16:51 in PM recovery pass)</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; <strong>431/431 in-window chats deep-reviewed across all 5 accounts</strong> (AM 318 cs1/2/4/5 + PM 113 cs3 post-relogin). 1 conditional flag (m2m2605) needs Sofia follow-up verification. 4 SYSTEM_FLAGGED retracted per 4-Q filter + deep-verify. cs3 full coverage restored same-day.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-26" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
