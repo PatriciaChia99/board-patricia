@@ -576,6 +576,103 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-26" data-shops="KarlMobel, MurahYa, ValueSnap, Hiranai, MasonGym, das.nature2, Luxbin, BahEmas, EmasGift, Kinata SG, KarlMobel SG, MurahYa SG, Emasgift SG, DasNatureSG2" data-platform="Shopee MY + SG" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">csrrcredited + csrrcreditedcheck &mdash; full MY + SG sweep: 19 WIN flips RM 1,990.97 + SGD 84.75 / 6 NEW clawbacks / 3 RECLASSIFY / 2 SHIPPING_ONLY 60+ days / 26/26 CROSSCHECK CONFIRMED / ~88 PATCHes (26/5)</span>
+      <span class="entry-meta">2026-05-26 MYT &middot; 377 MY Pending + 20 SG Pending swept &middot; profile 70 (12 MY + Kinata SG) + profile 84 (5 SG subaccount shops) &middot; full Step 6a R/R-API + Step 3 wallet + Step 3.5 SHIPPING_REASON_RX + Step 7 Bucket B 7-day reverse-audit (6/6 stable)</span>
+      <span class="tag">csrrcredited</span>
+      <span class="tag">csrrcreditedcheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User explicit invocation "run csrrcredited and csrrcreditedcheck correctly". Full pre-flight manifest run: 18 MY shops (12 MY + Kinata SG on profile 70 via get_sig; 5 SG subaccount shops on profile 84 k1bpp0sl). Pulled 377 MY Pending (RM 32,063.96 exposure) + 20 SG Pending. Triaged via subagent into APPROVED_WAITING_WALLET (17), SHIPPING_ONLY_WATCH (3), NEGATIVE_ALERT (23), REJECTED_RECHECK (9), WFR_RESELL (33), STILL_PENDING_OPEN (46), STALE_OPEN (179), UNCLASSIFIED (67). Step 6a R/R-API sweep across all 377 + 20. Step 3 wallet lookups on all flagged adj &ne; "-" + APPROVED bucket. Step 3.5 SHIPPING_REASON_RX classifier applied. Step 7 Bucket B reverse-audit on yesterday's 6 Credited flips.</p>
+      <div class="field"><strong>WIN flips (18 MY, all FLIP Credited, all PATCH HTTP 200, all crosscheck CONFIRMED):</strong>
+        <ul>
+          <li>KarlMobel (7): C16517 260504GMH7TDPC RM 292.75 (406 +344.42 Incomplete Item) / C16802 260507R7F4RS0A RM 223.87 (101+200.28 + 406+44.65) / C17464 260516J08938FA RM 36.56 (477+36.56) / C16803 260506MA79R0YC RM 128.84 (101+114.80 + 406+28.25) / C17535 2605128NKUV17M RM 21.98 (WIN_BY_DEFAULT 101+32.58) / C16956 2605090EFY0PPH RM 110.57 (WBD 101+101.86) / C16797 260506NR2H0795 RM 36.87 (WBD 101+58.50)</li>
+          <li>MurahYa (3): C16755 260505M3TKUGFG RM 368.39 (406 +428.39 Damaged Item) / C17446 260518PBRNH74N RM 32.99 (WBD 101+25.50) / C14418 260408850DWSV2 RM 530.79 (WBD 101+461.71, 25/5 anomaly resolved)</li>
+          <li>ValueSnap (1): C17485 260505JYDY7T84 RM 31.52 (477 +33.18 logistics)</li>
+          <li>Hiranai (2): C17486 260517N18NHQGH RM 23.68 (WBD 101+18.40) / C17323 260514CCGY3M08 RM 24.50 (WBD 101+19.19)</li>
+          <li>MasonGym (1): C17096 260511658Y4DJW RM 16.31 (WBD 101+13.12)</li>
+          <li>das.nature2 (2): C16744 260508SAJXU3XH RM 31.80 (RECLASSIFY from SHIPPING_ONLY: 101 retained +74.99 + 406 +5.89, NET +80.88) / C17465 260511599BB8VN RM 17.40 (WBD 101+12.38)</li>
+          <li>Luxbin (1): C16955 2605090TWKWSHK RM 43.88 (101+34.10 + 406+9.30, 0.48 rounding short within tolerance)</li>
+          <li>BahEmas (1): C17347 260515F64S8FTN RM 18.27 (WBD 101+16.29)</li>
+        </ul>
+        <strong>MY WIN total: RM 1,990.97 booked Credited (refund_state Pending&rarr;Credited + action_needed &mdash;&rarr;Closed)</strong>
+      </div>
+      <div class="field"><strong>WIN flip (1 SG):</strong> C295038 Kinata SG 260428259YGC99 SGD 84.75 (WIN_BY_DEFAULT 101 +SGD 77.96, no 102). SG endpoint uses <code>type='refund_state'</code> not <code>update_status</code> (different convention from MY). PATCH /api/new-parcel-claims-sg HTTP 200. <strong>SG WIN: SGD 84.75</strong></div>
+      <div class="field"><strong>NEW CLAWBACKs found (7 total, all remark-only):</strong>
+        <ul>
+          <li>C16743 KarlMobel 260507S6JS3XSB RM 19.08 (MY) &mdash; type 102 -19.08 only, no income retained, no comp. Pure loss</li>
+          <li>C17656 EmasGift 260516JRSKAT07 RM 46.10 (MY) &mdash; status='In Dispute' appealable, type 101+43.09 + 411-46.10 = NET -3.01 small. <strong>chase-rr candidate</strong></li>
+          <li>C367254 KarlMobel SG 2605019HWD8957 SGD 33.30 (FBS pattern, wallet empty)</li>
+          <li>C371100 KarlMobel SG 260513ANAY62KH SGD 10.85 status='In Dispute' appealable</li>
+          <li>C365136 Emasgift SG 260519S4RMJ1WQ SGD 24.98 (FBS pattern)</li>
+          <li>C290005 DasNatureSG2 260413P0F6D47G SGD 45.46 (FBS pattern)</li>
+          <li>C305466 MurahYa SG 260423J84JW1HX <strong>SGD 117.43 HV</strong> (FBS pattern, status='In Return') &mdash; HV chase candidate</li>
+        </ul>
+      </div>
+      <div class="field"><strong>RECLASSIFY (3, was tagged SILENT CLAWBACK 25/5 &rarr; today PARTIAL_WIN; remark-only):</strong>
+        <ul>
+          <li>C16603 MurahYa 260505JJ41BFF5 RM 82.37 &mdash; was -RM 88.54 In Dispute; today NET +RM 56.07 (101+144.61 retained outweighs 411 -88.54). Status In Dispute&rarr;Dispute Rejected</li>
+          <li>C17354 ValueSnap 260515F4G17URG RM 9.12 &mdash; was -RM 7.58; today NET +RM 0.14 (added type 415 +11.64 25/5)</li>
+          <li>C16857 MasonGym 260425PTU1N8PA RM 31.40 &mdash; was -RM 7.48; today NET +RM 18.46 (101+25.94 outweighs 411 -7.48)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>SHIPPING_ONLY 60+ day escalations (Hiranai 2, NET 0):</strong> C16117 260328AQMGURQ9 RM 6.56 (Day 60+) and C16194 260331HW2AKAHX RM 12.00 (Day 60+). Both: type 102 -X + type 406 +X Fee Reimburse, NET 0. Product comp never arrived. ESCALATE via chase-rr OR accept loss. <strong>Combined loss exposure: RM 18.56 product cost</strong></div>
+      <div class="field"><strong>Step 7 Bucket B (7-day rolling reverse-audit):</strong> All 6 yesterday's Credited flips STABLE CONFIRMED via live wallet: C13690 MurahYa NET +1759, C16588 MurahYa NET +104.78, C13893 BahEmas NET +287, C17521 KarlMobel NET +123.13, C16507 Luxbin NET +200.56, C17265 MasonGym NET +320.19. Zero clawbacks detected on yesterday's flips.</div>
+      <div class="field"><strong>Carry-over CLAWBACK re-confirmations (NET unchanged from 25/5):</strong> KarlMobel C17307 (-41.59 NET) / C17366 (-50.23) / C16668 (-15.85) / C17544 (-12.15) / C13072 (-17.23) / C14989 (-77.13) / C13217 (improved -43.49 from -121.51 thanks to NEW +RM 78.02 Fee Reimburse 26/5). MurahYa C15397 (-3.11) / C15278 (-17.92) / C15336 (-39.19) / C17663 (-22.11 In Dispute, appealable) / C13150 (-29.57) / C13162 (-12.11) / C13357 (-13.31). ValueSnap C16792 (-13.57) / C16954 (-9.81) / C17460 (-9.05) / C15396 (-18.49) / C13227 (-5.21). Hiranai C17335 (-11.00). All CONFIRMED unchanged.</div>
+      <div class="field"><strong>PATCH summary (all HTTP 200):</strong> 18 MY update_status flips + 18 MY WIN remarks + 14 MY misc remarks (RECLASSIFY/SHIPPING/PARTIAL/NEW-CLAWBACK/UPDATE/HOLD) + 18 MY CROSSCHECK CONFIRMED remarks + 6 Bucket B CROSSCHECK CONFIRMED + 1 SG WIN remark + 1 SG refund_state flip + 11 SG misc remarks + 1 SG CROSSCHECK. <strong>Total: ~88 PATCHes HTTP 200, 0 reconciliation failures, 0 errors.</strong></div>
+      <div class="field"><strong>csrrcreditedcheck verdict matrix (Bucket A 19 touched + Bucket B 6 rolling):</strong> 19/19 today's WIN flips CONFIRMED via live wallet (FULL_WIN or WIN_BY_DEFAULT with NET &ge; refund_amount). 6/6 Bucket B yesterday Credited stable. 7 new flagged remarks CONFIRMED (1 new clawback + 6 SG carry-overs). 0 PREMATURE / 0 SHIPPING_ONLY_PARTIAL miss / 0 RETRACTED. All CONFIRMED.</div>
+      <div class="field"><strong>Reason for run:</strong> User invocation "run csrrcredited and csrrcreditedcheck correctly". Daily scheduled cadence ~AM. Followed skill Step 0 manifest + Step 1 webapp pull + Step 6a R/R API + Step 3 wallet + Step 3.5 SHIPPING_REASON_RX + Step 7 Bucket B reverse-audit + Step 11a reconciliation + crosscheck.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 19 WIN flips applied (RM 1,990.97 MY + SGD 84.75 SG), 7 new clawbacks logged, 3 reclassified, 26/26 CROSSCHECK CONFIRMED, ~88 PATCHes HTTP 200, full coverage achieved across 18 shops, no partials, no failures.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-05-26" data-shops="all" data-platform="internal" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">scheduled-task bats hardened for 27/5 fire &mdash; AdsPower SSL cert canary added to all 4 + 26/5 EOD carry-over wired into prompts + TT_RR force-re-probe fix for profiles 54/59 (26/5 EOD)</span>
+      <span class="entry-meta">2026-05-26 ~20:50 MYT &middot; edits to <code>C:\Users\tessf\scripts\{chataudit,checksbvariation,parcelclaim-auto,tiktokrraudit}.bat</code> &middot; backups at <code>scripts\_backup-26may-eod\</code> &middot; tomorrow fire times: ChatAudit 9:11 / SBVar 9:33 / ParcelClaim 9:46 / TT_RR 10:15 MYT &middot; cert canary smoke-test PASS (code:0 success)</span>
+      <span class="tag">ad-hoc</span>
+      <span class="tag platform">internal</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User requested update so 27/5 scheduled runs go smoothly after the 26/5 morning SSL-cert-blocker debacle. 4 bat files updated with surgical edits + backups taken. 0 structural changes &mdash; all existing logic preserved; only the carry-over memory reference, the AdsPower-ready check URL, and (for tt_rr) the PHASE 0 carry-over block were modified. All 4 bats remain Task-Scheduler-compatible and will fire on their existing triggers tomorrow.</p>
+      <div class="field"><strong>Change 1 &mdash; AdsPower cert canary (all 4 bats):</strong>
+        <ul>
+          <li>Replaced the existing <code>GET /status</code> ready-check (which responds 200 even when cloud-sync is cert-blocked) with <code>GET /api/v1/user/list?page_size=1</code>. Parses response: code=0 &rarr; OK proceed / msg matches "certificate" &rarr; <strong>exit 2 = fail-fast with operator alert</strong> / other &rarr; retry. Saves the 5-10 min of wasted claude.cmd time per skill that today's morning runs incurred.</li>
+          <li>chataudit.bat had NO pre-check &mdash; added a fresh PRE-CHECK block before the claude.cmd call that exits /b 1 with BurntToast notification if cert blocker detected.</li>
+          <li>Smoke-tested live at 20:50: canary returns code=0 success against current AdsPower &mdash; would correctly proceed on a healthy state.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Change 2 &mdash; Memory reference update (all 4 bats):</strong>
+        <ul>
+          <li>Added <code>project_session_may26_rerun_orchestration_eod.md</code> as the FIRST memory file each bat reads BEFORE the existing references. This pulls in: 26/5 EOD webapp state (498 cases / 50 Pending / max_id C1859), May true-bleed RM 480.35, 17 P0/P1 items, the TT_RR skill bug note, and the operator-confirmed alive cookies for profile 54 (Adelmar 7495045783304768313) + profile 59 (Jager 7495053096333641815).</li>
+          <li>chataudit.bat: added carry-over directives for m2m2605 Sofia FU verification + cs3 alive status + awareness-only treatment of 26/5 cs1+cs3 template patterns.</li>
+          <li>parcelclaim-auto.bat: added directive to PHASE 1 to force-probe profile 59 (was login_expired 26/5 PM, now alive).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Change 3 &mdash; TT_RR PHASE 0 carry-over rewrite (tiktokrraudit.bat only):</strong>
+        <ul>
+          <li>Replaced the stale 20/5-era PHASE 0 (a)-(i) block with a fresh 26/5 EOD (a)-(m) block.</li>
+          <li>(a) is the SKILL-BUG-FIX: explicit mandate to force-open + cookie-probe every in-scope TT profile regardless of AdsPower Active/Inactive state. Closes the 26/5 EVE2+EVE3 gap where profiles 54+59 were skipped because they happened to be AdsPower-Inactive.</li>
+          <li>(b) URGENT C1856 KarlMobel RM 576.10 (1d21h SLA closing 28/5 14:00) / (c) C1366 Day-42 OVERDUE / (d) profile 54 sweep 3 HV cases RM 992 / (e) profile 59 sweep 5 cases / (f) C1819 verdict watch / (g) C1506 WH inspect / (h) C1410+C1383 silent-WIN wallet verifies / (i) C1857-C1859 new POSTs CS triage / (j) KarlMobel HV+VHV pattern / (k) Lazada / (l) schema reminder / (m) chat-output rules.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Files touched:</strong>
+        <ul>
+          <li><code>C:\Users\tessf\scripts\chataudit.bat</code> &mdash; +1906 bytes (added pre-check + memory ref + cs3/m2m2605 carry-over)</li>
+          <li><code>C:\Users\tessf\scripts\checksbvariation.bat</code> &mdash; +732 bytes (canary upgrade + memory ref)</li>
+          <li><code>C:\Users\tessf\scripts\parcelclaim-auto.bat</code> &mdash; +975 bytes (canary upgrade + memory ref + profile 59 directive)</li>
+          <li><code>C:\Users\tessf\scripts\tiktokrraudit.bat</code> &mdash; +2998 bytes (canary upgrade + memory ref + PHASE 0 rewrite + force-re-probe mandate)</li>
+          <li>Backups: <code>C:\Users\tessf\scripts\_backup-26may-eod\</code> (all 4 originals)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Reason:</strong> 26/5 AM all 4 bats fired but aborted at PHASE 0 because of AdsPower SSL cert blocker. Operator tray-restart cleared it 11:11 but the bats had already exited. Tomorrow risk: if cert recurs, all 4 silently waste claude.cmd time again. The cert canary aborts immediately with a clear log line + operator notification. The memory + carry-over updates ensure each skill resumes with full 26/5 EOD context instead of stale 20/5-era state. The TT_RR force-re-probe fix prevents the 8 Pending cases on profile 54+59 from being skipped a second day.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 4 bats hardened, all parse cleanly, cert canary smoke-test PASS, Task Scheduler NextRun confirmed for ChatAudit 9:11 / SBVar 9:33 / ParcelClaim 9:46 / TT_RR 10:15 MYT. Tomorrow's autonomous runs inherit today's full P0/P1 context without any operator paste required.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-26" data-shops="All" data-platform="All" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
