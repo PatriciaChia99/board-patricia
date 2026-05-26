@@ -951,6 +951,27 @@ header.page::after{
           <li><strong>DISCREPANCY:</strong> none.</li>
         </ul>
       </div>
+      <div class="field"><strong>EVE2 RE-FIRE (post-EVE, ~17:30+ MYT) &mdash; 1 NEW unlogged HV POST + 3 verification PATCHes HTTP 200:</strong>
+        <ul>
+          <li><strong>Webapp state at fire:</strong> 494 cases / <strong>48 Pending RM 10,236.93</strong> (drift &minus;11 cases &minus;RM 412.87 from EVE 59/RM 10,649.80). 2 Rejected / 18 Credited / 426 Withdrawn. max_id at fire = C1855.</li>
+          <li><strong>NEW unlogged HV POSTed &mdash; <code>C1856</code>:</strong> <strong>584132551190873133</strong> TT KarlMobel buyer kariffin78 RM 576.10 / 2 items / reason "Product is defective or doesn't work". Spotted on profile 62 KarlMobel <code>/order/return?tab=100</code> as "Awaiting return approval &mdash; 1d22h left" (filed 26/5 4:01 PM, SLA closes 28/5 ~14:00 MYT). <strong>C1473-style inattention risk</strong>: if CS does not respond/dispute by SLA, auto-approves and seller loses RM 576.10. Same order has a Request-closed sibling card (4:00:04 PM, older) &mdash; LATEST status wins (4:01:13 PM card is active). POST HTTP 200 (id 1856). Audit-trail PATCH added flagging URGENT + AI-SUGGEST RR-HV-DEMAND-PROOF.</li>
+          <li><strong>C1506 hidden-loss-risk TT-side VERIFIED:</strong> Profile 62 KarlMobel <code>/order/return?tab=1100</code> shows <strong>583846770144282571</strong> haimie91 status = <strong>"Refund complete" + tag "Non-seller-fault"</strong> (NOT appeal-rejected). Buyer reason "No longer needed (sealed condition)". Parcel delivered back to WH 15/5 1:22 PM. The "[REJECTED]" in webapp parsed_remarks must refer to an internal 2nd-dispute ticket that TT rejected, NOT a TT case-level appeal-failure. <strong>Reclassification: NOT a confirmed loss</strong>. Actions: (a) WH inspect parcel + check resellable; (b) if resellable &rarr; resell + Withdrawn; (c) if not resellable &rarr; file TT Reimbursement Coverage claim (Non-seller-fault eligibility, RM 632.73 recovery potential). Audit-trail PATCH added.</li>
+          <li><strong>C1410 silent-WIN verification DEFERRED:</strong> Profile 64 MurahYa session live (seller_id 7494613237803355026 &check;). Order 583715652997252216 not visible in Resolved first pages (21d old). TT wallet API owner-only blocks programmatic verify. Audit-trail PATCH added deferring to operator. Note: <code>comp_amount_rm</code> already 20.50 set, strengthens silent-WIN signal.</li>
+          <li><strong>Status-discrepancy + Rejected sweeps (re-run):</strong> 0 NEW. PM3+EVE already caught real signals (C1506/C1410/C1383). 0 NEW Rejected beyond C1408+C1533 (May true-bleed unchanged RM 480.35).</li>
+          <li><strong>FD sweep:</strong> 23 Pending FD-keyword cases / RM 5,250.83 / 10 stuck &ge;7d. All have prior PM3/EVE PATCHes &mdash; no new action.</li>
+          <li><strong>Cumulative 26/5 day tally:</strong> AM blocked (0) &rarr; PM3 27 &rarr; EVE 17 &rarr; <strong>EVE2 4 (1 POST + 3 PATCH) = 48 total ops / 0 failures</strong>. 1 NEW HV C1856 RM 576.10 logged. May true-bleed unchanged RM 480.35. Hidden-loss risk RM 632.73 RECLASSIFIED to "needs WH inspect/resell".</li>
+          <li><strong>P0 for 27/5 AM:</strong> profile 54 Adelmar manual relogin (3 cases RM 992) &middot; profile 59 Jager manual relogin (5 cases RM 506) &middot; <strong>C1856 KarlMobel RM 576.10 dispute via profile 62 URGENT 1d22h SLA &rarr; 28/5 ~14:00</strong> &middot; profile 62 WH inspect C1506 parcel &middot; profile 64/65 wallet verify C1410/C1383 &middot; TT verdicts C1825+C1678+C1819.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>EVE2 CROSSCHECK (tiktokrrauditcheck) &mdash; 4/4 CONFIRMED / 0 RECLASSIFY / 0 RETRACTED / 0 DISCREPANCY:</strong>
+        <ul>
+          <li><strong>CONFIRMED (4/4)</strong> &mdash; C1856 POST HTTP 200 (id 1856) &middot; C1856 remark PATCH HTTP 200 &middot; C1506 verify PATCH HTTP 200 &middot; C1410 deferral PATCH HTTP 200.</li>
+          <li><strong>TT-side re-verified:</strong> profile 62 KarlMobel seller_id 7495002863841610732 &check; &middot; C1506 status "Refund complete + Non-seller-fault" rendered clean &middot; C1856 visible with "1d22h left" SLA badge.</li>
+          <li><strong>Arithmetic:</strong> 494+1=495 cases / 48+1=49 Pending RM 10,812.93. Tally MATCH.</li>
+          <li><strong>RETRACT:</strong> none.</li>
+          <li><strong>DISCREPANCY:</strong> none.</li>
+        </ul>
+      </div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-26" data-shops="TT Adelmar, TT Hiranai, TT KarlMobel, TT MurahYa, TT Valuesnap, Lazada MurahYa, Laz das.nature" data-platform="TikTok MY + Lazada MY + internal" data-result="ok">
