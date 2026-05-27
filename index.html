@@ -579,6 +579,37 @@ header.page::after{
   <div class="entry" data-date="2026-05-27" data-shops="All" data-platform="All" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
+      <span class="entry-title">checkcskpi &mdash; skill patched to bake in Fit/Haja attribution + Formula A win-rate from 5/5/2026 lockdown (27/5)</span>
+      <span class="entry-meta">2026-05-27 MYT &middot; ad-hoc skill edit &middot; 2 Edit calls on C:\Users\tessf\.claude\skills\checkcskpi.md &middot; Steps 4-8 + Checklist updated &middot; portable for download</span>
+      <span class="tag">checkcskpi</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User asked if checkcskpi skill included the RR Success rate methodology for Fit/Haja with shop-handler differentiation she did last month (April 2026 KPI). It did NOT &mdash; skill only had generic credited_to_wallet classification + a vague "Win Rate = Won/(Won+Lost)" line. None of the 5/5/2026 lockdown rules (Formula A, shop&rarr;handler mapping, kinata SG exception, das.nature2 distinction, cross-platform attribution) were in the skill. User wanted it patched so she can download a self-contained skill file. Patched.</p>
+      <div class="field"><strong>What was missing (now added):</strong>
+        <ul>
+          <li><strong>Formula A lockdown</strong> &mdash; Won = Yes/Credited/Withdrawn · Lost = No · Pending EXCLUDED from rate. Withdrawn = Won because warehouse resells item (value recovered via inventory, not a loss). Formula B (Credited-only) rejected.</li>
+          <li><strong>MY shop&rarr;handler mapping</strong> &mdash; Haja MY: das.nature / ValueSnap / Emas Gift / JagerHelmet / Adelmar / Wilmermobel / Atlusrack / Solaree. Fit MY = everything else (incl. das.nature2 which is a SEPARATE shop from das.nature).</li>
+          <li><strong>SG attribution</strong> &mdash; Haja SG: HiranaiSG/DasNatureSG/MurahYaSG/KarlMobelSG/DasNatureSG2/EmasgiftSG. Fit SG: kinata SG (the only Fit-on-SG exception).</li>
+          <li><strong>Cross-platform rules</strong> &mdash; All TT &rarr; Haja. All Lazada &rarr; Fit.</li>
+          <li><strong>NULL requested_by backfill instructions</strong> &mdash; PATCH /api/new-parcel-claims with type='requested_by'. April 2026 ref: 293 PATCHes total (106 MY backfill + 94 SG/TT overwrite + 93 kinata SG re-attribution).</li>
+          <li><strong>Reporting structure</strong> &mdash; per-handler overall (Fit/Haja/Overall) + within-handler per-platform breakdown (Fit&rarr;MY/kinata SG/Lazada · Haja&rarr;MY/TT/SG-non-kinata). Lost cases list now includes handler column.</li>
+          <li><strong>April 2026 benchmark numbers</strong> &mdash; Fit 98.98% (975/10/181) · Haja 94.70% (375/21/56) · Overall 97.75% (1,350/31/237). Baked in as sanity-check reference.</li>
+          <li><strong>Checklist rewrite</strong> &mdash; 16 items (up from 10) covering Formula A, attribution mapping, das.nature2 + kinata SG edge cases, per-handler reporting, benchmark sanity-check.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Files changed:</strong>
+        <ul>
+          <li><code>C:\Users\tessf\.claude\skills\checkcskpi.md</code> &mdash; 2 Edit calls. Step 4 expanded with Formula A explicit. Steps 5-8 inserted/renumbered (was 5-7). Checklist rewrote 10&rarr;16 items.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Source memories referenced:</strong> <code>project_session_may5_kpi_attribution.md</code> (Fit/Haja mapping + April 2026 final rates), <code>reference_win_rate_formula.md</code> (Formula A definition).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; skill now self-contained and portable for download. Next month's run can apply Fit/Haja shop-handler attribution + Formula A without re-explaining. Anyone reading the skill cold should be able to reproduce the April 2026 methodology.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-05-27" data-shops="All" data-platform="All" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
       <span class="entry-title">cs-training-ppt &mdash; v2 deck regenerated with 17 amendments from user 27/5 review (46&rarr;65 slides, 20 chapters)</span>
       <span class="entry-meta">2026-05-27 MYT &middot; ad-hoc task &middot; saved C:\Users\tessf\Downloads\CS_Training_v2.pptx (168 KB) &middot; 4 new chapters added &middot; KPI math rewrite &middot; PDF Parcel Claim Flow chapter</span>
       <span class="tag">cs-training-ppt</span>
@@ -625,13 +656,13 @@ header.page::after{
   <div class="entry" data-date="2026-05-27" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">checkkinataorder &mdash; AM run: 1 ToP marmoussg S$19.14 / 30 Processed (0 Risk-of-Late) / 213 Shipping / 3 carry-over R/R Refunded (rachelsl AVOIDABLE LOSS S$18.97) / 5 new R/R / arianneespano cancelled S$21.94 saved (27/5)</span>
-      <span class="entry-meta">2026-05-27 12:08&ndash;12:14 MYT &middot; profile 70 (k1b44nvg, kmall:patricia) 20th consecutive day primary &middot; 1 fresh ToP (marmoussg Rose Soap Flower Pink S, pickup 28/05 14:00) &middot; carry-over 1/1 ToP + 2/2 Processed advanced &middot; R/R 2 actionable (emnlhji45d cancel due 29/05 + weiming2k dispute due 30/05) + 12 monitor (S$324.69 live exposure) &middot; rachelsl 260506NBYPAEB2 auto-refunded after CS missed 26/05 deadline (S$8.05 + adj -S$10.92)</span>
+      <span class="entry-title">checkkinataorder &mdash; AM+PM runs: AM 1 ToP marmoussg S$19.14 advanced &rarr; PM 0 ToP / 40 Processed / 191 Shipping / 579 R/R (+3 vs AM) / 2 Actionable R/R STALE since AM / radhakuppuswami HV S$76.50 deadline 28/05 (27/5)</span>
+      <span class="entry-meta">2026-05-27 12:08 AM + 16:40 PM MYT &middot; profile 70 (k1b44nvg, kmall:patricia) 20th day primary &middot; AM 1 fresh ToP marmoussg ADVANCED to Processed by PM &middot; PM 0 ToP / 40 Processed (+10) zero Risk-of-Late / Shipping 191 (-22) / R/R total 579 (+3 vs AM) &middot; 2 Actionable R/R UNCHANGED since AM (emnlhji45d Due 29/05 + weiming2k Due 30/05 &mdash; no CS touch 4.5hrs) &middot; 3 NEW PM R/R: nainsafaie S$17.13 Rejected + tohhongshiang S$20.99 sig-diff + atqhdx S$10.19 sealed &middot; rachelsl AM avoidable loss S$18.97 unchanged &middot; radhakuppuswami HV S$76.50 buyer return DEADLINE TOMORROW 28/05</span>
       <span class="tag">checkkinataorder</span>
       <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
-      <p><strong>Brief:</strong> Scheduled AM run of checkkinataorder. Profile 70 (k1b44nvg, kmall:patricia) used &mdash; task prompt referenced profile k1asxln6 but that is reassigned to TT JagerHelmet since 19/5 per `reference_kinata_profile_id.md`. Verified Kmall:Patricia live via get-browser-list before launch. MY shop switcher &rarr; Kinata Details &rarr; seller.shopee.sg redirect normal. Scraped To Process (clicked detail for Customer Order Time) + Processed (Risk-of-Late check) + R/R page 1 + targeted search for rachelsl carry-over. Read-only audit. Report saved to Documents\kinata-reports\kinata-report-2026-05-27.md. WhatsApp SKIPPED per task instruction (QR-blocker).</p>
+      <p><strong>Brief:</strong> Scheduled AM (12:08) + PM (16:40) runs of checkkinataorder merged into one entry. Profile 70 (k1b44nvg, kmall:patricia) used &mdash; task prompt referenced profile k1asxln6 but that is reassigned to TT JagerHelmet since 19/5 per `reference_kinata_profile_id.md`. Verified Kmall:Patricia live via get-browser-list before launch. MY shop switcher &rarr; Kinata Details &rarr; seller.shopee.sg redirect normal. Scraped To Process (clicked detail for Customer Order Time) + Processed (Risk-of-Late check) + R/R page 1 + targeted search for rachelsl carry-over. Read-only audit. Report saved to Documents\kinata-reports\kinata-report-2026-05-27.md. WhatsApp SKIPPED per task instruction (QR-blocker).</p>
       <div class="field"><strong>Tab counts (27/5 12:08 vs 26/5 PM 16:36):</strong> To Ship 31 vs 3 (+28; 1 TP + 30 Processed) / Shipping 213 vs 261 (-48 healthy outflow) / R/R Action Required 2 vs 3 (-1) / R/R total all-time 576 vs 565 (+11 new).</div>
       <div class="field"><strong>To Process (1):</strong> marmoussg 260527G05REK5E S$19.14 Rose Soap Flower Bouquet (Pink Small + Bag) &mdash; Customer Order Time 27/05/2026 10:59 (from order detail page Order History) &mdash; Pickup deadline 28/05/2026 14:00 (~24h, comfortable) &mdash; Next Day Doorstep Delivery (COT EOD).</div>
       <div class="field"><strong>Processed (30) &mdash; count only per skill rule:</strong> Zero Risk-of-Late badges. All waybills printed. Top fresh AM entries: huffy0411 Crochet Blanket, weiming2k Sleeping Bag, orange3_she Dustbin, mazelbash Snuffle Mat, rabsan1807 Cardigan, etc. Pickup deadlines 28/5&ndash;29/5.</div>
@@ -643,7 +674,16 @@ header.page::after{
       <div class="field"><strong>Khaki OS (Day 10+ open):</strong> WOMEN-LONG-SLEEVE-KNIT-SWEATER-KHAKI-OS-SG &mdash; no NEW jesslyneaxinjie cancellations on page 1 today; older 4 cases (cumulative S$50.86) remain warehouse-PIC action. Repeat reminder to operator (Day 10).</div>
       <div class="field"><strong>Action items for CS (priority):</strong> P0 Approve/Reject emnlhji45d cancellation by 29/05; P0 Dispute weiming2k by 30/05 (Shopee already approved); P0 prep dispute evidence for radhakuppuswami HV S$76.50 (return ETA 28/05) &mdash; do NOT repeat rachelsl mistake; P1 prep dispute evidence for joswen89/haiyato/bhumikadadbhawala Pick-Up-Done; P1 Offer Partial vs Wait decisions on 8 In-Return cases (S$155.64); P1 audit rachelsl CS workflow gap; P2 warehouse Khaki OS reconcile.</div>
       <div class="field"><strong>WhatsApp:</strong> SKIPPED per task instruction (QR-blocker).</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; AM run complete. Profile 70 healthy 20th day. 1 fresh ToP captured + Customer Order Time confirmed via detail-page click. 1 avoidable seller-fault loss surfaced (rachelsl S$18.97 CS-gap). 2 actionable R/R for CS (combined S$35.56). 12 monitor R/R + 12 In-Return live exposure S$324.69. Report saved to Documents\kinata-reports\kinata-report-2026-05-27.md.</div>
+      <div class="field"><strong>PM tab counts (27/5 16:40 vs AM 12:08):</strong> To Ship 40 vs 31 (+9; 0 TP + 40 Processed) / Shipping 191 vs 213 (-22 healthy outflow continues) / R/R Action Required 2 vs 2 (UNCHANGED) / R/R total all-time 579 vs 576 (+3 new PM).</div>
+      <div class="field"><strong>PM To Process (0):</strong> Empty queue. marmoussg AM order ADVANCED to Processed (waybill assigned, pickup tomorrow 28/05 14:00 on schedule). No STALE.</div>
+      <div class="field"><strong>PM Processed (40) &mdash; count only per skill rule:</strong> +10 fresh since AM. Zero Risk-of-Late badges. Top fresh PM entries: 260527GJN63K76, 260527GJEVVRNF, 260527GJ912G1H, 260527GHS8GFVJ, 260527GFFSRB9F, 260527GEYTH3X6, 260527GBJHF4VA, 260527GAUMYDWJ, 260527G8WGKWQE + marmoussg 260527G05REK5E. Pickup deadlines 28/5&ndash;29/5.</div>
+      <div class="field"><strong>PM R/R Actionable carry-over (2 STALE):</strong> emnlhji45d 260526EP6JBV8A S$15.70 cancellation &mdash; UNCHANGED In Seller Review Due 29/05 (2 days). weiming2k 2605249QKVMCMX S$19.86 Shopee-approved refund &mdash; UNCHANGED In Seller Review Due 30/05 (3 days). NO CS TOUCH in 4.5 hours since AM. Both must be actioned EOD/tomorrow to avoid auto-approval (emnlhji45d) and missed dispute window (weiming2k).</div>
+      <div class="field"><strong>PM R/R Monitor (12 unchanged since AM):</strong> 3 Pick-Up-Done confirmed (joswen89 SPXSG064963165285 dispute from 29/05, haiyato SPXSG061876935415 dispute from 28/05 TOMORROW, bhumikadadbhawala SPXSG063959914025 dispute from 28/05 TOMORROW). 9 In-Return Preparing (onedoc88, anaqaisha, nanaajmeer, rix5cs__lm, jinnyong22, radhakuppuswami HV S$76.50 buyer return DEADLINE 28/05 TOMORROW, annahuang_11, joetjp, olj8i1v_if). arianneespano cancelled still preserved (+S$21.94 saved).</div>
+      <div class="field"><strong>PM R/R NEW since AM (3):</strong> nainsafaie 260507RK57B9RR S$17.13 Dustbin Scratch/dents &mdash; Request Rejected (no seller action, informational). tohhongshiang 260526DFMHHEFR S$20.99 Hanging Dustbin Kitchen 8L sig-diff &mdash; In Return Preparing SPXSG060651674645 delivered 27/05. atqhdx 260509V07C448P S$10.19 Half Zipper Sweater sealed &mdash; In Return buyer return by 29/05 (Pick Lockers no tracking). NEW combined monitor exposure +S$31.18.</div>
+      <div class="field"><strong>PM NEW losses since AM:</strong> 0 (zero fresh refunds/adjustments PM). Day bleed unchanged: rachelsl S$18.97 avoidable + kiraan11 S$12.96 sig-diff + sahilsehaj S$25.22 sig-diff = S$57.15 day total (only S$18.97 preventable).</div>
+      <div class="field"><strong>PM combined live exposure:</strong> 2 actionable S$35.56 + 14 monitor S$320.31 = S$355.87 (+S$31.18 vs AM S$324.69 due to 2 new monitor cases).</div>
+      <div class="field"><strong>PM Action items (urgent next-24h):</strong> P0 CS Approve emnlhji45d cancellation EOD (Due 29/05). P0 CS Dispute weiming2k by 30/05. P0 CS prep dispute evidence radhakuppuswami HV S$76.50 (buyer return DEADLINE TOMORROW 28/05). P0 CS prep dispute evidence haiyato + bhumikadadbhawala (dispute windows opening 28/05 TOMORROW). P1 joswen89 dispute prep (window opens 29/05).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; AM+PM runs complete (12:08 + 16:40 MYT). Profile 70 healthy 20th day. AM 1 fresh ToP captured (marmoussg) + Customer Order Time confirmed; advanced to Processed by PM. 1 avoidable seller-fault loss booked AM (rachelsl S$18.97 CS-gap) &mdash; no new losses PM. PM 2 actionable R/R STALE since AM (CS must act EOD/tomorrow). 3 NEW PM R/R cases (1 Rejected info + 2 monitor +S$31.18). Combined PM live exposure S$355.87. radhakuppuswami HV S$76.50 buyer return DEADLINE TOMORROW 28/05 &mdash; URGENT evidence prep. Report saved to Documents\kinata-reports\kinata-report-2026-05-27.md (PM overwrites AM file per skill rule).</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-27" data-shops="TT Adelmar, TT MurahYa, TT Valuesnap, TT DasNature, TT Hiranai" data-platform="TikTok MY + internal" data-result="ok">
