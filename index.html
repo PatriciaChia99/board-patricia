@@ -576,6 +576,29 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-27" data-shops="TT KarlMobel, MurahYa, MasonGym" data-platform="Shopee MY + TikTok" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck &mdash; ad-hoc audit: 3 dark-icon (isContacted=false) cases diagnosed on /customer-service/parcel-split (27/5 EVE)</span>
+      <span class="entry-meta">2026-05-27 MYT &middot; ad-hoc user-triggered audit &middot; 3 dark cases verified against source platform &middot; 1 user-fixed shop mislabel (MasonGym&rarr;MurahYa for 2605236V8NH0VU) &middot; 1 WH-typo pending (260525881DX761) &middot; 1 TT-no-bot expected (584204748229805423) &middot; 0 DB writes by me
+      <span class="tag">parcelsplit-contact-crosscheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User flagged "parcel split got 2 cannot contact customer pls check why, wrong order id or wrong platform filled in" at ~21:30 MYT. Investigated all dark-grey phone-icon rows (text-warm-ink-disabled = isContacted=false) on /customer-service/parcel-split page. Found 3 dark cases. Verified each against source Shopee MY Seller Centre via /api/v3/order/get_order_list_search_bar_hint.</p>
+      <div class="field"><strong>Case 1 — 584204748229805423 TT KarlMobel (TikTok):</strong> Added 27/05 00:14:12 MYT (today newly-added). isShipped=false, isContacted=false. Diagnosis: expected dark — auto-contact bot only runs Shopee MY, not TikTok. No change. User confirmed skip until tomorrow.</div>
+      <div class="field"><strong>Case 2 — 260525881DX761 MurahYa (Shopee MY):</strong> Added 26/05 02:07 MYT, isShipped=true, isContacted=false. SKU WOOD-LONG-TABLE160X60X75CM (consistent with MurahYa). Tracking 66668162585001 Best Cargo. Search hint API: NOT found on MurahYa OR KarlMobel within past 2 years. Diagnosis: WH typo on orderId at parcel-split entry creation. User will chase WH for correct orderId; no DB change made.</div>
+      <div class="field"><strong>Case 3 — 2605236V8NH0VU shop field BEFORE=MasonGym &rarr; AFTER=MurahYa (user-PATCHed on webapp ~22:00 MYT):</strong> Added 24/05 20:45 MYT, isShipped=true, isContacted=false. SKU GAZEBO-TENT-WHITE-3M, tracking 666600421390001 Best Cargo. Pre-fix verification: NOT found on MasonGym. User changed shop field MasonGym&rarr;MurahYa on webapp /api/parcel-split. Post-fix verification: orderId DOES exist on MurahYa — buyer naderahaziz98, status Shipped, RM 349.31 SPayLater, exact SKU+tracking match. isContacted still false because user fix was AFTER today's 09:30 + 11:00 MYT bot cycles. Bot will retry tomorrow 09:30 MYT.</div>
+      <div class="field"><strong>Shops affected:</strong> TT KarlMobel (TT), MurahYa (Shopee MY, twice: typo case + shop-mislabel case), MasonGym (Shopee MY, removed from one case).</div>
+      <div class="field"><strong>Platform(s):</strong> Shopee MY (cases 2 + 3), TikTok (case 1).</div>
+      <div class="field"><strong>Reason:</strong> User asked to diagnose 2 cases on parcel-split page showing dark contact icon — root cause investigation requested ("wrong order id or wrong platform filled in"). User wanted to know which is which so they can route fixes correctly (WH typo correction vs shop dropdown re-selection).</div>
+      <div class="field"><strong>DB writes by me:</strong> None. Only user PATCHed shop field MasonGym&rarr;MurahYa for 2605236V8NH0VU directly on webapp UI.</div>
+      <div class="field"><strong>Memories saved:</strong> project_session_may27_parcelsplit_contact_audit.md (full diagnosis + outstanding queue); feedback_parcel_split_separate_from_sb_variation.md (/api/parcel-split vs /api/sb-variation distinction); feedback_shopee_search_hint_api_for_orderid_existence.md (fast orderId existence check); feedback_kmall_patricia_no_webchat_access.md (subaccount lacks webchat perms).</div>
+      <div class="field"><strong>Tomorrow prompt:</strong> .claude/skills/parcelsplit-contact-crosscheck/TOMORROW_PROMPT.md — covers both auto-contact bot (checksbvariation 09:30 MYT) and parcelsplit-contact-crosscheck (11:00 MYT) verification side.</div>
+      <div class="field"><strong>Outstanding for 28/5:</strong> P0 verify 2605236V8NH0VU icon flips orange after 09:30 bot run; P0 chase WH for correct 260525881DX761 orderId; P1 confirm TT KarlMobel 584204748229805423 stays dark (TT manual contact only); P2 re-sweep /api/parcel-split for any new overnight dark cases.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 3/3 dark cases diagnosed with root cause + fix path. 1 user-corrected live during session, 2 awaiting external action (WH for typo case, scheduled bot retry for shop-fixed case).</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-27" data-shops="All" data-platform="All" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
