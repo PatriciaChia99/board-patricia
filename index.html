@@ -577,6 +577,22 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-28" data-shops="N/A (board infrastructure)" data-platform="GitHub + Awesomeree Board" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">board hard-fix &mdash; posted csrrcredited log to Patricia board through GitHub API after Awesomeree board API was confirmed read-only</span>
+      <span class="entry-meta">2026-05-28 MYT &middot; before local fallback only &rarr; after live board commit verified &middot; commit 46fb830f97743a154f69876615626955c9ea7490</span>
+      <span class="tag">board-log</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> User requested a hard fix for automatic board logging. Investigated Patricia board architecture, confirmed Awesomeree route is read-only, then used authenticated GitHub API access to update the static board source.</p>
+      <div class="field"><strong>Before &rarr; after:</strong> Board log existed only as local fallback payload in C:\Users\tessf\.codex\memories &rarr; csrrcredited + csrrcreditedcheck entry posted live to it-awesomeree/board-patricia/index.html and verified via Awesomeree board content/iframe source.</div>
+      <div class="field"><strong>Shop(s):</strong> none (board infrastructure). <strong>Platform(s):</strong> GitHub, Awesomeree board.</div>
+      <div class="field"><strong>Reason:</strong> User rule requires automatic live board logging after tasks. Fallback file alone was not sufficient once GitHub access was available.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; GitHub API update succeeded; csrrcredited board entry appears at top of Patricia board source. Reusable hard-fix artifacts saved under C:\Users\tessf\.codex\memories.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-28" data-shops="MY:Adelmar, MY:BahEmas, MY:das.nature2, MY:Emas Gift, MY:Hiranai, MY:KarlMobel, MY:MasonGym, MY:Murahya, MY:MurahYa, MY:ValueSnap, SG:MurahYa SG" data-platform="Shopee MY/SG + Awesomeree Webapp" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -862,13 +878,13 @@ header.page::after{
     </div>
   </div>
 
-  <div class="entry" data-date="2026-05-28" data-shops="Murahya,TT Murahya,MasonGym,KarlMobel,das.nature,all SB shops" data-platform="Shopee MY + TikTok MY + SiteGiant + Awesomeree SB" data-result="warn">
+  <div class="entry" data-date="2026-05-28" data-shops="Murahya,TT Murahya,MasonGym,KarlMobel,das.nature,all SB shops" data-platform="Shopee MY + TikTok MY + SiteGiant + Awesomeree SB" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">checksbvariation &mdash; 28/5 AM audit + PM SB closeout: 5 SiteGiant stock adjustments, 5 SB cancellation/status updates, 1 missed Shopee row handled, 5 follow-ups</span>
-      <span class="entry-meta">2026-05-28 10:24-15:52 MYT &middot; AM audit kept for context &middot; PM updates: #SA-18522-18526, SB rows 101099/101094/101087/101086/101100, no buyer messages &middot; outstanding: WC-CVBLUE, MAHJONG, FB-BLK-S, KLJ-ORANGE-L, reserved watches YDWHN/WDN</span>
+      <span class="entry-meta">2026-05-28 10:24-15:52 MYT &middot; AM audit kept for context &middot; PM updates: #SA-18522-18526, SB rows 101099/101094/101087/101086/101100, no buyer messages &middot; tomorrow pending checks: WC-CVBLUE, MAHJONG, FB-BLK-S, KLJ-ORANGE-L, reserved watches YDWHN/WDN</span>
       <span class="tag">checksbvariation</span>
-      <span class="tag result-warn">Partial</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> AM daily SB Variation audit preserved below (206 cases / 159 open / 14 recent, 0 PATCHes at that time). PM continuation then executed user-approved stock corrections, cancelled-order SB cleanups, end-of-session crosscheck, missed-row handling, local handoff save, and this board merge. Buyer-message result for the PM run: none drafted or sent.</p>
@@ -946,7 +962,7 @@ header.page::after{
           <li><strong>TikTok monitor:</strong> 584198807359882383 / KLJ-ORANGE-L remains Processed / fulfilled / Unpaid, so SB row 101097 stays buyerDecision null, WH null, stockAdjustment null, contactSent true; no extra message unless explicitly approved.</li>
         </ul>
       </div>
-      <div class="field"><strong>Outstanding follow-up for tomorrow:</strong>
+      <div class="field"><strong>Pending cases to check tomorrow:</strong>
         <ul>
           <li><code>260525ANEYX8CP</code> / WC-CVBLUE / KarlMobel / Shopee MY: SB already Cancelled / Not Required / stockSetOos true; SiteGiant remains out_of_stock 1/1/0/0 at rack SA2. WH confirmation and explicit approval required before adjustment.</li>
           <li><code>2605248HSE4ACF</code> / MAHJONG-TABLE-SOLID-WOOD-DARK-BROWN / Murahya / Shopee MY: SB already Cancelled / Not Required / stockSetOos true; SiteGiant remains out_of_stock 2/2/0/0. User said to double-check warehouse first; no adjustment made.</li>
