@@ -576,6 +576,69 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-28" data-shops="TT KarlMobel, TT Valuesnap, TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerSafety, TT Lovento, TT MurahYa, TT JagerHelmet, TT Kinata, Lazada MurahYa, Laz das.nature" data-platform="TikTok MY + Lazada MY" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto &mdash; 3 NEW POSTed C1875&ndash;C1877 RM 983.76 / 7/15 alive / 8 TT login_expired / dedupe-bug-fix VERIFIED clean (28/5)</span>
+      <span class="entry-meta">2026-05-28 09:48&ndash;10:24 MYT &middot; scheduled run via Claude session (MCP+CDP fallback) &middot; 7 alive: 59 KM 63 64 65 81 82 / 8 TT login_expired (54+55+56+58+60+61+66+67) / 9 in-window collected / 5 already-in-webapp (incl C1678 re-opened R/R correctly DROPPED per 27/5 dedupe patch) / 1 RC-dropped / 3 NEW POSTed HTTP 200 / 0 failures</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily 09:45 MYT scheduled parcel-claim auto-logger. Pivoted MCP &rarr; Python CDP after the playwright bridge hit its 10-connection limit at profile 61. Webapp baseline pulled across all refund_states (Pending 51 / Withdrawn 430 / Credited 20 / Rejected 2 = 503 total / 494 unique OIDs / max_id C1874). 27/5 PM3 dedupe patch (key=order_id, all refund_states) verified working: C1678 (Withdrawn KM 584052344694015323) was a re-opened R/R with TT-side LATEST status &ldquo;Awaiting return approval&rdquo; &mdash; correctly DROPPED via Phase-4 dedupe rather than re-posted as a new C18xx (would have replicated yesterday's RM 3,346.57 duplicate-injection bug otherwise).</p>
+      <div class="field"><strong>Date:</strong> 2026-05-28 (Thursday, 09:48&ndash;10:24 MYT)</div>
+      <div class="field"><strong>Task:</strong> parcelclaim-auto skill (PHASE 0 webapp baseline / PHASE 1 TT R/R / PHASE 2 TT FD / PHASE 3 Lazada / PHASE 4 dedupe / PHASE 5 LIVE POST / PHASE 6 report / PHASE 8 state.json persist).</div>
+      <div class="field"><strong>Platforms / Shops:</strong> TikTok MY (13 profiles 54-67) + Lazada MY (2 profiles 81-82 in scope). Profile 83 (Lazada Lovento) not in scope today &mdash; config moved into in-scope on 6/5 but still no traffic.</div>
+      <div class="field"><strong>Profiles scanned OK (7):</strong>
+        <ul>
+          <li><strong>59 TT Jager</strong> &mdash; 95 R/R cards / 62 FD orders. Latest R/R 22/5 + latest FD 23/5 (C1869). 0 in-window.</li>
+          <li><strong>62 TT KarlMobel</strong> &mdash; 150 R/R cards / 250 FD orders. 7 R/R in window: 1 Request-closed dropped (5a filter) + 5 already in webapp (C1678 + C1845 + C1856 + C1857 + C1860) + 1 NEW (C1875 life jacket RM 125.07). 1 FD in window: NEW C1876 Adelmar scooter RM 847.70.</li>
+          <li><strong>63 TT Lovento</strong> &mdash; 0 R/R / 0 FD (empty shop).</li>
+          <li><strong>64 TT MurahYa</strong> &mdash; 0 R/R / 250 FD orders. 0 in-window.</li>
+          <li><strong>65 TT Valuesnap</strong> &mdash; 0 R/R / 250 FD orders. 1 FD in window: NEW C1877 PU Foam Spray RM 10.99.</li>
+          <li><strong>81 Lazada MurahYa</strong> &mdash; 10 returns visible on page 1 of 403. 2 in window: 503590472120363 + 503595245811988 (both already in webapp).</li>
+          <li><strong>82 Lazada DasNature</strong> &mdash; 6 returns total, all Jan-Mar 2026 (out of window).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Profiles login_expired (8 TT) &mdash; OPERATOR ACTION REQUIRED for next 09:45 run:</strong> 54 TT Adelmar / 55 TT DasNature / 56 TT Hiranai / 58 TT HiranaiMY / 60 TT JagerArmor / 61 TT JagerSafety / 66 TT JagerHelmet / 67 TT Kinata. All 8 return probe code 98001002 (genuine login expiry, NOT the 98001004 signature-block false-positive). Cookies still hold global_seller_id_unified_seller_env from 26/5 operator re-login (held through 27/5 but dropped before 28/5 09:48). state.json verified_seller_ids table preserved &mdash; just need re-auth, no remapping.</div>
+      <div class="field"><strong>NEW POSTs (3/3 HTTP 200, RM 983.76):</strong>
+        <ul>
+          <li><strong>C1875</strong> TT KarlMobel R/R <code>584126192112011142</code> Life Jacket Vest Adults Kids Marine Safety &mdash; <strong>RM 125.07</strong> &middot; source 2026-05-27 10:46 MYT &middot; TT status &ldquo;Refund complete&rdquo; (R/R already closed, parcel may be returning).</li>
+          <li><strong>C1876</strong> TT KarlMobel FD <code>584178194745755036</code> tracking <code>3240849696516310428</code> Adelmar Skuter Elektrik 350W &mdash; <strong>RM 847.70</strong> &middot; source 2026-05-24 17:46 MYT &middot; main_order_status 102 (shipping).</li>
+          <li><strong>C1877</strong> TT Valuesnap FD <code>584184478434559917</code> tracking <code>3241119340481447853</code> Vira Foam PU Foam Polyurethane Spray 750ml &mdash; <strong>RM 10.99</strong> &middot; source 2026-05-25 01:28 MYT &middot; main_order_status 102 (shipping).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Dedupe drops (5 in-window R/R cards correctly excluded):</strong>
+        <ul>
+          <li><code>584052344694015323</code> &rarr; C1678 (Withdrawn since 26/5) &mdash; TT-side LATEST status &ldquo;Awaiting return approval&rdquo; (re-opened R/R after withdrawal). Per dedupe_check_all_refund_states:true, kept Withdrawn. NOT re-posted.</li>
+          <li><code>584132551190873133</code> &rarr; C1856 (Pending, KM RM 576.10) &mdash; Plus 1 &ldquo;Request closed&rdquo; sibling card dropped by 5a filter (same OID, different rrId).</li>
+          <li><code>584163852510528533</code> &rarr; C1845 (Pending) &mdash; TT &ldquo;Refund complete&rdquo;.</li>
+          <li><code>584150406283166781</code> &rarr; C1860 (Pending, KM RM 746.15) &mdash; TT &ldquo;Awaiting customer return&rdquo;.</li>
+          <li><code>584173392498755342</code> &rarr; C1857 (Pending, KM RM 46.00) &mdash; TT &ldquo;Awaiting customer return&rdquo;.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Runtime notes:</strong>
+        <ul>
+          <li>MCP playwright bridge connection-limit hit at profile 61 &mdash; pivoted to Python CDP-direct script <code>C:\Users\tessf\scripts\parcelclaim_2026_05_28_cdp.py</code> for profiles 61-67 + 81-82 (per <code>feedback_mcp_playwright_bridge_10_connection_limit</code> + <code>reference_cdp_fallback_when_adspower_mcp_unavailable</code>).</li>
+          <li>Profile 70 SG-redirect was triggered mid-run (auto-redirected to sitegiant.co); cleared via open-new-page &rarr; re-navigate per <code>feedback_patricia_70_subaccount_redirect</code>.</li>
+          <li>TT FD <code>fp</code> token captured via <code>performance.getEntriesByType('resource')</code> regex per skill 6/5 update.</li>
+          <li>POSTs used MYT-localized dates (<code>YYYY-MM-DD HH:mm:ss</code>) per webapp date-format convention &mdash; not raw UTC ISO.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Files changed:</strong>
+        <ul>
+          <li><code>C:\Users\tessf\.claude\skills\parcelclaim-auto\state.json</code> &mdash; last_run, last_run_stats (profiles_scanned_ok=7, login_expired=8, posted=3, posted_case_ids [1875,1876,1877], posted_value_rm 983.76, verified_seller_ids preserved), run_history +1 entry, seen +3 entries. Written via python bypass.</li>
+          <li><code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-05-28.md</code> &mdash; full daily report (created).</li>
+          <li><code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_cdp_pull_2026-05-28.json</code> &mdash; raw CDP scrape (created).</li>
+          <li><code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_existing_oids_2026-05-28.json</code> &mdash; webapp baseline snapshot (created).</li>
+          <li><code>C:\Users\tessf\scripts\parcelclaim_2026_05_28_cdp.py</code> &mdash; today's CDP fallback orchestrator (created).</li>
+          <li><code>C:\Users\tessf\scripts\_update_state_2026_05_28.py</code> &mdash; state.json updater (created).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Reason / Trigger:</strong> Scheduled daily parcel-claim auto-logger (skill <code>parcelclaim-auto</code>). Live mode per config. Verifies the 27/5 PM3 dedupe-key patch (<code>order_id</code> alone + <code>dedupe_check_all_refund_states: true</code>) prevents the 8/10 duplicate-injection bug that hit tt_rr on 27/5 (RM 3,346.57 wrongly-Pending exposure that required cleanup).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 3/3 POSTs HTTP 200 RM 983.76 booked / 5/5 dedupe drops correct (incl 1 same-OID re-opened R/R caught by all-refund-states check) / 1 Request-closed sibling filtered by 5a / 0 errors / 0 false login_expired. 8 TT operator-side login expiries flagged for re-auth.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-28" data-shops="TT KarlMobel" data-platform="TikTok" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
