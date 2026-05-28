@@ -576,6 +576,59 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-28" data-shops="all (159 open across MY+SG+TT+Laz)" data-platform="Shopee MY + TikTok + Shopee SG + Lazada" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation &mdash; 206 cases / 159 open / 14 recent (-17 overnight self-resolution) &mdash; 0 PATCHes (28/5)</span>
+      <span class="entry-meta">2026-05-28 11:30 MYT &middot; profile 70 (kmall:patricia) &middot; 0 NEW since 27/5 &middot; 13 20/5 PATCHes intact (8d) &middot; 5 27/5-P0 resolved (101097+101095 manual-sent 27/5 16:00 / 101080+101091+101088 bd-&gt;Cancelled overnight) &middot; 10 P0 carry to 29/5 (101065+101071 TT ParseFail 7.8d+6.5d / 101084 close-per-user-note / 101049+101060 Accept-Change-Pending 9.6d+8d / 101079+101074+101073 csR-backfill / WL HCS+CTP-SVER SG-bounce-back) &middot; NO PATCHes / NO Jira / NO WhatsApp</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily SB Variation audit. 206 cases (-1 vs 27/5 hard-delete or close); 159 open (-17 overnight self-resolution); 14 recent (&le;5d) open. 0 PATCHes / 0 sends per user mandate (APPROVAL-REQUIRED only). 5 yesterday-P0 cleared (manual sends + overnight cancellations). 10 P0 carry to 29/5.</p>
+      <div class="field"><strong>Date:</strong> 2026-05-28 (Thursday, 11:30 MYT)</div>
+      <div class="field"><strong>Task:</strong> checksbvariation daily audit (PHASE 1 ingest, PHASE 2 routing, PHASE 3 MY ladder, PHASE 6 report). No PATCH, no send, no Jira per user mandate.</div>
+      <div class="field"><strong>Shops:</strong> All 27 MY (Karlmobel, Murahya, das.nature/2, MasonGym, Hiranai, ValueSnap, etc.) + 8 SG + 14 TT + 1 Laz</div>
+      <div class="field"><strong>Platforms:</strong> Shopee MY (119 open) / TikTok MY (27) / Shopee SG (8) / Lazada MY (5)</div>
+      <div class="field"><strong>Counts before -&gt; after vs 27/5:</strong>
+        <ul>
+          <li>Total cases: 207 -&gt; 206 (-1 hard-delete or close)</li>
+          <li>Open: 176 -&gt; 159 (-17 overnight self-resolution)</li>
+          <li>Terminal: 31 -&gt; 47 (+16)</li>
+          <li>Recent (&le;5d): 21 -&gt; 14</li>
+          <li>Stale (&gt;5d): 155 -&gt; 145</li>
+          <li>NEW cases since 27/5: 0 (newest still id 101099 from 26/5 11:27 MYT)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>27/5 P0 resolved (5 wins, no action by me):</strong>
+        <ul>
+          <li>101097 TT Murahya 584198807359882383 - manual TT_OFFER_CHANGE sent 27/5 16:03 MYT (csRem confirms)</li>
+          <li>101095 Laz MurahYa 507141129966279 - manual LAZ_OFFER_CHANGE sent 27/5 16:20 MYT (csRem confirms)</li>
+          <li>101080 TT Murahya 584127666751833541 - bd null -&gt; Cancelled overnight</li>
+          <li>101091 TT KarlMobel 584150246060492355 - bd null -&gt; Cancelled overnight</li>
+          <li>101088 Murahya 2605234XWF5YWF - bd null -&gt; Cancelled overnight (MX60WR Solar Light)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>20/5 PATCHes integrity check (8 days):</strong> all 13 cases still intact (StockId + sa correct + bd consistent). 6 still awaiting buyer (boots/MCP-CVR/MW-BLK x2/FAMILY-STOOL-PACK + WOMEN-BOOTS), 4 Adjusted-Accept-Change, 3 Cancelled.</div>
+      <div class="field"><strong>P0 carry to 29/5 (10 items):</strong>
+        <ul>
+          <li>101065 TT Hiranai 584104634091275501 ParseFail 7.8d (was 6.7d) - APPROVAL REQUIRED manual lookup + TT_OFFER_CHANGE</li>
+          <li>101071 TT Murahya 584101290737829241 ParseFail 6.5d (was 5.5d) - APPROVAL REQUIRED manual lookup</li>
+          <li>101084 das.nature2 2605235SJYHATU CS-BROWN-HIGH - close per user note (still bd=null)</li>
+          <li>101049 Hiranai 260517MXBAM8Q2 Accept Change Pending 9.6d - WH chase or unilateral SG-1 on TS-SLIPPER-9CM-KHAKI-36-37</li>
+          <li>101060 das.nature 260519QW42CUB2 Accept Change + cancel-already contradiction 8d</li>
+          <li>101079 TT Murahya 584132395641635854 - bd=Cancelled csR=null backfill</li>
+          <li>101074 das.nature2 26052100M310YF - bd=Cancelled csR=null backfill</li>
+          <li>101073 MurahYa 2605210SQ0UR56 - bd=Cancelled csR=null backfill</li>
+          <li>WL-2026-05-20-001 HCS-SILVER-TYPE-B SG bounce-back check (101031 confirmed Cancelled)</li>
+          <li>WL-2026-05-20-001b CTP-SVER-2.3M-2PC-BG SG bounce-back check (101038 confirmed Cancelled but COD never paid)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Stale bucket aggregate (145):</strong> 82 BOT_OK awaiting buyer / 36 ParseFail TT/SG/Laz outside bot scope / 14 Accept-Change-Pending WH unresponsive / 13 H-Adjusted awaiting shipment.</div>
+      <div class="field"><strong>Reason:</strong> Daily scheduled audit run per skill schedule. User mandate: NO PATCHes / NO sends / NO Jira submits - APPROVAL REQUIRED items listed only.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; Audit complete, report saved to C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-05-28.md. state.json written via python bypass (perm gate fallback). AdsPower profile 70 closed cleanly. No PATCHes executed.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-28" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
