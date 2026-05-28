@@ -808,16 +808,16 @@ header.page::after{
     </div>
   </div>
 
-  <div class="entry" data-date="2026-05-28" data-shops="all (159 open across MY+SG+TT+Laz)" data-platform="Shopee MY + TikTok + Shopee SG + Lazada" data-result="ok">
+  <div class="entry" data-date="2026-05-28" data-shops="Murahya,TT Murahya,MasonGym,KarlMobel,das.nature,all SB shops" data-platform="Shopee MY + TikTok MY + SiteGiant + Awesomeree SB" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation &mdash; 206 cases / 159 open / 14 recent (-17 overnight self-resolution) &mdash; 0 PATCHes (28/5)</span>
-      <span class="entry-meta">2026-05-28 11:30 MYT &middot; profile 70 (kmall:patricia) &middot; 0 NEW since 27/5 &middot; 13 20/5 PATCHes intact (8d) &middot; 5 27/5-P0 resolved (101097+101095 manual-sent 27/5 16:00 / 101080+101091+101088 bd-&gt;Cancelled overnight) &middot; 10 P0 carry to 29/5 (101065+101071 TT ParseFail 7.8d+6.5d / 101084 close-per-user-note / 101049+101060 Accept-Change-Pending 9.6d+8d / 101079+101074+101073 csR-backfill / WL HCS+CTP-SVER SG-bounce-back) &middot; NO PATCHes / NO Jira / NO WhatsApp</span>
+      <span class="entry-title">checksbvariation &mdash; 28/5 AM audit + PM SB closeout: 5 SiteGiant stock adjustments, 5 SB cancellation/status updates, 1 missed Shopee row handled, 5 follow-ups</span>
+      <span class="entry-meta">2026-05-28 10:24-15:52 MYT &middot; AM audit kept for context &middot; PM updates: #SA-18522-18526, SB rows 101099/101094/101087/101086/101100, no buyer messages &middot; outstanding: WC-CVBLUE, MAHJONG, FB-BLK-S, KLJ-ORANGE-L, reserved watches YDWHN/WDN</span>
       <span class="tag">checksbvariation</span>
-      <span class="tag result-ok">Completed</span>
+      <span class="tag result-warn">Partial</span>
     </div>
     <div class="entry-body">
-      <p><strong>Brief:</strong> Daily SB Variation audit. 206 cases (-1 vs 27/5 hard-delete or close); 159 open (-17 overnight self-resolution); 14 recent (&le;5d) open. 0 PATCHes / 0 sends per user mandate (APPROVAL-REQUIRED only). 5 yesterday-P0 cleared (manual sends + overnight cancellations). 10 P0 carry to 29/5.</p>
+      <p><strong>Brief:</strong> AM daily SB Variation audit preserved below (206 cases / 159 open / 14 recent, 0 PATCHes at that time). PM continuation then executed user-approved stock corrections, cancelled-order SB cleanups, end-of-session crosscheck, missed-row handling, local handoff save, and this board merge. Buyer-message result for the PM run: none drafted or sent.</p>
       <div class="field"><strong>Date:</strong> 2026-05-28 (Thursday, 11:30 MYT)</div>
       <div class="field"><strong>Task:</strong> checksbvariation daily audit (PHASE 1 ingest, PHASE 2 routing, PHASE 3 MY ladder, PHASE 6 report). No PATCH, no send, no Jira per user mandate.</div>
       <div class="field"><strong>Shops:</strong> All 27 MY (Karlmobel, Murahya, das.nature/2, MasonGym, Hiranai, ValueSnap, etc.) + 8 SG + 14 TT + 1 Laz</div>
@@ -859,6 +859,50 @@ header.page::after{
       <div class="field"><strong>Stale bucket aggregate (145):</strong> 82 BOT_OK awaiting buyer / 36 ParseFail TT/SG/Laz outside bot scope / 14 Accept-Change-Pending WH unresponsive / 13 H-Adjusted awaiting shipment.</div>
       <div class="field"><strong>Reason:</strong> Daily scheduled audit run per skill schedule. User mandate: NO PATCHes / NO sends / NO Jira submits - APPROVAL REQUIRED items listed only.</div>
       <div class="field"><strong>Result:</strong> ok &mdash; Audit complete, report saved to C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-05-28.md. state.json written via python bypass (perm gate fallback). AdsPower profile 70 closed cleanly. No PATCHes executed.</div>
+      <div class="field"><strong>PM SB stock/cancellation closeout (10:24-15:52 MYT):</strong>
+        <ul>
+          <li><strong>Scope:</strong> continued SB variation workflow from the 27/5 closeout using live Awesomeree SB Variation, live SiteGiant order records by marketplace order ID, exact SiteGiant iSKU inventory, and saved skill/memory files. Used <code>checksbvariation</code> for operational rules and <code>claude-skill-converter</code> only for continuation-prompt coverage.</li>
+          <li><strong>Buyer-message rule followed:</strong> no buyer messages drafted or sent. Cancelled rows were verified through SiteGiant order records first, then SB was updated to Cancelled / Not Required where applicable.</li>
+          <li><strong>Initial new-row check:</strong> at ~10:23 MYT the live pull showed total rows 206 and 0 Shopee MY rows created on 28/5 or 29/5. End-of-session crosscheck found this was no longer complete because a new row had appeared; see <code>260525ANEYX8CP</code> below.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>SB cancellation/status changes:</strong>
+        <div class="changes">
+          <div class="change-row"><span class="before"><code>2605248HSE4ACF</code> Murahya / Shopee MY / MAHJONG-TABLE-SOLID-WOOD-DARK-BROWN / row 101099: buyerDecision null, WH null, stockAdjustment null, stockSetOos true, contactSent true</span><span class="arrow">&rarr;</span><span class="after">buyerDecision [Cancelled], WH [Not Required], stockAdjustment [Not Required], stockSetOos true, contactSent true. Reason: SiteGiant order 461303550 / #1400440 verified Cancelled. Result: SB closed; SiteGiant stock still held for WH check at 2/2/0/0.</span></div>
+          <div class="change-row"><span class="before"><code>260523708U9A3Y</code> MasonGym / Shopee MY / WAIST-POSTURE-BELT-BLK-S / row 101094: buyerDecision null, WH null, stockAdjustment null, stockSetOos true, contactSent true</span><span class="arrow">&rarr;</span><span class="after">buyerDecision [Cancelled], WH [Not Required], stockAdjustment [Not Required], stockSetOos true, contactSent true after SiteGiant order 461109138 / #1399661 verified Cancelled; later stockAdjustment [Not Required] -&gt; [Stock Adjusted] after #SA-18524 and csRemarks added with final 0/0/0/0 evidence.</span></div>
+          <div class="change-row"><span class="before"><code>2605248JSQ0ARA</code> KarlMobel / Shopee MY / CSGS-KHAKI-STOVE-BAG-PAN / row 101087: buyerDecision null, WH null, stockAdjustment null, stockSetOos true, contactSent true</span><span class="arrow">&rarr;</span><span class="after">buyerDecision [Cancelled], WH [Not Required], stockAdjustment [Not Required], stockSetOos true, contactSent true after SiteGiant order 461310941 / #1400472 verified Cancelled; later stockAdjustment [Not Required] -&gt; [Stock Adjusted] after #SA-18525 and csRemarks added with final 0/0/0/0 evidence.</span></div>
+          <div class="change-row"><span class="before"><code>2605236EDJ9ERW</code> das.nature / Shopee MY / DRY-BAG-BLACK-5L / row 101086: buyerDecision null, WH null, stockAdjustment null, stockSetOos true, contactSent true</span><span class="arrow">&rarr;</span><span class="after">buyerDecision [Cancelled], WH [Not Required], stockAdjustment [Not Required], stockSetOos true, contactSent true after SiteGiant order 460990478 / #1399256 verified Cancelled; later stockAdjustment [Not Required] -&gt; [Stock Adjusted] after #SA-18526 and csRemarks added with final 0/0/0/0 evidence.</span></div>
+          <div class="change-row"><span class="before"><code>260525ANEYX8CP</code> KarlMobel / Shopee MY / WC-CVBLUE original, suggested WC-CVBLACK/WC-CVRED / row 101100: buyerDecision null, WH null, stockAdjustment null, stockSetOos false, contactSent false, csRemarks null</span><span class="arrow">&rarr;</span><span class="after">buyerDecision [Cancelled], WH [Not Required], stockAdjustment [Not Required], stockSetOos true, contactSent false, csRemarks added. Reason: SiteGiant order 461696891 / #1402095 verified Cancelled; exact iSKU WC-CVBLUE is out_of_stock but still 1/1/0/0 at rack SA2. Result: SB cancelled/OOS reflected; stock adjustment held for WH confirmation and explicit approval.</span></div>
+        </div>
+      </div>
+      <div class="field"><strong>SiteGiant stock adjustments made (user-approved):</strong>
+        <div class="changes">
+          <div class="change-row"><span class="before"><code>MX60WR</code> / order 2605234XWF5YWF / Murahya / Shopee MY: out_of_stock, SOH/Sellable/Reserved/Allocated 6/6/0/0, rack 2B1-1 = 6</span><span class="arrow">&rarr;</span><span class="after">#SA-18522 internal 9583877, quantity -6 from 2B1-1; final out_of_stock 0/0/0/0, rack 2B1-1 = 0. Reason: exact iSKU OOS-labelled but positive sellable; user confirmed no stock and approved final zero. SB row 101088 was already Cancelled / Not Required / stockSetOos true.</span></div>
+          <div class="change-row"><span class="before"><code>KLJ-ORANGE-L</code> / order 584198807359882383 / TT Murahya / TikTok MY: out_of_stock, 9/0/9/0, rack 2 FLOOR = 9; SB row 101097 buyerDecision null, WH null, stockAdjustment null, stockSetOos true, contactSent true</span><span class="arrow">&rarr;</span><span class="after">Reserved Stock 9 -&gt; 0 first, Sellable 0 -&gt; 9 after blur/tab; then #SA-18523 internal 9583989 quantity -9 from 2 FLOOR; final out_of_stock 0/0/0/0. Reason: user confirmed no stock including reserved. Result: stock clean OOS; order still Processed/fulfilled/Unpaid, so continue monitor and do not message buyer.</span></div>
+          <div class="change-row"><span class="before"><code>WAIST-POSTURE-BELT-BLK-S</code> / order 260523708U9A3Y / MasonGym / Shopee MY: out_of_stock, 1/1/0/0, rack 3NEW-ITEMS = 1</span><span class="arrow">&rarr;</span><span class="after">#SA-18524 internal 9585559 quantity -1; final out_of_stock 0/0/0/0, rack 3NEW-ITEMS = 0. Reason: cancelled-order release left sellable stock; user approved final zero. SB row 101094 stockAdjustment [Not Required] -&gt; [Stock Adjusted].</span></div>
+          <div class="change-row"><span class="before"><code>CSGS-KHAKI-STOVE-BAG-PAN</code> / order 2605248JSQ0ARA / KarlMobel / Shopee MY: out_of_stock, 1/1/0/0, rack 2B3-2 = 1</span><span class="arrow">&rarr;</span><span class="after">#SA-18525 internal 9585561 quantity -1; final out_of_stock 0/0/0/0, rack 2B3-2 = 0. Reason: cancelled-order release left sellable stock; user approved final zero. SB row 101087 stockAdjustment [Not Required] -&gt; [Stock Adjusted].</span></div>
+          <div class="change-row"><span class="before"><code>DRY-BAG-BLACK-5L</code> / order 2605236EDJ9ERW / das.nature / Shopee MY: out_of_stock, 1/1/0/0, rack 1NEW-ITEMS = 0 and 1 FLOOR = 1</span><span class="arrow">&rarr;</span><span class="after">#SA-18526 internal 9585562 quantity -1 from 1 FLOOR; final out_of_stock 0/0/0/0, both racks 0. Reason: cancelled-order release left sellable stock; user approved final zero. SB row 101086 stockAdjustment [Not Required] -&gt; [Stock Adjusted].</span></div>
+        </div>
+      </div>
+      <div class="field"><strong>Accuracy crosscheck:</strong>
+        <ul>
+          <li><strong>Adjusted SKUs verified final clean OOS:</strong> MX60WR, KLJ-ORANGE-L, WAIST-POSTURE-BELT-BLK-S, CSGS-KHAKI-STOVE-BAG-PAN, DRY-BAG-BLACK-5L all rechecked at 0/0/0/0.</li>
+          <li><strong>Prior adjusted SKUs rechecked:</strong> FB-BLK-S remains 0/0/0/0 after #SA-18507; CWS-4F-BLACK-UPGRADE remains 0/0/0/0 after #SA-18506.</li>
+          <li><strong>Order status monitor:</strong> 2605247WMV2XCS / FB-BLK-S remains Processed / fulfilled / Unpaid, so SB row 101090 stays buyerDecision null, WH null, stockAdjustment null; no buyer message.</li>
+          <li><strong>TikTok monitor:</strong> 584198807359882383 / KLJ-ORANGE-L remains Processed / fulfilled / Unpaid, so SB row 101097 stays buyerDecision null, WH null, stockAdjustment null, contactSent true; no extra message unless explicitly approved.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Outstanding follow-up for tomorrow:</strong>
+        <ul>
+          <li><code>260525ANEYX8CP</code> / WC-CVBLUE / KarlMobel / Shopee MY: SB already Cancelled / Not Required / stockSetOos true; SiteGiant remains out_of_stock 1/1/0/0 at rack SA2. WH confirmation and explicit approval required before adjustment.</li>
+          <li><code>2605248HSE4ACF</code> / MAHJONG-TABLE-SOLID-WOOD-DARK-BROWN / Murahya / Shopee MY: SB already Cancelled / Not Required / stockSetOos true; SiteGiant remains out_of_stock 2/2/0/0. User said to double-check warehouse first; no adjustment made.</li>
+          <li><code>2605247WMV2XCS</code> / FB-BLK-S / Murahya / Shopee MY: stock already 0/0/0/0 after #SA-18507, but order not cancelled yet. Continue monitoring; do not message buyer.</li>
+          <li><code>584198807359882383</code> / KLJ-ORANGE-L / TT Murahya / TikTok MY: stock now 0/0/0/0 after reserved clear + #SA-18523, but order not cancelled yet. Continue monitoring buyer/order decision; no extra message unless approved.</li>
+          <li><strong>Reserved watches:</strong> YDWHN remains out_of_stock 1/0/1/0 at rack SA; WDN remains out_of_stock 6/0/6/0 at rack SA. No adjustment without WH/user approval because reserved stock may release after cancellation.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Session save and board logging:</strong> closeout saved to <code>C:Users	essf.codexmemorieschecksbvariation-2026-05-28-session.md</code>; continuation prompt saved to <code>C:Users	essf.codexmemorieschecksbvariation-2026-05-29-continuation-prompt.md</code>. Board before: existing 28/5 checksbvariation entry only covered the AM audit and stated 0 PATCHes. Board after: this same entry is merged with PM stock adjustments, SB updates, crosscheck result, and tomorrow follow-ups; no duplicate checksbvariation card was created.</div>
+
     </div>
   </div>
   <div class="entry" data-date="2026-05-28" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
