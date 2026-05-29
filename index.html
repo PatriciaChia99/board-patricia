@@ -577,79 +577,37 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
-  <div class="entry" data-date="2026-05-29" data-shops="Kinata SG, das.nature, ValueSnap, KarlMobel, Murahya, MasonGym, Laz MurahYa" data-platform="Awesomeree SB + SiteGiant" data-result="warn">
+  <div class="entry" data-date="2026-05-29" data-shops="Kinata SG, das.nature, ValueSnap, KarlMobel, Murahya, MasonGym, Laz MurahYa, TT Murahya" data-platform="Awesomeree SB + SiteGiant + Shopee MY/SG + Lazada MY + TikTok MY" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation &mdash; stock follow-up split after 29/5 buyer messages</span>
-      <span class="entry-meta">2026-05-29 16:21 MYT &middot; read-only stock audit &middot; WH confirm list + stock-adjust candidates &middot; 0 writes</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag result-warn">Follow-up</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Rechecked live SB rows and SiteGiant context after Patricia asked which cases need warehouse confirmation versus stock adjustment. No SiteGiant or SB changes made in this read-only pass.</p>
-      <div class="field"><strong>Clean / no quantity adjustment:</strong> <code>507287105894574</code> / <code>FOLD-GLASSES-CASE</code> final SiteGiant OOS <code>0/0/0/0</code>; <code>260526ESWSYJGV</code> / <code>ELASTIC-GYM-BAND-BLUE</code> final SiteGiant OOS <code>0/0/0/0</code>.</div>
-      <div class="field"><strong>Kinata status issue:</strong> <code>260528JFXDHRX9</code> / order detail <code>#1406945</code> / exact iSKU <code>WEDDING-ARCH-STAND-BLK-SG</code>. SiteGiant order is Processed/Paid/Fulfilled with tracking <code>SPXSG062965722635</code>; item Black is <code>0/0/0/0</code> but Stock Status still <code>Available</code>. Prefix check also shows Dark Green <code>WEDDING-ARCH-STAND-DK-GRN-SG</code> <code>0/0/0/0</code> Available and White <code>WEDDING-ARCH-STAND-WHT-SG</code> <code>6/6/0/0</code> Available. Needs WH/order confirmation before any status/OOS cleanup.</div>
-      <div class="field"><strong>WH confirm before quantity adjustment:</strong> <code>260526DSV67DUA</code> / <code>LANTERN-RECHARG-GERN</code> OOS-labelled but <code>9/5/4/0</code>; <code>260525BPM2KQH6</code> / <code>PF-UPG-MAROON-8R-20X25CM</code> OOS-labelled but <code>2/2/0/0</code>; <code>260525ANEYX8CP</code> / <code>WC-CVBLUE</code> OOS-labelled but <code>1/1/0/0</code>; <code>2605248HSE4ACF</code> / <code>MAHJONG-TABLE-SOLID-WOOD-DARK-BROWN</code> OOS-labelled but <code>2/2/0/0</code>; <code>2605247WMV2XCS</code> / <code>FB-BLK-S</code> cancellation release restored <code>1/1/0/0</code> after earlier adjustment.</div>
-      <div class="field"><strong>Action rule:</strong> none are safe for automatic SiteGiant quantity adjustment without WH confirmation and Patricia approval. If WH confirms physical zero for the positive-SOH items, proceed with the listed deductions; for <code>LANTERN-RECHARG-GERN</code>, reserved stock must be cleared before final zeroing.</div>
-    </div>
-  </div>
-  <div class="entry" data-date="2026-05-29" data-shops="Kinata SG" data-platform="Awesomeree SB + Shopee SG" data-result="ok">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation &mdash; Kinata 260528JFXDHRX9 buyer message sent after WH no-stock confirmation</span>
-      <span class="entry-meta">2026-05-29 16:06 MYT &middot; CS5 k1arw890 via seller.shopee.com.my/webchat &middot; 1 buyer message &middot; 1 SB PATCH &middot; 0 stock changes</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag result-ok">Done</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> User confirmed warehouse no-stock and requested send-first handling for Kinata row <code>101102</code>. Opened CS5 Shopee chat, searched exact order, restarted the conversation, sent the approved no-stock template, verified the message in chat, then patched the SB row.</p>
-      <div class="field"><strong>Shopee SG:</strong> <code>260528JFXDHRX9</code> / row <code>101102</code> / buyer <code>marcusstangg</code> / product <code>Metal Arch Stand Flower Plant Stand Outdoor Garden Decoration Backdrop Stand Climbing Plant Support Wedding Balloon Arch</code>. Message visible at 16:06 MYT. SB row <code>contactSent</code> changed <code>false</code> &rarr; <code>true</code>.</div>
-      <div class="field"><strong>Note:</strong> Chat already contained a 14:17 Sofia message for Metal Arch Black restock with white variation option; current send was done per Patricia's explicit send-first instruction. No SiteGiant stock changes made.</div>
-    </div>
-  </div>
-  <div class="entry" data-date="2026-05-29" data-shops="MasonGym,Laz MurahYa" data-platform="Awesomeree SB + Lazada MY + Shopee MY" data-result="ok">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation &mdash; 29/5 true-OOS buyer messages sent: Lazada 507287105894574 + Shopee 260526ESWSYJGV</span>
-      <span class="entry-meta">2026-05-29 15:54 MYT &middot; Lazada profile 81 + Shopee CS1 k1artcxf &middot; 2 buyer messages &middot; 2 SB PATCHes &middot; 0 stock changes</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag result-ok">Done</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> User approved message-first handling for the two live-verified true out-of-stock SB cases. Sent buyer messages first, verified each message in chat, then patched only the matching SB rows to <code>contactSent=true</code> with CS remarks.</p>
-      <div class="field"><strong>Lazada:</strong> <code>507287105894574</code> / row <code>101104</code> / Laz MurahYa / <code>FOLD-GLASSES-CASE</code>. Sent <code>LAZ_NO_STOCK</code> from Lazada IM as <code>CS Laz Murahya</code> at 15:48 MYT. SB row <code>contactSent</code> changed <code>false</code> &rarr; <code>true</code>.</div>
-      <div class="field"><strong>Shopee MY:</strong> <code>260526ESWSYJGV</code> / row <code>101105</code> / MasonGym / <code>ELASTIC-GYM-BAND-BLUE</code>. Sent <code>SHOPEE_MY_NO_STOCK</code> via CS1 Shopee chat to <code>tamaoserizawa10</code> at 15:51 MYT. SB row <code>contactSent</code> changed <code>false</code> &rarr; <code>true</code>.</div>
-      <div class="field"><strong>Guardrails:</strong> Stock-mismatch/watch rows <code>101103</code> and <code>101102</code> were left untouched. No SiteGiant stock quantity changes were made.</div>
-    </div>
-  </div>
-  <div class="entry" data-date="2026-05-29" data-shops="MasonGym,Laz MurahYa,das.nature,Kinata SG,ValueSnap,Murahya,KarlMobel,TT Murahya" data-platform="Awesomeree SB + SiteGiant + Shopee MY/SG + Lazada MY + TikTok MY" data-result="warn">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation &mdash; 29/5 live SB continuation: 5 new rows checked, 5 SB updates, MAHJONG 2+2 verified, 6 follow-ups</span>
-      <span class="entry-meta">2026-05-29 14:29 MYT &middot; profile 70 k1b44nvg &middot; live SB API + SiteGiant order/item APIs &middot; 5 SB PATCHes &middot; 0 buyer messages &middot; 0 SiteGiant stock changes</span>
+      <span class="entry-title">checksbvariation &mdash; 29/5 full-day SB variation: 5 SB PATCHes (14:29) + 3 buyer messages sent (Lazada + Shopee MY + Kinata SG) + read-only stock follow-up split (16:21)</span>
+      <span class="entry-meta">2026-05-29 14:29&ndash;16:21 MYT &middot; profile 70 + CS1 + CS5 + Lazada 81 &middot; 5 SB PATCHes + 3 buyer messages + read-only stock audit &middot; 0 SiteGiant stock changes</span>
       <span class="tag">checksbvariation</span>
       <span class="tag result-warn">Partial</span>
     </div>
     <div class="entry-body">
-      <p><strong>Brief:</strong> Continued the SB variation workflow from the 2026-05-28 closeout using <code>checksbvariation</code> and the requested <code>claude-skill-converter</code> context. Checked live Awesomeree SB rows after <code>101100</code>, SiteGiant marketplace order records by marketplace order ID, and exact iSKU inventory. No buyer messages were drafted/sent and no SiteGiant stock adjustment was made.</p>
-      <div class="field"><strong>MAHJONG stock request:</strong> WH/user confirmed two units each. Live SiteGiant already showed <code>MAHJONG-TABLE-SOLID-WOOD-DARK-BROWN</code> as <code>available</code> with SOH/Sellable/Reserved/Allocated <code>2/2/0/0</code> (warehouse 2699, 12 listings) and <code>MAHJONG-TABLE-SOLID-WOOD-LIGHT-BROWN</code> as <code>available</code> with <code>2/2/0/0</code> (warehouse 2699, 12 listings). Before &rarr; after: unchanged, stock already available; no SiteGiant adjustment needed.</div>
-      <div class="field"><strong>SB updates made (5 PATCHes):</strong>
+      <p><strong>Brief:</strong> Consolidated 2026-05-29 checksbvariation activity (4 same-day runs merged into one per HARD RULE #4). Continued the SB variation workflow from the 28/5 closeout: checked live Awesomeree SB rows + SiteGiant order/inventory, updated safe SB statuses/OOS flags, sent 3 approved no-stock buyer messages, then ran a read-only stock follow-up split. No SiteGiant stock quantity changes were made all day.</p>
+      <div class="field"><strong>[14:29] MAHJONG stock request:</strong> WH/user confirmed two units each. Live SiteGiant already showed <code>MAHJONG-TABLE-SOLID-WOOD-DARK-BROWN</code> available 2/2/0/0 (warehouse 2699, 12 listings) and <code>MAHJONG-TABLE-SOLID-WOOD-LIGHT-BROWN</code> available 2/2/0/0. Before &rarr; after: unchanged, stock already available; no SiteGiant adjustment needed.</div>
+      <div class="field"><strong>[14:29] SB updates made (5 PATCHes):</strong>
         <div class="change-row"><span class="before"><code>260525BPM2KQH6</code> / ValueSnap / row 101101: buyerDecision null, WH null, stockAdjustment null, stockSetOos false, csRemarks null.</span><span class="arrow">&rarr;</span><span class="after">buyerDecision [Cancelled], WH [Not Required], stockAdjustment [Not Required], stockSetOos true, csRemarks added. Evidence: SiteGiant order 461935055 / #1403130 Cancelled; affected iSKU PF-UPG-MAROON-8R-20X25CM out_of_stock but 2/2/0/0. No buyer message.</span></div>
         <div class="change-row"><span class="before"><code>2605247WMV2XCS</code> / Murahya / row 101090: buyerDecision null, WH null, stockAdjustment null, stockSetOos true, contactSent true, csRemarks null.</span><span class="arrow">&rarr;</span><span class="after">buyerDecision [Cancelled], WH [Not Required], stockAdjustment [Not Required], stockSetOos true, csRemarks added. Evidence: SiteGiant order 461211713 / #1400101 Cancelled; FB-BLK-S bounced back to out_of_stock 1/1/0/0 after #SA-18507. No buyer message.</span></div>
         <div class="change-row"><span class="before"><code>260526DSV67DUA</code> / das.nature / row 101103: stockSetOos false, csRemarks null.</span><span class="arrow">&rarr;</span><span class="after">stockSetOos true, csRemarks added. Evidence: SiteGiant order 462260259 / #1404483 Processed; affected iSKU LANTERN-RECHARG-GERN out_of_stock but 9/5/4/0; suggested RED 8/8/0/0 and WHT 197/197/0/0 checked. No buyer message.</span></div>
-        <div class="change-row"><span class="before"><code>507287105894574</code> / Laz MurahYa / row 101104: stockSetOos false, csRemarks null.</span><span class="arrow">&rarr;</span><span class="after">stockSetOos true, csRemarks added. Evidence: SiteGiant order 462945432 / #1407178 Ready To Ship; FOLD-GLASSES-CASE out_of_stock 0/0/0/0. No buyer message pending approval.</span></div>
-        <div class="change-row"><span class="before"><code>260526ESWSYJGV</code> / MasonGym / row 101105: stockSetOos false, csRemarks null.</span><span class="arrow">&rarr;</span><span class="after">stockSetOos true, csRemarks added. Evidence: SiteGiant order 462436132 / #1405131 Processed; ELASTIC-GYM-BAND-BLUE out_of_stock 0/0/0/0. No buyer message pending approval.</span></div>
+        <div class="change-row"><span class="before"><code>507287105894574</code> / Laz MurahYa / row 101104: stockSetOos false, csRemarks null.</span><span class="arrow">&rarr;</span><span class="after">stockSetOos true, csRemarks added. Evidence: SiteGiant order 462945432 / #1407178 Ready To Ship; FOLD-GLASSES-CASE out_of_stock 0/0/0/0. Buyer message sent at 15:48 (see below).</span></div>
+        <div class="change-row"><span class="before"><code>260526ESWSYJGV</code> / MasonGym / row 101105: stockSetOos false, csRemarks null.</span><span class="arrow">&rarr;</span><span class="after">stockSetOos true, csRemarks added. Evidence: SiteGiant order 462436132 / #1405131 Processed; ELASTIC-GYM-BAND-BLUE out_of_stock 0/0/0/0. Buyer message sent at 15:51 (see below).</span></div>
       </div>
-      <div class="field"><strong>Rows checked with no write:</strong>
+      <div class="field"><strong>[14:29] Rows checked with no write:</strong>
         <ul>
-          <li><code>260528JFXDHRX9</code> / Kinata SG / row 101102: SiteGiant order 462887762 / #1406945 Processed. Ordered iSKU <code>WEDDING-ARCH-STAND-BLK-SG</code> is <code>available</code> 1/1/0/0, green variant <code>WEDDING-ARCH-STAND-DK-GRN-SG</code> is 0/0/0/0 but labelled available, white variant <code>WEDDING-ARCH-STAND-WHT-SG</code> is 4/4/0/0. WH note said black/green no stock and 6 white, so this needs WH/SiteGiant confirmation before stock or buyer action.</li>
+          <li><code>260528JFXDHRX9</code> / Kinata SG / row 101102: SiteGiant order 462887762 / #1406945 Processed. Ordered iSKU <code>WEDDING-ARCH-STAND-BLK-SG</code> available 1/1/0/0, green <code>WEDDING-ARCH-STAND-DK-GRN-SG</code> 0/0/0/0 but labelled available, white <code>WEDDING-ARCH-STAND-WHT-SG</code> 4/4/0/0. WH note said black/green no stock and 6 white &mdash; needs WH/SiteGiant confirmation before stock or buyer action.</li>
           <li><code>260525ANEYX8CP</code> / KarlMobel / row 101100: already Cancelled / Not Required / stockSetOos true. WC-CVBLUE still out_of_stock 1/1/0/0; still needs WH confirmation and explicit stock-adjustment approval.</li>
           <li><code>2605248HSE4ACF</code> / Murahya / row 101099: already Cancelled / Not Required. Dark-brown MAHJONG now available 2/2/0/0 per WH confirmation; no SiteGiant change required.</li>
-          <li><code>584198807359882383</code> / TT Murahya / row 101097: SiteGiant order 462063242 / #1403660 moved from Processed to Shipped; KLJ-ORANGE-L remains out_of_stock 0/0/0/0 after #SA-18523. No additional buyer message sent; needs disposition guidance if SB row should be closed as shipped/resolved.</li>
+          <li><code>584198807359882383</code> / TT Murahya / row 101097: SiteGiant order 462063242 / #1403660 moved Processed &rarr; Shipped; KLJ-ORANGE-L remains out_of_stock 0/0/0/0 after #SA-18523. No additional buyer message; needs disposition guidance if SB row should be closed as shipped/resolved.</li>
         </ul>
       </div>
-      <div class="field"><strong>Approvals still needed:</strong> WH confirmation + explicit stock-adjustment approval for <code>PF-UPG-MAROON-8R-20X25CM</code> 2/2/0/0, <code>FB-BLK-S</code> 1/1/0/0 bounce-back, <code>LANTERN-RECHARG-GERN</code> 9/5/4/0, <code>WC-CVBLUE</code> 1/1/0/0, and the Kinata SG arch stand black/green/white mismatch. Buyer-message send approval is still needed before contacting <code>507287105894574</code> or <code>260526ESWSYJGV</code>.</div>
-      <div class="field"><strong>Result:</strong> partial &mdash; safe SB statuses/OOS flags updated, MAHJONG availability verified, no stock/buyer-message writes made. Pending items are WH confirmation, buyer-message approval, and KLJ shipped-row disposition.</div>
+      <div class="field"><strong>[15:54] True-OOS buyer messages sent (2) (before: contactSent false &rarr; after: true):</strong> Lazada <code>507287105894574</code> / row 101104 / Laz MurahYa / <code>FOLD-GLASSES-CASE</code> &mdash; sent <code>LAZ_NO_STOCK</code> from Lazada IM as &ldquo;CS Laz Murahya&rdquo; at 15:48, verified in chat, SB row contactSent false &rarr; true. Shopee MY <code>260526ESWSYJGV</code> / row 101105 / MasonGym / <code>ELASTIC-GYM-BAND-BLUE</code> &mdash; sent <code>SHOPEE_MY_NO_STOCK</code> via CS1 Shopee chat to <code>tamaoserizawa10</code> at 15:51, verified, SB row contactSent false &rarr; true. Guardrails: watch rows 101103 + 101102 left untouched; no SiteGiant stock changes.</div>
+      <div class="field"><strong>[16:06] Kinata buyer message sent (1) (before: contactSent false &rarr; after: true):</strong> <code>260528JFXDHRX9</code> / row 101102 / buyer <code>marcusstangg</code> / <code>Metal Arch Stand Flower Plant Stand</code>. User confirmed WH no-stock and requested send-first; opened CS5 (k1arw890) Shopee chat, searched exact order, restarted conversation, sent the no-stock template, verified visible at 16:06, then patched SB row contactSent false &rarr; true. Note: chat already had a 14:17 Sofia message offering white-variation restock; current send done per Patricia's explicit send-first instruction. No SiteGiant stock changes.</div>
+      <div class="field"><strong>[16:21] Read-only stock follow-up split (0 writes):</strong> Clean / no qty adjustment &mdash; <code>507287105894574</code> FOLD-GLASSES-CASE final OOS 0/0/0/0; <code>260526ESWSYJGV</code> ELASTIC-GYM-BAND-BLUE final OOS 0/0/0/0. Kinata status issue &mdash; <code>260528JFXDHRX9</code> / #1406945 / <code>WEDDING-ARCH-STAND-BLK-SG</code>: SiteGiant Processed/Paid/Fulfilled tracking SPXSG062965722635, Black 0/0/0/0 but Stock Status Available; Dark Green 0/0/0/0 Available; White 6/6/0/0 Available &mdash; needs WH/order confirmation before status/OOS cleanup. WH confirm before qty adjustment &mdash; LANTERN-RECHARG-GERN 9/5/4/0, PF-UPG-MAROON-8R-20X25CM 2/2/0/0, WC-CVBLUE 1/1/0/0, MAHJONG-DARK-BROWN 2/2/0/0, FB-BLK-S restored 1/1/0/0.</div>
+      <div class="field"><strong>Approvals still needed:</strong> WH confirmation + explicit stock-adjustment approval for <code>PF-UPG-MAROON-8R-20X25CM</code> 2/2/0/0, <code>FB-BLK-S</code> 1/1/0/0 bounce-back, <code>LANTERN-RECHARG-GERN</code> 9/5/4/0 (reserved stock must clear before zeroing), <code>WC-CVBLUE</code> 1/1/0/0, and the Kinata SG arch stand black/green/white mismatch. KLJ-ORANGE-L (584198807359882383) shipped-row disposition still open.</div>
+      <div class="field"><strong>Result:</strong> partial &mdash; safe SB statuses/OOS flags updated (5 PATCHes), 3 approved buyer messages sent + verified, MAHJONG availability verified, no stock-quantity/SiteGiant writes. Pending: WH confirmations, the listed stock-adjustment approvals, and KLJ shipped-row disposition.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-29" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
