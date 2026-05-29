@@ -577,6 +577,37 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-29" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerSafety, TT JagerArmor, TT JagerHelmet, TT KarlMobel, TT Murahya, TT Valuesnap, TT Kinata SG, TT Lovento" data-platform="TikTok MY + SG + Google Sheets" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checkttrating &mdash; 28/05 TT Shop Health, 13/13 shops &rarr; Sheet TIKTOK rows 394-406, 8 red flags (28/5)</span>
+      <span class="entry-meta">2026-05-29 MYT &middot; audit date 28/05/2026 &middot; 13/13 captured (3 re-logged: Murahya/Valuesnap/Lovento) &middot; 8 metrics below target &middot; clipboard-paste write + 8 real-click red fills</span>
+      <span class="tag">checkttrating</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> TikTok Shop Health service-metrics audit (Seller-fault R&amp;R rate, 12-hour response rate, Average response time, Chat satisfaction rate) for all 13 TT shops via AdsPower profiles 54-67. Each shop's /health-center page was read, then the data was written into the Google Sheet &ldquo;CS TT Shop Rating&rdquo; TIKTOK tab as a new 13-row block at rows 394-406, with red fill on every metric missing its target. This is the 28/05 run the user kicked off; the sheet block carries date 28/05/2026 and completion slipped to 29/05 due to repeated AdsPower bridge drops + 3 shops needing re-login.</p>
+      <div class="field"><strong>Sheet write (before: rows 394-406 empty &rarr; after: 13 shops' metrics in cols A-I; verified A394=28/05/2026, B406=Lovento, I404=66.67%):</strong> clipboard-paste (navigator.clipboard.writeText + real Ctrl+V) on profile 70.</div>
+      <div class="field"><strong>Per-shop captured (R&amp;R / 12hr / Avg-hrs / ChatSat):</strong>
+        Adelmar 0% / 94.12% / 0.18 / 100%;
+        Das Nature 0.44% / 100% / 0.10 / 88.89%;
+        Hiranai 0.38% / 98.04% / 0.22 / <strong>25%</strong>;
+        HiranaiMY 0% / 100% / <strong>1.26</strong> / 100%;
+        Jager 0% / 100% / 0.38 / 100%;
+        JagerSafety 0% / 100% / 0.07 / --;
+        JagerArmor <strong>7.14%</strong> / 100% / 0.03 / --;
+        JagerHelmet <strong>1.75%</strong> / 100% / 0.80 / 100%;
+        KarlMobel 0.63% / 100% / 0.09 / <strong>69.57%</strong>;
+        Murahya 0.64% / 98.82% / 0.39 / 71.43%;
+        Valuesnap 0.47% / 100% / 0.15 / <strong>66.67%</strong>;
+        Kinata SG 0% / <strong>50%</strong> / <strong>2.82</strong> / 100%;
+        Lovento 0% / 100% / 0.02 / --.</div>
+      <div class="field"><strong>Red highlights (before: no fill &rarr; after: red fill, 8 cells):</strong> I396 Hiranai ChatSat 25% (&lt;70%); G397 HiranaiMY Avg 1.26 (&ge;1hr); C400 JagerArmor R&amp;R 7.14% (&gt;1.5%); C401 JagerHelmet R&amp;R 1.75% (&gt;1.5%); I402 KarlMobel ChatSat 69.57% (&lt;70%); I404 Valuesnap ChatSat 66.67% (&lt;70%); E405 Kinata SG 12hr 50% (&lt;85%); G405 Kinata SG Avg 2.82 (&ge;1hr). Reason: each breaches its target threshold. Murahya 71.43% correctly left white (&ge;70%).</div>
+      <div class="field"><strong>Re-login re-capture:</strong> Murahya (64), Valuesnap (65), Lovento (63) were session-expired during the 28/05 capture (blank rows). Operator re-logged Murahya + Lovento; Valuesnap needed a second login. All 3 re-captured 29/05 and filled. Reason: TT sessions expire and captcha blocks automated login.</div>
+      <div class="field"><strong>Obstacle:</strong> AdsPower Playwright bridge dropped repeatedly (connection reset &rarr; ECONNREFUSED) and morning scheduled skills churned profiles (70/64/63/65 closed mid-run). Recovered by re-opening profile 70 to finish the last 4 red fills. JS clicks on the color swatch were rejected by Sheets (synthetic-event), so real click-element calls were used per the documented pattern.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 13/13 shops captured, block written + verified, all 8 red highlights applied, no stray fills.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-29" data-shops="TT Valuesnap, TT Jager, TT MurahYa, TT Adelmar, TT Hiranai, TT DasNature, TT KarlMobel, TT Lovento, TT Kinata, Lazada MurahYa, Laz das.nature, Lazada Lovento" data-platform="TikTok + Lazada" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
