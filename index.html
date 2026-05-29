@@ -577,6 +577,24 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-29" data-shops="MY:KEDAI GARDEN, MY:Chairsy, MY:Solaree, MY:Flashree, MY:dutchgaming, MY:Gameniture, MY:Atlusrack, MY:Stationarylah, MY:FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked (unchanged), 1 shop new activity, 1 active To Ship (29/5)</span>
+      <span class="entry-meta">2026-05-29 MYT &middot; profile 70 &middot; 27 MY shops / 18 SiteGiant ShopeeMY / gap 9 unchanged since 13/5 &middot; KEDAI GARDEN new To Ship 260528JYMYAT3N RM1.61 (NOT 4.5 SPayLater pattern) &middot; other 8 dormant, To Ship 0 / Shipping 0</span>
+      <span class="tag">sg-gap-monitor</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily SiteGiant integration-gap monitor. Re-diffed Shopee MY shop list (Shopee SC) vs SiteGiant ShopeeMY channels, then scanned all 9 unlinked shops for new order activity via the get_sig shop-switch endpoint. Read-only audit &mdash; no writes to Shopee, SiteGiant, or webapp; no customer messages.</p>
+      <div class="field"><strong>Gap (unchanged):</strong> 27 Shopee MY shops vs 18 SiteGiant ShopeeMY channels &rarr; 9 unlinked: Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer. 0 newly-linked, 0 newly-added vs 13/5 baseline.</div>
+      <div class="field"><strong>Active stock-desync risk NOW (To Ship&gt;0):</strong> KEDAI GARDEN (garden.mall) order 260528JYMYAT3N (28/5), buyer llmloke, 50CM OCTO Plastic Flower Pot Hanger Transparent x4, RM1.61, ShopeePay Balance PAID, To Ship ship-by 29/5. Classified NOT the PHASE 4.5 SPayLater auto-cancel pattern (that is buyer kedaibarutmama2 + Pink + SPayLater) &mdash; this is a different buyer, paid via ShopeePay &mdash; so genuine paid order. PIC: decrement SiteGiant 4 units IF shipped, else non-fulfillment auto-cancel 29/5. Shipping NOW: 0 across all 9.</div>
+      <div class="field"><strong>Changes made (before &rarr; after):</strong> (1) state.json lastSeenOrderId.garden.mall 2605249HFW8J07 &rarr; 260528JYMYAT3N; (2) state.json lastRunTime 2026-05-28T09:00 &rarr; 2026-05-29T09:00; (3) perShop snapshot 28/5 &rarr; 29/5 with garden.mall to_ship 0 &rarr; 1. state.json Write tool was permission-gated, persisted via documented Python-bypass fallback (verified read-back OK). (4) Report written: C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-05-29.md. Other 8 shops latest order IDs all unchanged (Chairsy 260211F1FRUFAH, Solaree 240718V5H3A1KA, Flashree 2409031DJJWV7T, dutchgaming none, Gameniture none, Atlusrack 260214NUX1Y8BX, Stationarylah 260414QW1M81CQ, FynnKoffer 260307GC8213CQ).</div>
+      <div class="field"><strong>Shop(s):</strong> KEDAI GARDEN (active); 9 unlinked shops monitored. <strong>Platform(s):</strong> Shopee MY, SiteGiant, internal (state.json + report + board).</div>
+      <div class="field"><strong>Reason:</strong> Scheduled daily 09:00 MYT integration-gap monitor. garden.mall flagged because a new paid To Ship order landed on an unlinked shop (silent SiteGiant master-inventory desync risk). DEVIATION FROM 26-28/5 SHORTCUT: gave all 8 dormant shops the FULL 3-tab scan (all + toship + shipping), not all-tab-only, after garden.mall all-tab failed to surface the 28/5 To Ship order at the top &mdash; To Ship/Shipping tabs are authoritative for live stock risk.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; full audit completed, all 9 shops 3-tab scanned (get_sig code 0 for all 9), no SSL/login blockers; data-result=warn for the 1 active To Ship finding; state.json persisted via Python fallback after Write perm-gate.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-28" data-shops="N/A (board infrastructure)" data-platform="GitHub + Awesomeree Board" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
