@@ -577,6 +577,22 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-29" data-shops="Kinata SG, das.nature, ValueSnap, KarlMobel, Murahya, MasonGym, Laz MurahYa" data-platform="Awesomeree SB + SiteGiant" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation &mdash; stock follow-up split after 29/5 buyer messages</span>
+      <span class="entry-meta">2026-05-29 16:21 MYT &middot; read-only stock audit &middot; WH confirm list + stock-adjust candidates &middot; 0 writes</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-warn">Follow-up</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Rechecked live SB rows and SiteGiant context after Patricia asked which cases need warehouse confirmation versus stock adjustment. No SiteGiant or SB changes made in this read-only pass.</p>
+      <div class="field"><strong>Clean / no quantity adjustment:</strong> <code>507287105894574</code> / <code>FOLD-GLASSES-CASE</code> final SiteGiant OOS <code>0/0/0/0</code>; <code>260526ESWSYJGV</code> / <code>ELASTIC-GYM-BAND-BLUE</code> final SiteGiant OOS <code>0/0/0/0</code>.</div>
+      <div class="field"><strong>Kinata status issue:</strong> <code>260528JFXDHRX9</code> / order detail <code>#1406945</code> / exact iSKU <code>WEDDING-ARCH-STAND-BLK-SG</code>. SiteGiant order is Processed/Paid/Fulfilled with tracking <code>SPXSG062965722635</code>; item Black is <code>0/0/0/0</code> but Stock Status still <code>Available</code>. Prefix check also shows Dark Green <code>WEDDING-ARCH-STAND-DK-GRN-SG</code> <code>0/0/0/0</code> Available and White <code>WEDDING-ARCH-STAND-WHT-SG</code> <code>6/6/0/0</code> Available. Needs WH/order confirmation before any status/OOS cleanup.</div>
+      <div class="field"><strong>WH confirm before quantity adjustment:</strong> <code>260526DSV67DUA</code> / <code>LANTERN-RECHARG-GERN</code> OOS-labelled but <code>9/5/4/0</code>; <code>260525BPM2KQH6</code> / <code>PF-UPG-MAROON-8R-20X25CM</code> OOS-labelled but <code>2/2/0/0</code>; <code>260525ANEYX8CP</code> / <code>WC-CVBLUE</code> OOS-labelled but <code>1/1/0/0</code>; <code>2605248HSE4ACF</code> / <code>MAHJONG-TABLE-SOLID-WOOD-DARK-BROWN</code> OOS-labelled but <code>2/2/0/0</code>; <code>2605247WMV2XCS</code> / <code>FB-BLK-S</code> cancellation release restored <code>1/1/0/0</code> after earlier adjustment.</div>
+      <div class="field"><strong>Action rule:</strong> none are safe for automatic SiteGiant quantity adjustment without WH confirmation and Patricia approval. If WH confirms physical zero for the positive-SOH items, proceed with the listed deductions; for <code>LANTERN-RECHARG-GERN</code>, reserved stock must be cleared before final zeroing.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-29" data-shops="Kinata SG" data-platform="Awesomeree SB + Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
