@@ -577,6 +577,49 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-29" data-shops="All Shopee FBS shops" data-platform="Local files + Patricia Board" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">FBS Claim Progress JIRA file duplicated to searchable project folder</span>
+      <span class="entry-meta">2026-05-29 MYT &middot; file access follow-up &middot; hidden .codex copy made searchable</span>
+      <span class="tag">fbs-claim-progress</span>
+      <span class="tag">file-access</span>
+      <span class="tag result-ok">Done</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> User could not search/find the final FBS Claim Progress JIRA wording file under the hidden .codex memories folder.</p>
+      <div class="field"><strong>Before &rarr; after:</strong> Before: final JIRA wording existed at C:\Users\tessf\.codex\memories\fbs-claim-progress-jira-final-2026-05-29.md, which may be hard to find in Windows search because .codex is hidden. After: duplicated the same file to C:\Users\tessf\code\codex-lab\FBS Claim Progress JIRA Final 2026-05-29.md.</div>
+      <div class="field"><strong>Shop:</strong> All Shopee FBS shops.</div>
+      <div class="field"><strong>Platform:</strong> Local files, Awesomeree JIRA preparation, Patricia Board.</div>
+      <div class="field"><strong>Reason for change:</strong> Make the JIRA-ready wording easier for the user to locate and open.</div>
+      <div class="field"><strong>Evidence checked:</strong> Source and destination file paths both exist; destination length is 14769 bytes.</div>
+      <div class="field"><strong>Result:</strong> File copy completed.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-date="2026-05-29" data-shops="All Shopee FBS shops" data-platform="Shopee MY FBS + Awesomeree Webapp + JIRA + Patricia Board" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">FBS Claim Progress JIRA wording finalized &mdash; UI/UX dashboard + backend FBS scrape/balance adjustment/status logic split</span>
+      <span class="entry-meta">2026-05-29 MYT &middot; final JIRA wording prepared &middot; Fulfillment by Shopee only &middot; Lost must claim &middot; no Finance owner</span>
+      <span class="tag">fbs-claim-progress</span>
+      <span class="tag">jira-ready</span>
+      <span class="tag result-ok">Ready</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Continued the FBS Claim Progress JIRA work from the 2026-05-28 handoff and prepared two final JIRA-ready tickets: UI/UX FBS Claim Progress Dashboard and Backend FBS scrape/balance adjustment/status sync/auto logic.</p>
+      <div class="field"><strong>Before &rarr; after:</strong> Before: approved proposal and handoff existed, but the newest requirements for the Credited tab, exact main/detail columns, dropdown options, Lost must-claim rule, Google Sheet/Claude bridge, duplicate occurrence handling, and removal of Tier 1-5 mapping were not yet merged into final JIRA wording. After: final ticket wording was saved at C:\Users\tessf\.codex\memories\fbs-claim-progress-jira-final-2026-05-29.md with the two-ticket split and all clarified rules.</div>
+      <div class="field"><strong>UI changes documented:</strong> Dashboard scope now includes tabs Failed Delivery, Return Refund, All Active, Credited for pending credited cases, and Closed / Skip; search by Order ID and remarks; filters for Shop, Case Type, Shopee Status, Reason, Forward Logistic, Action, QC Judgement, Claim Status, Aging, Net amount, and Attention type; exact main table columns; case detail money fields and histories; Excel export with QC Judgement and Claim Status.</div>
+      <div class="field"><strong>Backend changes documented:</strong> Backend scope now requires Fulfillment by Shopee orders only, both FBS Failed Delivery and Return/Refund/Cancel scrape, Shopee reason scrape, Forward Logistic Cancelled/Not Started default exclusion, Lost must-claim logic, Shopee Balance &gt; Shopee Adjustment scrape if technically possible, and Claude/Human manual or Google Sheet bridge fallback if balance scraping is blocked.</div>
+      <div class="field"><strong>Auto logic clarified:</strong> Removed old Tier 1 to Tier 5 QC mapping. Action/classification is Human/Claude reviewed, QC Judgement and Claim Status are FBS/Human updated, Pending Credited cases feed the Credited tab, gap/deducted-without-credit stays active, and close requires verified money result or intentional skip.</div>
+      <div class="field"><strong>Duplicate handling clarified:</strong> Do not treat Order ID alone as unique because a customer can cancel and request again. Preferred key is Shop + Order ID + Shopee case/request ID; fallback is a generated occurrence key using Shop, Order ID, Case Type, first seen time, status, and reason snapshot.</div>
+      <div class="field"><strong>Owner split:</strong> IT owns UI/backend/database/bot/scheduler/export/audit/credentials. Claude owns JIRA/spec wording and fallback/manual status support. Human/FBS team owns Action review, QC Judgement, Claim Status, FBS/Shopee chasing, and final close decision. No Finance owner.</div>
+      <div class="field"><strong>Evidence checked:</strong> C:\Users\tessf\.codex\memories\fbs-claim-progress-jira-handoff-2026-05-29.md and C:\Users\tessf\code\codex-lab\fbs-parcel-claim-dashboard-proposal-revised.html.</div>
+      <div class="field"><strong>Outstanding follow-up:</strong> IT still needs to confirm Shopee access method, whether a stable case/request ID exists, exact FBS Failed Delivery location, balance adjustment match fields, scheduler/credential approach, shop list, and whether Claude/Human updates should use Google Sheet sync, CSV/manual import, or direct webapp form.</div>
+      <div class="field"><strong>Result:</strong> JIRA wording ready for copy/paste and board log prepared for Patricia board.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-29" data-shops="Kinata SG, das.nature, ValueSnap, KarlMobel, Murahya, MasonGym, Laz MurahYa, TT Murahya" data-platform="Awesomeree SB + SiteGiant + Shopee MY/SG + Lazada MY + TikTok MY" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -700,10 +743,12 @@ header.page::after{
       <div class="field"><strong>CONFIRMED #2 &mdash; nedyhouse (cs3/KarlMobel), Lost-sale:</strong> Agent answered 2 pond-vacuum wattage questions well, but customer 3rd Q (27/5 20:50) "ada product lain sesuai utk cuci kolam dan hisap air sampai 95% kering tak?" + re-ask "boleh send link tak?" (28/5 10:11 &amp; 10:51) got only a holding template &mdash; no answer, no link. Purchase-intent dropped. <strong>Action:</strong> CS follow up, recommend product + send link.</div>
       <div class="field"><strong>NEEDS HUMAN REVIEW &mdash; tharani7397 (cs1/ValueSnap), failed-pickup + cancel-risk:</strong> Customer 28/5 16:23-24 "Pickup attempt was unsuccessful" + "if really can get by 30th thn i have to cancel" (order est. 31/5); bot SLA template fired twice, no human. Borderline (timing = Q3-valid) but failed-pickup + cancel threat warranted a human. <strong>Action:</strong> CS verify re-pickup + reassure to prevent cancellation. REJECTED 1 other (zme8nxc2ep &mdash; Lucy cancel was the correct fix for an impossible address-change).</div>
       <div class="field"><strong>Carry-over:</strong> m2m2605/MasonGym (cs1) Sofia follow-up promise &mdash; RESOLVED, CONFIRMED. In-window 27/5 18:29 customer wrote "Ok Thanks Sofia, Really appreciate it"; warm closer 18:31. Closed. No other active carry-overs.</div>
-      <div class="field"><strong>cs5 Kinata SG SKIPPED &mdash; ACTION REQUIRED:</strong> seller.shopee.sg/webchat redirected to login (session expired). Auto-relogin not attempted (OTP/CAPTCHA/lockout risk, unattended). Operator toast/alert was sandbox-blocked (PowerShell module/.NET gated) &mdash; flagged here instead. Operator to re-login kmall:cservice5 (profile 53). Browser left open on login page. ~5-15 chats unaudited for 29/5.</div>
+      <div class="field"><strong>cs5 Kinata SG RE-AUDITED PM (before: SKIPPED, session expired &rarr; after: 10/10 deep-reviewed after operator re-logged profile 53):</strong> Operator completed email-OTP login (cservice5.janamuda@gmail.com); webchat renderer crashed repeatedly until 3 extra heavy tabs closed to free memory, then list rendered. 10 in-window chats, all handled by agent Sofia. 9 OK: easy_ipl (game-save defect &rarr; asked for video to check supplier), chaneltyx (card-wish &rarr; forwarded), extremeworld (urgent pickup &rarr; online-only answered), derektunbbss (product-share, no Q &rarr; greeted), orion_ct (R36 Max vs Ultra &rarr; detailed rec), iupachaccp (self-pickup &rarr; doorstep-only, customer satisfied), dclstxclsv (order confirm &rarr; pack/ship, rest stickers), salesandsales + marmoussg (ship-from corrected by Sofia).</div>
+      <div class="field"><strong>cs5 NEEDS HUMAN REVIEW &mdash; onedoc88 (28/5 12:33):</strong> Customer "Hi sorry the item alrdy collected" got only a bot holding template ("Our team will be with you as soon as possible"), no human reply before auto-close 14:12. Vague/possibly self-resolved but never acknowledged. Low stakes. <strong>Action:</strong> optional CS glance.</div>
+      <div class="field"><strong>cs5 AWARENESS (systemic, fix recommended) &mdash; wrong ship-from in SG auto-template:</strong> The Kinata SG quick-reply/bot tells customers "we ship from Selangor (Malaysia)" but Sofia manually corrected to "we ship from Singapore" in BOTH salesandsales and marmoussg (28/5). Customers get contradictory shipping-origin info; if an agent misses the catch they receive the wrong answer. <strong>Action:</strong> confirm true ship-from with team + fix SG quick-reply template.</div>
       <div class="field"><strong>Awareness (not flagged):</strong> ~30+ product-share&rarr;sticker chats (no question asked, verified not misses); das.nature "Chat with Seller"&rarr;courtesy-closer on timing FAQs (Q3, restate-ETA coaching); fathimaashahmar TnG/COD conflation; akmalsamsuri203 size-exchange refusal w/o offering return; iddieyshop trust-concern not addressed; multiple Haja/PIC/warehouse/relevant-team follow-ups pending (several Raya-holiday-delayed = legit).</div>
-      <div class="field"><strong>Shop(s):</strong> ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar (audited); Kinata SG (skipped). <strong>Platform(s):</strong> Shopee MY + SG.</div>
-      <div class="field"><strong>Result:</strong> ok (data-result=warn for the 2 confirmed CS issues + cs5 gap) &mdash; 316/316 deep-reviewed across 4 accounts, 0 CAPTCHA, report saved to Documents/chataudit-reports/chataudit-summary-2026-05-29.md. cs2 &amp; cs4 fully clean. cs5 pending operator re-login.</div>
+      <div class="field"><strong>Shop(s):</strong> ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG (all audited). <strong>Platform(s):</strong> Shopee MY + SG.</div>
+      <div class="field"><strong>Result:</strong> ok (data-result=warn for the 2 confirmed CS issues + cs5 onedoc88 needs-review + SG ship-from template) &mdash; <strong>326/326 deep-reviewed across all 5 accounts</strong>, 0 CAPTCHA, report saved to Documents/chataudit-reports/chataudit-summary-2026-05-29.md. cs2 &amp; cs4 fully clean; cs5 re-audited PM 10/10 (9 OK + 1 needs-review + 1 systemic template awareness).</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-29" data-shops="MY:KEDAI GARDEN, MY:Chairsy, MY:Solaree, MY:Flashree, MY:dutchgaming, MY:Gameniture, MY:Atlusrack, MY:Stationarylah, MY:FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
