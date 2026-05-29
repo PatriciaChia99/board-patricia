@@ -577,6 +577,36 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-29" data-shops="MasonGym,Laz MurahYa,das.nature,Kinata SG,ValueSnap,Murahya,KarlMobel,TT Murahya" data-platform="Awesomeree SB + SiteGiant + Shopee MY/SG + Lazada MY + TikTok MY" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation &mdash; 29/5 live SB continuation: 5 new rows checked, 5 SB updates, MAHJONG 2+2 verified, 6 follow-ups</span>
+      <span class="entry-meta">2026-05-29 14:29 MYT &middot; profile 70 k1b44nvg &middot; live SB API + SiteGiant order/item APIs &middot; 5 SB PATCHes &middot; 0 buyer messages &middot; 0 SiteGiant stock changes</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-warn">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Continued the SB variation workflow from the 2026-05-28 closeout using <code>checksbvariation</code> and the requested <code>claude-skill-converter</code> context. Checked live Awesomeree SB rows after <code>101100</code>, SiteGiant marketplace order records by marketplace order ID, and exact iSKU inventory. No buyer messages were drafted/sent and no SiteGiant stock adjustment was made.</p>
+      <div class="field"><strong>MAHJONG stock request:</strong> WH/user confirmed two units each. Live SiteGiant already showed <code>MAHJONG-TABLE-SOLID-WOOD-DARK-BROWN</code> as <code>available</code> with SOH/Sellable/Reserved/Allocated <code>2/2/0/0</code> (warehouse 2699, 12 listings) and <code>MAHJONG-TABLE-SOLID-WOOD-LIGHT-BROWN</code> as <code>available</code> with <code>2/2/0/0</code> (warehouse 2699, 12 listings). Before &rarr; after: unchanged, stock already available; no SiteGiant adjustment needed.</div>
+      <div class="field"><strong>SB updates made (5 PATCHes):</strong>
+        <div class="change-row"><span class="before"><code>260525BPM2KQH6</code> / ValueSnap / row 101101: buyerDecision null, WH null, stockAdjustment null, stockSetOos false, csRemarks null.</span><span class="arrow">&rarr;</span><span class="after">buyerDecision [Cancelled], WH [Not Required], stockAdjustment [Not Required], stockSetOos true, csRemarks added. Evidence: SiteGiant order 461935055 / #1403130 Cancelled; affected iSKU PF-UPG-MAROON-8R-20X25CM out_of_stock but 2/2/0/0. No buyer message.</span></div>
+        <div class="change-row"><span class="before"><code>2605247WMV2XCS</code> / Murahya / row 101090: buyerDecision null, WH null, stockAdjustment null, stockSetOos true, contactSent true, csRemarks null.</span><span class="arrow">&rarr;</span><span class="after">buyerDecision [Cancelled], WH [Not Required], stockAdjustment [Not Required], stockSetOos true, csRemarks added. Evidence: SiteGiant order 461211713 / #1400101 Cancelled; FB-BLK-S bounced back to out_of_stock 1/1/0/0 after #SA-18507. No buyer message.</span></div>
+        <div class="change-row"><span class="before"><code>260526DSV67DUA</code> / das.nature / row 101103: stockSetOos false, csRemarks null.</span><span class="arrow">&rarr;</span><span class="after">stockSetOos true, csRemarks added. Evidence: SiteGiant order 462260259 / #1404483 Processed; affected iSKU LANTERN-RECHARG-GERN out_of_stock but 9/5/4/0; suggested RED 8/8/0/0 and WHT 197/197/0/0 checked. No buyer message.</span></div>
+        <div class="change-row"><span class="before"><code>507287105894574</code> / Laz MurahYa / row 101104: stockSetOos false, csRemarks null.</span><span class="arrow">&rarr;</span><span class="after">stockSetOos true, csRemarks added. Evidence: SiteGiant order 462945432 / #1407178 Ready To Ship; FOLD-GLASSES-CASE out_of_stock 0/0/0/0. No buyer message pending approval.</span></div>
+        <div class="change-row"><span class="before"><code>260526ESWSYJGV</code> / MasonGym / row 101105: stockSetOos false, csRemarks null.</span><span class="arrow">&rarr;</span><span class="after">stockSetOos true, csRemarks added. Evidence: SiteGiant order 462436132 / #1405131 Processed; ELASTIC-GYM-BAND-BLUE out_of_stock 0/0/0/0. No buyer message pending approval.</span></div>
+      </div>
+      <div class="field"><strong>Rows checked with no write:</strong>
+        <ul>
+          <li><code>260528JFXDHRX9</code> / Kinata SG / row 101102: SiteGiant order 462887762 / #1406945 Processed. Ordered iSKU <code>WEDDING-ARCH-STAND-BLK-SG</code> is <code>available</code> 1/1/0/0, green variant <code>WEDDING-ARCH-STAND-DK-GRN-SG</code> is 0/0/0/0 but labelled available, white variant <code>WEDDING-ARCH-STAND-WHT-SG</code> is 4/4/0/0. WH note said black/green no stock and 6 white, so this needs WH/SiteGiant confirmation before stock or buyer action.</li>
+          <li><code>260525ANEYX8CP</code> / KarlMobel / row 101100: already Cancelled / Not Required / stockSetOos true. WC-CVBLUE still out_of_stock 1/1/0/0; still needs WH confirmation and explicit stock-adjustment approval.</li>
+          <li><code>2605248HSE4ACF</code> / Murahya / row 101099: already Cancelled / Not Required. Dark-brown MAHJONG now available 2/2/0/0 per WH confirmation; no SiteGiant change required.</li>
+          <li><code>584198807359882383</code> / TT Murahya / row 101097: SiteGiant order 462063242 / #1403660 moved from Processed to Shipped; KLJ-ORANGE-L remains out_of_stock 0/0/0/0 after #SA-18523. No additional buyer message sent; needs disposition guidance if SB row should be closed as shipped/resolved.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Approvals still needed:</strong> WH confirmation + explicit stock-adjustment approval for <code>PF-UPG-MAROON-8R-20X25CM</code> 2/2/0/0, <code>FB-BLK-S</code> 1/1/0/0 bounce-back, <code>LANTERN-RECHARG-GERN</code> 9/5/4/0, <code>WC-CVBLUE</code> 1/1/0/0, and the Kinata SG arch stand black/green/white mismatch. Buyer-message send approval is still needed before contacting <code>507287105894574</code> or <code>260526ESWSYJGV</code>.</div>
+      <div class="field"><strong>Result:</strong> partial &mdash; safe SB statuses/OOS flags updated, MAHJONG availability verified, no stock/buyer-message writes made. Pending items are WH confirmation, buyer-message approval, and KLJ shipped-row disposition.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-29" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
