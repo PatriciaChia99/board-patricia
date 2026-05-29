@@ -577,6 +577,28 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-29" data-shops="N/A (infrastructure)" data-platform="Local Windows Task Scheduler + AdsPower" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">Weekend reliability prep &mdash; AdsPower auto-restart watchdog added; 3 morning skills had failed today (29/5)</span>
+      <span class="entry-meta">2026-05-29 18:11 MYT &middot; long weekend 30/5&ndash;1/6 &middot; priorities: checksbvariation + parcelclaim-auto &middot; watchdog next run 30/5 08:50</span>
+      <span class="tag">infra-scheduling</span>
+      <span class="tag">adspower-watchdog</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Day before a 3-day unattended long weekend (Sat 30/5 &ndash; Mon 1/6 public holiday). User asked to make the scheduled skills run reliably every day, prioritising checksbvariation (auto-contact customer) and parcelclaim-auto (expedite cases). Audited the full scheduled-task setup and added a watchdog to remove the recurring weekend single-point-of-failure.</p>
+      <div class="field"><strong>Diagnosis (today 29/5 scheduled runs):</strong> checksbvariation FAILED (exit 0x1, no report produced), parcelsplit FAILED (0x1), tiktokrraudit FAILED (0xFF); parcelclaim-auto, chataudit, sg-gap-monitor, kinata ran OK (0x0). Root-cause class = AdsPower cert blocker / expired profile logins (needs a human &mdash; the 3 built-in retries hit the same wall). Infra is otherwise solid: every task already has WakeToRun + StartWhenAvailable + RestartCount=3 @ 5min + runs-on-battery.</div>
+      <div class="field"><strong>Change 1 &mdash; new file:</strong> created C:\Users\tessf\scripts\adspower-watchdog.ps1. Probes the AdsPower local API; on cert blocker / API down / process dead it stops + relaunches AdsPower and polls up to 180s for the API to go green; no-op when healthy. Test-run now logged "OK - AdsPower healthy, no action", exit 0.</div>
+      <div class="field"><strong>Change 2 &mdash; new scheduled task (before &rarr; after):</strong> registered Windows task "AdsPowerWatchdog" (before: none &rarr; after: State Ready, daily 08:50 repeating every 30 min for 2h = 08:50/09:20/09:50/10:20/10:50, WakeToRun=True, StartWhenAvailable=True, battery-OK=True, NextRun 30/5 08:50). Brackets the morning batch so AdsPower is healthy before each priority skill.</div>
+      <div class="field"><strong>User manual actions (context):</strong> user re-logged all TikTok profiles and reran all skills manually for 29/5. I verified Profile 70 / Kmall:Patricia (k1b44nvg) session alive via the CDP debug port &mdash; webapp tab "Awesomeree Central Operations Dashboard" + Shopee MY Seller Centre both logged in.</div>
+      <div class="field"><strong>Shop(s):</strong> N/A &mdash; infrastructure change affecting all browser-driven skills.</div>
+      <div class="field"><strong>Platform(s):</strong> Local Windows Task Scheduler + AdsPower local API. No marketplace or DB writes.</div>
+      <div class="field"><strong>Reason:</strong> long weekend 30/5&ndash;1/6 with no one home to do the manual AdsPower tray Exit&rarr;relaunch that the cert blocker requires; the watchdog removes that human dependency before the priority skills fire.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; watchdog script written, scheduled task registered + verified Ready, test-run no-op confirmed. No DB/marketplace writes made.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-05-29" data-shops="Murahya, das.nature, ValueSnap, KarlMobel, Kinata SG" data-platform="SiteGiant + SB Variation" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
