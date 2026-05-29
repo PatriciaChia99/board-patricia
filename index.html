@@ -577,11 +577,28 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-29" data-shops="MY:KarlMobel, MY:MurahYa, TT:Murahya, TT:KarlMobel" data-platform="Shopee MY + TikTok + internal" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck &mdash; manual recovery (10AM task failed 0x1); 10/10 in-scope PASS, 0 mismatch (29/5)</span>
+      <span class="entry-meta">2026-05-29 ~18:25 MYT &middot; profile 70 via Python CDP &middot; 2156 API rows / 1806 shipped / 2 skipped-today / 338 out-of-window / 10 in-scope &middot; window 22/5-28/5 &middot; read-only</span>
+      <span class="tag">parcelsplit-contact-crosscheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> The 10:00 MYT ParcelSplitCrosscheck_1000AM scheduled task FAILED today (exit 0x1, AdsPower bridge instability in the morning 9:30-10:00 window). Re-ran manually per user request after logins were restored. Read-only audit of <code>/api/parcel-split</code> via profile 70 (chrome_146 MCP connect hangs, so Python CDP suppress_origin). Verifies every dark (isContacted=false) carry-over case has no phone collected and no phone-ask in csNotes &mdash; which would mean the Shopee MY auto-contact bot failed to send.</p>
+      <div class="field"><strong>Scope (window 22/5 00:00 &ndash; 28/5 23:59 MYT, unshipped only):</strong> 2156 total API rows &mdash; 1806 shipped, 2 skipped (newly-added today, bot runs tonight), 338 out-of-window (&gt;7d), <strong>10 in-scope</strong>.</div>
+      <div class="field"><strong>Result per case (10/10 PASS, 0 mismatch, 0 manual):</strong> 8 Shopee MY all isContacted=true (lit / system record proves bot sent the phone request) &mdash; KarlMobel 260528JR2QUCSY + MurahYa 260527G50HU3VY / 260528HWR9CQ8D / 260527G9FGMFBR / 260527G3VNNF0S / 260527G3U9R2XH / 260526EK2VBW7N / 260526CDK9S09N. 2 TikTok dark-clean (expected &mdash; TT has no auto-contact bot): TT Murahya 584223542456387237 + TT KarlMobel 584204748229805423. No phone collected and no csNotes phone-ask on any dark case.</div>
+      <div class="field"><strong>Changes made (before &rarr; after):</strong> state.json lastRunTime 2026-05-28T14:30 &rarr; 2026-05-29T~18:25 MYT; inScope 1 &rarr; 10; pass 1 &rarr; 10; mismatch 0 &rarr; 0 (unchanged); lastRunId cleanrun10 &rarr; "2026-05-29...manual-recover". NO writes to Shopee/TikTok/webapp (read-only audit).</div>
+      <div class="field"><strong>Shop(s):</strong> KarlMobel, MurahYa (Shopee MY); Murahya, KarlMobel (TikTok). <strong>Platform(s):</strong> Shopee MY + TikTok + internal (state.json).</div>
+      <div class="field"><strong>Reason:</strong> 10AM scheduled run failed (0x1); user asked to run it now. <strong>Result:</strong> ok &mdash; 10/10 in-scope PASS, 0 mismatch, clean run; state.json persisted.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-29" data-shops="N/A (infrastructure)" data-platform="Local Windows Task Scheduler + AdsPower" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">Weekend reliability prep &mdash; AdsPower auto-restart watchdog added; 3 morning skills had failed today (29/5)</span>
-      <span class="entry-meta">2026-05-29 18:11 MYT &middot; long weekend 30/5&ndash;1/6 &middot; priorities: checksbvariation + parcelclaim-auto &middot; watchdog next run 30/5 08:50</span>
+      <span class="entry-title">Weekend reliability prep &mdash; AdsPower auto-restart watchdog + phone failure-alerts added; 3 morning skills had failed today (29/5)</span>
+      <span class="entry-meta">2026-05-29 18:27 MYT &middot; long weekend 30/5&ndash;1/6 &middot; priorities: checksbvariation + parcelclaim-auto &middot; watchdog 08:50 + phone alert (ntfy) 11:50 daily</span>
       <span class="tag">infra-scheduling</span>
       <span class="tag">adspower-watchdog</span>
       <span class="tag result-ok">Completed</span>
@@ -591,11 +608,12 @@ header.page::after{
       <div class="field"><strong>Diagnosis (today 29/5 scheduled runs):</strong> checksbvariation FAILED (exit 0x1, no report produced), parcelsplit FAILED (0x1), tiktokrraudit FAILED (0xFF); parcelclaim-auto, chataudit, sg-gap-monitor, kinata ran OK (0x0). Root-cause class = AdsPower cert blocker / expired profile logins (needs a human &mdash; the 3 built-in retries hit the same wall). Infra is otherwise solid: every task already has WakeToRun + StartWhenAvailable + RestartCount=3 @ 5min + runs-on-battery.</div>
       <div class="field"><strong>Change 1 &mdash; new file:</strong> created C:\Users\tessf\scripts\adspower-watchdog.ps1. Probes the AdsPower local API; on cert blocker / API down / process dead it stops + relaunches AdsPower and polls up to 180s for the API to go green; no-op when healthy. Test-run now logged "OK - AdsPower healthy, no action", exit 0.</div>
       <div class="field"><strong>Change 2 &mdash; new scheduled task (before &rarr; after):</strong> registered Windows task "AdsPowerWatchdog" (before: none &rarr; after: State Ready, daily 08:50 repeating every 30 min for 2h = 08:50/09:20/09:50/10:20/10:50, WakeToRun=True, StartWhenAvailable=True, battery-OK=True, NextRun 30/5 08:50). Brackets the morning batch so AdsPower is healthy before each priority skill.</div>
+      <div class="field"><strong>Change 3 &mdash; phone failure-alerts (before &rarr; after):</strong> created C:\Users\tessf\scripts\weekend-failure-alert.ps1 + registered Windows task "WeekendFailureAlert" (before: none &rarr; after: State Ready, daily 11:50, WakeToRun=True, NextRun 30/5 11:50). Each run checks whether every priority + secondary skill produced today's report and pushes ONE consolidated summary to the phone via ntfy.sh topic "awesomeree-patricia-ops-7h3k9q" (loud priority-5 alert if a PRIORITY skill failed; quiet heartbeat when all ran). Test POST verified ok. User must install the ntfy app + subscribe to that topic to receive them. Note: report-file presence is the truth source, so manual/Codex runs that skip the Documents report path can false-FAIL; scheduled weekend bats DO write the report, so weekend alerts are accurate.</div>
       <div class="field"><strong>User manual actions (context):</strong> user re-logged all TikTok profiles and reran all skills manually for 29/5. I verified Profile 70 / Kmall:Patricia (k1b44nvg) session alive via the CDP debug port &mdash; webapp tab "Awesomeree Central Operations Dashboard" + Shopee MY Seller Centre both logged in.</div>
       <div class="field"><strong>Shop(s):</strong> N/A &mdash; infrastructure change affecting all browser-driven skills.</div>
       <div class="field"><strong>Platform(s):</strong> Local Windows Task Scheduler + AdsPower local API. No marketplace or DB writes.</div>
       <div class="field"><strong>Reason:</strong> long weekend 30/5&ndash;1/6 with no one home to do the manual AdsPower tray Exit&rarr;relaunch that the cert blocker requires; the watchdog removes that human dependency before the priority skills fire.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; watchdog script written, scheduled task registered + verified Ready, test-run no-op confirmed. No DB/marketplace writes made.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 2 new scheduled tasks registered + verified Ready (AdsPowerWatchdog 08:50, WeekendFailureAlert 11:50), watchdog test-run no-op + alert test-POST both confirmed. No DB/marketplace writes made.</div>
     </div>
   </div>
 
