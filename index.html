@@ -577,6 +577,43 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-30" data-shops="KarlMobel, MurahYa" data-platform="Shopee MY+SG+TT+Laz" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck &mdash; 2 pass / 0 mismatch / 0 manual (30/5)</span>
+      <span class="entry-meta">2026-05-30 MYT &middot; profile 70 kmall:patricia &middot; manual run via Claude Code &middot; 2156 API rows / 1816 shipped / 338 out-of-window / 2 in-scope &middot; 10/12 prior carry-overs graduated via shipment overnight</span>
+      <span class="tag">parcelsplit-contact-crosscheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily read-only audit on <code>/customer-service/parcel-split</code>. Verifies the orange phone-icon (<code>isContacted</code> field). isContacted=true IS the system record proving bot sent &rarr; PASS. Dark icon is a MISMATCH only when phone collected OR csNotes mentions phone-ask regex. Skips today's newly-added (bot runs at night). 7-day carry-over window.</p>
+      <div class="field"><strong>Scope (30/5 window 2026-05-23 00:00 MYT &rarr; 2026-05-30 00:00 MYT):</strong> 2156 total &rarr; 1816 shipped (skip) + 0 today newly-added (skip, re-eval 31/5) + 338 out-of-window (skip) + 2 in-scope.</div>
+      <div class="field"><strong>In-scope evaluations (2 PASS):</strong>
+        <ol>
+          <li>260528K5E1KXJB &mdash; KarlMobel Shopee MY &mdash; date 2026-05-29T10:25:19Z &mdash; isContacted=true, phoneN=0 &mdash; <strong>PASS lit-system-record</strong>. (Was today-skipped 29/5, now in scope.)</li>
+          <li>260527G9FGMFBR &mdash; MurahYa Shopee MY &mdash; date 2026-05-28T10:31:03Z &mdash; isContacted=true, phoneN=0 &mdash; <strong>PASS lit-system-record</strong>. (Carry-over from 29/5 in-scope, still unshipped.)</li>
+        </ol>
+      </div>
+      <div class="field"><strong>DOM sanity:</strong> orange phone icon class <code>lucide lucide-phone h-5 w-5 text-brand-orange</code> confirmed for both in-scope rows on the parcel-split page &mdash; visual state matches API <code>isContacted=true</code>.</div>
+      <div class="field"><strong>Carry-over flag flips since 29/5 run (12 prior cases tracked):</strong>
+        <ul>
+          <li>SHIPPED &amp; graduated (10): 584223542456387237 TT Murahya, 260528JR2QUCSY KarlMobel, 260527G50HU3VY MurahYa, 260528HWR9CQ8D MurahYa, 260527G3VNNF0S MurahYa, 260527G3U9R2XH MurahYa, 260526EK2VBW7N MurahYa, 260526CDK9S09N MurahYa, 584204748229805423 TT KarlMobel (TT dark-clean exited via shipment, no contact needed), 260528JPYX0JU0 MurahYa (29/5 today-skipped &rarr; shipped before evaluation).</li>
+          <li>isContacted false &rarr; true flips: <strong>0</strong>.</li>
+          <li>New dark cases overnight: <strong>0</strong>.</li>
+          <li>Carried over unchanged (2): 260527G9FGMFBR, 260528K5E1KXJB &mdash; both already lit, both still unshipped.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Before &rarr; after:</strong>
+        <ul>
+          <li>state.json: lastRunId 2026-05-29T1820+0800-manual-recover &rarr; 2026-05-30T-manual-via-claude-code; totals.inScope 10 &rarr; 2; totals.pass 10 &rarr; 2; totals.mismatch 0 &rarr; 0; evaluatedCases list refreshed; new <code>carryOverFlipsSincePriorRun</code> block recording the 10 shipped &amp; 2 unchanged.</li>
+          <li>Report saved: <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-05-30.md</code>.</li>
+          <li>No webapp PATCH/POST issued; read-only audit. 0 customer-facing messages sent.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Reason / Trigger:</strong> User-invoked the parcelsplit-contact-crosscheck skill via Claude Code (manual run; the 10AM scheduled task <code>ParcelSplitCrosscheck_1000AM</code> failed 0x1 yesterday and same root cause may still apply &mdash; investigate separately).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 2 in-scope evaluated, 2 PASS, 0 MISMATCH, 0 MANUAL. No new bot misses. 10/12 prior carry-overs graduated via shipment.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-30" data-shops="KarlMobel, Hiranai, MasonGym, das.nature, das.nature2, Murahya, ValueSnap, Karlmobel, Kinata SG, TT Hiranai, TT Murahya, Laz MurahYa" data-platform="Shopee MY + SG + TT + Lazada" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
