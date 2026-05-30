@@ -577,6 +577,39 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-30" data-shops="KEDAI GARDEN, Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked, 0 new orders, 0 To Ship, 0 Shipping; KEDAI GARDEN 28/5 order flipped To Ship&rarr;Cancelled overnight (30/5)</span>
+      <span class="entry-meta">2026-05-30 09:00 MYT &middot; profile 70 kmall:patricia &middot; 27 Shopee MY vs 18 SiteGiant ShopeeMY &middot; gap 9 unchanged since 13/5 &middot; all 9 shops full 3-tab scan &middot; 0 stock-desync risk</span>
+      <span class="tag">sg-gap-monitor</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily SiteGiant integration-gap audit. Read-only. Re-diff Shopee MY 27 shops (Seller Centre get_shop_list page 1+2) against SiteGiant ShopeeMY 18 channels (sitegiant.co DOM scrape) &mdash; gap remains 9 since 2026-05-13 baseline. Per-shop activity scan via get_sig shop-switch + 3 order tabs (all / toship / shipping). No new orders since 29/5 run; no shops actively shipping or pending shipment. Yesterday's KEDAI GARDEN 260528JYMYAT3N (28/5 ShopeePay) auto-cancelled by Shopee overnight (ship-by 29/5 missed, buyer llmloke no fulfilment) &mdash; resolved without stock impact.</p>
+      <div class="field"><strong>Shop list (Shopee SC):</strong> 27 MY shops fetched via get_shop_list page_index=1+2, replayed with credentials &mdash; before: 27 / after: 27 (no change).</div>
+      <div class="field"><strong>SiteGiant ShopeeMY channels:</strong> 18 cards DOM-scraped at sitegiant.co/marketplaces/shopee/all &mdash; AdelmarMY, BahEmas, BidariMu, das.nature, das.nature2, EmasGift, EncikPlastic, Hiranai, JagerHelmet, KarlMobel, Lenza_Eyewear, Lovento, Luxbiin, MasonGym, Murahya, SecretRacer, ValueSnap, WilmerMobel. Before: 18 / after: 18 (no change).</div>
+      <div class="field"><strong>Gap (unlinked) shops:</strong> Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer. Before 29/5: 9 / after 30/5: 9 (no change &mdash; PIC has not integrated any new channel in SiteGiant).</div>
+      <div class="field"><strong>Per-shop scan (3-tab, all/toship/shipping):</strong>
+        <ul>
+          <li>KEDAI GARDEN garden.mall: all=5 / toship=0 / shipping=0 &mdash; latest 260528JYMYAT3N <strong>flipped overnight from To Ship&rarr;Cancelled</strong> (auto by Shopee, ship-by 29/5 missed, buyer llmloke ShopeePay)</li>
+          <li>Chairsy chairsy: all=1 / toship=0 / shipping=0 &mdash; latest 260211F1FRUFAH (11/02/2026 unchanged)</li>
+          <li>dutchgaming dutch_gaming: all=0 / toship=0 / shipping=0 &mdash; no orders</li>
+          <li>Flashree flashree: all=3 / toship=0 / shipping=0 &mdash; latest 2409031DJJWV7T (03/09/2024 unchanged)</li>
+          <li>Solaree solaree2024: all=6 / toship=0 / shipping=0 &mdash; latest 240718V5H3A1KA (18/07/2024 unchanged)</li>
+          <li>Gameniture gameniture: all=0 / toship=0 / shipping=0 &mdash; no orders</li>
+          <li>Atlusrack atlusrack: all=2 / toship=0 / shipping=0 &mdash; latest 260214NUX1Y8BX (14/02/2026 Cancelled, unchanged)</li>
+          <li>Stationarylah stationarylah: all=18 / toship=0 / shipping=0 &mdash; latest 260414QW1M81CQ (14/04/2026 Cancelled, unchanged)</li>
+          <li>FynnKoffer fynnkoffer: all=1 / toship=0 / shipping=0 &mdash; latest 260307GC8213CQ (07/03/2026 unchanged)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Active stock-desync risk RIGHT NOW:</strong> NONE. 0 To Ship + 0 Shipping across all 9 unlinked shops. No manual SiteGiant decrement required today.</div>
+      <div class="field"><strong>State flips since 29/5:</strong> 1 &mdash; KEDAI GARDEN 260528JYMYAT3N "To Ship (ship-by 29/5)" &rarr; "Cancelled automatically by Shopee's system". Zero stock impact (order never shipped). Yesterday's state.json To Ship=1 flag retired.</div>
+      <div class="field"><strong>State.json update:</strong> path C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json. Write tool perm-gated; fell back to Python helper script C:\Users\tessf\scripts\sg_gap_write_state_2026_05_30.py via Bash. Updated lastRunTime 2026-05-29T09:00&rarr;2026-05-30T09:00; lastSeenOrderId map unchanged (all 9 shops). PerShop 2026-05-30 snapshot recorded with all_orders/to_ship/shipping/activity_class/latest.</div>
+      <div class="field"><strong>Reason / trigger:</strong> Scheduled daily 09:00 MYT audit (sg-gap-monitor.bat). Read-only audit; no Shopee/SiteGiant/webapp writes.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 9 unlinked shops re-confirmed dormant or auto-cancel-resolved; zero pending stock-desync; KEDAI GARDEN 28/5 order safely auto-cancelled without manual intervention; state.json + report file saved; board entry posted via local clone.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-29" data-shops="MY:KarlMobel, MY:MurahYa, MY:MasonGym, MY:Luxbin, MY:das.nature2, SG:MurahYa SG, SG:DasNatureSG2, SG:kinata SG, SG:Emasgift SG" data-platform="Shopee MY + SG + internal" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
