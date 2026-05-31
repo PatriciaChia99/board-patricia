@@ -577,6 +577,27 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-31" data-shops="KarlMobel, Murahya, das.nature, das.nature2, Hiranai, MasonGym, ValueSnap, Kinata SG, TT Hiranai, TT Murahya, Laz MurahYa" data-platform="Shopee MY+SG+TikTok+Lazada" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation &mdash; 202 cases / 107 open / 4 NEW since 30/5 / 16 recent / 13 PATCHes 20/5 intact / 0 PATCHes today (31/5)</span>
+      <span class="entry-meta">2026-05-31 11:30 MYT &middot; AdsPower-less direct API mode (webapp_api_call) &middot; 4 NEW (101112-101115) need actions today &middot; 1 state-change overnight 101110 cancellation_check flipped &middot; 13/13 20/5 PATCHes intact (11 days) &middot; 49 stale / 20 approvals_pending carry-over &middot; NO PATCH/send/Jira this run per mandate</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Saturday SB Variation audit. Ran scheduled audit logic via direct API (saved AdsPower launch as not strictly needed for read-only ingest). Classified 202 cases via A-J ladder. 4 NEW since 30/5 AM, 1 state-change detected overnight (101110 cancellation_check), 0 PATCHes (per user mandate &mdash; APPROVAL REQUIRED only). All 13 20/5 PATCHes verified intact 11 days later. 20 approvals_pending carried into 01/6 incl 1 P0 URGENT shipBy-today (101115 KarlMobel) + 1 Kinata SG auto-cancel reconciliation flag (101102) + 4 NEW today actions.</p>
+      <div class="field"><strong>Headline:</strong> 202 cases (was 204; -2 net &mdash; mid-month bulk close). Newest id 101115 (`260528JCVJMN94` KarlMobel). Recent (&le;5d) open=16, Stale (&gt;5d) open=~49 (32 BOT_OK + 9 ParseFail + 3 Accept-Change-Pending + 5 closure-backfill). Terminal=~95.</div>
+      <div class="field"><strong>4 NEW since 30/5 AM:</strong> 101112 Kinata SG `260529NH4TJJEU` ParseFail "NO MORE SILVER" (CS5 manual needed); 101113 ValueSnap `260526E0VV0UEQ` cancellation_check=true contactSent=false (close terminal); 101114 das.nature2 `260530Q6J1S5EK` Cancelled-pending csRemarks=null (backfill); 101115 KarlMobel `260528JCVJMN94` Cat E ParseFail shipBy 31/5 TODAY (URGENT manual).</div>
+      <div class="field"><strong>State change overnight (1):</strong> 101110 KarlMobel `260526EK7VHDNS` cancellation_check `false &rarr; true` (auto-detected; ready for terminal close with backfill remark).</div>
+      <div class="field"><strong>P0 carry-over for 01/6 (20 items):</strong> 101115 / 101113 / 101112 / 101114 (NEW today) + 101110 / 101102 / 101106 (30/5 carry, 1 status flip detected) + 101065 / 101071 (TT ParseFail 10.85d / 9.60d) + 101049 / 101050 / 101060 (3 stale Cat C "cancel already" 11&ndash;13d) + 101099 / 101079 / 101074 / 101073 (4 closure backfill 5&ndash;10d) + 101105 / 101103 (2 fresh Accept Change) + WL-HCS / WL-CTP-SVER (SG retire candidates).</div>
+      <div class="field"><strong>20/5 PATCHes verification (13/13 intact 11 days):</strong> 100960 / 100972 / 101044 / 101045 / 101018 / 101020 (6 Adjusted) + 101042 / 101036 (2 Cancelled terminal) + 101041 / 101047 / 101039 / 101033 / 101056 (5 awaiting-buyer). No reversions.</div>
+      <div class="field"><strong>Urgent flag &amp; reasoning:</strong> 🔴 101102 Kinata SG `260528JFXDHRX9` auto-cancel deadline 30/5 23:30 PASSED but case state still bd=null + cancellation_check=false. Need Shopee SG order-status verify + DB reconcile. Per user MEMORY.md "auto-cancels 23:30" did NOT fire as expected. + 🔴 101115 KarlMobel shipBy=2026-05-31 TODAY ParseFail bot never ran; URGENT manual SKU lookup + SHOPEE_MY_NO_STOCK send needed before shipping.</div>
+      <div class="field"><strong>Run mode notes:</strong> Skipped AdsPower launch (Phase 0); used `mcp__webapp__webapp_api_call` GET `/api/sb-variation` HTTP 200 directly. Saved 1 cache-miss + 0 SSL-cert exposure. Full classification via subagent (8,799-line JSON read in chunks). Skill carry-overs all loaded (5 HARD-RULE memory files + state.json + 30/5 EOD report). No WhatsApp sends (per user instruction step 6).</div>
+      <div class="field"><strong>Files updated:</strong> `C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-05-31.md` (saved) &middot; `C:\Users\tessf\.claude\skills\checksbvariation\state.json` (lastRunId=2026-05-31-AM, lastCaseId=101115, totalCasesInAPI=202, 20 approvals_pending).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 202 cases audited, 1 state-change detected, 4 NEW logged, 13 20/5 PATCHes verified intact, 0 PATCHes/sends/Jira this run per APPROVAL REQUIRED mandate. 20 approvals carried into 01/6.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-31" data-shops="MurahYa, TT KarlMobel" data-platform="Shopee MY+TikTok" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
