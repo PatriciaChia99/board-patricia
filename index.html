@@ -577,6 +577,25 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-05-31" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">Kinata PM 18:30 audit &mdash; 37 To Process (~S$1,414.26) / 1 Processed RISK-OF-LATE Day 3 / 156 Shipping &mdash; PM force-refund S$56.99 CS-gap (31/5)</span>
+    <span class="entry-meta">2026-05-31 18:30 MYT &middot; Kinata SG (kinatasg) &middot; Profile 70 (k1b44nvg, kmall:patricia) &middot; AdsPower MCP fully alive &middot; read-only scan, no DB writes</span>
+    <span class="tag">checkkinataorder</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Scheduled PM run 18:29 MYT replacing 16:30 slot. 24th consecutive day primary profile 70. Tab snapshot vs noon 13:05: To Ship 30&rarr;38 (+8), To Process 29&rarr;37 (+8), Processed 1=1, Shipping 169&rarr;156 (-13 outflow to Completed), R/R total 595&rarr;598 (+3). R/R action-required 8&rarr;2 (6 cleared via refund, 0 CS-actioned). Combined live exposure ~S$523.49 across 17 cases.</p>
+    <div class="field"><strong>To Process &mdash; 37 orders ~S$1,414.26 buyer payment:</strong> 8 NEW arrived 13:25-18:19 SGT (fizil_mohamed S$32.09 / nigelseah435 S$28.98 / ishahzee17xx S$18.98 / kathyktk S$19.40 / hareshpal S$48.73 / ikrimahishak S$32.90 / xtw0gq7b78 S$86.68 / anie_0310 S$9.40 = combined S$277.06) + 29 carry-over from noon. All ship-by 02/06 14:00/23:30 SGT. Auto-cancel deadline 03/06 23:30 SGT. STALE Day-2+28h carry-overs muruganmuru S$24.15 (Dustbin SlimFit 10L) + fauliafaulia758 S$11.26 (Stripe V-neck Cream) STILL not shipped since 30/05 14:49/14:07 SGT &mdash; ship-by 02/06 23:30 (47h left), matches marcusstangg pattern (yesterday auto-cancel S$16.90 loss).</div>
+    <div class="field"><strong>Processed &mdash; 1 order (RISK-OF-LATE):</strong> rlcym 260529NH4TJJEU S$25.99 BT Keyboard Touchpad Silver. Tracking SPXSG061220158775 SPX Express Drop-off still "Waiting for courier to confirm shipment" after 3 calendar days. Day 3 RISK-OF-LATE unchanged from noon. HIGH RISK seller-fault auto-cancel in ~24h if courier handover not done tonight.</div>
+    <div class="field"><strong>Shipping (Shipped tab) &mdash; 156 orders:</strong> Net -13 vs noon = continued Shipping&rarr;Completed outflow. No new issues surfaced.</div>
+    <div class="field"><strong>R/R observations (no DB writes):</strong> 3 FORCED-REFUNDED CS-gap S$56.99 (bhumikadadbhawala S$12.09 Snuffle Mat sealed / joswen89 S$31.87 Joycon "wrong item" / haiyato S$13.03 Sleeping Bag sealed) &mdash; all Due-31/5 17:00 SGT hit deadline with NO CS dispute/validate &rarr; Shopee auto-refunded buyer. 3 early-refund S$66.29 Due-01/6 likely CS-approved-validated (nanaajmeer S$25.74 / onedoc88 S$14.56 / annahuang_11 S$25.99) &mdash; pending warehouse physical-condition confirmation. 2 In-Validation 01/6 STILL pending (jinnyong22 S$14.99 + rix5cs__lm S$10.99 = S$25.98, ~30h left). 2 NEW R/R (vaniajay S$11.41 In-Return-by-05/6 + zakikihassen S$9.56 offer-partial). 2 NEW Cancellations no-loss pre-ship (hareshpal S$50.50 duplicate + weezersbiggestfan S$13.89). angxiangwei HV S$79.71 Day-3 offer-partial CS not actioned. simplyskillslab HV S$43.50 PROGRESSED to Pick-Up-Done 31/5. radhakuppuswami HV S$78.49 3d past return-by-28/5, item never returned &mdash; monitor wallet for clawback.</div>
+    <div class="field"><strong>Loss tally:</strong> May cumulative seller-fault loss S$48.14 &rarr; S$105.13 (+S$56.99 from CS-gap force-refund). +S$66.29 early-refund outflow flagged for warehouse condition check (NOT counted as loss yet). Khaki OS Sweater Day-14 unchanged S$50.86 (WAREHOUSE PIC must mark variant OOS).</div>
+    <div class="field"><strong>Reason:</strong> Scheduled daily Kinata order check (PM run replaces 16:30 slot, fired 18:29 MYT). Read-only audit per skill spec &mdash; no DB writes, no message sends, no status flips. WhatsApp skipped per task instruction (QR-blocker). All metrics observed via Shopee SC DOM scrapes + /api/v3/order/get_one_order batch calls.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; PM snapshot captured cleanly. Profile 70 verified, AdsPower MCP tools alive throughout (no CDP fallback needed). 12 priority Action Items handed off to operator/CS/warehouse (3 force-refund inspect, 3 early-refund condition check, rlcym courier rescue, 2 STALE TP ship-tonight, 35 fresh TP ship-ASAP, 2 In-Val CS dispute, angxiangwei HV CS triage, radhakuppuswami HV wallet watch, Khaki OS OOS-flip repeat reminder).</div>
+  </div>
+</div>
   <div class="entry" data-date="2026-05-31" data-shops="13 TT shops" data-platform="TikTok + Lazada" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
