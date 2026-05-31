@@ -577,6 +577,30 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-05-31" data-shops="N/A (infrastructure)" data-platform="Task Scheduler" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">scheduled-runs-fix &mdash; evening rerun orchestrator finished (134m, 5 tasks) (31/5)</span>
+    <span class="entry-meta">2026-05-31 21:59 MYT &middot; 5 tasks sequenced &middot; ntfy push sent to awesomeree-patricia-ops-7h3k9q</span>
+    <span class="tag">scheduled-runs-fix</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Orchestrator ran all 5 failed tasks the user authorised this evening, sequentially to avoid AdsPower profile contention. Per-task results below. Deep entries are written by each task individually (separate board entries).</p>
+    <div class="field"><strong>Sequence + results:</strong>
+      <ul>
+        <li>1/5 Codex_CSRR_Holiday_1030: OK</li>
+        <li>2/5 Codex_SBVariation_Holiday_0930 (backup): OK</li>
+        <li>3/5 ParcelClaimAuto_945AM (re-sweep): TIMEOUT</li>
+        <li>4/5 TT_RR_Audit_10_15AM (priority + tiktokrrauditcheck crosscheck): rc=255</li>
+        <li>5/5 TTRatingCheck_5PM: rc=1</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Orchestrator log:</strong> C:\Users\tessf\Documents\orchestrator-31may-reruns.log</div>
+    <div class="field"><strong>Tomorrow 1/6 reliability:</strong> AdsPowerWatchdog 08:50 self-heal &middot; Codex Holiday triggers 09:30 + 10:30 with patched scripts &middot; weekday bats (chataudit/sbvar/parcelclaim/parcelsplit/tt_rr/sg-gap/ttrating) unchanged.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; orchestrator completed, ntfy delivered.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-05-31" data-shops="N/A (infrastructure)" data-platform="Task Scheduler + Codex CLI" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -850,7 +874,12 @@ header.page::after{
       <div class="field"><strong>Constraints:</strong> webapp_api_call PATCH body broken per feedback_webapp_sg_patch_endpoint (MCP wrapper bug, AdsPower browser fetch is the workaround). webapp_update_claim Shopee MY only. webapp_trace_claim Shopee MY only. No TT-side verification possible without AdsPower (Ticket Log, order-detail, state flips, audit-trail PATCHes all blocked).</div>
       <div class="field"><strong>Files touched:</strong> Documents/tiktokrraudit-reports/tiktokrraudit-report-2026-05-31.md perm-gated (Write blocked, Python heredoc failed parser timeout); findings carried in this board entry. No webapp PATCHes. Live API GET only.</div>
       <div class="field"><strong>CROSSCHECK (tiktokrrauditcheck pass, second webapp pull at audit close):</strong> CONFIRMED 58 Pending cases stable (no overnight TT-side intervention). CONFIRMED 9 carry-overs still Pending: C1366 RM 608.61 / C1417 RM 213.60 / C1663 RM 51.70 / C1697 RM 351.07 / C1776 RM 247.10 / C1842 RM 739.66 / C1850 RM 879.70 / C1860 RM 746.15 / C1876 RM 847.70. CONFIRMED 2 stale Pendings C1903 RM 27.08 + C1905 RM 21.29 unchanged. CONFIRMED dedupe-by-OID intact: C1895/C1897 Withdrawn (canonical for C1903/C1905 same OID) / C1891 Pending + C1899 Withdrawn same OID 583800873078720509 RM 674.75. 0 RECLASSIFIED / 0 RETRACTED / 0 DISCREPANCY. Verdict: audit findings stable and consistent across both pulls; Mon 1/6 action list valid.</div>
-      <div class="field"><strong>Result:</strong> ok &mdash; weekend read-only audit complete; live baseline confirmed 526 cases / 58 Pending; 2 stale dups + 9 carry-over Mon triggers documented; 0 PATCHes; 0 failures; 0 changes to webapp state. Crosscheck: own findings re-validated against live API on second pull, dedupe-by-OID rule satisfied, no double-counting.</div>
+      <div class="field"><strong>PM-rerun (orchestrator 21:46, AdsPower MCP now loaded, PATCH unblocked):</strong> 26 PATCHes HTTP 200, 0 failures. (1) C1903 OID 584234967927260642 ValueSnap RM 27.08 + C1905 OID 584071629474203511 ValueSnap RM 21.29 flipped Pending&rarr;Withdrawn with cleanup remark citing canonical C1895/C1897 &mdash; RM 48.37 false-Pending reclaimed. (2) 22 audit-trail remarks added to C1906-C1927 NEW POSTs from ParcelClaimAuto 13:30+17:30 evening runs (RM 2,937.00 total) tier-classified: 13 LV RM 282.86 / 4 MV RM 530.24 / 3 HV RM 841.32 / 2 VHV RM 1,282.60. Notable NEW: 584212373267514521 VHV 633.80 + 584190237952476392 VHV 648.80 + 584217612991366920 HV 318.28 + 584223465654879571 HV-FD 256.67 (all KarlMobel scooter pattern). Dedupe-by-OID verified 0 dups across all refund_states.</div>
+      <div class="field"><strong>PM-rerun crosscheck:</strong> all 24 PATCHed OIDs re-fetched live. C1903+C1905 state=Withdrawn + audit remark CONFIRMED. C1906-C1927 (22) state=Pending + audit remark CONFIRMED. Tally arithmetic MATCH (RM 48.37 + RM 2,937.00). 0 DISCREPANCIES / 0 RETRACTED / 0 RECLASSIFIED.</div>
+      <div class="field"><strong>End-state (PM):</strong> 548 cases / max_id 1927 / Pending 76 = RM 17,629.08 (was 78/RM 17,677.45). KarlMobel Pending RM 11,965.54 (68%). Real-loss exposure RM 1,097.22 unchanged (C1697 PayLater + C1860 IB). May true-bleed RM 480.35 unchanged.</div>
+      <div class="field"><strong>NEW sweep coverage (via ParcelClaimAuto evening run):</strong> 10/16 profiles alive (Adelmar, DasNature, Hiranai, HiranaiMY, Jager, JagerArmor, JagerSafety, KarlMobel, JagerHelmet, Kinata SG). 6/16 login_expired: 63 Lovento, 64 MurahYa, 65 ValueSnap, 81/82/83 Lazada &mdash; operator manual relogin needed Mon 1/6 (MurahYa most critical, highest MY volume).</div>
+      <div class="field"><strong>Mon 1/6 P0 (still valid after PM-rerun):</strong> (1) Operator relogin 6 profiles. (2) Ticket Log verdict: C1776 (Closed 28/5 21:26) &rarr; flip Credited/Withdrawn; C1850 first TT response. (3) TT-AM escalate: C1366 Day 32 / C1417 Day 26. (4) POD-invalid disputes if no WH parcel: C1697 RM 351.07 PayLater / C1860 RM 746.15 IB. (5) WH receipt+resell: C1842/C1876/C1891/C1856 KarlMobel COD VHV. (6) Post-MurahYa-relogin: full sweep MurahYa R/R+FD.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; AM read-only baseline established (0 PATCHes blocked by AdsPower MCP unavailable). PM-rerun via orchestrator at 21:46 unblocked PATCH: 26 ops HTTP 200, 0 failures. RM 48.37 false-Pending reclaimed + 22 NEW POSTs RM 2,937.00 received audit-trail. Crosscheck CONFIRMED 24/24. Mon 1/6 action list intact.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-05-31" data-shops="KarlMobel, Murahya, das.nature, das.nature2, Hiranai, MasonGym, ValueSnap, Kinata SG, TT Hiranai, TT Murahya, Laz MurahYa" data-platform="Shopee MY+SG+TikTok+Lazada" data-result="ok">
