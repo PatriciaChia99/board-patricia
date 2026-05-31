@@ -622,7 +622,85 @@ header.page::after{
     <div class="field"><strong>Result:</strong> ok &mdash; 2 .ps1 scripts patched &middot; smoke test passed &middot; CSRR Holiday rerun in-flight &middot; tomorrow's Holiday triggers safe.</div>
   </div>
 </div>
-<div class="entry" data-date="2026-05-31" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
+<div class="entry" data-date="2026-05-31" data-shops="MY:MurahYa, KarlMobel, Hiranai, ValueSnap, MasonGym, Luxbin, das.nature2, Emas Gift, Adelmar; SG:KarlMobel SG, MurahYa SG, Emasgift SG, DasNatureSG2, Kinata SG" data-platform="Shopee MY + Shopee SG + internal" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">csrrcredited &mdash; full fresh MY+SG pull, 515 Pending R/R swept, 77 wallet checks, 26 audit remarks, 0 credit flips (31/5)</span>
+    <span class="entry-meta">2026-05-31 19:34-20:53 MYT &middot; profile 70 k1b44nvg + profile 84 k1bpp0sl &middot; CDP-direct via websocket-client suppress_origin=True &middot; local clone board log</span>
+    <span class="tag">csrrcredited</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Ran the Claude-source csrrcredited workflow for today. Fresh pulls: MY Pending 449, MY Credited 411, SG all 194, warehouse returns 12,451. R/R Step 6a proof files saved under <code>C:\Users\tessf\chase-rr\deep_sweep_*_2026-05-31.json</code>; coverage 515/515 Pending rows across planned shops plus Adelmar, no sweep errors after MurahYa retry.</p>
+    <div class="field"><strong>Money gates:</strong> 77 live wallet targets checked by direct <code>order_sn</code> lookup. Class summary: 39 CLAWBACK, 5 FULL_WIN already Credited, 13 INCOME_ONLY holds, 16 NO_MATCH holds, 4 PARTIAL_WIN holds. Step 3.5 shipping-only classifier found 0 Pending cases eligible to flip and 0 shipping-only premature Credited in the csrrcredited target set. No case met the Credited gate today.</div>
+    <div class="field"><strong>Webapp changes (all remark-only, before&rarr;after state unchanged Pending&rarr;Pending, HTTP 200 and reconciled):</strong>
+      <ul>
+        <li><code>260319HQKFCT0U</code> KarlMobel: NET -RM43.49; product comp RM805.49 still missing; hold/escalate.</li>
+        <li><code>260413P0F6D47G</code> DasNatureSG2: SG R/R adj -SGD45.46 + warehouse Resell; reclassified RESELL_REFUND_EXPECTED, no R/R loss chase.</li>
+        <li><code>260415UCREE60D</code> KarlMobel SG: SG wallet no match, R/R adj -SGD34.69; hold Pending.</li>
+        <li><code>260423J84JW1HX</code> MurahYa SG: SG R/R adj -SGD117.43 + warehouse Resell; reclassified RESELL_REFUND_EXPECTED, no R/R loss chase.</li>
+        <li><code>260423JF34WA0X</code> MurahYa: NET -RM184.71, type 411 loss signal; hold/escalate.</li>
+        <li><code>260424KHTR29PW</code> MurahYa: NET -RM157.36, type 411 loss signal; hold/escalate.</li>
+        <li><code>2604281XJS1A7H</code> KarlMobel: NET -RM190.59, type 411 loss signal; hold/escalate.</li>
+        <li><code>2604306RDY7TW0</code> Murahya: wallet no match; RM282.38 approval still within lead time; alert if still RM0 on 4/6.</li>
+        <li><code>2605019HWD8957</code> KarlMobel SG: SG wallet no match, R/R adj -SGD33.30; hold Pending.</li>
+        <li><code>260503F0KSDM17</code> KarlMobel: non-shipping comp present but NET RM90.88 vs refund RM93.61; hold short-pay.</li>
+        <li><code>260505K9FHCCJD</code> MasonGym: income-only, no refund-out/comp txn; hold until lead time clears.</li>
+        <li><code>260507PSGCYJKM</code> MurahYa: refund-out only NET -RM17.91 despite approved R/R; hold/chase.</li>
+        <li><code>260508TF5UTMX3</code> MurahYa: NET -RM84.82, type 411 loss signal; hold/escalate.</li>
+        <li><code>2605090ACJ83YR</code> Emasgift SG: SG wallet no match and R/R now Dispute Rejected; hold/chase if SLA expires.</li>
+        <li><code>26050915C13G2K</code> KarlMobel: income-only, no refund-out/comp txn; hold until lead time clears.</li>
+        <li><code>2605102UMNKPP3</code> MurahYa SG: SG wallet no match and R/R now Dispute Rejected; hold/chase if SLA expires.</li>
+        <li><code>26051036XG50CN</code> MurahYa: non-shipping comp present but NET RM187.50 vs refund RM200.39; hold short-pay.</li>
+        <li><code>260511636DMSEY</code> KarlMobel SG: SG wallet no match, R/R adj -SGD31.66; hold Pending.</li>
+        <li><code>260513ANAY62KH</code> KarlMobel SG: SG wallet no match, R/R adj -SGD10.85; hold Pending.</li>
+        <li><code>260514CV0B2MQ3</code> KarlMobel: NET -RM84.60; type 411 not reversed, approved comp not landed; monitor to ~5/6.</li>
+        <li><code>260515EXGJUH72</code> KarlMobel SG: SG wallet no match, R/R adj -SGD9.24; hold Pending.</li>
+        <li><code>260515FKSVTVBS</code> Murahya: wallet no match; RM762.82 approval still within 3WD lead time; escalate if still RM0 on 3/6.</li>
+        <li><code>260518Q7A93V4D</code> KarlMobel: income-only, no refund-out/comp txn; hold until lead time clears.</li>
+        <li><code>260519RXMCHSUA</code> MurahYa: income-only, no refund-out/comp txn; hold until lead time clears.</li>
+        <li><code>2605223JN7M7F0</code> MasonGym: income-only, no refund-out/comp txn; hold until lead time clears.</li>
+        <li><code>260527FNG3J91N</code> MurahYa: NET -RM28.91, type 411 loss signal while In Seller Review; hold/escalate.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Reconciliation:</strong> 26/26 remark PATCHes verified by re-reading webapp lists; 0 status flips, 0 reopens in csrrcredited. Evidence files: <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\csrrcredited-2026-05-31\classifications_2026-05-31.json</code> and <code>patch_results_2026-05-31.json</code>.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; full fresh pull completed, all Step 6a shop sweeps have JSON proof, no unsafe Credited flips, carry-overs verified with fresh wallet/R/R/warehouse evidence.</div>
+  </div>
+</div>
+<div class="entry" data-date="2026-05-31" data-shops="MY:MurahYa, KarlMobel, Hiranai, ValueSnap, MasonGym, Luxbin, das.nature, das.nature2, Emas Gift; SG:KarlMobel SG, MurahYa SG, DasNatureSG2" data-platform="Shopee MY + Shopee SG + internal" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">csrrcreditedcheck &mdash; independent 228-case live-wallet audit, 1 reopen, 14 CROSSCHECK remarks (31/5)</span>
+    <span class="entry-meta">2026-05-31 20:20-20:53 MYT &middot; Bucket A 26 touched cases + Bucket B 7-day recent window &middot; 228/228 wallet checks, no skipped shops</span>
+    <span class="tag">csrrcreditedcheck</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Ran csrrcreditedcheck independently after csrrcredited. It rebuilt Bucket A from today&apos;s 26 PATCH payloads and Bucket B from the recent remark window, then re-hit live wallet by shop instead of trusting parent remarks. Results: 52 confirmed Credited, 67 Pending no-match holds, 54 Pending clawback flags, 36 Pending income-only holds, 3 Pending short-pay holds, 7 Credited short-pay flags, 6 Credited clawback/reversal flags, and 3 initial premature candidates.</p>
+    <div class="field"><strong>Premature candidate guard:</strong> live R/R probe reduced the 3 initial candidates to 1 clear auto-reopen. SG <code>260526DN166DYK</code> has live R/R adj +SGD8.25 &ge; refund SGD4.41, so no reopen despite SG wallet 0/0 FBS pattern. SG <code>2604065EGYRTJ1</code> has live R/R adj +SGD3.10 vs refund SGD3.23 and remains a short/ambiguous flag, not auto-reopened. MY <code>260503E4BWD6YW</code> had wallet no-match + R/R adj "-" + warehouse Resell, so Credited was retracted.</div>
+    <div class="field"><strong>Webapp changes (HTTP 200 and reconciled):</strong>
+      <ul>
+        <li><code>260503E4BWD6YW</code> Hiranai: Credited&rarr;Pending via <code>reopen_case</code> + CROSSCHECK remark; no wallet match, R/R no adjustment, warehouse Resell; needs WFR/Withdrawn review.</li>
+        <li><code>260516JRSKAT07</code> Emas Gift: Credited same-state CROSSCHECK remark; type 411/reversal component, NET RM57.55 vs refund RM47.32; flag only.</li>
+        <li><code>2605235W1FQS70</code> Hiranai: Credited same-state CROSSCHECK remark; short-pay NET RM9.64 vs refund RM12.89.</li>
+        <li><code>260515EGB1VK53</code> KarlMobel: Credited same-state CROSSCHECK remark; reversal component, NET RM123.13 vs refund RM103.55; flag only.</li>
+        <li><code>260503DDKEQQ81</code> Luxbin: Credited same-state CROSSCHECK remark; short-pay NET RM200.56 vs refund RM224.89.</li>
+        <li><code>2605090TWKWSHK</code> Luxbin: Credited same-state CROSSCHECK remark; short-pay NET RM43.40 vs refund RM43.88.</li>
+        <li><code>260503DPCX77P8</code> MurahYa: Credited same-state CROSSCHECK remark; reversal component, NET RM104.10 vs refund RM125.31; flag only.</li>
+        <li><code>260504F81D1F5V</code> MurahYa: Credited same-state CROSSCHECK remark; reversal component, NET RM136.76 vs refund RM150.47; flag only.</li>
+        <li><code>26051280VA8U1G</code> MurahYa: Credited same-state CROSSCHECK remark; reversal component, NET RM103.94 vs refund RM113.42; flag only.</li>
+        <li><code>260515DXR2Y150</code> MurahYa: Credited same-state CROSSCHECK remark; reversal component, NET RM104.43 vs refund RM122.15; flag only.</li>
+        <li><code>260520TRDVKQ0Y</code> MurahYa: Credited same-state CROSSCHECK remark; short-pay NET RM113.01 vs refund RM119.61.</li>
+        <li><code>2604282A5A43MQ</code> ValueSnap: Credited same-state CROSSCHECK remark; short-pay NET RM19.56 vs refund RM24.37.</li>
+        <li><code>260520TDW7X37U</code> ValueSnap: Credited same-state CROSSCHECK remark; short-pay NET RM75.36 vs refund RM102.00.</li>
+        <li><code>2605223DA0T44A</code> das.nature: Credited same-state CROSSCHECK remark; short-pay NET RM4.79 vs refund RM6.79.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Reconciliation:</strong> 15/15 crosscheck writes verified: 1/1 reopen confirmed Pending and 14/14 CROSSCHECK remark substrings present. Evidence files: <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\csrrcredited-2026-05-31\crosscheck_results_2026-05-31.json</code> and <code>crosscheck_patch_results_2026-05-31.json</code>.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; independent check found no missed win candidate from today&apos;s csrrcredited run, caught one stale premature Credited/resell case, and flagged short-pay/reversal Credited rows without unsafe status changes.</div>
+  </div>
+</div>
+  <div class="entry" data-date="2026-05-31" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">Kinata PM 18:30 audit &mdash; 37 To Process (~S$1,414.26) / 1 Processed RISK-OF-LATE Day 3 / 156 Shipping &mdash; PM force-refund S$56.99 CS-gap (31/5)</span>
