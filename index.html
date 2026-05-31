@@ -577,6 +577,122 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-31" data-shops="13 TT shops" data-platform="TikTok + Lazada" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto &mdash; 15 NEW POSTed C1906-C1920 RM 2,435.04 / 13/13 TT alive / 0/3 Laz login_expired (31/5)</span>
+      <span class="entry-meta">2026-05-31 13:08-13:30 MYT &middot; 16 profiles in scope, CDP-direct via parcelclaim_2026_05_31_cdp.py &middot; 13/13 TT alive cookie-verified &middot; 3 Lazada (81/82/83) login_expired persistent &middot; 46 cands &rarr; 29 webapp-dedupe + 2 within-batch dedupe &rarr; 15 NEW POSTed all HTTP 200</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily 09:45 MYT parcelclaim-auto LIVE run (fired manually at 13:08 MYT). Full CDP-direct pull of all 13 TT profiles (54-67) + 3 Lazada (81-83). Profile 70 (webapp destination) opened separately for PHASE 0 baseline pull (526 existing claims) and PHASE 5 POSTs. All POSTs sent via in-page fetch from profile 70 webapp tab (MCP webapp_api_call body delivery still broken &mdash; persistent issue per <code>feedback_webapp_sg_patch_endpoint.md</code>).</p>
+      <div class="field"><strong>Profiles scanned:</strong> 16 in scope. <strong>TT alive:</strong> 13/13 (54 Adelmar / 55 DasNature / 56 Hiranai / 58 HiranaiMY / 59 Jager / 60 JagerArmor / 61 JagerSafety / 62 KarlMobel / 63 Lovento / 64 MurahYa / 65 Valuesnap / 66 JagerHelmet / 67 Kinata &mdash; all cookie-verified via <code>global_seller_id_unified_seller_env</code> match to <code>state.json.verified_seller_ids</code>). <strong>Lazada:</strong> 0/3 alive &mdash; 81/82/83 login_expired persistent (same as 28/5, 29/5, 30/5 &mdash; operator manual relogin required across 4 consecutive days).</div>
+      <div class="field"><strong>Source pull stats:</strong> TT R/R 844 cards total &rarr; 11 in 4-day window (filter: drop "Request closed" + canceled-no-tracking). TT FD 1,257 cards total &rarr; 35 in 4-day window (filter: in window if create_time OR update_time within cutoff &mdash; catches OLD-OID resurfaces). Lazada 0/0 (login_expired).</div>
+      <div class="field"><strong>PHASE 0 webapp baseline:</strong> 526 existing webapp claims pulled. By refund_state: Pending 58, Withdrawn 445, Credited 21, Rejected 2. Max case_id pre-run = C1905. Dedupe set built across ALL refund_states per <code>feedback_tt_rr_dedupe_must_check_all_refund_states.md</code> + config.json dedupe_key=<code>order_id</code> (narrowed 27/5 PM3 from <code>shop|case_type|order_id</code>).</div>
+      <div class="field"><strong>Dedupe results:</strong> 46 candidates &rarr; 29 already in webapp (dropped) &rarr; 17 new-after-webapp &rarr; 15 after within-batch dedupe by order_id (2 dropped: 584209738778903852 had 3 R/R cards for same order on Hiranai, kept latest src_ms only). Final NEW POSTs = 15.</div>
+      <div class="field"><strong>NEW POSTs (15, all HTTP 200, before&rarr;after webapp Pending count 58&rarr;73):</strong>
+        <ul>
+          <li>C1906 TT Hiranai R/R RM 2.65 order 584209738778903852 &mdash; Refund complete tiny case</li>
+          <li>C1907 TT Hiranai R/R RM 25.12 order 584227319926523616 &mdash; Refund complete</li>
+          <li>C1908 TT Hiranai FD RM 20.59 order 584154689983907672 status=104 (cancel-but-shipped, tracking 323962103010574524, TRACE-BACK)</li>
+          <li>C1909 TT Hiranai FD RM 22.30 order 583942770791516091 OLD-OID status=104 (cancel-but-shipped, tracking 322778936139550098, TRACE-BACK; surfaced via update_time gate)</li>
+          <li>C1910 TT Jager FD RM 113.52 order 584208079225914463 status=102 (in-transit, tracking 324278719390577571)</li>
+          <li>C1911 TT KarlMobel FD RM 33.40 order 584232912205743943</li>
+          <li>C1912 TT KarlMobel FD RM 318.28 order 584217612991366920 HV (kitchen cabinet)</li>
+          <li><strong>C1913 TT KarlMobel FD RM 633.80 order 584212373267514521 VHV</strong> (Khemah camping 8-12 person tent, 2 rooms)</li>
+          <li>C1914 TT KarlMobel FD RM 13.98 order 584190975089215036 (ground mat)</li>
+          <li><strong>C1915 TT KarlMobel FD RM 648.80 order 584190237952476392 VHV</strong> (Skuter Elektrik 350W &mdash; another scooter loss continuing KarlMobel speedy-refund pattern)</li>
+          <li>C1916 TT MurahYa FD RM 153.94 order 584252258592851641 (roller skates)</li>
+          <li>C1917 TT MurahYa FD RM 266.37 order 584227523757246092 HV (hoverboard 7" LED)</li>
+          <li>C1918 TT MurahYa FD RM 37.29 order 584171064870471207 status=104 (cancel-but-shipped life jacket, TRACE-BACK, tracking 324054902649634973)</li>
+          <li>C1919 TT MurahYa FD RM 13.90 order 584045612021286691 OLD-OID status=104 (cancel-but-shipped pilot cap, TRACE-BACK, tracking 323354191264556829)</li>
+          <li>C1920 TT JagerHelmet R/R RM 131.10 order 584170244085024453 &mdash; Refund complete (helmet)</li>
+        </ul>
+      </div>
+      <div class="field"><strong>By shop:</strong> KarlMobel 5/RM 1,648.26 dominates (54% of value, including 2 VHV scooter+tent). MurahYa 4/RM 471.50. Hiranai 4/RM 70.66. Jager 1/RM 113.52. JagerHelmet 1/RM 131.10.</div>
+      <div class="field"><strong>OLD-OID resurfaces (2 caught via update_time gate):</strong> 583942770791516091 Hiranai (C1909, update_time 30/5) + 584045612021286691 MurahYa (C1919, update_time 30/5) &mdash; both 583xxx-range orders that re-appeared in FD page recently. Carry-over from 30/5 update_time gate fix.</div>
+      <div class="field"><strong>Cancel-but-shipped (4 cases, status=104 + tracking present):</strong> C1908 / C1909 Hiranai + C1918 / C1919 MurahYa &mdash; per skill rule, these are KEPT (not auto-Withdrawn) because the parcel was shipped before the order cancelled. CS must trace back via tracking number. Total RM 94.08 trace-back exposure.</div>
+      <div class="field"><strong>State persisted:</strong> state.json updated with last_run=2026-05-31T13:30 / mode=live / verified_seller_ids for all 13 TT profiles / posted_case_ids C1906-C1920 / posted_value_rm 2435.04 / errors 0 / login_expired_profiles [81,82,83]. Seen[] grew by 15 keys. Run history appended (15 entries total). schedule-log.txt appended.</div>
+      <div class="field"><strong>Carry-overs for follow-up:</strong> (1) Lazada 81/82/83 login_expired 4-day streak &mdash; operator manual relogin needed; (2) WH inspect for the 2 VHV KarlMobel cases (C1913 tent RM 633.80 + C1915 scooter RM 648.80) once parcels return; (3) 4 cancel-but-shipped cases (C1908/C1909/C1918/C1919) need CS trace-back via tracking IDs to locate physical parcels; (4) 0 errors this run, no retry queue.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 15/15 POSTs HTTP 200, RM 2,435.04 logged. Pending count 58&rarr;73. Max case_id C1905&rarr;C1920. ETA next run: tomorrow 09:45 MYT (scheduled).</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-05-31" data-shops="Kinata SG" data-platform="Shopee" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checkkinataorder &mdash; noon scheduled run: 29 TP (S$1,137 incl 2 STALE Day-2 carry); 1 Processed RISK-OF-LATE rlcym courier-handover-fail; 3 R/R DUE IN 4 HOURS S$57.99 forced-refund risk; +1 NEW R/R angelynsee S$19.55; +1 NEWLY-DISCOVERED LOSS linsiqi222 S$9.38 25/5 CS-gap (31/5)</span>
+      <span class="entry-meta">2026-05-31 ~13:05 MYT &middot; profile 70 (k1b44nvg, kmall:patricia) &middot; CDP-direct fallback (MCP unavailable) &middot; TabBadges: To Ship 30 / Shipping 169 / R/R All-8 &middot; To Process sub 29 / Processed sub 1 (RISK) &middot; In-Val 8 (3 due 4hr + 5 due 2d, composition unchanged) &middot; R/R total 595 (+1)</span>
+      <span class="tag">checkkinataorder</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Scheduled noon checkkinataorder on Kinata (kinatasg, Singapore) via AdsPower profile 70 (kmall:patricia) &mdash; prompt referenced <code>k1asxln6</code> reassigned to TT JagerHelmet since 19/5 per <code>reference_kinata_profile_id.md</code>. AdsPower MCP tools NOT loaded this session; CDP-direct via <code>scripts/kinata_cdp_scrape.py</code> over port 50502. Customer Order Time resolved via <code>/api/v3/order/get_one_order?entity_type=1&amp;order_id=&lt;numeric&gt;</code> (verified vs yesterday's 14:49 muruganmuru = exact match). Carry-over from 30/5 PM (16:00 SGT) fully reconciled.</p>
+      <div class="field"><strong>Tab counts (BEFORE &rarr; AFTER snapshot 31/5 noon):</strong> To Ship 4&rarr;30 (+26 overnight); To Process 2&rarr;29 (+27, S$1,137.20 combined); Processed 2&rarr;1 (-1, ryzhiy cancellation approved); Risk-of-Late 0&rarr;1 (rlcym courier-handover Day 3); Shipping 194&rarr;169 (-25 outflow); R/R Total 594&rarr;595 (+1 angelynsee NEW); R/R action panel 9&rarr;8 (ryzhiy Cancellation cleared).</div>
+      <div class="field"><strong>Carry-over status (5 critical):</strong>
+        <br>1) <strong>muruganmuru 260530QXDHVH3T S$24.15</strong> (Dustbin 10L, order 30/05 14:49) &mdash; 🟧 STILL TP Day 2 STALE, ship-by 02/06 23:30 (comfortable but no progress 22h);
+        <br>2) <strong>fauliafaulia758 260530QV2BTRDT S$11.26</strong> (Stripe V-neck, order 30/05 14:07) &mdash; 🟧 STILL TP Day 2 STALE, ship-by 02/06 23:30;
+        <br>3) <strong>rlcym 260529NH4TJJEU S$25.99</strong> Processed &rarr; ⚠️ <em>ESCALATED to RISK-OF-LATE</em> Day 3 (tracking SPXSG061220158775 SPX Express Drop-off, courier never picked up);
+        <br>4) <strong>ryzhiy 260530Q6690F8S S$32.84</strong> Cancellation &rarr; ✅ APPROVED-by-you 30/05 (no-loss, expected);
+        <br>5) <strong>radhakuppuswami 260506PAM2D3V6 S$78.49 HV</strong> &rarr; ❓ off page 1 (likely auto-closing seller-favor, wallet-clawback watch).</div>
+      <div class="field"><strong>🚨 In-Validation 8 (composition UNCHANGED from yesterday PM, Day 4 for the 31/5 trio):</strong>
+        <br>DUE IN 4 HOURS (Day 4, deadline ~17:00 SGT 31/05): bhumikadadbhawala 260517K135G2P5 S$12.09 Snuffle Mat / joswen89 260520TH1UHVKH S$31.87 Joycon-wrong-item / haiyato 2605211APVF4AH S$13.03 Sleeping Bag &mdash; <strong>combined S$57.99 at imminent risk of forced refund.</strong>
+        <br>Due in 2 days (Day 3, 01/06): jinnyong22 260518QTB2Q79N S$14.99 / nanaajmeer 260520U5QNSKQT S$25.74 / onedoc88 2605248DWMM2S4 S$14.56 / rix5cs__lm 260506PRKY4HCP S$10.99 / annahuang_11 2605223W5A7C9W S$25.99 &mdash; combined S$92.27 at risk.</div>
+      <div class="field"><strong>🆕 NEW R/R since 30/5 PM (1 case):</strong> angelynsee 260527F3JMWX7Y S$19.55 (Request 2605300RQCF3BCG opened 30/05 ~14:00 SGT). Dustbin Round 12L C.Gold "sealed". In Return &mdash; Offer Partial / Full / Wait For Return. Delivered 29/5. <em>Actionable today.</em></div>
+      <div class="field"><strong>🚨 NEWLY-DISCOVERED LOSS (was missed in prior reports):</strong> linsiqi222 26052367DGM3Y6 S$9.38 (Laptop Sleeve Navy 15/16in). Refund-Only "Seller did not arrange shipment on time", auto-refunded 25/05. <strong>May seller-fault cumulative updated S$38.76 &rarr; S$48.14 (+S$9.38).</strong> Not in 25-30/5 reports; surfaced on page 1 today.</div>
+      <div class="field"><strong>Monitor R/R (Pick-Up-Done, dispute windows opening 02/06&ndash;05/06):</strong> joetjp 26052490K7PQA1 S$26.90 / olj8i1v_if 2605249Q0DUHXH S$9.48 / unava78 260525AXHGCSB3 S$22.82 / tohhongshiang 260526DFMHHEFR S$20.99 / tqst2qold8 260526DXGW508F S$8.37 / atqhdx 260509V07C448P S$10.19 / emnlhji45d 260526EP6JBV8A S$15.70. Plus carry HV cases: angxiangwei 260525AVRHVKG4 S$79.71 (offer-partial Day 2) / simplyskillslab 260515E40UJHSD S$43.50 (buyer-return by 04/06) / radhakuppuswami HV S$78.49 (wallet watch). Total ~S$236.73.</div>
+      <div class="field"><strong>Khaki OS Day 14:</strong> <code>WOMEN-LONG-SLEEVE-KNIT-SWEATER-KHAKI-OS-SG</code> &mdash; no new jesslyneaxinjie cancellations on R/R page 1. Cumulative S$50.86 unchanged. Warehouse must mark OOS. REPEAT.</div>
+      <div class="field"><strong>Shop:</strong> Kinata (kinatasg, Singapore) &middot; <strong>Platform:</strong> Shopee SG &middot; <strong>Reason:</strong> scheduled daily order &amp; R/R audit per <code>checkkinataorder</code> skill. AdsPower MCP unavailable so CDP-direct websocket fallback used (kernel chrome_146, port 50502). WhatsApp send SKIPPED per task instruction (QR-blocker). No DB writes / no PATCHes &mdash; read-only audit.</div>
+      <div class="field"><strong>Files touched:</strong> <code>Documents/kinata-reports/kinata-report-2026-05-31.md</code> (saved) &middot; <code>scripts/_kinata_31may_*.{py,json,txt}</code> (transient CDP working files) &middot; AdsPower browser stopped post-run (<code>/api/v1/browser/stop?user_id=k1b44nvg</code> success).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; full To Process / Processed / R/R / Khaki OS coverage; 0 DB writes; 5 priority action items raised (P0=3 in-val due 4hr, P1=angxiangwei HV decide, P2=rlcym courier-fix, P3=2 STALE TP ship, P4=27 fresh TP ship). Carry-over fully reconciled; muruganmuru+fauliafaulia758 flagged STALE Day 2 but still within ship-by; radhakuppuswami HV moved to off-page-1 wallet-watch.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-05-31" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked unchanged, 0 new orders, 0 To Ship, 0 Shipping &mdash; ALL CLEAR (31/5)</span>
+      <span class="entry-meta">2026-05-31 09:00 MYT &middot; profile 70 kmall:patricia &middot; 27 MY shops &middot; 18 SG ShopeeMY &middot; gap 9 (since 13/5) &middot; KEDAI GARDEN 260528JYMYAT3N stays Cancelled &middot; AdsPower MCP unavailable, raw CDP fallback used</span>
+      <span class="tag">sg-gap-monitor</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily 09:00 MYT SiteGiant integration-gap audit. Re-diffed Shopee MY shop list (27) vs SiteGiant ShopeeMY channel list (18). Gap unchanged at 9 since 13/5 baseline. Per-shop 3-tab scan (all/toship/shipping) on all 9 unlinked shops via get_sig sub-shop context switch. 0 new orders since 30/5 run; 0 shops with To Ship&gt;0; 0 shops with Shipping&gt;0. No stock-desync risk this cycle.</p>
+      <div class="field"><strong>Shopee MY shops total:</strong> 27 (unchanged vs 30/5). Captured via /api/selleraccount/subaccount/get_shop_list/ on profile 70. Page 2 cursor fetch returned code=0 with empty shops array (signed-paginator quirk; both as-is and search_content-stripped variants failed). Workaround: replayed page 1 with page_size=50 in URL &rarr; all 27 MY shops in one fetch.</div>
+      <div class="field"><strong>SiteGiant ShopeeMY channels total:</strong> 18 (unchanged vs 30/5). DOM-scraped sitegiant.co/marketplaces/shopee/all. List: AdelmarMY, BahEmas, BidariMu, das.nature, das.nature2, EmasGift, EncikPlastic, Hiranai, JagerHelmet, KarlMobel, Lenza_Eyewear, Lovento, Luxbiin, MasonGym, Murahya, SecretRacer, ValueSnap, WilmerMobel.</div>
+      <div class="field"><strong>Gap (9 unlinked, unchanged):</strong> Chairsy (chairsy 429078278), dutchgaming (dutch_gaming 503721641), Flashree (flashree 738554401), Solaree (solaree2024 1156025778), Gameniture (gameniture 373454740), Atlusrack (atlusrack 336726327), Stationarylah (stationarylah 321734518), KEDAI GARDEN (garden.mall 289957447), FynnKoffer (fynnkoffer 214632596).</div>
+      <div class="field"><strong>Per-shop scan (latest_id &rarr; unchanged vs 30/5):</strong> Solaree 240718V5H3A1KA / Flashree 2409031DJJWV7T / dutchgaming (none, 0 orders ever) / Chairsy 260211F1FRUFAH / Gameniture (none, 0 orders ever) / Atlusrack 260214NUX1Y8BX / Stationarylah 260414QW1M81CQ / KEDAI GARDEN 260528JYMYAT3N / FynnKoffer 260307GC8213CQ. All 9 To Ship = 0 and Shipping = 0 (verified noOrders=true on direct toship+shipping tab scans per 29/5 HARD lesson).</div>
+      <div class="field"><strong>PHASE 4.5 (KEDAI GARDEN):</strong> latest 260528JYMYAT3N unchanged. Yesterday's overnight (29/5&rarr;30/5) auto-Cancelled state holds; To Ship = 0, Shipping = 0. No stock movement; no manual SiteGiant decrement needed. No new kedaibarutmama2 + Pink Plastic Flower Pot Hanger pattern this cycle.</div>
+      <div class="field"><strong>Newly-linked shops detected:</strong> 0. PIC has not integrated any of the 9 unlinked shops since 13/5 baseline.</div>
+      <div class="field"><strong>Active stock-desync risk RIGHT NOW:</strong> NONE. Every unlinked shop has To Ship = 0 AND Shipping = 0.</div>
+      <div class="field"><strong>State.json update:</strong> path C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json. Write tool perm-gated; fell back to inline Python io.open via Bash per feedback_board_write_python_bypass.md. Updated lastRunTime 2026-05-30T09:00 &rarr; 2026-05-31T09:00; lastSeenOrderId map unchanged (all 9 shops); perShop_2026_05_31 snapshot recorded for all 9 shops.</div>
+      <div class="field"><strong>Environment / fallbacks:</strong> AdsPower MCP server not registered this session. Profile 70 already active on debug port 50502 from prior task; reused via raw CDP fallback per skill CDP FALLBACK section. No SSL cert blocker. Both Shopee SC (SPC_F cookie present) and SiteGiant logged in throughout. get_sig code=0 for all 9 unlinked shops.</div>
+      <div class="field"><strong>Reason / trigger:</strong> Scheduled daily 09:00 MYT audit (sg-gap-monitor.bat). Read-only audit; no Shopee/SiteGiant/webapp writes.</div>
+      <div class="field"><strong>Files touched:</strong> C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-05-31.md (report); C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json (snapshot). Helper scripts: C:\Users\tessf\sg_gap_phase1_v3.py, sg_gap_phase3.py, sg_gap_phase4.py, sg_gap_phase4b.py.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; clean run; gap stable at 9; 0 new activity; 0 active stock-desync risk; state.json + board + report all updated.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-05-31" data-shops="TT KarlMobel, TT MurahYa, TT Adelmar, TT JagerSafety, TT Valuesnap, TT Hiranai, TT DasNature, TT Jager, TT HiranaiMY, Lazada MurahYa" data-platform="TikTok+Lazada" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">tiktokrraudit &mdash; Sun read-only audit (no AdsPower MCP); 526 cases / 58 Pending RM 14,762.60 / 2 stale dups C1903+C1905 Mon cleanup (31/5)</span>
+      <span class="entry-meta">2026-05-31 MYT &middot; profile 70 webapp live read &middot; AdsPower MCP unavailable &middot; webapp_api_call PATCH body broken HTTP 400 &middot; 0 PATCHes possible &middot; 9 carry-overs verdict-watch Mon 1/6</span>
+      <span class="tag">tiktokrraudit</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Sunday autonomous read-only audit. Live webapp baseline pull confirmed 30/5 EOD state. AdsPower MCP not loaded; webapp_api_call PATCH body broken (HTTP 400); webapp_update_claim/trace_claim Shopee MY only. TT support closed Sundays so verdict watches deferred to Mon anyway. No PATCHes performed; Mon 1/6 P0-P2 handoff captured.</p>
+      <div class="field"><strong>Baseline (live API):</strong> 526 cases / max_id 1905 / Pending 58 = RM 14,762.60. TT KarlMobel dominates 25 cases / RM 9,866.15 (67%). Real-loss exposure within Pending ~RM 1,097.22 only (C1697 PayLater + C1860 IB). Rest near-zero (COD auto-cancels + LV/MV auto-withdraw + already-banked tickets).</div>
+      <div class="field"><strong>30/5 EOD verification:</strong> all 16 bot POSTs C1882-C1897 present. 2 STALE Pendings to clean Mon: C1903 OID 584234967927260642 Valuesnap RM 27.08 (canonical C1895 Withdrawn) + C1905 OID 584071629474203511 Valuesnap RM 21.29 (canonical C1897 Withdrawn). LV auto-withdraw band.</div>
+      <div class="field"><strong>9 FOLLOW-UP carry-overs:</strong> C1366 KarlMobel 583381706383197812 RM 608.61 (Ticket Day 30+) &middot; C1417 JagerSafety 583847713187529896 RM 213.60 (Reimbursement 48h ETA expired - escalate Mon) &middot; C1663 KarlMobel 583860299630085502 RM 51.70 (Ticket Day 9+) &middot; C1697 KarlMobel 584032042943088478 RM 351.07 (PayLater - POD-invalid trigger Mon) &middot; C1776 KarlMobel 584046495792333923 RM 247.10 (Ticket CLOSED 28/5 - extract verdict Mon) &middot; C1842 KarlMobel 584170337577305483 RM 739.66 (COD canceled) &middot; C1850 KarlMobel 584041773501547868 RM 879.70 (COD + Ticket Mon) &middot; C1860 KarlMobel 584150406283166781 RM 746.15 (IB exposure - WH inspect on return) &middot; C1876 KarlMobel 584178194745755036 RM 847.70 (COD canceled).</div>
+      <div class="field"><strong>FD sweep:</strong> &gt;7d stuck: C1697 Day 11 + C1772 RM 15.19 Day 12 LV + C1790 RM 25.22 Day 12 LV + C1685 RM 8.19 Day 13+ Request-closed (retro candidate). Delivered-back-not-inspected: C1697 + 4 COD scooters (RM 3,213.21).</div>
+      <div class="field"><strong>Pattern alert:</strong> KarlMobel COD VHV pattern continues (C1842/C1876/C1899/C1891 = 4 VHV COD-canceled 1 week, all logistics). Logistics-vendor reliability review suggested.</div>
+      <div class="field"><strong>Mon 1/6 P0:</strong> (1) PATCH C1903+C1905 Withdrawn (2) C1697 POD-invalid trigger if WH not received (3) C1417 escalate TT AM if no verdict (4) C1776 open Ticket detail-view extract verdict (5) C1850 check Ticket first response (6) C1860 WH inspect on return (7) Lazada 81/82/83 manual relogin (4-day carry-over).</div>
+      <div class="field"><strong>Constraints:</strong> webapp_api_call PATCH body broken per feedback_webapp_sg_patch_endpoint (MCP wrapper bug, AdsPower browser fetch is the workaround). webapp_update_claim Shopee MY only. webapp_trace_claim Shopee MY only. No TT-side verification possible without AdsPower (Ticket Log, order-detail, state flips, audit-trail PATCHes all blocked).</div>
+      <div class="field"><strong>Files touched:</strong> Documents/tiktokrraudit-reports/tiktokrraudit-report-2026-05-31.md perm-gated (Write blocked, Python heredoc failed parser timeout); findings carried in this board entry. No webapp PATCHes. Live API GET only.</div>
+      <div class="field"><strong>CROSSCHECK (tiktokrrauditcheck pass, second webapp pull at audit close):</strong> CONFIRMED 58 Pending cases stable (no overnight TT-side intervention). CONFIRMED 9 carry-overs still Pending: C1366 RM 608.61 / C1417 RM 213.60 / C1663 RM 51.70 / C1697 RM 351.07 / C1776 RM 247.10 / C1842 RM 739.66 / C1850 RM 879.70 / C1860 RM 746.15 / C1876 RM 847.70. CONFIRMED 2 stale Pendings C1903 RM 27.08 + C1905 RM 21.29 unchanged. CONFIRMED dedupe-by-OID intact: C1895/C1897 Withdrawn (canonical for C1903/C1905 same OID) / C1891 Pending + C1899 Withdrawn same OID 583800873078720509 RM 674.75. 0 RECLASSIFIED / 0 RETRACTED / 0 DISCREPANCY. Verdict: audit findings stable and consistent across both pulls; Mon 1/6 action list valid.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; weekend read-only audit complete; live baseline confirmed 526 cases / 58 Pending; 2 stale dups + 9 carry-over Mon triggers documented; 0 PATCHes; 0 failures; 0 changes to webapp state. Crosscheck: own findings re-validated against live API on second pull, dedupe-by-OID rule satisfied, no double-counting.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-31" data-shops="KarlMobel, Murahya, das.nature, das.nature2, Hiranai, MasonGym, ValueSnap, Kinata SG, TT Hiranai, TT Murahya, Laz MurahYa" data-platform="Shopee MY+SG+TikTok+Lazada" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
