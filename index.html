@@ -577,6 +577,43 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-05-31" data-shops="MurahYa, TT KarlMobel" data-platform="Shopee MY+TikTok" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck &mdash; 3 pass / 1 mismatch / 0 manual (31/5)</span>
+      <span class="entry-meta">2026-05-31 MYT &middot; profile 70 (k1b44nvg, kmall:patricia) &middot; manual run via Claude Code (10AM scheduled task path) &middot; total API 2,159 / shipped 1,817 / today-newly-added 0 / out-of-window 338 / in-scope 4 &middot; carry-over 1 graduated via shipment, 0 dark&rarr;lit flips, 1 new dark</span>
+      <span class="tag">parcelsplit-contact-crosscheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Daily parcel-split contact-icon crosscheck against <code>/api/parcel-split</code> on the webapp employee dashboard. Window = 2026-05-24 00:00 MYT &le; date &lt; 2026-05-31 00:00 MYT (7-day carry-over; skip today&apos;s newly-added). Decision logic: <code>isContacted=true</code> &rarr; PASS (lit-system-record); <code>isContacted=false + phone present</code> or <code>+ csNotes phone-ask regex</code> &rarr; MISMATCH; else dark-clean PASS. Read-only audit; no customer-facing messages.</p>
+      <div class="field"><strong>Totals:</strong> totalApi=2,159 &middot; shipped=1,817 &middot; skippedTodayNewlyAdded=0 &middot; outOfWindow=338 &middot; inScope=4 &middot; PASS=3 &middot; MISMATCH=1 &middot; needManualCheck=0.</div>
+      <div class="field"><strong>PASS (3 &mdash; all lit-system-record):</strong>
+        <ul>
+          <li>260530QF8B667X &mdash; MurahYa Shopee MY &mdash; 30/05 20:30 &mdash; isContacted=true, phones=0 (new, bot already flipped).</li>
+          <li>260529NGUJXB72 &mdash; MurahYa Shopee MY &mdash; 30/05 20:30 &mdash; isContacted=true, phones=0 (new, bot already flipped).</li>
+          <li>260527G9FGMFBR &mdash; MurahYa Shopee MY &mdash; 28/05 18:31 &mdash; isContacted=true, phones=0 (carry-over PASS, unchanged).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>MISMATCH (1 &mdash; CS-manual gap, expected per TT routing):</strong>
+        <ul>
+          <li>584204748229805423 &mdash; TT KarlMobel TikTok &mdash; 27/05 00:14 &mdash; isContacted=false, phones=1, csNotes empty. TT has no Shopee MY auto-contact bot &mdash; per checksbvariation skill, TT/SG/Laz route to CS manual action. Same case was in 30/5&apos;s shippedAndGraduated list &mdash; reverted to unshipped today (possible label re-issue / buyer re-cancel). Action: CS manual follow-up; re-evaluate Mon 02/6.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Carry-over deltas since 30/5:</strong>
+        <ul>
+          <li>Shipped &amp; graduated: 1 case (260528K5E1KXJB KarlMobel).</li>
+          <li>isContacted false&rarr;true flips: 0.</li>
+          <li>New dark cases appeared: 1 (584204748229805423 &mdash; re-entered scope from prior graduated, see MISMATCH above).</li>
+          <li>Carried-over unchanged: 1 (260527G9FGMFBR PASS&rarr;PASS).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>DOM sanity:</strong> 23 rows visible on /customer-service/parcel-split, sampled top 20. All 4 target order IDs verified present on page. Row order matches API (newest first). No icon/state contradictions.</div>
+      <div class="field"><strong>Reason:</strong> 10AM ParcelSplitCrosscheck_1000AM scheduled task path &mdash; manual invocation via Claude Code per CLAUDE.md rule (skill #24). AdsPower profile 70 launched cleanly; no SSL cert blocker today; one CDP attempt navigated to parcel-split URL on first try.</div>
+      <div class="field"><strong>Files touched:</strong> C:/Users/tessf/.claude/skills/parcelsplit-contact-crosscheck/state.json (snapshot updated 30/5 manual &rarr; 31/5 manual; totals/evaluatedCases/skippedTodayCases/carryOverFlipsSincePriorRun all refreshed); C:/Users/tessf/Documents/parcelsplit-reports/parcelsplit-report-2026-05-31.md (new report saved).</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; 3 PASS confirmed, 1 MISMATCH flagged for CS manual action (TT case, expected routing), 0 unresolved.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-05-30" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
