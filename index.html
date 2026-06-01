@@ -577,6 +577,38 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-01" data-shops="Murahya, MurahYa SG, KarlMobel, ValueSnap, Kinata SG, das.nature2, das.nature, MasonGym, Hiranai, TT Murahya, TT Hiranai, TT DasNature" data-platform="Shopee MY + Shopee SG + TikTok + Lazada" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation &mdash; 201 cases / 18 recent open / 0 PATCHes / 3 NEW since 31/5 AM (1/6)</span>
+    <span class="entry-meta">2026-06-01 11:00 MYT &middot; AdsPower-less direct API mode (webapp_api_call) &middot; quiet Sun: 0 state changes on 20 carry-overs &middot; 13/13 20/5 PATCHes intact (12d) &middot; 1 NEW SG ParseFail 101116 needs CS manual</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Sunday AM read-only audit via direct API. Fetched /api/sb-variation (HTTP 200, 201 cases, 235KB JSON read in 155-line chunks via subagent). Classified all cases per A-J ladder. Verified all 20 carry-over IDs from 31/5 AM approvals_pending &mdash; ZERO state changes overnight (TT/Shopee quiet Sat night &rarr; Sun AM). Confirmed all 13 20/5 PATCH stockIds (SA-18247/18248/18249/18180/18181/18255/18257/18258) still intact across 12 days. No PATCHes / no WhatsApp / no Jira this run per user mandate (APPROVAL REQUIRED-only mode).</p>
+    <div class="field"><strong>NEW since 31/5 AM (3 cases):</strong>
+      <ul>
+        <li>101118 Murahya 260531T8VV5V9G Shopee MY &mdash; Cat A BOT_OK (Offer Change DMA-WHITE-1000ML &rarr; DMA-BLACK-1000ML; contactSent=true; stockSetOos=true; shipBy 31/5 PAST). Monitor only.</li>
+        <li>101117 Murahya 260530QYVRH4K3 Shopee MY &mdash; Cat A BOT_OK (No Stock RICE-DISPENSER-L-GRN-5KG; contactSent=true; stockSetOos=true; shipBy 31/5 PAST). Monitor only.</li>
+        <li>101116 MurahYa SG 260529NR0YCXVH Shopee SG &mdash; Cat B ParseFail (sku=[] pn=null suggSkus=SGREEN1.3L); contactSent=false; stockSetOos=false; shipBy 31/5 PAST. <strong>APPROVAL REQUIRED</strong> CS5 manual SHOPEE_SG_NO_STOCK send.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Carry-over status (20 IDs from 31/5 AM):</strong> 0 changed overnight (101115 still A-BOT-OK / 101113 still I-only / 101112 still B-SG / 101114 still F-pending / 101110 still B+I / 101102 still 3.7d Sofia-sent post-auto-cancel-deadline / 101106 still J-Invalid / 101065+101071 TT-stale 12.0d+10.4d / 101049+101050+101060 stuck stale 14.0d/13.5d/11.8d / 101099+101079+101074+101073 F-backfill 5.5d-10.7d / 101105 Accept-Change message-sent / 101103 alt RED awaiting WH-can-pack / 101084 user-closed).</div>
+    <div class="field"><strong>Watchlist:</strong> WL-HCS-SILVER-TYPE-B (101031) + WL-CTP-SVER-2.3M-2PC-BG (101038) confirmed RETIRED &mdash; both bd=Cancelled + full closure csRemarks per 21/5 verification. Dropping from active watchlist.</div>
+    <div class="field"><strong>20/5 PATCH integrity (12-day check):</strong> 13/13 intact &mdash; sa values + stockIds + csRemarks all preserved on 100960 / 100972 / 101044 / 101045 / 101018 / 101020 / 101042 / 101036 / 101041 / 101047 / 101039 / 101033 / 101056. Zero drift.</div>
+    <div class="field"><strong>Bucket counts (open / non-terminal):</strong>
+      <ul>
+        <li>Total open: ~140 (~115 MY / ~15 TT / ~6 SG / ~4 Laz)</li>
+        <li>Recent &le;5d: 18 (11 MY / 1 TT / 3 SG / 2 Laz / 1 borderline)</li>
+        <li>Stale &gt;5d: ~44 (~28 A-BOT_OK awaiting buyer / ~6 B-ParseFail TT+SG+Laz / 4 C-Accept-Change pending / ~5 F-Cancelled-closure-backfill / 1 I-only)</li>
+      </ul>
+    </div>
+    <div class="field"><strong>state.json:</strong> updated &mdash; lastRunId 2026-05-31-AM &rarr; 2026-06-01-AM; lastCaseId 101115 &rarr; 101118; total 202 &rarr; 201; newSinceLastRun 4 &rarr; 3; approvals_pending list refreshed with 22 entries; p0_carry_over_for_02jun list updated (19 IDs).</div>
+    <div class="field"><strong>Reason:</strong> Daily 09:30 MYT Task Scheduler audit ran via dynamic-mode prompt. Direct API mode skips AdsPower entirely &mdash; same pattern as 31/5 since webapp_api_call is reliable read-only path.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 201 cases classified, 0 state changes on 20 carry-overs, 13/13 20/5 PATCHes intact, 3 NEW logged (1 needs CS manual on SG side), report saved to sbvariation-report-2026-06-01.md, state.json updated, no PATCHes/WhatsApp/Jira executed (approval-only).</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-01" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
