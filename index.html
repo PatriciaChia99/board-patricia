@@ -577,28 +577,35 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
-<div class="entry" data-date="2026-05-31" data-shops="N/A (infrastructure)" data-platform="Task Scheduler" data-result="ok">
+<div class="entry" data-date="2026-06-01" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">scheduled-runs-fix &mdash; evening rerun orchestrator finished (134m, 5 tasks) (31/5)</span>
-    <span class="entry-meta">2026-05-31 21:59 MYT &middot; 5 tasks sequenced &middot; ntfy push sent to awesomeree-patricia-ops-7h3k9q</span>
-    <span class="tag">scheduled-runs-fix</span>
+    <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked unchanged, 0 with new activity, 0 actively shipping (1/6)</span>
+    <span class="entry-meta">2026-06-01 09:00 MYT &middot; 27 MY shops vs 18 SiteGiant ShopeeMY channels &middot; gap = 9 (baseline) &middot; ALL CLEAR for stock-desync</span>
+    <span class="tag">sg-gap-monitor</span>
     <span class="tag result-ok">Completed</span>
   </div>
   <div class="entry-body">
-    <p><strong>Brief:</strong> Orchestrator ran all 5 failed tasks the user authorised this evening, sequentially to avoid AdsPower profile contention. Per-task results below. Deep entries are written by each task individually (separate board entries).</p>
-    <div class="field"><strong>Sequence + results:</strong>
+    <p><strong>Brief:</strong> Sunday clean run. Profile 70 launched cleanly via AdsPower MCP (no SSL cert blocker today). Shopee MY 27 shops scraped from DOM (signed get_shop_list URL was one-time-consume, replays returned shops=null; XHR interceptor confirmed page re-fetches with stale search_content=kmall:patricia all returned count=0). SiteGiant ShopeeMY 18 channels scraped via DOM. Gap diff = 9 unchanged since 13/5 baseline. All 9 unlinked shops scanned with full 3-tab (all/toship/shipping) via get_sig shop-switch endpoint (code=0+url succeeded all 9 first try).</p>
+    <div class="field"><strong>Per-shop latest OID + counts (all unchanged vs 31/5 baseline):</strong>
       <ul>
-        <li>1/5 Codex_CSRR_Holiday_1030: OK</li>
-        <li>2/5 Codex_SBVariation_Holiday_0930 (backup): OK</li>
-        <li>3/5 ParcelClaimAuto_945AM (re-sweep): TIMEOUT</li>
-        <li>4/5 TT_RR_Audit_10_15AM (priority + tiktokrrauditcheck crosscheck): rc=255</li>
-        <li>5/5 TTRatingCheck_5PM: rc=1</li>
+        <li>Solaree: 240718V5H3A1KA Completed (18/07/2024) &middot; all=6 &middot; toship=0 &middot; shipping=0</li>
+        <li>Flashree: 2409031DJJWV7T Completed (03/09/2024) &middot; all=3 &middot; toship=0 &middot; shipping=0</li>
+        <li>dutchgaming: (no orders) &middot; all=0 &middot; toship=0 &middot; shipping=0</li>
+        <li>Gameniture: (no orders) &middot; all=0 &middot; toship=0 &middot; shipping=0</li>
+        <li>Atlusrack: 260214NUX1Y8BX Cancelled (14/02/2026) &middot; all=2 &middot; toship=0 &middot; shipping=0</li>
+        <li>Stationarylah: 260414QW1M81CQ Cancelled (14/04/2026) &middot; all=18 &middot; toship=0 &middot; shipping=0</li>
+        <li>KEDAI GARDEN: 260528JYMYAT3N auto-Cancelled (28/5) &middot; all=5 &middot; toship=0 &middot; shipping=0 (PHASE 4.5 monitor-only)</li>
+        <li>Chairsy: 260211F1FRUFAH Completed (11/02/2026) &middot; all=1 &middot; toship=0 &middot; shipping=0</li>
+        <li>FynnKoffer: 260307GC8213CQ Completed (07/03/2026) &middot; all=1 &middot; toship=0 &middot; shipping=0</li>
       </ul>
     </div>
-    <div class="field"><strong>Orchestrator log:</strong> C:\Users\tessf\Documents\orchestrator-31may-reruns.log</div>
-    <div class="field"><strong>Tomorrow 1/6 reliability:</strong> AdsPowerWatchdog 08:50 self-heal &middot; Codex Holiday triggers 09:30 + 10:30 with patched scripts &middot; weekday bats (chataudit/sbvar/parcelclaim/parcelsplit/tt_rr/sg-gap/ttrating) unchanged.</div>
-    <div class="field"><strong>Result:</strong> ok &mdash; orchestrator completed, ntfy delivered.</div>
+    <div class="field"><strong>Active stock-desync risk RIGHT NOW:</strong> NONE. 0 shops with To Ship&gt;0. 0 shops with Shipping&gt;0. No manual SiteGiant decrement required.</div>
+    <div class="field"><strong>New orders since 31/5:</strong> NONE. Every shop's latestOID matches yesterday's snapshot exactly.</div>
+    <div class="field"><strong>Newly-linked shops:</strong> NONE. PIC has not integrated any of the 9 gap shops since 13/5 baseline.</div>
+    <div class="field"><strong>Why each change:</strong> Daily scheduled audit (09:00 MYT). Read-only — no Shopee/SiteGiant/webapp writes, no customer messages.</div>
+    <div class="field"><strong>Files touched:</strong> C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-06-01.md (report); C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json (snapshot, written via Python bypass per feedback_board_write_python_bypass after Write tool perm gate fired).</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; clean run, 9 unlinked re-verified, 0 new activity, 0 stock-desync risk, state.json persisted via Python fallback.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-05-31" data-shops="N/A (infrastructure)" data-platform="Task Scheduler + Codex CLI" data-result="ok">
@@ -643,7 +650,17 @@ header.page::after{
         <li>3-day Holiday triggers cover 30/5 + 31/5 + 1/6 (Wesak/Hari Raya); tasks expire 2/6 onwards &mdash; user will need to re-set if next public holiday block needs them.</li>
       </ul>
     </div>
-    <div class="field"><strong>Result:</strong> ok &mdash; 2 .ps1 scripts patched &middot; smoke test passed &middot; CSRR Holiday rerun in-flight &middot; tomorrow's Holiday triggers safe.</div>
+    <div class="field"><strong>Later (21:59 MYT) &mdash; orchestrator finished (134m, 5 tasks sequenced to avoid AdsPower profile contention):</strong>
+      <ul>
+        <li>1/5 Codex_CSRR_Holiday_1030: OK</li>
+        <li>2/5 Codex_SBVariation_Holiday_0930 (backup): OK</li>
+        <li>3/5 ParcelClaimAuto_945AM (re-sweep): TIMEOUT</li>
+        <li>4/5 TT_RR_Audit_10_15AM (priority + tiktokrrauditcheck crosscheck): rc=255</li>
+        <li>5/5 TTRatingCheck_5PM: rc=1</li>
+      </ul>
+      <p>Orchestrator log: <code>C:\Users\tessf\Documents\orchestrator-31may-reruns.log</code>. ntfy push delivered to <code>awesomeree-patricia-ops-7h3k9q</code>. Deep per-task entries written by each task individually.</p>
+    </div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 2 .ps1 scripts patched &middot; smoke test passed &middot; CSRR Holiday rerun completed via orchestrator &middot; tomorrow's Holiday triggers safe.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-05-31" data-shops="MY:MurahYa, KarlMobel, Hiranai, ValueSnap, MasonGym, Luxbin, das.nature2, Emas Gift, Adelmar; SG:KarlMobel SG, MurahYa SG, Emasgift SG, DasNatureSG2, Kinata SG" data-platform="Shopee MY + Shopee SG + internal" data-result="ok">
