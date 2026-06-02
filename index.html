@@ -577,6 +577,40 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-02" data-shops="MasonGym, MurahYa SG, TT Murahya, ValueSnap, Kinata SG, das.nature, TT KarlMobel, TT JagerHelmet, TT Jager" data-platform="SB Variation + SiteGiant + Shopee MY + Shopee SG + TikTok MY" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation closeout - 2026-06-02 SB messages + SG stock cleanup + New Ship By rule saved</span>
+    <span class="entry-meta">2026-06-02 21:30 MYT &middot; live SB/SiteGiant crosscheck &middot; session saved for 2026-06-03 continuation</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Task:</strong> End-session crosscheck for 2026-06-02 checksbvariation work, save local closeout and tomorrow continuation prompt, correct any stale SB audit details, and log the result to Patricia board.</p>
+    <div class="field"><strong>Saved files:</strong> <code>C:\Users\tessf\.codex\memories\checksbvariation-2026-06-02-session-closeout.md</code>, <code>C:\Users\tessf\.codex\memories\checksbvariation-2026-06-03-continuation-prompt.md</code>, and appended <code>C:\Users\tessf\.codex\memories\checksbvariation-2026-06-02-manual-run.md</code>.</div>
+    <div class="field"><strong>Closeout corrections made:</strong>
+      <ul>
+        <li><code>260530RAEVYFNB</code> / MasonGym / Shopee MY / <code>ELASTIC-GYM-BAND-PURPLE</code>: SB row 101126 remark count <code>1 -&gt; 2</code>. Before latest remark said GREEN remained OOS after <code>SA-18691</code>; after appended correction says GREEN final <code>1/1/0/0 Available</code>, BLUE <code>0/0/0/0 Out Of Stock</code>, PURPLE <code>20/20/0/0 Available</code>. Reason: prior 18:06 note was superseded by user correction and live SiteGiant state. Result: SB PATCH 200.</li>
+        <li><code>260529NR0YCXVH</code> / MurahYa SG / Shopee SG / <code>PINK1.3L</code>: SB row 101116 remark count <code>1 -&gt; 2</code>. Before remark only showed <code>SGREEN1.3L</code>; after appended PINK status-cleanup audit: SiteGiant item 2083847 final <code>0/0/0/0 Out Of Stock</code>, quantity already zero, no stock adjustment ID needed. Result: SB PATCH 200.</li>
+        <li><code>260526DSV67DUA</code> / das.nature / Shopee MY / affected <code>LANTERN-RECHARG-GERN</code>, accepted <code>LANTERN-RECHARG-RED</code>: SB row 101103 changed WH <code>["Pending WH Confirm"] -&gt; ["WH Confirmed Can Pack"]</code> and stock <code>["Not Adjusted"] -&gt; ["Adjusted"]</code>; <code>stockId=["SA-18549"]</code> retained. Reason: buyerDecision Accept Change plus New Ship By <code>2026-05-30</code> triggers the saved New Ship By rule. Result: SB PATCH 200.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Final live SiteGiant verification:</strong> <code>PINK1.3L</code> 0/0/0/0 OOS; <code>ELASTIC-GYM-BAND-PURPLE</code> 20/20/0/0 Available; <code>ELASTIC-GYM-BAND-GREEN</code> 1/1/0/0 Available; <code>ELASTIC-GYM-BAND-BLUE</code> 0/0/0/0 OOS; <code>CWS-3F-BLACK-UPGRADE</code> 0/0/0/0 OOS; <code>KIDS-CAMERA-MOUSE-BLUE</code> 0/0/0/0 OOS; <code>WEDDING-ARCH-STAND-BLK-SG</code> 0/0/0/0 Available.</div>
+    <div class="field"><strong>Buyer-message results this session:</strong> sent and verified for <code>584290386131191532</code>, <code>584289378026947871</code>, <code>584302241772700949</code>, <code>584290378621355412</code>, <code>260529NR0YCXVH</code>, <code>584293453047301411</code>, <code>584281402577355776</code>, and <code>260530RMX4T0F1</code>. Cancelled/no-message cleanup done for <code>584299123686671505</code> and <code>260529NH4TJJEU</code>.</div>
+    <div class="field"><strong>SiteGiant stock/status changes already completed:</strong> <code>PINK1.3L</code> status Available -&gt; OOS; <code>ELASTIC-GYM-BAND-PURPLE</code> OOS -&gt; Available; <code>CWS-3F-BLACK-UPGRADE</code> reserved 1 -&gt; 0 then <code>SA-18691</code> -1 final 0/0/0/0 OOS; <code>KIDS-CAMERA-MOUSE-BLUE</code> <code>SA-18691</code> -2 final 0/0/0/0 OOS; <code>ELASTIC-GYM-BAND-GREEN</code> <code>SA-18691</code> -1 final 1/1/0/0 then status OOS -&gt; Available.</div>
+    <div class="field"><strong>Skill/test result:</strong> <code>.agents/skills/checksbvariation/SKILL.md</code> updated with the New Ship By accepted-change rule. <code>npm test</code> passed after the skill edit.</div>
+    <div class="field"><strong>Outstanding for 2026-06-03:</strong>
+      <ul>
+        <li><code>260530RMX4T0F1</code> / Kinata SG / Shopee SG / sleeping bag: buyer message sent; SB contactSent true; prior evidence says SiteGiant 0/0/0/0 but status Available. Re-resolve exact item ID and get approval before OOS status change.</li>
+        <li><code>260528JFXDHRX9</code> / Kinata SG / Shopee SG / <code>WEDDING-ARCH-STAND-BLK-SG</code>: SB Cancelled / Not Required; SiteGiant 0/0/0/0 but status Available. Needs approval if status should become OOS.</li>
+        <li><code>584281402577355776</code> / TT Murahya / TikTok MY / <code>CWS-3F-BLACK-UPGRADE</code>: SG final 0/0/0/0 OOS; SB Manual Review because WH status empty. Monitor cancelled-order stock bounce-back; do not force WH status without fresh approval.</li>
+        <li><code>260526E0VV0UEQ</code> / ValueSnap / Shopee MY / <code>KIDS-CAMERA-MOUSE-BLUE</code>: SG final 0/0/0/0 OOS; SB Manual Review because WH status empty. Needs WH/CS close decision if required.</li>
+        <li><code>260529NR0YCXVH</code> / MurahYa SG / Shopee SG: original PINK OOS done; accepted <code>SGREEN1.3L</code> has no New Ship By date yet, so WH remains Pending and stock remains Not Adjusted until date appears.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Result:</strong> closeout complete; missed details corrected; local handoff saved; board auto-log rule captured for future tasks.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-02" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin, Hiranai, das.nature2, MasonGym, Emas Gift, BahEmas, Adelmar, das.nature, Lovento MY, MurahYa SG, KarlMobel SG, DasNatureSG2, DasNature SG, e_masgift.sg" data-platform="Shopee MY + Shopee SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
