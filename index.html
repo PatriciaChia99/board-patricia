@@ -577,6 +577,42 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-02" data-shops="TT Adelmar, TT Hiranai, TT JagerHelmet, TT KarlMobel, TT DasNature, Lazada MurahYa, Lazada das.nature" data-platform="TikTok + Lazada" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">parcelclaim-auto &mdash; 3 NEW POSTed C1930-C1932 RM 335.72 / 9 TT alive 4 login_expired / 0 errors (2/6)</span>
+    <span class="entry-meta">2026-06-02 MYT &middot; live mode &middot; 9/13 TT alive + 2/2 Laz alive &middot; 4 login_expired (59/63/64/65) &middot; 684 TT R/R cards (358 Request-closed skipped, 23 in 4d-window) &middot; 605 TT FD orders (19 in-window) &middot; 16 Laz cards (1 in-window) &middot; 43 raw candidates &rarr; 38 unique by order_id &rarr; 35 already in webapp (incl 2 dedupe-all-states hits Withdrawn) &middot; 3 NEW posted all HTTP 200</span>
+    <span class="tag">parcelclaim-auto</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Daily 09:45 MYT bot run. Scanned TT Manage Returns + Failed Delivery across 13 TT profiles + Lazada Returns across 2 Laz profiles. Built webapp baseline via /api/new-parcel-claims-tiktok?limit=5000 (542 cases / 525 unique orders / 74 Pending). Per-profile 18s wait + cookie + API probe (per feedback_tt_login_probe_wait). Per-card filter: skip Request closed status (358 dropped). Per-order dedupe on order_id alone across ALL refund_state values (Pending/Withdrawn/Credited/Rejected) per config.dedupe_check_all_refund_states=true (was 27/5 PM3 fix preventing 8-case duplicate bug).</p>
+    <div class="field"><strong>NEW POSTs (3 cases, RM 335.72 total, all HTTP 200):</strong>
+      <ul>
+        <li>C1930 (id 1930) &mdash; TT Adelmar R/R &mdash; OID 584192803849078280 &mdash; Skuter Elektrik 24V E-bike &mdash; RM 215.74 &mdash; source 2026-06-01 09:34:56 &mdash; status "Awaiting customer return"</li>
+        <li>C1931 (id 1931) &mdash; TT Hiranai R/R &mdash; OID 584239670610527549 &mdash; Women Casual Long Sleeve Blazer &mdash; RM 25.40 &mdash; source 2026-06-01 07:08:44 &mdash; status "Awaiting customer return"</li>
+        <li>C1932 (id 1932) &mdash; TT JagerHelmet R/R &mdash; OID 584274702704805167 &mdash; JAGER Helmet open face &mdash; RM 94.58 &mdash; source 2026-06-01 14:51:15 &mdash; status "Awaiting customer return"</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Dedupe-all-states hits (correctly skipped, would have been wrong-duplicates otherwise):</strong>
+      <ul>
+        <li>OID 584019319220045670 (TT Hiranai) &rarr; matched existing C1580 Withdrawn (state since 5/16)</li>
+        <li>OID 503595245811988 (Lazada MurahYa) &rarr; matched existing C1838 Withdrawn</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Login_expired (4 profiles, operator relogin needed):</strong>
+      <ul>
+        <li>Profile 59 TT Jager &mdash; probe code 98001002 + redirect to /account/login &mdash; REGRESSION from 1/6 (was alive yesterday)</li>
+        <li>Profile 63 TT Lovento &mdash; carry from 1/6</li>
+        <li>Profile 64 TT MurahYa &mdash; carry from 1/6 (HIGHEST-yield, ~10-15 cases/day silent)</li>
+        <li>Profile 65 TT Valuesnap &mdash; carry from 1/6+ (4+ days silent)</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Per-shop NEW breakdown:</strong> TT Adelmar 1 / TT Hiranai 1 / TT JagerHelmet 1 / Others 0. All 3 NEWs from R/R (none from FD or Lazada).</div>
+    <div class="field"><strong>Reason:</strong> Scheduled daily 09:45 MYT auto-run to keep webapp parcel-claim board current; CS uses board to action disputes/refund-state changes. Dedupe-all-states + Request-closed-skip prevent re-posting noise.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 3/3 NEW POSTed HTTP 200 (C1930-C1932 = RM 335.72). 0 errors. State.json updated (77 seen / 17 history). Verified seller IDs refreshed for 9 alive TT profiles. Report at C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-02.md.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-02" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, KarlMobel, Luxbin, Lovento MY, MurahYa, Adelmar, Emas Gift, JagerHelmet, Kinata SG" data-platform="Shopee MY + Shopee SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
