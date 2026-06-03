@@ -577,6 +577,33 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-03" data-shops="MasonGym, TT Murahya, Murahya, KarlMobel, Kinata SG" data-platform="SB Variation + SiteGiant + Patricia board + local Codex memory" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation closeout cross-check and handoff saved</span>
+    <span class="entry-meta">2026-06-03 21:40 MYT &middot; saved <code>C:\Users\tessf\.codex\memories\checksbvariation-2026-06-03-session-closeout.md</code> &middot; SB + SiteGiant + board readback verified</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> User asked whether the webapp was fully updated, whether anything was missed, and to end the session by saving the handoff. Per rule, this closeout task was logged after live cross-check and memory save.</p>
+    <div class="field"><strong>Before &rarr; After values verified, no new operational stock write:</strong>
+      <ul>
+        <li><strong>MasonGym / Shopee MY / 260506N5YF4U4Y / RUBBER-WEIGHT-PLATE-1PAIR-15KG:</strong> closeout readback confirmed SB <code>Manual Review</code> + <code>SA-18708</code> stayed linked; SiteGiant stayed <code>0/0/0/0 Out Of Stock</code>. No change after the SA-18708 cleanup entry.</li>
+        <li><strong>TT Murahya / TikTok MY / 584306042900416434 / CWS-4F-KHAKI:</strong> closeout readback confirmed SB <code>Manual Review</code> + <code>SA-18708</code> stayed linked; SiteGiant stayed <code>0/0/0/0 Out Of Stock</code>, rack <code>1 FLOOR</code> stayed <code>0</code>. Buyer decision still pending after offer-change contact.</li>
+        <li><strong>MasonGym / Shopee MY / 260530RJCYYH07 / VIDALIDO-5-8-WHT:</strong> closeout readback confirmed SB <code>Manual Review</code> + <code>SA-18708</code> stayed linked; SiteGiant stayed <code>0/0/0/0 Out Of Stock</code>.</li>
+        <li><strong>Murahya / Shopee MY / 260527G9FGMFBR / GAZEBO-TENT-WHITE-3M:</strong> closeout readback confirmed SB stayed <code>Cancelled / Not Required</code> with still-checking remark; SiteGiant stayed <code>2/2/0/0 Out Of Stock</code>. No stock write made.</li>
+        <li><strong>KarlMobel / Shopee MY / 260526EK7VHDNS / TUBCOVER:</strong> closeout readback confirmed SB stayed <code>Cancelled / Not Required</code> with manual-skip remark; SiteGiant stayed <code>0/0/0/0 Out Of Stock</code> after separate manual <code>SA-18707</code>. Codex made no stock write.</li>
+        <li><strong>Kinata SG / Shopee SG / 2606034A46AVC4:</strong> closeout scan confirmed contactSent <code>true</code> and CS remark for 17:30 MYT buyer chat. SiteGiant evidence remains <code>0/0/0/0</code> but Stock Status <code>Available</code>, so status/OOS cleanup is still pending WH/Patricia approval.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Memory save Before &rarr; After:</strong> Before: no 2026-06-03 session closeout memory for this run. After: saved and read back <code>C:\Users\tessf\.codex\memories\checksbvariation-2026-06-03-session-closeout.md</code>, length 11746 bytes, containing verified states, outstanding items, automation cleanup, and tomorrow continuation prompt using <code>-skill-converter</code> + <code></code>.</div>
+    <div class="field"><strong>Reason for closeout:</strong> User requested end-of-session save, accuracy cross-check, missed/outstanding list, and a continuation prompt for tomorrow.</div>
+    <div class="field"><strong>Evidence checked:</strong> Live SB Variation API HTTP 200 readback; live SiteGiant exact iSKU lookup for the five stock/status items; Patricia board remote readback for prior <code>SA-18708</code> entry; local memory file readback; process check showed no <code>chromedriver</code> process.</div>
+    <div class="field"><strong>Result:</strong> Requested five webapp rows are updated as far as SB validation allows. Three adjusted rows are intentionally <code>Manual Review</code> because SB rejects <code>Adjusted</code> while WH Confirm Status is empty. Closeout memory saved and verified.</div>
+    <div class="field"><strong>Outstanding follow-up:</strong> rows 100973 / 101137 / 101138 need WH Confirm Status before SB can become <code>Adjusted</code>; TT Murahya 584306042900416434 buyer decision pending; GAZEBO-TENT-WHITE-3M still checking; Kinata SG 2606034A46AVC4 status/OOS cleanup pending approval; TT KarlMobel 584299123686671505 / RLS-WHITE-S40 still needs WH confirmation and approved adjustment; new unprocessed rows found at closeout: 101146, 101145, 101144, 101143, 101142, 101141, 101140; New Ship By accepted-change watch: 101128 and 101127.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-03" data-shops="Adelmar, Das Nature, Hiranai, HiranaiMY, Jager, JagerSafety, JagerArmor, JagerHelmet, KarlMobel, Murahya, Valuesnap, Kinata SG, Lovento" data-platform="TikTok MY + SG + Google Sheets" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
