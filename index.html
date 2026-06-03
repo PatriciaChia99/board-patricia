@@ -577,6 +577,43 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<<<<<<< HEAD
+<div class="entry" data-date="2026-06-03" data-shops="TT Murahya" data-platform="TikTok MY + SB Variation" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation &mdash; sent TT offer-change message for 584306042900416434 and marked contact sent (3/6)</span>
+    <span class="entry-meta">2026-06-03 16:10 MYT &middot; TikTok chat send verified at 16:08 from Customer Service3969 &middot; SB PATCH 1/1 HTTP 200 verified persisted &middot; no SiteGiant stock write</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-details">
+    <div class="field"><strong>Before &rarr; after:</strong> 584306042900416434 / TT Murahya / Offer Change. SB contactSent false &rarr; [true]; csRemarks existing stock/OOS evidence &rarr; appended 16:08 TikTok send evidence; stockSetOos stayed [true]; buyerDecision, whConfirmStatus, and stockAdjustmentStatus stayed null.</div>
+    <div class="field"><strong>Shop/platform/reason/evidence:</strong> TT Murahya / TikTok MY. User approved send after draft review. Live TikTok order page showed Awaiting collection, order #584306042900416434, product Windshield Stove Camping Adjustable Foldable Windshield Gas Stove Wind Shield Cover Camping Accessories Wind Deflector, variation 4 Fold Khaki, seller SKU CWS-4F-KHAKI. Exact buyer chat for _cucoqkodok opened from TikTok contact-link endpoint; message appears in chat at 16:08 from Customer Service3969 and shows Delivered with translation.</div>
+    <div class="field"><strong>Message sent:</strong> Hi boss, please be informed that Windshield Stove Camping Adjustable Foldable Windshield Gas Stove Wind Shield Cover Camping Accessories Wind Deflector restock is estimated in about 1 month.. We apologize for the inconvenience caused. Can we s3nd 4 Fold White or 4 Fold Black instead? Otherwise, please manage the order from your Order Details Once a request comes through, I'll handle it immediately.</div>
+    <div class="field"><strong>Result/outstanding follow-up:</strong> ok &mdash; buyer contacted and SB contact flag/remark updated. Outstanding: wait for buyer decision or marketplace cancellation. CWS-4F-KHAKI remains stock mismatch action item: SiteGiant OOS label with SOH/Sellable/Reserved/Allocated 10/10/0/0; WH stock check and approved SiteGiant adjustment still needed before changing stock.</div>
+=======
+<div class="entry" data-date="2026-06-03" data-shops="all TT MY shops" data-platform="Scheduled task config" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">scheduled-task config update &mdash; parcelclaim-auto.bat + tiktokrraudit.bat memory pointer refreshed to 3/6 master (4/6 schedule run ready)</span>
+    <span class="entry-meta">2026-06-03 EOD &middot; bumped LATEST MASTER pointer from project_session_may27_tt_rr_pm3.md (8 days stale) &rarr; project_session_jun03_pm_rerun.md &middot; +inline mandatory delete_cache=1 rule &middot; 4/6 09:45 + 10:15 scheduled runs will now load today&#39;s carry-overs automatically</span>
+    <span class="tag">parcelclaim-auto</span>
+    <span class="tag">tiktokrraudit</span>
+    <span class="tag">scheduled-tasks</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> User asked end-of-session whether anything urgent for today + requested update of scheduled-run prompts so tomorrow&rsquo;s automatic 09:45 + 10:15 firings load today&rsquo;s PM-rerun context. Updated both `C:\Users\tessf\scripts\parcelclaim-auto.bat` and `C:\Users\tessf\scripts\tiktokrraudit.bat` to swap the &ldquo;LATEST EOD MASTER&rdquo; carry-over memory pointer from the 8-day-stale 27/5 reference to today&rsquo;s `project_session_jun03_pm_rerun.md` + added the new HARD rule pointer `feedback_adspower_delete_cache_unblocks_chromium145.md`.</p>
+    <div class="field"><strong>File: parcelclaim-auto.bat L57</strong> &mdash; Before: <code>(a0) project_session_may27_tt_rr_pm3.md (LATEST 27/5 EOD MASTER: ...8-day-stale 27/5 RM 611.25 RM 10,940 ~max C1874...)</code>, (a1) feedback_tt_rr_dedupe_must_check_all_refund_states.md... After: <code>(a0) project_session_jun03_pm_rerun.md (LATEST 3/6 PM EOD MASTER: today&#39;s 4 NEW POSTs C1954-C1957 RM 501.67 / 13 PATCHes / webapp 560/87 Pending / max_id C1957 / delete_cache=1 MANDATORY)</code>, (a0b) feedback_adspower_delete_cache_unblocks_chromium145.md, (a1) feedback_tt_rr_dedupe_must_check_all_refund_states.md... Verified 1+2 substring occurrences of new pointers.</div>
+    <div class="field"><strong>File: tiktokrraudit.bat L52</strong> &mdash; Before: <code>(a) project_session_may27_tt_rr_pm3.md (LATEST 27/5 EOD MASTER handoff &mdash; 18 PM3 PATCHes... 51 Pending ~RM 10,940... May true-bleed RM 480.35)</code>, (a1) feedback_tt_rr_dedupe_must_check_all_refund_states.md... After: <code>(a) project_session_jun03_pm_rerun.md (LATEST 3/6 PM EOD MASTER: today&#39;s AM 38 PATCHes / 2 NEW MAY LOSSes C1697 C1856 / PM-rerun 4 NEW POSTs + 13 PATCHes / 560 cases / 87 Pending / max C1957 / May true-bleed RM 1,270.05 / P0 CARRY 4/6 listed with all OIDs RM amounts and Ticket Log targets)</code>, (a0b) feedback_adspower_delete_cache_unblocks_chromium145.md... Verified 1+2 substring occurrences.</div>
+    <div class="field"><strong>Shops affected:</strong> All 13 TT MY shops + 3 Lazada profiles (the scheduled-task scope). No direct shop data changes &mdash; only the prompt that the scheduled task feeds to Claude Code.</div>
+    <div class="field"><strong>Platform:</strong> Scheduled task config (Windows Task Scheduler &rarr; .bat &rarr; claude.cmd -p &lt;prompt&gt;). Affects 4/6 ParcelClaimAuto_945AM and TT_RR_Audit_10_15AM firings.</div>
+    <div class="field"><strong>Reason for change:</strong> User directive at session end: &ldquo;update the prompt to the skill for tomorrow schedule run&rdquo;. Both .bat prompts had been pointing to the 27/5 memory file for 8 days &mdash; carrying obsolete RM totals, missing the C1697/C1856 LOSS context, missing the delete_cache=1 chromium-145 fix discovered today. Without this swap, tomorrow&rsquo;s scheduled runs would load 27/5 context first.</div>
+    <div class="field"><strong>Today scheduled task failures noted (informational, not blocker):</strong> KinataOrderCheck_430PM TERM_USER 16:35 (no PM kinata report written; noon report already covers all cases). TTRatingCheck_5PM ERR 0x1 17:00 (no rating row written to Google Sheet for 3/6; likely AdsPower contention during PM-rerun). No case-level errors. Both can be backfilled tomorrow or skipped &mdash; not operational.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; both .bat files updated cleanly. Verified each contains 1 reference to project_session_jun03_pm_rerun.md + 2 references to feedback_adspower_delete_cache_unblocks_chromium145.md (path + inline mention). Tomorrow 09:45 (parcelclaim-auto) and 10:15 (tiktokrraudit) scheduled firings will load today&rsquo;s PM-rerun context as their primary carry-over master.</div>
+>>>>>>> 6150c26 (Log checksbvariation TT send for 584306)
+  </div>
+</div>
 <div class="entry" data-date="2026-06-03" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Adelmar, JagerHelmet, Emas Gift, Kinata SG, ValueSnap SG" data-platform="Shopee MY + Shopee SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -869,7 +906,12 @@ header.page::after{
         <li><code>584306042900416434</code> TT Murahya / Windshield Stove CWS-4F-KHAKI. Draft message prepared only, NOT sent. Suggested alternatives CWS-4F-WHITE + CWS-4F-BLACK have stock. Draft: &ldquo;Hi boss, please be informed that Windshield Stove Camping Adjustable Foldable... restock is estimated in about 1 month. We apologize for the inconvenience caused. Can we s3nd 4 Fold White or 4 Fold Black instead? Otherwise, please manage the order from your Order Details. Once a request comes through, I&rsquo;ll handle it immediately.&rdquo; Pending WH confirmation/approval before buyer contact.</li>
       </ul>
     </div>
-    <div class="field"><strong>Result:</strong> ok &mdash; Daily SB Var audit completed read-only. 202 cases (+1 net), 5 NEW (1 TT ParseFail / 1 TT oversize / 1 SG closure-pending / 2 A-BOT_OK). 4 PATCHes total today (2 PM continuation 13:03 + 1 PM ad-hoc 14:17 + 1 PM 15:19), all HTTP 200 verified persisted. Yesterday PM cleanup wave verified: 2 cases CLOSED, 14 progressed. Report saved C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-06-03.md.</div>
+    <div class="field"><strong>PM 16:08 MYT &mdash; TT buyer message SENT for 584306042900416434 (contactSent flip):</strong>
+      <ul>
+        <li><code>584306042900416434</code> TT Murahya / Offer Change. Before: SB contactSent false, csRemarks existing stock/OOS evidence, stockSetOos true, buyerDecision/whConfirmStatus/stockAdjustmentStatus null. After: SB contactSent [true], csRemarks appended with 16:08 TikTok send evidence; stockSetOos stayed [true]; buyerDecision/whConfirmStatus/stockAdjustmentStatus stayed null. Evidence: live TikTok order page Awaiting collection, product Windshield Stove (CWS-4F-KHAKI). Exact buyer chat for _cucoqkodok opened from contact-link endpoint; message visible at 16:08 from Customer Service3969 with Delivered status + translation. Message: same draft from 15:19 (4 Fold Khaki restock ~1 month, offer White/Black, manage from Order Details if no reply). Follow-up: wait for buyer decision or marketplace cancellation; CWS-4F-KHAKI 10/10/0/0 stock mismatch action item still requires WH stock check + SiteGiant adjustment before quantity write.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Result:</strong> ok &mdash; Daily SB Var audit completed read-only. 202 cases (+1 net), 5 NEW (1 TT ParseFail / 1 TT oversize / 1 SG closure-pending / 2 A-BOT_OK). 5 PATCHes total today (2 PM continuation 13:03 + 1 PM ad-hoc 14:17 + 1 PM 15:19 + 1 PM 16:08 buyer-send), all HTTP 200 verified persisted. Yesterday PM cleanup wave verified: 2 cases CLOSED, 14 progressed. Report saved C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-06-03.md.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-03" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
