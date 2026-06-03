@@ -577,6 +577,24 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-03" data-shops="Kinata SG" data-platform="Shopee SG + SiteGiant + SB Variation" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation &mdash; Kinata SG no-stock customer contacted for 2606034A46AVC4</span>
+      <span class="entry-meta">2026-06-03 17:30 MYT &middot; row 101139 &middot; buyer rintalib1822 &middot; CS5 Shopee SG Webchat &middot; SiteGiant #1415809 checked</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Newly added Kinata SG SB Variation no-stock case. User requested customer contact after live verification.</p>
+      <div class="field"><strong>Before &rarr; after:</strong> SB row <code>101139</code> / order <code>2606034A46AVC4</code>: <code>contactSent=false</code> &rarr; <code>[true]</code>; <code>csRemarks=null</code> &rarr; sent-message/evidence remark added; <code>stockSetOos=false</code> stayed <code>false</code>; <code>buyerDecision</code>, <code>whConfirmStatus</code>, and <code>stockAdjustmentStatus</code> stayed <code>null</code>.</div>
+      <div class="field"><strong>Shop / platform:</strong> Kinata SG / Shopee SG; operational sources were Shopee Seller Centre, CS5 Shopee Webchat, SiteGiant, and SB Variation webapp.</div>
+      <div class="field"><strong>Reason:</strong> Live SB row was new No Stock with <code>contactSent=false</code>; order was verified active and not cancelled before contact.</div>
+      <div class="field"><strong>Evidence checked:</strong> Shopee seller API found buyer <code>rintalib1822</code>, order id <code>234148317237636</code>, status <strong>To Ship</strong>, iSKU <code>WOMENS-BLAZER-JACKET-BLK-XXXL-SG</code>, ship-by <code>2026-06-03</code>. SiteGiant order <code>#1415809</code> / <code>465253399</code> was <strong>Processed / Paid / Fulfilled</strong>, tracking <code>SPXSG066225878056</code>, product Blazer Women Outerwear Coat, variation Smart Blazer - Black,3XL, qty 1. SiteGiant exact iSKU stock was SOH/Sellable/Reserved/Allocated <code>0/0/0/0</code> but Stock Status <strong>Available</strong>.</div>
+      <div class="field"><strong>Customer contact result:</strong> CS5 Kinata SG Webchat sent the approved no-stock template to buyer <code>rintalib1822</code> at 17:30 MYT and the exact message was verified visible in the thread before SB update.</div>
+      <div class="field"><strong>Outstanding follow-up:</strong> No SiteGiant stock quantity change was made. Because the exact iSKU is already <code>0/0/0/0</code> but status remains <strong>Available</strong>, WH/Patricia approval is still needed if SiteGiant status should be changed to Out Of Stock and SB <code>stockSetOos</code> should be marked.</div>
+    </div>
+  </div>
 <div class="entry" data-date="2026-06-03" data-shops="Adelmar, Das Nature, Hiranai, HiranaiMY, Jager, JagerSafety, JagerArmor, JagerHelmet, KarlMobel, Murahya, Valuesnap, Kinata SG, Lovento" data-platform="TikTok MY + SG + Google Sheets" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -626,6 +644,13 @@ header.page::after{
       </ul>
       Root cause: single AI chatbot failure on Logistics intent. No human-agent coaching needed; 50% rate is misleading because only 2 chats rated total (1 positive + 1 negative).
     </div>
+    <div class="field"><strong>JagerHelmet (66 k1asxln6) &mdash; 2 negatives / 44 total chats:</strong>
+      <ul>
+        <li><code>muszaqim</code> 6/02 02:53 Pre-purchase &mdash; (AI) &mdash; AI-only &mdash; 1-star &mdash; no specific tag.</li>
+        <li><code>koh.yung.kuan</code> 5/31 12:51 Pre-purchase &mdash; (AI) &mdash; AI-only &mdash; 1-star &mdash; <strong>chatbot tag1 (Couldn&rsquo;t understand) + tag2 (Answer irrelevant)</strong>.</li>
+      </ul>
+      Root cause: both AI chatbot failures on Pre-purchase intent, zero human-agent involvement. Reinforces the cross-shop chatbot pattern.
+    </div>
     <div class="field"><strong>KarlMobel (62 k1as2202) &mdash; 10 negatives / 367 total chats (the worst absolute count):</strong>
       <ul>
         <li><strong>Customer Service6956 owns 7 of 10 negatives</strong> (tag breakdown: 4&times; tag2 slow / 2&times; tag5 rude / 1&times; tag1 didn&rsquo;t solve / 1&times; tag4 unhelpful).</li>
@@ -636,7 +661,7 @@ header.page::after{
       </ul>
       Root cause: <strong>Customer Service6956 is the single largest negative-review agent across portfolio</strong> with attitude (tag5) flags from 2 different buyers + chronic slow-response pattern. Plus 3 serial complainers leaving multiple 1-star reviews suggests the same KarlMobel customers are repeatedly underserved. dapurabang.manager 7-hour first reply with tag5 (rude) is a clear coaching escalation.
     </div>
-    <div class="field"><strong>Cross-shop pattern:</strong> AI chatbot tag2 (Answer irrelevant) appears across all 3 shops (Hiranai 1, Jager 1, KarlMobel 3) on Logistics + Pre-purchase intents &mdash; suggests TT chatbot is poorly trained for these intents &mdash; appealable to TT Account Manager OR consider disabling AI auto-reply for these intent categories. The human-agent pattern is most concerning on KarlMobel (CS6956) and Hiranai (CS8741) &mdash; tag2 (Slow response) dominant across both, plus 1 standout 11-hour SLA breach on Hiranai 5/17.</div>
+    <div class="field"><strong>Cross-shop pattern (4 shops investigated):</strong> AI chatbot tag2 (Answer irrelevant) appears across all 4 shops (Hiranai 1, Jager 1, KarlMobel 3, JagerHelmet 1) on Logistics + Pre-purchase intents &mdash; suggests TT chatbot is poorly trained for these intents &mdash; appealable to TT Account Manager OR consider disabling AI auto-reply for these intent categories. JagerHelmet is 100% AI-chatbot-driven (zero human-agent negative chats). The human-agent pattern is most concerning on KarlMobel (CS6956) and Hiranai (CS8741) &mdash; tag2 (Slow response) dominant across both, plus 1 standout 11-hour SLA breach on Hiranai 5/17.</div>
     <div class="field"><strong>Action items for tomorrow 4/6:</strong> (1) URGENT &mdash; coach <strong>Customer Service6956 KarlMobel</strong> on tag5 (attitude) + tag2 (slow response). 2 different buyers flagged rudeness in the same agent. (2) Coach <strong>Customer Service8741 Hiranai</strong> on response-time SLA &mdash; 11-hour first reply on 5/17 is unacceptable. (3) Reach out to <strong>dapurabang.manager + bakaljenazah116 + 2ft50</strong> proactively &mdash; recover the relationship before they post 1-star public reviews. (4) Consider AI auto-reply opt-out for Logistics + Pre-purchase intents on these 3 shops &mdash; chatbot tag2 (irrelevant) reproducing across shops indicates model issue not local config. (5) Escalate chatbot issue to TT Account Manager with concrete tag2 examples (wooicheah2989 Jager Logistics 5/31; bakaljenazah116 KarlMobel Logistics 5/31).</div>
     <div class="field"><strong>Result:</strong> ok &mdash; recovery of TTRatingCheck_5PM 17:00 failure COMPLETE. 13/13 shops scraped (delete_cache=1 fix prevented any chromium-145 ECONNREFUSED), Google Sheet TIKTOK tab row 407-419 written, 10 red highlights applied. Daily KPI row no longer missing for 3/6. PM follow-up: investigated 3 lowest chat-sat shops (Hiranai/Jager/KarlMobel), root-caused each via API negative-conversation scrape, identified 2 individual agents needing coaching + 3 serial-complainer buyers needing outreach + 1 chatbot-model issue worth TT Account Manager escalation.</div>
   </div>
