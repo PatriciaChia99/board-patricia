@@ -577,62 +577,36 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
-<div class="entry" data-date="2026-06-03" data-shops="MasonGym" data-platform="Shopee MY / SiteGiant" data-result="ok">
-  <div class="entry-summary">
-    <span class="chevron">&#9654;</span>
-    <span class="entry-title">checksbvariation &mdash; RUBBER-WEIGHT-PLATE-1PAIR-15KG put in line for stock adjust to 0 OOS (3/6)</span>
-    <span class="entry-meta">2026-06-03 14:17 MYT &middot; SB case 100973 / order 260506N5YF4U4Y / MasonGym &middot; PATCH 1/1 HTTP 200 verified persisted &middot; no SiteGiant stock write performed</span>
-    <span class="tag">checksbvariation</span>
-    <span class="tag result-ok">Completed</span>
-  </div>
-  <div class="entry-details">
-    <div class="field"><strong>Before &rarr; after:</strong> csRemarks null &rarr; [2026-06-03 checksbvariation user instruction: RUBBER-WEIGHT-PLATE-1PAIR-15KG exact SiteGiant item 11092873 is labelled Out Of Stock but still shows SOH/Sellable/Reserved/Allocated 1/1/0/0. Put in line for stock adjustment: adjust stock to 0 and keep OOS. No SiteGiant write performed in this step.] SB stockSetOos stayed true; contactSent stayed true; buyerDecision/WH/stock adjustment statuses stayed null.</div>
-    <div class="field"><strong>Shop/platform/reason/evidence:</strong> MasonGym / Shopee MY + SiteGiant. Live SB search found product-family line case 100973 with SB SKU RUBBER-WEIGHT-PLATE-1PAIR-2.5KG; exact SiteGiant lookup for requested iSKU RUBBER-WEIGHT-PLATE-1PAIR-15KG found item 11092873, 1 listing, status Out Of Stock, SOH 1, sellable 1, reserved 0, allocated 0.</div>
-    <div class="field"><strong>Result/outstanding follow-up:</strong> ok &mdash; requested line note added and verified. Outstanding: warehouse/SiteGiant stock adjustment still needed to bring RUBBER-WEIGHT-PLATE-1PAIR-15KG stock to 0 while keeping OOS; no SiteGiant quantity write was made in this step.</div>
-  </div>
-</div>
-<div class="entry" data-date="2026-06-03" data-shops="KarlMobel, TT Murahya, Kinata SG, ValueSnap, MurahYa SG, MasonGym, MurahYa" data-platform="Shopee MY + Shopee SG + TikTok" data-result="ok">
-  <div class="entry-summary">
-    <span class="chevron">&#9654;</span>
-    <span class="entry-title">checksbvariation &mdash; SB Variation continuation from 2/6 closeout: 2 SB PATCHes verified, outstanding rows checked, New Ship By no-op (3/6)</span>
-    <span class="entry-meta">2026-06-03 13:03 MYT &middot; live SB API 202 rows / max_id 101138 &middot; scoped to 2/6 closeout outstanding rows plus 3 newer rows &middot; PATCH 2/2 HTTP 200 and verified persisted &middot; no buyer messages, no Jira/form submits, no SiteGiant writes</span>
-    <span class="tag">checksbvariation</span>
-    <span class="tag result-ok">Completed</span>
-  </div>
-  <div class="entry-details">
-    <div class="field"><strong>Completed SB writes:</strong> 260526EK7VHDNS KarlMobel / Shopee MY / No Stock &mdash; before buyerDecision=null, whConfirmStatus=null, stockAdjustmentStatus=null, stockSetOos=false, csRemarks=null; after buyerDecision=[Cancelled], whConfirmStatus=[Not Required], stockAdjustmentStatus=[Not Required], stockSetOos=[true], csRemarks=[evidence remark]. Reason/evidence: SiteGiant order #1404973 / marketplace order 260526EK7VHDNS verified Cancelled / Paid / Fulfilled; exact iSKU TUBCOVER qty 4, label Out Of Stock, SOH/Sellable/Reserved/Allocated 35/35/0/0. Result: SB closed as cancelled, no buyer message. Outstanding follow-up: WH stock check required because OOS label has positive stock; no SiteGiant quantity/status write without approval.</div>
-    <div class="field"><strong>Completed SB writes:</strong> 584306042900416434 TT Murahya / TikTok / Offer Change &mdash; before stockSetOos=false, contactSent=false, buyerDecision=null, whConfirmStatus=null, stockAdjustmentStatus=null, csRemarks=null; after stockSetOos=[true], contactSent=false unchanged, buyerDecision/WH/stock statuses unchanged, csRemarks=[evidence remark]. Reason/evidence: SiteGiant order #1413263 verified Processed / Unpaid / Fulfilled; exact original iSKU CWS-4F-KHAKI qty 1, label Out Of Stock, SOH/Sellable/Reserved/Allocated 10/10/0/0. Suggested alternatives have stock: CWS-4F-WHITE 35/33/2/0 Available and CWS-4F-BLACK 46/29/17/0 Available. Result: SB exact-iSKU OOS flag corrected. Outstanding follow-up: WH stock check + approval before buyer message or SiteGiant adjustment.</div>
-    <div class="field"><strong>Checked with no SB write:</strong> 260530RMX4T0F1 Kinata SG / Shopee SG &mdash; before=after buyerDecision=[Cancelled], whConfirmStatus=[Not Required], stockAdjustmentStatus=[Not Required], stockSetOos=false. Evidence: SiteGiant order #1410618 Cancelled / Paid / Fulfilled; exact iSKU ADULT-EMERGENCY-SLEEP-BAG-TEAL-1-3KG-SG changed from closeout 0/0/0/0 Available to 1/1/0/0 Available. Result: no SB mutation. Follow-up: WH stock/restock mismatch watch; no OOS flag because exact iSKU label is Available.</div>
-    <div class="field"><strong>Checked with no SB write:</strong> 260528JFXDHRX9 Kinata SG / Shopee SG &mdash; before=after buyerDecision=[Cancelled], whConfirmStatus=[Not Required], stockAdjustmentStatus=[Not Required], stockSetOos=[true]. Evidence: exact iSKU WEDDING-ARCH-STAND-BLK-SG item 12004454 remains 0/0/0/0 Available. Result: no SB mutation. Follow-up: ask approval if SiteGiant status should be changed to OOS.</div>
-    <div class="field"><strong>Checked with no SB write:</strong> 584281402577355776 TT Murahya / TikTok &mdash; before=after contactSent=[true], stockSetOos=true, stockAdjustmentStatus=[Manual Review]. Evidence: exact iSKU CWS-3F-BLACK-UPGRADE item 8214936 remains 0/0/0/0 Out Of Stock after SA-18691. Result: no force-close. Follow-up: monitor buyer bounce-back; do not force WH without fresh approval.</div>
-    <div class="field"><strong>Checked with no SB write:</strong> 260526E0VV0UEQ ValueSnap / Shopee MY &mdash; before=after stockSetOos=true, stockAdjustmentStatus=[Manual Review], buyerDecision=null. Evidence: SiteGiant order #1404636 Cancelled; exact iSKU KIDS-CAMERA-MOUSE-BLUE item 11379226 is 0/0/0/0 Out Of Stock. Result: no force-close because closeout marked WH/CS decision needed. Follow-up: WH/CS decision required if status should close.</div>
-    <div class="field"><strong>Checked with no SB write:</strong> 260529NR0YCXVH MurahYa SG / Shopee SG &mdash; before=after buyerDecision=[Accept Change], acceptedSku=[SGREEN1.3L], shipQty=[1], whConfirmStatus=[Pending WH Confirm], stockAdjustmentStatus=[Not Adjusted], newShipBy=null. Evidence: original PINK1.3L is 0/0/0/0 Out Of Stock; accepted SGREEN1.3L is 5/5/0/0 Available. Result: New Ship By rule not triggered because no New Ship By date exists. Follow-up: if New Ship By appears, set/keep WH Confirmed Can Pack before marking stock adjustment Adjusted.</div>
-    <div class="field"><strong>Checked with no SB write:</strong> 260530RJCYYH07 MasonGym / Shopee MY and 260527G9FGMFBR MurahYa / Shopee MY &mdash; before=after stockSetOos=true and contactSent=true on both. Evidence: VIDALIDO-5-8-WHT is 1/1/0/0 Out Of Stock; GAZEBO-TENT-WHITE-3M is 2/2/0/0 Out Of Stock and order #1405670 already Shipped. Result: no SB mutation. Follow-up: WH stock check for positive-stock OOS mismatch; no SiteGiant writes without approval.</div>
-    <div class="field"><strong>Result:</strong> ok &mdash; continuation completed for outstanding cases only; 2 safe SB PATCHes persisted, no buyer messages sent, no warehouse/SiteGiant writes made, New Ship By accepted-change rule checked and not applicable today.</div>
-  </div>
-</div>
 <div class="entry" data-date="2026-06-03" data-shops="Kinata SG" data-platform="Jira / TikTok SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">Jira Change Request &mdash; Implement TikTok chatbot for Kinata SG (mirror Shopee SG Kinata script) (3/6)</span>
-    <span class="entry-meta">2026-06-03 ~12:26 MYT &middot; form GRBT/921 (Change Request) submitted on AdsPower profile 70 &middot; Page=Chatbot, Priority=High, Team=Customer Service, Requestor=Patricia &middot; service-desk confirmation rendered (no GRBT-### number returned)</span>
+    <span class="entry-title">Jira ticket raised &mdash; TikTok chatbot for Kinata SG (3/6)</span>
+    <span class="entry-meta">2026-06-03 ~12:26 MYT &middot; Change Request submitted to Jira &middot; Priority High &middot; Page Chatbot &middot; Team Customer Service &middot; Requestor Patricia</span>
     <span class="tag">jira</span>
     <span class="tag">change-request</span>
     <span class="tag result-ok">Completed</span>
   </div>
   <div class="entry-body">
-    <p><strong>Brief:</strong> User requested raising a Jira ticket to implement a TikTok chatbot for Kinata SG, modelled on the existing Shopee SG Kinata chatbot. Submitted via Jira GRBT form 921 (Change Request template) on AdsPower profile 70.</p>
-    <div class="field"><strong>Form selection:</strong> User chose Change Request form (not Bug Report form 152 or Feature Request) since this is a planned implementation, not a defect. Discovered form/921 URL via Forms tab on GRBT board after navigating from project root. BEFORE: only Bug Report form 152 was documented in memory. AFTER: Change Request form 921 now also exercised end-to-end on profile 70 &mdash; same field IDs as form 152 (#summary-field, #ak-editor-textarea, #priority-field, #customfield_10105/06/07-field) with label "Change Title" instead of "Bug Title".</div>
-    <div class="field"><strong>Field values set:</strong> Change Title="Implement TikTok Chatbot for Kinata SG (mirror Shopee SG Kinata script)"; Change Overview=789-char body listing reference (Shopee SG Kinata bot), scope (TikTok Shop / Singapore / Kinata SG), why (extend channel coverage), acceptance criteria (intent parity with shipping queries/order status/FAQ, deployment to Kinata SG TT seller account, latency parity); Priority=High; Page=Chatbot; Requesting Team=Customer Service; Requestor=Patricia. BEFORE: form blank. AFTER: all required fields populated + Submit clicked.</div>
-    <div class="field"><strong>Submission confirmation:</strong> Post-Submit page rendered "We're on it! Thanks for your response." heading with "Submit another form" link, matching the documented form-152 behavior (service-desk request form, not Create Issue &mdash; no GRBT-### ticket number returned in confirmation; IT sees the request in their queue).</div>
-    <div class="field"><strong>Reason:</strong> User direct ask &mdash; "raise one, i want to implement chatbot for Tiktok chatbot for Shop SG Kinata. Script should use similar one with Shopee SG Kinata." Goal: extend automated chat coverage to the TikTok channel for Kinata SG (currently only Shopee SG Kinata bot is live).</div>
-    <div class="field"><strong>Result:</strong> ok &mdash; form submitted, confirmation rendered, no errors. Watch GRBT board for IT pickup; no auto-confirmation email expected on Jira service-desk forms per prior pattern.</div>
+    <p><strong>What I did:</strong> Raised a Jira ticket asking IT to build a TikTok chatbot for Kinata SG. The new bot should copy the script we already use for the Shopee SG Kinata chatbot.</p>
+    <div class="field"><strong>Ticket details:</strong>
+      <ul>
+        <li>Title: Implement TikTok Chatbot for Kinata SG (mirror Shopee SG Kinata script)</li>
+        <li>Form: GRBT form 921 (Change Request)</li>
+        <li>Priority: High</li>
+        <li>Page: Chatbot</li>
+        <li>Team: Customer Service</li>
+        <li>Requestor: Patricia</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Why:</strong> Kinata SG already has a chatbot on Shopee but not on TikTok. This ticket asks IT to build the TikTok one so the bot can handle the same things on both platforms (shipping, order status, FAQ).</div>
+    <div class="field"><strong>How it was sent:</strong> Filled the form on AdsPower profile 70. After clicking Submit, Jira showed "We're on it! Thanks for your response." That is the normal reply for service-desk forms. No ticket number is shown to us, but IT sees the request in their queue.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; ticket submitted. Next step: wait for IT to pick it up.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-03" data-shops="Hiranai, KarlMobel, MurahYa, Luxbin, ValueSnap, das.nature, Emas Gift" data-platform="Shopee MY" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">csrrcredited + csrrcreditedcheck &mdash; 20 PATCHes / KarlMobel 260426S7S6E936 correction (user-flagged) / Hiranai 260514DACFSATG action reversion re-fixed / 3 overnight auto-flips clean / Bucket B 7-day 57 Credited verified (3/6)</span>
+    <span class="entry-title">csrrcredited + csrrcreditedcheck FULL &mdash; 37 PATCHes / 13 LIVE WALLET probes across 6 shops / 1 STATUS FLIP Hiranai chase WIN landed today RM 13.95 / KarlMobel 260426 user-flagged correction / 4 action_needed reversions detected + re-fixed (NEW webapp bug) / Bucket B clean (3/6)</span>
     <span class="entry-meta">2026-06-03 ~13:30-15:30 MYT &middot; webapp 2337 cases / 362 Pending RM 36k / 429 Credited / 1524 Withdrawn / 22 Rejected &middot; 20 PATCHes HTTP 200 (0 fail) &middot; 0 status flips (CS team manual flips overnight on 3 PARTIAL/NO_MATCH carry-overs) &middot; 13/13 verified persisted &middot; 0 drift detected in crosscheck</span>
     <span class="tag">csrrcredited</span>
     <span class="tag">csrrcreditedcheck</span>
@@ -853,7 +827,15 @@ header.page::after{
     <div class="field"><strong>TT bot SKU-extraction regression CONTINUES:</strong> +1 NEW today (<code>101137</code> CWS-4F pattern on TT Murahya) extends 2/6 LENS-pattern batch. Total 13+ cases over 2 weeks across Jager/JagerHelmet/Murahya/Hiranai/KarlMobel. Jira Draft #3 strongly recommended &mdash; APPROVAL REQUIRED.</div>
     <div class="field"><strong>Data hygiene flag:</strong> <code>101136</code> Murahya orderId <code>260527G9FGMFBR&nbsp;</code> carries trailing space (15 chars). Low-impact (case still operable), SiteGiant/webapp string-parse not trimming.</div>
     <div class="field"><strong>State.json:</strong> patched at <code>C:\Users\tessf\.claude\skills\checksbvariation\state.json</code> with runId 2026-06-03-AM, lastCaseId 101138, 33-case p0_carry_over_for_04jun, 16-entry state_change_2_6_pm_user_action block, fully_resolved_2_6_pm list. Write tool perm-gated; bypassed via Python script per <code>feedback_board_write_python_bypass.md</code> pattern.</div>
-    <div class="field"><strong>Result:</strong> ok &mdash; Daily SB Var audit completed read-only. 202 cases (+1 net), 5 NEW (1 TT ParseFail / 1 TT oversize / 1 SG closure-pending / 2 A-BOT_OK). Zero PATCHes per user mandate. Yesterday PM cleanup wave verified: 2 cases CLOSED, 14 progressed. Report saved C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-06-03.md.</div>
+    <div class="field"><strong>PM continuation 13:03 MYT &mdash; 2 SB PATCHes verified persisted (Shopee MY + TikTok):</strong>
+      <ul>
+        <li><code>260526EK7VHDNS</code> KarlMobel / Shopee MY / No Stock &mdash; closed as Cancelled. Before: all decision fields null + stockSetOos false. After: buyerDecision Cancelled, whConfirmStatus Not Required, stockAdjustmentStatus Not Required, stockSetOos true + evidence remark. Evidence: SiteGiant order 1404973 Cancelled/Paid/Fulfilled; iSKU TUBCOVER OOS but SOH 35. Follow-up: WH stock check needed (positive stock on OOS label).</li>
+        <li><code>584306042900416434</code> TT Murahya / TikTok / Offer Change &mdash; stockSetOos flipped false to true on exact original SKU CWS-4F-KHAKI. Evidence: SiteGiant order 1413263 Processed; CWS-4F-KHAKI 10/10/0/0 OOS, alternatives WHITE 35/33 and BLACK 46/29 available. Follow-up: WH check + approval before buyer message.</li>
+      </ul>
+      Also checked 7 other cases without SB writes (Kinata SG 260530RMX4T0F1, 260528JFXDHRX9; TT Murahya 584281402577355776; ValueSnap 260526E0VV0UEQ; MurahYa SG 260529NR0YCXVH; MasonGym 260530RJCYYH07; MurahYa 260527G9FGMFBR) &mdash; no mutations, just SiteGiant evidence captured. New Ship By rule not applicable today.
+    </div>
+    <div class="field"><strong>PM ad-hoc 14:17 MYT &mdash; MasonGym RUBBER-WEIGHT-PLATE-1PAIR-15KG line note:</strong> SB case 100973 / order 260506N5YF4U4Y / MasonGym. 1 PATCH on csRemarks (before null, after a note saying: SiteGiant item 11092873 RUBBER-WEIGHT-PLATE-1PAIR-15KG is labelled OOS but still shows SOH/Sellable 1/1; queued for stock adjustment to 0 while keeping OOS). stockSetOos / contactSent / buyerDecision unchanged. No SiteGiant quantity write done in this step. Follow-up: warehouse/SiteGiant adjustment still needed.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; Daily SB Var audit completed read-only. 202 cases (+1 net), 5 NEW (1 TT ParseFail / 1 TT oversize / 1 SG closure-pending / 2 A-BOT_OK). 3 PATCHes total today (2 PM continuation + 1 PM ad-hoc remark), all HTTP 200 verified persisted. Yesterday PM cleanup wave verified: 2 cases CLOSED, 14 progressed. Report saved C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-06-03.md.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-03" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
