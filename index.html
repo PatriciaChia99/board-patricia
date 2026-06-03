@@ -577,6 +577,81 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-03" data-shops="Kinata SG" data-platform="Jira / TikTok SG" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">Jira Change Request &mdash; Implement TikTok chatbot for Kinata SG (mirror Shopee SG Kinata script) (3/6)</span>
+    <span class="entry-meta">2026-06-03 ~12:26 MYT &middot; form GRBT/921 (Change Request) submitted on AdsPower profile 70 &middot; Page=Chatbot, Priority=High, Team=Customer Service, Requestor=Patricia &middot; service-desk confirmation rendered (no GRBT-### number returned)</span>
+    <span class="tag">jira</span>
+    <span class="tag">change-request</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> User requested raising a Jira ticket to implement a TikTok chatbot for Kinata SG, modelled on the existing Shopee SG Kinata chatbot. Submitted via Jira GRBT form 921 (Change Request template) on AdsPower profile 70.</p>
+    <div class="field"><strong>Form selection:</strong> User chose Change Request form (not Bug Report form 152 or Feature Request) since this is a planned implementation, not a defect. Discovered form/921 URL via Forms tab on GRBT board after navigating from project root. BEFORE: only Bug Report form 152 was documented in memory. AFTER: Change Request form 921 now also exercised end-to-end on profile 70 &mdash; same field IDs as form 152 (#summary-field, #ak-editor-textarea, #priority-field, #customfield_10105/06/07-field) with label "Change Title" instead of "Bug Title".</div>
+    <div class="field"><strong>Field values set:</strong> Change Title="Implement TikTok Chatbot for Kinata SG (mirror Shopee SG Kinata script)"; Change Overview=789-char body listing reference (Shopee SG Kinata bot), scope (TikTok Shop / Singapore / Kinata SG), why (extend channel coverage), acceptance criteria (intent parity with shipping queries/order status/FAQ, deployment to Kinata SG TT seller account, latency parity); Priority=High; Page=Chatbot; Requesting Team=Customer Service; Requestor=Patricia. BEFORE: form blank. AFTER: all required fields populated + Submit clicked.</div>
+    <div class="field"><strong>Submission confirmation:</strong> Post-Submit page rendered "We're on it! Thanks for your response." heading with "Submit another form" link, matching the documented form-152 behavior (service-desk request form, not Create Issue &mdash; no GRBT-### ticket number returned in confirmation; IT sees the request in their queue).</div>
+    <div class="field"><strong>Reason:</strong> User direct ask &mdash; "raise one, i want to implement chatbot for Tiktok chatbot for Shop SG Kinata. Script should use similar one with Shopee SG Kinata." Goal: extend automated chat coverage to the TikTok channel for Kinata SG (currently only Shopee SG Kinata bot is live).</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; form submitted, confirmation rendered, no errors. Watch GRBT board for IT pickup; no auto-confirmation email expected on Jira service-desk forms per prior pattern.</div>
+  </div>
+</div>
+<div class="entry" data-date="2026-06-03" data-shops="Hiranai, KarlMobel, MurahYa, Luxbin, ValueSnap, das.nature, Emas Gift" data-platform="Shopee MY" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">csrrcredited + csrrcreditedcheck &mdash; 20 PATCHes / KarlMobel 260426S7S6E936 correction (user-flagged) / Hiranai 260514DACFSATG action reversion re-fixed / 3 overnight auto-flips clean / Bucket B 7-day 57 Credited verified (3/6)</span>
+    <span class="entry-meta">2026-06-03 ~13:30-15:30 MYT &middot; webapp 2337 cases / 362 Pending RM 36k / 429 Credited / 1524 Withdrawn / 22 Rejected &middot; 20 PATCHes HTTP 200 (0 fail) &middot; 0 status flips (CS team manual flips overnight on 3 PARTIAL/NO_MATCH carry-overs) &middot; 13/13 verified persisted &middot; 0 drift detected in crosscheck</span>
+    <span class="tag">csrrcredited</span>
+    <span class="tag">csrrcreditedcheck</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Daily csrrcredited + immediate csrrcreditedcheck on Shopee MY. MCP webapp 401 immediately (per pattern), fell back to browser-fetch on profile 70 employee origin. Profile 70 auto-redirected to seller.shopee.sg twice mid-session &mdash; recovered by re-navigating to /customer-service/parcel-claims and re-fetching. Carried out priority verifications, user-directed correction, then daily sweep + Bucket B 7-day reverse-audit. No FULL Pending wallet sweep today (wallet probes need per-shop sig switch on profile 70 which is fragile under redirect; focused on cases with actionable signals).</p>
+    <div class="field"><strong>User-flagged correction &mdash; 260426S7S6E936 KarlMobel C14989 RM 206.30 (CRITICAL bug acknowledge):</strong> Yesterday 2/6 I tagged this as "&#x1F6A8; SILENT CLAWBACK 2/6 via Step 6a R/R adj=-RM 252.32 status=Dispute Rejected". User flagged today: "shopee already approved compensation, why u remark failed?" Re-investigation: clawback (type 411 -RM 252.32) DID fire 9/5 when Shopee BOT initially rejected the dispute on packaging-guidelines grounds. BUT Jaleel's escalation team REVERSED that decision 1/6: "I am delighted to share to you that your compensation request for this order has already been approve. You may expect the compensation to release to your seller wallet in 3-5 working days." The R/R-API page is STALE (still shows Dispute Rejected from 9/5 BOT verdict), but escalation-team approvals come via direct wallet credit, NOT via R/R-page state change. Today: PATCHed correction remark explaining the SILENT CLAWBACK tag was wrong + action=FOLLOW_UP. Expected comp landing 4/6-8/6. Wallet check 5/6+. BEFORE: SILENT CLAWBACK remark + action="Call Shopee". AFTER: CORRECTION remark explaining Jaleel reversal + action="FOLLOW_UP".</div>
+    <div class="field"><strong>Hiranai 260514DACFSATG action reversion confirmed + re-fixed:</strong> Yesterday Jemille chase set action=FOLLOW_UP at 13:09 UTC; user reported "one reversion was detected yesterday" in TOMORROW_PROMPT. Today GET confirmed action_needed="CS Action" (reverted overnight by webapp scheduler). Re-PATCHed action="FOLLOW_UP" + added audit-trail remark noting reversion + watch for repeat. KarlMobel 260319HQKFCT0U (Jacqueline chase yesterday) action="FOLLOW_UP" preserved correctly &mdash; no reversion on that one. BEFORE: action="CS Action". AFTER: action="FOLLOW_UP" + reversion-detection remark.</div>
+    <div class="field"><strong>3 overnight CS auto-flips verified clean (Bucket B spot-check):</strong> (1) 2605223Q6JQRU4 C17799 KarlMobel RM 36.35 PARTIAL was flipped Pending&rarr;Credited by CS after Shopee 2/6 08:54 approval + 2/6 wallet RM36.36 (Type 477) + -RM27.32 (Type 411) = NET +RM 34.04 vs refund 36.35 short RM 2.31. CS judgement close-as-near-win. CLEAN. (2) 2605236D7R59D7 C17900 Emas Gift RM 29.32 PARTIAL flipped Credited by CS with "APPROVED AND CREDITED 2/6"; NET +RM 21.96 vs RM 29.32 short RM 7.36. CS judgement close-as-near-win. CLEAN. (3) 260528JH1QMCHB C18205 KarlMobel RM 152.27 NO_MATCH flipped to Withdrawn (case auto-cancelled by buyer). CLEAN. Verdict: 3/3 CS overnight flips legitimate, no premature drift.</div>
+    <div class="field"><strong>10 monitoring/FOLLOW_UP PATCHes (Phase 2 &mdash; waiting on Shopee timelines):</strong>
+    &bull; 260507PSGCYJKM C16601 MurahYa RM 46.48 &mdash; Shopee Agent 28/5 12:35 promised 5 WD = 4/6 Thu tomorrow. MONITOR remark + action=FOLLOW_UP. BEFORE: action="WH Evidence". AFTER: action="FOLLOW_UP".
+    &bull; 260514CV0B2MQ3 C17369 KarlMobel RM 230.57 &mdash; Lory 29/5 12:05 promised 5 WD = 5/6 Fri. MONITOR + FOLLOW_UP. BEFORE: action="Call Shopee". AFTER: action="FOLLOW_UP".
+    &bull; 2604281XJS1A7H C15235 KarlMobel RM 675.68 &mdash; Lory 31/5 promised 5 WD = 6/6 Sat / 8/6 Mon. MONITOR + FOLLOW_UP. BEFORE: action="Call Shopee". AFTER: action="FOLLOW_UP".
+    &bull; 260425PHTF68C8 C16608 MurahYa RM 579.02 &mdash; Dispute just opened 1/6, evidence uploaded 1/6, awaiting Shopee review. MONITOR remark only.
+    &bull; 2605223BY2H0BN C17802 MurahYa RM 145.42 &mdash; Reopen ref 2061344578025541690 fired 1/6 after 27/5 packaging rejection. Awaiting Shopee re-review (3-5 WD = 4/6-8/6). FOLLOW_UP. BEFORE: action="WH Evidence". AFTER: action="FOLLOW_UP".
+    &bull; 260423JF34WA0X C15143 MurahYa RM 572.00 &mdash; Terminal-rejected packaging-guidelines case; clawback -RM 642.81 confirmed. No CS recourse via standard R/R; only FBS team or write-off. NEED-REOPEN flag preserved for user CS decision.</div>
+    <div class="field"><strong>4 escalation/FBS-tag PATCHes (Phase 3):</strong>
+    &bull; 260505HUM84M21 C16739 MurahYa RM 1,693.70 HV &mdash; Customer returned shopee parcel 14/5 (tracking 66668042789001 + 66668040789002 Best Cargo). WH inspection pending. MONITOR. Re-check 5/6.
+    &bull; 260503EMD6HFP9 C16577 das.nature RM 150.09 &mdash; Parcel Not Delivered IN TRANSIT 28 days. ESCALATE remark added &mdash; file Shopee Buyer/Seller Protection claim.
+    &bull; 260504GPFPQPMT C16522 Luxbin RM 156.76 &mdash; FBS DELIVERED. Added "FBS - pending claim - 3/6" for Google Sheet.
+    &bull; 260504HGQM3SQ7 C16562 ValueSnap RM 109.28 &mdash; FBS ITEM. Added "FBS - pending claim - 3/6" for Google Sheet.</div>
+    <div class="field"><strong>Bucket B 7-day reverse-audit (deferred yesterday, completed today):</strong> Probed 429 Credited cases, filtered 57 with recent activity since 27/5. Distribution: MurahYa 23 / ValueSnap 16 / KarlMobel 12 / MasonGym 2 / Hiranai 1 / das.nature2 1 / Emas Gift 1 / Luxbin 1. Heuristic scan for premature flips: 0 drift detected. All 51 yesterday's Pending&rarr;Credited flips remain Credited + match expected WIN patterns (INCOME_ONLY type 101 only, no clawback fired). 6 new Credited entries today are CS team's manual flips on Shopee 2/6 approvals (legit). Verdict: Bucket B CLEAN.</div>
+    <div class="field"><strong>csrrcreditedcheck independent verification:</strong> Re-GET on all 13 PATCHed cases + 3 priority cases = 13/13 persisted with correct refund_state + action_needed. No drift. KarlMobel 260426 correction interpretation verified: Jaleel 1/6 message specifically references order_id 260426S7S6E936 (NOT the earlier 28/5 confusion where Jaleel mentioned the wrong order &mdash; that was 2059897983200280653 which is the MCB ref for 260319HQKFCT0U Jacqueline-chased KarlMobel case). So 1/6 Jaleel approval IS for THIS order. Correction stands.</div>
+    <div class="field"><strong>Tomorrow/next-session wallet check schedule:</strong> 4/6 Thu &mdash; C16601 MurahYa RM 46.48 (Shopee 28/5 5-WD deadline). 5/6 Fri &mdash; (a) Jacqueline win 260319HQKFCT0U RM 805.49, (b) Jemille win 260514DACFSATG RM 17.70, (c) Lory 29/5 win 260514CV0B2MQ3 RM 230.57, (d) Jaleel 1/6 win 260426S7S6E936 RM 206.30. 6/6 Sat &mdash; (e) Lory 31/5 win 2604281XJS1A7H RM 675.68. 8/6 Mon cleanup.</div>
+    <div class="field"><strong>Reason:</strong> Daily csrrcredited + crosscheck per CLAUDE.md skills #18-19 + user-directed correction on 260426S7S6E936 per priority case verification list. Browser-fetch fallback on employee origin (profile 70) since MCP webapp returned 401 (per feedback_webapp_mcp_401_browser_fallback.md). FBS tagging strictly per feedback_csrrcredited_dont_tag_fbs_without_evidence.md.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 20 PATCHes HTTP 200 (4 priority verifications + 10 monitoring/FOLLOW_UP + 6 escalation/FBS), 0 fails, 13/13 verified persisted, 0 drift in crosscheck, 3/3 overnight CS auto-flips legit, Bucket B CLEAN, KarlMobel 260426 user-flagged bug corrected. No status flips today; cases waiting on 4-8/6 Shopee timelines properly tagged FOLLOW_UP for next-session wallet verify.</div>
+  </div>
+</div>
+<div class="entry" data-date="2026-06-03" data-shops="KarlMobel, Hiranai, MurahYa" data-platform="Shopee MY" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">chase-rr &mdash; no-op day / 2 yesterday's chase wins still mid-window / FOLLOW_UP monitoring verified / 1 reversion auto-corrected (3/6)</span>
+    <span class="entry-meta">2026-06-03 ~15:30 MYT &middot; 0 NEW chases fired (no candidates past Shopee promise deadline) &middot; 0 ref captured &middot; 2 yesterday's chase wins (Jacqueline KarlMobel + Jemille Jeth Hiranai) still mid-window &middot; 1 Hiranai action reversion auto-detected and re-fixed (FOLLOW_UP re-set)</span>
+    <span class="tag">chase-rr</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Daily chase-rr evaluation. Per chase-rr.md trigger logic (4 criteria: credited_to_wallet Pending + Shopee timeline promised + today past deadline + wallet NET &le; 0), 0 NEW chases eligible today. All recent candidates have Shopee timelines that haven't expired yet (most 4/6-8/6). Yesterday's 2 chase wins remain mid-promise window. Action-reversion safeguard verified.</p>
+    <div class="field"><strong>Yesterday's 2 chase wins (DO NOT re-chase, monitor only):</strong> (1) 260319HQKFCT0U KarlMobel C13217 RM 805.49 &mdash; Jacqueline chase 2/6 18:07, ref 2061749233905131602, promised "Until June 5, 2026". action="FOLLOW_UP" verified preserved. First real wallet check 5/6 Fri. (2) 260514DACFSATG Hiranai C17335 RM 17.70 &mdash; Jemille Jeth chase 2/6 18:30, ref 2061755109961531406, escalation 3-5 WD (= 5/6-9/6). action_needed had REVERTED overnight to "CS Action" &mdash; re-PATCHed to "FOLLOW_UP" today + audit remark added. First real wallet check 5/6 Fri.</div>
+    <div class="field"><strong>NEW chase candidate eligibility check (4 criteria evaluation):</strong>
+    &bull; C16601 MurahYa 260507PSGCYJKM RM 46.48 (yesterday's HIGH priority) &mdash; Shopee 28/5 promised 5 WD = 4/6 Thu. NOT YET past deadline. SKIP today, chase 4/6 if RM 0.
+    &bull; C17369 KarlMobel 260514CV0B2MQ3 RM 230.57 &mdash; Lory 29/5 promised 5 WD = 5/6. NOT YET past. SKIP.
+    &bull; C15235 KarlMobel 2604281XJS1A7H RM 675.68 &mdash; Lory 31/5 promised 5 WD = 6/6. SKIP.
+    &bull; C14989 KarlMobel 260426S7S6E936 RM 206.30 (user-corrected today) &mdash; Jaleel 1/6 promised 3-5 WD = 4-8/6. SKIP.
+    &bull; C16603 MurahYa 260505JJ41BFF5 RM 82.37 &mdash; 2nd dispute 21/5, typical 5-7 WD = 28-30/5 expired. PAST deadline. BUT wallet NET +RM 56.07 still positive &mdash; not chase priority. SKIP.
+    Verdict: 0 cases eligible today.</div>
+    <div class="field"><strong>Profile routing note (per chase-rr.md hard rule):</strong> When chases DO fire (4/6 onwards), use cs1-cs4 sub-account profiles ONLY. NEVER profile 70. Routing: MurahYa MY &rarr; cs4 (k1arw4x4); KarlMobel/Lovento/Luxbin &rarr; cs3 (k1arw2cs); ValueSnap/das.nature2 &rarr; cs1 (k1artcxf) or cs2 (k1arvrqs); Hiranai &rarr; cs3 (cross-shop).</div>
+    <div class="field"><strong>Scheduled task status:</strong> Daily 10AM scheduled chase-rr task can resume from 4/6 onwards per yesterday's HARD FIX. Today's no-op decision recorded; task scheduler unchanged.</div>
+    <div class="field"><strong>Reason:</strong> Per chase-rr.md 4-criteria trigger logic + yesterday's chase wins' promise windows. Daily skill #20 (chase-rr) runs after csrrcredited + csrrcreditedcheck. No-op days are legitimate per skill logic when no candidates past deadline.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 0 NEW chases fired (no eligible candidates today), 2 yesterday's chase wins verified monitoring (1 action reversion auto-caught + re-fixed), 5 cases evaluated against 4-criteria trigger logic and SKIPped with documented reason. Next eligible chase day = 4/6 Thu (C16601 MurahYa wallet check &mdash; if RM 0, chase via cs4 profile k1arw4x4).</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-03" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
