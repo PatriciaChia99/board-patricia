@@ -1129,7 +1129,7 @@ header.page::after{
     <span class="chevron">&#9654;</span>
     <span class="entry-title">EOD ADDENDUM &mdash; checksbvariation closeout 2026-06-02 SB messages + SG stock cleanup + New Ship By rule saved</span>
     <span class="entry-meta">2026-06-02 21:30 MYT &middot; live SB/SiteGiant crosscheck &middot; session saved for 2026-06-03 continuation</span>
-    <span class="tag">checksbvariation</span>
+    <span class="tag">eod-addendum</span>
     <span class="tag result-ok">Completed</span>
   </div>
   <div class="entry-body">
@@ -1681,7 +1681,7 @@ header.page::after{
     <span class="chevron">&#9654;</span>
     <span class="entry-title">Kinata PM 18:30 audit &mdash; 37 To Process (~S$1,414.26) / 1 Processed RISK-OF-LATE Day 3 / 156 Shipping &mdash; PM force-refund S$56.99 CS-gap (31/5)</span>
     <span class="entry-meta">2026-05-31 18:30 MYT &middot; Kinata SG (kinatasg) &middot; Profile 70 (k1b44nvg, kmall:patricia) &middot; AdsPower MCP fully alive &middot; read-only scan, no DB writes</span>
-    <span class="tag">checkkinataorder</span>
+    <span class="tag">kinata-pm-addendum</span>
     <span class="tag result-ok">Completed</span>
   </div>
   <div class="entry-body">
@@ -2216,7 +2216,6 @@ header.page::after{
       <span class="chevron">&#9654;</span>
       <span class="entry-title">SB stock split corrected: FB-BLK-S adjusted, Mahjong removed from pending</span>
       <span class="entry-meta">2026-05-29 17:51 MYT &middot; stock follow-up &middot; #SA-18548</span>
-      <span class="tag">checksbvariation</span>
       <span class="tag">stock-adjusted</span>
       <span class="tag result-ok">Done</span>
     </div>
@@ -3370,7 +3369,7 @@ header.page::after{
       <span class="chevron">&#9654;</span>
       <span class="entry-title">scheduled-task bats hardened for 27/5 fire &mdash; AdsPower SSL cert canary added to all 4 + 26/5 EOD carry-over wired into prompts + TT_RR force-re-probe fix for profiles 54/59 (26/5 EOD)</span>
       <span class="entry-meta">2026-05-26 ~20:50 MYT &middot; edits to <code>C:\Users\tessf\scripts\{chataudit,checksbvariation,parcelclaim-auto,tiktokrraudit}.bat</code> &middot; backups at <code>scripts\_backup-26may-eod\</code> &middot; tomorrow fire times: ChatAudit 9:11 / SBVar 9:33 / ParcelClaim 9:46 / TT_RR 10:15 MYT &middot; cert canary smoke-test PASS (code:0 success)</span>
-      <span class="tag">ad-hoc</span>
+      <span class="tag">scheduled-tasks</span>
       <span class="tag platform">internal</span>
       <span class="tag result-ok">Completed</span>
     </div>
@@ -4768,13 +4767,7 @@ header.page::after{
       <span class="chevron">&#9654;</span>
       <span class="entry-title">batch-run &mdash; 7 daily skills user-triggered while offline (22/5)</span>
       <span class="entry-meta">2026-05-22 MYT &middot; user requested: chataudit/parcelclaim-auto/checksbvariation/parcelsplit-contact-crosscheck/csrrcredited+check/tiktokrraudit/checkkinataorder &middot; morning scheduled-task batch all terminated at 13:28:02 (result 1073807364/3221225786 &mdash; system catch-up wake interrupt) &middot; manual webapp-API queries used for state verification &middot; no DB writes / no agent messages / no PATCHes / read-only</span>
-      <span class="tag">chataudit</span>
-      <span class="tag">parcelclaim-auto</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag">parcelsplit-contact-crosscheck</span>
-      <span class="tag">csrrcredited</span>
-      <span class="tag">tiktokrraudit</span>
-      <span class="tag">checkkinataorder</span>
+      <span class="tag">batch-run</span>
       <span class="tag result-warn">Partial</span>
     </div>
     <div class="entry-body">
@@ -4826,7 +4819,6 @@ header.page::after{
       <span class="chevron">&#9654;</span>
       <span class="entry-title">ad-hoc &mdash; packaged checksbvariation skill into zip for sharing (22/5)</span>
       <span class="entry-meta">2026-05-22 MYT &middot; user asked for SB variation folder as downloadable zip &middot; staged 4 files (skill .md + config.json + state.json + watchlist.json) &middot; output C:\Users\tessf\Downloads\checksbvariation.zip 35.55 KB &middot; verified zip contents</span>
-      <span class="tag">checksbvariation</span>
       <span class="tag">ad-hoc</span>
       <span class="tag result-ok">Completed</span>
     </div>
@@ -4852,9 +4844,6 @@ header.page::after{
       <span class="entry-meta">2026-05-21 MYT &middot; bug surfaced via 260425NQ4GM32Y Luxbin (refund RM 42.30, bot Credited 13/5 on +RM 9.30 type-406 = shipping leg only, missed product comp; user opened new dispute 2057335135231721485 today) &middot; skill files patched: csrrcredited Step 3.5 SHIPPING_ONLY_PARTIAL + Step 6a gate + Step 7 reverse-audit + Error 8 + checklist &middot; csrrcreditedcheck CHECK 1 verdict matrix + auto-revert + Error 3 &middot; tiktokrraudit + parcelclaim-auto + incomewalletcheck preventative NOTEs &middot; HARD memory saved &middot; **BACKFILL: 413 Credited cases swept across 11 shops, 14 flags, 13 actionable (C14924 excluded since user already opened follow-up), 13/13 reopened to Pending HTTP 200, 13/13 reconciled credited_to_wallet=Pending + remark present**</span>
       <span class="tag">csrrcredited</span>
       <span class="tag">csrrcreditedcheck</span>
-      <span class="tag">tiktokrraudit</span>
-      <span class="tag">incomewalletcheck</span>
-      <span class="tag">parcelclaim-auto</span>
       <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
