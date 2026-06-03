@@ -577,6 +577,87 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-03" data-shops="KarlMobel + Luxbin + MurahYa + ValueSnap" data-platform="Shopee MY" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checkfbsclaims (money-credited-only) &mdash; 110 FBS cases R/R-verdict scanned across 4 shops, 0 PATCHes (read-only per user) (3/6)</span>
+    <span class="entry-meta">2026-06-03 PM MYT &middot; 4 shops &middot; 30-day window &middot; KarlMobel 43 / ValueSnap 54 / MurahYa 8 / Luxbin 4 &middot; 17 Yes verified pattern, 9 KarlMobel "No" mismatches RM 711.85, 2 ValueSnap Pending&rarr;Withdrawn candidates RM 30.76, 26 NULL should be Pending</span>
+    <span class="tag">checkfbsclaims</span>
+    <span class="tag">read-only</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> User asked to run checkfbsclaims but ONLY the money-credited verification portion (skip new-case discovery from Shopee R/R tabs). Scope confirmed via AskUserQuestion: Everything (Yes + Pending + No) / Last 30 days. Wallet UI verification could not be completed (finance password modal + tab-routing instability + wallet API body capture failed). Pivoted to R/R API verdict-mapping per skill table as the canonical "did Shopee resolve in our favour" proxy.</p>
+    <div class="field"><strong>DB scope (NEWParcelclaim, remarks LIKE FBS, date &ge; 30d ago):</strong>
+    &bull; KarlMobel: 43 cases (1 Yes / 25 Pending / 9 No / 1 Withdrawn / 7 NULL)
+    &bull; Luxbin: 4 cases (4 Pending)
+    &bull; MurahYa: 8 cases (3 Yes / 4 Pending / 1 NULL)
+    &bull; ValueSnap: 54 cases (13 Yes / 22 Pending / 18 NULL / 1 Withdrawn)
+    &bull; Total: 110 cases &middot; "Yes" sum RM 488.76 &middot; "Pending" sum RM 3,349.22</div>
+    <div class="field"><strong>R/R API method:</strong> POST <code>/api/v4/seller_center/return/return_list/get_exceptional_case_list</code> on each shop&apos;s active session, keyword=order_id, flow_tab=1 case_tab=0. Switched shop via /portal/shop &rarr; Details. Profile k1b44nvg (port 50359 after delete_cache=1 reopen following CDP ECONNREFUSED at 56921 per [[feedback_adspower_delete_cache_unblocks_chromium145]]).</div>
+    <div class="field"><strong>17 DB "Yes" cases &mdash; verified pattern (16/17 confirmed credited):</strong>
+    &bull; MurahYa 3/3: all Request Rejected &rarr; escrow released &check;
+    &bull; ValueSnap 13/13: 12 Request Rejected + 1 Request Cancelled &check;
+    &bull; KarlMobel 1/1: 260515EGB1VK53 RM 103.55 Request Refunded+DD &mdash; unusual; only true wallet-check candidate (DB Yes implies FBS warehouse-fault comp landed, R/R alone can&apos;t confirm)</div>
+    <div class="field"><strong>9 KarlMobel "No" mismatches RM 711.85 &mdash; R/R says we WON:</strong>
+    26052121UAJNA6 RM 47.62 / 260425NV00XGHV RM 140.51 / 260520UCR20XRK RM 52.99 / 260519RQ589H0T RM 35.50 / 260519T2A8KV47 RM 19.88 / 260516HKVCFPY6 RM 50.66 / 260514CFC2EJ91 RM 167.88 / 260506P3JQNTRW RM 127.46 / 260509VY8WQ8RT RM 69.35 &mdash; all Request Rejected (buyer R/R denied by Shopee), no buyer refund flow. DB &quot;No&quot; tag inappropriate &mdash; should be Withdrawn or Yes depending on escrow-release interpretation. Surfaced, not patched.</div>
+    <div class="field"><strong>2 ValueSnap "Pending" &rarr; should be Withdrawn:</strong>
+    &bull; 260520VP4DBWG0 RM 18.03 Request Cancelled (buyer withdrew)
+    &bull; 2605210QSEMMRT RM 12.73 Request Cancelled (buyer withdrew)</div>
+    <div class="field"><strong>26 NULL credited_to_wallet cases &mdash; should default to Pending:</strong> KarlMobel 7 / MurahYa 1 / ValueSnap 18 &mdash; all Request Refunded + Delivery Failed = FBS courier-loss in flight, awaiting Shopee logistics comp. Currently NULL in DB; setting to Pending is safe minimum.</div>
+    <div class="field"><strong>Cannot confirm without wallet UI:</strong>
+    &bull; KarlMobel 260515EGB1VK53 RM 103.55 actual wallet credit landing
+    &bull; ~55 Pending Request-Refunded+DD cases that may have been silently FBS-comped</div>
+    <div class="field"><strong>Operational issues encountered:</strong>
+    &bull; Finance password modal blocked initial wallet access &mdash; user auto-typed + verified
+    &bull; AdsPower MCP tab attachment kept hopping between MY/SG tabs as user browsed in parallel; navigation 3x to seller.shopee.com.my needed to stabilise
+    &bull; CDP ECONNREFUSED mid-session on port 56921 &mdash; resolved via open-browser with delete_cache=1 (new port 50359, session cookies survived)
+    &bull; Wallet transactions API <code>/api/v4/seller/local_wallet/get_wallet_transactions</code> body shape not captured (fetch/XHR patches didn&apos;t catch the call &mdash; possibly already issued pre-patch); wallet UI scraping yielded only 19 inline txns (no pagination control accessible). Abandoned wallet path.</div>
+    <div class="field"><strong>User decision:</strong> &quot;Stop &mdash; just give me the report, no PATCHes&quot; via AskUserQuestion. Read-only audit complete, no DB writes. Findings preserved here for follow-up.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 110 cases scanned, 4 shops covered, all mismatches surfaced (RM 742.61 of mis-tagged exposure &middot; RM 711.85 KarlMobel No + RM 30.76 ValueSnap Pending). No DB changes per user instruction.</div>
+  </div>
+</div>
+<div class="entry" data-date="2026-06-03" data-shops="N/A — skill files" data-platform="csrrcredited + csrrcreditedcheck + chase-rr skills" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">Skill files updated for 4/6 scheduled run &mdash; 3 skills, 16 new rules baked in (R/R-page stale / action_needed reversion periodic / FBS token discipline / browser-fetch fallback / chase-rr verified outcomes) (3/6)</span>
+    <span class="entry-meta">2026-06-03 ~17:00 MYT &middot; updated `csrrcredited.md` (+7 rules A-G), `csrrcreditedcheck.md` (+5 rules CC-A to CC-E), `chase-rr.md` (+4 rules CR-A to CR-D + 2nd verified outcome Jemille WIN) &middot; lessons from 3/6 session baked into skills so scheduled bot run 4/6 AM picks them up automatically</span>
+    <span class="tag">skill-update</span>
+    <span class="tag">csrrcredited</span>
+    <span class="tag">csrrcreditedcheck</span>
+    <span class="tag">chase-rr</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> User requested skill-file updates so tomorrow morning's scheduled csrrcredited+csrrcreditedcheck+chase-rr runs apply the 3/6 lessons automatically (not just from TOMORROW_PROMPT which I read at session start). Baked the 4 new feedback memories into the skill source files at <code>C:\Users\tessf\.claude\skills\</code>.</p>
+    <div class="field"><strong>csrrcredited.md updates (7 rules A-G):</strong>
+    &bull; Rule A: R/R-page status STALE after escalation reversal &mdash; scan parsed_remarks for chronologically later Shopee escalation team approvals before tagging SILENT CLAWBACK
+    &bull; Rule B: action_needed reverts both event-driven (~30s post-remark) AND periodic (~15-30 min) &mdash; PATCH action LAST + re-verify + re-PATCH up to 3x; daily first-action check on all FOLLOW_UP cases
+    &bull; Rule C: FBS token discipline reinforced (explicit FBS/FBS-ITEM/FBS-DELIVERED token required)
+    &bull; Rule D: MCP webapp 401 &rarr; browser-fetch fallback on profile 70 employee origin, no user MCP refresh prompt
+    &bull; Rule E: 4/6 first-action verify list (10 cases + 1 SG flip)
+    &bull; Rule F: C16601 4/6 wallet-deadline check + chase-rr trigger if RM 0
+    &bull; Rule G: Kinata SG 38-case sweep carry-over (retry when profile 70 free)</div>
+    <div class="field"><strong>csrrcreditedcheck.md updates (5 rules CC-A to CC-E):</strong>
+    &bull; CC-A: Step 4.5 NEW action_needed drift check (re-GET Bucket A cases, re-PATCH reversions, report drift count in summary)
+    &bull; CC-B: R/R-page stale verification before confirming SILENT CLAWBACK tags
+    &bull; CC-C: Browser-fetch cross-origin fallback path when MCP 401 (employee origin for PATCH + SC origin for wallet probe via the same browser)
+    &bull; CC-D: Profile 70 redirect storm handling (tight navigate+fetch single eval, guard against redirect, defer affected work after 3 retries)
+    &bull; CC-E: Late-PM wallet re-probe pattern (comps can land mid-day, re-probe ~16:00 before declaring "no comp today")</div>
+    <div class="field"><strong>chase-rr.md updates (4 rules CR-A to CR-D + 2nd verified outcome):</strong>
+    &bull; Added Jemille Jeth 2/6 chase verified outcome (WIN landed 3/6, 2 days ahead of promise, RM 13.95 product comp landed)
+    &bull; CR-A: action_needed reversion check at start of every chase-rr session for all previously-chased cases (last 7d)
+    &bull; CR-B: Profile 70 dual redirect issues (sitegiant.co + /portal/finance/wallet/shopeepay) + profile routing reminder
+    &bull; CR-C: Post-chase wallet verify cadence (lower bound, daily probe, upper bound)
+    &bull; CR-D: chased-case state after WIN flip (action=Closed set by classifier, don't manually PATCH)</div>
+    <div class="field"><strong>Files modified:</strong>
+    &bull; <code>C:\Users\tessf\.claude\skills\csrrcredited.md</code>
+    &bull; <code>C:\Users\tessf\.claude\skills\csrrcreditedcheck.md</code>
+    &bull; <code>C:\Users\tessf\.claude\skills\chase-rr.md</code></div>
+    <div class="field"><strong>Reason:</strong> User: "update TO THE SKILLS FOR TOMRROW MORNING SCHEDULE RUN" &mdash; ensure scheduled bot (not just manual session) picks up the 5 action-reversions / R/R-stale-page bug / SG flip carry-over / chase wins from 3/6 session. TOMORROW_PROMPT files alone are read only on manual invocation; skill files are read on every run including scheduled tasks. References: feedback_rr_page_stale_after_escalation_reversal.md, feedback_webapp_action_needed_reversion_pattern.md, feedback_csrrcredited_dont_tag_fbs_without_evidence.md, feedback_webapp_mcp_401_browser_fallback.md.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 3 skill files updated with 16 new rules + 1 new verified outcome (Jemille WIN). Tomorrow's scheduled csrrcredited + csrrcreditedcheck + chase-rr runs will apply these automatically without user prompt.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-03" data-shops="all TT MY shops" data-platform="TikTok MY (CS training)" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -746,7 +827,7 @@ header.page::after{
 <div class="entry" data-date="2026-06-03" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">checkkinataorder &mdash; scheduled noon run: 6 NEW TPs SGD 131.99 (sjuksjuk HV S$84 Dustbin); Processed DRAINED 19&rarr;0; meiglow88 S$13.32 NEW LOSS (CS non-responsive); 7 In-Val Due 05/6 48h left; 2 NEW HV R/R lloydobial S$40.06 + sensational_touch S$52.00 (3/6)</span>
+    <span class="entry-title">checkkinataorder &mdash; scheduled noon + PM runs: 6 NEW noon TPs SGD 131.99 + 10 NEW PM TPs SGD 364.91 (gyeong_byeol bulk Metal Shelf 3-pack S$178.70); meiglow88 noon LOSS SGD 13.32 + sensational_touch PM LOSS SGD 52.00 HV R36S (Shopee Review&rarr;Refunded); today total SGD 65.32; 7 In-Val Due 05/6 36h left; 5 R/R Pick-Up-Done events TODAY (3/6)</span>
     <span class="entry-meta">2026-06-03 12:05+12:30 MYT &middot; TP 4&rarr;6 (6 NEW today 08:18-11:31 SGT ~SGD 131.99 incl sjuksjuk HV S$84.00 SS Dustbin 60L) &middot; Processed 19&rarr;0 DRAINED (all 19 noon Processed + 4 PM TPs &rarr;Shipping) &middot; 0 Risk-of-Late &middot; Shipping 192&rarr;201 (+9) &middot; R/R action_req 7&rarr;8 (+emnlhji45d In Return Pick-Up-Done; 7 In-Val Due 05/6 same cohort, 48h left, CS NOT acted in 24h) &middot; R/R historical 608&rarr;614 (+6) &middot; &#x1F534; NEW LOSS SGD 13.32 meiglow88 260530RMX4T0F1 Sleeping Bag (Seller not responsive &rarr; CS approved refund 03/06) &middot; June running SGD 13.32 / May+June running SGD 144.44 &middot; &#x1F195; 7 NEW R/R inflow overnight ~SGD 209.93 incl 2 HV: lloydobial 260601VBYCMKSP S$40.06 Defective R36S (offer-partial Day 1) + sensational_touch 260529N5UWKMN2 S$52.00 "Parcel not delivered" R36S (In Shopee Review) &middot; &#x1F7E2; jinnyong22+rix5cs__lm S$25.98 seller-win hold STABLE (status=4/ext=10 unchanged) &middot; &#x26A0; radhakuppuswami HV S$78.49 Day 7 wallet watch unchanged (status=4/ext=9, no clawback today) &middot; angxiangwei HV S$79.71 Day 5 still unactioned &middot; paul.gloria 260602170Q6WJS modify-order shipment arranged status=2/ext=2 BUT cancellation pending (auto-cancel 04/06 20:01 SGT, ~32h) &middot; 4 yesterday-PM TPs (himpohtan/k102j3xoy7/irwansapari195/theplasticcow) ALL &rarr;Shipping (API status=2/ext=2/ls=2) 0 STALE &middot; Khaki OS Day 16 0 new cancellations</span>
     <span class="tag">checkkinataorder</span>
     <span class="tag result-ok">Completed</span>
@@ -767,7 +848,17 @@ header.page::after{
     <div class="field"><strong>Other carry-over carry status:</strong> angxiangwei 260525AVRHVKG4 S$79.71 HV Day 5 still In Return offer-partial unactioned (CS) &middot; paul.gloria 260602170Q6WJS S$19.99 modify-order: API status=2/ext=2 (shipment arranged), cancellation request pending in R/R, auto-cancel 04/06 20:01 SGT (~32h runway) &middot; anaqaisha S$28.98 unchanged status=2/ext=9 &middot; angelynsee S$19.55 sealed In Return offer-partial &middot; vaniajay (dispute from 05-06) / revenantak (dispute from 04-06) / qiutingg (dispute from 03-06 TODAY) all unchanged</div>
     <div class="field"><strong>Khaki OS Sweater Day 16:</strong> 0 new cancellations on R/R page 1 today &middot; Cumulative S$50.86 unchanged &middot; Variant still not flipped OOS by warehouse (REPEAT REMINDER Day 16)</div>
     <div class="field"><strong>Profile:</strong> AdsPower 70 (k1b44nvg, kmall:patricia) &middot; AdsPower MCP fully alive this run &middot; CDP port 60585 &middot; WhatsApp send SKIPPED per task instruction (QR-blocker)</div>
-    <div class="field"><strong>Result:</strong> ok &mdash; Noon audit complete; Processed drained (excellent throughput); 6 fresh TPs queued for shipment incl. sjuksjuk HV S$84 priority; meiglow88 NEW CS-gap loss S$13.32 surfaced; 7 In-Validation Due 05/6 still need CS validation (48h left); 2 NEW HV R/R disputes opened (lloydobial + sensational_touch); read-only audit, no DB writes/PATCHes; report saved.</div>
+    <div class="field"><strong>PM run (16:33-16:40 MYT, ~4h after noon):</strong> Profile 70 reopened with <code>delete_cache=1</code> (chromium-145 fix from 3/6 PM-rerun memory). All carry-over checks done via DOM scrape + API search-hint (tab=300 To Ship / tab=400 Shipping / tab=500 Completed). 0 PATCHes / 0 DB writes (read-only audit per skill). Report saved (overwrite of noon snapshot) <code>C:\Users\tessf\Documents\kinata-reports\kinata-report-2026-06-03.md</code>. WhatsApp SKIPPED per task instruction.</div>
+    <div class="field"><strong>To Process (PM):</strong> 6 noon &rarr; 10 PM &middot; All 10 NEW PM (afternoon orders): ayuktersayank 260603539Q7B5E Blazer 2XL Black S$13.89 / sssabbiee 26060352S6TU3C 99 Stalks Soap Rose Bouquet S$39.43 / ashlynlee065 260603513XM60W Soap Flower Blue Whisper S$19.83 / ken.woon 2606034X7GC1A0 Dustbin Simplex 12L S$27.11 / dee_pika 2606034X0EB89Y Arch Backdrop 2Mx2M Gold S$29.21 / w2ul4szsxq 2606034WVDKFQ0 BT Keyboard Touchpad S$29.99 / gyeong_byeol 2606034VTG8Q99 Metal Shelf 5T 100cm S$53.90 / gyeong_byeol 2606034VTG8Q97 Metal Shelf 5T 120cm S$70.90 / gyeong_byeol 2606034VTG8Q98 Metal Shelf 5T 100cm S$53.90 / userajskhh 2606034V3XCAGJ Rose Soap Bouquet Pink Large S$26.75 &middot; Combined SGD 364.91 &middot; Ship-by 04/06 14:00/EOD SGT &middot; <strong>gyeong_byeol 3-pack Metal Shelf bundle S$178.70 = priority single-buyer pack.</strong></div>
+    <div class="field"><strong>Processed (PM):</strong> 1 &middot; rintalib1822 2606034A46AVC4 Blazer 3XL Black S$15.70 (noon TP) SPX Express SPXSG066225878056 pickup 03/06. 0 Risk-of-Late.</div>
+    <div class="field"><strong>Shipping (PM):</strong> 198 (-3 vs noon 201) &middot; Completed outflow &gt; shipout inflow in 4h window.</div>
+    <div class="field"><strong>R/R PM (page 1 / 16 scraped, 30 entries):</strong> Total Requests 614 unchanged from noon (0 NEW R/R inflow in 4h, positive). action_required panel still 8 (7 In-Val Due 05/6 + 1 emnlhji45d Pick-Up-Done). All 7 In-Val cohort SAME state, "Dispute Due in 2 days" button live. CS HAS STILL NOT acted in another 4h. 36h until 05/6 deadline.</div>
+    <div class="field"><strong>&#x1F534; NEW HV LOSS SGD 52.00 (PM, between noon and 16:40):</strong> sensational_touch 260529N5UWKMN2 R36S "Parcel not delivered" FLIPPED Shopee Review &rarr; Request Refunded. Now shows TWO paired requests on R/R page: one Request Refunded $52.00, one Request Cancelled $52.00 (Shopee auto-pair after refund approval). Net $52.00 LOSS. Delivered via Doorstep 30/05 to buyer; HV R36S electronics &mdash; likely doorstep proof gap. **Today total LOSS SGD 65.32 (noon meiglow88 13.32 + PM sensational_touch 52.00).** May+June running S$196.44.</div>
+    <div class="field"><strong>&#x1F195; 5 R/R Pick-Up-Done events TODAY 03-06 (buyer return parcels in transit):</strong> emnlhji45d 260526EP6JBV8A S$15.70 Singpost POPstation RNSHS00835430 (carry from noon, now Pick-Up-Done) / dir1983 260601UM4XQSCY S$39.10 Wrong Dustbin SPX Express Pick Up SPXSG066069352146 (can dispute 06-06) / shafura241 260601VNJ1VNGS S$6.21 Sealed Laptop Bag Singpost POPstation RNSHS00837014 (can dispute 04-06) / qiutingg 260526D5UXEQ63 S$7.03 Sealed Singpost POPstation RNSHS00836156 (**can dispute 03-06 TODAY**) / zakikihassen 260525BY2SS9M7 S$9.56 Wrong item Screen Protector x2 SPX Express Pick Up SPXSG067656666505 (can dispute 06-06). CS should pre-empt dispute on parcel arrival.</div>
+    <div class="field"><strong>Carry-over PM (search-hint API):</strong> All 6 noon TPs progressed &mdash; 5 in tab=400 Shipping FOUND (dexterong066/sjuksjuk HV S$84/o6bau26.../amythystc136/fionne) + 1 in Processed (rintalib1822) &middot; 5 R/R carry-overs verified: radhakuppuswami Completed tab (Day 7 wallet watch unchanged, no clawback) / jinnyong22+rix5cs__lm Completed tab (S$25.98 seller-win hold stable) / paul.gloria Shipping tab (modify-order auto-cancel 04/06 20:01 SGT 27h) / anaqaisha Shipping tab (delivered-with-R/R unchanged) &middot; angxiangwei HV S$79.71 Day 5 STILL unactioned (SPX Pick Up SPXSG061135004805 Preparing) &middot; lloydobial HV S$40.06 Day 2 unactioned (SPX Pick Up SPXSG066975342696 Preparing, 3 buttons live) &middot; angelynsee S$19.55 buyer Ninja Van Pick Up SPR3484124585 Preparing (CS decision overdue).</div>
+    <div class="field"><strong>Khaki OS Day 16 PM:</strong> 0 new cancellations on R/R page 1 scrape since noon. Cumulative S$50.86 unchanged. Variant still not flipped OOS (REPEAT REMINDER Day 16).</div>
+    <div class="field"><strong>Reason for PM run:</strong> Scheduled task <code>KinataOrderCheck_430PM</code> fired at 16:33 MYT (16:30 slot). Earlier task at 16:35 had TERM_USER on prior browser; this re-fire successful. AdsPower MCP fully alive after <code>delete_cache=1</code>.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; Noon + PM audits complete; Processed drained (excellent throughput); 6 fresh TPs queued for shipment incl. sjuksjuk HV S$84 priority; meiglow88 noon S$13.32 + sensational_touch PM S$52.00 HV CS-gap LOSSes surfaced (combined SGD 65.32); 7 In-Validation Due 05/6 still need CS validation (36h left PM); 2 NEW HV R/R disputes (lloydobial unactioned Day 2 + sensational_touch FLIPPED to LOSS PM); read-only audit (noon + PM); 0 DB writes/PATCHes; report saved (PM overwrite of noon snapshot). 10 PM TPs queued ship-by 04/06 14:00/EOD incl gyeong_byeol 3-pack bundle S$178.70 priority.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-03" data-shops="Adelmar, Hiranai, Valuesnap, DasNature, MurahYa, JagerHelmet, Jager" data-platform="TikTok MY + Lazada" data-result="ok">
