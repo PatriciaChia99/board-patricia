@@ -611,7 +611,34 @@ header.page::after{
     <div class="field"><strong>Platform:</strong> TikTok seller MY (seller-my.tiktok.com/health-center) + TikTok seller SG (seller-sg.tiktok.com/health-center) for read; Google Sheets (docs.google.com) for write.</div>
     <div class="field"><strong>Reason for change:</strong> User directive &ldquo;MAKE SURE U RUN TTCHECKRATING LATER 5PM SUCCESSFULLY&rdquo;. The 17:00 scheduled run failed with ERR 0x1 (AdsPower contention with PM-rerun work). Manual recovery ensures Google Sheet daily KPI row is captured for 3/6 (rather than a gap row). Also gives the operator visibility on the 5 shops with poor chat satisfaction (Hiranai 25%, Jager 50%, JagerHelmet 50%, KarlMobel 56%) and 3 R&amp;R outliers (JagerArmor 8.33% worst, Adelmar 2.78%, Jager 2.48%) for tomorrow&rsquo;s CS coaching.</div>
     <div class="field"><strong>Notable observations:</strong> JagerArmor 8.33% R&amp;R rate is the worst across portfolio (5.5x target). Kinata SG 12hr response 50% + AvgTime 2.82h both RED &mdash; CS chat coverage gap for the SG shop. KarlMobel chat satisfaction 56% mirrors the PM-rerun Pending case load (many MurahYa+KarlMobel auto-approved Speedy refund cases sitting unappealed).</div>
-    <div class="field"><strong>Result:</strong> ok &mdash; recovery of TTRatingCheck_5PM 17:00 failure COMPLETE. 13/13 shops scraped (delete_cache=1 fix prevented any chromium-145 ECONNREFUSED), Google Sheet TIKTOK tab row 407-419 written, 10 red highlights applied. Daily KPI row no longer missing for 3/6. Operator can review red flags for tomorrow&rsquo;s coaching priorities.</div>
+    <div class="field"><strong>PM follow-up &mdash; ON-DEMAND chat satisfaction investigation per user request (Hiranai 25% + Jager 50% + KarlMobel 56%):</strong> Pulled 30-day negative-rated chats via <code>/api/v1/shop_im/shop/conversation/search</code> for 4/5/2026 &rarr; 3/6/2026 window. Methodology per checkttrating SKILL.md OPTIONAL section (uses conversation_search API rather than UI). Each shop opened fresh with delete_cache=1, navigated to <code>/chat/inbox/current</code>, then API queried with chunks of 100.</div>
+    <div class="field"><strong>Hiranai (56 k1aryu0c) &mdash; 3 negatives / 114 total chats:</strong>
+      <ul>
+        <li><code>syedfarhan952</code> 5/17 14:12 Pre-purchase &mdash; <strong>Customer Service8741</strong> &mdash; AI-to-Agent &mdash; 1-star &mdash; <strong>tag4 (Unhelpful)</strong> &mdash; first reply <strong>11 HOURS (39612s)</strong>, avg response 5.5h.</li>
+        <li><code>rglrnpc</code> 5/12 07:55 Aftersales &mdash; <strong>Customer Service8741</strong> &mdash; AI-to-Agent &mdash; 1-star &mdash; tag4 (Unhelpful) &mdash; first reply 13min.</li>
+        <li><code>kenzatod_999</code> 5/07 11:00 Aftersales &mdash; (AI) &mdash; AI-only &mdash; 1-star &mdash; no tag.</li>
+      </ul>
+      Root cause: <strong>Customer Service8741 owns 2/3 negatives</strong>. 5/17 case 11-hour first reply is the standout failure &mdash; needs urgent coaching on response SLA.
+    </div>
+    <div class="field"><strong>Jager (59 k1as1jf6) &mdash; 1 negative / 97 total chats:</strong>
+      <ul>
+        <li><code>wooicheah2989</code> 5/31 09:28 Logistics &mdash; (AI) &mdash; AI-only &mdash; 1-star &mdash; <strong>chatbot tag2 (Answer irrelevant)</strong>.</li>
+      </ul>
+      Root cause: single AI chatbot failure on Logistics intent. No human-agent coaching needed; 50% rate is misleading because only 2 chats rated total (1 positive + 1 negative).
+    </div>
+    <div class="field"><strong>KarlMobel (62 k1as2202) &mdash; 10 negatives / 367 total chats (the worst absolute count):</strong>
+      <ul>
+        <li><strong>Customer Service6956 owns 7 of 10 negatives</strong> (tag breakdown: 4&times; tag2 slow / 2&times; tag5 rude / 1&times; tag1 didn&rsquo;t solve / 1&times; tag4 unhelpful).</li>
+        <li><strong>Serial complainer dapurabang.manager: 3 negatives</strong> (5/4 Agent CS6956 Pre-purchase tag2+tag5; 5/19 AI Pre-purchase tag2; 5/20 Agent CS6956 tag2+tag5 &mdash; <strong>first reply 7 HOURS / 25296s</strong>).</li>
+        <li>Serial complainer <code>bakaljenazah116</code>: 2 negatives (5/31 Agent + AI both 1-star).</li>
+        <li>Serial complainer <code>2ft50</code>: 2 negatives (5/31 Agent CS6956 first reply 36min tag1 + 5/30 AI Pre-purchase 3 chatbot tags 1+2+5).</li>
+        <li>3 NEW chats with AI-only AI-tag2 (Answer irrelevant) on Logistics + Pre-purchase.</li>
+      </ul>
+      Root cause: <strong>Customer Service6956 is the single largest negative-review agent across portfolio</strong> with attitude (tag5) flags from 2 different buyers + chronic slow-response pattern. Plus 3 serial complainers leaving multiple 1-star reviews suggests the same KarlMobel customers are repeatedly underserved. dapurabang.manager 7-hour first reply with tag5 (rude) is a clear coaching escalation.
+    </div>
+    <div class="field"><strong>Cross-shop pattern:</strong> AI chatbot tag2 (Answer irrelevant) appears across all 3 shops (Hiranai 1, Jager 1, KarlMobel 3) on Logistics + Pre-purchase intents &mdash; suggests TT chatbot is poorly trained for these intents &mdash; appealable to TT Account Manager OR consider disabling AI auto-reply for these intent categories. The human-agent pattern is most concerning on KarlMobel (CS6956) and Hiranai (CS8741) &mdash; tag2 (Slow response) dominant across both, plus 1 standout 11-hour SLA breach on Hiranai 5/17.</div>
+    <div class="field"><strong>Action items for tomorrow 4/6:</strong> (1) URGENT &mdash; coach <strong>Customer Service6956 KarlMobel</strong> on tag5 (attitude) + tag2 (slow response). 2 different buyers flagged rudeness in the same agent. (2) Coach <strong>Customer Service8741 Hiranai</strong> on response-time SLA &mdash; 11-hour first reply on 5/17 is unacceptable. (3) Reach out to <strong>dapurabang.manager + bakaljenazah116 + 2ft50</strong> proactively &mdash; recover the relationship before they post 1-star public reviews. (4) Consider AI auto-reply opt-out for Logistics + Pre-purchase intents on these 3 shops &mdash; chatbot tag2 (irrelevant) reproducing across shops indicates model issue not local config. (5) Escalate chatbot issue to TT Account Manager with concrete tag2 examples (wooicheah2989 Jager Logistics 5/31; bakaljenazah116 KarlMobel Logistics 5/31).</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; recovery of TTRatingCheck_5PM 17:00 failure COMPLETE. 13/13 shops scraped (delete_cache=1 fix prevented any chromium-145 ECONNREFUSED), Google Sheet TIKTOK tab row 407-419 written, 10 red highlights applied. Daily KPI row no longer missing for 3/6. PM follow-up: investigated 3 lowest chat-sat shops (Hiranai/Jager/KarlMobel), root-caused each via API negative-conversation scrape, identified 2 individual agents needing coaching + 3 serial-complainer buyers needing outreach + 1 chatbot-model issue worth TT Account Manager escalation.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-03" data-shops="KarlMobel + Luxbin + MurahYa + ValueSnap" data-platform="Shopee MY" data-result="ok">
