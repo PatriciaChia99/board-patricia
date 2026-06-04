@@ -577,6 +577,100 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-04" data-shops="Karlmobel, MurahYa, ValueSnap, Hiranai, MasonGym, das.nature2, Kinata SG, MurahYa SG, TT Murahya, TT Adelmar, TT KarlMobel, TT JagerHelmet, TT Jager, BahEmas" data-platform="Shopee MY + SG + TikTok + Lazada" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation &mdash; 181 cases (-21 vs 3/6), 8 NEW (101139-101146), 0 PATCHes report-only (4/6)</span>
+    <span class="entry-meta">2026-06-04 09:30 MYT &middot; profile 70 &middot; 181 cases / 33 recent / 148 stale &middot; 8 NEW: 3 TT ParseFail + 4 A-BOT_OK + 1 SG no-stock &middot; 24 P0 carry-over for 05/6 &middot; 2 wins overnight (101137 SA-18708 / 101110 SA-18707 user-manual) &middot; TT bot regression 16+ cases over 17d</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Manual fire of scheduled audit. APPROVAL REQUIRED report-only per user mandate; no PATCHes / no WhatsApp / no Jira submits. /api/sb-variation returned 181 cases (-21 vs 3/6 from 29 closures + 8 new). Newest id 101146. 8 NEW since 3/6 AM. 33 carry-over P0 items from yesterday all still present in API (none flipped terminal between runs).</p>
+    <div class="field"><strong>Reason:</strong> Daily 09:30 MYT scheduled audit. User mandate: report-only (NO PATCHes / sends / Jira). Verify yesterday's 3/6 P0/P1 carry-over (33 items) + classify 8 NEW + surface APPROVAL REQUIRED items only.</div>
+    <div class="field"><strong>Before &rarr; After (state.json):</strong> totalCasesInAPI 202 &rarr; 181 (-21). lastCaseId 101138 &rarr; 101146 (+8 NEW). p0_carry_over 33 &rarr; 24 for 05/6 (101105 + 101103 + 101137 + 101115 + 101117 + 101119 + 101120 + 101121 + 101122-25 + 101126 + 101127 + 101129 + 101132 + 101133 + 101134 + 101136 + 101138 cleared/monitor-only).</div>
+    <div class="field"><strong>Big wins yesterday PM (3/6 18:20 MYT):</strong> 101137 TT Murahya (584306042900416434) CWS-4F-KHAKI &mdash; sent TT_OFFER_CHANGE 16:08 + SA-18708 -11 (SG 11&rarr;0); 101110 KarlMobel (260526EK7VHDNS) TUBCOVER &mdash; user manual SA-18707 -35 (SG 35&rarr;0); both stockSetOos=true, OOS verified.</div>
+    <div class="field"><strong>8 NEW cases (101139-101146):</strong>
+      <ul>
+        <li>101139 Kinata SG (2606034A46AVC4) WOMENS-BLAZER-JACKET-BLK-XXXL-SG &mdash; sent 17:30 MYT, SOH 0/0/0/0 but Status Available, stockSetOos=false &rarr; APPROVAL Patricia OOS flag + cc=true</li>
+        <li>101140 ValueSnap (2606010SWCYA21) DESKTOP-FLIP-CLOCK-SQ-FLAT-BLK &rarr; SLV-BLK &mdash; A-BOT_OK ✓</li>
+        <li>101141 TT Murahya (584323489193756530) sku=[] suggSkus=CT-OUTER-LAYER-D.GREEN-5-8P &mdash; APPROVAL TT_OFFER_CHANGE profile 64</li>
+        <li>101142 TT Murahya (584330313036433239) sku=[] suggSkus=CT-OUTER-LAYER-D.GREEN-5-8P &mdash; APPROVAL TT_OFFER_CHANGE profile 64 (same pattern)</li>
+        <li>101143 Karlmobel (2606020VA1SQ6U) CWS-4F-KHAKI &rarr; WHITE/BLACK &mdash; A-BOT_OK ⚠️ iSKU just zeroed yesterday via SA-18708 (101137); verify SG holds</li>
+        <li>101144 das.nature2 (26060347E6Y3NJ) FISHING-BUCKET-BLUE-40CM &rarr; ORANGE/GREY/BLK &mdash; A-BOT_OK ✓</li>
+        <li>101145 Hiranai (2606033JKN2QX2) SNEAKERS-2STRIPES-WHITE-37 &rarr; BROWN/YELLOW &mdash; A-BOT_OK ✓</li>
+        <li>101146 TT Adelmar (584324190793271260) sku=[] suggSkus=RDWHN10/PDBN10/BL10IN &mdash; APPROVAL TT_OFFER_CHANGE profile 54</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Carry-over Accept Change pending WH+SG deduct (recent &le;5d, 4 cases):</strong>
+      <ul>
+        <li>101128 Karlmobel (260601V4G98JAU) acceptedSku=<strong>SS50LSQ-SLVR</strong> ⚠️ NOT in suggSkus C.GOLD/BLK &mdash; WH verify SLVR availability</li>
+        <li>101127 das.nature2 (260531SR55WF2W) acceptedSku=PSB-BLACK-0.95KG, newShipBy 3/6</li>
+        <li>101118 Murahya (260531T8VV5V9G) acceptedSku=DMA-BLACK-1000ML, newShipBy 3/6 PAST</li>
+        <li>101116 MurahYa SG (260529NR0YCXVH) acceptedSku=SGREEN1.3L, newShipBy 3/6 PAST</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Cancellation closure PATCHes pending (4 recent):</strong> 101130 TT KarlMobel (584299123686671505) WH SG -1 RLS-WHITE-S40 + cc=true; 101114 das.nature2 (260530Q6J1S5EK) csRemarks closure backfill + trim phantom; 101113 ValueSnap (260526E0VV0UEQ) final csRemarks "case closed" only; 101112 Kinata SG (260529NH4TJJEU) cc=true.</div>
+    <div class="field"><strong>TT bot SKU-extraction regression:</strong> +3 NEW today (101141+101142 CT-OUTER-LAYER + 101146 Adelmar RDWHN10). Total 16+ cases over 17 days. Jira Draft #3 strongly recommended &mdash; APPROVAL REQUIRED.</div>
+    <div class="field"><strong>Data hygiene flags:</strong> (1) 101136 Murahya orderId trailing space (15 chars) &mdash; low priority. (2) 101128 acceptedSku off-list (SS50LSQ-SLVR not in C.GOLD/BLK suggSkus) &mdash; new pattern.</div>
+    <div class="field"><strong>Report saved:</strong> C:\Users\tessf\Documents\sbvariation-reports\sbvariation-report-2026-06-04.md (full 24-item P0 list, recent &le;5d tables Order ID first, stale 148 count only per HARD RULE 20/5).</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 181 cases audited, 8 NEW classified, 33/33 carry-over verified in API, 24 P0 surfaced for 05/6, 0 PATCHes per user mandate, state.json updated, browser closed.</div>
+  </div>
+</div>
+<div class="entry" data-date="2026-06-04" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked unchanged, 1 NEW PAID To Ship on KEDAI GARDEN requires SiteGiant master decrement x10 (4/6)</span>
+    <span class="entry-meta">2026-06-04 09:30 MYT &middot; profile 70 &middot; 27 MY shops / 18 SG channels / 9 gap &middot; 8/9 shops UNCHANGED &middot; 1/9 ACTIVE (garden.mall 2606034CSCUXRN Online Banking PAID, NOT PHASE 4.5 auto-cancel pattern) &middot; SLA 04/06 14h</span>
+    <span class="tag">sg-gap-monitor</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Daily Shopee MY shop list vs SiteGiant ShopeeMY channel diff via profile 70 (kmall:patricia). Read-only audit. Gap unchanged 9 since 13/5. Each unlinked shop scanned via <code>/api/selleraccount/subaccount/get_sig/?target_shop_id=X</code> context-switch + 3-tab all/toship/shipping. One real-money order surfaced on KEDAI GARDEN that does NOT match the PHASE 4.5 auto-cancel pattern (Transparent variant + Online Banking up-front, not Pink + SPayLater) &mdash; first true stock-desync risk since monitoring started.</p>
+    <div class="field"><strong>Shopee MY shop list (Phase 1):</strong> 27 MY shops confirmed via DOM scrape pages 1+2 after clicking &ldquo;View all shops&rdquo; link. Signed <code>get_shop_list</code> URL replay returned <code>code=0</code> but <code>shops=0</code> (one-time-consume bug same as 6/2 + 3/6) &mdash; DOM-scrape fallback worked. Page 1 (16 rows, 2 SG): Kinata, Lenza Eyewear, Lovento MY, Solaree, JagerHelmet, Adelmar, Wilmermobel, Luxbin&trade;, Flashree, das.nature2, Hiranai, ValueSnap SG, dutchgaming, Chairsy, Secret Racer, ValueSnap. Page 2 (13 rows, all MY): Gameniture, Atlusrack, EncikPlastic, das.nature, MasonGym, Stationarylah, KEDAI GARDEN, Bidarimu, KarlMobel, FynnKoffer, Emas Gift, MurahYa, BahEmas.</div>
+    <div class="field"><strong>SiteGiant ShopeeMY channels (Phase 2):</strong> 18 confirmed via DOM scrape of <code>ant-list-item-meta-content</code> nodes with label <code>ShopeeMY</code>: AdelmarMY, BahEmas, BidariMu, EmasGift, EncikPlastic, Hiranai, JagerHelmet, KarlMobel, Lenza_Eyewear, Lovento, Luxbiin, MasonGym, Murahya, SecretRacer, ValueSnap, WilmerMobel, das.nature, das.nature2.</div>
+    <div class="field"><strong>Gap diff (Phase 3):</strong> 9 unlinked (unchanged since 13/5 baseline): Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer.</div>
+    <div class="field"><strong>Per-shop 3-tab scan (Phase 4):</strong>
+      <ul>
+        <li><strong>Chairsy</strong> &mdash; To Ship 0 / Shipping 0 / latest 260211F1FRUFAH (11/02 Completed unchanged) &mdash; HISTORICAL_DRIFT.</li>
+        <li><strong>dutchgaming</strong> &mdash; 0 / 0 / 0 orders ever &mdash; DORMANT.</li>
+        <li><strong>Flashree</strong> &mdash; To Ship 0 / Shipping 0 / latest 2409031DJJWV7T (03/09/2024 Completed unchanged) &mdash; DORMANT.</li>
+        <li><strong>Solaree</strong> &mdash; To Ship 0 / Shipping 0 / latest 240718V5H3A1KA (18/07/2024 Completed unchanged) &mdash; DORMANT.</li>
+        <li><strong>Gameniture</strong> &mdash; 0 / 0 / 0 orders ever &mdash; DORMANT.</li>
+        <li><strong>Atlusrack</strong> &mdash; To Ship 0 / Shipping 0 / latest 260214NUX1Y8BX (14/02 Cancelled unchanged) &mdash; DORMANT.</li>
+        <li><strong>Stationarylah</strong> &mdash; To Ship 0 / Shipping 0 / latest 260414QW1M81CQ (14/04 Cancelled unchanged) &mdash; DORMANT_LIGHT.</li>
+        <li><strong>KEDAI GARDEN (garden.mall)</strong> &mdash; <span style="color:#c00">To Ship 1 (NEW 2606034CSCUXRN)</span> / Shipping 0 / latest on /all 260528JYMYAT3N unchanged &mdash; <span style="color:#c00">ACTIVE_STOCK_DESYNC_RISK</span>.</li>
+        <li><strong>FynnKoffer</strong> &mdash; To Ship 0 / Shipping 0 / latest 260307GC8213CQ (07/03 Completed unchanged) &mdash; HISTORICAL_DRIFT. (First sig URL nav didn&rsquo;t switch context; fresh <code>get_sig</code> fetch worked on retry.)</li>
+      </ul>
+    </div>
+    <div class="field"><strong>🚨 ACTIVE STOCK-DESYNC FLAG &mdash; KEDAI GARDEN order 2606034CSCUXRN:</strong>
+      <ul>
+        <li>Product: 50CM OCTO PLASTIC FLOWER POT HANGER PLANTS HANGING GARDENING POTS DECO TOOLS TALI PASU GANTUNG</li>
+        <li>Variation: <strong>Transparent</strong> [HANGER HANGER TRANS] (NOT Pink &mdash; doesn&rsquo;t match PHASE 4.5 auto-cancel pattern)</li>
+        <li>Qty: x10</li>
+        <li>Total: RM 5.10</li>
+        <li>Payment: <strong>Online Banking</strong> (PAID up-front &mdash; NOT SPayLater)</li>
+        <li>Status: To Ship, deadline 04/06/2026 (~14h countdown at 09:30 MYT)</li>
+        <li>Logistics: Doorstep Delivery via SPX Express (West Malaysia)</li>
+        <li><strong>PIC action:</strong> Manual SiteGiant master inventory decrement <strong>x10 units</strong> of 50CM OCTO Transparent Flower Pot Hanger after shop fulfils this order. This is the first real-money order on garden.mall since monitoring started 13/5 (all prior flagged orders were kedaibarutmama2 + Pink + SPayLater auto-cancel-pattern per <code>[[feedback_phase_4_5_kedai_garden]]</code>).</li>
+      </ul>
+    </div>
+    <div class="field"><strong>State.json update BLOCKED:</strong> Write/Edit on <code>C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json</code> hit permission gate even in interactive session. Intended values that SHOULD be written so tomorrow&rsquo;s run doesn&rsquo;t re-flag the same order as &ldquo;new&rdquo;:
+      <ul>
+        <li><code>lastRunId</code> &rarr; <code>"2026-06-04T09:30:00+08:00"</code></li>
+        <li><code>lastRunTime</code> &rarr; <code>"2026-06-04T09:30:00+08:00"</code></li>
+        <li><code>previousRunId</code> &rarr; <code>"2026-06-03T09:00:00+08:00"</code></li>
+        <li><code>lastSeenOrderId.garden.mall</code> &rarr; <code>"2606034CSCUXRN"</code> (was 260528JYMYAT3N)</li>
+        <li>All other 8 shops <code>lastSeenOrderId</code> values UNCHANGED.</li>
+        <li>Add <code>perShop_2026_06_04</code> snapshot with garden.mall flagged <code>activity_class: ACTIVE_STOCK_DESYNC_RISK</code>, to_ship: 1, all others UNCHANGED.</li>
+      </ul>
+      An interactive operator session can run <code>Edit</code> on state.json afterward; without the patch, tomorrow&rsquo;s run will re-flag 2606034CSCUXRN as a new delta (noisy but not a correctness issue).
+    </div>
+    <div class="field"><strong>Report:</strong> Saved to <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-06-04.md</code>.</div>
+    <div class="field"><strong>Anything I might have missed:</strong> Shopee SC /all-tab default sort is NOT pure date-desc &mdash; the new 2606034CSCUXRN (03/06) does not appear at top of /all even though it&rsquo;s newer than 260528JYMYAT3N. The To Ship tab is authoritative for live fulfilment. FynnKoffer all-tab total dropped 415&rarr;413 (-2) vs baseline &mdash; minor drift, not a real concern. AdsPower MCP profile 70 stable throughout; no SSL blocker, no CDP fallback needed.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 8/9 shops UNCHANGED, 1/9 (KEDAI GARDEN) ACTIVE with 1 paid To Ship order requiring manual SiteGiant master decrement x10 after fulfilment SLA 04/06/2026.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-03" data-shops="Adelmar, Das Nature, Hiranai, HiranaiMY, Jager, JagerSafety, JagerArmor, JagerHelmet, KarlMobel, Murahya, Valuesnap, Kinata SG, Lovento" data-platform="TikTok MY + SG + Google Sheets" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
