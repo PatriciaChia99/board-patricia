@@ -577,16 +577,6 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
-<div class="entry" data-source="codex" data-tags="checksbvariation tiktok offer-change buyer-contact">
-  <h2>2026-06-04 TT offer-change buyer messages sent - 584323489193756530 / 584324190793271260</h2>
-  <p><strong>Logged:</strong> 2026-06-04 15:40 MYT. <strong>Reason:</strong> Patricia/user approved sending both buyer messages first and requested the exact message text. <strong>Scope:</strong> customer contact only; no SiteGiant stock/status adjustment was made.</p>
-  <ul>
-    <li><strong>584323489193756530</strong> - TT Murahya / TikTok MY / Offer Change. Before: SB contactSent=false, stockSetOos=true, CS remarks=2. After: contactSent=[true], stockSetOos=true, CS remarks=3. Evidence: TikTok order #584323489193756530 Awaiting collection; selected buyer thread roslan.salleh.bam showed the exact Customer Service3969 message at 15:31 MYT. Result: offered Outer Layer-D.Green, 5-8 people instead of CT-OUTER-LAYER-L.BROWN-5-8P / Outer Layer-Brown, 5-8 people. Follow-up: wait buyer choice and WH all-variation count; original remains OOS-labelled system stock mismatch 1/1/0/0, so no SiteGiant write without fresh approval.</li>
-    <li><strong>584324190793271260</strong> - TT Adelmar / TikTok MY / Offer Change. Before: SB contactSent=false, stockSetOos=true, CS remarks=1. After: contactSent=[true], stockSetOos=true, CS remarks=2. Evidence: TikTok order #584324190793271260 Awaiting collection; selected buyer thread wang_arshah showed Customer Service1597 message at 15:32 MYT with Delivered with translation. Result: offered Red design Combo - 10 inch (RDWHN10), Red - 10 inch (PDBN10), or Blue - 10 inch (BL10IN) instead of BM10IN / Black, 10 inch. Follow-up: wait buyer choice; BM10IN was already verified 0/0/0/0 Out Of Stock, so no stock adjustment needed from this send.</li>
-  </ul>
-  <p><strong>Message 584323489193756530:</strong> Hi boss, please be informed that Outer Layer Only Waterproof Outdoor Camping Tent family Tent large Cover Kemah besar Outer Layer 5 8 12 persons restock is estimated in about 1 month.. We apologize for the inconvenience caused. Can we s3nd Outer Layer-D.Green, 5-8 people instead? Otherwise, please manage the order from your Order Details Once a request comes through, I'll handle it immediately.</p>
-  <p><strong>Message 584324190793271260:</strong> Hi boss, please be informed that HOVERBOARD 7&quot;/10&quot; Inci Lampu LED HOVERBOARD 7&quot;/10&quot; Inch LED Light BLUETOOTH SPEAKER Self Balancing elektrik skuter electric scooter restock is estimated in about 1 month.. We apologize for the inconvenience caused. Can we s3nd Red design Combo - 10 inch, Red - 10 inch, or Blue - 10 inch instead? Otherwise, please manage the order from your Order Details Once a request comes through, I'll handle it immediately.</p>
-</div>
 <div class="entry" data-date="2026-06-04" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -709,6 +699,39 @@ header.page::after{
     <div class="field"><strong>PM webapp delta:</strong> 555 cases &rarr; <strong>556</strong> (+1 C1968 RM 263.49). Pending est 95 &rarr; 96. max_case_id C1967 &rarr; <strong>C1968</strong>.</div>
     <div class="field"><strong>delete_cache=1 use on profile 81:</strong> initial WS connect timed out twice (browser busy/held); close + reopen with delete_cache=1 unblocked CDP attach per feedback memory. Session cookies survived as expected.</div>
     <div class="field"><strong>PM catch-up result:</strong> ok &mdash; 1 NEW POST C1968 RM 263.49 Lazada MurahYa, 0 errors, 2 KM cases confirmed already-logged. Operator action 62+81 RESOLVED.</div>
+    <h4>HISTORIC BACKFILL (4/6 ~16:00 MYT) &mdash; FD design-flaw remediation 23/5-4/6 window</h4>
+    <div class="field"><strong>Trigger:</strong> User flagged 2 TT MurahYa FD orders missing from webapp (584177530706757099 + 584206079397955128). Investigation revealed systemic skill bug: `source_date_cutoff_days: 4` filters by ORDER create_time but FD STATUS triggers happen days/weeks later &mdash; legitimately-active FD orders with create_time &gt; 4d get permanently excluded. Sample miss rate MurahYa = 134/163 (82.2%) and Adelmar = 22/27 (81.5%) confirmed systemic.</div>
+    <div class="field"><strong>Scope (per user direction + Screenshot_2.png):</strong> Scan TT Failed Delivery page for all 13 TT shops. Window = order create_time between 2026-05-23 00:00 MYT and 2026-06-04 23:59 MYT (12 days). Dedupe by order_id alone across ALL refund_state. POST missing via /api/new-parcel-claims-tiktok/add.</div>
+    <div class="field"><strong>Per-shop sweep result:</strong> MurahYa 13/439 in-window &middot; KarlMobel 17/281 &middot; Adelmar 5/27 &middot; DasNature 1/105 &middot; Hiranai 4/166 &middot; HiranaiMY 0/46 &middot; Jager 5/62 &middot; JagerArmor 0/1 &middot; JagerSafety 0/2 &middot; Lovento 0/0 &middot; Valuesnap 5/265 &middot; JagerHelmet 1/8 &middot; Kinata 0/0 (SG). <strong>Total 51 in-window candidates</strong> across 13 TT shops.</div>
+    <div class="field"><strong>Dedupe vs webapp 556 cases:</strong> 39 already in webapp (matched by order_id across Pending/Withdrawn/Credited/Rejected per dedupe_check_all_refund_states), <strong>12 NEW MISSING</strong>.</div>
+    <div class="field"><strong>12 NEW POSTs (HTTP 200 all, C1969-C1980, TOTAL RM 2,483.07):</strong>
+      <ul>
+        <li>C1969 TT MurahYa 584279797110507261 RM 287.66 Electric scooter 24v (Tracking 680017233112115)</li>
+        <li>C1970 TT MurahYa <strong>584206079397955128</strong> RM 59.90 Life Jacket Vest (user-flagged; 680059028532210)</li>
+        <li>C1971 TT MurahYa <strong>584177530706757099</strong> RM 83.29 GXT Helmet open face (user-flagged; 680081315292616)</li>
+        <li>C1972 TT KarlMobel 584250852466525760 RM 859.95 Adelmar Scooter Elektrik 350W (680019726902615)</li>
+        <li>C1973 TT KarlMobel 584248339068782155 RM 103.45 LED Roller Skate (680073625272613)</li>
+        <li>C1974 TT Adelmar 584190053015586074 RM 239.13 Skuter Elektrik 24V (MYPM10196551401)</li>
+        <li>C1975 TT Adelmar 584170093205226778 RM 288.16 Skuter Elektrik 24V (MYPM10304241401)</li>
+        <li>C1976 TT Adelmar 584167045765957194 RM 275.00 HOVERBOARD 7"/10" LED Bluetooth (680088217252312)</li>
+        <li>C1977 TT DasNature 584183549359653982 RM 23.85 Camping Solar Fan Light (MYPM10263071401)</li>
+        <li>C1978 TT Jager 584214924801967852 RM 116.10 Helmet open face dual lens (680000121982012)</li>
+        <li>C1979 TT Jager 584214779460617964 RM 16.08 Helmet Visor 708 Rainbow Black (680010123782617)</li>
+        <li>C1980 TT Valuesnap 584216727254303799 RM 130.50 Chocolate Fountain 4 Tier (680021126382014)</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Webapp end-state:</strong> 556 cases &rarr; <strong>568</strong> (+12). max_case_id C1968 &rarr; <strong>C1980</strong>.</div>
+    <div class="field"><strong>Bug discovery side-finding (script-internal):</strong> initial cutoffStart was unix 1779811200 which is actually 27/5 00:00 MYT (not 23/5 as intended) &mdash; off by 4 days. Caught after the 2 user-flagged OIDs (24/5 + 26/5) were excluded. Recomputed via `Date.UTC(2026, 4, 22, 16, 0, 0)/1000 = 1779465600` for 23/5 00:00 MYT. All 51 candidates extracted with corrected cutoff.</div>
+    <div class="field"><strong>Skill fix recommendation (NOT YET APPLIED &mdash; awaiting Patricia decision):</strong> Three options for parcelclaim-auto going forward to prevent future FD misses:
+      <ol>
+        <li><strong>A</strong> Remove source_date_cutoff_days for FD only (keep for R/R). TT FD page only surfaces active claims &mdash; no cutoff needed. Dedupe-by-order_id prevents duplicates.</li>
+        <li><strong>B</strong> Use FD-trigger timestamp (from order_history "Package delivery failed" event) as source_date instead of order create_time.</li>
+        <li><strong>C</strong> Add separate `failed_delivery_cutoff_days: 30` or 60 for FD.</li>
+      </ol>
+      Recommended option A for simplicity + completeness. 1-line skill markdown edit.
+    </div>
+    <div class="field"><strong>Estimated remaining backfill backlog beyond today's window (not POSTed):</strong> MurahYa sample showed ~134 missing in first 163 of 439 (mostly old &gt; 30d). Across 13 shops, likely 1,500-3,000 unlogged historical FD claims. User instructed to scope this backfill to 23/5-4/6 only; older window can be addressed separately if desired.</div>
+    <div class="field"><strong>Backfill result:</strong> ok &mdash; 12/12 POSTs HTTP 200, 0 errors, RM 2,483.07 recovered. Both user-flagged OIDs landed (C1970 + C1971). 39 candidate OIDs correctly skipped as dedupe-hits.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-04" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, Karlmobel, Lovento MY, Luxbin, MurahYa, Emas Gift, JagerHelmet, Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
