@@ -639,6 +639,26 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<!-- SBQ-20260604-1803-SA18751 -->
+<div class="entry" data-date="2026-06-04" data-shops="MurahYa SG, Murahya" data-platform="Shopee SG + Shopee MY + SiteGiant + SB Variation" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation &mdash; New Ship By accepted-change stock deduction SA-18751 + webapp updates (4/6)</span>
+    <span class="entry-meta">2026-06-04 18:03 MYT &middot; Patricia approval: DO NOW &middot; SiteGiant SA-18751 &middot; SB rows 101116 + 101118 patched</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Completed the approved New Ship By accepted-change stock action for <code>260529NR0YCXVH</code> and <code>260531T8VV5V9G</code>. Created SiteGiant stock adjustment <code>SA-18751</code> and updated both Awesomeree SB Variation rows to <code>[&quot;Adjusted&quot;]</code> with stock ID, stock URL, and CS remarks.</p>
+    <div class="field"><strong>SiteGiant change:</strong> <code>SA-18751</code> / internal adjustment id <code>9652923</code> / Default warehouse <code>2699</code> / reason <code>Stock Adjustment</code>. SiteGiant remark: <code>260529NR0YCXVH SGREEN1.3L -1; 260531T8VV5V9G DMA-BLACK-1000ML -1</code>. API response: status success, success_ids <code>2392359</code> and <code>7523212</code>.</div>
+    <div class="field"><strong>Inventory before &rarr; after:</strong> <code>260529NR0YCXVH</code> / MurahYa SG / Shopee SG / accepted iSKU <code>SGREEN1.3L</code>: SiteGiant SOH/Sellable/Reserved/Allocated <code>5/5/0/0</code> Available &rarr; <code>4/4/0/0</code> Available. <code>260531T8VV5V9G</code> / Murahya / Shopee MY / accepted iSKU <code>DMA-BLACK-1000ML</code>: <code>13/13/0/0</code> Available &rarr; <code>12/12/0/0</code> Available.</div>
+    <div class="field"><strong>Webapp changes:</strong> Row <code>101116</code> / <code>260529NR0YCXVH</code>: whConfirmStatus kept <code>[&quot;WH Confirmed Can Pack&quot;]</code>; stockAdjustmentStatus <code>[&quot;Not Adjusted&quot;]</code> &rarr; <code>[&quot;Adjusted&quot;]</code>; stockId <code>null</code> &rarr; <code>[&quot;SA-18751&quot;]</code>; stockUrl <code>null</code> &rarr; <code>[&quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/9652923/edit&quot;]</code>; csRemarks appended with SA evidence. Row <code>101118</code> / <code>260531T8VV5V9G</code>: same status/id/url change; csRemarks appended with SA evidence.</div>
+    <div class="field"><strong>Reason:</strong> Buyer decision was <code>Accept Change</code>, accepted iSKU and shipQty were populated, and New Ship By date <code>2026-06-03</code> was present; Patricia gave current approval <code>DO NOW</code>. Applied checksbvariation New Ship By rule for accepted changes.</div>
+    <div class="field"><strong>Evidence checked:</strong> Live SB Variation API before values, SiteGiant adjustment success response, post-adjust SiteGiant item pages showing <code>SGREEN1.3L</code> final <code>4/4/0/0</code> Available and <code>DMA-BLACK-1000ML</code> final <code>12/12/0/0</code> Available, plus live SB API readback showing both rows now <code>[&quot;Adjusted&quot;]</code> with <code>SA-18751</code>.</div>
+    <div class="field"><strong>Outstanding follow-up:</strong> None for these two rows. They should not remain on the New Ship By stock-adjustment pending list unless a fresh stock bounce-back or webapp reversal appears.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; SiteGiant stock deducted with order IDs in the remark, SB webapp updated and read back clean, and no buyer message/Jira/seller-portal write was made in this stock-update step.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-04" data-shops="(skill-build)" data-platform="TikTok MY (skill files)" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -673,6 +693,17 @@ header.page::after{
     <div class="field"><strong>Recheck schedule:</strong> 5/6 re-check the 4 R/R cases for 24h-window outcomes &middot; 6/6 WH inspection deadline for 584273764418946333 + 584257886761223547 (escalate via ttchaserr if pending) &middot; 7/6 +3 WD recheck for the 4 R/R if still monitor &middot; 9/6 +5 WD recheck for 584216273450665669 + 584274324623492126 if still RTS in transit.</div>
     <div class="field"><strong>Report file:</strong> <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-dryrun-2026-06-04.md</code>.</div>
     <div class="field"><strong>Result (dry-run):</strong> ok &mdash; decision logic validated on 9 NEW cases; 1 pre-existing metadata discrepancy surfaced for operator clarification; 0 PATCHes made (dry-run mode). Skills ready for live operational run once C1966 question answered + KarlMobel/Lazada MurahYa relogged in.</div>
+    <h4>LIVE PROMOTION (4/6 ~18:30 MYT) &mdash; user "promote dry-run to live", 2 remark PATCHes + C1966 SR Return verified</h4>
+    <div class="field"><strong>C1966 SR Return verification:</strong> Tracking <code>3243283120342402697</code> (584222625411729033 Valuesnap Star Light Projector) queried against <code>/api/returns</code> (12,555 records). <strong>Zero matches by tracking AND zero by Order ID.</strong> Parcel was never logged as returned through SR Return. Conclusion: case is correctly CLOSED &mdash; buyer cancelled / TT closed, NO physical return. The `[RESELL]` token in last_remark was speculative ("auto-withdraw on inspection if damaged") and didn't reflect an actual resell. Decision: <strong>leave <code>return_type=null</code></strong> (no PATCH).</div>
+    <div class="field"><strong>2 LIVE remark PATCHes (HTTP 200):</strong>
+      <ul>
+        <li><code>PATCH /api/new-parcel-claims-tiktok {id:1965, type:'remark'}</code> &rarr; appended <em>[ttparcelclaim 4/6 &mdash; A2 Pending WH Inspection day 3 since 1/6, WH inspect by 6/6 +2 WD. Escalate WH lead if not done by 6/6 EOD.]</em> &mdash; 584273764418946333 MurahYa Skuter RM 287.66.</li>
+        <li><code>PATCH /api/new-parcel-claims-tiktok {id:1967, type:'remark'}</code> &rarr; appended <em>[ttparcelclaim 4/6 &mdash; A2 Pending WH Inspection day 1 since 3/6, WH inspect by 6/6 +2 WD. Profile 66 webapp-session broken; TT-side verify via SR Return webapp tracking 3245289133230491003 instead.]</em> &mdash; 584257886761223547 JagerHelmet Topi RM 116.10.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Post-PATCH verify (30s wait + re-GET):</strong> Both new remarks visible in <code>last_remark</code>. <code>refund_state=Pending</code> held on both (no classifier reversion). <code>action_needed=WH Action</code> held on both (no revert). <code>return_type=null</code> unchanged on both. PATCHes settled cleanly.</div>
+    <div class="field"><strong>API behaviour note (skill correction):</strong> <code>type:'remark'</code> PATCH actually <strong>APPENDS</strong> to <code>last_remark</code>, not prepends as documented in ttparcelclaim/SKILL.md. New remark lands at the end after the existing <code>[STATUS DD/M]</code> tokens. Skill docs to be corrected on next edit.</div>
+    <div class="field"><strong>Result (live):</strong> ok &mdash; 2 PATCHes HTTP 200, 0 failures, 0 classifier reversions, 0 ttchaserr triggers needed; C1966 metadata confirmed correct as-is (no PATCH); skills ready for daily operational use.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-04" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
