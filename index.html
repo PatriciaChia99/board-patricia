@@ -577,6 +577,26 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-04" data-shops="TT Murahya, KarlMobel, MurahYa" data-platform="Shopee MY+TikTok" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">parcelsplit-contact-crosscheck &mdash; 4 pass / 0 mismatch / 0 manual (4/6)</span>
+    <span class="entry-meta">2026-06-04 11:00 MYT &middot; profile 70 k1b44nvg &middot; API rows 2169 &middot; shipped 1827 / OOW 338 / today-new 0 / in-scope 4 &middot; 2 NEW entered window (1 dark TT-manual + 1 lit bot-flipped overnight) &middot; 2 carry-over unchanged &middot; DOM icon colors verified all 4 rows</span>
+    <span class="tag">parcelsplit-contact-crosscheck</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Daily 11:00 MYT verification of Shopee MY auto-contact bot's overnight run + 7-day carry-over watch on `/customer-service/parcel-split`. Read-only audit; no DB writes, no customer-facing messages.</p>
+    <div class="field"><strong>Scope window:</strong> 2026-05-28 00:00 MYT &le; date &lt; 2026-06-04 00:00 MYT (7d carry-over, today's newly-added deferred to 5/6).</div>
+    <div class="field"><strong>Totals:</strong> totalApi=2169 / shipped=1827 / todayNewlyAdded=0 / outOfWindow=338 / inScope=4 / pass=4 / mismatch=0 / needManualCheck=0.</div>
+    <div class="field"><strong>In-scope PASS (4):</strong> (1) <code>584332958100784574</code> TT Murahya TikTok 3/6 22:45 MYT &mdash; isContacted=false but no phone/csNotes = dark-no-evidence PASS (TT manual track, no Shopee MY bot scope). (2) <code>2606034JKKDEU7</code> KarlMobel Shopee MY 3/6 22:45 MYT &mdash; isContacted=true (NEW, bot flipped overnight, lit by 11:00). (3) <code>260530QF8B667X</code> MurahYa Shopee MY 30/5 20:30 &mdash; lit-system-record carry-over Day 5. (4) <code>260527G9FGMFBR</code> MurahYa Shopee MY 28/5 18:31 &mdash; lit-system-record carry-over Day 7 (tail; graduates tomorrow).</div>
+    <div class="field"><strong>Carry-over deltas vs 3/6:</strong> Shipped&amp;graduated 0 &middot; removed 0 &middot; false&rarr;true 0 &middot; newDark 1 (<code>584332958100784574</code> TT Murahya, added 3/6 22:45 after yest run) &middot; newPass 1 (<code>2606034JKKDEU7</code> KarlMobel, bot lit overnight) &middot; carriedUnchanged 2 (<code>260530QF8B667X</code>, <code>260527G9FGMFBR</code>). Net in-scope 2 &rarr; 4.</div>
+    <div class="field"><strong>DOM sanity (4/4 verified):</strong> 584332958100784574 phone icon `text-warm-ink-disabled` gray &rarr; matches false &middot; 2606034JKKDEU7 phone icon `text-brand-orange` &rarr; matches true &middot; 260530QF8B667X orange &rarr; matches true &middot; 260527G9FGMFBR orange &rarr; matches true. Zero UI/API drift.</div>
+    <div class="field"><strong>Reason / Trigger:</strong> User-invoked daily parcelsplit-contact-crosscheck skill (Thursday 4/6 manual run). Pre-read state.json prior snapshot (3/6 inScope=2 pass=2). Skill spec: Tier-1 decision table on isContacted + phone + csNotes phone-ask regex; today's newly-added deferred (bot runs at night).</div>
+    <div class="field"><strong>Files written:</strong> Report <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-06-04.md</code> &middot; State <code>C:\Users\tessf\.claude\skills\parcelsplit-contact-crosscheck\state.json</code> (Python bypass).</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 4/4 in-scope PASS, zero mismatches, zero regressions, DOM cross-check clean. Auto-contact bot performed nominally overnight on 2606034JKKDEU7. 5/6 watch items: 260527G9FGMFBR (Day 7 tail) graduates out of 7d window; new TT entries continue manual-track routing.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-04" data-shops="Karlmobel, MurahYa, ValueSnap, Hiranai, MasonGym, das.nature2, Kinata SG, MurahYa SG, TT Murahya, TT Adelmar, TT KarlMobel, TT JagerHelmet, TT Jager, BahEmas" data-platform="Shopee MY + SG + TikTok + Lazada" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
