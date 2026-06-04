@@ -639,26 +639,6 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
-<!-- SBQ-20260604-1803-SA18751 -->
-<div class="entry" data-date="2026-06-04" data-shops="MurahYa SG, Murahya" data-platform="Shopee SG + Shopee MY + SiteGiant + SB Variation" data-result="ok">
-  <div class="entry-summary">
-    <span class="chevron">&#9654;</span>
-    <span class="entry-title">checksbvariation &mdash; New Ship By accepted-change stock deduction SA-18751 + webapp updates (4/6)</span>
-    <span class="entry-meta">2026-06-04 18:03 MYT &middot; Patricia approval: DO NOW &middot; SiteGiant SA-18751 &middot; SB rows 101116 + 101118 patched</span>
-    <span class="tag">checksbvariation</span>
-    <span class="tag result-ok">Completed</span>
-  </div>
-  <div class="entry-body">
-    <p><strong>Brief:</strong> Completed the approved New Ship By accepted-change stock action for <code>260529NR0YCXVH</code> and <code>260531T8VV5V9G</code>. Created SiteGiant stock adjustment <code>SA-18751</code> and updated both Awesomeree SB Variation rows to <code>[&quot;Adjusted&quot;]</code> with stock ID, stock URL, and CS remarks.</p>
-    <div class="field"><strong>SiteGiant change:</strong> <code>SA-18751</code> / internal adjustment id <code>9652923</code> / Default warehouse <code>2699</code> / reason <code>Stock Adjustment</code>. SiteGiant remark: <code>260529NR0YCXVH SGREEN1.3L -1; 260531T8VV5V9G DMA-BLACK-1000ML -1</code>. API response: status success, success_ids <code>2392359</code> and <code>7523212</code>.</div>
-    <div class="field"><strong>Inventory before &rarr; after:</strong> <code>260529NR0YCXVH</code> / MurahYa SG / Shopee SG / accepted iSKU <code>SGREEN1.3L</code>: SiteGiant SOH/Sellable/Reserved/Allocated <code>5/5/0/0</code> Available &rarr; <code>4/4/0/0</code> Available. <code>260531T8VV5V9G</code> / Murahya / Shopee MY / accepted iSKU <code>DMA-BLACK-1000ML</code>: <code>13/13/0/0</code> Available &rarr; <code>12/12/0/0</code> Available.</div>
-    <div class="field"><strong>Webapp changes:</strong> Row <code>101116</code> / <code>260529NR0YCXVH</code>: whConfirmStatus kept <code>[&quot;WH Confirmed Can Pack&quot;]</code>; stockAdjustmentStatus <code>[&quot;Not Adjusted&quot;]</code> &rarr; <code>[&quot;Adjusted&quot;]</code>; stockId <code>null</code> &rarr; <code>[&quot;SA-18751&quot;]</code>; stockUrl <code>null</code> &rarr; <code>[&quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/9652923/edit&quot;]</code>; csRemarks appended with SA evidence. Row <code>101118</code> / <code>260531T8VV5V9G</code>: same status/id/url change; csRemarks appended with SA evidence.</div>
-    <div class="field"><strong>Reason:</strong> Buyer decision was <code>Accept Change</code>, accepted iSKU and shipQty were populated, and New Ship By date <code>2026-06-03</code> was present; Patricia gave current approval <code>DO NOW</code>. Applied checksbvariation New Ship By rule for accepted changes.</div>
-    <div class="field"><strong>Evidence checked:</strong> Live SB Variation API before values, SiteGiant adjustment success response, post-adjust SiteGiant item pages showing <code>SGREEN1.3L</code> final <code>4/4/0/0</code> Available and <code>DMA-BLACK-1000ML</code> final <code>12/12/0/0</code> Available, plus live SB API readback showing both rows now <code>[&quot;Adjusted&quot;]</code> with <code>SA-18751</code>.</div>
-    <div class="field"><strong>Outstanding follow-up:</strong> None for these two rows. They should not remain on the New Ship By stock-adjustment pending list unless a fresh stock bounce-back or webapp reversal appears.</div>
-    <div class="field"><strong>Result:</strong> ok &mdash; SiteGiant stock deducted with order IDs in the remark, SB webapp updated and read back clean, and no buyer message/Jira/seller-portal write was made in this stock-update step.</div>
-  </div>
-</div>
 <div class="entry" data-date="2026-06-04" data-shops="(skill-build)" data-platform="TikTok MY (skill files)" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -704,6 +684,17 @@ header.page::after{
     <div class="field"><strong>Post-PATCH verify (30s wait + re-GET):</strong> Both new remarks visible in <code>last_remark</code>. <code>refund_state=Pending</code> held on both (no classifier reversion). <code>action_needed=WH Action</code> held on both (no revert). <code>return_type=null</code> unchanged on both. PATCHes settled cleanly.</div>
     <div class="field"><strong>API behaviour note (skill correction):</strong> <code>type:'remark'</code> PATCH actually <strong>APPENDS</strong> to <code>last_remark</code>, not prepends as documented in ttparcelclaim/SKILL.md. New remark lands at the end after the existing <code>[STATUS DD/M]</code> tokens. Skill docs to be corrected on next edit.</div>
     <div class="field"><strong>Result (live):</strong> ok &mdash; 2 PATCHes HTTP 200, 0 failures, 0 classifier reversions, 0 ttchaserr triggers needed; C1966 metadata confirmed correct as-is (no PATCH); skills ready for daily operational use.</div>
+    <h4>SKILL DOC CORRECTION (4/6 ~19:00 MYT) &mdash; prepend &rarr; append fix in ttparcelclaim + ttparcelclaimcheck</h4>
+    <div class="field"><strong>Bug:</strong> ttparcelclaim/SKILL.md initially documented <code>type:'remark'</code> PATCH as "prepended to last_remark"; live verification on C1965 + C1967 showed the API actually <strong>APPENDS</strong> &mdash; new tag lands at the END of <code>last_remark</code>, after any trailing <code>[STATUS DD/M]</code> tokens.</div>
+    <div class="field"><strong>Files corrected:</strong>
+      <ul>
+        <li><code>C:\Users\tessf\.claude\skills\ttparcelclaim\SKILL.md</code> &mdash; 3 lines (remark append example / PATCH type description / ttchaserr Ticket ID handoff).</li>
+        <li><code>C:\Users\tessf\.claude\skills\ttparcelclaimcheck\SKILL.md</code> &mdash; 1 line (crosscheck PATCH body comment about append behaviour).</li>
+        <li>New memory: <code>feedback_tt_remark_patch_appends.md</code> + MEMORY.md index updated.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Reason:</strong> Future skill runs (and any new TT skills) should not re-discover this empirically &mdash; the behaviour is now documented and memoryised so the first PATCH writer gets it right.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 4 file edits applied, 1 new memory file, no PATCHes / no commits other than this board entry.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-04" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
@@ -1055,6 +1046,15 @@ header.page::after{
     <div class="field"><strong>Correction:</strong> Future checksbvariation runs must include a mandatory New Ship By exception sweep across all open rows, independent of row age and independent of the starting row list. Any accepted-change row with New Ship By and Not Adjusted must be surfaced as a stock-adjustment action item before final response.</div>
     <div class="field"><strong>Outstanding follow-up:</strong> Obtain current explicit approval before deducting <code>SGREEN1.3L -1</code> for <code>260529NR0YCXVH</code> and <code>DMA-BLACK-1000ML -1</code> for <code>260531T8VV5V9G</code>, then update SB/webapp with stock adjustment ID.</div>
     <div class="field"><strong>Result:</strong> RCA completed and logged; no stock adjustment performed in this note.</div>
+    <h4>PM CONTINUATION 5 (4/6 18:03 MYT) &mdash; SA-18751 New Ship By accepted-change stock deduction (Patricia approved DO NOW)</h4>
+    <p><strong>Brief:</strong> Completed the approved New Ship By accepted-change stock action for <code>260529NR0YCXVH</code> and <code>260531T8VV5V9G</code>. Created SiteGiant stock adjustment <code>SA-18751</code> and updated both Awesomeree SB Variation rows to <code>[&quot;Adjusted&quot;]</code> with stock ID, stock URL, and CS remarks.</p>
+    <div class="field"><strong>SiteGiant change:</strong> <code>SA-18751</code> / internal adjustment id <code>9652923</code> / Default warehouse <code>2699</code> / reason <code>Stock Adjustment</code>. SiteGiant remark: <code>260529NR0YCXVH SGREEN1.3L -1; 260531T8VV5V9G DMA-BLACK-1000ML -1</code>. API response: status success, success_ids <code>2392359</code> and <code>7523212</code>.</div>
+    <div class="field"><strong>Inventory before &rarr; after:</strong> <code>260529NR0YCXVH</code> / MurahYa SG / Shopee SG / accepted iSKU <code>SGREEN1.3L</code>: SiteGiant SOH/Sellable/Reserved/Allocated <code>5/5/0/0</code> Available &rarr; <code>4/4/0/0</code> Available. <code>260531T8VV5V9G</code> / Murahya / Shopee MY / accepted iSKU <code>DMA-BLACK-1000ML</code>: <code>13/13/0/0</code> Available &rarr; <code>12/12/0/0</code> Available.</div>
+    <div class="field"><strong>Webapp changes:</strong> Row <code>101116</code> / <code>260529NR0YCXVH</code>: whConfirmStatus kept <code>[&quot;WH Confirmed Can Pack&quot;]</code>; stockAdjustmentStatus <code>[&quot;Not Adjusted&quot;]</code> &rarr; <code>[&quot;Adjusted&quot;]</code>; stockId <code>null</code> &rarr; <code>[&quot;SA-18751&quot;]</code>; stockUrl <code>null</code> &rarr; <code>[&quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/9652923/edit&quot;]</code>; csRemarks appended with SA evidence. Row <code>101118</code> / <code>260531T8VV5V9G</code>: same status/id/url change; csRemarks appended with SA evidence.</div>
+    <div class="field"><strong>Reason:</strong> Buyer decision was <code>Accept Change</code>, accepted iSKU and shipQty were populated, and New Ship By date <code>2026-06-03</code> was present; Patricia gave current approval <code>DO NOW</code>. Applied checksbvariation New Ship By rule for accepted changes.</div>
+    <div class="field"><strong>Evidence checked:</strong> Live SB Variation API before values, SiteGiant adjustment success response, post-adjust SiteGiant item pages showing <code>SGREEN1.3L</code> final <code>4/4/0/0</code> Available and <code>DMA-BLACK-1000ML</code> final <code>12/12/0/0</code> Available, plus live SB API readback showing both rows now <code>[&quot;Adjusted&quot;]</code> with <code>SA-18751</code>.</div>
+    <div class="field"><strong>Outstanding follow-up:</strong> None for these two rows. They should not remain on the New Ship By stock-adjustment pending list unless a fresh stock bounce-back or webapp reversal appears.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; SiteGiant stock deducted with order IDs in the remark, SB webapp updated and read back clean, and no buyer message/Jira/seller-portal write was made in this stock-update step.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-04" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
