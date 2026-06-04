@@ -577,6 +577,23 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-source="codex" data-tags="checksbvariation closeout tiktok sitegiant stock-adjustment">
+  <h2>2026-06-04 SB variation session closeout - accepted-change stock, TT messages, holds</h2>
+  <p><strong>Logged:</strong> 2026-06-04 16:23 MYT. <strong>Task:</strong> End-of-session crosscheck and save for SB variation continuation. <strong>Reason:</strong> User requested accuracy review, outstanding list, saved closeout, continuation prompt, and automatic Patricia board log. <strong>Result:</strong> Live SB readback matched the completed writes; no incorrect stock write or buyer message was found. Closeout saved to <code>C:\Users\tessf\.codex\memories\checksbvariation-2026-06-04-session-closeout.md</code>; continuation prompt saved to <code>C:\Users\tessf\.codex\memories\checksbvariation-2026-06-05-continuation-prompt.md</code>.</p>
+  <ul>
+    <li><strong>260601V4G98JAU</strong> - Karlmobel / Shopee MY / row 101128. Before: buyerDecision Accept Change, WH Pending, stock Not Adjusted, accepted iSKU SS50LSQ-SLVR shipQty 1, stockId empty, SiteGiant SS50LSQ-SLVR 78/78/0/0. After: WH Confirmed Can Pack, stock Adjusted, stockId SA-18745, stockUrl saved, SiteGiant 77/77/0/0. Reason: New Ship By accepted-change shipped; Patricia approved deduct 1. Evidence: SiteGiant order #1412404 shipped and SA-18745 internal 9647464. Follow-up: none unless audit requested.</li>
+    <li><strong>260531SR55WF2W</strong> - das.nature2 / Shopee MY / row 101127. Before: buyerDecision Accept Change, WH Pending, stock Not Adjusted, accepted iSKU PSB-BLACK-0.95KG shipQty 1, stockId empty, SiteGiant PSB-BLACK-0.95KG 11/10/1/0 before final adjustment. After: WH Confirmed Can Pack, stock Adjusted, stockId SA-18745, stockUrl saved, SiteGiant 10/9/1/0. Reason: New Ship By accepted-change shipped; Patricia approved deduct 1. Evidence: SiteGiant order #1411011 shipped and SA-18745 internal 9647464. Follow-up: note top-level sku conflicts with affectedItems; accepted iSKU was used.</li>
+    <li><strong>2606034A46AVC4</strong> - Kinata SG / Shopee SG / row 101139. Before: contactSent true, stockSetOos false, exact iSKU WOMENS-BLAZER-JACKET-BLK-XXXL-SG previously 0/0/0/0 with status concern. After: stockSetOos true, no SiteGiant write, stock status verified Out Of Stock with 0/0/0/0/0. Reason: Patricia item #1 approved OOS/status cleanup. Result: SB flag corrected; no stock adjustment needed.</li>
+    <li><strong>2606033JKN2QX2</strong> - Hiranai / Shopee MY / row 101145. Before: Cancelled / Not Required, SNEAKERS-2STRIPES-WHITE-37 1/1/0/0, stockId empty. After: SA-18747 saved, SiteGiant 0/0/0/0 OOS, SB remains Cancelled / Not Required. Reason: Patricia item #2 approved adjust to 0. Evidence: SA-18747 internal 9649239.</li>
+    <li><strong>584299123686671505</strong> - TT KarlMobel / TikTok MY / row 101130. Before: Cancelled / Not Required, RLS-WHITE-S40 1/1/0/0, stockId empty. After: SA-18747 saved, SiteGiant 0/0/0/0 OOS, SB remains Cancelled / Not Required. Reason: Patricia item #5 confirmed no stock and approved adjust to 0. Evidence: SA-18747 internal 9649239.</li>
+    <li><strong>584306042900416434</strong> - TT Murahya / TikTok MY / row 101137. Before: waiting buyer decision after prior offer-change, SA-18708 retained. After: marketplace verified Cancelled/Unpaid/Fulfilled; SB buyerDecision Cancelled, WH/stock Not Required, exact CWS-4F-KHAKI 0/0/0/0 OOS. Reason: buyer decision/order-status cleanup. Result: no new SiteGiant action.</li>
+    <li><strong>260527G9FGMFBR</strong> - Murahya / Shopee MY / row 101136. Before/after: Cancelled / Not Required, stockSetOos true, no stock write. Reason: Patricia item #4 says still finding GAZEBO-TENT-WHITE-3M stock. Evidence: last live SiteGiant 2/2/0/0 Out Of Stock. Follow-up: keep WH finding stock.</li>
+    <li><strong>584330313036433239</strong> - TT Murahya / TikTok MY / row 101142. Before: contactSent false, stockSetOos false. After: contactSent true, stockSetOos true, message sent at 13:00 MYT offering CT-OUTER-LAYER-D.GREEN-5-8P, no SiteGiant write. Reason: user approved sending first and monitoring buyer choice. Follow-up: wait buyer choice and WH all-variation count.</li>
+    <li><strong>584323489193756530</strong> - TT Murahya / TikTok MY / row 101141. Before: contactSent false, stockSetOos true, CS remarks 2. After: contactSent [true], stockSetOos true, CS remarks 3; TT message sent at 15:31 MYT offering Outer Layer-D.Green 5-8 people. Reason: user approved both TT messages. Result: verified visible in selected buyer thread. Follow-up: wait buyer choice and WH all-variation count; no SiteGiant write.</li>
+    <li><strong>584324190793271260</strong> - TT Adelmar / TikTok MY / row 101146. Before: contactSent false, stockSetOos true, CS remarks 1. After: contactSent [true], stockSetOos true, CS remarks 2; TT message sent at 15:32 MYT offering RDWHN10/PDBN10/BL10IN options. Reason: user approved both TT messages. Result: verified visible and Delivered with translation. Follow-up: wait buyer choice; BM10IN already 0/0/0/0 OOS.</li>
+  </ul>
+  <p><strong>Audit gaps found:</strong> rows 101144 / 26060347E6Y3NJ, 101143 / 2606020VA1SQ6U, and 101140 / 2606010SWCYA21 are live contactSent=true and stockSetOos=true but csRemarkCount=0. They should be rechecked tomorrow only if Patricia needs full audit remarks. <strong>Rules carried forward:</strong> no automatic SiteGiant stock/status change without current explicit approval; apply New Ship By rule for accepted changes; log every completed task to board; close automation before final response.</p>
+</div>
 <div class="entry" data-date="2026-06-04" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -732,6 +749,28 @@ header.page::after{
     </div>
     <div class="field"><strong>Estimated remaining backfill backlog beyond today's window (not POSTed):</strong> MurahYa sample showed ~134 missing in first 163 of 439 (mostly old &gt; 30d). Across 13 shops, likely 1,500-3,000 unlogged historical FD claims. User instructed to scope this backfill to 23/5-4/6 only; older window can be addressed separately if desired.</div>
     <div class="field"><strong>Backfill result:</strong> ok &mdash; 12/12 POSTs HTTP 200, 0 errors, RM 2,483.07 recovered. Both user-flagged OIDs landed (C1970 + C1971). 39 candidate OIDs correctly skipped as dedupe-hits.</div>
+    <h4>SKILL FIX APPLIED (4/6 ~16:30 MYT, user "yes pls ensure this will not happened again next time")</h4>
+    <div class="field"><strong>Option A applied to parcelclaim-auto:</strong> source_date_cutoff_days split into per-case-type fields. R/R keeps 4-day cutoff (unchanged); FD removes the cutoff entirely.</div>
+    <div class="field"><strong>config.json changes (`.claude/skills/parcelclaim-auto/config.json`):</strong>
+      <ul>
+        <li>Added <code>source_date_cutoff_days_rr: 4</code> (R/R behaves identical to before)</li>
+        <li>Added <code>source_date_cutoff_days_fd: null</code> (NEW: no cutoff on FD)</li>
+        <li>Kept legacy <code>source_date_cutoff_days: 4</code> as backward-compatibility fallback only</li>
+        <li>Updated <code>source_date_cutoff_note</code> to explain per-case-type behaviour + regression guard reference</li>
+      </ul>
+    </div>
+    <div class="field"><strong>parcelclaim-auto.md changes:</strong>
+      <ul>
+        <li>HARD RULE 3 rewritten with per-case-type cutoffs explicit (R/R = _rr, FD = _fd null = no cutoff)</li>
+        <li>HARD RULE 3 includes regression guard: any future non-null _fd cutoff MUST verify across all 13 TT shops before deploy</li>
+        <li>PHASE 2 (TT Failed Delivery) explicitly states "NO date cutoff" with reasoning</li>
+        <li>Added 🚨 warning block in PHASE 2 referencing today's incident (82% miss rate on MurahYa+Adelmar samples) + backfill C1969-C1980 RM 2,483.07</li>
+      </ul>
+    </div>
+    <div class="field"><strong>New feedback memory:</strong> <code>feedback_parcelclaim_auto_fd_no_cutoff.md</code> with full incident detail + correct config + code path template (`const fdCutoff = config.source_date_cutoff_days_fd; // may be null`) + regression guard + "expect spike on first post-fix daily run" note for operator. Added to MEMORY.md index as 1st entry.</div>
+    <div class="field"><strong>Expected impact tomorrow (5/6 09:45 MYT parcelclaim-auto run):</strong> first post-fix run will pull a much wider FD set on 13 shops. Initial run may produce 50-200 NEW POSTs (the accumulated unlogged backlog beyond 23/5 that today's user-scoped backfill did not cover). Subsequent daily runs return to normal volume (1-15 NEW per day) because dedupe-by-order_id prevents re-POST. Operator should expect the spike on 5/6 only, then normalisation.</div>
+    <div class="field"><strong>What is NOT affected:</strong> R/R logging behaviour unchanged (still 4d cutoff via _rr). Lazada profiles unchanged (no FD page on Lazada). Skill HARD RULES 1, 2, 4-9 unchanged.</div>
+    <div class="field"><strong>Skill fix result:</strong> ok &mdash; future FD silent-drops prevented. Skill config + markdown + memory all updated. Regression guard in place. Awaiting 5/6 09:45 auto-run to verify behaviour matches expectation.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-04" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, Karlmobel, Lovento MY, Luxbin, MurahYa, Emas Gift, JagerHelmet, Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
