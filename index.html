@@ -722,45 +722,48 @@ header.page::after{
     <div class="field"><strong>Result:</strong> ok &mdash; 467/467 in-window chats deep-reviewed across cs1+cs2+cs3+cs4+cs5, 0 confirmed misses, 1 awareness item (gjioiedrwy bot Pattern A2), 2 carry-overs verified NOT misses, 1 still-unresolved 5d outbound recommendation (ikmal_sumadi).</div>
   </div>
 </div>
-<div class="entry" data-date="2026-06-04" data-shops="TT KarlMobel" data-platform="TikTok MY" data-result="ok">
+<div class="entry" data-date="2026-06-04" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerSafety, TT KarlMobel, TT Lovento, TT MurahYa, TT Valuesnap, TT JagerHelmet, TT Kinata" data-platform="TikTok MY" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">investigation &mdash; kmall.cservice@gmail.com TT KarlMobel chronic 24h session expiry root-caused (4/6)</span>
-    <span class="entry-meta">2026-06-04 ~13:30 MYT &middot; profile 62 k1as2202 &middot; cookie inventory + localStorage + AdsPower profile map &middot; root cause = 24h hard TTL on `*_unified_seller_env` cookies + multi-shop-master Gmail flag</span>
+    <span class="entry-title">investigation &mdash; ALL 13 TT profiles share IPv6 &rarr; TT mass session revocation is the chronic-logout root cause (4/6, REVISED)</span>
+    <span class="entry-meta">2026-06-04 ~14:30 MYT &middot; user corrected my earlier narrow analysis "not only profile 62, others also" &middot; AdsPower profile map + 30-day login_expired history &middot; root cause = shared IPv6 across 13 TT shops triggering TT anti-bot mass session rotation, NOT per-Gmail policy</span>
     <span class="tag">investigation</span>
     <span class="tag result-ok">Completed</span>
   </div>
   <div class="entry-body">
-    <p><strong>Brief:</strong> User flagged "why the email keep logged out especially for kmallcservice email". Inspected profile 62 TT KarlMobel cookies + localStorage + cross-referenced AdsPower profile list to identify root cause. Pattern: 6+ login_expired events on profile 62 over past 30 days (5/7, 11/5, 14/5, 18/5, 25/5, 4/6), recurring roughly every 4-7 days. Other TT shops in portfolio rarely login_expired.</p>
-    <div class="field"><strong>Smoking-gun cookie TTLs (profile 62 after today's operator relogin ~11:24 MYT):</strong> `global_seller_id_unified_seller_env` expires <strong>2026-06-05T03:27:56Z = Fri 5/6 11:27 MYT</strong> (exactly 24h from login) &middot; `app_id_unified_seller_env` same 24h expiry &middot; `oec_seller_id_unified_seller_env` same 24h expiry &middot; `msToken` 10d TTL &middot; `passport_csrf_token` 1y TTL (CSRF only, not auth). <strong>Hard 24h absolute TTL on auth cookies, NO slide-renewal on use.</strong></div>
-    <div class="field"><strong>Multi-shop-master localStorage finding:</strong> Profile 62 localStorage contains data for <strong>4 different seller_ids</strong>: 7495002863841610732 (KarlMobel canonical) + 7496189201473636956 + 7504591668760364039 + 7219120584743437314. `kmall.cservice@gmail.com` has master-account access to multiple TT shops &rarr; TT flags as "shared/multi-shop operator" &rarr; shorter session policy. Other TT profiles using single-shop Gmails (csttadelmar / csttjager / csttvaluesnap / csttjagerhelmet etc.) have longer ~7d TTLs.</div>
-    <div class="field"><strong>Why AM scheduled runs always fail on profile 62:</strong> parcelclaim-auto fires 09:45 MYT daily. If prior operator relogin was earlier than 09:45 the day before, the 24h window closes BEFORE the AM run. Today: prior login was Tue night 03/6, expired Wed night, today AM 09:45 = >22h past expiry &rarr; LOGIN_EXPIRED. Pattern repeats every time the manual relogin time drifts earlier than the previous day's.</div>
-    <div class="field"><strong>NOT delete_cache=1 fault (ruled out):</strong> Per feedback_adspower_delete_cache_unblocks_chromium145, cookies survive delete_cache=1. Confirmed today: PM catch-up reopen with delete_cache=1 kept session alive after operator login. Cache-clearing wipes browser cache + IndexedDB but NOT cookies file.</div>
-    <div class="field"><strong>NOT concurrent-login fault (ruled out):</strong> Only ONE AdsPower profile (62) uses `kmall.cservice@gmail.com`. Profile 64 TT MurahYa uses similar-pattern Gmail `kmall.cservice2@gmail.com` but is single-shop &rarr; longer TTL. No multi-device conflict.</div>
-    <div class="field"><strong>AdsPower profile-to-Gmail map for kmall.cservice* accounts:</strong>
+    <p><strong>Brief:</strong> User flagged "why the email keep logged out especially for kmallcservice email". Earlier narrow analysis (per-Gmail / multi-shop-master flag on profile 62) was WRONG &mdash; corrected after user pushback. Real cause: <strong>all 13 TT seller-my profiles share the same IPv6 address</strong> &rarr; TT anti-bot mass session rotation. Mass-revocation events affect MULTIPLE shops at once regardless of which Gmail is used.</p>
+    <div class="field"><strong>Smoking gun &mdash; shared IPv6 across 13 TT profiles (from <code>mcp__adspower__get-browser-list</code> 4/6):</strong> ALL of 54 Adelmar / 55 DasNature / 56 Hiranai / 58 HiranaiMY / 59 Jager / 60 JagerArmor / 61 JagerSafety / 62 KarlMobel / 63 Lovento / 64 MurahYa / 65 Valuesnap / 66 JagerHelmet / 67 Kinata show <code>ip: "2001:e68:6313:8700:ac81:b54:835e:1184"</code> with <code>user_proxy_config.proxy_soft = "no_proxy"</code>. No per-profile proxy. TT backend sees 13 different sellers from one IPv6 &rarr; suspicious-activity rule fires periodically &rarr; mass session revocation.</div>
+    <div class="field"><strong>Historical mass-revocation evidence (from parcelclaim-auto-report-*.md grep):</strong>
       <ul>
-        <li>profile 49 k1artcxf (kmall:cservice / cs1) &mdash; Shopee MY accounts.shopee.com.my</li>
-        <li>profile 50 k1arvrqs (kmall:cservice2 / cs2) &mdash; Shopee MY</li>
-        <li>profile 51 k1arw2cs (kmall:cservice3 / cs3) &mdash; Shopee account.seller.shopee.com</li>
-        <li>profile 52 k1arw4x4 (kmall:cservice4 / cs4) &mdash; Shopee MY</li>
-        <li>profile 53 k1arw890 (kmall:cservice5 / cs5) &mdash; Shopee MY</li>
-        <li>profile 96 k1cuqn7o (new kmall:cservice 1) &mdash; Shopee MY (newer variant)</li>
-        <li>profile 98 k1cuqt3x (new kmall:cservice2) &mdash; Shopee MY (newer variant)</li>
-        <li><strong>profile 62 k1as2202 &mdash; uses Gmail `kmall.cservice@gmail.com` for TT KarlMobel</strong></li>
-        <li>profile 64 k1as27m9 &mdash; uses Gmail `kmall.cservice2@gmail.com` for TT MurahYa</li>
+        <li><strong>5/7/2026: 11 of 11 TT profiles login_expired SIMULTANEOUSLY</strong> + Lazada 81. Confirmed via 18s + cookie + API probe (code 98001002). Not false positive.</li>
+        <li>4/30/2026: 4 at once (54 Adelmar / 56 Hiranai / 64 MurahYa / 82 Laz DasNature). These use 4 DIFFERENT Gmails (csttadelmar / farasya0303 / kmall.cservice2 / hajaawesomeree) &mdash; proves it's not Gmail-specific.</li>
+        <li>5/11/2026: 12 profiles expired (mass).</li>
+        <li>5/14/2026: 14 of 16 profiles expired (near-total).</li>
+        <li>6/2/2026: 4 at once (59 Jager / 63 Lovento / 64 MurahYa / 65 Valuesnap).</li>
+        <li>6/4/2026 (today): 2 (62 KarlMobel + 81 Laz MurahYa).</li>
       </ul>
     </div>
-    <div class="field"><strong>Recommended fixes (operator + Patricia decision):</strong>
+    <div class="field"><strong>Gmail diversity proof (different Gmails get hit together):</strong> csttadelmar@gmail.com / aretinjanamuda@gmail.com / farasya0303@gmail.com / cstthiranaimy@gmail.com / csttjager@gmail.com / csttjagerarmor@gmail.com / leena.janamuda@gmail.com / <strong>kmall.cservice@gmail.com</strong> / csttlovento@gmail.com / <strong>kmall.cservice2@gmail.com</strong> / csttvaluesnap@gmail.com / csttjagerhelmet@gmail.com / ttkinatacs@gmail.com. Mass events hit MOST of these together &mdash; not a kmall.cservice* family problem.</div>
+    <div class="field"><strong>What I got wrong earlier today (corrected):</strong>
       <ol>
-        <li>Add 09:30 MYT (or 06:00 MYT) auto-relogin step for profile 62 BEFORE parcelclaim-auto 09:45 + tiktokrraudit. Required because TT 24h hard TTL cannot be bypassed.</li>
-        <li>OR stagger profile-62-specific skills to PM (e.g., 16:00 MYT) when manual login is fresher.</li>
-        <li>Investigate splitting the 4 seller_ids off `kmall.cservice@gmail.com` &mdash; if KarlMobel master Gmail is unlinked from the other 3 shops, TT may upgrade to longer TTL.</li>
-        <li>Check if TT mobile-app 2FA is enabled on `kmall.cservice@gmail.com`. If yes, that explains the shortened session. Disable if not strictly required (security tradeoff).</li>
-        <li>Spot-check profile 64 MurahYa cookie TTLs for comparison. If MurahYa shows 7d while KarlMobel shows 24h, that confirms it's shop-specific not Gmail-format-specific.</li>
+        <li>❌ "Multi-shop-master Gmail flag on KarlMobel only" &mdash; wrong. Mass events hit single-shop Gmails too.</li>
+        <li>❌ "Other TT shops have 7d TTL" &mdash; unverified claim, no comparison data. Profile 64 MurahYa cookie inspection attempted but CDP attach failed; cannot confirm.</li>
+        <li>❌ "Fix = split the 4 seller_ids off kmall.cservice@gmail.com" &mdash; won't help without also fixing the shared-IP root cause.</li>
+        <li>✅ Correct framing: <strong>shared IPv6 across 13 TT shops &rarr; TT periodic mass session rotation &rarr; all kmall.* / cstt.* / etc. logins affected together.</strong></li>
       </ol>
     </div>
-    <div class="field"><strong>cs1-cs5 Shopee accounts (separate issue, addressed in chataudit 4/6 entry):</strong> Today's cs1 bust was scroll-related (Shopee traffic-detector triggered by aggressive scrollTop=scrollHeight pattern), NOT session-expiry. Gradual scrollTop += 2500 (already used for cs2-cs5) eliminates this. Shopee cservice accounts have normal session TTL; chronic logout pattern claim does NOT apply to them.</div>
-    <div class="field"><strong>Result:</strong> ok &mdash; root cause identified (24h hard TTL on `*_unified_seller_env` cookies + multi-shop-master Gmail flag). Fix options documented above. Awaiting Patricia decision on which mitigation path to deploy (recommend option 1 + option 4 combined). Findings will be persisted as feedback memory `feedback_tt_karlmobel_24h_session_ttl.md` next session.</div>
+    <div class="field"><strong>Profile 62 specific data (still valid but secondary):</strong> Today's cookie inventory showed `*_unified_seller_env` 24h-from-login TTL (expires 2026-06-05 11:27 MYT, exactly 24h after operator relogin 11:24 MYT). localStorage shows 4 seller_ids (KarlMobel 7495002863841610732 + 7496189201473636956 + 7504591668760364039 + 7219120584743437314). This MAY add slightly higher solo-revocation frequency on profile 62 between mass events &mdash; but the bigger problem is the IP-wide event.</div>
+    <div class="field"><strong>Recommended fixes (corrected priority):</strong>
+      <ol>
+        <li><strong>PRIMARY: migrate to residential proxy pool (1 IP per TT profile).</strong> Standard mitigation for multi-shop AdsPower fleets. Bright Data / Smartproxy / etc., typically $5-15/month per residential IP. AdsPower supports per-profile proxy config &mdash; switch each TT profile to its own residential IP and the mass-revocation events should stop entirely.</li>
+        <li>Stagger profile access timing: current schedule (parcelclaim-auto + tiktokrraudit + checkfbsclaims) hits 13 profiles within minutes of each other. If TT's trigger is "N sessions on one IP within X min", spreading access over 4-6 hours reduces detection.</li>
+        <li>Reduce per-day profile activations: skip dormant shops (TT Lovento often empty etc.) to keep the daily access footprint smaller.</li>
+        <li>For profile 62 specifically (between mass events): add a pre-09:45 MYT relogin step in case the daily 24h-TTL closes before the AM scheduled run.</li>
+        <li>Do NOT bother changing Gmails &mdash; proven not Gmail-specific.</li>
+      </ol>
+    </div>
+    <div class="field"><strong>cs1-cs5 Shopee accounts (separate IP, separate issue):</strong> Profiles 49-53 (cs1-cs5) use IPv4 `175.142.108.66` for Shopee MY accounts (not TT). Different IP, different platform, different rotation policy. Today's cs1 bust during chataudit was scroll-triggered traffic-detector (gradual scrollTop += 2500 is the fix per chataudit calibration). Chronic-logout issue does NOT apply to them.</div>
+    <div class="field"><strong>Result:</strong> ok (revised) &mdash; root cause re-identified after user correction: shared IPv6 across 13 TT shops &rarr; TT mass session rotation. Primary fix recommendation = residential proxy pool. Memory file updated as `feedback_tt_karlmobel_24h_session_ttl.md` with the corrected analysis. Awaiting Patricia decision on proxy-pool migration vs. status-quo + scheduled relogins.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-04" data-shops="TT Murahya, KarlMobel, MurahYa" data-platform="Shopee MY+TikTok" data-result="ok">
