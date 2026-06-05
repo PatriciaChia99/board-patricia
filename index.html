@@ -639,51 +639,54 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
-<div class="entry" data-date="2026-06-05" data-shops="TT Murahya" data-platform="TikTok MY + SiteGiant + SB Variation" data-result="ok">
+<div class="entry" data-date="2026-06-05" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, MurahYa, JagerHelmet, Emas Gift, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">checksbvariation &mdash; SA-18789 final-zero cleanup for TT Murahya CT outer-layer rows (5/6)</span>
-    <span class="entry-meta">2026-06-05 21:31 MYT &middot; 2 SiteGiant SKU deductions &middot; 2 SB PATCHes HTTP 200 &middot; final 0/0/0/0 verified</span>
-    <span class="tag">checksbvariation</span>
+    <span class="entry-title">chataudit &mdash; 5 cservice accts 365/365 deep-reviewed, 0 confirmed CS misses (5/6)</span>
+    <span class="entry-meta">2026-06-05 10:17 MYT &middot; window 3/6 17:45 &rarr; 4/6 17:45 &middot; 1,582 convs loaded / 365 in-window &middot; 28 raw flags ALL REJECTED &middot; 0 CAPTCHA &middot; 3 STILL-UNRESOLVED carry-overs need CS outbound</span>
+    <span class="tag">chataudit</span>
     <span class="tag result-ok">Completed</span>
   </div>
   <div class="entry-body">
-    <div class="field"><strong>Marker:</strong> <code>SBQ-20260605-SA18789-CT</code></div>
-    <div class="field"><strong>Task:</strong> User approved adjusting two exact TT Murahya SB Variation iSKUs to final zero after live audit showed Out Of Stock label but positive SiteGiant stock.</div>
-    <div class="field"><strong>Before &rarr; after values:</strong>
+    <p><strong>Brief:</strong> Daily 5-cservice Shopee chat audit. Methodology = REACT STORE EXTRACTION + BATCH JS CLICK + 4-Q PRE-FLAG FILTER + Section 4d 5-pattern classifier + DEEP-VERIFY via search box on every candidate. 365/365 in-window chats individually opened + full-panel read.</p>
+    <div class="field"><strong>Scope per cservice:</strong>
       <ul>
-        <li><strong>584330313036433239</strong> / SB <code>101142</code> / <code>CT-OUTER-LAYER-KHAKI-5-8P</code>: SiteGiant SOH/Sellable/Allocated/Reserved <code>1/1/0/0</code>, rack <code>GROUND FLOOR 1</code>, status <code>out_of_stock</code> &rarr; <code>0/0/0/0</code>, rack <code>0</code>, status <code>out_of_stock</code>. SB <code>stockAdjustmentStatus</code> <code>null</code> &rarr; <code>Manual Review</code>; <code>stockId</code> <code>null</code> &rarr; <code>SA-18789</code>; <code>stockUrl</code> saved.</li>
-        <li><strong>584323489193756530</strong> / SB <code>101141</code> / <code>CT-OUTER-LAYER-L.BROWN-5-8P</code>: SiteGiant SOH/Sellable/Allocated/Reserved <code>1/1/0/0</code>, rack <code>GROUND FLOOR 1</code>, status <code>out_of_stock</code> &rarr; <code>0/0/0/0</code>, rack <code>0</code>, status <code>out_of_stock</code>. SB <code>stockAdjustmentStatus</code> <code>null</code> &rarr; <code>Manual Review</code>; <code>stockId</code> <code>null</code> &rarr; <code>SA-18789</code>; <code>stockUrl</code> saved.</li>
+        <li>cs1 (k1artcxf, ValueSnap+MasonGym+BahEmas+das.nature): 300 loaded / 81 in-window / 81 deep-reviewed / 6 raw flags &rarr; 0 confirmed</li>
+        <li>cs2 (k1arvrqs, das.nature2+Hiranai): 200 loaded / 55 in-window / 55 deep-reviewed / 7 raw flags &rarr; 0 confirmed</li>
+        <li>cs3 (k1arw2cs, KarlMobel+Lovento MY+Luxbin): 400 loaded / 109 in-window / 109 deep-reviewed / 7 raw flags &rarr; 0 confirmed</li>
+        <li>cs4 (k1arw4x4, MurahYa+JagerHelmet+Emas Gift+Adelmar): 582 loaded / 106 in-window / 106 deep-reviewed / 7 raw flags &rarr; 0 confirmed</li>
+        <li>cs5 (k1arw890, Kinata SG): 100 loaded / 14 in-window / 14 deep-reviewed / 1 raw flag &rarr; 0 confirmed</li>
+        <li><strong>TOTAL: 1,582 / 365 / 365 / 28 raw &rarr; 0 confirmed misses</strong></li>
       </ul>
     </div>
-    <div class="field"><strong>Shop / platform:</strong> TT Murahya / TikTok MY, SiteGiant warehouse <code>Default</code> (<code>2699</code>), SB Variation rows <code>101141</code> and <code>101142</code>.</div>
-    <div class="field"><strong>Reason:</strong> Final-zero cleanup for OOS-label positive-stock mismatch after user approval. Reserved stock was already <code>0</code> for both, so no reserved-stock clearing step was needed.</div>
-    <div class="field"><strong>Evidence:</strong> SiteGiant stock adjustment <code>SA-18789</code> / internal <code>9666836</code> saved at <code>https://sitegiant.co/inventory-adjustment/stock-adjustment/9666836/edit</code>. API response success_ids <code>7909996</code> and <code>7910000</code>; products recorded <code>quantity_changed:-1</code>, rack <code>435660 / GROUND FLOOR</code>. Post-adjustment item lookups verified both total available/sellable/on-hold <code>0/0/0</code>, warehouse available/sellable/non-sellable/allocated/reserved <code>0/0/0/0/0</code>, rack in-hand <code>0</code>, and <code>stock_status: out_of_stock</code>.</div>
-    <div class="field"><strong>SB webapp result:</strong> PATCH <code>101142</code> and <code>101141</code> returned HTTP 200 / <code>affectedRows:1</code>. Appended CS remarks with SA evidence. <code>contactSent</code> and <code>stockSetOos</code> stayed true; <code>buyerDecision</code> and <code>whConfirmStatus</code> stayed null.</div>
-    <div class="field"><strong>Outstanding follow-up:</strong> Continue monitoring buyer replies for both TT Murahya orders and the offered replacement <code>CT-OUTER-LAYER-D.GREEN-5-8P</code>. Do not change buyer decision, send another buyer message, or adjust additional SiteGiant stock without fresh current approval.</div>
-  </div>
-</div>
-<div class="entry" data-date="2026-06-05" data-shops="TT KarlMobel; TT profiles 54-67; Lazada profiles 81-83; internal Parcel Split" data-platform="TikTok MY + Lazada MY + Shopee MY + internal" data-result="ok">
-  <div class="entry-summary">
-    <span class="entry-title">parcelsplit-contact-crosscheck - TT/Lazada split contact workflow + weekend ntfy hardening + TT KarlMobel phone backfill (5/6)</span>
-    <span class="entry-meta">2026-06-05 ~18:15 MYT &middot; skill amended &middot; runner daily/weekend + ntfy &middot; TT KarlMobel order 584278890262333342 phone []&rarr;***730 &middot; npm test 1/1 pass</span>
-  </div>
-  <div class="entry-body">
-    <div class="field"><strong>Task:</strong> User requested Parcel Split contact skill update for TT/Lazada split-parcel customer messaging, one recent TikTok test, weekend-safe daily schedule, ntfy notifications, closeout save, and a new standing rule to log every completed task to this board.</div>
-    <div class="field"><strong>Files / before &rarr; after:</strong>
+    <div class="field"><strong>Before &rarr; after values:</strong> No PATCHes / DB writes / message sends. Summary report file generated: <code>C:\Users\tessf\Documents\chataudit-reports\chataudit-summary-2026-06-05.md</code>.</div>
+    <div class="field"><strong>28 raw flag rejection breakdown (all WRONG_CLOSER_NO_TRIG):</strong>
       <ul>
-        <li><code>AGENTS.md</code>: repo instructions had plan/small-change/dependency/test rules &rarr; added automatic Patricia board logging rule requiring date, task, before/after values, shop, platform, reason, and result after every task.</li>
-        <li><code>.agents/skills/parcelsplit-contact-crosscheck/SKILL.md</code>: Shopee MY bot-contact crosscheck focus &rarr; Shopee MY remains audit-only; TT/Lazada manual split-parcel contact added; TT profiles <code>54-67</code>; Lazada profiles <code>81-83</code>; Best Cargo only; Courier/Tracking <code>+</code> expansion required; Manage Order phone reveal/update required; phone-backfill lane added; ntfy + weekend scheduled-run requirements added.</li>
-        <li><code>C:\Users\tessf\scripts\parcelsplit-contact-crosscheck.bat</code>: scheduled runner prompt/report flow &rarr; explicit TT/Lazada contact/backfill workflow, daily including weekends, same-day TT/Lazada handling, report verification, and ntfy STARTED/OK/FAILED plus prompt-level partial summaries to <code>awesomeree-patricia-ops-7h3k9q</code>.</li>
-        <li><code>.agents/skills/parcelsplit-contact-crosscheck/state.json</code>: absent &rarr; saved closeout snapshot with schedule status and masked TT validation result.</li>
-        <li><code>.codex/memories/parcelsplit-contact-2026-06-05-closeout.md</code>: absent &rarr; saved tomorrow continuation prompt + session summary.</li>
+        <li>18 &times; Q3 bot SLA template to urgency Q (today/when ship/expedite/ASAP) &mdash; correct shop policy per IS-NOT rule #1</li>
+        <li>4 &times; Q1 substantive agent reply found in panel (turissaina tracking# / aleen4 / 94nadiah / mohdyazidhamid Haja+Lucy substantive prior days)</li>
+        <li>3 &times; Q2 customer self-resolved / thanked (beemarissa "Okay" / w2ul4szsxq "Thanks" / irenecxe "Sure. Thank you.")</li>
+        <li>2 &times; product-share courtesy closer no typed Q (zubaidaabdulrahimzue / 00_nm)</li>
+        <li>3 &times; Pattern A2 closer noise / no in-window Q (limhongwai81 / disini.coffee / penghulu45)</li>
       </ul>
     </div>
-    <div class="field"><strong>Shop/platform change:</strong> TikTok MY / TT KarlMobel, AdsPower profile 62, order <code>584278890262333342</code>, Best Cargo tracking IDs <code>66668185711001</code> + <code>66668183711002</code>. Before: <code>isContacted:true</code>, <code>phoneNumbers:[]</code>. After: <code>isContacted:true</code>, <code>phoneNumbers:["***730"]</code>. Reason: already-contacted TT split row had empty Parcel Split phone column. Result: OK, phone saved; no duplicate TikTok buyer message sent.</div>
-    <div class="field"><strong>Schedule / notification before &rarr; after:</strong> ParcelSplitCrosscheck_1000AM already existed &rarr; verified enabled with <code>DaysInterval:1</code>, start boundary <code>2026-05-06T10:00:00+08:00</code>, last run <code>2026-06-05 10:00:17</code> result <code>0</code>, next run <code>2026-06-06 10:04:37 MYT</code>, missed runs <code>0</code>. ntfy test POST returned OK. WeekendFailureAlert backup last result <code>0</code>, next <code>2026-06-06 12:30 MYT</code>, missed runs <code>1</code>.</div>
-    <div class="field"><strong>Validation:</strong> Readback confirmed skill and runner prompt contain TT/Lazada phone-backfill + ntfy instructions. <code>npm test</code> passed: 1 test, 1 pass.</div>
-    <div class="field"><strong>Outstanding for tomorrow:</strong> No required work intentionally left open. Watch first full updated weekend run on 2026-06-06 after 10 AM MYT. No recent uncontacted TikTok 2+ parcel row was available today, so only TT phone-backfill was live-tested. Lazada phone reveal was not live-tested today; workflow must block without ticking if phone cannot be viewed.</div>
-    <div class="field"><strong>Continuation saved:</strong> <code>C:\Users\tessf\code\codex-lab\.codex\memories\parcelsplit-contact-2026-06-05-closeout.md</code>. Use together with <code>parcelsplit-contact-crosscheck</code> and <code>checksbvariation</code> tomorrow.</div>
+    <div class="field"><strong>3 STILL-UNRESOLVED carry-overs (CS outbound action MANDATORY):</strong>
+      <ul>
+        <li><strong>zarinamohdkassim</strong> (cs1 / ValueSnap) &mdash; 6+ days. Last activity Sofia 31/5 08:53 wrong-context "Minta maaf boss, kami tidak ada ked41 ya" reply to customer's 30/5 22:09 "Ni tadi jatuhhhhh n pecahhhh" (item fell + broke). NO further CS contact in window. Action: outbound recovery + warranty-claim path.</li>
+        <li><strong>thecreation2020</strong> (cs1 / ValueSnap) &mdash; 3+ days. Haja "P1c will cont4ct you ya - Haja" 2/6 09:20 then chat auto-closed. NO further P1c contact across 3/6 or 4/6 in window. Lost-sale risk (asking about 6.6 sale + voucher). Action: verify P1c agent actually reached out via phone/WhatsApp.</li>
+        <li><strong>ikmal_sumadi</strong> (cs4 / MurahYa) &mdash; 6+ days (escalated from 5+ on 4/6). Last in-panel 30/5 17:48-50 customer escalation "Service and produk kau mmg tak berkualiti / Tak guna" + bot 17:50 ack "Pasukan kami akan follow up di sini sebentar lagi" &rarr; NO human reply since. Customer angry, d3f3ct helmet rejection 12-day old. Action: outbound recovery via WhatsApp/phone, MANDATORY.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>2 awareness items (NOT counted as misses):</strong>
+      <ul>
+        <li><strong>irenecxe</strong> (cs5 / Kinata SG) &mdash; CARRY-OVER from 4/6. Sofia substantively resolved R/R, customer accepted, then BOT closer fired TWICE within 4 min (3/6 18:04 + 18:08, identical text) &rarr; Shopee penalty banner. CS to investigate duplicate-closer auto-fire on Kinata SG.</li>
+        <li><strong>mohdyazidhamid</strong> (cs4 / JagerHelmet) &mdash; Pattern A2 closer firing early "Thank you, Boss / Have a great day!" across multiple days while order is still in Shipping (not Delivered). Coach/configure to suppress closer when status still Shipping.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Shop / platform:</strong> All 5 cservice profiles &mdash; Shopee MY (ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, MurahYa, JagerHelmet, Emas Gift, Adelmar) + Shopee SG (Kinata SG).</div>
+    <div class="field"><strong>Reason:</strong> Daily scheduled audit per chataudit.md ABSOLUTE RULE 15/5 (deep-review every in-window chat). User reported board-missing 5/6 EOD &mdash; entry was generated at 10:17 but never auto-pushed.</div>
+    <div class="field"><strong>CAPTCHA / technical events:</strong> 0 CAPTCHA across all 5 accounts. cs3 sortedConversations initially returned 0 &rarr; recovered after 8s wait + retry (React state populate lag). All 5 profiles opened/closed sequentially, AdsPower MCP stable.</div>
+    <div class="field"><strong>Scheduled-run diagnostic (failure mode why this entry was missing):</strong> ChatAudit_910AM Windows Task fired 09:17:51 with LastTaskResult=0, BUT <code>C:\Users\tessf\Documents\chataudit-reports\schedule-log.txt</code> mtime stuck at 2026-05-29 09:12 &mdash; the <code>echo STARTED</code> line at top of chataudit.bat (which always runs before claude) has NOT written for 7 days. Means the .bat itself did not actually execute despite Task Scheduler reporting success. Summary file timestamp 10:17 says "Manual via interactive Claude session" &mdash; the audit was done manually, not by the scheduled path. Operator must investigate .bat launch failure before next 09:10 fire (possible causes: 27/5 21:25 .bat edit broke something, schedule-log.txt locked by another process, or Task Scheduler launching but bat exits silently before line 17).</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 365/365 deep-reviewed, 0 confirmed misses, 3 carry-overs flagged for CS outbound action, board entry now pushed (delayed by 12 hours due to scheduled-run failure).</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-05" data-shops="all" data-platform="Shopee MY/SG + TikTok MY + Lazada MY + internal" data-result="ok">
@@ -1142,6 +1145,20 @@ header.page::after{
     <div class="field"><strong>Reason / Trigger:</strong> User-invoked daily parcelsplit-contact-crosscheck skill (Friday 5/6 manual run). 4/6 prior snapshot loaded. Tier-1 decision table applied. Read-only audit, no PATCHes, no customer messages.</div>
     <div class="field"><strong>Files written:</strong> Report <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-06-05.md</code> &middot; State <code>C:\Users\tessf\.claude\skills\parcelsplit-contact-crosscheck\state.json</code> (Python bypass).</div>
     <div class="field"><strong>Result:</strong> ok &mdash; 10 PASS, 0 MISMATCH, 0 manual-check. Bot keeping up with overnight MurahYa burst (8 entries 19:56-20:01 MYT 4/6 all lit). No action required. Next run 6/6 morning will re-evaluate today's deferred case 2606047980XCWR KarlMobel + any new 5/6 darks.</div>
+    <h4>PM ADDENDUM (5/6 ~18:15 MYT) &mdash; parcelsplit-contact-crosscheck skill + runner refactor for TT/Lazada split contact + weekend ntfy hardening + TT KarlMobel phone backfill (merged from duplicate 5/6 entry per HARD RULE #4)</h4>
+    <div class="field"><strong>Refactor task:</strong> User requested Parcel Split contact skill update for TT/Lazada split-parcel customer messaging, one recent TikTok test, weekend-safe daily schedule, ntfy notifications, closeout save, and a new standing rule to log every completed task to this board.</div>
+    <div class="field"><strong>Files / before &rarr; after:</strong>
+      <ul>
+        <li><code>AGENTS.md</code>: repo instructions had plan/small-change/dependency/test rules &rarr; added automatic Patricia board logging rule requiring date, task, before/after values, shop, platform, reason, and result after every task.</li>
+        <li><code>.agents/skills/parcelsplit-contact-crosscheck/SKILL.md</code>: Shopee MY bot-contact crosscheck focus &rarr; Shopee MY remains audit-only; TT/Lazada manual split-parcel contact added; TT profiles <code>54-67</code>; Lazada profiles <code>81-83</code>; Best Cargo only; Courier/Tracking <code>+</code> expansion required; Manage Order phone reveal/update required; phone-backfill lane added; ntfy + weekend scheduled-run requirements added.</li>
+        <li><code>C:\Users\tessf\scripts\parcelsplit-contact-crosscheck.bat</code>: scheduled runner prompt/report flow &rarr; explicit TT/Lazada contact/backfill workflow, daily incl weekends, same-day TT/Lazada handling, report verification, and ntfy STARTED/OK/FAILED plus prompt-level partial summaries to <code>awesomeree-patricia-ops-7h3k9q</code>.</li>
+        <li><code>.agents/skills/parcelsplit-contact-crosscheck/state.json</code>: absent &rarr; saved closeout snapshot with schedule status and masked TT validation result.</li>
+        <li><code>.codex/memories/parcelsplit-contact-2026-06-05-closeout.md</code>: absent &rarr; saved tomorrow continuation prompt + session summary.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>TT KarlMobel phone backfill (live test):</strong> TikTok MY profile 62, order <code>584278890262333342</code>, Best Cargo tracking IDs <code>66668185711001</code> + <code>66668183711002</code>. Before: <code>isContacted:true</code>, <code>phoneNumbers:[]</code>. After: <code>isContacted:true</code>, <code>phoneNumbers:["***730"]</code>. Reason: already-contacted TT split row had empty Parcel Split phone column. Result: OK, phone saved; no duplicate TikTok buyer message sent.</div>
+    <div class="field"><strong>Schedule + ntfy validation:</strong> ParcelSplitCrosscheck_1000AM verified enabled (DaysInterval:1, start 2026-05-06T10:00, last run 2026-06-05 10:00:17 result 0, next 2026-06-06 10:04:37, missed 0). ntfy test POST OK. WeekendFailureAlert backup last 0, next 2026-06-06 12:30, missed 1. Readback confirmed skill + runner contain TT/Lazada phone-backfill + ntfy instructions. npm test 1/1 pass.</div>
+    <div class="field"><strong>PM addendum outstanding for tomorrow:</strong> No required work intentionally left open. Watch first full updated weekend run on 2026-06-06 after 10 AM MYT. No recent uncontacted TikTok 2+ parcel row was available today, so only TT phone-backfill was live-tested. Lazada phone reveal was not live-tested today; workflow must block without ticking if phone cannot be viewed. Continuation saved at <code>C:\Users\tessf\code\codex-lab\.codex\memories\parcelsplit-contact-2026-06-05-closeout.md</code>.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-05" data-shops="Karlmobel, Murahya, TT KarlMobel, TT Adelmar, TT Murahya, Kinata SG, MurahYa SG, das.nature, das.nature2, MasonGym, BahEmas, Hiranai, ValueSnap, TT Jager, TT JagerHelmet" data-platform="Shopee MY + SG + TikTok + Lazada" data-result="ok">
@@ -1243,6 +1260,16 @@ header.page::after{
     <div class="field"><strong>Changes made:</strong> TT buyer message sent from Customer Service6956 in TT KarlMobel chat. SB contactSent false&rarr;true; stockSetOos false&rarr;true; csRemarks null&rarr;one evidence remark saved at 2026-06-05 15:50 MYT. No SiteGiant stock quantity/status adjustment.</div>
     <div class="field"><strong>Evidence:</strong> TT order detail Awaiting collection, shipment overdue, ship-by 4/6 23:59, auto-cancel 9/6 23:59. Chat had no prior offer-change message; exact sent draft visible after send. SiteGiant #1415834: original KC-GRY-150CM-RT-STV 0/0/0/0 OOS; replacement KC-WHT-150CM-RT-STV 1/1/0/0 Available.</div>
     <div class="field"><strong>Sent result:</strong> Completed. Buyer waiting to choose White 150cm Right Stove or manage from Order Details. SB readback confirmed contactSent=true, stockSetOos=true, remark saved. Outstanding: monitor buyer reply/decision; do not adjust SiteGiant stock unless Patricia explicitly approves.</div>
+    <h4>PM ADDENDUM (5/6 ~21:31 MYT) &mdash; checksbvariation SA-18789 final-zero cleanup TT Murahya CT outer-layer rows (merged from duplicate 5/6 entry per HARD RULE #4)</h4>
+    <div class="field"><strong>Marker:</strong> <code>SBQ-20260605-SA18789-CT</code>. User approved adjusting two exact TT Murahya SB Variation iSKUs to final zero after live audit showed Out Of Stock label but positive SiteGiant stock.</div>
+    <div class="field"><strong>SA-18789 before &rarr; after:</strong>
+      <ul>
+        <li><strong>584330313036433239</strong> / SB <code>101142</code> / <code>CT-OUTER-LAYER-KHAKI-5-8P</code>: SiteGiant SOH/Sellable/Allocated/Reserved <code>1/1/0/0</code>, rack <code>GROUND FLOOR 1</code>, status <code>out_of_stock</code> &rarr; <code>0/0/0/0</code>, rack <code>0</code>, status <code>out_of_stock</code>. SB <code>stockAdjustmentStatus</code> null &rarr; Manual Review; <code>stockId</code> null &rarr; <code>SA-18789</code>; <code>stockUrl</code> saved.</li>
+        <li><strong>584323489193756530</strong> / SB <code>101141</code> / <code>CT-OUTER-LAYER-L.BROWN-5-8P</code>: SiteGiant <code>1/1/0/0</code> &rarr; <code>0/0/0/0</code>, status out_of_stock. SB <code>stockAdjustmentStatus</code> null &rarr; Manual Review; <code>stockId</code> null &rarr; <code>SA-18789</code>; <code>stockUrl</code> saved.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>SA-18789 evidence:</strong> SiteGiant SA <code>SA-18789</code> / internal <code>9666836</code> at <code>https://sitegiant.co/inventory-adjustment/stock-adjustment/9666836/edit</code>. API success_ids <code>7909996</code> + <code>7910000</code>; quantity_changed:-1, rack <code>435660 / GROUND FLOOR</code>. Post-adjustment verified 0/0/0 + warehouse 0/0/0/0/0 + rack in-hand 0 + status out_of_stock.</div>
+    <div class="field"><strong>SA-18789 SB result:</strong> PATCH <code>101142</code> + <code>101141</code> returned HTTP 200 / affectedRows:1. Appended CS remarks with SA evidence. contactSent + stockSetOos stayed true; buyerDecision + whConfirmStatus stayed null. Outstanding follow-up: monitor buyer replies for both TT Murahya orders + the offered replacement CT-OUTER-LAYER-D.GREEN-5-8P. Do NOT change buyer decision / send another buyer message / adjust additional SiteGiant stock without fresh approval.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-05" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
