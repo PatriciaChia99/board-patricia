@@ -639,23 +639,6 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
-<div class="entry" data-date="2026-06-05" data-shops="TT KarlMobel" data-platform="TikTok MY + SB Webapp" data-result="ok" data-task-id="checksbvariation-20260605-584332958100784574-send">
-  <div class="entry-summary">
-    <span class="chevron">&#9654;</span>
-    <span class="entry-title">checksbvariation &mdash; 584332958100784574 TT KarlMobel sent + SB updated</span>
-    <span class="entry-tags"><span class="tag shop">TT KarlMobel</span><span class="tag platform">TikTok MY + SB</span><span class="tag result-ok">Completed</span></span>
-  </div>
-  <div class="entry-body">
-    <div class="full-tags"><span class="tag">checksbvariation</span><span class="tag">Offer Change</span><span class="tag">manual-send</span><span class="tag">SB patch</span></div>
-    <div class="field"><strong>Task:</strong> Approved urgent send/update for order <code>584332958100784574</code> / SB row <code>101147</code>.</div>
-    <div class="field"><strong>Changes made:</strong> TikTok buyer message sent from Customer Service6956 in TT KarlMobel chat. SB <code>contactSent</code> <code>false</code> &rarr; <code>true</code>; <code>stockSetOos</code> <code>false</code> &rarr; <code>true</code>; <code>csRemarks</code> <code>null</code> &rarr; one evidence remark saved at <code>2026-06-05 15:50 MYT</code>. No SiteGiant stock quantity/status adjustment was made.</div>
-    <div class="field"><strong>Shop / platform:</strong> TT KarlMobel / TikTok MY; SB Variation webapp.</div>
-    <div class="field"><strong>Reason:</strong> Offer Change row was still unhandled after urgent user check; original ordered iSKU <code>KC-GRY-150CM-RT-STV</code> was unavailable and approved replacement offer was <code>KC-WHT-150CM-RT-STV</code>.</div>
-    <div class="field"><strong>Evidence checked:</strong> TikTok order detail still <strong>Awaiting collection</strong>, shipment overdue, ship-by <code>2026-06-04 23:59:59</code>, auto-cancel <code>2026-06-09 23:59:59</code>; chat thread had no prior offer-change message; exact sent draft is visible after send. SiteGiant order <code>#1415834</code> / COID <code>584332958100784574</code>; original <code>KC-GRY-150CM-RT-STV</code> <code>0/0/0/0 Out Of Stock</code>; replacement <code>KC-WHT-150CM-RT-STV</code> <code>1/1/0/0 Available</code>.</div>
-    <div class="field"><strong>Result:</strong> Completed. Buyer now waiting to choose White, 150cm Right Stove or manage from Order Details. SB readback confirmed <code>contactSent=true</code>, <code>stockSetOos=true</code>, remark saved.</div>
-    <div class="field"><strong>Outstanding follow-up:</strong> Monitor buyer reply/decision; do not adjust SiteGiant stock or item status unless Patricia/user gives explicit current approval.</div>
-  </div>
-</div>
   <div class="entry" data-date="2026-06-05" data-shops="TT DasNature, TT Jager, TT MurahYa, TT JagerHelmet, TT Adelmar, TT Hiranai, TT Valuesnap, TT KarlMobel" data-platform="TikTok MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -740,6 +723,33 @@ header.page::after{
       <div class="field"><strong>Crosscheck on addendum:</strong> All 4 closures had explicit closure-test pass (1 TT-final-rejection + 2 LV-auto-withdraw + 1 buyer-failed-evidence). 0 IN-DISPUTE cases closed (rule 1 compliance). C1959 correction re-verified appeal-visibility logic. 19 orphans now have action_needed set + concise remark + return_status mapped per carrier trace.</div>
       <div class="field"><strong>Pending pool end-state:</strong> 100 &rarr; 96 (-4 closed) &middot; RM 20,410.41 &rarr; RM 20,147.98 (-RM 262.43) &middot; WH Action bucket re-categorised, WH Evidence bucket flagged in reminder file. Operator can forward WH reminder file to PIC immediately.</div>
       <div class="field"><strong>Result addendum:</strong> ok &mdash; 9 user rules encoded as ABSOLUTE in skills, 6 feedback memories written + MEMORY.md index updated, 2 report files generated, 4 cases cleanly closed RM 262.43, 1 mistake corrected (C1959), 19 orphans hardened. Tomorrow's ttparcelclaim will follow the new routine (cleanup pass + coverage audit + WH reminder by default).</div>
+      <h4>PM ADDENDUM-2 (5/6 ~19:30 MYT) &mdash; webapp UI Open=106 vs API Pending=95 explained + 26 orphans swept</h4>
+      <p><strong>Brief:</strong> User reported webapp UI showing 106 Open cases vs my reported 95 Pending. Investigation: webapp UI "Open" filter uses <code>action_needed != Closed</code>, NOT <code>refund_state == Pending</code>. Terminal-state cases (Withdrawn/Rejected/Credited) with action_needed still on CS Follow Up/WH Action/etc inflated UI count. Swept 25 forward-orphans + 1 reverse-orphan.</p>
+      <div class="field"><strong>25 orphans closed (PATCH action='Closed'):</strong>
+        <ul>
+          <li><strong>14 Withdrawn-orphans:</strong> 7 KarlMobel cancellation cluster C1986-C1992 (action='&mdash;') + 3 Adelmar cluster C1963/C1974/C1975 (action='CS Follow Up') + C1947 Adelmar + C1840 MurahYa + C1891 KarlMobel + C1376 KarlMobel (older sessions stuck WH/CS).</li>
+          <li><strong>2 Rejected-orphans:</strong> C1406 MurahYa RM 309.74 (today's NEW MAY LOSS) + C1533 MurahYa RM 48.34.</li>
+          <li><strong>9 Credited-orphans:</strong> C1412 + C918 + C1389 + C1337 + C1263 + C1342 + C1360 + C1357 + C1356 &mdash; all paid out but action_needed stuck on CS Follow Up / WH Evidence from prior sessions.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>1 reverse-orphan fixed:</strong> C1506 KarlMobel RM 632.73 OID 583846770144282571 was Pending but action mistakenly set to Closed (mis-PATCH from older session). Reverted to action='CS Follow Up' (case still in dispute per remark "TT verdict unverified since 26/5, CS Action P0: verify TT-side via profile 62").</div>
+      <div class="field"><strong>State after sweep (live verify 19:30 MYT):</strong>
+        <ul>
+          <li>Pending: 95 &middot; RM 20,611.55</li>
+          <li>action != Closed: 95 (matches Pending count exactly now)</li>
+          <li>Withdrawn: 443 &middot; Rejected: 2 &middot; Credited: 12 &middot; Total: 552</li>
+          <li>Remaining orphans: 0 &middot; Remaining reverse-orphans: 0</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Skill updates (additional):</strong>
+        <ul>
+          <li><code>ttparcelclaim/SKILL.md</code> Routine 2 split into Step 2a (Pending&rarr;terminal flips) + Step 2b (terminal-state orphan sweep) + Step 2c (reverse-orphan sweep). All three steps MANDATORY every run.</li>
+          <li><code>ttparcelclaimcheck/SKILL.md</code> Rule 14b added: ORPHAN_ACTION_NOT_CLOSED flag. Post-batch count of `refund_state IN (Withdrawn,Rejected,Credited) AND action != Closed` must be 0.</li>
+          <li>New memory <code>feedback_ttparcelclaim_terminal_state_orphan_sweep.md</code> + MEMORY.md index entry.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>PATCH stats this sweep:</strong> 26 HTTP 200 / 0 errors. Cumulative 5/6 ttparcelclaim total: 42 + 74 + 26 = <strong>142 PATCHes HTTP 200</strong>.</div>
+      <div class="field"><strong>Result addendum-2:</strong> ok &mdash; webapp UI 106 mystery solved (orphan action_needed inflation). 26 cleaned in single sweep. Webapp UI should now show ~95 Open after refresh. Skill routine permanently encoded so this never recurs.</div>
     </div>
   </div>
 <div class="entry" data-date="2026-06-05" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
@@ -988,6 +998,11 @@ header.page::after{
     <div class="field"><strong>Chat/contact:</strong> TT contact API hasUnRead=false. Chat thread has no prior offer-change message; only platform/order confirmation. No buyer message sent by Codex.</div>
     <div class="field"><strong>Draft ready (not sent):</strong> "Hi boss, please be informed that Kitchen Cabinet... restock estimated about 1 month. We apologize. Can we send White 150cm Right Stove instead? Otherwise please manage from Order Details."</div>
     <div class="field"><strong>Single-order result:</strong> partial &mdash; awaiting Patricia approval for manual-send + SB contactSent/stockSetOos flip. WH/CS to note shipment-overdue/pickup-label conflict (TT shows Awaiting collection despite original iSKU OOS).</div>
+    <h4>PM ADDENDUM (5/6 ~15:50 MYT) &mdash; checksbvariation 584332958100784574 TT KarlMobel SENT + SB updated (merged from duplicate 5/6 entry)</h4>
+    <div class="field"><strong>Task (sent):</strong> Approved urgent send/update for order 584332958100784574 / SB row 101147 (continuation of 14:31 single-order check above).</div>
+    <div class="field"><strong>Changes made:</strong> TT buyer message sent from Customer Service6956 in TT KarlMobel chat. SB contactSent false&rarr;true; stockSetOos false&rarr;true; csRemarks null&rarr;one evidence remark saved at 2026-06-05 15:50 MYT. No SiteGiant stock quantity/status adjustment.</div>
+    <div class="field"><strong>Evidence:</strong> TT order detail Awaiting collection, shipment overdue, ship-by 4/6 23:59, auto-cancel 9/6 23:59. Chat had no prior offer-change message; exact sent draft visible after send. SiteGiant #1415834: original KC-GRY-150CM-RT-STV 0/0/0/0 OOS; replacement KC-WHT-150CM-RT-STV 1/1/0/0 Available.</div>
+    <div class="field"><strong>Sent result:</strong> Completed. Buyer waiting to choose White 150cm Right Stove or manage from Order Details. SB readback confirmed contactSent=true, stockSetOos=true, remark saved. Outstanding: monitor buyer reply/decision; do not adjust SiteGiant stock unless Patricia explicitly approves.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-05" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
