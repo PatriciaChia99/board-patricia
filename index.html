@@ -639,6 +639,55 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-05" data-shops="all skills (10 scheduled .bats)" data-platform="Windows Task Scheduler + Norton Antivirus" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">scheduled-bat hardening &mdash; Norton-blocked schedule-log writes diagnosed + 10 .bats migrated Documents&rarr;AppData (5/6 23:15)</span>
+    <span class="entry-meta">2026-06-05 23:15 MYT &middot; root cause: Norton Antivirus silently blocks cmd.exe (Task Scheduler context) writes to Documents\*-reports\*.log &middot; chataudit 7-day silent failure since 29/5 fixed &middot; 9 other skills migrated proactively</span>
+    <span class="tag">scheduling</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> User reported chataudit not appearing on the board today. Investigated &rarr; scheduled task fired at 09:17:51 with LastTaskResult=0 but schedule-log.txt was stale since 29/5 (7 days) and the actual audit work was done manually at 10:17 via interactive Claude session, with no auto-board-push. Deep diagnostic traced failure to a specific line in chataudit.bat (echo STARTED &gt;&gt; schedule-log.txt). Norton Antivirus + Firewall + Tools + VPN are running (Microsoft Defender = Stopped because Norton replaces it). All 10 scheduled .bats patched to write schedule-log to AppData\Local\&lt;skill&gt;\ instead of Documents\*-reports\.</p>
+    <div class="field"><strong>Root cause diagnostic chain (5/6 22:30-23:10):</strong>
+      <ul>
+        <li>Built numbered-checkpoint trace .bats (POINT_A &rarr; POINT_E). Via Task Scheduler: POINT_A-D all wrote to trace.log (same Documents folder), then died at the next line writing to schedule-log.txt. Direct cmd /c: POINT_A-E all succeeded.</li>
+        <li>Restart Manager API + EXCLUSIVE PowerShell file-open both confirmed schedule-log.txt is NOT locked by any process &mdash; ruling out file-lock theory.</li>
+        <li>Re-pointed trace target to AppData\Local\: POINT_A-E all succeeded via Task Scheduler. Documents blocked, AppData allowed.</li>
+        <li>Final test: real chataudit.bat with new AppData path triggered via Task Scheduler &rarr; STARTED line wrote at 23:10:44 + .bat got past line 17 toward AdsPower probe / claude.cmd launch. Stopped at 2s to avoid full audit.</li>
+        <li>Verified Norton: Norton Antivirus / Firewall / Tools / VPN / WscReporter all Running. WinDefend (MS Defender) = Stopped, Manual. Get-MpPreference unavailable (Defender module errors out when Defender disabled by Norton).</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Smoking-gun pattern across all skills (Documents\*-reports\schedule-log.txt staleness):</strong>
+      <ul>
+        <li>chataudit &mdash; last write May 29 09:11 (7 days stale; .bat froze at line 17, claude.cmd never launched, 7 days of silent failure)</li>
+        <li>csrrcredited &mdash; schedule-log.txt does NOT exist (first-ever write also blocked)</li>
+        <li>parcelsplit &mdash; last write May 7 (4 weeks stale)</li>
+        <li>parcelclaim-auto &mdash; last write Jun 3 (2 days stale)</li>
+        <li>Other skills similar &mdash; their .bats continued past the failed echo silently and still called claude.cmd, but log entries silently missing</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Files patched (set LOGFILE redirect + added mkdir):</strong>
+      <ul>
+        <li><code>chataudit.bat</code> L13/16/20 &rarr; <code>AppData\Local\chataudit\schedule-log.txt</code></li>
+        <li><code>csrrcredited.bat</code> L12/13/19 &rarr; <code>AppData\Local\csrrcredited\schedule-log.txt</code></li>
+        <li><code>parcelclaim-auto.bat</code> L17/18/24 &rarr; <code>AppData\Local\parcelclaim-auto\schedule-log.txt</code></li>
+        <li><code>parcelsplit-contact-crosscheck.bat</code> L12/13/19 &rarr; <code>AppData\Local\parcelsplit\schedule-log.txt</code></li>
+        <li><code>tiktokrraudit.bat</code> L12/13/19 &rarr; <code>AppData\Local\tiktokrraudit\schedule-log.txt</code></li>
+        <li><code>sg-gap-monitor.bat</code> L14/15/21 &rarr; <code>AppData\Local\sg-gap-monitor\schedule-log.txt</code></li>
+        <li><code>checksbvariation.bat</code> L12/13/19 &rarr; <code>AppData\Local\sbvariation\schedule-log.txt</code></li>
+        <li><code>checkkinataorder.bat</code> L12/13/20 &rarr; <code>AppData\Local\kinata\schedule-log.txt</code></li>
+        <li><code>checkttrating.bat</code> L25/26/33 &rarr; <code>AppData\Local\ttrating\schedule-log.txt</code></li>
+        <li><code>shopee-shipping-claim.bat</code> L15/16/21 &rarr; <code>AppData\Local\shopee-shipping-claim\schedule-log.txt</code></li>
+      </ul>
+    </div>
+    <div class="field"><strong>Shop / platform:</strong> N/A &mdash; operator-infra work affecting all skills (Shopee MY/SG + TikTok MY + Lazada MY + internal). Windows Task Scheduler + Norton Antivirus interaction.</div>
+    <div class="field"><strong>Reason:</strong> User reported missing chataudit board entry today. Root cause investigation traced to Norton-blocked schedule-log writes. Other skills survived because their claude.cmd invocation is independent of the failed echo; chataudit froze hard at line 17 and 7 days of audits were silently manual + board-skipped.</div>
+    <div class="field"><strong>Memory saved:</strong> <code>C:\Users\tessf\.claude\projects\C--Users-tessf\memory\feedback_norton_blocks_scheduled_bat_logging.md</code> with full diagnostic recipe + fix pattern + alternative Norton-exclusion fallback.</div>
+    <div class="field"><strong>Audit OUTPUT location unchanged:</strong> claude.exe is whitelisted by Norton and writes summary .md / report .json to Documents\*-reports\ fine. Only the .bat-level echo &gt;&gt; schedule-log.txt is blocked; that's now the only thing moved.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 10 .bats patched, chataudit re-tested live via Task Scheduler at 23:10:44 confirming STARTED line writes to new AppData path. Tomorrow's morning cascade (09:10 chataudit &rarr; 09:30 checksbvariation &rarr; 09:45 parcelclaim-auto &rarr; 10:00 parcelsplit &rarr; 10:15 tt_rr &rarr; 10:30 csrrcredited) should all leave proper schedule-log entries for the first time in weeks. Outstanding: user may also want to add cmd.exe + chataudit.bat to Norton 360 exclusion list as belt-and-braces but not required (AppData fix is self-contained).</div>
+  </div>
+</div>
   <div class="entry" data-date="2026-06-05" data-shops="multiple" data-platform="SB Variation" data-result="ok" data-marker="SBVAR-CLOSEOUT-20260605-WEEKEND-MSGONLY">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
