@@ -639,6 +639,24 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-05" data-shops="multiple" data-platform="SB Variation" data-result="ok" data-marker="SBVAR-CLOSEOUT-20260605-WEEKEND-MSGONLY">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation closeout - weekend run message-only rule saved (5/6)</span>
+      <span class="entry-meta">2026-06-05 MYT &middot; saved closeout and continuation prompt</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Ended the 2026-06-05 SB Variation session, saved the closeout, and hardened the weekend scheduled prompt so Saturday/Sunday runs contact/message customers only and do not adjust SiteGiant stock.</p>
+      <div class="field"><strong>Before:</strong> Scheduler hard-fix already allowed bounded weekend customer contact and blocked unapproved stock writes, but the runner did not explicitly name the 2026-06-06/2026-06-07 message-only instruction.</div>
+      <div class="field"><strong>After:</strong> <code>checksbvariation/SKILL.md</code> and <code>run-checksbvariation-scheduled.ps1</code> now explicitly say weekend scheduled runs are message/contact-only for stock matters, do not perform SiteGiant stock adjustment, and report stock mismatches/accepted-change deductions/OOS cleanup as Patricia/warehouse action items.</div>
+      <div class="field"><strong>Shop/platform:</strong> multiple SB Variation shops across Shopee/TikTok/Lazada/Shopee SG; no marketplace customer was contacted in this closeout step.</div>
+      <div class="field"><strong>Reason:</strong> Patricia requested Saturday and Sunday runs, customer messages only, no stock adjustment first, accurate crosscheck, saved closeout, and tomorrow continuation prompt.</div>
+      <div class="field"><strong>Evidence:</strong> PowerShell parse OK; <code>npm test</code> passed (1/1). Closeout saved to <code>C:\Users\tessf\.codex\memories\checksbvariation-2026-06-05-session-closeout.md</code> and repo mirror <code>C:\Users\tessf\code\codex-lab\.codex\memories\checksbvariation-2026-06-05-session-closeout.md</code>.</div>
+      <div class="field"><strong>Result:</strong> Tomorrow continuation prompt saved inside the closeout. Outstanding follow-up: verify Saturday scheduled run output/ntfy/report/board log and confirm Sunday remains scheduled. No stock action taken in this closeout.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-05" data-shops="multiple" data-platform="SB Variation" data-result="ok" data-marker="SBVAR-SCHED-20260605-CODEX-WEEKEND">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
