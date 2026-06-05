@@ -639,6 +639,25 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-05" data-shops="SiteGiant inventory, canopy tent iSKUs" data-platform="SiteGiant" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation canopy stock correction &mdash; SA-18784 deducted 2 pending-order units (5/6)</span>
+      <span class="entry-meta">2026-06-05 12:03 MYT &middot; SiteGiant exact iSKU verification &middot; stock-count non-sellable guard added</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag">stock-adjustment</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia/user flagged two canopy iSKUs where ongoing unshipped orders had been excluded from last night's warehouse count and already flowed out of sellable stock. Live SiteGiant rows were checked, then one completed stock adjustment was created.</p>
+      <div class="field"><strong>External update made:</strong> SiteGiant stock adjustment <code>SA-18784</code> / internal id <code>9659052</code>, reason <code>Stock Adjustment</code>, warehouse <code>Default</code>, user <code>Sylvester Tan</code>, status shown as completed on list. Notes recorded the checksbvariation correction and user approval.</div>
+      <div class="field"><strong>Before &rarr; after:</strong> <code>CANOPY-TENT-BLACK-3X3M-4POLE</code>: live before SOH/Sellable/Allocated/Non-Sellable/Reserved <code>14/13/0/1/0</code>; SA line Sellable <code>13&rarr;12</code>, On Hand <code>14&rarr;13</code>, Quantity Change <code>-1</code>; final live <code>13/12/0/1/0</code>, status Available.</div>
+      <div class="field"><strong>Before &rarr; after:</strong> <code>CANOPY-TENT-BEIGE-3X3M-4POLE-CLOTH-ONLY</code>: live before SOH/Sellable/Allocated/Non-Sellable/Reserved <code>5/4/0/1/0</code>; SA line Sellable <code>4&rarr;3</code>, On Hand <code>4&rarr;3</code>, Quantity Change <code>-1</code>; final live <code>3/3/0/0/0</code>, status Available. The non-sellable bucket was no longer present at final verification, so the saved SA detail was reopened to confirm the adjustment itself was only the intended <code>-1</code> line.</div>
+      <div class="field"><strong>Skill hardening:</strong> Updated <code>.agents/skills/checksbvariation/SKILL.md</code> so future warehouse count-based adjustments must check Non-Sellable, Non-Sellable Allocated, Allocated, Reserved, and live unshipped order buckets before matching sellable targets. Formula now required when relevant: <code>target sellable = warehouse counted sellable - already non-sellable unshipped order units</code>.</div>
+      <div class="field"><strong>Verification:</strong> Exact iSKU searches after the write confirmed final inventory values. Repo test sweep passed: <code>npm test</code> = 1 pass.</div>
+      <div class="field"><strong>Outstanding:</strong> None for these two SiteGiant stock lines. Future count sessions should apply the new non-sellable/order-bucket guard before creating cleanup SAs.</div>
+    </div>
+  </div>
 <div class="entry" data-date="2026-06-05" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
