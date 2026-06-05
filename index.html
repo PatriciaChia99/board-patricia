@@ -681,6 +681,48 @@ header.page::after{
       <div class="field"><strong>Reason:</strong> Daily ttparcelclaim case processing per spec &mdash; 4/6 first-run carry-overs needed 5/6 re-decision (24h windows expired, A2 inspection days advancing); today's parcelclaim-auto NEW cases (C1981&ndash;C1997) needed initial classification + remark + followup_dt.</div>
       <div class="field"><strong>Crosscheck (ttparcelclaimcheck):</strong> 17 reviewed / 17 CONFIRMED / 0 RECLASSIFIED / 0 RETRACTED / 0 DISCREPANCY. Post-PATCH state held 30s no auto-classifier reversion. Tally arithmetic RM 2,456.00 (Trigger A RM 1,268.85 + Trigger B RM 1,187.15) matches case-by-case sum &check;. ttchaserr necessity audit 0/17 needed (all within SLA / awaiting CS manual). No LOSS booked, no premature CREDITED flip, no IN DISPUTE without evidence cue in remark, no PENDING REOPEN without transcript.</div>
       <div class="field"><strong>Result:</strong> ok &mdash; 42 PATCHes HTTP 200 / 0 errors / 0 ttchaserr triggers / 17 CONFIRMED via crosscheck. Pending pool unchanged in count + RM (no state flips today &mdash; only enrichment of remark / followup_dt / action_needed on existing Pending cases).</div>
+      <h4>PM ADDENDUM (5/6 ~18:00 MYT) &mdash; user-feedback cleanup pass + 9 hard-rule updates to skills</h4>
+      <p><strong>Brief (cleanup pass):</strong> User audited the 100-case Pending pool and gave 9 corrections. Executed cleanup + correction batch (74 more PATCHes HTTP 200) + 6 feedback memories saved + ttparcelclaim/ttparcelclaimcheck SKILL.md updated with all 9 rules + 2 new report files generated (WH PIC reminder + shop coverage).</p>
+      <div class="field"><strong>4 cases closed (state flips) RM 262.43:</strong>
+        <ul>
+          <li><strong>584183823112242679</strong> TT MurahYa RM 180.00 &mdash; Pending&rarr;Rejected+Closed. TT final verdict: packaging guidelines non-compliance, no appeal path. (rule 1 dispute-rejected close).</li>
+          <li><strong>502849054409241</strong> Lazada MurahYa RM 35.05 &mdash; Pending&rarr;Withdrawn+Closed. Buyer failed submit evidence 20/5, Lazada closed return. No loss. (rule 8 customer-cancel-equivalent).</li>
+          <li><strong>584190975089215036</strong> TT KarlMobel RM 13.98 &mdash; Pending&rarr;Withdrawn+Closed. LV Day 7 auto-withdraw, no dispute cost justified. (rule 1 LV auto-withdraw).</li>
+          <li><strong>584232912205743943</strong> TT KarlMobel RM 33.40 &mdash; Pending&rarr;Withdrawn+Closed. LV Day 8 auto-withdraw. (rule 1 LV auto-withdraw).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>1 correction (rule 7 advanced-refund != appeal closed):</strong>
+        <ul>
+          <li><strong>584211629235864731</strong> TT DasNature RM 39.16 &mdash; my AM remark "Appeal window closed (no timer visible)" was WRONG. Per user: TT message "Platform has issued an advanced refund... accept the return or submit an appeal if there are any issues" means appeal IS available via TT More Action dropdown. Corrected: <code>[5/6 - CORRECTION: advanced-refund msg != appeal closed. CS file appeal via TT More Action button. IN DISPUTE.]</code> + action=CS Follow Up + followup_dt=2026-06-09.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>19 orphan cases (action='&mdash;') fixed:</strong> set return_status (Pick Up Done / Preparing / Delivery Done per user rule 4 carrier-trace mapping) + concise remark + action_needed + followup_dt. Affected IDs: 1980, 1973, 1972, 1924, 1923, 1926, 1954, 1927, 1912, 1913, 1915, 1929, 1968, 1969, 1970, 1971 + C1993/C1994 return_status set to Pick Up Done.</div>
+      <div class="field"><strong>2 reports generated (rules 15-16):</strong>
+        <ul>
+          <li><code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-05.md</code> &mdash; 26 Open Parcel + 12 Do Evidence + 4 Cleaned-Up listing. CS to forward to WH PIC via WhatsApp/email. 2 URGENT 6/6 EOD deadline: C1965 MurahYa Skuter RM 287.66 + C1967 JagerHelmet Topi RM 116.10.</li>
+          <li><code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-05.md</code> &mdash; per-profile audit verdict. FULL AUDIT: 5 shops (Adelmar/DasNature/KarlMobel/MurahYa/JagerHelmet). PARTIAL: 3 (Hiranai/Jager-expired-PM/Valuesnap-expired-PM). CLEAN: 6. NO AUDIT: 1 (Lazada Lovento expired since AM). <strong>Login-expired needing relogin BEFORE 6/6 09:45 bot: profiles 59 Jager + 65 Valuesnap + 83 Lazada Lovento.</strong> KarlMobel WAS audited (FULL).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>6 new feedback memories written:</strong>
+        <ul>
+          <li><code>feedback_tt_advanced_refund_not_appeal_closed.md</code> &mdash; rule 7 codified, ttparcelclaimcheck Rule 13 enforces.</li>
+          <li><code>feedback_ttparcelclaim_concise_remarks.md</code> &mdash; rule 2 codified, format <code>[DD/M STATE - one-line]</code>, no padding, ttparcelclaimcheck Rule 12 enforces REMARK_BLOAT.</li>
+          <li><code>feedback_tt_return_status_mapping.md</code> &mdash; rules 4+5 codified, 4 canonical values Preparing/Pick Up Done/Delivery Done/Lost and not received.</li>
+          <li><code>feedback_ttparcelclaim_closeable_cleanup_routine.md</code> &mdash; rule 1 codified, strict close-tests + IN-DISPUTE-never-close.</li>
+          <li><code>feedback_ttparcelclaim_wh_pic_reminder.md</code> &mdash; rule 3 codified, Category A Open Parcel + Category B Do Evidence + reply protocol.</li>
+          <li><code>feedback_ttparcelclaim_shop_coverage_report.md</code> &mdash; rule 9 codified, all 16 profiles audited per-run + login-expired flagging.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>SKILL.md updates:</strong>
+        <ul>
+          <li><code>C:\Users\tessf\.claude\skills\ttparcelclaim\SKILL.md</code> &mdash; 6 new ABSOLUTE RULES (11 concise remarks / 12 cleanup pass / 13 advanced-refund / 14 customer-cancel / 15 shop coverage / 16 WH PIC reminder) + B0 CS-contact-buyer routine + B-APPEAL-VISIBILITY check + return_status mapping table + PER-RUN ROUTINE section (Routines 1-4 + post-run) + WH PIC REMINDER + SHOP COVERAGE templates + concise-remark rule in per-case INSTRUCTIONS step 11.</li>
+          <li><code>C:\Users\tessf\.claude\skills\ttparcelclaimcheck\SKILL.md</code> &mdash; 6 new HARD RULES (12 REMARK_BLOAT / 13 APPEAL_VISIBILITY / 14 MISSED_CLOSURE_CANDIDATE / 15 ORPHAN_RETURN_STATUS / 16 COVERAGE_GAP / 17 WH_REMINDER_MISSING).</li>
+        </ul>
+      </div>
+      <div class="field"><strong>PATCH stats this addendum:</strong> 74 HTTP 200 / 0 errors. 12 close PATCHes (4 cases &times; 3 ops each = remark + refund_state + action) + 3 C1959 correction (remark + action + followup_dt) + 58 orphan-fix (16 cases &times; 3-4 ops each) + 3 C1880 close. Cumulative 5/6 ttparcelclaim total: 42 + 74 = <strong>116 PATCHes HTTP 200</strong>.</div>
+      <div class="field"><strong>Crosscheck on addendum:</strong> All 4 closures had explicit closure-test pass (1 TT-final-rejection + 2 LV-auto-withdraw + 1 buyer-failed-evidence). 0 IN-DISPUTE cases closed (rule 1 compliance). C1959 correction re-verified appeal-visibility logic. 19 orphans now have action_needed set + concise remark + return_status mapped per carrier trace.</div>
+      <div class="field"><strong>Pending pool end-state:</strong> 100 &rarr; 96 (-4 closed) &middot; RM 20,410.41 &rarr; RM 20,147.98 (-RM 262.43) &middot; WH Action bucket re-categorised, WH Evidence bucket flagged in reminder file. Operator can forward WH reminder file to PIC immediately.</div>
+      <div class="field"><strong>Result addendum:</strong> ok &mdash; 9 user rules encoded as ABSOLUTE in skills, 6 feedback memories written + MEMORY.md index updated, 2 report files generated, 4 cases cleanly closed RM 262.43, 1 mistake corrected (C1959), 19 orphans hardened. Tomorrow's ttparcelclaim will follow the new routine (cleanup pass + coverage audit + WH reminder by default).</div>
     </div>
   </div>
 <div class="entry" data-date="2026-06-05" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
@@ -913,6 +955,22 @@ header.page::after{
     <div class="field"><strong>Before &rarr; after:</strong> <code>CANOPY-TENT-BEIGE-3X3M-4POLE-CLOTH-ONLY</code> live before <code>5/4/0/1/0</code>; SA line Sellable <code>4&rarr;3</code>, On Hand <code>4&rarr;3</code>, Quantity Change <code>-1</code>; final live <code>3/3/0/0/0</code>, status Available. Non-sellable bucket no longer present at final verification; saved SA detail reopened to confirm adjustment was only the intended <code>-1</code> line.</div>
     <div class="field"><strong>Skill hardening:</strong> Updated <code>.agents/skills/checksbvariation/SKILL.md</code> so future warehouse-count adjustments must check Non-Sellable, Non-Sellable Allocated, Allocated, Reserved, and live unshipped-order buckets before matching sellable targets. Formula required when relevant: <code>target sellable = warehouse counted sellable - already non-sellable unshipped order units</code>.</div>
     <div class="field"><strong>SA-18784 result:</strong> ok &mdash; 2 canopy iSKUs corrected, npm test 1 pass. Future count sessions to apply the new non-sellable/order-bucket guard before creating cleanup SAs.</div>
+    <h4>PM ADDENDUM (5/6 ~14:01 MYT) &mdash; checksbvariation live continuation buyer-reply + stock-drift audit (merged from duplicate 5/6 entry)</h4>
+    <div class="field"><strong>Brief (live continuation):</strong> Continued from 4/6 closeout + 5/6 SA-18784. Pulled live SB API via profile 70: 174 rows max 101151. Read-only audit (0 SB/SiteGiant/customer-message writes).</div>
+    <div class="field"><strong>TT Adelmar 584324190793271260:</strong> SB before/after buyerDecision null&rarr;null, contactSent true&rarr;true, stockSetOos true&rarr;true. SiteGiant #1414976 Processed/Unpaid/Fulfilled; TT order Awaiting collection. Chat readback: offer sent 4/6 15:32; buyer replied 09:55 5/6 asking why not picked up, did not choose RDWHN10/PDBN10/BL10IN. Needs CS/Patricia instruction before response.</div>
+    <div class="field"><strong>TT Murahya 584323489193756530 + 584330313036433239:</strong> SB before/after buyerDecision null&rarr;null, contactSent true&rarr;true, stockSetOos true&rarr;true. SiteGiant #1414914 + #1415622 Processed/Paid/Fulfilled. TT Murahya profile k1as27m9 logged out; contact API 98001002 must log in. Buyer chat replies unverified until profile access restored.</div>
+    <div class="field"><strong>GAZEBO 260527G9FGMFBR / GAZEBO-TENT-WHITE-3M:</strong> SB Cancelled/Not Required, contactSent true, stockSetOos true. Stock 4/6 closeout 2/2/0/0 OOS &rarr; live 0/0/0/0 OOS post SA-18754. Clean; do not re-adjust.</div>
+    <div class="field"><strong>Audit rows 101144/101143/101140:</strong> FISHING-BUCKET-BLUE-40CM 0/0/0/0 OOS; CWS-4F-KHAKI 0/0/0/0 OOS; DESKTOP-FLIP-CLOCK-SQ-FLAT-BLK 0/0/0/0 OOS &rarr; live 1/1/0/0 Out Of Stock (quantity mismatch needing WH confirmation if Patricia wants cleanup). No CS remarks added &mdash; Patricia approval pending.</div>
+    <div class="field"><strong>Mismatch/approval watch:</strong> 101145 SNEAKERS-2STRIPES-WHITE-37 was 3/3/0/0 Available after SA-18747, live now 2/2/0/0 Available (drift). 101139 WOMENS-BLAZER-JACKET-BLK-XXXL-SG 0/0/0/0 OOS &rarr; live 1/1/0/0 Out Of Stock. No writes; both need current WH/Patricia approval before SiteGiant action.</div>
+    <div class="field"><strong>Live continuation result:</strong> partial &mdash; read-only audit complete, 0 writes. Outstanding: restore TT Murahya access; decide TT Adelmar buyer-reply response; WH/Patricia decisions for SNEAKERS / WOMENS-BLAZER / DESKTOP-FLIP-CLOCK quantity mismatches.</div>
+    <h4>PM ADDENDUM (5/6 ~14:31 MYT) &mdash; checksbvariation urgent single-order TT KarlMobel 584332958100784574 (merged from duplicate 5/6 entry)</h4>
+    <div class="field"><strong>Brief (urgent single-order):</strong> User asked specifically about TT KarlMobel marketplace order 584332958100784574. Checked live SB row 101147 + SiteGiant order detail + exact iSKU inventory + TT KarlMobel chat via profile 62. Read-only, send approval needed.</div>
+    <div class="field"><strong>SB before/after:</strong> row 101147 Offer Change, contactSent false&rarr;false, stockSetOos false&rarr;false, buyerDecision null&rarr;null, whConfirmStatus null&rarr;null. No SB PATCH (user did not explicitly approve).</div>
+    <div class="field"><strong>Order evidence:</strong> SiteGiant #1415834 / COID 584332958100784574 Processed/Paid/Fulfilled, J&amp;T 680095243252012. TT Awaiting collection, shipment overdue, ship-by 4/6 23:59, auto-cancel 9/6 23:59. Product: Kitchen Cabinet Stainless Steel Sets, ordered variation Grey 150cm Right Stove-3D / KC-GRY-150CM-RT-STV.</div>
+    <div class="field"><strong>Inventory verification:</strong> KC-GRY-150CM-RT-STV before/live 0/0/0/0 OOS. Suggested KC-WHT-150CM-RT-STV live 1/1/0/0 Available. Supports SB Offer Change classification; stockSetOos should be true after approved SB update.</div>
+    <div class="field"><strong>Chat/contact:</strong> TT contact API hasUnRead=false. Chat thread has no prior offer-change message; only platform/order confirmation. No buyer message sent by Codex.</div>
+    <div class="field"><strong>Draft ready (not sent):</strong> "Hi boss, please be informed that Kitchen Cabinet... restock estimated about 1 month. We apologize. Can we send White 150cm Right Stove instead? Otherwise please manage from Order Details."</div>
+    <div class="field"><strong>Single-order result:</strong> partial &mdash; awaiting Patricia approval for manual-send + SB contactSent/stockSetOos flip. WH/CS to note shipment-overdue/pickup-label conflict (TT shows Awaiting collection despite original iSKU OOS).</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-05" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
@@ -3916,45 +3974,6 @@ header.page::after{
   </div>
 
 </details>
-  <div class="entry" data-date="2026-06-05" data-shops="TT Adelmar, TT Murahya, Murahya, Hiranai, Karlmobel, das.nature2, ValueSnap, Kinata SG, MurahYa SG" data-platform="SB webapp + SiteGiant + TikTok MY" data-result="warn">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation live continuation - buyer reply and stock drift audit (5/6)</span>
-      <span class="entry-meta">2026-06-05 14:01 MYT &#183; live SB 174 rows max 101151 &#183; read-only &#183; 0 SB/SiteGiant/customer-message writes &#183; TT Adelmar reply found &#183; TT Murahya chat blocked</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag result-warn">Partial / Warning</span>
-    </div>
-    <div class="entry-body">
-      <div class="full-tags"><span class="tag shop">TT Adelmar</span><span class="tag shop">TT Murahya</span><span class="tag shop">SiteGiant</span><span class="tag platform">TikTok MY</span><span class="tag result-warn">Read-only</span></div>
-      <div class="field"><strong>Scope checked:</strong> Continued from 2026-06-04 closeout plus existing 2026-06-05 stock-count correction. Pulled live SB API through profile k1b44nvg: 174 rows, max id 101151. Compared requested carry-overs only; rows 101150 and 101151 appeared after the 09:30 board audit and were noted but not processed in this carry-over run.</div>
-<div class="field"><strong>TT Adelmar 584324190793271260:</strong> SB before/after buyerDecision null -> null, contactSent true -> true, stockSetOos true -> true. SiteGiant order #1414976 remains Processed / Unpaid / Fulfilled; TikTok order detail is Awaiting collection. Chat readback: offer sent yesterday 15:32; buyer replied at 09:55 asking why the order has not been picked up and asking to expedite, but did not choose RDWHN10, PDBN10, or BL10IN. Result: buyer reply present, no valid offer-change decision yet; needs CS/Patricia instruction before any response or SB decision update.</div>
-<div class="field"><strong>TT Murahya 584323489193756530 and 584330313036433239:</strong> SB before/after buyerDecision null -> null, contactSent true -> true, stockSetOos true -> true. SiteGiant orders #1414914 and #1415622 remain Processed / Paid / Fulfilled. TT Murahya AdsPower profile k1as27m9 is logged out; explicit login attempt reached TikTok email-code plus puzzle verification and contact API returned 98001002 You must log in to continue. Result: marketplace order status checked, but buyer chat replies are unverified until profile access is restored.</div>
-<div class="field"><strong>GAZEBO 260527G9FGMFBR / GAZEBO-TENT-WHITE-3M:</strong> SB remains Cancelled / Not Required, contactSent true, stockSetOos true. Stock before from 4/6 closeout 2/2/0/0 Out Of Stock -> live 0/0/0/0 Out Of Stock after the later SA-18754 stock-count adjustment. Result: old still-finding-stock hold is now clean; do not re-adjust.</div>
-<div class="field"><strong>Audit rows 101144 / 101143 / 101140:</strong> 26060347E6Y3NJ FISHING-BUCKET-BLUE-40CM-WITH-HANDLE live 0/0/0/0 Out Of Stock; 2606020VA1SQ6U CWS-4F-KHAKI live 0/0/0/0 Out Of Stock; 2606010SWCYA21 DESKTOP-FLIP-CLOCK-SQ-FLAT-BLK changed from 0/0/0/0 OOS in 4/6 closeout to live 1/1/0/0 with status Out Of Stock. No CS remarks were added because Patricia completeness approval was not provided. Result: first two clean, DESKTOP-FLIP-CLOCK is a quantity mismatch needing WH confirmation if Patricia wants audit cleanup.</div>
-<div class="field"><strong>Completed status checks:</strong> 101128 and 101127 remain Accept Change / WH Confirmed Can Pack / Adjusted with SA-18745; 101116 and 101118 remain Adjusted with SA-18751; 101130 remains Cancelled / Not Required with SA-18747 and RLS-WHITE-S40 live 0/0/0/0 OOS; 101137 remains Cancelled / Not Required with SA-18708 and CWS-4F-KHAKI now clean 0/0/0/0 OOS.</div>
-<div class="field"><strong>Mismatch and approval watch:</strong> 101145 SNEAKERS-2STRIPES-WHITE-37 remains bounce-back/current drift, 4/6 was 3/3/0/0 Available after SA-18747, live now 2/2/0/0 Available. 101139 WOMENS-BLAZER-JACKET-BLK-XXXL-SG changed from 0/0/0/0 OOS in 4/6 closeout to live 1/1/0/0 with status Out Of Stock. No stock writes made; both need current WH/Patricia approval before any SiteGiant action.</div>
-<div class="field"><strong>External updates made:</strong> Patricia board entry only. No SB PATCH, no SiteGiant adjustment/status write, no seller-portal write, no buyer message, no Jira/form submission. Outstanding: restore TT Murahya access; decide approved response/action for TT Adelmar buyer reply; WH/Patricia decisions for SNEAKERS, WOMENS-BLAZER, and DESKTOP-FLIP-CLOCK quantity mismatches.</div>
-    </div>
-  </div>
-  <div class="entry" data-date="2026-06-05" data-shops="TT KarlMobel" data-platform="SB webapp + SiteGiant + TikTok MY" data-result="warn">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation urgent single-order check - TT KarlMobel 584332958100784574 (5/6)</span>
-      <span class="entry-meta">2026-06-05 14:31 MYT &#183; live SB row 101147 &#183; SiteGiant #1415834 &#183; TT KarlMobel profile 62 &#183; read-only &#183; send approval needed</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag result-warn">Partial / Warning</span>
-    </div>
-    <div class="entry-body">
-      <div class="full-tags"><span class="tag shop">TT KarlMobel</span><span class="tag platform">TikTok MY</span><span class="tag result-warn">Approval needed</span></div>
-      <div class="field"><strong>Scope checked:</strong> User asked specifically about marketplace order 584332958100784574. Checked live SB API, SiteGiant order detail, exact SiteGiant inventory for original and suggested iSKUs, and TT KarlMobel order/chat route via profile 62.</div>
-<div class="field"><strong>SB before/after:</strong> row 101147 remains Offer Change, orderId 584332958100784574, shop TT KarlMobel, contactSent false -> false, stockSetOos false -> false, buyerDecision null -> null, whConfirmStatus null -> null, stockAdjustmentStatus null -> null, csRemarks null -> null. No SB PATCH was made because user did not explicitly approve this write.</div>
-<div class="field"><strong>Order evidence:</strong> SiteGiant order #1415834 / COID 584332958100784574 is Processed / Paid / Fulfilled, tracking J&T 680095243252012. TikTok order detail is Awaiting collection, shipment overdue, ship-by 2026-06-04 23:59:59, auto-cancel 2026-06-09 23:59:59. Product: Kitchen Cabinet Stainless Steel Sets kichen Sink Base Simple Cabinet Stove Storage Cupboard Kabinet Dapur Almari; ordered variation Grey, 150cm Right Stove-3D; seller SKU/iSKU KC-GRY-150CM-RT-STV.</div>
-<div class="field"><strong>Inventory verification:</strong> Original KC-GRY-150CM-RT-STV before/live 0/0/0/0 Out Of Stock. Suggested KC-WHT-150CM-RT-STV live 1/1/0/0 Available. This supports the SB Offer Change classification and stockSetOos should be true after approved SB update.</div>
-<div class="field"><strong>Chat/contact:</strong> TikTok contact API returned hasUnRead=false. Chat thread opened successfully and has no prior offer-change message for this order; only platform/order confirmation is visible. No buyer message was sent by Codex in this check.</div>
-<div class="field"><strong>Draft ready, not sent:</strong> Hi boss, please be informed that Kitchen Cabinet Stainless Steel Sets kichen Sink Base Simple Cabinet Stove Storage Cupboard Kabinet Dapur Almari restock is estimated in about 1 month.. We apologize for the inconvenience caused. Can we s3nd White, 150cm Right Stove instead? Otherwise, please manage the order from your Order Details Once a request comes through, I'll handle it immediately.</div>
-<div class="field"><strong>Needed action:</strong> Approve TT KarlMobel manual-send for the exact draft above, then patch SB contactSent false -> true, stockSetOos false -> true, and append evidence remark. Also WH/CS should note the shipment-overdue/pickup-label conflict because TikTok already shows Awaiting collection despite original iSKU being OOS.</div>
-    </div>
-  </div>
 <!-- ENTRIES_END -->
     <div class="empty-state" id="emptyState" style="display:none;">No entries match your filters.</div>
   </div>
