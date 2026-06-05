@@ -639,6 +639,23 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-05" data-shops="TT Adelmar, das.nature, Hiranai, ValueSnap, Kinata SG, TT Murahya, Murahya" data-platform="SB Webapp + SiteGiant" data-result="ok" data-task-id="checksbvariation-20260605-stock-action-audit-1709">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation stock audit - accepted-change deductions + WH stock-check list</span>
+    <span class="entry-tags"><span class="tag shop">SB stock audit</span><span class="tag platform">SiteGiant</span><span class="tag result-ok">Completed</span></span>
+  </div>
+  <div class="entry-body">
+    <div class="full-tags"><span class="tag">checksbvariation</span><span class="tag">stock audit</span><span class="tag">read-only</span><span class="tag">WH follow-up</span></div>
+    <div class="field"><strong>Task:</strong> Live read-only check for accepted changes needing stock deduction, OOS rows with positive SiteGiant stock that need warehouse confirmation, and pending stock-adjustment backlog.</div>
+    <div class="field"><strong>Changes made:</strong> No SB row patch, no buyer message, no SiteGiant stock/status adjustment. Patricia board log only. Live SB snapshot had <code>174</code> rows, max row <code>101151</code>.</div>
+    <div class="field"><strong>Accepted-change action items:</strong> <code>260531U4J0C7XV</code> / das.nature / row <code>101133</code>: SB <code>Accept Change</code> to <code>HCS-BLACK</code>, shipQty <code>1</code>, New Ship By <code>2026-06-04</code>, WH Pending, Stock Not Adjusted. SiteGiant order <code>#1411985</code> is <strong>Shipped / Paid / Fulfilled</strong>; accepted SKU <code>HCS-BLACK</code> live <code>129/127/0/0</code> SOH/Sellable/Allocated/Reserved, non-sellable <code>2</code>, status Available. Needs current approval to deduct <code>-1</code> and then patch SB WH Confirmed Can Pack / Adjusted with SA ID. <code>584324190793271260</code> / TT Adelmar / row <code>101146</code>: SB <code>Accept Change</code> to <code>RDWHN10</code>, shipQty <code>1</code>, no New Ship By, WH Pending, Stock Not Adjusted. SiteGiant order <code>#1414976</code> is <strong>Shipped / Unpaid / Fulfilled</strong>; accepted SKU <code>RDWHN10</code> live <code>13/13/0/0</code> Available. Needs WH confirmation / approval before deducting <code>-1</code> because SiteGiant order display still lists original Black 10 inch while SB says buyer accepted RDWHN10.</div>
+    <div class="field"><strong>WH stock-check list:</strong> These exact iSKUs have positive SiteGiant stock despite OOS/no-stock workflow evidence and should be checked with WH before any re-zero/status action: <code>SNEAKERS-2STRIPES-WHITE-37</code> Available <code>2/2/0/0</code>; <code>DESKTOP-FLIP-CLOCK-SQ-FLAT-BLK</code> Out Of Stock label but <code>1/1/0/0</code>; <code>WOMENS-BLAZER-JACKET-BLK-XXXL-SG</code> Out Of Stock label but <code>1/1/0/0</code>; <code>CT-OUTER-LAYER-KHAKI-5-8P</code> Out Of Stock label but <code>1/1/0/0</code>; <code>CT-OUTER-LAYER-L.BROWN-5-8P</code> Out Of Stock label but <code>1/1/0/0</code>; <code>RSB-WHT41</code> Out Of Stock label but <code>1/1/0/0</code>.</div>
+    <div class="field"><strong>Clean stock checks:</strong> <code>CWS-4F-KHAKI</code>, <code>GAZEBO-TENT-WHITE-3M</code>, <code>KC-GRY-150CM-RT-STV</code>, and <code>RSB-BLACK38</code> are clean <code>0/0/0/0 Out Of Stock</code>. <code>KC-WHT-150CM-RT-STV</code> replacement remains <code>1/1/0/0 Available</code>.</div>
+    <div class="field"><strong>Older pending backlog:</strong> SB still contains older accepted rows with Not Adjusted/null status: <code>260519QW42CUB2</code> and <code>260516JNF8KXBH</code> have <code>cancel already</code> remarks; <code>260517MXBAM8Q2</code>, <code>260507R7KD5XVX</code>, <code>260506N402NB72</code>, and <code>260506NC6X3105</code> are May stale rows needing separate cleanup/reverification before treating as stock actions. Manual Review rows with existing SA IDs (<code>SA-18708</code>, <code>SA-18691</code>) look like SB-status cleanup/backfill items, not new stock deductions from this audit.</div>
+    <div class="field"><strong>Outstanding follow-up:</strong> Ask WH/Patricia whether to approve <code>HCS-BLACK -1</code> and whether <code>RDWHN10 -1</code> was the actual shipped replacement. Ask WH to confirm the six positive-stock OOS/mismatch iSKUs above before any SiteGiant adjustment. Do not recreate voided cleanup SAs <code>SA-18781</code> / <code>SA-18782</code>.</div>
+  </div>
+</div>
   <div class="entry" data-date="2026-06-05" data-shops="TT DasNature, TT Jager, TT MurahYa, TT JagerHelmet, TT Adelmar, TT Hiranai, TT Valuesnap, TT KarlMobel" data-platform="TikTok MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -750,6 +767,38 @@ header.page::after{
       </div>
       <div class="field"><strong>PATCH stats this sweep:</strong> 26 HTTP 200 / 0 errors. Cumulative 5/6 ttparcelclaim total: 42 + 74 + 26 = <strong>142 PATCHes HTTP 200</strong>.</div>
       <div class="field"><strong>Result addendum-2:</strong> ok &mdash; webapp UI 106 mystery solved (orphan action_needed inflation). 26 cleaned in single sweep. Webapp UI should now show ~95 Open after refresh. Skill routine permanently encoded so this never recurs.</div>
+      <h4>PM ADDENDUM-3 (5/6 ~20:30 MYT) &mdash; HARD_RULES + TODO_CHECKLIST + ERROR_LOG codified + daily 09:15 MYT scheduled run registered</h4>
+      <p><strong>Brief:</strong> User directive: "apply hard rule and save everything... schedule run on this everyday including weekend, every day 9.15am". Built self-crosscheck files + Windows Task Scheduler task. First run 6/6 09:15 MYT verified.</p>
+      <div class="field"><strong>3 self-crosscheck files created in skill folder:</strong>
+        <ul>
+          <li><code>C:\Users\tessf\.claude\skills\ttparcelclaim\HARD_RULES.md</code> &mdash; 23 ABSOLUTE rules (original 10 + 13 new from today's user feedback) consolidated for every-run obedience reference.</li>
+          <li><code>C:\Users\tessf\.claude\skills\ttparcelclaim\TODO_CHECKLIST.md</code> &mdash; tick-box checklist per routine (preflight + cleanup pass + shop coverage + per-case + post-run + acceptance criteria + CARRY-OVER section for next day + DONE section).</li>
+          <li><code>C:\Users\tessf\.claude\skills\ttparcelclaim\ERROR_LOG.md</code> &mdash; canonical mistakes log seeded with today's 8 documented errors (bloated remarks / advanced-refund mistake / orphan return_status / 106 UI mystery / sitegiant redirect / coverage gap / WH reminder missing / cleanup not run). Append-only with TEMPLATE for future entries.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Windows Task Scheduler task registered:</strong>
+        <ul>
+          <li>Task name: <code>ttparcelclaim_daily_0915</code></li>
+          <li>Trigger: Daily at 09:15 MYT (system local time)</li>
+          <li>Days: Every day including Sat + Sun</li>
+          <li>Runs as: logged-on interactive user (so AdsPower local browser is accessible)</li>
+          <li>Execution limit: 2 hours</li>
+          <li>Next run verified: <strong>6/6/2026 09:15:00 AM</strong></li>
+        </ul>
+      </div>
+      <div class="field"><strong>Launcher script:</strong> <code>C:\Users\tessf\.claude\skills\ttparcelclaim\run-daily.ps1</code> &mdash; PowerShell that invokes <code>claude -p &lt;self-contained prompt&gt; --permission-mode acceptEdits</code> with --add-dir for skill folder + board-patricia + reports folder. Logs to <code>ttparcelclaim-scheduled-run-&lt;DATE&gt;.log</code>. The prompt instructs the scheduled session to: (1) READ the 3 self-crosscheck files first, (2) apply HARD RULES as ABSOLUTE, (3) RUN ttparcelclaim end-to-end (Routine 1-4 + post-run), (4) UPDATE the 3 files on completion (move ticks to DONE, append new errors), (5) Board log.</div>
+      <div class="field"><strong>Registration script (idempotent re-run-safe):</strong> <code>C:\Users\tessf\.claude\skills\ttparcelclaim\register-task-scheduler.ps1</code> &mdash; removes any existing task with same name, registers fresh. Used to deploy + can be re-run to update.</div>
+      <div class="field"><strong>Co-existence with parcelclaim-auto:</strong> 09:15 ttparcelclaim runs FIRST (cleanup pass on yesterday's pool + deadline carry-overs), then 09:45 parcelclaim-auto adds today's NEW. Operator can re-trigger ttparcelclaim manually later in the day to process today's NEW via the skill.</div>
+      <div class="field"><strong>Manual control:</strong>
+        <ul>
+          <li>Verify: <code>Get-ScheduledTask -TaskName ttparcelclaim_daily_0915</code></li>
+          <li>Run now: <code>Start-ScheduledTask -TaskName ttparcelclaim_daily_0915</code></li>
+          <li>Disable: <code>Disable-ScheduledTask -TaskName ttparcelclaim_daily_0915</code></li>
+          <li>Unregister: <code>Unregister-ScheduledTask -TaskName ttparcelclaim_daily_0915 -Confirm:$false</code></li>
+        </ul>
+      </div>
+      <div class="field"><strong>Memory:</strong> <code>reference_ttparcelclaim_scheduled_run.md</code> + MEMORY.md index entry. All 7 related rule memories cross-linked.</div>
+      <div class="field"><strong>Result addendum-3:</strong> ok &mdash; daily 09:15 MYT schedule active for 6/6 onward. Self-crosscheck pattern enforced via 3-file load-update routine. ttparcelclaim now auto-runs every morning (incl weekends) with HARD RULES applied + ERROR LOG learning loop.</div>
     </div>
   </div>
 <div class="entry" data-date="2026-06-05" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
