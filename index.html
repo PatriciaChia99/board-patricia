@@ -801,6 +801,60 @@ header.page::after{
       </div>
       <div class="field"><strong>Memory:</strong> <code>reference_ttparcelclaim_scheduled_run.md</code> + MEMORY.md index entry. All 7 related rule memories cross-linked.</div>
       <div class="field"><strong>Result addendum-3:</strong> ok &mdash; daily 09:15 MYT schedule active for 6/6 onward. Self-crosscheck pattern enforced via 3-file load-update routine. ttparcelclaim now auto-runs every morning (incl weekends) with HARD RULES applied + ERROR LOG learning loop.</div>
+      <h4>PM ADDENDUM-4 (5/6 ~21:30 MYT EOD WRAP) &mdash; stable CS URL + schedule retiming + final session crosscheck</h4>
+      <p><strong>Brief (EOD wrap):</strong> User asked for stable URL CS can bookmark (vs different file every day). Built `wh-reminder.html` in board repo. Verified GitHub Pages public mirror works without GitHub account. Discovered `TTSessionPreflight_830AM` at 8:30 must run BEFORE ttparcelclaim — retimed schedule from 09:15 to 08:55 (fits gap between AdsPowerWatchdog at 8:50 and parcelclaim-auto at 9:50). Final crosscheck: 98 Pending = 98 Open exactly, 0 orphans, schedule Ready next 6/6 08:55, URL live. Session memory + TOMORROW_PROMPT_6JUN.md saved.</p>
+      <div class="field"><strong>New stable CS URL (no GitHub account needed):</strong>
+        <ul>
+          <li>URL: <code>https://patriciachia99.github.io/board-patricia/wh-reminder.html</code></li>
+          <li>Source: <code>C:\Users\tessf\board-patricia\wh-reminder.html</code> (162 lines, styled HTML with traffic-light colors)</li>
+          <li>Public, no login, works any browser/phone &mdash; CS bookmarks once, refreshes daily</li>
+          <li>Auto-updated by scheduled run &mdash; commits + pushes private repo &mdash; BoardMirrorSync_10min syncs to public &mdash; Pages rebuilds in 30-60s</li>
+          <li>Mirror sync script <code>.scripts/sync-mirror.sh</code> updated to also sync wh-reminder.html (was only syncing index.html)</li>
+          <li>Verified live: page responds 200, title + content correct, public no-login confirmed via WebFetch</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Schedule retimed 09:15 &rarr; 08:55:</strong>
+        <ul>
+          <li><strong>Why:</strong> CS starts at 9 AM. Old 09:15 ran AFTER CS started, URL refresh missed morning shift. New 08:55 lets URL refresh by ~09:30 right after CS arrives.</li>
+          <li><strong>Constraint:</strong> Must fire AFTER <code>TTSessionPreflight_830AM</code> (8:30) + <code>AdsPowerWatchdog</code> (8:50) so TT/Lazada sessions verified alive before Routine 3 shop coverage.</li>
+          <li><strong>Old task <code>ttparcelclaim_daily_0915</code> unregistered. New task <code>ttparcelclaim_daily_0855</code> Ready, next run 6/6 08:55 MYT.</strong></li>
+          <li>6 file references updated to new name: register-task-scheduler.ps1, run-daily.ps1, weekend-failure-alert.ps1, parcelclaim-auto/TOMORROW_PROMPT_6JUN.md, reference_weekend_schedule_jun06.md, reference_ttparcelclaim_scheduled_run.md, MEMORY.md index.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Updated morning chain:</strong>
+        <pre style="background:#f5f5f5;padding:8px;border-radius:4px;font-size:0.85em;line-height:1.4;">
+08:30  TTSessionPreflight_830AM    - relogin expired TT/Lazada sessions
+08:50  AdsPowerWatchdog            - verify AdsPower service alive
+08:55  ttparcelclaim_daily_0855    - cleanup + URL refresh (NEW since 5/6)
+09:00  CS starts work
+~09:30 CS URL refreshed with today's cases
+09:50  ParcelClaimAuto_945AM       - fetch today's NEW R/R + FD
+10:03  ParcelSplitCrosscheck_1000AM
+11:30  TT_RR_Audit_10_15AM
+12:30  WeekendFailureAlert (Sat/Sun) - auto-retry failed runs
+17:00  TTRatingCheck_5PM</pre>
+      </div>
+      <div class="field"><strong>Final crosscheck (live verify EOD):</strong>
+        <ul>
+          <li>Total cases: 555 (was 552 mid-session; +3 NEW C1998-C2000 from late-PM parcelclaim-auto)</li>
+          <li>By state: Pending 98 / Withdrawn 443 / Credited 12 / Rejected 2</li>
+          <li><strong>Pending = action!=Closed count = 98 exactly</strong> (the 106 mystery fix held)</li>
+          <li>Terminal-state orphans: 0 &middot; Reverse-orphans: 0</li>
+          <li>Pending RM 21,554.35 (+RM 942.80 from 3 NEW since 95-case end-state earlier)</li>
+          <li>Schedule task: Ready, NextRun 6/6 08:55:00 AM</li>
+          <li>CS URL: live, 200 response, correct content</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Files saved + TOMORROW prompt:</strong>
+        <ul>
+          <li><code>C:\Users\tessf\.claude\skills\ttparcelclaim\TODO_CHECKLIST.md</code> &mdash; DONE section appended with 11 timestamped completion entries; CARRY-OVER section refreshed for 6/6 with P0/P1/P2 priorities incl 3 NEW C1998-C2000</li>
+          <li><code>C:\Users\tessf\.claude\skills\ttparcelclaim\ERROR_LOG.md</code> &mdash; daily run summary line appended: <code>=== run-2026-06-05: ~142 PATCHes HTTP 200, 4 cleanly closed (RM 262.43), 26 orphans swept, 98 Pending end-state (RM 21,554.35) ===</code></li>
+          <li><code>C:\Users\tessf\.claude\skills\ttparcelclaim\TOMORROW_PROMPT_6JUN.md</code> &mdash; comprehensive continuation prompt covering ttparcelclaim + ttparcelclaimcheck (9 steps + quick paths + acceptance criteria + manual control commands)</li>
+          <li><code>project_session_jun05_ttparcelclaim.md</code> memory &mdash; EOD wrap section appended with totals + schedule details + carry-over + files-saved list + 12 related memory cross-links</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Outstanding for 6/6 (continuation):</strong> 4 P0 deadline cases (C1965+C1967 WH 6/6 EOD / C1981+C1995 verdict verify) + 3 NEW C1998-C2000 classify + operator relogin profile 59/65/83 + 4 CS-filed-appeal verify (C1960/C1961/C1982/C1997) + C1959 appeal-filed verify. All listed in TODO_CHECKLIST.md CARRY-OVER section.</div>
+      <div class="field"><strong>Result addendum-4:</strong> ok &mdash; session ended cleanly with all 23 PATCHes pushed, all 8 memories + 1 reference saved, 3 skill files (HARD_RULES + TODO + ERROR_LOG) + 2 PS1 scripts + 1 HTML page + sync-mirror.sh fix all in place, 6 board commits pushed (832f713 &rarr; 7b4c86a &rarr; 7be89e5 &rarr; 1701774 &rarr; 8515c29 + mirror 1c75370 + this), schedule Ready 6/6 08:55 MYT, stable CS URL live. Tomorrow's session can paste TOMORROW_PROMPT_6JUN.md and continue from carry-over.</div>
     </div>
   </div>
 <div class="entry" data-date="2026-06-05" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
