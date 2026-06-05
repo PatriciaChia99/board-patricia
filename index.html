@@ -639,6 +639,23 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-05" data-shops="multiple" data-platform="SB Variation" data-result="ok" data-marker="SBVAR-SCHED-20260605-CODEX-WEEKEND">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation scheduler hard-fix - Codex weekend runner + ntfy self-test (5/6)</span>
+      <span class="entry-meta">2026-06-05 22:31 MYT &middot; task updated for daily/weekend SB Variation contact workflow</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Hardened the SB Variation scheduled workflow so it runs through weekends using the Codex <code>checksbvariation</code> skill and sends <code>ntfy</code> notifications.</p>
+      <div class="field"><strong>Before:</strong> Active task <code>SBVariationAudit_930AM</code> launched stale Claude batch <code>C:\Users\tessf\scripts\checksbvariation.bat</code>, runtime cap <code>PT2H</code>; expired task <code>Codex_SBVariation_Holiday_0930</code> had no next run after 2026-06-01.</div>
+      <div class="field"><strong>After:</strong> <code>SBVariationAudit_930AM</code> launches <code>C:\Users\tessf\code\codex-lab\.agents\skills\checksbvariation\scripts\run-checksbvariation-scheduled.ps1</code>, daily trigger <code>DaysInterval=1</code> with <code>PT10M</code> random delay, next run <code>2026-06-06 09:36:20 MYT</code>, <code>ExecutionTimeLimit=PT6H</code>, <code>RestartCount=3</code>, <code>RestartInterval=PT15M</code>, <code>StartWhenAvailable=true</code>, <code>WakeToRun=true</code>; expired holiday task disabled to avoid ambiguity.</div>
+      <div class="field"><strong>Standing approval captured:</strong> Weekend scheduled customer contact may proceed without per-case approval only with approved SB Variation templates after live order/customer/thread/no-prior-contact verification. Stock changes, SiteGiant item status, Jira/forms, seller status changes, off-platform contact, and non-template wording still require explicit approval.</div>
+      <div class="field"><strong>Evidence:</strong> PowerShell parse OK; <code>npm test</code> passed (1/1); runner <code>-SelfTest</code> sent <code>checksbvariation scheduled SELFTEST OK</code> to <code>awesomeree-patricia-ops-7h3k9q</code> at 2026-06-05 22:31 MYT and did not contact any customer.</div>
+      <div class="field"><strong>Result:</strong> Scheduled weekend run is ready for Saturday 2026-06-06. Outstanding follow-up: check tomorrow's report/log/ntfy after the 09:30+random-delay run completes.</div>
+    </div>
+  </div>
 <div class="entry" data-date="2026-06-05" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, MurahYa, JagerHelmet, Emas Gift, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
