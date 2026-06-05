@@ -639,6 +639,56 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-05" data-shops="multiple" data-platform="Shopee MY+SG+TT" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation &mdash; 122 contacted / 11 failed / 39 routed-CS (5/6 summary)</span>
+    <span class="entry-meta">2026-06-05 MYT &middot; 172 total cases &middot; 33 recent &le;5d &middot; 139 stale &gt;5d &middot; 2 Jira drafts pending approval &middot; report-only run, no PATCHes</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Daily 09:30 MYT SB Variation audit &mdash; KPI-summary view of 172 open cases categorised by bot-outcome status (contacted / failed / routed-CS) for triage and Jira approval. AdsPower profile 70 (k1b44nvg), <code>/api/sb-variation</code> read-only, no PATCHes per user mandate.</p>
+    <div class="field"><strong>Category breakdown (172 total):</strong>
+      <ul>
+        <li><strong>Contacted (122):</strong> auto-bot successfully reached buyer &mdash; 98 stale A-BOT_OK awaiting buyer reply + 14 recent A-BOT_OK Shopee (101149/101148/101144/101143/101140/101129/101132/101126/101123/101117/101115 etc.) + 10 recent TT_OFFER_CHANGE sent (101146/101142/101141/101137/101134/101125/101124/101121/101120/101119)</li>
+        <li><strong>Failed (11):</strong> bot could not auto-send &mdash; 10 stale B-ParseFail (TT/SG/Laz manual zone, incl 101065/101071/101079) + 1 NEW today (101147 TT KarlMobel KC-WHT-150CM-RT-STV, <code>sku=[] pn=null</code>)</li>
+        <li><strong>Routed-CS (39):</strong> manual CS action required &mdash; 4 Accept-Change-Pending stale (101049/101050/101060/100959 KEDAI GARDEN) + 5 F-Cancelled pending csRemarks-backfill stale (101099/101079/101074/101073/101088/101114/101113) + ~10 recent pending (101135 OOS-flag/101133 WH+SG-1/101138 Manual Review/101136 closure/101145/101130/101139/101137 closure carry-overs) + 21 misc terminal-pending/Cat H/unmarked</li>
+        <li><strong>Other (1):</strong> 1 I-only stale (100908 MurahYa)</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Top failing shops (B-ParseFail / no-bot-send, frequency over 18-day pattern):</strong>
+      <ul>
+        <li><strong>TT Murahya &mdash; 5 cases</strong> (profile 64): 101141, 101142, 101137, 101071, 101079</li>
+        <li><strong>TT KarlMobel &mdash; 3 cases</strong> (profile 62, 24h session TTL): 101147 (NEW today KC-WHT-150CM-RT-STV), 101130, 101134</li>
+        <li><strong>TT JagerHelmet &mdash; 3 cases</strong> (profile 56): 101120, 101124, 101125 (LENS pattern)</li>
+        <li><strong>TT Adelmar &mdash; 1 case</strong> (profile 54): 101146</li>
+        <li><strong>TT Jager &mdash; 1 case</strong> (profile 55): 101121 (LENS pattern)</li>
+        <li><strong>TT Hiranai &mdash; 1 case</strong> (profile 57): 101065 (15.7d stale)</li>
+      </ul>
+      All failures on TikTok (no Shopee MY/SG/Lazada B-ParseFail this cycle). Root cause: TT bot SKU-extraction regression &mdash; see Jira Draft #3 below.
+    </div>
+    <div class="field"><strong>SLA breaches:</strong>
+      <ul>
+        <li><strong>139 cases &gt;5d open</strong> (overall stale bucket &mdash; count-only per HARD recency rule 20/5)</li>
+        <li><strong>5 cases &gt;13d</strong>: 101049 Hiranai TS-SLIPPER 17.5d wh=Pending (worst, true defect) &middot; 101050 MasonGym 17.5d &middot; 101074 das.nature2 13.8d &middot; 101073 MurahYa 13.8d &middot; 101079 TT Murahya 13.5d</li>
+        <li><strong>3 cases shipBy PAST 5+ days</strong>: 101117 Murahya RICE-DISPENSER-L-GRN (shipBy 31/5) &middot; 101115 Karlmobel WC-CVBLUE (shipBy 31/5) &middot; 101133 das.nature HCS-BLACK (nSB 4/6 PAST &mdash; buyer Accept Change awaiting WH+SG-1)</li>
+        <li><strong>1 invalid-orderId WH chase &gt;7d</strong>: 101106 KarlMobel TUBCOVER &mdash; WH unresponsive, escalation needed</li>
+        <li><strong>Worst stale carry-over</strong>: 101049 Hiranai TS-SLIPPER-9CM-KHAKI-36-37 (17.5d, wh=Pending true defect) &mdash; ties into Jira Draft #2</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Pending Jira approvals (2 active drafts + 1 candidate):</strong>
+      <ul>
+        <li><strong>Draft #2 (carried 18 days from 18/5) &mdash; APPROVAL REQUIRED:</strong> 4-case regression (101049 Hiranai TS-SLIPPER true defect + 101052/101053/101055 A-BOT_OK stale). Recommendation: re-scope to single-case Jira for 101049 OR close-without-filing. Patricia decision needed.</li>
+        <li><strong>Draft #3 &mdash; APPROVAL REQUIRED:</strong> TT bot SKU-extraction regression. Pattern: <code>sku=[] pn=null</code> on TT_OFFER_CHANGE messages. <strong>17+ cases over 18 days</strong>, +1 NEW today (101147 KC-WHT-150CM-RT-STV). Case IDs: 101147/101146/101142/101141/101137/101130/101125/101124/101121/101120/101119/101065/101071/101079/101081/101089/101097. Pattern strengthening &mdash; recommend filing.</li>
+        <li><strong>Draft #4 candidate (not yet drafted, low priority):</strong> 101136 Murahya orderId <code>260527G9FGMFBR</code> carries trailing space &mdash; data hygiene flag, single case.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Report file:</strong> <code>C:/Users/tessf/Documents/sbvariation-reports/sbvariation-report-2026-06-05.md</code>. State.json at <code>C:/Users/tessf/.claude/skills/checksbvariation/state.json</code>.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 172 cases classified (122 contacted / 11 failed / 39 routed-CS / 1 other); 2 Jira drafts surfaced for Patricia approval (Draft #2 single-case TS-SLIPPER, Draft #3 TT bot SKU-extraction regression 17+ cases); top failing platform = TikTok (5 shops); 0 PATCHes per user mandate, companion summary to the 09:30 operational entry.</div>
+  </div>
+</div>
+
 <div class="entry" data-date="2026-06-05" data-shops="Karlmobel, Murahya, TT KarlMobel, TT Adelmar, TT Murahya, Kinata SG, MurahYa SG, das.nature, das.nature2, MasonGym, BahEmas, Hiranai, ValueSnap, TT Jager, TT JagerHelmet" data-platform="Shopee MY + SG + TikTok + Lazada" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
