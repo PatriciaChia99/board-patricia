@@ -3913,6 +3913,25 @@ header.page::after{
 <div class="field"><strong>External updates made:</strong> Patricia board entry only. No SB PATCH, no SiteGiant adjustment/status write, no seller-portal write, no buyer message, no Jira/form submission. Outstanding: restore TT Murahya access; decide approved response/action for TT Adelmar buyer reply; WH/Patricia decisions for SNEAKERS, WOMENS-BLAZER, and DESKTOP-FLIP-CLOCK quantity mismatches.</div>
     </div>
   </div>
+  <div class="entry" data-date="2026-06-05" data-shops="TT KarlMobel" data-platform="SB webapp + SiteGiant + TikTok MY" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation urgent single-order check - TT KarlMobel 584332958100784574 (5/6)</span>
+      <span class="entry-meta">2026-06-05 14:31 MYT &#183; live SB row 101147 &#183; SiteGiant #1415834 &#183; TT KarlMobel profile 62 &#183; read-only &#183; send approval needed</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-warn">Partial / Warning</span>
+    </div>
+    <div class="entry-body">
+      <div class="full-tags"><span class="tag shop">TT KarlMobel</span><span class="tag platform">TikTok MY</span><span class="tag result-warn">Approval needed</span></div>
+      <div class="field"><strong>Scope checked:</strong> User asked specifically about marketplace order 584332958100784574. Checked live SB API, SiteGiant order detail, exact SiteGiant inventory for original and suggested iSKUs, and TT KarlMobel order/chat route via profile 62.</div>
+<div class="field"><strong>SB before/after:</strong> row 101147 remains Offer Change, orderId 584332958100784574, shop TT KarlMobel, contactSent false -> false, stockSetOos false -> false, buyerDecision null -> null, whConfirmStatus null -> null, stockAdjustmentStatus null -> null, csRemarks null -> null. No SB PATCH was made because user did not explicitly approve this write.</div>
+<div class="field"><strong>Order evidence:</strong> SiteGiant order #1415834 / COID 584332958100784574 is Processed / Paid / Fulfilled, tracking J&T 680095243252012. TikTok order detail is Awaiting collection, shipment overdue, ship-by 2026-06-04 23:59:59, auto-cancel 2026-06-09 23:59:59. Product: Kitchen Cabinet Stainless Steel Sets kichen Sink Base Simple Cabinet Stove Storage Cupboard Kabinet Dapur Almari; ordered variation Grey, 150cm Right Stove-3D; seller SKU/iSKU KC-GRY-150CM-RT-STV.</div>
+<div class="field"><strong>Inventory verification:</strong> Original KC-GRY-150CM-RT-STV before/live 0/0/0/0 Out Of Stock. Suggested KC-WHT-150CM-RT-STV live 1/1/0/0 Available. This supports the SB Offer Change classification and stockSetOos should be true after approved SB update.</div>
+<div class="field"><strong>Chat/contact:</strong> TikTok contact API returned hasUnRead=false. Chat thread opened successfully and has no prior offer-change message for this order; only platform/order confirmation is visible. No buyer message was sent by Codex in this check.</div>
+<div class="field"><strong>Draft ready, not sent:</strong> Hi boss, please be informed that Kitchen Cabinet Stainless Steel Sets kichen Sink Base Simple Cabinet Stove Storage Cupboard Kabinet Dapur Almari restock is estimated in about 1 month.. We apologize for the inconvenience caused. Can we s3nd White, 150cm Right Stove instead? Otherwise, please manage the order from your Order Details Once a request comes through, I'll handle it immediately.</div>
+<div class="field"><strong>Needed action:</strong> Approve TT KarlMobel manual-send for the exact draft above, then patch SB contactSent false -> true, stockSetOos false -> true, and append evidence remark. Also WH/CS should note the shipment-overdue/pickup-label conflict because TikTok already shows Awaiting collection despite original iSKU being OOS.</div>
+    </div>
+  </div>
 <!-- ENTRIES_END -->
     <div class="empty-state" id="emptyState" style="display:none;">No entries match your filters.</div>
   </div>
