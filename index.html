@@ -737,6 +737,29 @@ header.page::after{
     <div class="field"><strong>Profile probe regressions vs 3/6 PM:</strong> Profile 59 Jager + 65 Valuesnap LOGIN_EXPIRED 5/6 (were ALIVE 3/6 PM-rerun). Mass-revoke pattern per feedback_tt_karlmobel_24h_session_ttl HARD 4/6. NOT a TT_KARLMOBEL_24H regression -- multi-profile pattern. Operator manual relogin needed before next run.</div>
     <div class="field"><strong>Crosscheck verdict:</strong> 58 CONFIRMED / 0 RECLASSIFIED / 0 RETRACTED / 1 DISCREPANCY (C1697 OID mismatch, logged in audit trail). Audit integrity intact.</div>
     <div class="field"><strong>Result:</strong> ok &mdash; 56/56 PATCHes HTTP 200 0 errors. Pending bucket RM -3,413.04 reduction. 1 NEW MAY LOSS booked. 2 URGENT today RM 537.89 + 5 follow-up RM 2,063.04 surfaced to CS.</div>
+    <h4>PM RE-RUN 5/6 LATE &mdash; Profiles 59+65 relogged, 11 PATCHes + parcelclaim-auto delta verified 0 NEW</h4>
+    <div class="field"><strong>Trigger:</strong> User confirmed all expired profiles re-authenticated post-PM-rerun. Verified 59 Jager / 62 KarlMobel / 65 Valuesnap / 83 Lazada Lovento all ALIVE via TT Seller Center homepage + Lazada Common Tools shell.</div>
+    <div class="field"><strong>parcelclaim-auto delta sweep:</strong> 0 NEW POSTs. Lazada Lovento profile 83 only 1 case visible (RM 50.62 dated 11/03/2026 outside 4-day R/R cutoff). Profile 59 Jager page 1 R/R: 16 visible OIDs, 8 already in webapp + 8 NEW but ALL 8 dated 23/12/2025-16/04/2026 (outside 4-day cutoff). Confirms morning sweep (97 Jager R/R &rarr; 0 POSTs) was thorough. Webapp baseline unchanged: 563 cases / max_id C1997.</div>
+    <div class="field"><strong>tiktokrraudit delta on Jager (3 PATCHes HTTP 200):</strong>
+      <ul>
+        <li>C1957 OID 584284424751843116 amysherynna11 RM 130.56 &mdash; Refund complete + Delivered 04/06 15:03:44 + Non-seller-fault tag confirmed + 9d20h appeal window LEFT. Remark + CS file appeal/IB before 14/6 OR accept returned parcel.</li>
+        <li>C1795 OID 584034138632782870 aem.ree Day 17 RM 129 &mdash; STILL Awaiting customer return + Non-seller-fault tag confirmed visible. Issue full refund button still active. CS chase buyer return OR file 2nd-channel Reimbursement Coverage today.</li>
+        <li>C1962 OID 584302613858715461 ibrahimmike7487 RM 16.37 Damaged &mdash; STATE FLIP: was Awaiting customer return, NOW Refund complete + Out for delivery 05/06 11:57:24 (parcel arriving today). NO Non-seller-fault. Speedy refund. Action: WH inspect on arrival, withdraw if usable else appeal.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>tiktokrraudit delta on Valuesnap (8 PATCHes HTTP 200 = 5 remark + 3 action_needed):</strong>
+      <ul>
+        <li>C1949 OID 584273307256259747 insanbiasa_0808 RM 24.53 Wrong product &mdash; STATE FLIP: was IN TRANSIT, NOW Refund complete + Delivered 06/04 + APPEAL 9d18h LEFT. action_needed &rarr; CS Action. URGENT file appeal before ~14/6.</li>
+        <li>C1942 OID 584265628582970715 nabel_haha RM 15.82 Damage &mdash; STATE FLIP: was DAMAGE PENDING EVI, NOW Refund complete + Delivered 06/03 + APPEAL 7d1h LEFT (closes ~12/6). action_needed &rarr; CS Action. URGENT submit appeal evidence ASAP.</li>
+        <li>C1956 OID 584310510937212614 kellychong1983 RM 15.44 Damage 2 items &mdash; STATE FLIP: was WFR, NOW Refund complete + Collected 06/04 + APPEAL 9d18h LEFT. action_needed &rarr; CS Action. File appeal OR accept returned parcel WH inspect.</li>
+        <li>C1996 OID 584330283472356512 ckguprof RM 96.17 Trampoline &mdash; STILL Platform processing (Refund only Missing items). Remark touch only. Monitor next 24h.</li>
+        <li>C1772 OID 584058720133154244 mr.aa933 RM 15.19 No-longer-needed &mdash; Refund complete + Appeal failed + Non-seller-fault tag CONFIRMED. Earlier shop CS chat RM 15.19 comp 3-5WD STILL OUTSTANDING (credit not yet landed). Monitor wallet next 2WD.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Crosscheck (35s post-PATCH wait):</strong> 8/8 cases STILL Pending (no auto-classifier reversion). 8/8 remark tails confirm new tokens landed verbatim. 3/3 action_needed=CS Action holding. Cumulative tt_rr today: 56 morning + 11 PM-late = <strong>67 PATCHes HTTP 200 / 0 errors</strong>.</div>
+    <div class="field"><strong>3 URGENT Valuesnap appeal windows surfaced (CS action 6/6 AM):</strong> C1942 7d1h (~12/6) / C1949 9d18h (~14/6) / C1956 9d18h (~14/6). Combined exposure RM 55.79.</div>
+    <div class="field"><strong>Profile session status post-relogin:</strong> 59 Jager ALIVE / 62 KarlMobel ALIVE / 65 Valuesnap ALIVE / 83 Lazada Lovento ALIVE / 70 webapp ALIVE. All mass-revoke profiles recovered. Sub-tab=100 endpoint on profile 62 not re-probed this run (skill already worked around via sub-tab sweep).</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 11/11 PATCHes HTTP 200 (3 Jager remark + 5 Valuesnap remark + 3 Valuesnap action). 4 state-flip flags surfaced (1 Jager + 3 Valuesnap). 2 confirmed Non-seller-fault tags visible (C1957 Jager + C1772 Valuesnap). 0 NEW losses booked. parcelclaim-auto delta 0 NEW. Lazada Lovento confirmed 0 actionable today.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-05" data-shops="KarlMobel, Luxbin, das.nature2, Hiranai, Karlmobel, MasonGym, Murahya, ValueSnap, kinata SG, Emasgift SG, HiranaiSG, MurahYa SG, KarlMobel SG, DasNatureSG2, DasNature SG, TT KarlMobel, TT MurahYa, TT Adelmar, TT DasNature, TT Hiranai, TT Jager, TT JagerHelmet, TT JagerArmor, TT JagerSafety, TT Valuesnap, TT HiranaiMY, Lazada MurahYa" data-platform="Shopee MY + SG + TikTok + Lazada" data-result="ok">
