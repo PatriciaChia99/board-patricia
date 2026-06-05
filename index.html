@@ -683,25 +683,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; 42 PATCHes HTTP 200 / 0 errors / 0 ttchaserr triggers / 17 CONFIRMED via crosscheck. Pending pool unchanged in count + RM (no state flips today &mdash; only enrichment of remark / followup_dt / action_needed on existing Pending cases).</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-06-05" data-shops="SiteGiant inventory, canopy tent iSKUs" data-platform="SiteGiant" data-result="ok">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation canopy stock correction &mdash; SA-18784 deducted 2 pending-order units (5/6)</span>
-      <span class="entry-meta">2026-06-05 12:03 MYT &middot; SiteGiant exact iSKU verification &middot; stock-count non-sellable guard added</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag">stock-adjustment</span>
-      <span class="tag result-ok">Completed</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Patricia/user flagged two canopy iSKUs where ongoing unshipped orders had been excluded from last night's warehouse count and already flowed out of sellable stock. Live SiteGiant rows were checked, then one completed stock adjustment was created.</p>
-      <div class="field"><strong>External update made:</strong> SiteGiant stock adjustment <code>SA-18784</code> / internal id <code>9659052</code>, reason <code>Stock Adjustment</code>, warehouse <code>Default</code>, user <code>Sylvester Tan</code>, status shown as completed on list. Notes recorded the checksbvariation correction and user approval.</div>
-      <div class="field"><strong>Before &rarr; after:</strong> <code>CANOPY-TENT-BLACK-3X3M-4POLE</code>: live before SOH/Sellable/Allocated/Non-Sellable/Reserved <code>14/13/0/1/0</code>; SA line Sellable <code>13&rarr;12</code>, On Hand <code>14&rarr;13</code>, Quantity Change <code>-1</code>; final live <code>13/12/0/1/0</code>, status Available.</div>
-      <div class="field"><strong>Before &rarr; after:</strong> <code>CANOPY-TENT-BEIGE-3X3M-4POLE-CLOTH-ONLY</code>: live before SOH/Sellable/Allocated/Non-Sellable/Reserved <code>5/4/0/1/0</code>; SA line Sellable <code>4&rarr;3</code>, On Hand <code>4&rarr;3</code>, Quantity Change <code>-1</code>; final live <code>3/3/0/0/0</code>, status Available. The non-sellable bucket was no longer present at final verification, so the saved SA detail was reopened to confirm the adjustment itself was only the intended <code>-1</code> line.</div>
-      <div class="field"><strong>Skill hardening:</strong> Updated <code>.agents/skills/checksbvariation/SKILL.md</code> so future warehouse count-based adjustments must check Non-Sellable, Non-Sellable Allocated, Allocated, Reserved, and live unshipped order buckets before matching sellable targets. Formula now required when relevant: <code>target sellable = warehouse counted sellable - already non-sellable unshipped order units</code>.</div>
-      <div class="field"><strong>Verification:</strong> Exact iSKU searches after the write confirmed final inventory values. Repo test sweep passed: <code>npm test</code> = 1 pass.</div>
-      <div class="field"><strong>Outstanding:</strong> None for these two SiteGiant stock lines. Future count sessions should apply the new non-sellable/order-bucket guard before creating cleanup SAs.</div>
-    </div>
-  </div>
 <div class="entry" data-date="2026-06-05" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -902,6 +883,13 @@ header.page::after{
     <div class="field"><strong>Live post-void cross-check:</strong> A.GREEN-8-12P 48 sellable; D.GREEN-5-8P 38; BRN no-walls 2; BLK no-walls 2; BLACK-4POLE SOH 14/sellable 13/non-sellable 1; BLACK cloth-only 9; BEIGE cloth-only SOH 5/sellable 4/non-sellable 1; BROWN-4POLE 32; BROWN cloth-only 10; BEIGE full-cover SOH 20/sellable 18/reserved 2; WHITE gazebo 0 OOS. Post-void rows below original count but not re-adjusted: KHAKI-8-12P 0, A.GREEN-5-8P 15, BLACK-5-8P 3, BEIGE-4POLE SOH 58/sellable 57/non-sellable 1, L.BROWN-8-12P SOH 5/sellable 4/non-sellable 1.</div>
     <div class="field"><strong>Closeout files:</strong> <code>.codex\memories\checksbvariation-2026-06-05-session-closeout.md</code> &middot; <code>.codex\memories\checksbvariation-2026-06-05-stock-count-update.md</code> &middot; <code>.codex\memories\checksbvariation-2026-06-06-continuation-prompt.md</code>.</div>
     <div class="field"><strong>Closeout result:</strong> ok &mdash; no further SiteGiant stock adjustment outstanding from stock-count session. Tomorrow: normal SB variation P0 checks from 5/6 audit and must not reopen SA-18781/SA-18782 cleanup quantities without fresh warehouse approval.</div>
+    <h4>PM ADDENDUM (5/6 ~12:03 MYT) &mdash; checksbvariation canopy stock correction SA-18784 (merged from duplicate 5/6 entry)</h4>
+    <div class="field"><strong>Brief (canopy correction):</strong> Patricia/user flagged two canopy iSKUs where ongoing unshipped orders had been excluded from last night's warehouse count and already flowed out of sellable stock. Live SiteGiant rows checked, one completed stock adjustment created.</div>
+    <div class="field"><strong>External update made:</strong> SiteGiant stock adjustment <code>SA-18784</code> / internal id <code>9659052</code>, reason <code>Stock Adjustment</code>, warehouse <code>Default</code>, user <code>Sylvester Tan</code>, status completed. Notes recorded the checksbvariation correction and user approval.</div>
+    <div class="field"><strong>Before &rarr; after:</strong> <code>CANOPY-TENT-BLACK-3X3M-4POLE</code> live before SOH/Sellable/Allocated/Non-Sellable/Reserved <code>14/13/0/1/0</code>; SA line Sellable <code>13&rarr;12</code>, On Hand <code>14&rarr;13</code>, Quantity Change <code>-1</code>; final live <code>13/12/0/1/0</code>, status Available.</div>
+    <div class="field"><strong>Before &rarr; after:</strong> <code>CANOPY-TENT-BEIGE-3X3M-4POLE-CLOTH-ONLY</code> live before <code>5/4/0/1/0</code>; SA line Sellable <code>4&rarr;3</code>, On Hand <code>4&rarr;3</code>, Quantity Change <code>-1</code>; final live <code>3/3/0/0/0</code>, status Available. Non-sellable bucket no longer present at final verification; saved SA detail reopened to confirm adjustment was only the intended <code>-1</code> line.</div>
+    <div class="field"><strong>Skill hardening:</strong> Updated <code>.agents/skills/checksbvariation/SKILL.md</code> so future warehouse-count adjustments must check Non-Sellable, Non-Sellable Allocated, Allocated, Reserved, and live unshipped-order buckets before matching sellable targets. Formula required when relevant: <code>target sellable = warehouse counted sellable - already non-sellable unshipped order units</code>.</div>
+    <div class="field"><strong>SA-18784 result:</strong> ok &mdash; 2 canopy iSKUs corrected, npm test 1 pass. Future count sessions to apply the new non-sellable/order-bucket guard before creating cleanup SAs.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-05" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
@@ -3905,6 +3893,26 @@ header.page::after{
   </div>
 
 </details>
+  <div class="entry" data-date="2026-06-05" data-shops="TT Adelmar, TT Murahya, Murahya, Hiranai, Karlmobel, das.nature2, ValueSnap, Kinata SG, MurahYa SG" data-platform="SB webapp + SiteGiant + TikTok MY" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation live continuation - buyer reply and stock drift audit (5/6)</span>
+      <span class="entry-meta">2026-06-05 14:01 MYT &#183; live SB 174 rows max 101151 &#183; read-only &#183; 0 SB/SiteGiant/customer-message writes &#183; TT Adelmar reply found &#183; TT Murahya chat blocked</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-warn">Partial / Warning</span>
+    </div>
+    <div class="entry-body">
+      <div class="full-tags"><span class="tag shop">TT Adelmar</span><span class="tag shop">TT Murahya</span><span class="tag shop">SiteGiant</span><span class="tag platform">TikTok MY</span><span class="tag result-warn">Read-only</span></div>
+      <div class="field"><strong>Scope checked:</strong> Continued from 2026-06-04 closeout plus existing 2026-06-05 stock-count correction. Pulled live SB API through profile k1b44nvg: 174 rows, max id 101151. Compared requested carry-overs only; rows 101150 and 101151 appeared after the 09:30 board audit and were noted but not processed in this carry-over run.</div>
+<div class="field"><strong>TT Adelmar 584324190793271260:</strong> SB before/after buyerDecision null -> null, contactSent true -> true, stockSetOos true -> true. SiteGiant order #1414976 remains Processed / Unpaid / Fulfilled; TikTok order detail is Awaiting collection. Chat readback: offer sent yesterday 15:32; buyer replied at 09:55 asking why the order has not been picked up and asking to expedite, but did not choose RDWHN10, PDBN10, or BL10IN. Result: buyer reply present, no valid offer-change decision yet; needs CS/Patricia instruction before any response or SB decision update.</div>
+<div class="field"><strong>TT Murahya 584323489193756530 and 584330313036433239:</strong> SB before/after buyerDecision null -> null, contactSent true -> true, stockSetOos true -> true. SiteGiant orders #1414914 and #1415622 remain Processed / Paid / Fulfilled. TT Murahya AdsPower profile k1as27m9 is logged out; explicit login attempt reached TikTok email-code plus puzzle verification and contact API returned 98001002 You must log in to continue. Result: marketplace order status checked, but buyer chat replies are unverified until profile access is restored.</div>
+<div class="field"><strong>GAZEBO 260527G9FGMFBR / GAZEBO-TENT-WHITE-3M:</strong> SB remains Cancelled / Not Required, contactSent true, stockSetOos true. Stock before from 4/6 closeout 2/2/0/0 Out Of Stock -> live 0/0/0/0 Out Of Stock after the later SA-18754 stock-count adjustment. Result: old still-finding-stock hold is now clean; do not re-adjust.</div>
+<div class="field"><strong>Audit rows 101144 / 101143 / 101140:</strong> 26060347E6Y3NJ FISHING-BUCKET-BLUE-40CM-WITH-HANDLE live 0/0/0/0 Out Of Stock; 2606020VA1SQ6U CWS-4F-KHAKI live 0/0/0/0 Out Of Stock; 2606010SWCYA21 DESKTOP-FLIP-CLOCK-SQ-FLAT-BLK changed from 0/0/0/0 OOS in 4/6 closeout to live 1/1/0/0 with status Out Of Stock. No CS remarks were added because Patricia completeness approval was not provided. Result: first two clean, DESKTOP-FLIP-CLOCK is a quantity mismatch needing WH confirmation if Patricia wants audit cleanup.</div>
+<div class="field"><strong>Completed status checks:</strong> 101128 and 101127 remain Accept Change / WH Confirmed Can Pack / Adjusted with SA-18745; 101116 and 101118 remain Adjusted with SA-18751; 101130 remains Cancelled / Not Required with SA-18747 and RLS-WHITE-S40 live 0/0/0/0 OOS; 101137 remains Cancelled / Not Required with SA-18708 and CWS-4F-KHAKI now clean 0/0/0/0 OOS.</div>
+<div class="field"><strong>Mismatch and approval watch:</strong> 101145 SNEAKERS-2STRIPES-WHITE-37 remains bounce-back/current drift, 4/6 was 3/3/0/0 Available after SA-18747, live now 2/2/0/0 Available. 101139 WOMENS-BLAZER-JACKET-BLK-XXXL-SG changed from 0/0/0/0 OOS in 4/6 closeout to live 1/1/0/0 with status Out Of Stock. No stock writes made; both need current WH/Patricia approval before any SiteGiant action.</div>
+<div class="field"><strong>External updates made:</strong> Patricia board entry only. No SB PATCH, no SiteGiant adjustment/status write, no seller-portal write, no buyer message, no Jira/form submission. Outstanding: restore TT Murahya access; decide approved response/action for TT Adelmar buyer reply; WH/Patricia decisions for SNEAKERS, WOMENS-BLAZER, and DESKTOP-FLIP-CLOCK quantity mismatches.</div>
+    </div>
+  </div>
 <!-- ENTRIES_END -->
     <div class="empty-state" id="emptyState" style="display:none;">No entries match your filters.</div>
   </div>
