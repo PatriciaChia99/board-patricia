@@ -639,6 +639,51 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-06" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked unchanged, 1 NEW SHIPPED order on KEDAI GARDEN requires SiteGiant master decrement x10 (6/6)</span>
+    <span class="entry-meta">2026-06-06 09:00 MYT &middot; 27 Shopee MY shops vs 18 SiteGiant ShopeeMY channels &middot; gap 9 stable since 13/5 &middot; KEDAI GARDEN 2606034CSCUXRN buyer ivaansoo Pink Octo Flower Pot Hanger TRANS x10 RM 5.10 Online Banking SHIPPED SPX Express &middot; NOT PHASE 4.5 (not kedaibarutmama2 / not SPayLater) = real stock-desync &middot; state.json BLOCKED (intended values in body)</span>
+    <span class="tag">sg-gap-monitor</span>
+    <span class="tag result-warn">Partial</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Saturday 09:00 MYT scheduled run. Re-diffed Shopee MY shop list (27 MY) against SiteGiant ShopeeMY channel set (18). Gap held at 9 unlinked shops since 13/5 (Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer). Read-only audit; no writes to Shopee, SiteGiant, or webapp. Per-shop 3-tab scan (all/toship/shipping) completed via <code>/api/selleraccount/subaccount/get_sig/?target_shop_id=&lt;id&gt;</code> + Shopee SC order tab DOM reads. <strong>1 new active stock-desync flag on KEDAI GARDEN:</strong> previously latest 260528JYMYAT3N (28/5 SPayLater auto-cancel by Shopee system) &rarr; now 2606034CSCUXRN (3/6 buyer <code>ivaansoo</code>, 50CM OCTO PLASTIC FLOWER POT HANGER Transparent x10 RM 5.10, Online Banking, SHIPPED via SPX Express West MY tracking <code>SPXMY069007879356</code>). PHASE 4.5 check: NOT the auto-cancel-prone SPayLater pattern (buyer is not <code>kedaibarutmama2</code> and payment is Online Banking, not SPayLater) &rarr; this is a real stock-desync. PIC manual decrement of 10 units on SiteGiant master inventory (SKU <code>HANGER HANGER TRANS</code>) recommended.</p>
+    <div class="field"><strong>Shopee MY shop list (Shopee SC, profile 70):</strong> 27 MY shops captured via <code>/api/selleraccount/subaccount/get_shop_list/</code> pages 1 + 2 (page-2 cursor reconstructed from page-1 pager metadata <code>[&quot;1780675175&quot;,&quot;1262266197&quot;]</code> because the captured page-2 URL had a stale <code>search_content=kmall:patricia</code> filter from the &quot;View all shops&quot; click). Region totals: MY 27, SG 2 &mdash; matches UI &quot;Shop (29)&quot;.</div>
+    <div class="field"><strong>SiteGiant ShopeeMY channels (sitegiant.co/marketplaces/shopee/all):</strong> 18 captured via DOM text scrape (AdelmarMY, BahEmas, BidariMu, das.nature, das.nature2, EmasGift, EncikPlastic, Hiranai, JagerHelmet, KarlMobel, Lenza_Eyewear, Lovento, Luxbiin, MasonGym, Murahya, SecretRacer, ValueSnap, WilmerMobel).</div>
+    <div class="field"><strong>Gap (9 unlinked, unchanged since 13/5):</strong> Chairsy (429078278), dutchgaming (503721641), Flashree (738554401), Solaree (1156025778), Gameniture (373454740), Atlusrack (336726327), Stationarylah (321734518), KEDAI GARDEN (289957447), FynnKoffer (214632596). No newly-linked shop this run.</div>
+    <div class="field"><strong>Per-shop activity scan (all / toship / shipping):</strong>
+      <ul>
+        <li>Chairsy: 1367 / 0 / 0 &mdash; latest <code>260211F1FRUFAH</code> Completed unchanged (count -8 cancellation drift) &mdash; quiet.</li>
+        <li>dutchgaming: 0 / 0 / 0 &mdash; no orders &mdash; quiet.</li>
+        <li>Flashree: 31 / 0 / 0 &mdash; latest <code>2409031DJJWV7T</code> Completed unchanged (count -1 drift) &mdash; quiet.</li>
+        <li>Solaree: 6 / 0 / 0 &mdash; latest <code>240718V5H3A1KA</code> Completed unchanged &mdash; quiet.</li>
+        <li>Gameniture: 0 / 0 / 0 &mdash; no orders &mdash; quiet.</li>
+        <li>Atlusrack: 6 / 0 / 0 &mdash; latest <code>260214NUX1Y8BX</code> Cancelled unchanged &mdash; quiet.</li>
+        <li>Stationarylah: 18 / 0 / 0 &mdash; latest <code>260414QW1M81CQ</code> Cancelled unchanged &mdash; quiet (webapp auto-redirect fired here once mid-scan; recovered with re-nav).</li>
+        <li><strong>KEDAI GARDEN: 188 / 0 / 1</strong> &mdash; previous latest <code>260528JYMYAT3N</code> &rarr; new latest <code>2606034CSCUXRN</code> (03/06 SHIPPED) &mdash; <strong>REAL stock-desync risk</strong>.</li>
+        <li>FynnKoffer: 412 / 0 / 0 &mdash; latest <code>260307GC8213CQ</code> Completed unchanged (count -3 drift) &mdash; quiet.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Active stock-desync (Shipping &gt; 0 RIGHT NOW):</strong> KEDAI GARDEN order <code>2606034CSCUXRN</code> &mdash; buyer <code>ivaansoo</code>, &ldquo;50CM OCTO PLASTIC FLOWER POT HANGER PLANTS HANGING GARDENING POTS DECO TOOLS TALI PASU GANTUNG&rdquo; (Transparent / SKU <code>HANGER HANGER TRANS</code>), qty x10, RM 5.10 Online Banking, tracking <code>SPXMY069007879356</code> SPX Express (West Malaysia). PIC manual decrement of <strong>10 units</strong> on SiteGiant master inventory.</div>
+    <div class="field"><strong>PHASE 4.5 special-case check (KEDAI GARDEN):</strong> Per skill v1.4, garden.mall has a recurring <code>kedaibarutmama2 + Pink Flower Pot Hanger x10 + SPayLater</code> auto-cancel pattern that should be lowered to monitor-only urgency. Today&rsquo;s order does NOT match: buyer is <code>ivaansoo</code> (not kedaibarutmama2) and payment is Online Banking (not SPayLater). Treat at full stock-desync urgency.</div>
+    <div class="field"><strong>State.json update BLOCKED:</strong> Write/Edit on <code>C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json</code> hit permission gate in this session. Intended values that SHOULD be patched so the next run doesn&rsquo;t re-flag the same order as &ldquo;new&rdquo;:
+      <ul>
+        <li><code>lastRunId</code>: <code>2026-06-06T09:00:00+08:00</code></li>
+        <li><code>lastRunTime</code>: <code>2026-06-06T09:00:00+08:00</code></li>
+        <li><code>previousRunId</code>: <code>2026-06-03T09:00:00+08:00</code></li>
+        <li><code>lastSeenOrderId.garden.mall</code>: <code>2606034CSCUXRN</code> (was <code>260528JYMYAT3N</code>)</li>
+        <li>All other 8 <code>lastSeenOrderId</code> entries unchanged from 3/6 snapshot</li>
+        <li>Add <code>perShop_2026_06_06</code> block mirroring per-shop scan above</li>
+        <li>Update <code>notes</code> field with run summary</li>
+      </ul>
+      Long-term fix: add <code>.claude/skills/sg-gap-monitor/state.json</code> to allowed-write paths in <code>settings.local.json</code>.
+    </div>
+    <div class="field"><strong>Report:</strong> Saved to <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-06-06.md</code>.</div>
+    <div class="field"><strong>Crosscheck:</strong> Recomputed gap count 9 matches reported. All 9 unlinked shops got the 3-tab scan; none silently skipped. Shopee SC + SiteGiant + get_sig endpoint sessions all healthy. Order count drift on Chairsy / Flashree / FynnKoffer attributed to historical cancellation falloff (no signal). No duplicate sg-gap-monitor entry for 2026-06-06 exists in this index.html before insertion.</div>
+    <div class="field"><strong>Result:</strong> warn &mdash; clean run with 1 actionable stock-desync flag on KEDAI GARDEN requiring PIC manual SiteGiant decrement. State.json patch deferred to interactive session (no impact on today&rsquo;s findings; tomorrow&rsquo;s run will repeat the KEDAI GARDEN flag until state is updated).</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-06" data-shops="MurahYa, KarlMobel, Adelmar, DasNature, JagerHelmet, Jager, Hiranai, Valuesnap, Lazada MurahYa" data-platform="TikTok MY + Lazada MY" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
