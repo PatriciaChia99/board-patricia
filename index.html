@@ -639,6 +639,54 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-06" data-shops="MurahYa, KarlMobel" data-platform="Shopee MY" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">parcelsplit-contact-crosscheck &mdash; 2 in-scope PASS, 0 mismatch, 3 KarlMobel today-skipped (1 dark watch), 0 TT/Laz in window (6/6)</span>
+    <span class="entry-meta">2026-06-06 10:00 MYT &middot; profile 70 k1b44nvg &middot; 2185 API rows &middot; 1841 shipped &middot; 5 in 7d window (2 Shopee MY in-scope evaluated + 3 Shopee MY skipped today) &middot; 0 TT 0 Lazada in window &middot; all PASS lit-system-record &middot; DOM 20/20 match</span>
+    <span class="tag">parcelsplit-contact-crosscheck</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Scheduled Saturday autonomous run via Claude on AdsPower profile 70 (k1b44nvg / Kmall:Patricia). Quiet day. Fetched <code>/api/parcel-split</code> fresh (2185 rows total, 1841 shipped, 344 open, 339 out of 7d window). 5 rows in window: 2 Shopee MY in-scope (both MurahYa, both <code>isContacted=true</code> &rarr; PASS lit-system-record); 3 Shopee MY skipped per skill rule (dated 6/6 MYT, bot runs tonight); 0 TikTok and 0 Lazada rows in window so the manual contact lane was not exercised. 0 customer-facing messages sent, 0 phone backfills, 0 BLOCKED. DOM sanity 20/20 visible rows matched API icon class. State files updated for both Claude and Codex.</p>
+    <div class="field"><strong>In-scope evaluated (2 PASS):</strong>
+      <ul>
+        <li><code>2606046RPC6UQ5</code> MurahYa Shopee MY (2026-06-05 11:44:40 UTC = 5/6 19:44 MYT, CANOPY-TENT-BEIGE-3X3M-4POLE-CLOTH-ONLY) &mdash; isContacted before/after: <code>true</code> / <code>true</code> (no change; new lit-system-record carry-over since 5/6 morning run) &mdash; phoneN 0 &mdash; PASS</li>
+        <li><code>260530QF8B667X</code> MurahYa Shopee MY (2026-05-30 12:30:32 UTC, carry-over) &mdash; isContacted before/after: <code>true</code> / <code>true</code> (unchanged from 4/6 and 5/6 runs) &mdash; phoneN 0 &mdash; PASS</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Shopee MY skipped today's adds (3 cases dated 6/6 MYT &mdash; per rule, bot runs tonight, re-evaluate at 6/7 run):</strong>
+      <ul>
+        <li><code>2606034HGG2FSU</code> KarlMobel (6/6 00:45 MYT, MDT-WHT140C6C, 1 tracking) &mdash; isContacted=true (already lit at scan time)</li>
+        <li><strong><code>680015944262015</code> KarlMobel</strong> (6/6 00:45 MYT, OFFICE-DESK-TSHAPE-2PERSON, <strong>4 trackings</strong> BEST CARGO) &mdash; isContacted=<strong>false</strong> &mdash; <strong>WATCH</strong>: multi-parcel dark; expect bot flip tonight. If still dark by 6/7 morning, will be flagged as mismatch and escalated to IT for bot send-log audit.</li>
+        <li><code>260604758G4E0T</code> KarlMobel (6/6 00:44 MYT, OFFICE-DESK-8PERSON-WHT, 8 trackings) &mdash; isContacted=true</li>
+      </ul>
+    </div>
+    <div class="field"><strong>TT/Lazada manual contact lane:</strong> 0 TikTok and 0 Lazada rows met the <code>isShipped=false &amp;&amp; date &gt;= 2026-05-29T16:00Z</code> filter today. Lane not exercised. No customer-facing messages sent. The 4/6 TT case <code>584332958100784574</code> (TT KarlMobel) shipped on 5/6 and remains shipped.</div>
+    <div class="field"><strong>Carry-over flips since 5/6 prior run:</strong>
+      <ul>
+        <li>Shipped &amp; graduated (10): <code>2606047A8P5JPY</code>, <code>2606045YFK95HF</code>, <code>2606035S0TRAP8</code>, <code>2606035J41WNKR</code>, <code>26060354TK8RW1</code>, <code>260603532J9NPE</code>, <code>26060349E9C0JU</code>, <code>26060349B93JDU</code>, <code>2606033PCVN4NR</code>, <code>2606047980XCWR</code></li>
+        <li><strong>Shipped while still dark (1, notable for trend tracking):</strong> <code>2606047980XCWR</code> KarlMobel was the 5/6 skipped-today (dark) case &mdash; bot did not flip overnight, then shipped. Single occurrence today &mdash; no action. If repeats this weekend, escalate to IT.</li>
+        <li>isContactedFalseToTrue flips while open: none</li>
+        <li>Fell out of 7d window: none (5/6 already aged out <code>260527G9FGMFBR</code>)</li>
+        <li>New PASS appeared in-scope: <code>2606046RPC6UQ5</code> MurahYa (dated 5/6 19:44 MYT, after 5/6 morning run)</li>
+        <li>New dark in-scope: none</li>
+        <li>Carried over unchanged: <code>260530QF8B667X</code> MurahYa</li>
+      </ul>
+    </div>
+    <div class="field"><strong>DOM sanity sample (20/20 match):</strong> Top 21 rendered rows on page 1 inspected; 4 of the 5 target IDs (2 in-scope + 3 skipped-today) directly visible; all 4 visual icon classes matched API <code>isContacted</code> truth (<code>text-brand-orange</code> &harr; <code>true</code>, <code>text-warm-ink-disabled</code> &harr; <code>false</code>). 5th target (<code>260530QF8B667X</code> from 30/5) is on a later page &mdash; API truth used. No render disagreement.</div>
+    <div class="field"><strong>Artifacts:</strong>
+      <ul>
+        <li>Report: <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-06-06.md</code></li>
+        <li>Claude state: <code>C:\Users\tessf\.claude\skills\parcelsplit-contact-crosscheck\state.json</code> (updated)</li>
+        <li>Codex state: <code>C:\Users\tessf\code\codex-lab\.agents\skills\parcelsplit-contact-crosscheck\state.json</code> (updated)</li>
+        <li>ntfy: start + completion sent to topic <code>awesomeree-patricia-ops-7h3k9q</code></li>
+      </ul>
+    </div>
+    <div class="field"><strong>Reason:</strong> Daily scheduled crosscheck per skill cadence (10:00 MYT, weekend-incl) verifying icon state consistency with phone-request evidence after overnight contact bot pass. Honors updated Codex skill spec (skip-today applies to Shopee MY only; TT/Laz processed same-day with 2+ tracking). Read-only on the Shopee MY lane; manual contact lane not triggered today (empty scope).</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 2/2 Shopee MY PASS, 0 mismatch, 0 manual-check, 0 TT/Laz messages required. Bot keeping up. Watch <code>680015944262015</code> for 6/7 morning verification.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-06" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
