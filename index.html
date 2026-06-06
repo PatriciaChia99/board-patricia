@@ -639,6 +639,26 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-06" data-shops="DasNatureSG2, Karlmobel, Murahya, TT Adelmar, das.nature, Karlmobel" data-platform="Shopee SG + Shopee MY + TikTok MY + SiteGiant" data-result="warn">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation scheduled weekend run &mdash; 174 rows / 25 cases checked / 4 SB PATCHes / 0 buyer sends (6/6)</span>
+    <span class="entry-meta">2026-06-06 10:20 MYT &middot; profile 70 k1b44nvg + SG CS k1arw890 probe &middot; 25 SiteGiant order lookups + 55 iSKU lookups &middot; 2 cancelled rows cleaned &middot; 2 SG contacts skipped login-blocked &middot; no SiteGiant stock write</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag">scheduled</span>
+    <span class="tag result-warn">Partial</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Scheduled Saturday SB Variation run for 2026-06-06 MYT. Pulled live <code>/api/sb-variation</code> (174 rows, newest 101161), checked recent/outstanding open cases by marketplace order ID first, and verified SiteGiant order/iSKU evidence before any write. Customer-contact standing approval was applied conservatively: no buyer message was sent because Shopee SG customer thread/no-prior-contact verification was blocked by seller login on profile <code>k1arw890</code>.</p>
+    <div class="field"><strong>SB webapp changes made (all PATCH 200, verified by post-PATCH API pull):</strong> <code>101149</code> Karlmobel / Shopee MY / <code>2606046XA1VQ4G</code>: buyerDecision <code>null</code> &rarr; <code>["Cancelled"]</code>, whConfirmStatus <code>null</code> &rarr; <code>["Not Required"]</code>, stockAdjustmentStatus <code>null</code> &rarr; <code>["Not Required"]</code>, csRemarks <code>null</code> &rarr; scheduled cancellation-cleanup remark; reason SiteGiant #1417560 Cancelled/Paid/Fulfilled. <code>101148</code> Murahya / Shopee MY / <code>2606023474VVX0</code>: same field changes, reason SiteGiant #1415265 Cancelled/Paid/Fulfilled.</div>
+    <div class="field"><strong>SB stock flags / remarks:</strong> <code>101158</code> DasNatureSG2 / Shopee SG / <code>2606047RT6JRF1</code>: stockSetOos <code>false</code> &rarr; <code>[true]</code>, csRemarks <code>null</code> &rarr; SiteGiant OOS + SG-login-block remark; contactSent stayed <code>false</code>. Evidence: order #1418277 Processed/Paid/Fulfilled; <code>PSB-ROSERED-0.95KG</code> 1/0/1/0 out_of_stock; replacements <code>PSB-KHAKI-0.9KG</code> and <code>PSB-PURPLE-0.95KG</code> available. <code>101157</code> DasNatureSG2 / Shopee SG / <code>2606059CWEUAY1</code>: stockSetOos <code>false</code> &rarr; <code>[true,true]</code>, csRemarks <code>null</code> &rarr; 2-slot OOS + SG-login-block remarks; contactSent stayed <code>false</code>. Evidence: order #1419157 Processed/Paid/Fulfilled; <code>PSB-ORANGE-0.95KG</code> 2/0/2/0 out_of_stock and <code>PSB-ROSERED-0.95KG</code> 1/0/1/0 out_of_stock.</div>
+    <div class="field"><strong>Customer contact result:</strong> 0 sent. <code>101157</code> and <code>101158</code> were skipped because live order/shop/iSKU facts were verified but Shopee SG CS profile <code>k1arw890</code> redirected to login, so customer thread and no-prior-contact could not be verified. Row <code>101157</code> also has two affected SKUs, so Patricia/manual CS should confirm wording if the approved singular offer-change template is not sufficient. No non-template buyer wording was used.</div>
+    <div class="field"><strong>Stock action items only (no SiteGiant write):</strong> 5 items: <code>PSB-ORANGE-0.95KG</code> reserved OOS 2/0/2/0; <code>PSB-ROSERED-0.95KG</code> reserved OOS 1/0/1/0; <code>RDWHN10</code> TT Adelmar accepted-change shipped-order verification before any -1; <code>HCS-BLACK</code> das.nature accepted-change shipped-order -1 proposal after approval; <code>CWS-4F-KHAKI</code> 8/8/0/0 but stock_status out_of_stock mismatch. Weekend instruction honored: no SiteGiant stock/status/reserved adjustment.</div>
+    <div class="field"><strong>Files / evidence:</strong> report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-scheduled-2026-06-06.md</code>; initial API <code>_raw_scheduled_2026-06-06.json</code>; post-PATCH API <code>_raw_scheduled_2026-06-06-after-patch.json</code>; SiteGiant evidence <code>_sitegiant_evidence_2026-06-06.json</code>.</div>
+    <div class="field"><strong>Result / follow-up:</strong> partial &mdash; live audit and safe SB webapp updates completed; customer contact blocked by Shopee SG login and not sent; 5 stock action items handed to Patricia/WH. Re-authenticate SG CS profile before messaging rows 101157/101158; keep weekend no-stock-write rule for 2026-06-07 unless fresh exact approval is given.</div>
+  </div>
+</div>
+
 <div class="entry" data-date="2026-06-06" data-shops="MurahYa, KarlMobel" data-platform="Shopee MY" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
