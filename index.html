@@ -639,6 +639,63 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-07" data-shops="TT Murahya,das.nature2,Shopee SG,ValueSnap,das.nature,Murahya,Hiranai" data-platform="TikTok MY + Shopee MY + Shopee SG + SiteGiant" data-result="warn">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation - 7/6 scheduled weekend run: 158 live rows / 2 SB updates / 0 messages / 8 stock action items</span>
+    <span class="entry-meta">2026-06-07 09:35-10:12 MYT &middot; checked 24 recent rows + 3 carryovers &middot; SiteGiant 15 orders / 25 iSKUs &middot; sent 0 &middot; skipped-cancelled 4 &middot; SB PATCH 2 &middot; stock writes 0 &middot; report saved</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-warn">Partial</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Scheduled weekend SB Variation run for 2026-06-07 MYT. Pulled live <code>/api/sb-variation</code> through authenticated employee browser: 158 rows, max id 101163. Reviewed recent/current rows 101140-101163 plus carryovers 101133, 101136, 101145. Verified SiteGiant order/iSKU evidence before stock conclusions. No customer message satisfied every weekend-send condition, so sent count is 0. No SiteGiant stock adjustment, Jira/form update, seller-portal write, WhatsApp/off-platform contact, or non-template wording used.</p>
+
+    <div class="field"><strong>SB webapp changes, before &rarr; after:</strong>
+      <ul>
+        <li><code>101151 / 2606035BCMR3TE / das.nature2 / Shopee MY / Offer Change</code>: reason = SiteGiant order #1416685 verified <strong>Cancelled / Paid / Fulfilled</strong>. <code>buyerDecision</code> <code>[&quot;Accept Change&quot;]</code> &rarr; <code>[&quot;Cancelled&quot;]</code>; <code>whConfirmStatus</code> <code>[&quot;Pending WH Confirm&quot;]</code> &rarr; <code>[&quot;Not Required&quot;]</code>; <code>stockAdjustmentStatus</code> <code>[&quot;Not Adjusted&quot;]</code> &rarr; <code>[&quot;Not Required&quot;]</code>; <code>acceptedSku</code> <code>[&quot;FB-BLK-POL-HLDR&quot;]</code> &rarr; <code>null</code> (SB endpoint cleared after cancellation); <code>shipQty</code> <code>[3]</code> &rarr; <code>null</code> (SB endpoint cleared after cancellation); <code>csRemarks</code> <code>null</code> &rarr; evidence remark added 2026-06-07 10:11 MYT. Unchanged: <code>contactSent=true</code>, <code>stockSetOos=true</code>. Result: cancellation cleanup only, no buyer message, no accepted-change deduction, no SiteGiant write.</li>
+        <li><code>101163 / 584376966935119001 / TT Murahya / TikTok MY / Offer Change</code>: reason = new open TT row; marketplace order verified Awaiting collection, ship-by 2026-06-09 23:59:59, seller SKU <code>GXTSTARL-GREY-XL</code>, buyer <code>h*********i</code>; SiteGiant order #1419979 verified <strong>Processed / Paid / Fulfilled</strong>. <code>stockSetOos</code> <code>false</code> &rarr; <code>true</code>; <code>csRemarks</code> <code>null</code> &rarr; evidence remark added 2026-06-07 10:11 MYT. Unchanged: <code>contactSent=false</code>, <code>buyerDecision=null</code>, <code>acceptedSku=null</code>, <code>shipQty=null</code>. Result: stock flag recorded, no customer message because exact TikTok chat thread/no-prior-contact was not verified, no SiteGiant write.</li>
+      </ul>
+    </div>
+
+    <div class="field"><strong>Customer contact decisions:</strong>
+      <ul>
+        <li><code>101163 / TT Murahya / TikTok MY</code>: live marketplace order verified, affected iSKU verified, replacements available, but TikTok chat direct order route opened an empty list and no per-order contact control was found. No approved template sent.</li>
+        <li><code>101157 / 2606059CWEUAY1 / Shopee SG</code>: SiteGiant order #1419157 Processed/Paid/Fulfilled; exact affected iSKUs <code>PSB-ORANGE-0.95KG</code> <code>2/0/2/0</code> OOS and <code>PSB-ROSERED-0.95KG</code> <code>1/0/1/0</code> OOS; suggestions available. Shopee SG profile <code>k1arw890</code> redirected order page to login and chat crashed. No message, no SB update today.</li>
+        <li><code>101158 / 2606047RT6JRF1 / Shopee SG</code>: SiteGiant order #1418277 Processed/Paid/Fulfilled; exact affected iSKU <code>PSB-ROSERED-0.95KG</code> <code>1/0/1/0</code> OOS; suggestions available. Shopee SG profile <code>k1arw890</code> redirected order page to login and chat crashed. No message, no SB update today.</li>
+        <li><code>101151 / das.nature2 / Shopee MY</code>: cancelled order, so no buyer message and no accepted-change deduction.</li>
+      </ul>
+    </div>
+
+    <div class="field"><strong>Stock action items (evidence only, no weekend writes):</strong>
+      <ul>
+        <li><code>GXTSTARL-GREY-XL</code> for 101163: SOH/Sellable/Reserved/Allocated <code>3/3/0/0</code> but Stock Status Out Of Stock. Verify whether 3 units are truly not sellable or stock status should be corrected later.</li>
+        <li><code>FB-ORNG-POL-HLDR</code> for 101151: cancelled row, SOH/Sellable <code>3/3</code> but Stock Status Out Of Stock. Review later whether to keep OOS or return available.</li>
+        <li><code>PSB-ORANGE-0.95KG</code> for 101157: <code>2/0/2/0</code> Out Of Stock, reserved/allocated review needed.</li>
+        <li><code>PSB-ROSERED-0.95KG</code> for 101157/101158: <code>1/0/1/0</code> Out Of Stock, reserved/allocated review needed.</li>
+        <li><code>RDWHN10</code> for 101146: accepted-change stock deduction proposal only after approval + WH confirmation: <code>13/13/0/0</code> &rarr; <code>12/12/0/0</code>.</li>
+        <li><code>HCS-BLACK</code> for 101133: accepted-change stock deduction proposal only after approval + WH confirmation: <code>126/126/0/0</code> &rarr; <code>125/125/0/0</code>.</li>
+        <li><code>KC-WHT-150CM-RT-STV</code> for 101147: suggested replacement now <code>0/0/0/0</code> while Stock Status says Available. Needs Patricia/warehouse review.</li>
+        <li><code>DESKTOP-FLIP-CLOCK-SQ-FLAT-BLK</code> for 101140: cancelled row, exact SKU now <code>1/1/0/0</code> while Stock Status Out Of Stock. Needs stock-status review.</li>
+      </ul>
+    </div>
+
+    <div class="field"><strong>Other checked rows:</strong> 101146 RDWHN10 shipped/unpaid/fulfilled stock action only; 101133 HCS-BLACK shipped/paid/fulfilled stock action only; 101141/101142 CT outer-layer waiting buyer with replacement D.GREEN available <code>36/36/0/0</code>; 101136 gazebo completed/paid/fulfilled and SB already Cancelled/Not Required; 101145 sneakers cancelled/paid/fulfilled and SB already Cancelled/Not Required.</div>
+
+    <div class="field"><strong>Evidence files:</strong>
+      <ul>
+        <li>Report: <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-scheduled-2026-06-07.md</code></li>
+        <li>Raw before: <code>C:\Users\tessf\Documents\sbvariation-reports\_raw_scheduled_2026-06-07.json</code></li>
+        <li>Raw after PATCH: <code>C:\Users\tessf\Documents\sbvariation-reports\_raw_scheduled_2026-06-07-after-patch.json</code></li>
+        <li>SiteGiant evidence: <code>_sitegiant_ui_evidence_2026-06-07.json</code>, <code>_sitegiant_item_GXTSTARL-GREY-XL_2026-06-07.json</code>, <code>_sitegiant_ui_evidence_2026-06-07-carryover.json</code></li>
+        <li>Marketplace contact evidence: <code>_tiktok_ttmurahya_contact_check_2026-06-07.json</code>, <code>_tiktok_ttmurahya_order_controls_2026-06-07.json</code>, <code>_shopee_sg_contact_check_2026-06-07.json</code></li>
+      </ul>
+    </div>
+
+    <div class="field"><strong>Reason / Trigger:</strong> Scheduled daily/weekend SB Variation run for 2026-06-07 MYT with standing weekend approval for customer messages only when every skill condition is satisfied and only approved templates are used. Conditions were not fully satisfied for any send.</div>
+    <div class="field"><strong>Result:</strong> partial &mdash; Live SB pull, marketplace/SiteGiant verification, report, and 2 allowed SB webapp updates completed. 0 messages sent, 0 stock writes. Outstanding: TT thread verification for 101163, Shopee SG login/chat for 101157/101158, and 8 Patricia/warehouse stock action items.</div>
+  </div>
+</div>
+
 <div class="entry" data-date="2026-06-07" data-shops="MurahYa,KarlMobel" data-platform="Shopee MY" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
