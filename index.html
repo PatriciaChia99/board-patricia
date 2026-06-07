@@ -639,6 +639,84 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-07" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checkkinataorder &mdash; scheduled AM run: 51 TPs (44 NEW + 7 STALE carry SGD 225.31); 2 STATE FLIP WINS angxiangwei HV S$79.71 + qiutingg S$7.03; vaniajay panel ESCALATED Due-2h; salihin76 Processed NEW Risk-of-Late (7/6)</span>
+    <span class="entry-meta">2026-06-07 ~10:35 MYT &middot; profile 70 (k1b44nvg, kmall:patricia) &middot; 51 TPs (44 NEW + 7 STALE) &middot; Processed 2 STALE incl 1 Risk-of-Late &middot; R/R panel 4 (SGD 84.83) &middot; State flips +SGD 86.74 pulled from refund track &middot; R/R Total 630 stable &middot; 0 NEW losses</span>
+    <span class="tag">checkkinataorder</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Sunday AM scheduled run via AdsPower profile 70 (k1b44nvg, kmall:patricia, 30th consecutive day primary &mdash; k1asxln6 reassigned to TT JagerHelmet per <code>reference_kinata_profile_id.md</code>). Shop-switcher &rarr; Kinata Details &rarr; seller.shopee.sg verified kinatasg. 51 TPs scraped across pages 1+2; numeric_id&rarr;create_time fetched via batched <code>/api/v3/order/get_one_order_list?order_id=&lt;num&gt;</code> for all 51 (faster than detail-page navigation). R/R panel + monitor via <code>.return-row-item</code> DOM across 2 pages.</p>
+    <div class="field"><strong>State flips since 6/6 PM (positive):</strong>
+      OID 260525AVRHVKG4 angxiangwei HV S$79.71 Smart Dustbin: In Return offer-partial Day 9 &rarr; <strong>Request Cancelled</strong> &mdash; CS escalation finally bit, buyer/Shopee withdrew refund. S$79.71 HV recovered.
+      OID 260526D5UXEQ63 qiutingg S$7.03 Sealed Cardigan: In Validation Due-1d &rarr; <strong>In Dispute</strong> &mdash; CS submitted dispute via Singpost POPstation RNSHS00836156. Pulled from auto-refund track.
+      Combined SGD 86.74 pulled OFF refund track today (no DB writes &mdash; observation only, Kinata SG webapp not in DB scope).
+    </div>
+    <div class="field"><strong>Panel exposure (4 cases SGD 84.83, sorted by deadline):</strong>
+      vaniajay 260530QP4EXRA4 S$11.41 Sig diff Floral Blouse In Validation Due <strong>~2 hours</strong> (escalated from 6/6 PM Due-1d &mdash; CS did NOT validate overnight); IMMINENT AUTO-REFUND.
+      angelynsee 260531S9NGN42D S$26.88 Sealed Dustbin 2nd In Validation Due 1d (was Due-2d 6/6 PM).
+      angelynsee 260527F3JMWX7Y S$19.55 Sealed Dustbin 1st In Validation Due 1d (was Due-2d 6/6 PM).
+      anaqaisha 260519T7TKF6M8 S$26.99 Wrong-item Soap Flower (Pink Cream vs Red Love) In Return Pick Up Done 03-06 SPXSG067393039365 Resp by 09-06 NEW.
+    </div>
+    <div class="field"><strong>NEW TP intake (44 orders ~SGD 795 estimate):</strong>
+      14 created 07/6 SGT 00:25-12:01 &mdash; HV: leejason815 60L Cosmos Dustbin S$216.32 VHV / wnats Dish Rack SS 2-Tier S$67.83 / 3zq4d71ax9 Sleeping Bag x2 S$37.20.
+      30 created 06/6 SGT 17:55-23:54 &mdash; HV: cindy.neo SpinBin 45L Wheeled S$45.20 / ulyjv1i5nh Metal Arch Curve 0.8M&times;1.8M Gold S$37.69 / augybogy SpinBin 20L Wheeled S$34.08 / tanmyjessica Wool-Silk Thermal Set S$22.11.
+      All ship-by 08/06/2026 (auto-cancel deadline TOMORROW).
+    </div>
+    <div class="field"><strong>STALE carry from 6/6 PM (7 TPs SGD 225.31, T+17-20h):</strong>
+      nursxhirx 260606CJU3VTR1 Magnus 50L Black Dustbin S$69.71 HV (T+18h);
+      keyc2929 260606CH8DMHRV BT Foldable Keyboard Gray S$25.32 (T+19h);
+      pearlythx 260606CGTQXT7H Beverage Dispenser 6L Silver+Black combo S$33.09 HV (T+19h);
+      ridzuanng 260606CE0WJ732 Wool Sweater Half-Neck Gray L bulk S$66.69 HV (T+20h);
+      jailani13xx 260606CDC9KVGE SlimFit 10L Black Dustbin S$16.38 (T+20h);
+      17lqpdy37y 260606CD9SHYDX Water Jug 2.5L S$4.34 (T+20h);
+      ras.ar 260606CC3MTX8P Casual Blazer Black XL S$9.78 (T+20h).
+      Sunday operator delay. Auto-cancel 08/06 deadline tomorrow.
+    </div>
+    <div class="field"><strong>Processed (2 STALE, SGD 59.24):</strong>
+      noredahkalabas 260606BN0ETF8C Simplex 6L Gold Dustbin x2 S$33.50 HV &mdash; pickup pending, "Cancelled In 1 day" warning by 07/06/2026 23:30.
+      salihin76 260606B12P5MUE Wedding Arch 1.5&times;2M Gold S$25.74 HV &mdash; NEW <strong>Risk of Late shipment</strong> flag (was unflagged 6/6 PM). Operator chase SPXSG067625106196 + SPXSG066138726456 pickup TODAY.
+    </div>
+    <div class="field"><strong>R/R monitor (10 cases ~SGD 359.06):</strong>
+      radhakuppuswami HV S$76.50 return-by 09-06 STABLE;
+      dana_29125 VHV S$73.71 return-by 11-06 6/6 PM partial-WIN HOLD;
+      anfiiiia HV S$93.56 offer-partial Day 5 unactioned;
+      lloydobial HV S$40.06 offer-partial Day 6 unactioned;
+      scedw40onz HV S$44.13 R36S Sig diff offer-partial Day 9 unactioned (worst now angxiangwei cleared);
+      phyniques HV S$41.65 Pick Up Done 05-06 dispute window opens TODAY 07-06;
+      localsg S$27.88 Pick Up Done 04-06 dispute window opens TODAY 07-06;
+      kannzerr S$9.48 Pick Up Done 06-06 dispute window 09-06;
+      irenecxe S$19.10 Pick Up Done 06-06 dispute window 09-06;
+      amythystc136 S$10.49 Pick Up Done 06-06 dispute window 09-06.
+      Combined HV ghosting at risk: SGD 177.75 (anfiiiia+lloydobial+scedw40onz).
+    </div>
+    <div class="field"><strong>Booked losses/wins (UNCHANGED from 6/6):</strong>
+      LOSSES SGD 82.08 (dir1983 HV S$39.10 + emnlhji45d S$15.70 + revenantak S$11.41 + zakikihassen S$9.56 + shafura241 S$6.21) &mdash; all "Request Refunded" confirmed.
+      WINS net +SGD 1.97 buffer (atqhdx S$10.19 + unava78 S$22.82 Other Adj comp) HOLD.
+      0 NEW losses + 0 NEW booked wins AM 7/6.
+    </div>
+    <div class="field"><strong>Carry-over crosscheck vs 6/6 PM 17:30 report:</strong>
+      3 from 6/6 AM TPs (windyting1314 + initialcw + deeanabar) cleared to Shipping &mdash; 0 STALE older;
+      7 from 6/6 PM TPs STILL UNSHIPPED 17-20h later (Sunday operator delay);
+      2 from 6/6 PM Processed STALE, salihin76 now Risk-of-Late + noredahkalabas Cancellation warning;
+      vaniajay Due-1d &rarr; Due-2h (CS DID NOT validate &mdash; auto-refund imminent);
+      angelynsee&times;2 Due-2d &rarr; Due-1d (still ghosting);
+      qiutingg validated &amp; disputed (out of panel);
+      anaqaisha new panel case (R36S Soap Flower wrong-item);
+      angxiangwei HV S$79.71 REQUEST CANCELLED (recovered from Day 9 ghost);
+      dana_29125 + radhakuppuswami + trupti23 returns on-track;
+      anfiiiia/lloydobial/scedw40onz HV offer-partial Day 5/6/9 ghosting (SGD 177.75 HV at risk);
+      phyniques HV + localsg dispute window opens TODAY 07-06.
+    </div>
+    <div class="field"><strong>Tab counts (06/6 PM &rarr; 07/6):</strong> To Ship 9&rarr;53 (51 TP + 2 Processed); Processed 2&rarr;2 STALE; Risk-of-Late 0&rarr;1; Shipping 223&rarr;204; R/R panel All 4&rarr;4 (Due-1d 2&rarr;3, Due-2d 4&rarr;3); R/R Total 630&rarr;630 (no NEW intake AM).</div>
+    <div class="field"><strong>Shop:</strong> Kinata SG (kinatasg). <strong>Platform:</strong> Shopee SG (seller.shopee.sg).</div>
+    <div class="field"><strong>Reason:</strong> Daily scheduled Sunday AM audit per <code>checkkinataorder</code> skill. Full pre-completion evidence table per <code>[[feedback_pre_completion_evidence_table_required]]</code> (51 TP + 2 Processed + R/R panel + monitor all paginated). All 51 TP create_times fetched via batched API call after extracting numeric_id from <code>a.order-card[href]</code> (vs slow per-page navigation). Report saved (overwrite) to <code>C:\Users\tessf\Documents\kinata-reports\kinata-report-2026-06-07.md</code>. Schedule-log append blocked by permission scope; main report intact.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; full sweep completed. 51 TPs documented with exact SGT order times. 2 state-flip WINs (SGD 86.74 pulled from refund track). vaniajay Due-2h CRITICAL flagged for immediate operator/CS action. 7 STALE TPs + 2 STALE Processed flagged for Sunday operator chase. R/R panel 4 cases SGD 84.83 exposure documented. 10-case monitor SGD 359.06 documented incl 3 HV ghosting SGD 177.75. 0 NEW losses + cumulative May+June SGD 520.42 unchanged. WhatsApp send SKIPPED per task instruction (QR-blocker).</div>
+  </div>
+</div>
+
 <div class="entry" data-date="2026-06-07" data-shops="TT KarlMobel,TT MurahYa,TT Valuesnap,TT JagerSafety" data-platform="TikTok MY" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
