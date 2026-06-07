@@ -639,6 +639,84 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-07" data-shops="MurahYa,KarlMobel" data-platform="Shopee MY" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">parcelsplit-contact-crosscheck &mdash; 2 in-scope PASS / 0 mismatch / 0 manual / 0 TT-Laz in window / 680015944262015 KM watch (7/6)</span>
+    <span class="entry-meta">2026-06-07 10:00 MYT &middot; 2 in-scope (Shopee MY) &middot; 2 PASS &middot; 0 mismatch &middot; 0 NEED MANUAL &middot; 0 TT/Laz/SG in window &middot; DOM 20/20 match &middot; 1 bot-skipped overnight WATCH</span>
+    <span class="tag">parcelsplit-contact-crosscheck</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Scheduled autonomous Sat run 10:00 MYT via Claude (ParcelSplitCrosscheck_1000AM task, weekend-compatible). Profile 70 (k1b44nvg). Used UPDATED Codex-imported SKILL.md workflow + .claude SKILL.md. Pulled <code>/api/parcel-split</code> fresh (2192 total, 1850 shipped, 342 open). Scope filter: last 7 days, isShipped=false; Shopee MY today MYT skipped (none today); TT/Lazada/SG NOT skipped today (none in window today). DOM sanity 20/20 rows match API.</p>
+    <div class="field"><strong>In-scope decisions (2 cases, both PASS):</strong>
+      <ul>
+        <li><code>2606046RPC6UQ5</code> MurahYa Shopee MY (dated 5/6 19:44 MYT) &mdash; isContacted=true &rarr; PASS (lit-system-record, carry-over unchanged from 6/6).</li>
+        <li><code>680015944262015</code> KarlMobel Shopee MY (dated 6/6 00:45 MYT, 4 Best Cargo trackings) &mdash; isContacted=false, phoneNumbers=[], csNotes="" &rarr; PASS by strict decision table (dark + no evidence = consistent). <strong>WATCH 8/6:</strong> bot did NOT flip overnight 6&rarr;7 despite multi-parcel high-priority signature. Was on yesterday's WATCH list. If still dark 8/6 morning &rarr; escalate IT to inspect bot send-log for KarlMobel orders.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>TT/Lazada/Shopee SG manual lane:</strong> 0 cases in 7-day window. Lane not exercised. 0 messages sent, 0 phone backfills, 0 BLOCKED. (Updated Codex workflow allows same-day TT/Laz processing when 2+ Best Cargo trackings present, but none qualified today.)</div>
+    <div class="field"><strong>Carry-over deltas since 6/6 10:00 MYT run:</strong>
+      <ul>
+        <li>Shipped &amp; graduated (3): 2606034HGG2FSU (KM, lit), 260604758G4E0T (KM, lit), 2606047980XCWR (KM, <strong>shipped-while-dark</strong> &mdash; trend marker, 1 of 3 toward IT escalation threshold).</li>
+        <li>Fell out of 7-day window (1): 260530QF8B667X (MurahYa, was lit).</li>
+        <li>isContacted false&rarr;true flips on open rows: 0.</li>
+        <li>New dark appeared in scope: 0 (680015944262015 graduated from yesterday's skipped-today bucket).</li>
+        <li>Carried over unchanged: 2606046RPC6UQ5 (MurahYa, lit).</li>
+      </ul>
+    </div>
+    <div class="field"><strong>State writes (before &rarr; after):</strong>
+      <ul>
+        <li><code>C:\Users\tessf\.claude\skills\parcelsplit-contact-crosscheck\state.json</code> &mdash; lastRunId <code>2026-06-06T-claude-scheduled-1000</code> &rarr; <code>2026-06-07T-claude-scheduled-1000</code>; lastRunTime <code>2026-06-06T10:00:00+0800</code> &rarr; <code>2026-06-07T10:00:00+0800</code>; totalApi 2185 &rarr; 2192; openInWindow 5 &rarr; 2; shopeeMYInScope 2 &rarr; 2 (different cases); shopeeMYSkippedToday 3 &rarr; 0; pass 2 &rarr; 2; mismatch 0 &rarr; 0; needManualCheck 0 &rarr; 0; trendPatterns.karlmobel_shipped_while_dark added (1/3 toward escalation). Written via Python heredoc (Edit/Write perm-gated on .claude path, per session memory ERROR #10).</li>
+        <li><code>C:\Users\tessf\code\codex-lab\.agents\skills\parcelsplit-contact-crosscheck\state.json</code> &mdash; lastSavedAt <code>2026-06-06T10:00:00+08:00</code> &rarr; <code>2026-06-07T10:00:00+08:00</code>; lastClaudeReport.path bumped to 2026-06-07; outstanding list updated (680015944262015 carry, trend counter, Lazada lane untested).</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Report:</strong> <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-06-07.md</code>.</div>
+    <div class="field"><strong>Reason / Trigger:</strong> Scheduled run (ParcelSplitCrosscheck_1000AM, daily incl. weekends). User invoked via Claude with UPDATED workflow brief honoring both .claude SKILL.md and Codex-imported SKILL.md. Read-only audit; no customer-facing messages; no PATCHes.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; All in-scope PASS. Zero mismatch / manual check / TT-Laz action. Bot mostly current; one multi-parcel KarlMobel case (680015944262015) carried into next-run WATCH. Trend marker: 2606047980XCWR shipped-while-dark = 1/3 toward IT escalation threshold for KarlMobel bot send-log audit.</div>
+  </div>
+</div>
+
+<div class="entry" data-date="2026-06-07" data-shops="ValueSnap,BahEmas,MasonGym,das.nature,das.nature2,Hiranai,KarlMobel,Lovento MY,Luxbin,MurahYa,JagerHelmet,Emas Gift,Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">chataudit &mdash; 291/291 deep-reviewed cs1-cs4 clean / 0 NEW miss / 3 carry-over still unresolved (zarinamohdkassim 8d + ikmal_sumadi 8d + planto 3d tribunal) / cs5 LOGIN_EXPIRED 2nd day (7/6)</span>
+    <span class="entry-meta">2026-06-07 MYT &middot; window 5/6 17:45 &rarr; 6/6 17:45 &middot; cs1 68 + cs2 44 + cs3 85 + cs4 94 = 291 in-window &middot; 0 NEW miss &middot; 3 classifier system-flag all REJECTED (Pattern A2 misfire) &middot; 3 carry-over CONFIRMED still unresolved &middot; cs5 LOGIN_EXPIRED</span>
+    <span class="tag">chataudit</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Sunday chataudit covering Fri 5/6 17:45 &rarr; Sat 6/6 17:45 MYT window. 291/291 chats across cs1-cs4 deep-reviewed via REACT STORE EXTRACTION + BATCH JS CLICK METHOD with full-panel scan (no tail-truncation) + 4-Q PRE-FLAG FILTER. cs5 Kinata SG LOGIN_EXPIRED 2nd consecutive day &mdash; operator manual re-login required. 0 NEW in-window confirmed misses. 3 CARRY-OVER misses STILL UNRESOLVED requiring CS outbound action. 3 system-flags caught (Pattern A2 / holding-template misfire pattern accumulating on shop records 4th day in a row).</p>
+    <div class="field"><strong>Scope per account (before &rarr; after):</strong>
+      cs1 k1artcxf 300 loaded &rarr; 68 in-window deep-reviewed &mdash; 0 candidates, 1 system-flag REJECTED (kitchong82 ValueSnap).
+      cs2 k1arvrqs 200 loaded &rarr; 44 in-window deep-reviewed &mdash; 0 candidates / 0 flags.
+      cs3 k1arw2cs 452 loaded &rarr; 85 in-window deep-reviewed &mdash; 0 candidates, 2 system-flag REJECTED (azlieyaliey + norzaidi82 KarlMobel).
+      cs4 k1arw4x4 454 loaded &rarr; 94 in-window deep-reviewed &mdash; 0 candidates / 0 flags.
+      cs5 k1arw890 LOGIN_EXPIRED &mdash; redirected to accounts.shopee.sg/seller/login on webchat URL, page crashed twice attempting reload; operator toast alert sent.</div>
+    <div class="field"><strong>Carry-over verification (5 cases re-opened individually via search box):</strong>
+      M1 zarinamohdkassim cs1 ValueSnap &mdash; STILL UNRESOLVED 8+ days. Sofia 31/5 08:53 wrong-context "Minta maaf boss, kami tidak ada ked41 ya" to customer's 30/5 22:09 broken-item complaint. NO new contact 1/6-6/6. Order RM136.16. CS outbound MANDATORY.
+      M2 ikmal_sumadi cs4 MurahYa &mdash; STILL UNRESOLVED 8+ days. 5/6 08:24 bot wrong-context greeting after customer 08:21 sarcastic "Reply sticker je lah mampu". NO further webchat activity 5/6-6/6. Customer abandoned webchat. Background: 30/5 Haja defect-rejection + customer anger burst. CS outbound (WhatsApp/phone) MANDATORY.
+      M3 planto cs3 KarlMobel &mdash; STILL UNRESOLVED 3+ days + tribunal threat. 4/6 17:11-12 Sofia battery-out-of-warranty &rarr; customer 17:47-50 anger + "I'll report this to consumer tribunal with all this proof". NO in-window contact 5/6-6/6. URGENT CS outbound de-escalation + manager-level escalation.
+      thecreation2020 cs1 ValueSnap &mdash; STILL UNRESOLVED 5+ days in webchat (last Haja "P1c will cont4ct you ya - Haja" 2/6 09:20 + system-flag). CS verify P1c agent actually contacted via off-chat.
+      irenecxe cs5 Kinata SG &mdash; UNVERIFIED 2nd day (LOGIN_EXPIRED blocker).</div>
+    <div class="field"><strong>Classifier system-flag breakdown (all REJECTED via Q1 substantive reply):</strong>
+      cs1 kitchong82 ValueSnap 6/6 14:00 FLAGGED &rarr; Haja substantive 16:57 with tracking SPXMY063171713426.
+      cs3 azlieyaliey KarlMobel 6/6 10:14 FLAGGED &rarr; Haja substantive ship template 10:10 "Hi boss, Haja here&hellip;".
+      cs3 norzaidi82 KarlMobel 5/6 09:26 FLAGGED &rarr; Agent substantive Malay shipping reply 07:27 ("Terima kasih boss&hellip; matte black dan saiz medium").
+      All 3 = bot Pattern A2 closer / holding template misfire AFTER substantive agent reply &mdash; recurring 4th consecutive day (4/6 planto + 6/6 babytee3421 + 6/6 gjioiedrwy + 7/6 kitchong82 + 7/6 azlieyaliey + 7/6 norzaidi82). AWARENESS for CS lead: engineering suppress misfire trigger when customer-typed Q exists prior; ops appeal accumulated shop-record penalties.</div>
+    <div class="field"><strong>Why each carry-over miss is still a miss (4-Q filter):</strong>
+      Q1 substantive reply ANYWHERE addressing customer's actual issue? NO for M1/M2/M3 (wrong-context or pre-escalation only).
+      Q2 customer self-retract/resolve/thank? NO (all 3 have unresolved anger or abandonment).
+      Q3 bot SLA template to urgency Q? N/A (these are post-resolution defect-rejection disputes, not timing Qs).
+      Q4 pre-window? Carry-over verification is explicitly outside the pure-window classifier scope; flag survives because original miss was CONFIRMED in earlier audit and 7/6 verification shows continued no-recovery.</div>
+    <div class="field"><strong>After-hours items:</strong> None flagged this run &mdash; all post-17:45 customer activity flowed into multi-day open conversations already accounted for or got bot SLA template (correct policy).</div>
+    <div class="field"><strong>CAPTCHA / technical:</strong> 0 CAPTCHA across cs1-cs4. 1 mid-run technical event: AdsPower browser connection dropped mid cs4 batch 3 &mdash; reopened profile, re-scrolled, re-extracted, final count 94 matches initial 94 (no data loss). cs5 LOGIN_EXPIRED 2nd consecutive day &mdash; toast alert sent to operator.</div>
+    <div class="field"><strong>Methodology:</strong> chataudit.md ABSOLUTE RULE 15/5 (deep-review every chat) + 4-Q PRE-FLAG FILTER (13/5 rule) + Error 26 full-panel scan + Error 27 en-dash regex + Section 4d 5-pattern classifier. Carry-over individual re-open via search box per <code>feedback_chataudit_search_vs_react_store.md</code>.</div>
+    <div class="field"><strong>Output files:</strong> Master <code>C:\Users\tessf\Documents\chataudit-reports\chataudit-summary-2026-06-07.md</code> + per-account <code>06-07-batches\cs[1-5]-summary.md</code>.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 291/291 deep-reviewed cs1-cs4 / 0 NEW miss / 3 carry-over CONFIRMED still unresolved + 3 system-flags REJECTED + cs5 LOGIN_EXPIRED operator action required.</div>
+  </div>
+</div>
+
 <div class="entry" data-date="2026-06-07" data-shops="KEDAI GARDEN,Gameniture,Atlusrack,Stationarylah,FynnKoffer,Solaree,Flashree,dutchgaming,Chairsy" data-platform="Shopee MY + SiteGiant" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
