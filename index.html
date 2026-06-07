@@ -639,6 +639,47 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-07" data-shops="KEDAI GARDEN,Gameniture,Atlusrack,Stationarylah,FynnKoffer,Solaree,Flashree,dutchgaming,Chairsy" data-platform="Shopee MY + SiteGiant" data-result="warn">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked unchanged, KEDAI GARDEN still shipping x10 hangers (2nd day re-flag, state BLOCKED 6/6+7/6) (7/6)</span>
+    <span class="entry-meta">2026-06-07 09:30 MYT &middot; 27 MY shops / 18 SiteGiant ShopeeMY / 9 gap &middot; 1 shop with To Ship+Shipping &gt; 0 (KEDAI GARDEN 0/1) &middot; 0 new gap entries / 0 newly-linked &middot; 8/9 shops unchanged latestOID &middot; state.json write BLOCKED 2nd consecutive day</span>
+    <span class="tag">sg-gap-monitor</span>
+    <span class="tag result-warn">Partial</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Daily 09:30 MYT (Sunday) audit of Shopee MY shops not yet linked as SiteGiant ShopeeMY channels. Re-derived gap = 9 unchanged since 13/5 baseline. ALL 9 unlinked shops swept via <code>get_sig</code> sig-switch + 3-tab scan (all/toship/shipping). Result is &ldquo;warn&rdquo; because (a) KEDAI GARDEN still has 1 shipping order x10 hangers requiring manual SiteGiant master decrement and (b) state.json write hit permission gate for the 2nd consecutive day, so tomorrow&rsquo;s run will again re-flag the same OID as &ldquo;new&rdquo; until the gate is opened.</p>
+    <div class="field"><strong>Per-shop activity (before &rarr; after):</strong>
+      Gameniture 0/0/0 (lastOID null &rarr; null) &mdash; DORMANT unchanged.
+      Atlusrack 6/0/0 (260214NUX1Y8BX Cancelled &rarr; unchanged) &mdash; DORMANT unchanged.
+      Stationarylah 18/0/0 (260414QW1M81CQ Cancelled &rarr; unchanged) &mdash; DORMANT_LIGHT unchanged.
+      KEDAI GARDEN 188/0/1 (state lastOID 260528JYMYAT3N &rarr; current latest 2606034CSCUXRN) &mdash; <strong>ACTIVE STOCK DESYNC</strong>: buyer ivaansoo 3/6 50CM OCTO Plastic Flower Pot Hanger Transparent x10 RM5.10 Online Banking, SPX Express tracking SPXMY069007879356, Status=Shipped (in transit). NOT the kedaibarutmama2 SPayLater auto-cancel pattern (different buyer + Online Banking + status=Shipped) &rarr; PHASE 4.5 monitor-only does NOT apply.
+      FynnKoffer 411/0/0 (260307GC8213CQ Completed &rarr; unchanged) &mdash; HISTORICAL_DRIFT unchanged.
+      Solaree 6/0/0 (240718V5H3A1KA Completed &rarr; unchanged) &mdash; DORMANT unchanged.
+      Flashree 31/0/0 (2409031DJJWV7T Completed &rarr; unchanged; all-orders 32 &rarr; 31 explained by past-2yr UI cutoff) &mdash; DORMANT unchanged.
+      dutchgaming 0/0/0 (null &rarr; null) &mdash; DORMANT unchanged.
+      Chairsy 1361/0/0 (260211F1FRUFAH Completed &rarr; unchanged; all-orders 1375 &rarr; 1361 explained by past-2yr UI cutoff) &mdash; HISTORICAL_DRIFT unchanged.
+    </div>
+    <div class="field"><strong>Shops:</strong> KEDAI GARDEN, Gameniture, Atlusrack, Stationarylah, FynnKoffer, Solaree, Flashree, dutchgaming, Chairsy (all 9 unlinked).</div>
+    <div class="field"><strong>Platform:</strong> Shopee MY (Seller Centre profile 70) + SiteGiant (sitegiant.co/marketplaces/shopee/all). Read-only audit &mdash; no PATCH, no message.</div>
+    <div class="field"><strong>Reason:</strong> Daily scheduled monitor for shop-level stock-desync risk between Shopee SC (authoritative) and SiteGiant master inventory (linked subset only). Until PIC integrates the 9 unlinked shops in SiteGiant, any new order on them silently desyncs master qty &mdash; this skill provides daily visibility so PIC can manually decrement (or chase listings-removal).</p>
+    </div>
+    <div class="field"><strong>Result:</strong> warn &mdash; (1) KEDAI GARDEN order 2606034CSCUXRN (x10 hangers, Shipped) requires manual SiteGiant master decrement by PIC if not already done since 6/6 flag. (2) state.json write BLOCKED 2nd consecutive day, so tomorrow&rsquo;s run will again re-flag this same OID as &ldquo;new&rdquo; (false-positive noise). The actual audit completed without error.</div>
+    <div class="field"><strong>State.json update BLOCKED:</strong> Write/Edit on <code>C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json</code> hit permission gate in this session (same as 6/6). Intended values that SHOULD be patched so the next run doesn&rsquo;t re-flag the same KEDAI GARDEN order as &ldquo;new&rdquo;:
+      <ul>
+        <li><code>lastRunId</code> / <code>lastRunTime</code> &rarr; <code>2026-06-07T09:30:00+08:00</code></li>
+        <li><code>previousRunId</code> &rarr; <code>2026-06-03T09:00:00+08:00</code></li>
+        <li><code>lastSeenOrderId.garden.mall</code> &rarr; <code>2606034CSCUXRN</code> (was <code>260528JYMYAT3N</code>)</li>
+        <li>All other <code>lastSeenOrderId</code> values unchanged (chairsy 260211F1FRUFAH, dutch_gaming null, flashree 2409031DJJWV7T, solaree2024 240718V5H3A1KA, gameniture null, atlusrack 260214NUX1Y8BX, stationarylah 260414QW1M81CQ, fynnkoffer 260307GC8213CQ)</li>
+        <li>perShop_2026_06_07 snapshot per report.</li>
+      </ul>
+      Long-term fix: add <code>.claude/skills/sg-gap-monitor/state.json</code> to allowed-write paths in <code>settings.local.json</code>. This is now 2 consecutive days blocked &mdash; operator should patch settings to stop the false-positive noise on KEDAI GARDEN.
+    </div>
+    <div class="field"><strong>Report:</strong> Saved to <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-06-07.md</code>.</div>
+    <div class="field"><strong>Notes:</strong> Shopee SC signed <code>get_shop_list</code> URL returned <code>code=0 shops=null</code> (one-time-consume same as 6/2, 6/3) &mdash; worked around via DOM scrape of pages 1+2 after clicking &ldquo;View all shops&rdquo; to clear the stale <code>kmall:patricia</code> search filter. Page 1 = 16 rows (15 MY + Kinata SG), page 2 = 13 rows (12 MY + ValueSnap SG), total 27 MY + 2 SG = 29 &checkmark;. <code>get_sig</code> code=0 first try all 9 shops, no CAPTCHA, no session expiry. One transient redirect to <code>employee.awesomeree.com.my/customer-service/parcel-claim/tiktok</code> at start (known edge case from another scheduled tab) &mdash; re-navigated to <code>/portal/shop</code> and fetched cleanly. AdsPower MCP fully functional.</div>
+  </div>
+</div>
+
 <div class="entry" data-date="2026-06-07" data-shops="TT MurahYa,TT Adelmar,TT KarlMobel,TT Hiranai" data-platform="TikTok MY" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
