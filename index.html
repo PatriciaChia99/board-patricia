@@ -639,30 +639,12 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
-    <div class="entry" data-date="2026-06-08" data-shops="das.nature, TT Adelmar, DasNatureSG2, TT Murahya, ValueSnap, Laz MurahYa, Kinata SG, TT DasNature" data-platform="Shopee MY + Shopee SG + TikTok MY + Lazada MY + SiteGiant" data-result="ok">
-      <div class="entry-summary">
-        <span class="chevron">&#9654;</span>
-        <span class="entry-title">checksbvariation &mdash; read-only stock action review: accepted-change deductions + OOS/zero candidates after SG/TikTok/Lazada contact run</span>
-        <span class="entry-meta">2026-06-08 14:35 MYT &middot; marker SBVAR-STOCK-ACTION-REVIEW-20260608 &middot; no SiteGiant writes &middot; active deduction candidates: 101166, 101146, 101133 &middot; OOS/zero or reserved-cleanup candidates: PSB, GXTSTARL, FB holder, desktop flip clock &middot; new contact rows need fresh SiteGiant checks before stock action</span>
-        <span class="tag">checksbvariation</span>
-        <span class="tag result-ok">Completed</span>
-      </div>
-      <div class="entry-body">
-        <div class="field"><strong>Task:</strong> User asked which SB Variation cases need stock adjustment now: set OOS, adjust to zero, or deduct due to accepted changes.</div>
-        <div class="field"><strong>Changes made:</strong> None. Before &rarr; after for all SiteGiant/SB stock fields: no change. This was a read-only classification from live SB API plus 2026-06-06/2026-06-07 scheduled evidence.</div>
-        <div class="field"><strong>Accepted-change deduction candidates:</strong> <code>101166 / 2606058CXRK322 / PICNIC-MAT-YELLOW-WHITE-200X200CM -1</code> pending fresh SiteGiant stock read + WH confirm; <code>101146 / 584324190793271260 / RDWHN10 -1</code> latest evidence 13/13/0/0 &rarr; proposed 12/12/0/0; <code>101133 / 260531U4J0C7XV / HCS-BLACK -1</code> latest evidence 126/126/0/0 &rarr; proposed 125/125/0/0. All remain Pending WH Confirm / Not Adjusted.</div>
-        <div class="field"><strong>OOS / adjust-zero candidates:</strong> <code>PSB-ORANGE-0.95KG</code> 2/0/2/0 OOS and <code>PSB-ROSERED-0.95KG</code> 1/0/1/0 OOS need reserved-stock/WH review before final zero; <code>GXTSTARL-GREY-XL</code> 3/3/0/0 with OOS status needs WH decision whether to zero or restore availability; <code>FB-ORNG-POL-HLDR</code> 3/3/0/0 with OOS status is cancelled-row mismatch, review only; <code>DESKTOP-FLIP-CLOCK-SQ-FLAT-BLK</code> 1/1/0/0 with OOS status needs stock-status/zero decision.</div>
-        <div class="field"><strong>Not ready for stock write:</strong> New contacted rows <code>101170</code>, <code>101168</code>, <code>101171</code>, <code>101172</code>, and new row <code>101173</code> have stockSetOos false or missing fresh SiteGiant exact-iSKU evidence in this review; verify exact iSKU live before any terminal stock action.</div>
-        <div class="field"><strong>Do not re-adjust:</strong> CT rows <code>101141/101142</code>, CWS row <code>101119</code>, VIDALIDO row <code>101138</code>, exact <code>CWS-4F-KHAKI</code>, <code>GAZEBO-TENT-WHITE-3M</code>, and <code>SNEAKERS-2STRIPES-WHITE-37</code> were classified as already clean, already adjusted, or no-zero per previous/user evidence.</div>
-        <div class="field"><strong>Result:</strong> Stock adjustment list prepared; Patricia/user approval and fresh live SiteGiant/WH confirmation still required before any SiteGiant quantity/status write.</div>
-      </div>
-    </div>
 
     <div class="entry" data-date="2026-06-08" data-shops="Kinata SG, DasNatureSG2, TT DasNature, TT Murahya, Laz MurahYa, ValueSnap" data-platform="Shopee SG + TikTok MY + Lazada MY + Shopee MY" data-result="ok">
       <div class="entry-summary">
         <span class="chevron">&#9654;</span>
-        <span class="entry-title">checksbvariation &mdash; manual customer-contact run for SG + TikTok + Lazada cases: 6 approved-template messages sent, 2 live-cancelled orders skipped, SB webapp patched (8/8 OK)</span>
-        <span class="entry-meta">2026-06-08 14:15 MYT &middot; marker SBVAR-CONTACT-20260608-SG-LAZ-TT &middot; contacts sent: Kinata SG 260606B12P5MUE, DasNatureSG2 2606059CWEUAY1, TT DasNature 584388056800593471, TT Murahya 584376966935119001, Laz MurahYa 507917307979695 + 504483268548464 &middot; skipped cancelled: DasNatureSG2 2606047RT6JRF1 + ValueSnap 260526E0VV0UEQ &middot; no SiteGiant writes</span>
+        <span class="entry-title">checksbvariation &mdash; customer-contact run (6 messages sent, 2 cancelled skipped, 8/8 SB PATCH ok) + read-only stock action review (deductions: 101166/101146/101133; OOS candidates: PSB/GXTSTARL/FB/clock)</span>
+        <span class="entry-meta">2026-06-08 14:15+14:35 MYT &middot; markers SBVAR-CONTACT-20260608-SG-LAZ-TT + SBVAR-STOCK-ACTION-REVIEW-20260608 &middot; contacts sent: Kinata SG 260606B12P5MUE, DasNatureSG2 2606059CWEUAY1, TT DasNature 584388056800593471, TT Murahya 584376966935119001, Laz MurahYa 507917307979695 + 504483268548464 &middot; skipped cancelled: DasNatureSG2 2606047RT6JRF1 + ValueSnap 260526E0VV0UEQ &middot; no SiteGiant writes</span>
         <span class="tag">checksbvariation</span>
         <span class="tag result-ok">Completed</span>
       </div>
@@ -685,7 +667,9 @@ header.page::after{
           </ul>
         </div>
         <div class="field"><strong>Evidence checked:</strong> Fresh SB API pull; live Shopee SG/MY, TikTok Seller Center, and Lazada Seller Center order statuses; exact customer chat/order-card match; no-prior-contact scans; post-send message readbacks; SB PATCH responses and final readback.</div>
-        <div class="field"><strong>Result:</strong> 6 customer contacts sent and verified, 2 cancelled orders marked Cancelled, 8/8 SB PATCHes returned HTTP 200, and final SB readback matched expected values. No SiteGiant stock writes, Jira/form submissions, seller-status changes, or off-platform contacts were made.</div>
+        <div class="field"><strong>Customer-contact Result:</strong> 6 customer contacts sent and verified, 2 cancelled orders marked Cancelled, 8/8 SB PATCHes returned HTTP 200, and final SB readback matched expected values. No SiteGiant stock writes, Jira/form submissions, seller-status changes, or off-platform contacts were made.</div>
+        <div class="field"><strong>Stock action review (14:35 MYT addendum, marker SBVAR-STOCK-ACTION-REVIEW-20260608, read-only — no SiteGiant writes):</strong> User asked which SB Variation cases need stock adjustment now (OOS / adjust-zero / accepted-change deduction). Read-only classification from live SB API + 2026-06-06/2026-06-07 scheduled evidence. <strong>Accepted-change deduction candidates:</strong> <code>101166 / 2606058CXRK322 / PICNIC-MAT-YELLOW-WHITE-200X200CM -1</code> pending fresh SiteGiant stock read + WH confirm; <code>101146 / 584324190793271260 / RDWHN10 -1</code> latest evidence 13/13/0/0 &rarr; proposed 12/12/0/0; <code>101133 / 260531U4J0C7XV / HCS-BLACK -1</code> latest evidence 126/126/0/0 &rarr; proposed 125/125/0/0 (all remain Pending WH Confirm / Not Adjusted). <strong>OOS / adjust-zero candidates:</strong> <code>PSB-ORANGE-0.95KG</code> 2/0/2/0 OOS + <code>PSB-ROSERED-0.95KG</code> 1/0/1/0 OOS need reserved-stock/WH review; <code>GXTSTARL-GREY-XL</code> 3/3/0/0 OOS needs WH zero-vs-restore decision; <code>FB-ORNG-POL-HLDR</code> 3/3/0/0 OOS cancelled-row mismatch review only; <code>DESKTOP-FLIP-CLOCK-SQ-FLAT-BLK</code> 1/1/0/0 OOS needs stock-status decision. <strong>Not ready for stock write:</strong> rows 101170, 101168, 101171, 101172, 101173 have stockSetOos false or missing fresh SiteGiant exact-iSKU evidence — verify live before any terminal stock action. <strong>Do not re-adjust:</strong> CT rows 101141/101142, CWS row 101119, VIDALIDO row 101138, exact CWS-4F-KHAKI, GAZEBO-TENT-WHITE-3M, SNEAKERS-2STRIPES-WHITE-37 classified clean/already-adjusted/no-zero per previous/user evidence.</div>
+        <div class="field"><strong>Stock action review Result:</strong> Stock adjustment list prepared (read-only); Patricia/user approval and fresh live SiteGiant/WH confirmation still required before any SiteGiant quantity/status write.</div>
         <div class="field"><strong>Outstanding follow-up:</strong> Monitor buyer replies/decisions for the six contacted orders. Keep stock action items separate; do not adjust SiteGiant stock without fresh explicit approval.</div>
       </div>
     </div>
@@ -807,7 +791,7 @@ header.page::after{
     <div class="entry" data-date="2026-06-08" data-shops="TT Jager, TT MurahYa, TT Valuesnap, Lazada MurahYa" data-platform="TikTok MY + Lazada MY" data-result="ok">
       <div class="entry-summary">
         <span class="chevron">&#9654;</span>
-        <span class="entry-title">parcelclaim-auto &mdash; manual unattended sweep 7 NEW POSTed C2032-C2038 RM 856.01, mass-revoke 10 TT down (8/6)</span>
+        <span class="entry-title">parcelclaim-auto &mdash; AM+PM combined: 17 NEW POSTed C2032-C2048 RM 1,819.30 (AM 7 RM 856.01 + PM delta 10 RM 963.29), session recovery PM 9 TT alive (8/6)</span>
         <span class="entry-meta">2026-06-08 ~10:35 MYT &middot; manual invoke per BIND1-5 binding-rule prompt &middot; 13 TT + 3 Lazada in scope &middot; 3 TT alive (59 Jager, 64 MurahYa, 65 Valuesnap) + 1 TT SG-only (67 Kinata) + 9 TT login_expired (54/55/56/58/60/61/62/63/66) + 3 Lazada all alive (81/82/83) &middot; 18 candidates raw &rarr; 11 in webapp &rarr; 7 NEW POSTed RM 856.01 HTTP 200 &middot; crosscheck 7/7 amount+state+audit CONFIRMED, action drift to WH Evidence auto-classifier (sensible default for Awaiting customer return)</span>
         <span class="tag">parcelclaim-auto</span>
         <span class="tag result-ok">Completed</span>
@@ -869,7 +853,56 @@ header.page::after{
             <li>C2038 Lazada MurahYa Adelmar Skuter Elektrik RM 633.59 HV &mdash; priority WH inspection</li>
           </ul>
         </div>
-        <div class="field"><strong>Result:</strong> ok &mdash; 7 NEW POSTs HTTP 200 + 7 remark PATCH + 7 action PATCH + 7 due_date PATCH = 28 writes / 0 errors. Crosscheck 7/7 CONFIRMED (amount+state+audit), 7/7 RECLASSIFIED-action (webapp classifier default acceptable). Zero false dupes (all 11 in-webapp candidates correctly skipped). State + report + board persisted.</div>
+        <div class="field"><strong>Result (AM 10:35):</strong> ok &mdash; 7 NEW POSTs HTTP 200 + 7 remark PATCH + 7 action PATCH + 7 due_date PATCH = 28 writes / 0 errors. Crosscheck 7/7 CONFIRMED (amount+state+audit), 7/7 RECLASSIFIED-action (webapp classifier default acceptable). Zero false dupes (all 11 in-webapp candidates correctly skipped).</div>
+        <div class="field"><strong>PM delta re-run (13:00 MYT, user-invoked binding-rule prompt) &mdash; 10 NEW POSTs C2039-C2048 RM 963.29 / 0 errors:</strong>
+          <ul>
+            <li>Session recovery: 6 TT profiles ALIVE PM (54 Adelmar/55 DasNature/56 Hiranai/58 HiranaiMY/60 JagerArmor/61 JagerSafety/62 KarlMobel/63 Lovento/66 JagerHelmet) vs login_expired AM &mdash; 8 TT MY paginated successfully this run vs 3 AM</li>
+            <li>NEW expiry: P64 TT MurahYa flipped login_expired PM (was alive AM). P59/P65 still down. Net 3 TT still need operator relogin Mon 9/6 (59/64/65) &mdash; down from 9 in AM. Lazada 81/82/83 all 3 alive both runs.</li>
+            <li><strong>C2039</strong> id 2039 TT Adelmar 584361961728410833 RM 315.05 HOVERBOARD 7"/10" Awaiting customer return D0 (07/06 13:40)</li>
+            <li><strong>C2040</strong> id 2040 TT Hiranai 584338720729367712 RM 10.71 Korean Patchwork Refund complete D2 (06/06 17:12)</li>
+            <li><strong>C2041</strong> id 2041 TT Hiranai 584345572238394888 RM 34.90 Shoes Stiletto Refund complete D2 (06/06 15:55)</li>
+            <li><strong>C2042</strong> id 2042 TT Hiranai 584338815898060501 RM 19.97 Shoulder Bags PU Awaiting customer return D1 (07/06 07:50)</li>
+            <li><strong>C2043</strong> id 2043 TT Hiranai 584248140608734549 RM 1.13 Suspender Vest Awaiting customer return D2 (06/06 23:19)</li>
+            <li><strong>C2044</strong> id 2044 TT KarlMobel 584368872253851555 RM 200.18 Luxbin Dustbin Awaiting issue refund D1 (07/06 13:28) &mdash; verify Day 7 SLA window</li>
+            <li><strong>C2045</strong> id 2045 TT KarlMobel 584311655043335194 RM 212.22 Luxbin Dustbin Awaiting customer return D0 (08/06 06:10) &mdash; CS contact buyer Rule 14 B0</li>
+            <li><strong>C2046</strong> id 2046 TT JagerHelmet 584330825315682068 RM 21.75 Visor 708 Lens Refund complete D0 (08/06 04:18)</li>
+            <li><strong>C2047</strong> id 2047 TT JagerHelmet 584178102499443745 RM 129.00 JAGER Topi keledar double visor Refund complete D1 (07/06 05:59)</li>
+            <li><strong>C2048</strong> id 2048 TT JagerHelmet 584178103540089889 RM 18.38 JAGER Visor 708 Lens Refund complete D1 (07/06 05:57)</li>
+          </ul>
+        </div>
+        <div class="field"><strong>PM dedupe outcome (PHASE 4):</strong> 13 PM candidates &rarr; 3 already in webapp (C2001 Adelmar 584274354748752906 / C1976 Adelmar 584167045765957194 / C2038 Lazada MurahYa 504050467992019) &rarr; 10 NEW POSTed. No silent re-POST. Webapp baseline at PM start = 544 cases / 528 unique OIDs / max_id 2038 (matches AM run end).</div>
+        <div class="field"><strong>PM evidence table 2b:</strong>
+          <ul>
+            <li>P54 TT Adelmar &mdash; R/R 84 cards / 23 OOW / 58 RC-skipped / 3 in-window / 1 NEW (C2039) &middot; FD API 31 + DOM 28 / 2 Returning / 0 DOM-only</li>
+            <li>P55 TT DasNature &mdash; R/R 0 / FD API 103 + DOM 60 / 0 Returning / 0 NEW</li>
+            <li>P56 TT Hiranai &mdash; R/R 150 cards / 112 OOW / 33 RC-skipped / 5 in-window / 4 NEW (C2040-C2043) &middot; FD API 167 + DOM 60 / 2 Returning / 0 DOM-only</li>
+            <li>P58 TT HiranaiMY &mdash; R/R 0 / FD API 46 + DOM 36 / 0 Returning / 0 NEW</li>
+            <li>P59 TT Jager &mdash; LOGIN_EXPIRED (down vs alive AM)</li>
+            <li>P60 TT JagerArmor &mdash; R/R 6 cards / 5 OOW / 1 RC / 0 in-window &middot; FD API 1 + DOM 1 / 0 NEW (recovered vs AM)</li>
+            <li>P61 TT JagerSafety &mdash; R/R 55 cards / 20 OOW / 35 RC-skipped / 0 in-window &middot; FD API 2 + DOM 1 / 0 NEW (recovered vs AM)</li>
+            <li>P62 TT KarlMobel &mdash; R/R 150 cards / 80 OOW / 67 RC-skipped / 3 in-window / 2 NEW (C2044+C2045) &middot; FD API 286 + DOM 60 / 5 Returning / 0 DOM-only (all in API; recovered vs AM)</li>
+            <li>P63 TT Lovento &mdash; R/R 0 / FD API 0 / 0 NEW (recovered vs AM)</li>
+            <li>P64 TT MurahYa &mdash; LOGIN_EXPIRED PM (was alive AM)</li>
+            <li>P65 TT Valuesnap &mdash; LOGIN_EXPIRED (still down)</li>
+            <li>P66 TT JagerHelmet &mdash; R/R 150 cards / 63 OOW / 84 RC-skipped / 3 in-window / 3 NEW (C2046-C2048) &middot; FD API 10 + DOM 10 / 2 Returning / 0 DOM-only (recovered vs AM)</li>
+            <li>P67 TT Kinata &mdash; SG-only (out of MY scope)</li>
+            <li>P81 Lazada MurahYa &mdash; 10 paired card rows / 1 in-window / 0 NEW (504050467992019 already C2038 from AM)</li>
+            <li>P82 Laz das.nature &mdash; 6 rows / 0 in-window / 0 NEW</li>
+            <li>P83 Lazada Lovento &mdash; 1 row / 0 in-window / 0 NEW</li>
+          </ul>
+        </div>
+        <div class="field"><strong>PHASE 7a auto-crosscheck verdict PM (35s settle then re-GET):</strong> <strong>10/10 amount+state+shop CONFIRMED</strong>, audit-trail remarks PATCHed HTTP 200 across all 10 cases. 0 RECLASSIFIED action (PM cases too fresh for auto-classifier flip during settle window), 0 RETRACTED, 0 DISCREPANCY. Arithmetic OK &plusmn; RM 0.10 tolerance.</div>
+        <div class="field"><strong>Cumulative 8/6 totals (AM + PM):</strong> 17 NEW POSTs C2032-C2048 / 0 errors / 17/17 crosscheck CONFIRMED / RM <strong>1,819.30</strong> day-total value. PM doubled the day's intake vs AM-only baseline.</div>
+        <div class="field"><strong>Updated operator action queued Mon 9/6 BEFORE 09:45 auto-run:</strong>
+          <ul>
+            <li>RELOGIN 3 TT profiles: <strong>59 / 64 / 65</strong> (down from AM 9 &mdash; 6 recovered during today)</li>
+            <li>WH PIC: inspect 17 returning parcels (AM 7 carry forward + PM 10 NEW: 6 Refund-complete category A Open Parcel C2040/C2041/C2046/C2047/C2048/C1985 + 4 Awaiting customer return category B Buyer-chase C2039/C2042/C2045 + C2043 LV)</li>
+            <li>C2044 KarlMobel RM 200.18 Awaiting issue refund Day 1 &mdash; verify Day 7 SLA window (deadline Mon 15/6)</li>
+            <li>C2039 Adelmar HOVERBOARD RM 315.05 + C2045 KarlMobel Dustbin RM 212.22 Day 0/1 awaiting customer return &mdash; CS contact buyer Rule 14 B0 before EOD Mon</li>
+          </ul>
+        </div>
+        <div class="field"><strong>Files PM:</strong> Report saved <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-08-pm.md</code>. state.json refreshed (last_run 2026-06-08T14:30, posted_value_rm 963.29, cumulative_8jun_runs day_total RM 1,819.30).</div>
+        <div class="field"><strong>Result PM:</strong> ok &mdash; 10 NEW POSTs HTTP 200 + 10 remark PATCH HTTP 200 = 20 writes / 0 errors. Crosscheck 10/10 CONFIRMED no auto-classifier flip during settle. State + report + board persisted (merged into existing AM entry per HARD RULE 4 no-duplicates).</div>
       </div>
     </div>
     <div class="entry" data-date="2026-06-08" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
