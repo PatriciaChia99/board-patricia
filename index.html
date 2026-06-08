@@ -639,6 +639,30 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+    <div class="entry" data-date="2026-06-08" data-shops="TT Adelmar, das.nature" data-platform="TikTok MY + Shopee MY" data-result="ok">
+      <div class="entry-summary">
+        <span class="chevron">&#9654;</span>
+        <span class="entry-title">checksbvariation &mdash; accepted-change stock deduction completed by order ID (SA-18896)</span>
+        <span class="entry-meta">2026-06-08 16:59 MYT &middot; marker SBVAR-ACCEPTED-STOCK-20260608-SA18896 &middot; SiteGiant stock adjustment id 9691033 / SA-18896 &middot; SB rows patched by marketplace order ID</span>
+        <span class="tag">checksbvariation</span>
+        <span class="tag result-ok">Completed</span>
+      </div>
+      <div class="entry-body">
+        <div class="field"><strong>Task:</strong> Patricia approved accepted-change deductions only: change warehouse status to WH Confirmed Can Pack and adjust SiteGiant stock after fresh SiteGiant iSKU check. OOS/adjust-to-zero cases were not written in this action.</div>
+        <div class="field"><strong>Reason:</strong> Buyer accepted change and New Ship By was present, so accepted/change-to SKU needed deduction by ship quantity. Exact SiteGiant iSKU was verified live before write.</div>
+        <div class="field"><strong>External stock change:</strong> Created SiteGiant stock adjustment <a href="https://sitegiant.co/inventory-adjustment/stock-adjustment/9691033/edit">SA-18896</a> in Default warehouse, reason Stock Adjustment, remark tied to orders 584324190793271260, 260531U4J0C7XV, and 2606058CXRK322.</div>
+        <div class="field"><strong>Changes by order ID:</strong>
+          <ul>
+            <li><strong>584324190793271260</strong> / TT Adelmar / TikTok MY / accepted iSKU <code>RDWHN10</code>: SiteGiant SOH/Sellable/Allocated/Reserved/Non-Sellable <code>13/13/0/0/0</code> &rarr; <code>12/12/0/0/0</code>; rack <code>SA</code> <code>13</code> &rarr; <code>12</code>; SB WH Confirm <code>["Pending WH Confirm"]</code> &rarr; <code>["WH Confirmed Can Pack"]</code>; Stock Adjustment <code>["Not Adjusted"]</code> &rarr; <code>["Adjusted"]</code>; stockId <code>null</code> &rarr; <code>["18896"]</code>; stockUrl <code>null</code> &rarr; SA link; CS remark appended.</li>
+            <li><strong>260531U4J0C7XV</strong> / das.nature / Shopee MY / accepted iSKU <code>HCS-BLACK</code>: SiteGiant SOH/Sellable/Allocated/Reserved/Non-Sellable <code>123/121/0/0/2</code> &rarr; <code>122/120/0/0/2</code>; rack <code>1-A31-2</code> <code>123</code> &rarr; <code>122</code>; SB WH Confirm <code>["Pending WH Confirm"]</code> &rarr; <code>["WH Confirmed Can Pack"]</code>; Stock Adjustment <code>["Not Adjusted"]</code> &rarr; <code>["Adjusted"]</code>; stockId <code>null</code> &rarr; <code>["18896"]</code>; stockUrl <code>null</code> &rarr; SA link; CS remark appended.</li>
+            <li><strong>2606058CXRK322</strong> / das.nature / Shopee MY / accepted iSKU <code>PICNIC-MAT-YELLOW-WHITE-200X200CM</code>: SiteGiant SOH/Sellable/Allocated/Reserved/Non-Sellable <code>13/13/0/0/0</code> &rarr; <code>12/12/0/0/0</code>; no rack row on item; SB WH Confirm <code>["Pending WH Confirm",""]</code> &rarr; <code>["WH Confirmed Can Pack",""]</code>; Stock Adjustment <code>["Not Adjusted",""]</code> &rarr; <code>["Adjusted",""]</code>; stockId <code>null</code> &rarr; <code>["18896",""]</code>; stockUrl <code>null</code> &rarr; SA link in first slot; CS remark appended.</li>
+          </ul>
+        </div>
+        <div class="field"><strong>OOS / adjust-to-zero candidates, order ID first, not changed:</strong> <code>2606059CWEUAY1</code> PSB-ORANGE-0.95KG and PSB-ROSERED-0.95KG; <code>2606047RT6JRF1</code> PSB-ROSERED-0.95KG cancelled/shared reserved-stock evidence; <code>584376966935119001</code> GXTSTARL-GREY-XL; <code>2606035BCMR3TE</code> FB-ORNG-POL-HLDR cancelled/review only; <code>2606010SWCYA21</code> DESKTOP-FLIP-CLOCK-SQ-FLAT-BLK; <code>584332958100784574</code> KC-WHT-150CM-RT-STV status/replacement review. These still require fresh exact SiteGiant iSKU verification and explicit zero/OOS approval before any stock write.</div>
+        <div class="field"><strong>Fresh-check follow-up, not ready for stock write:</strong> <code>260606B12P5MUE</code> Kinata SG; <code>584388056800593471</code> TT DasNature; <code>507917307979695</code> and <code>504483268548464</code> Laz MurahYa; <code>2606059EVQJ5E9</code> das.nature2. New/contacted cases remain pending exact iSKU live verification before any OOS/zero action.</div>
+        <div class="field"><strong>Result:</strong> SiteGiant write successful for all three accepted-change products; API returned success_ids <code>2084125</code>, <code>7571724</code>, <code>10434424</code>. Post-write SiteGiant and SB readbacks matched expected values.</div>
+      </div>
+    </div>
 
     <div class="entry" data-date="2026-06-08" data-shops="Kinata SG, DasNatureSG2, TT DasNature, TT Murahya, Laz MurahYa, ValueSnap" data-platform="Shopee SG + TikTok MY + Lazada MY + Shopee MY" data-result="ok">
       <div class="entry-summary">
