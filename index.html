@@ -639,6 +639,38 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+    <div class="entry" data-date="2026-06-08" data-shops="Kinata SG, DasNatureSG2, TT DasNature, TT Murahya, Laz MurahYa, ValueSnap" data-platform="Shopee SG + TikTok MY + Lazada MY + Shopee MY" data-result="ok">
+      <div class="entry-summary">
+        <span class="chevron">&#9654;</span>
+        <span class="entry-title">checksbvariation &mdash; manual customer-contact run for SG + TikTok + Lazada cases: 6 approved-template messages sent, 2 live-cancelled orders skipped, SB webapp patched (8/8 OK)</span>
+        <span class="entry-meta">2026-06-08 14:15 MYT &middot; marker SBVAR-CONTACT-20260608-SG-LAZ-TT &middot; contacts sent: Kinata SG 260606B12P5MUE, DasNatureSG2 2606059CWEUAY1, TT DasNature 584388056800593471, TT Murahya 584376966935119001, Laz MurahYa 507917307979695 + 504483268548464 &middot; skipped cancelled: DasNatureSG2 2606047RT6JRF1 + ValueSnap 260526E0VV0UEQ &middot; no SiteGiant writes</span>
+        <span class="tag">checksbvariation</span>
+        <span class="tag result-ok">Completed</span>
+      </div>
+      <div class="entry-body">
+        <div class="field"><strong>Task:</strong> User requested immediate handling for all SB Variation cases needing customer contact, including SG and Lazada. Used approved checksbvariation templates only after live marketplace order, exact customer thread/order card, and no-prior-contact state were verified.</div>
+        <div class="field"><strong>Customer messages sent:</strong>
+          <ul>
+            <li><strong>260606B12P5MUE</strong> / SB <code>101170</code> / Kinata SG / Shopee SG: live order To Ship, buyer <code>salihin76</code>, thread <code>565231519045725076</code> no prior restock/no-stock contact. Sent approved No Stock template. SB <code>contactSent</code> <code>false</code> &rarr; <code>[true]</code>; <code>csRemarks</code> <code>null</code> &rarr; appended send/readback remark.</li>
+            <li><strong>2606059CWEUAY1</strong> / SB <code>101157</code> / DasNatureSG2 / Shopee SG: live order To Ship, buyer <code>noorazmie2005</code>, exact thread no prior contact. Sent approved Offer Change template offering Khaki 0.9KG or Purple 0.95KG. SB <code>contactSent</code> <code>false</code> &rarr; <code>[true,true]</code>; <code>csRemarks</code> two prior scheduled remarks &rarr; three remarks with send/readback evidence.</li>
+            <li><strong>584388056800593471</strong> / SB <code>101168</code> / TT DasNature / TikTok: live order Awaiting collection, exact chat <code>lo.hannah8</code> no prior contact. Sent approved Offer Change template offering Khaki 0.9KG or Red 0.95KG. SB <code>contactSent</code> <code>false</code> &rarr; <code>[true]</code>; <code>csRemarks</code> <code>null</code> &rarr; appended send/readback remark.</li>
+            <li><strong>584376966935119001</strong> / SB <code>101163</code> / TT Murahya / TikTok: live order Awaiting collection, exact chat <code>hadzridhani</code> no prior contact. Sent approved Offer Change template offering Starlight Blue XL or Starlight Yellow XL. SB <code>contactSent</code> <code>false</code> &rarr; <code>[true]</code>; <code>csRemarks</code> one prior scheduled remark &rarr; two remarks with send/readback evidence.</li>
+            <li><strong>507917307979695</strong> / SB <code>101172</code> / Laz MurahYa / Lazada: live order Packed, buyer <code>Khor Abby</code>, buyerId <code>79695</code>, session <code>1#103#100332996#2#79695#1</code> no prior restock/no-stock contact. Sent approved No Stock text via Lazada IM API, message <code>2d994PcGeNY0di1Gz13472</code>. SB <code>contactSent</code> <code>false</code> &rarr; <code>[true]</code>; <code>csRemarks</code> <code>null</code> &rarr; appended send/readback remark. Note: Lazada UI order-information card <code>5b3a4PcDwJT0BKSDI26814</code> was sent first before the approved no-stock text.</li>
+            <li><strong>504483268548464</strong> / SB <code>101171</code> / Laz MurahYa / Lazada: live order Ready To Ship, buyer <code>nuraneesaayuni</code>, buyerId <code>300930048464</code>, session <code>1#103#100332996#2#300930048464#1</code> no prior restock/no-stock contact. Sent approved No Stock text via Lazada IM API, message <code>9fcc4PcHDcf0BtmEG66634</code>. SB <code>contactSent</code> <code>false</code> &rarr; <code>[true]</code>; <code>csRemarks</code> <code>null</code> &rarr; appended send/readback remark.</li>
+          </ul>
+        </div>
+        <div class="field"><strong>Cancelled / no customer message:</strong>
+          <ul>
+            <li><strong>2606047RT6JRF1</strong> / SB <code>101158</code> / DasNatureSG2 / Shopee SG: live order <code>234267167293921</code> was Cancelled automatically by Shopee. No buyer message sent. SB <code>buyerDecision</code> <code>null</code> &rarr; <code>["Cancelled"]</code>; <code>csRemarks</code> one prior scheduled remark &rarr; two remarks; SB API also set <code>whConfirmStatus</code> <code>null</code> &rarr; <code>["Not Required"]</code> and <code>stockAdjustmentStatus</code> <code>null</code> &rarr; <code>["Not Required"]</code>.</li>
+            <li><strong>260526E0VV0UEQ</strong> / SB <code>101113</code> / ValueSnap / Shopee MY: live order <code>233482005249495</code> was Cancelled automatically by Shopee. No buyer message sent. SB <code>buyerDecision</code> <code>null</code> &rarr; <code>["Cancelled"]</code>; <code>csRemarks</code> one prior SA-18691 cleanup remark &rarr; two remarks; SB API also set <code>whConfirmStatus</code> <code>null</code> &rarr; <code>["Not Required"]</code> and <code>stockAdjustmentStatus</code> <code>["Manual Review"]</code> &rarr; <code>["Not Required"]</code>.</li>
+          </ul>
+        </div>
+        <div class="field"><strong>Evidence checked:</strong> Fresh SB API pull; live Shopee SG/MY, TikTok Seller Center, and Lazada Seller Center order statuses; exact customer chat/order-card match; no-prior-contact scans; post-send message readbacks; SB PATCH responses and final readback.</div>
+        <div class="field"><strong>Result:</strong> 6 customer contacts sent and verified, 2 cancelled orders marked Cancelled, 8/8 SB PATCHes returned HTTP 200, and final SB readback matched expected values. No SiteGiant stock writes, Jira/form submissions, seller-status changes, or off-platform contacts were made.</div>
+        <div class="field"><strong>Outstanding follow-up:</strong> Monitor buyer replies/decisions for the six contacted orders. Keep stock action items separate; do not adjust SiteGiant stock without fresh explicit approval.</div>
+      </div>
+    </div>
+
     <div class="entry" data-date="2026-06-08" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
       <div class="entry-summary">
         <span class="chevron">&#9654;</span>
