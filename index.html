@@ -639,6 +639,42 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+    <div class="entry" data-date="2026-06-08" data-shops="MurahYa, KarlMobel" data-platform="Shopee MY" data-result="ok">
+      <div class="entry-summary">
+        <span class="chevron">&#9654;</span>
+        <span class="entry-title">parcelsplit-contact-crosscheck &mdash; 6 in-scope PASS / 0 mismatch / 0 manual / 0 TT-Laz in window / 680015944262015 KM 2nd-night-dark IT escalate (8/6)</span>
+        <span class="entry-meta">2026-06-08 08:55 MYT &middot; scheduled daily run (incl. weekends) &middot; API 2196 rows &middot; openInWindow=6 (Shopee MY only) &middot; pass=6 mismatch=0 manual=0 &middot; 4 NEW 7/6 batch all lit (bot flipped overnight) &middot; 680015944262015 KarlMobel dark 2 consecutive nights &rarr; WATCH 8/6 trigger fired &middot; 2606046RPC6UQ5 MurahYa carried lit &middot; 0 TT-Lazada/Shopee SG in window &middot; DOM 6/6 match &middot; state.json updated &middot; ntfy start+success sent</span>
+        <span class="tag">parcelsplit-contact-crosscheck</span>
+        <span class="tag result-ok">Completed</span>
+      </div>
+      <div class="entry-body">
+        <p><strong>Brief:</strong> Scheduled autonomous run via Claude (Windows Task Scheduler equivalent of scheduled launcher, 08:55 MYT, daily incl. weekends). Profile 70 (<code>k1b44nvg</code>) Kmall:Patricia, dashboard host <code>employee.awesomeree.com.my</code> verified. Pulled <code>/api/parcel-split</code> credentials=include (HTTP 200, 2196 rows). Applied skill scope: 7-day window + skip Shopee MY today MYT + include TT/Lazada today if 2+ trackings. Result: 6 Shopee MY carry-over in scope, all PASS. Zero TT/Lazada in window (newest unshipped TT/Lazada are from 11-14/3, far outside 7d). Zero mismatch, zero manual.</p>
+        <div class="field"><strong>Shopee MY in-scope (6) &mdash; bot-contact lane:</strong>
+          <ul>
+            <li><code>260606CS89WY66</code> MurahYa &mdash; 7/6 batch &mdash; <em>isContacted=false &rarr; true</em> (overnight bot flip) &middot; phones=0 &middot; PASS</li>
+            <li><code>260606D1PA7D7X</code> KarlMobel &mdash; 7/6 batch &mdash; isContacted=false &rarr; <em>true</em> &middot; PASS</li>
+            <li><code>2606059XN1JXQW</code> KarlMobel &mdash; 7/6 batch &mdash; isContacted=false &rarr; <em>true</em> &middot; PASS</li>
+            <li><code>260605A50BHWV2</code> KarlMobel &mdash; 7/6 batch &mdash; isContacted=false &rarr; <em>true</em> &middot; PASS</li>
+            <li><code>680015944262015</code> KarlMobel &mdash; 5/6 carry-over &mdash; isContacted=false &rarr; <em>false (unchanged, 2nd consecutive overnight dark)</em> &middot; 4 Best Cargo trackings &middot; phones=0 csNotes=empty &middot; PASS (decision-table) but <strong>WATCH 8/6 trigger fired &rarr; recommend IT bot send-log check on KarlMobel</strong></li>
+            <li><code>2606046RPC6UQ5</code> MurahYa &mdash; 5/6 carry-over &mdash; isContacted=true &rarr; <em>true (unchanged, lit since first bot pass)</em> &middot; buyer never replied &middot; PASS</li>
+          </ul>
+        </div>
+        <div class="field"><strong>TT/Lazada lanes (manual contact + phone backfill):</strong> 0 in-window rows today. New skill spec (codex-lab updated SKILL.md) instructs to handle dark TT/Lazada rows with 2+ Best Cargo trackings via approved BM message + Manage Order phone copy + lighten icon, and to backfill phone for already-lit TT/Lazada rows with empty <code>phoneNumbers</code>. Neither lane exercised today (no TT/Lazada within 7d). Procedure remains untested in production until next TT/Lazada multi-parcel split enters window.</div>
+        <div class="field"><strong>Skipped pending tonight's bot:</strong> 0 (no Shopee MY rows dated today 8/6 MYT yet; latest is 7/6 20:24 MYT, already evaluated under carry-over).</div>
+        <div class="field"><strong>Delta vs 7/6 prior run:</strong> 0 flips, 0 graduations, 4 new appeared (all 7/6 batch lit), 2 carried unchanged (incl. 680015944262015 still dark for 2nd night, MurahYa 2606046RPC6UQ5 still lit).</div>
+        <div class="field"><strong>DOM sanity:</strong> 6/6 in-scope rows DOM icon class matches API <code>isContacted</code>. Lit rows have <code>lucide lucide-phone h-5 w-5 text-brand-orange</code>; dark row has <code>text-warm-ink-disabled</code>. No render disagreement.</div>
+        <div class="field"><strong>Trend &mdash; KarlMobel bot-flip latency (recommend IT):</strong> 680015944262015 multi-parcel split (4 trackings, 3 unique) added 6/6 00:45 MYT, dark after night-1 (state recorded 7/6), still dark after night-2 (state recorded 8/6 today). Decision table stays PASS because no phone or phone-ask evidence exists anywhere. Yesterday's state.json carried the WATCH instruction: "if still dark 8/6 morning, escalate IT for bot send-log check on KarlMobel." That trigger fires today &mdash; recommend IT pull bot send-log to verify (a) bot attempted but failed silently, or (b) buyer chat unreachable. Skill is read-only on Shopee MY, no auto-send.</div>
+        <div class="field"><strong>Outputs:</strong>
+          <ul>
+            <li>Report: <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-06-08.md</code></li>
+            <li>State: <code>C:\Users\tessf\.claude\skills\parcelsplit-contact-crosscheck\state.json</code> (totals, evaluatedCases x6, carryOverFlipsSincePriorRun, trendPatterns, DOM sanity)</li>
+            <li>ntfy: START + SUCCESS posted to <code>awesomeree-patricia-ops-7h3k9q</code></li>
+          </ul>
+        </div>
+        <div class="field"><strong>Anything I might have missed:</strong> 680015944262015 has unusual 15-digit ID (not <code>YYMMDDxxxx</code> Shopee MY pattern); API tags it Shopee MY, kept in Shopee MY lane, but worth CS sanity-check that platform tag is correct. New TT/Lazada lanes untested today &mdash; first real production exercise lands on next multi-parcel split entering 7d window. State.json holds only yesterday's snapshot &mdash; multi-day trend stats need longer history file if KarlMobel pattern recurs.</div>
+        <div class="field"><strong>Result:</strong> ok &mdash; scheduled run completed cleanly; 6 Shopee MY PASS, 0 mismatch, 0 manual, 0 TT/Lazada actions; one IT recommendation queued (KarlMobel 680015944262015 bot-flip latency).</div>
+      </div>
+    </div>
     <div class="entry" data-date="2026-06-08" data-shops="KEDAI GARDEN,Gameniture,Atlusrack,Stationarylah,FynnKoffer,Solaree,Flashree,dutchgaming,Chairsy" data-platform="Shopee MY + SiteGiant" data-result="warn">
       <div class="entry-summary">
         <span class="chevron">&#9654;</span>
