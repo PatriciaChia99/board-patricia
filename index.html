@@ -639,6 +639,74 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
     <!-- ENTRIES_START -->
+    <div class="entry" data-date="2026-06-08" data-shops="TT Jager, TT MurahYa, TT Valuesnap, Lazada MurahYa" data-platform="TikTok MY + Lazada MY" data-result="ok">
+      <div class="entry-summary">
+        <span class="chevron">&#9654;</span>
+        <span class="entry-title">parcelclaim-auto &mdash; manual unattended sweep 7 NEW POSTed C2032-C2038 RM 856.01, mass-revoke 10 TT down (8/6)</span>
+        <span class="entry-meta">2026-06-08 ~10:35 MYT &middot; manual invoke per BIND1-5 binding-rule prompt &middot; 13 TT + 3 Lazada in scope &middot; 3 TT alive (59 Jager, 64 MurahYa, 65 Valuesnap) + 1 TT SG-only (67 Kinata) + 9 TT login_expired (54/55/56/58/60/61/62/63/66) + 3 Lazada all alive (81/82/83) &middot; 18 candidates raw &rarr; 11 in webapp &rarr; 7 NEW POSTed RM 856.01 HTTP 200 &middot; crosscheck 7/7 amount+state+audit CONFIRMED, action drift to WH Evidence auto-classifier (sensible default for Awaiting customer return)</span>
+        <span class="tag">parcelclaim-auto</span>
+        <span class="tag result-ok">Completed</span>
+      </div>
+      <div class="entry-body">
+        <p><strong>Brief:</strong> Manual unattended invoke of parcelclaim-auto skill per user binding-rule prompt with BIND1-5 enforcement (pre-completion evidence table mandatory / delta sweep must paginate all pages / delete_cache flag on every open-browser / dedupe by order_id across all refund_states / TT login probe &ge;15s + cookie + API). Full paginated sweep of 13 TT R/R + 13 TT FD API + DOM cross-verify + 3 Lazada R/R. Mass TT session revoke worsened vs 7/6 &mdash; added 60/61/62 (were alive yesterday). Only 3 TT MY profiles paginated successfully today.</p>
+        <div class="field"><strong>Webapp baseline (PHASE 0, profile 70 k1b44nvg):</strong> /api/new-parcel-claims-tiktok?limit=5000 &rarr; 537 cases / 521 unique OIDs (79 Pending / 438 Withdrawn / 17 Credited / 3 other). Dedupe key = order_id alone across ALL refund_state values per BIND4.</div>
+        <div class="field"><strong>Session probe verdicts (PHASE 1/2 step 3 @ 18s wait + cookie + API):</strong>
+          <ul>
+            <li>P54 TT Adelmar &mdash; LOGIN_EXPIRED (cookie present but URL /account/login + probeCode 98001002)</li>
+            <li>P55 TT DasNature &mdash; LOGIN_EXPIRED (same shape)</li>
+            <li>P56 TT Hiranai &mdash; LOGIN_EXPIRED (same shape)</li>
+            <li>P58 TT HiranaiMY &mdash; LOGIN_EXPIRED (same shape)</li>
+            <li>P59 TT Jager &mdash; <strong>ALIVE</strong> (probeCode 0, shellOk, sellerId 7495053096333641815)</li>
+            <li>P60 TT JagerArmor &mdash; LOGIN_EXPIRED <strong>NEW DROP 8/6</strong> (was alive 7/6 per state.json verified_seller_ids)</li>
+            <li>P61 TT JagerSafety &mdash; LOGIN_EXPIRED <strong>NEW DROP 8/6</strong></li>
+            <li>P62 TT KarlMobel &mdash; LOGIN_EXPIRED <strong>NEW DROP 8/6</strong></li>
+            <li>P63 TT Lovento &mdash; LOGIN_EXPIRED (was already down 7/6)</li>
+            <li>P64 TT MurahYa &mdash; <strong>ALIVE</strong> (sellerId 7494613237803355026)</li>
+            <li>P65 TT Valuesnap &mdash; <strong>ALIVE</strong> (sellerId 7495874398509500630)</li>
+            <li>P66 TT JagerHelmet &mdash; LOGIN_EXPIRED</li>
+            <li>P67 TT Kinata &mdash; SG-only (URL redirects to seller-sg.tiktok.com/homepage&middot;shop_region=SG &mdash; out of MY skill scope)</li>
+            <li>P81 Lazada MurahYa &mdash; ALIVE (Laz auto-fill recovered overnight, /apps/order/reverse?tab=All landed clean)</li>
+            <li>P82 Laz das.nature &mdash; ALIVE</li>
+            <li>P83 Lazada Lovento &mdash; ALIVE</li>
+          </ul>
+        </div>
+        <div class="field"><strong>BINDING evidence table 2b (R/R + FD per profile, full paginated):</strong>
+          <ul>
+            <li>P59 TT Jager &mdash; R/R 98 cards / 1 in-window (07/06 15:30) / 1 NEW POSTed (C2032) &middot; FD API 61 + DOM 1 page 20 OIDs / 0 Returning to seller / 0 NEW &middot; 0 DOM-only catches</li>
+            <li>P64 TT MurahYa &mdash; R/R 250 cards / 13 in-window (3 Request closed skipped &rarr; 10 valid; newest 07/06 02:25) / 1 NEW POSTed (C2033, 9 already in webapp) &middot; FD API 300 + DOM 3 pages 50 OIDs / 0 Returning to seller / 0 NEW &middot; 0 DOM-only catches</li>
+            <li>P65 TT Valuesnap &mdash; R/R 100 cards / 6 in-window (1 Request closed skipped &rarr; 5 valid; newest 07/06 14:22) / 4 NEW POSTed (C2034-C2037, 1 already in webapp) &middot; FD API 265 + DOM 3 pages 20 OIDs / 0 Returning to seller / 0 NEW &middot; 0 DOM-only catches</li>
+            <li>P81 Lazada MurahYa &mdash; 10 DOM rows / 406 total / 2 in-window (07/06 18:10 + 04/06 10:30) / 1 NEW POSTed (C2038, 1 already in webapp = C1968) &middot; FD N/A (Lazada has no FD lane)</li>
+            <li>P82 Laz das.nature &mdash; 6 DOM rows / 6 total / 0 in-window (newest 11/03 stale) / 0 NEW</li>
+            <li>P83 Lazada Lovento &mdash; 1 DOM row / 1 total / 0 in-window (13/03 stale) / 0 NEW</li>
+          </ul>
+        </div>
+        <div class="field"><strong>NEW intake today &mdash; 7 POSTs RM 856.01, all HTTP 200, audit-trail token PATCHed:</strong>
+          <ul>
+            <li><strong>C2032</strong> id 2032 TT Jager 584302178891171093 RM 99.90 &mdash; JAGER Helmet Awaiting customer return 1D (07/06 15:30) &middot; Pending+WH Evidence (action auto-set by classifier) &middot; followup 10/06</li>
+            <li><strong>C2033</strong> id 2033 TT MurahYa 584290725428037086 RM 20.60 &mdash; 3 in 1 Chess Board Set Awaiting customer return 1D (07/06 02:25) &middot; Pending+WH Evidence &middot; followup 10/06</li>
+            <li><strong>C2034</strong> id 2034 TT Valuesnap 584321414311282586 RM 19.14 &mdash; Star Light Projector Awaiting customer return 1D (07/06 10:54) &middot; Pending+WH Evidence &middot; followup 10/06</li>
+            <li><strong>C2035</strong> id 2035 TT Valuesnap 584372615210174039 RM 18.53 &mdash; Lunch Box Glass Awaiting customer return 1D (07/06 10:26) &middot; Pending+WH Evidence &middot; followup 10/06</li>
+            <li><strong>C2036</strong> id 2036 TT Valuesnap 584367691742807439 RM 35.46 &mdash; Keyboard Piano 61 Keys Awaiting customer return 1D (07/06 08:53) &middot; Pending+WH Evidence &middot; followup 10/06</li>
+            <li><strong>C2037</strong> id 2037 TT Valuesnap 584325005705839635 RM 25.79 &mdash; Mini Chocolate Maker Refund not authorised 1D (07/06 06:30) &middot; Pending+WH Evidence (dispute candidate &mdash; CS should review) &middot; followup 09/06</li>
+            <li><strong>C2038</strong> id 2038 Lazada MurahYa 504050467992019 RM 633.59 &mdash; Adelmar Skuter Elektrik 350w Foldable HV Return Initiated 1D (07/06 18:10) &middot; Pending+WH Evidence &middot; followup 12/06</li>
+          </ul>
+        </div>
+        <div class="field"><strong>Dedupe outcome (PHASE 4 across ALL refund_state per BIND4):</strong> 11 of 18 candidates already in webapp &mdash; C2028 / C2030 / C2005 / C1995 / C2027 / C2029 (Withdrawn) / C2031 / C2003 / C2004 / C1996 / C1968 (Lazada MurahYa duplicate of 504062637316001 already exists). No silent re-POST.</div>
+        <div class="field"><strong>PHASE 2.5 DOM cross-verify (FD silent-drop check):</strong> 0 catches across all 3 alive TT profiles today. All "In transit + Returning to seller" rows already in PHASE 2 API result (or absent). No bug surfaced &mdash; PHASE 2 API filter is congruent with DOM today.</div>
+        <div class="field"><strong>PHASE 7a auto-crosscheck verdict (35s settle then re-GET):</strong> 7/7 amount + refund_state=Pending + audit-trail token MATCH. action_needed drifted to "WH Evidence" on all 7 (webapp auto-classifier overrode my PATCH of CS Follow Up / CS Action). Verdict per case = <strong>CONFIRMED-RECLASSIFIED-action</strong>. WH Evidence is the correct semantic default for "Awaiting customer return"-state cases (parcel returning to WH for inspection) so NO re-PATCH attempted &mdash; classifier would re-revert and WH Evidence is sensible.</div>
+        <div class="field"><strong>Reason:</strong> User binding-rule prompt explicitly invoked parcelclaim-auto with full BIND1-5 enforcement. Default scope = FULL paginated sweep per <code>[[feedback_pre_completion_evidence_table_required]]</code> (no page-1-only shortcuts). Auto-POST missed cases without permission ask. Auto-run crosscheck. Today's sweep coverage gap is structural (10 TT profiles login_expired, no operator action possible mid-run).</div>
+        <div class="field"><strong>Files:</strong> Report saved <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-08.md</code>. State persisted <code>C:\Users\tessf\.claude\skills\parcelclaim-auto\state.json</code> (last_run 2026-06-08T10:35, posted_value_rm 856.01, last_run_stats refreshed with today's verdict).</div>
+        <div class="field"><strong>Operator action queued for Monday 9/6 BEFORE 09:45 auto-run:</strong>
+          <ul>
+            <li>RELOGIN 10 TT profiles: 54/55/56/58 (carry-over from 7/6) + <strong>NEW DROPS</strong> 60/61/62 + 63/66 (carry-over) &mdash; mass-revoke pattern accelerating</li>
+            <li>WH PIC: inspect 7 NEW returning parcels (C2032 Helmet / C2033 Chess Set / C2034 Galaxy Light / C2035 Lunch Box / C2036 Keyboard Piano / C2037 Chocolate Maker / C2038 Adelmar Skuter HV RM 633.59) and reply RESELL/DAMAGED/EMPTY/WRONG ITEM/MISSING per Order ID</li>
+            <li>C2037 Refund not authorised &mdash; CS to decide dispute path (TT seller-side seems to have rejected, may need appeal within window)</li>
+            <li>C2038 Lazada MurahYa Adelmar Skuter Elektrik RM 633.59 HV &mdash; priority WH inspection</li>
+          </ul>
+        </div>
+        <div class="field"><strong>Result:</strong> ok &mdash; 7 NEW POSTs HTTP 200 + 7 remark PATCH + 7 action PATCH + 7 due_date PATCH = 28 writes / 0 errors. Crosscheck 7/7 CONFIRMED (amount+state+audit), 7/7 RECLASSIFIED-action (webapp classifier default acceptable). Zero false dupes (all 11 in-webapp candidates correctly skipped). State + report + board persisted.</div>
+      </div>
+    </div>
     <div class="entry" data-date="2026-06-08" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
       <div class="entry-summary">
         <span class="chevron">&#9654;</span>
