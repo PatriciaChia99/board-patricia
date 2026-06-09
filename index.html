@@ -639,6 +639,26 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-09" data-shops="Laz MurahYa, KarlMobel" data-platform="Lazada + TikTok + Shopee MY" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck - 2026-06-09 contact audit 5-9 Jun</span>
+      <span class="entry-meta">2026-06-09 09:40 MYT - API 2211 rows - 32 in window - 0 TT/Laz sends - 2 Shopee MY failed-contact watch</span>
+      <span class="tag">parcelsplit-contact-crosscheck</span>
+      <span class="tag result-warn">Warning</span>
+    </div>
+    <div class="entry-body"><div class="field"><pre>Date: 2026-06-09 09:40 MYT
+Task: Parcel Split contact audit from Friday 2026-06-05 through today 2026-06-09 for Lazada, TT, and SG request.
+Shop/platform: Laz MurahYa / Lazada; KarlMobel / Shopee MY. Fresh API had no TikTok rows and no separate SG platform rows.
+Reason for change: User requested contact-send eligibility and failed-contact audit.
+Dashboard changes: none.
+Before -&gt; After values:
+- Lazada 507953554276027: isContacted false -&gt; false; phoneNumbers [] -&gt; []; trackingCount 1 -&gt; 1; message sent no -&gt; no; result not eligible yet because only one Best Cargo tracking ID (66668236009001).
+- Shopee MY 680015944262015 KarlMobel: isShipped true -&gt; true; isContacted false -&gt; false; phoneNumbers [] -&gt; []; csNotes blank -&gt; blank; result failed-contact watch, no manual Shopee message sent.
+- Shopee MY 2606047980XCWR KarlMobel: isShipped true -&gt; true; isContacted false -&gt; false; phoneNumbers [] -&gt; []; csNotes blank -&gt; blank; result failed-contact watch, no manual Shopee message sent.
+Local audit artifacts: state.json lastSavedAt 2026-06-07T10:00:00+08:00 -&gt; 2026-06-09T09:40:29+08:00; report added at .agents/skills/parcelsplit-contact-crosscheck/reports/parcelsplit-report-2026-06-09.md.
+Result: No customer contact sent and no phone/icon updates. TT/Lazada eligible-to-contact count 0; phone-backfill count 0; Shopee strict mismatch count 0; Shopee shipped-while-dark watch count 2; DOM/API sample 20/20 matched.</pre></div></div>
+  </div>
     <div class="entry" data-date="2026-06-09" data-shops="ValueSnap, BahEmas, MasonGym, das.nature MY, das.nature2, Hiranai, KarlMobel, Lovento MY, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + Shopee SG" data-result="ok">
       <div class="entry-summary">
         <span class="chevron">&#9654;</span>
