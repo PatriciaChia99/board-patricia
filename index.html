@@ -639,6 +639,28 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-09" data-shops="Laz MurahYa, KarlMobel, Murahya" data-platform="Lazada + Shopee MY" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck - 2026-06-09 Lazada single-tracking send + Shopee data check</span>
+      <span class="entry-meta">2026-06-09 11:34 MYT - API 2217 rows - Lazada message sent - phone/icon blocked - 2 Shopee MY source-data failures</span>
+      <span class="tag">parcelsplit-contact-crosscheck</span>
+      <span class="tag result-warn">Warning</span>
+    </div>
+    <div class="entry-body"><div class="field"><pre>Date: 2026-06-09 11:34 MYT
+Task: Parcel Split follow-up after user clarified Lazada should be messaged even with 1 Best Cargo tracking ID, plus why Shopee MY bot did not contact 680015944262015 and 2606047980XCWR.
+Shop/platform: Laz MurahYa / Lazada; KarlMobel and Murahya / Shopee MY.
+Reason for change: Prior 09:40 audit treated Lazada single-tracking as not eligible. User corrected the rule; Shopee MY bot should send only when source order/shop data is valid.
+Dashboard changes: none. Customer-facing marketplace action: Lazada message sent for 507953554276027. Shopee MY manual messages: none.
+Before -&gt; After values:
+- Skill rule: Lazada required 2+ tracking IDs -&gt; Lazada may send with 1+ verified Best Cargo tracking ID after order/customer thread verification; TikTok remains 2+ unless explicitly approved.
+- Lazada 507953554276027 / Laz MurahYa: isContacted false -&gt; false; phoneNumbers [] -&gt; []; messageSent no -&gt; yes; trackingCount 1 -&gt; 1; tracking 66668236009001 unchanged. Result: message visible in Lazada chat at 11:15 MYT; phone/icon not updated because Lazada Show Personal Info stayed masked and sensitive-info API returned masked phone values only.
+- Shopee MY 680015944262015 / KarlMobel: isShipped true -&gt; true; isContacted false -&gt; false; phoneNumbers [] -&gt; []; csNotes blank -&gt; blank. SiteGiant Marketplace Order ID search returned 0 orders; Tracking No searches for 66668203792001, 66668201792002, 66668209792003 returned 0 orders. Result: likely wrong/non-SiteGiant order ID or source mapping; no manual Shopee message sent.
+- Shopee MY 2606047980XCWR / Parcel Split KarlMobel: isShipped true -&gt; true; isContacted false -&gt; false; phoneNumbers [] -&gt; []; csNotes blank -&gt; blank. SiteGiant found order #1417895 under Murahya, courier Shopee Express (Bulky) SPXMY069171930056; Parcel Split says KarlMobel + Best Cargo 66668204387001, and that tracking search returned 0 orders. Result: shop/courier mismatch likely caused bot path failure; no manual Shopee message sent.
+Files changed: .agents/skills/parcelsplit-contact-crosscheck/SKILL.md rule note; state.json lastRunId 2026-06-09T-claude-scheduled-0855 -&gt; 2026-06-09T-codex-followup-1134; report refreshed at .agents/skills/parcelsplit-contact-crosscheck/reports/parcelsplit-report-2026-06-09.md.
+Verification: Fresh /api/parcel-split pull HTTP 200 with 2217 rows; npm test passed 1/1.
+Result: partial/warn - Lazada buyer informed; dashboard icon remains dark until phone can be revealed/saved. Shopee MY failures need source-data correction or bot send-log lookup, not manual Shopee TT/Lazada wording.</pre></div></div>
+  </div>
 <div class="entry" data-date="2026-06-09" data-shops="ValueSnap, TT Murahya, Karlmobel, das.nature2, TT KarlMobel, Hiranai, MasonGym, Murahya, DasNatureSG2, TT DasNature, Laz MurahYa, Kinata SG" data-platform="Shopee MY + Shopee SG + TikTok MY + Lazada MY + SiteGiant" data-result="warn" data-marker="SBVAR-CONTINUATION-20260609-1111">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
