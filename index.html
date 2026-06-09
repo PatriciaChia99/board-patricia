@@ -640,6 +640,31 @@ header.page::after{
     </div>
         <!-- ENTRIES_START -->
 
+<div class="entry" data-date="2026-06-09" data-shops="KarlMobel, MurahYa" data-platform="Shopee MY" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">chatbot-bug-audit &mdash; 322 chats reviewed / 4 bug patterns / 14 confirmed buyers / 1 Jira ticket filed to GRBT (9/6)</span>
+    <span class="entry-meta">2026-06-09 MYT &middot; user-flagged systemic chatbot reply quality issues &middot; cs1+cs3+cs4 swept &middot; 7 screenshots attached &middot; submitted via GRBT/form/152</span>
+    <span class="tag">chatbot-bug-audit</span>
+    <span class="tag">jira</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Ad-hoc audit of Shopee MY chatbot reply quality after user flagged systemic bot bugs wasting CS team time. Audit window Sun 7/6 17:45 &rarr; Mon 8/6 17:45 MYT with carry-over examples Mon evening + Tue AM. Swept 3 cservice profiles (cs1 ValueSnap/BahEmas/MasonGym/das.nature, cs3 KarlMobel/Lovento/Luxbin, cs4 MurahYa/Emas Gift/JagerHelmet/Adelmar) = 322 chats reviewed. Identified 4 distinct chatbot reply bug patterns (A, G, H, I) across 14 confirmed buyer cases, captured 7 evidence screenshots, drafted consolidated Jira ticket, filled GRBT/form/152 (Title + 10K markdown body + Priority=High + Page=Chatbot + Team=Customer Service + Requestor=Patricia + 7 attachments), submitted via CDP setFileInputFiles workaround.</p>
+    <div class="field"><strong>Bug Pattern A (Off-topic SELF_PICKUP template):</strong> 3 KarlMobel buyers &mdash; osirishorus (Pool Table install Q &rarr; bot pickup template); mohd.nurhisyam (Bluetooth headset rider-passenger Q &rarr; bot pickup template); sitiramlahsapik (Tent outer layer Q &rarr; bot pickup template). Root cause: trigger fires on generic shopping intent without checking explicit pickup keywords.</div>
+    <div class="field"><strong>Bug Pattern G (Product/Order card &rarr; bot fires NOTHING):</strong> 3 KarlMobel buyers &mdash; atananuar (Electric Wheelchair card), nhasannah62, sediadi. Bot trigger only listens to text messages. CS team forced to manually pick up with generic greeting. <strong>Previously raised in earlier Jira ticket but still recurring.</strong></div>
+    <div class="field"><strong>Bug Pattern H (Description-answerable Q &rarr; bot fires holding template):</strong> 7 buyers across KarlMobel cs3 + MurahYa cs4 &mdash; quakeroat66 + chloeeliew (size chart) + happysoul271 (storage bag, 15h delay) + estore_online (weight+wood) + aina96anuar91 (warranty+repair, 11h delay) + aimanariff18 (variant comparison) + agnesiew (luggage weight). Bot does not consult product description as knowledge base.</div>
+    <div class="field"><strong>Bug Pattern I (QC request &rarr; bot fires holding instead of QC template):</strong> 1 KarlMobel buyer &mdash; wanmuhamadfaeez (Please check before postage &rarr; bot holding at 01:44, Sofia manually fired QC reassurance at 12:51 = <strong>~11 hour delay</strong>). QC template exists for agents but not wired to bot trigger.</div>
+    <div class="field"><strong>Skipped per user call:</strong> Bug Pattern E (Pattern 6 generic SLA template ignoring URGENT/specific date, 5+ instances on cs1) + Bug Pattern F (Holding loop) &mdash; user said skip those for this ticket. vivian959 + syeeikh removed from Bug H per user pushback (not real bugs). hynarazak removed from Bug A (customer wanted offline pickup, template was correct).</div>
+    <div class="field"><strong>Coverage gaps:</strong> cs2 (das.nature2/Hiranai), cs5 (Kinata SG), Shopee SG profile 84, TikTok, Lazada NOT yet swept &mdash; patterns likely affect them too, deferred to follow-up audit.</div>
+    <div class="field"><strong>Evidence attached:</strong> 7 PNG screenshots (~1MB total) saved to bot-bug-audit/2026-06-09/: osirishorus-pool-table-installation.png (user-provided) + atananuar-electric-wheelchair-card.png (user-provided) + mohd.nurhisyam-bluetooth-headset.png + sitiramlahsapik-tent-outer-layer.png + wanmuhamadfaeez-qc-request.png + chloeeliew-size-chart-Q.png + estore_online-weight-wood.png. Captured via PowerShell Win32 GetWindowRect after AdsPower MCP screenshot tool hung on font-load twice.</div>
+    <div class="field"><strong>Jira form submission:</strong> Title=Shopee MY chatbot fires wrong / irrelevant templates &mdash; 4 distinct patterns / Priority=High / Page=Chatbot / Requesting Team=Customer Service / Requestor=Patricia / Body=~10K chars markdown / 7 attachments. Submitted to GRBT/form/152 on profile 70. Confirmation page: We are on it! Thanks for your response. Ticket ID not exposed in form confirmation &mdash; check GRBT project for new issue.</div>
+    <div class="field"><strong>Memory update:</strong> Wrote feedback_bot_vs_cs_name_rule.md after user caught me attributing Lucy's Lucy here greeting as bot reply on atananuar product card case. New HARD RULE: message with name signoff (-Lucy / Lucy here / saya Sofia / -Haja) = CS HUMAN; message without name = BOT auto-reply. Real bug for atananuar = bot fired NOTHING, Lucy had to manually greet.</div>
+    <div class="field"><strong>Technical workaround:</strong> AdsPower MCP screenshot tool hung on waiting for fonts to load (Playwright timeout). Pivoted to PowerShell Win32 + System.Drawing.Bitmap.CopyFromScreen, identifying target window via netstat OwningProcess match on debug port. Browser security blocks programmatic file picker via .click() (requires real user gesture); resolved via Node.js raw WebSocket to AdsPower CDP, sending DOM.querySelectorAll + DOM.setFileInputFiles which bypasses gesture requirement.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 1 consolidated Jira ticket submitted to GRBT with 4 bug patterns + 14 buyer cases + 7 evidence screenshots. Awaiting IT triage.</div>
+  </div>
+</div>
+
 <div class="entry" data-date="2026-06-09" data-shops="Solaree,Flashree,dutchgaming,Chairsy,Gameniture,Atlusrack,Stationarylah,KEDAI GARDEN,FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
