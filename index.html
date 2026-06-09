@@ -638,7 +638,30 @@ header.page::after{
       </div>
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
-    <!-- ENTRIES_START -->
+        <!-- ENTRIES_START -->
+    <div class="entry" data-date="2026-06-09" data-shops="TT KarlMobel, TT MurahYa, TT Adelmar, TT DasNature, TT Hiranai, TT JagerHelmet, TT Jager, TT Valuesnap, Lazada MurahYa" data-platform="TikTok MY + Lazada MY" data-result="ok">
+      <div class="entry-summary">
+        <span class="chevron">&#9654;</span>
+        <span class="entry-title">ttparcelclaim+check &mdash; Mon AM scheduled 08:55: 58 cases processed / 118 PATCHes / 0 fails / 1 OID-dedupe Withdrawn flip C1896 RM 12.87 (9/6)</span>
+        <span class="entry-meta">2026-06-09 08:55 MYT &middot; profile 70 ALIVE &middot; 56 due-today day-advance batch + 2 delta (C1896 OID-dedupe + C1912 MV D9) &middot; Pending 107&rarr;106 &middot; orphans 2b/2c=0/0 HOLD &middot; CROSSCHECK 58/58 CONFIRMED 0 drift &middot; 11 TT + 1 Laz LOGIN_EXPIRED operator-relogin &middot; P0 carry: C1998 J&amp;T chase + C2055 D14+ trace + C1942/C1956 Valuesnap appeal window</span>
+        <span class="tag">ttparcelclaim</span>
+        <span class="tag">ttparcelclaimcheck</span>
+        <span class="tag result-ok">Completed</span>
+      </div>
+      <div class="entry-body">
+        <p><strong>Brief:</strong> Scheduled unattended ttparcelclaim run at 08:55 MYT Mon. 58 cases day-advanced with concise [9/6 - STATE] remark per Rule 11 + followup_dt push 1-3 WD. 56-case main batch (112 PATCHes) + 2-case delta sweep (6 PATCHes: C1896 Withdrawn flip + C1912 MV D9 day-advance) = 118 PATCHes total HTTP 200 / 0 fails. Pending pool 107&rarr;106 (-1 OID dedupe). Orphans 2b/2c=0/0 HOLD STABLE pre+post. Crosscheck 58/58 CONFIRMED 0 drift no auto-classifier reversion. 0 ttchaserr triggered (operator-blocked TT profile LOGIN_EXPIRED weekend carry).</p>
+        <div class="field"><strong>Cases (delta only):</strong> 584190720791053943 TT Valuesnap RM 12.87 Pending&rarr;Withdrawn+Closed (OID dedupe canonical C1904 already Withdrawn same OID, clear false exposure). 584217612991366920 TT KarlMobel MV D9 day-advanced (MV D9 dispute path).</div>
+        <div class="field"><strong>P0 day-advances:</strong> 584279950757234327 KM RM 683.02 A1 D10 J&amp;T 680055233012112 URGENT chase appeal closes Fri 12/6 (fu 10/6); 584230399410079447 Adelmar RM 339.67 A1 D14+ no tracking URGENT carrier trace + Reimb Coverage Tue (fu 10/6); 584265628582970715 Valuesnap IN DISPUTE appeal closes Fri 12/6 (fu 10/6); 584310510937212614 Valuesnap appeal closes Sun 14/6 (fu 11/6); 584162697929393499 MurahYa Hoverboard B3a D4 IN TRANSIT WH inspect on arrival (fu 11/6); 584312921965430473 Adelmar 8787moo B3a D5 WH inspect on arrival (fu 11/6); 584156284040480092 KM Skuter VHV Yorry WH inbound D10 (fu 11/6); 584250852466525760 KM J&amp;T VHV returning D5 + Reimb if non-receipt D14 (fu 11/6).</div>
+        <div class="field"><strong>HV monitor day-advances:</strong> 584171582272538602 KM 875.40 DAMAGE PENDING EVI; 584150406283166781 KM 746.15 HV DISPUTE DAMAGE 7/6; 584041773501547868 KM 879.70 NOT RECEIVE D7 ETA 12/6; 584170337577305483 KM 739.66 IB ETA 10/6; 584178194745755036 KM 847.70 IB ETA 10/6; 584023464990770600 KM 726.70 D22 favorable verdict wallet watch; 583991592599586009 MurahYa 288.16 D27 escalate AM; 583381706383197812 KM 608.61 D41 escalate Sat 13/6; 583846770144282571 KM 632.73 D18 verify SR Return tracker; 584032042943088478 KM 351.07 PayLater file new TT ticket; 584052344694015323 KM 269.90 CUST OPEN RR file Reimb; 584046495792333923 KM 247.10 packing video + AWB ticket 202606050812203418 URGENT 10/6.</div>
+        <div class="field"><strong>Shops:</strong> TT KarlMobel (40+ cases) + TT MurahYa + TT Adelmar + TT DasNature + TT Hiranai + TT JagerHelmet + TT Jager + TT Valuesnap + Lazada MurahYa.</div>
+        <div class="field"><strong>Platform:</strong> TikTok MY + Lazada MY.</div>
+        <div class="field"><strong>Reason:</strong> Daily scheduled 08:55 MYT unattended run. Operator weekend-away pattern + 11 TT + 1 Laz profile LOGIN_EXPIRED carry-over from 5/6+8/6 limited TT-side audit. Graceful degradation: webapp-side maintenance (day-advance + concise remark + orphan sweep) + WH PIC reminder + coverage report flagging LOGIN_EXPIRED for operator relogin before 09:45 parcelclaim-auto fire.</div>
+        <div class="field"><strong>Files:</strong> Coverage <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-09.md</code>; WH PIC reminder <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-09.md</code>.</div>
+        <div class="field"><strong>Crosscheck:</strong> 58/58 CONFIRMED 0 RECLASSIFIED 0 RETRACTED 0 DISCREPANCY. Orphans 2b/2c post=0/0. P0 fu_dt: 7/7 within 1-2D operator-actionable window. ttchaserr=0 acceptable (TT profiles LOGIN_EXPIRED + operator-blocked; will trigger on Mon 9/6 AM relogin + 09:45 parcelclaim-auto overlay).</div>
+        <div class="field"><strong>User action required Mon 9/6:</strong> (a) Relogin 11 TT profiles (54/55/56/58/59/60/61/62/63/65/66) + 1 Lazada (83) BEFORE 09:45 parcelclaim-auto fire; (b) C1998 KM J&amp;T 680055233012112 chase TODAY (3D left before appeal closes Fri); (c) C2055 Adelmar D14+ carrier trace TODAY + Reimb Coverage filing; (d) C1942 Valuesnap CS confirm appeal evidence submitted EOD; (e) C1776 KM packing video + AWB upload ticket 202606050812203418 AM.</div>
+        <div class="field"><strong>Result:</strong> ok &mdash; 118 PATCHes HTTP 200, 58/58 crosscheck CONFIRMED, 0/0/0/0 orphans HOLD stable, OID dedupe RM 12.87 false exposure cleared, P0 urgents queued for Mon operator AM action with concise remarks per Rule 11 + return_status preserved per Rule 18 + followup_dt via dedicated field per Rule 19.</div>
+      </div>
+    </div>
     <div class="entry" data-date="2026-06-08" data-shops="Kinata SG, DasNatureSG2, TT DasNature, TT Murahya, Laz MurahYa, ValueSnap, TT Adelmar, das.nature, das.nature2, TT KarlMobel" data-platform="Shopee SG + Shopee MY + TikTok MY + Lazada MY" data-result="ok">
       <div class="entry-summary">
         <span class="chevron">&#9654;</span>
@@ -1013,9 +1036,9 @@ header.page::after{
         </div>
         <div class="field"><strong>Pattern surfaced &mdash; &quot;Lucy/Sofia generic onboarding template for specific customer instructions&quot;:</strong> rashietadawood (FRAGILE), zulazammddahlan (ASAP), jameschasc (printer+ink condition check) all received the SAME 24h+double-check generic template instead of acknowledgment of their specific instruction. Classifier passes (hasAgent=true from Lucy/Sofia signoff or context) but Q&amp;A semantic mismatch is the failure mode. Skill TODO: add &quot;customer-specific-instruction&quot; pattern detector to chataudit Section 4d (instructions like FRAGILE / ASAP / call before ship / specific packing).</div>
         <div class="field"><strong>Result:</strong> partial &mdash; 621/621 deep-reviewed (cs1 114 + cs2 69 + cs3 229 + cs4 195 + cs5 14) &middot; <strong>2 CONFIRMED Lucy misses requiring CS action TODAY</strong> (cjplusstore defect + rashietadawood FRAGILE) &middot; 5 borderline awareness &middot; 2 cs5 LOST_SALE awareness + 1 cs5 SLOW (carry from prior cs5 backfill) &middot; 3 cs1-cs4 carry-over still unresolved (zarinamohdkassim 9d / thecreation2020 6d / ikmal_sumadi 9d) &middot; planto cs3 PARTIAL RECOVERY (Sofia goodwill 7/6) &middot; pattern detector skill-TODO surfaced for &quot;customer-specific instruction&quot; class of Q&amp;A mismatch.</div>
+        <div class="field"><strong>Patricia status correction 2026-06-08:</strong> Pending update remains open and this task will run again tomorrow. Keep as pending update, not settled.</div>
       </div>
-    
-        <div class="field"><strong>Patricia status correction 2026-06-08:</strong> Pending update remains open and this task will run again tomorrow. Keep as pending update, not settled.</div></div>
+    </div>
     <div class="entry" data-date="2026-06-08" data-shops="TT Jager, TT MurahYa, TT Valuesnap" data-platform="TikTok MY" data-result="ok">
       <div class="entry-summary">
         <span class="chevron">&#9654;</span>
@@ -1138,9 +1161,9 @@ header.page::after{
         <div class="field"><strong>Report:</strong> Saved to <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-06-08.md</code>.</div>
         <div class="field"><strong>Notes:</strong> Shopee SC signed <code>get_shop_list</code> URL returned <code>code=0 shops=null</code> on initial replay (one-time-consume same as 2/6, 3/6, 6/6, 7/6) &mdash; worked around via DOM scrape of pages 1+2 after clicking &ldquo;View all shops&rdquo; to clear the stale <code>kmall:patricia</code> search filter. Fresh fetch returned data nested at root (<code>r.shops + r.region_count + r.total</code>), not <code>r.data.shops</code>. <code>get_sig</code> code=0 first try for all 9 shops, no CAPTCHA, no session expiry &mdash; though initial Solaree sig URL landed on Hiranai residual session (re-issued + re-navigated, then confirmed solaree2024 in header). One transient redirect to <code>employee.awesomeree.com.my/customer-service/parcel-claim/tiktok</code> mid-Phase-1 (known EDGE CASE from another scheduled tab) &mdash; re-navigated to <code>/portal/shop</code> with 7s settle, recovered cleanly. AdsPower MCP fully functional.</div>
         <div class="field"><strong>Result:</strong> warn &mdash; (1) KEDAI GARDEN order 2606034CSCUXRN x10 OCTO Transparent hangers Order Received + escrow released; PIC must verify SiteGiant master decrement performed during the 6/6&ndash;8/6 window if not done yet. (2) state.json patched on 3rd attempt via Python heredoc fallback &mdash; tomorrow&rsquo;s run will no longer re-flag this OID. (3) The audit itself completed without error and confirmed gap unchanged at 9.</div>
+        <div class="field"><strong>Patricia status correction 2026-06-08:</strong> Follow-up is already settled. This board card is changed from Partial/warn to Settled/ok; no further action is open from this item.</div>
       </div>
-    
-        <div class="field"><strong>Patricia status correction 2026-06-08:</strong> Follow-up is already settled. This board card is changed from Partial/warn to Settled/ok; no further action is open from this item.</div></div>
+    </div>
 
     <div class="entry" data-date="2026-06-08" data-shops="TT KarlMobel, TT MurahYa, TT Adelmar, TT Jager, TT Valuesnap, TT JagerHelmet, TT Hiranai, Lazada MurahYa" data-platform="TikTok MY, Lazada MY" data-result="ok">
       <div class="entry-summary">
