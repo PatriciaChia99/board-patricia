@@ -639,6 +639,67 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-10" data-shops="KarlMobel, MurahYa, ValueSnap, Luxbin" data-platform="Shopee MY (internal webapp + Google Sheet)" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checkfbsclaims &mdash; first sync from FBS Claim Google Sheet to NEW webapp FBS dashboard, 273 PATCHes 0 fail (10/6)</span>
+    <span class="entry-meta">2026-06-10 16:30 MYT &middot; IT-shipped /customer-service/fbs-claim-progress (488 cases / 479 unique orders / 4 FBS shops) &middot; sheet 1_-YmjGYiC... 279 rows scanned (Murahya/Karlmobel/Valuesnap/Luxbin Claim Progress tabs) &middot; PATCH /api/fbs-claims {case_id,type,value} &middot; 114 QC + 130 Claim Status + 29 Latest Remark applied &middot; 10 unsupported values flagged (Disposed/BD Level) &middot; 22 sheet-only orders + 226 webapp-only orders reported &middot; Action column UNTOUCHED (user briefs next)</span>
+    <span class="tag">checkfbsclaims</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> User confirmed IT shipped the new FBS Claim Progress dashboard at <code>employee.awesomeree.com.my/customer-service/fbs-claim-progress</code> (replaces the old Shopee SC wallet-scraping path that was blocked since 3/6 finance password modal). User asked: "DOUBLE CHECK NICELY and CORRECTLY on all the cases can be closed. Referring to FBS Claim google sheet, update ALL the QC Judgement column E to webapp under QC Judgement. Google sheet column F Status to webapp Claim Status, Column G to webapp Latest Remark. Make sure u remember this and update to the skill forever without confusing and mistaking." Binding column rule locked into checkfbsclaims.md top section as permanent rule. Action column intentionally untouched &mdash; user will brief separately.</p>
+    <div class="field"><strong>Sheet (source):</strong> Google Sheet <code>1_-YmjGYiC-dG1832cFN73l2gqpQHBiVymG9Zqum-Jmc</code> &mdash; 4 tabs: Murahya Claim Progress (60 data rows) + Karlmobel Claim Progress (89) + Valuesnap Claim Progress (119) + Luxbin Claim Progress (5). Total 279 rows scanned (all pages, scrolled to bottom).</div>
+    <div class="field"><strong>Webapp (target):</strong> NEW dashboard at <code>/customer-service/fbs-claim-progress</code>. API <code>GET/PATCH /api/fbs-claims</code>. Total 488 cases / 479 unique order IDs (9 dup OIDs each have 2 case_ids). 4 shops: KarlMobel (149), MurahYa (148), ValueSnap (182), Luxbin&trade; (9).</div>
+    <div class="field"><strong>Column mapping locked (skill rule):</strong>
+      <ul>
+        <li>Sheet col E "QC Judgement" &rarr; webapp <code>qc_judgement</code> (enum: blank | judging | liquidate | received | rts)</li>
+        <li>Sheet col F "Status" &rarr; webapp <code>claim_status</code> (enum: pending_rr_submit_compensation | pending_seller_collect_item | qc_in_progress | closed)</li>
+        <li>Sheet col G "Latest Remark" &rarr; webapp <code>last_remark</code> via PATCH <code>type:"remark", value:[string]</code></li>
+        <li>Action column &mdash; NEVER touched by checkfbsclaims. User briefs separately.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>PATCH summary (HTTP 200 across the board):</strong>
+      <ul>
+        <li>KarlMobel: 40 QC + 46 Claim Status + 12 Latest Remark = 98 PATCHes</li>
+        <li>MurahYa: 24 QC + 24 Claim Status + 7 Latest Remark = 55 PATCHes</li>
+        <li>ValueSnap: 50 QC + 60 Claim Status + 10 Latest Remark = 120 PATCHes</li>
+        <li>Luxbin&trade;: 0 PATCHes (all 5 sheet rows had blank E/F/G; only col H notes filled)</li>
+        <li><strong>Total: 273 PATCHes / 273 success / 0 fail</strong></li>
+      </ul>
+    </div>
+    <div class="field"><strong>Before &rarr; After (representative cases):</strong>
+      <ul>
+        <li>MurahYa case 44 (oid 26032520R82A76): qc=blank &rarr; liquidate, cs=null &rarr; closed</li>
+        <li>MurahYa case 48 (oid 260319J71YM6R7): qc=blank &rarr; received, cs=null &rarr; qc_in_progress, lr=null &rarr; "24/6 Judged"</li>
+        <li>KarlMobel case 367 (oid 260223F2VFDSUP): qc=blank &rarr; received, cs=null &rarr; closed, lr=null &rarr; "10/3 Done reinbound"</li>
+        <li>ValueSnap case 168 (oid 260330FKY8GAU3): qc=blank &rarr; liquidate, cs=null &rarr; pending_rr_submit_compensation</li>
+        <li>ValueSnap case 262 (oid 260226QSVM7GYC): cs=null &rarr; closed, lr=null &rarr; "Lost - Platform auto compensate seller"</li>
+      </ul>
+    </div>
+    <div class="field"><strong>NEEDS USER DECISION &mdash; 10 unsupported sheet values (PATCH skipped, sheet unchanged):</strong>
+      <ul>
+        <li>KarlMobel <code>qc_judgement="Disposed"</code> x2: 250728BSE4MCTM, 250607VMSD7N6A &mdash; enum has only blank/judging/liquidate/received/rts. User to clarify mapping.</li>
+        <li>KarlMobel <code>claim_status="BD Level"</code> x3: 250605NWXB0JEX, 260305BBYF208E, 260201GQ7PD43V</li>
+        <li>ValueSnap <code>claim_status="BD Level"</code> x5: 2603254E9F5WKA, 260321N79947QJ, 250813P7WA6EH1, 25041112N9WRWX, 260226QM2R3RHW</li>
+        <li>Webapp enum has only: pending_rr_submit_compensation | pending_seller_collect_item | qc_in_progress | closed. User to clarify "BD Level" mapping (or ask IT to add to enum).</li>
+      </ul>
+    </div>
+    <div class="field"><strong>IN SHEET but NOT in webapp (22 orders):</strong> Mostly old "RR Cancelled" rows (Karlmobel 5 + Valuesnap 9 + 8 misc). Webapp dashboard does not list them &mdash; likely already auto-closed/purged. No action taken unless user wants them re-added. Full list in report.md.</div>
+    <div class="field"><strong>IN WEBAPP but NOT in sheet (226 cases) &mdash; user explicitly asked for this list:</strong>
+      <ul>
+        <li>KarlMobel: 62 cases (mostly request_refunded May-June 2026, plus 4 request_rejected, 1 compensation_credited)</li>
+        <li>MurahYa: 86 cases (mostly request_refunded Apr-Jun 2026, includes in_dispute / in_return / in_validation / request_rejected mix)</li>
+        <li>ValueSnap: 72 cases (mostly request_refunded May-Jun 2026, plus in_return + request_rejected)</li>
+        <li>Luxbin&trade;: 6 cases (the 5 sheet rows only covered 3 unique OIDs)</li>
+        <li>Full list per shop + per shopee_status in <code>C:\Users\tessf\Documents\fbs-sync-2026-06-10\report.md</code> and <code>webapp_not_in_sheet.txt</code>.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Method:</strong> AdsPower profile 70 (k1b44nvg Patricia, MY session). Pulled all 4 Google Sheet tabs via gviz <code>tqx=out:csv</code> (curl), pulled webapp via authenticated <code>GET /api/fbs-claims</code>. Discovered PATCH shape from page-9c042bd1f0d6aa34.js (regex grep). Smoke tested 2 PATCHes first, then batched 273 PATCHes via authenticated browser fetch in chunks of 40 (single big batch killed by context-destroyed navigation mid-run, recovered cleanly &mdash; PATCH endpoint is idempotent). Final diff confirms 0 PATCH ops remaining.</div>
+    <div class="field"><strong>Skill update:</strong> Added "BINDING RULE &mdash; GOOGLE SHEET &rarr; WEBAPP COLUMN MAPPING (LOCKED 2026-06-10)" section to the top of <code>checkfbsclaims.md</code> with the column mapping, sheet tabs in scope, hard rules (never swap E/F/G; always scroll to bottom; always report in-webapp-not-in-sheet; never touch Action column; always log to board).</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 273/273 PATCHes successful, 0 fail. Sync complete for all 4 shops. 10 unsupported values + 22 sheet-only + 226 webapp-only documented for user follow-up. Action column awaits user briefing.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-10" data-shops="all (TT/Shopee MY/Shopee SG/Lazada/Kinata SG/Valuesnap SG)" data-platform="all platforms (TikTok + Shopee MY + Shopee SG + Lazada)" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
