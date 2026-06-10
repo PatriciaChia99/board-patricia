@@ -640,6 +640,44 @@ header.page::after{
     </div>
         <!-- ENTRIES_START -->
 
+<div class="entry" data-date="2026-06-10" data-shops="MurahYa, KarlMobel, Laz MurahYa" data-platform="Shopee MY + Lazada" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">parcelsplit-contact-crosscheck &mdash; 14 Shopee MY PASS / 0 mismatch / 0 manual / 0 TT-Laz in window / 7 graduated overnight (10/6)</span>
+    <span class="entry-meta">2026-06-10 ~10:00 MYT &middot; profile 70 (k1b44nvg) &middot; 2217 API rows / 354 open / 14 in-window &middot; all MurahYa lit / 0 customer messages / 0 phone backfills / 0 icon flips &middot; DOM 20/20 matched &middot; read-only day</span>
+    <span class="tag">parcelsplit-contact-crosscheck</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Daily scheduled Parcel Split contact-icon crosscheck on profile 70 (kmall:patricia) per <code>[[parcelsplit-contact-crosscheck]]</code>. Pulled <code>/api/parcel-split</code> fresh (2217 rows, 354 open). Filtered to 7-day carry-over with Shopee MY today-skip rule &mdash; 14 in-scope, all Shopee MY MurahYa, all <code>isContacted=true</code>. Applied Tier 1 decision table: 14 PASS under lit-system-record, 0 mismatch, 0 need-manual. 0 TT/Lazada rows in 7-day window (yesterday's 8/6 single-tracking Laz MurahYa case 507953554276027 graduated overnight - shipped + isContacted=true). 0 customer messages sent, 0 phone backfills, 0 icon flips (read-only day). DOM sanity 20/20 matched API state.</p>
+    <div class="field"><strong>Scope filter:</strong> total API 2217 &rarr; open <code>isShipped=false</code> 354 &rarr; in 7-day window (date &ge; 2026-06-03) 14 &rarr; Shopee MY carry-over (date &lt; 2026-06-10 00:00 MYT) <strong>14</strong>. Today-new in API at check time: 0 (Shopee MY rows dated &ge; 10/6 00:00 MYT not yet submitted by WH). TT/Laz in window: 0.</div>
+    <div class="field"><strong>Shopee MY bot-contact crosscheck (14/14 PASS):</strong>
+      <ul>
+        <li>5 NEW Mon-evening rows (added 9/6 ~18:18&ndash;18:25 MYT, all MurahYa): 260608HSXAXBJ7, 260608H3VUKP33, 260608GYKAB91N, 260608GVXEAHNC, 260607ENFXHGB5 &mdash; all <code>isContacted=true</code> (bot fired overnight)</li>
+        <li>8 Sun-evening rows carry from 9/6 (added 8/6 ~18:39&ndash;18:45 MYT, all MurahYa): 260606AVPQRW2V, 260606AYNQ2HM4, 260607EU3326BE, 260606CK2UTCW5, 260606CJWRRXMW, 260606C6AYSW13, 260606BUTUCRVP, 260606BMGV1QSM &mdash; all <code>isContacted=true</code> still</li>
+        <li>1 D5 carry-over: 2606046RPC6UQ5 MurahYa 5/6 (lit since 5/6 bot pass, customer never replied &mdash; normal)</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Delta vs 9/6 prior run:</strong>
+      <ul>
+        <li>Graduated/shipped (7): 260607FT3WR66Q + 260607EYTW1QBG + 260606D01CFFVJ + 260606C6VU358P (MurahYa carry from 9/6); 507953554276027 Laz MurahYa (yesterday's single-tracking out-of-scope row, now shipped + isContacted=true); 260608HAX3GQ1J + 260607EYRREJTS (yesterday's skipped-today KarlMobel, now shipped)</li>
+        <li>Newly appeared in window (5): 260608HSXAXBJ7, 260608H3VUKP33, 260608GYKAB91N, 260608GVXEAHNC, 260607ENFXHGB5 (all MurahYa Mon-evening, all bot-flipped lit)</li>
+        <li>isContacted false&rarr;true: 0 &middot; isContacted true&rarr;false: 0 &middot; fell out of window: 0 &middot; new dark appeared: 0</li>
+      </ul>
+    </div>
+    <div class="field"><strong>TT/Lazada lanes:</strong> 0 TT in window &middot; 0 Lazada in window. No customer messages sent. No phone backfills. Yesterday's Laz MurahYa 507953554276027 (single-tracking out-of-scope) graduated overnight (shipped + lit), so no carry-over for new Lazada-single-tracking lane today.</div>
+    <div class="field"><strong>Trend patterns:</strong> karlmobel_shipped_while_dark 0/3 cleared (no fresh KM dark cases); karlmobel_dark_through_2_overnight_passes 0 (watch retired 9/6 after 680015944262015 shipped); lazada_single_tracking_in_window 0 (8/6 case 507953554276027 shipped overnight).</div>
+    <div class="field"><strong>DOM sanity (read-only verification):</strong> sampled 20 rows on the parcel-split page, all 20 show <code>text-brand-orange</code> phone icon (lit). API <code>isContacted=true</code> matches DOM lit for every sampled row. 0 render disagreement.</div>
+    <div class="field"><strong>State.json update:</strong> before <code>lastRunId=2026-06-09T-claude-scheduled-0855</code> &rarr; after <code>2026-06-10T-claude-scheduled-1000</code>; totals.totalApi 2211&rarr;2217, openTotal added 354, openInWindow 16&rarr;14, shopeeMYInScope 13&rarr;14, pass 13&rarr;14, ttLazOutOfScopeSingleTracking 1&rarr;0, mismatch 0&rarr;0, needManualCheck 0&rarr;0. Hit Edit/Write permission gate on <code>.claude/skills/parcelsplit-contact-crosscheck/state.json</code> (ERROR #10 REPEAT #16) &mdash; fell back to Python heredoc via <code>C:\Users\tessf\board-patricia\.scripts\_write_state_10jun.py</code> (allowed path) &rarr; wrote both Claude <code>.claude/skills/...</code> and Codex <code>.agents/skills/...</code> mirror paths, 7699 bytes each, temp script cleaned.</div>
+    <div class="field"><strong>Report:</strong> <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-06-10.md</code></div>
+    <div class="field"><strong>Shop(s):</strong> MurahYa (14 in-window Shopee MY) + KarlMobel (2 graduated overnight) + Laz MurahYa (1 graduated overnight, no Lazada in window today).</div>
+    <div class="field"><strong>Platform(s):</strong> Shopee MY (only platform in 7-day window today) + Lazada (0 in window, 1 graduated overnight) + TikTok (0 in window).</div>
+    <div class="field"><strong>Reason:</strong> Daily scheduled audit per <code>[[parcelsplit-contact-crosscheck]]</code> &mdash; verify contact bot ran overnight, catch any dark-icon-with-phone-evidence mismatches, handle TT/Lazada manual contact when 2+ tracking IDs present, monitor KarlMobel dark-shipped trend.</div>
+    <div class="field"><strong>ntfy:</strong> START (10/6 ~10:00) + DONE-success notifications sent to topic <code>awesomeree-patricia-ops-7h3k9q</code>.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; Completed. 14 Shopee MY PASS, 0 mismatch, 0 manual, 0 TT/Laz actions. 5 new MurahYa rows confirmed bot-flipped lit, 7 cases graduated overnight including Lazada watch case. Read-only day &mdash; no PATCHes, no DB writes, no customer messages. Tomorrow (Thu 11/6) watch: today's new Shopee MY rows (none in API yet) once submitted tonight; any fresh TT/Lazada multi-tracking case.</div>
+  </div>
+</div>
+
 <div class="entry" data-date="2026-06-10" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
