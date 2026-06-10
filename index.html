@@ -640,6 +640,30 @@ header.page::after{
     </div>
         <!-- ENTRIES_START -->
 
+<div class="entry" data-date="2026-06-10" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">sg-gap-monitor &mdash; 9 unlinked baseline-stable, ALL CLEAR 0 activity, SiteGiant logged out (PARTIAL) (10/6)</span>
+    <span class="entry-meta">2026-06-10 09:00 MYT &middot; 9/9 shops scanned via get_sig &middot; 0 new orders / 0 To Ship / 0 Shipping &middot; KEDAI GARDEN -10 PIC carry-over Day 7 &middot; SiteGiant /signin redirect &middot; state.json patched via Python fallback</span>
+    <span class="tag">sg-gap-monitor</span>
+    <span class="tag result-warn">Partial</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Daily SiteGiant integration-gap order monitor on Shopee MY 27 shops vs SiteGiant ShopeeMY 18 channels. Run 2026-06-10 09:00 MYT (Wed), profile 70 (kmall:patricia). PARTIAL outcome: SiteGiant logged out so Phase 2 fresh channel scrape impossible; fell back to baseline 13/5 gap (28-day stable, 9 shops unchanged). Phase 4 per-shop scan via get_sig completed cleanly on all 9 - ZERO new activity. Read-only audit, no writes to Shopee/SiteGiant/webapp.</p>
+    <div class="field"><strong>Shops in scope:</strong> 9 unlinked baseline (Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer)</div>
+    <div class="field"><strong>Platform:</strong> Shopee MY (Shopee Seller Centre /portal/shop + per-shop /portal/sale/order via get_sig) + SiteGiant (sitegiant.co/marketplaces/shopee/all - LOGGED OUT, fallback to baseline)</div>
+    <div class="field"><strong>Phase 1 (Shopee SC shop list):</strong> 27 MY shops fetched via get_shop_list pages 1+2 (search_content=kmall:patricia stripped from page 2 URL before replay). before: 27 baseline -&gt; after: 27 confirmed (no Shopee SC additions/removals).</div>
+    <div class="field"><strong>Phase 2 (SiteGiant channel scrape):</strong> FAILED - sitegiant.co/marketplaces/shopee/all redirects to https://account.sitegiant.co/signin (session expired). Retried via fresh tab (mcp__adspower__open-new-page), same redirect. before: 18 baseline -&gt; after: cannot verify (used baseline 18 as fallback). Reason: SiteGiant cookies expired on profile 70 master kmall:patricia.</div>
+    <div class="field"><strong>Phase 3 (Gap diff):</strong> baseline 13/5 gap used (28-day stable). before: 9 unlinked -&gt; after: 9 unlinked unchanged. Caveat: could not auto-detect any silent integration overnight (unlikely given 28-day stability).</div>
+    <div class="field"><strong>Phase 4 (Per-shop activity scan via get_sig):</strong> 9/9 shops PASS. All 9 latest order IDs unchanged vs 9/6 baseline; All 9 with 0 To Ship; All 9 with 0 Shipping. Detail: (1) Chairsy 260211F1FRUFAH 0/0; (2) dutch_gaming null/0/0; (3) Flashree 2409031DJJWV7T 0/0; (4) Solaree 240718V5H3A1KA 0/0; (5) Gameniture null/0/0; (6) Atlusrack 260214NUX1Y8BX 0/0; (7) Stationarylah 260414QW1M81CQ 0/0; (8) KEDAI GARDEN 2606034CSCUXRN 0/0 (CARRY-OVER Day 7); (9) FynnKoffer 260307GC8213CQ 0/0.</div>
+    <div class="field"><strong>KEDAI GARDEN carry-over PIC action (from 8/6):</strong> 2606034CSCUXRN ivaansoo 50CM OCTO PLASTIC FLOWER POT HANGER Transparent x10 RM 5.10 SPX Express SPXMY069007879356. Status: Order Received (escrow released, buyer can R/R until 22/06/2026). Stock desync since 3/6. before: PIC SiteGiant -10 uncompleted Day 6 -&gt; after: STILL uncompleted Day 7. No further action by sg-gap-monitor (read-only); PIC manual SiteGiant decrement required.</div>
+    <div class="field"><strong>State.json update:</strong> before: lastRunTime=2026-06-09T09:00:00+08:00 -&gt; after: lastRunTime=2026-06-10T09:00:00+08:00, previousRunId=2026-06-09T09:00:00+08:00, siteGiantStatus_2026_06_10=LOGGED_OUT, perShop_2026_06_10 added (all 9 shops with 0/0 activity), notes updated. Reason: persist run snapshot for tomorrow delta detection. Hit Write permission gate as documented in skill (ERROR #10 REPEAT #15) -&gt; fell back to Python heredoc via C:\Users\tessf\board-patricia\.scripts\_state_write_tmp.py (allowed path) -&gt; OK 4447 bytes -&gt; temp script cleaned.</div>
+    <div class="field"><strong>Sub-shop switch quirks:</strong> 0 today. 9 get_sig calls returned code=0 / 9 sub-shop URLs navigated cleanly / 9 sub-shop banners ("Home My Orders &lt;username&gt; kmall:patricia") confirmed. In contrast to 9/6 which hit a first-sig-switch tab-kill bug. No PHASE 4.5 SPayLater garden.mall auto-cancel pattern triggered this run (last instance 14/5).</div>
+    <div class="field"><strong>Report:</strong> C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-06-10.md</div>
+    <div class="field"><strong>Result:</strong> warn &mdash; Partial. Phase 4 completed cleanly on all 9 baseline shops (no missed exposure today). Phase 2 SiteGiant scrape failed due to logged-out session. State.json patched via Python fallback. PIC ACTION TODAY: re-login to sitegiant.co on profile 70 (master kmall:patricia) before Thu 11/6 09:00 run, otherwise tomorrow will also be PARTIAL. Also: chase KEDAI GARDEN -10 OCTO Transparent SiteGiant decrement (Day 7 uncompleted).</div>
+  </div>
+</div>
+
 <div class="entry" data-date="2026-06-09" data-shops="KarlMobel, MurahYa" data-platform="Shopee MY" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
