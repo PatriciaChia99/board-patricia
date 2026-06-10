@@ -643,7 +643,7 @@ header.page::after{
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">checkfbsclaims &mdash; first sync from FBS Claim Google Sheet to NEW webapp FBS dashboard, 273 PATCHes 0 fail (10/6)</span>
-    <span class="entry-meta">2026-06-10 16:30 MYT &middot; IT-shipped /customer-service/fbs-claim-progress (488 cases / 479 unique orders / 4 FBS shops) &middot; sheet 1_-YmjGYiC... 279 rows scanned (Murahya/Karlmobel/Valuesnap/Luxbin Claim Progress tabs) &middot; PATCH /api/fbs-claims {case_id,type,value} &middot; 114 QC + 130 Claim Status + 29 Latest Remark applied &middot; 10 unsupported values flagged (Disposed/BD Level) &middot; 22 sheet-only orders + 226 webapp-only orders reported &middot; Action column UNTOUCHED (user briefs next)</span>
+    <span class="entry-meta">2026-06-10 17:30 MYT &middot; IT-shipped /customer-service/fbs-claim-progress (488 cases / 479 unique orders / 4 FBS shops) &middot; sheet 1_-YmjGYiC... 279 rows scanned &middot; 273 PATCHes (114 QC + 130 Claim Status + 29 Latest Remark) 0 fail &middot; 222 webapp-only OIDs appended to sheet (85 MY + 60 KM + 71 VS + 6 Luxbin) for FBS team follow-up &middot; 2 Jira tickets filed (GRBT/810 add 7 orders + GRBT/812 add Disposed/BD Level enum) &middot; Action column UNTOUCHED (user briefs next)</span>
     <span class="tag">checkfbsclaims</span>
     <span class="tag result-ok">Completed</span>
   </div>
@@ -686,13 +686,29 @@ header.page::after{
       </ul>
     </div>
     <div class="field"><strong>IN SHEET but NOT in webapp (22 orders):</strong> Mostly old "RR Cancelled" rows (Karlmobel 5 + Valuesnap 9 + 8 misc). Webapp dashboard does not list them &mdash; likely already auto-closed/purged. No action taken unless user wants them re-added. Full list in report.md.</div>
-    <div class="field"><strong>IN WEBAPP but NOT in sheet (226 cases) &mdash; user explicitly asked for this list:</strong>
+    <div class="field"><strong>IN WEBAPP but NOT in sheet (226 cases / 222 unique OIDs) &mdash; user explicitly asked for this list:</strong>
       <ul>
-        <li>KarlMobel: 62 cases (mostly request_refunded May-June 2026, plus 4 request_rejected, 1 compensation_credited)</li>
-        <li>MurahYa: 86 cases (mostly request_refunded Apr-Jun 2026, includes in_dispute / in_return / in_validation / request_rejected mix)</li>
-        <li>ValueSnap: 72 cases (mostly request_refunded May-Jun 2026, plus in_return + request_rejected)</li>
-        <li>Luxbin&trade;: 6 cases (the 5 sheet rows only covered 3 unique OIDs)</li>
+        <li>KarlMobel: 62 cases / 60 unique OIDs (mostly request_refunded May-June 2026, plus 4 request_rejected, 1 compensation_credited)</li>
+        <li>MurahYa: 86 cases / 85 unique OIDs (mostly request_refunded Apr-Jun 2026, includes in_dispute / in_return / in_validation / request_rejected mix)</li>
+        <li>ValueSnap: 72 cases / 71 unique OIDs (mostly request_refunded May-Jun 2026, plus in_return + request_rejected)</li>
+        <li>Luxbin&trade;: 6 cases / 6 unique OIDs (the 5 sheet rows only covered 3 unique OIDs)</li>
         <li>Full list per shop + per shopee_status in <code>C:\Users\tessf\Documents\fbs-sync-2026-06-10\report.md</code> and <code>webapp_not_in_sheet.txt</code>.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>SHEET APPEND &mdash; all 222 unique webapp-only OIDs appended to col B of each Claim Progress tab (sorted newest-first by order_id):</strong>
+      <ul>
+        <li>Murahya Claim Progress: B65&ndash;B149 (85 OIDs appended)</li>
+        <li>Karlmobel Claim Progress: B95&ndash;B154 (60 OIDs appended)</li>
+        <li>Valuesnap Claim Progress: B122&ndash;B192 (71 OIDs appended)</li>
+        <li>Luxbin Claim Progress: B8&ndash;B13 (6 OIDs appended)</li>
+        <li>Total: 222 OIDs added. Only col B (Order_SN) populated &mdash; FBS team to fill in QC Judgement, Claim Status, Latest Remark, etc.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>JIRA TICKETS FILED:</strong>
+      <ul>
+        <li>GRBT/form/810 (Bug report) &mdash; submitted: "FBS Claim Progress dashboard &mdash; add 7 historic Shopee MY orders (KarlMobel + MurahYa + ValueSnap) to data sync so FBS team can track them". Lists the 7 in-sheet-not-in-webapp orders with values (1 BD Level + 6 blank).</li>
+        <li>GRBT/form/812 (Change request) &mdash; submitted: "FBS Claim Progress dashboard &mdash; add 'Disposed' (QC Judgement) and 'BD Level' (Claim Status) to dropdown enum options". Lists the 10 unsupported sheet values that need enum codes.</li>
+        <li>Both tickets: Priority=Medium, Page=FBS Claim, Requesting Team=Customer Service, Requestor=Patricia. Confirmation "We're on it! Thanks for your response." returned by Jira for both.</li>
       </ul>
     </div>
     <div class="field"><strong>Method:</strong> AdsPower profile 70 (k1b44nvg Patricia, MY session). Pulled all 4 Google Sheet tabs via gviz <code>tqx=out:csv</code> (curl), pulled webapp via authenticated <code>GET /api/fbs-claims</code>. Discovered PATCH shape from page-9c042bd1f0d6aa34.js (regex grep). Smoke tested 2 PATCHes first, then batched 273 PATCHes via authenticated browser fetch in chunks of 40 (single big batch killed by context-destroyed navigation mid-run, recovered cleanly &mdash; PATCH endpoint is idempotent). Final diff confirms 0 PATCH ops remaining.</div>
