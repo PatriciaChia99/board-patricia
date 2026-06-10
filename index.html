@@ -639,6 +639,48 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-10" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT KarlMobel, TT MurahYa, TT Valuesnap, TT JagerHelmet, TT Jager, TT JagerArmor, TT JagerSafety, TT HiranaiMY, TT Lovento, TT Kinata, Lazada MurahYa, Laz das.nature, Lazada Lovento" data-platform="TT MY + Lazada MY" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">parcelclaim-auto &mdash; 13 NEW POSTed C2070-C2082 RM 3,357.85 (2 R/R + 11 FD) + ~930 historical FD backlog flagged (10/6)</span>
+    <span class="entry-meta">2026-06-10 09:45-12:00 MYT &middot; 13/16 profiles scanned OK &middot; 1 SG-only skip &middot; 1 Laz relogin &middot; 13/13 POSTs HTTP 200 &middot; crosscheck 13/13 CONFIRMED &middot; 0 silent-drop DOM bug</span>
+    <span class="tag">parcelclaim-auto</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Wed 10/6 scheduled parcelclaim-auto live run. Full paginated sweep across 13 TT MY + 3 Lazada MY profiles per BIND1+BIND2 (R/R 5 pages × FD 15 pages × DOM 3 pages cross-verify). 13 NEW cases POSTed (C2070-C2082, RM 3,357.85). PHASE 7a auto-crosscheck: 13/13 CONFIRMED. **Major discovery: ~930 historical FD-tagged OIDs surfaced NEW to webapp** (likely residual silent-drops from legacy 4-day FD cutoff applied before fix 4/6). Hybrid 30d-FD POST scope applied today; older backfill deferred awaiting user decision.</p>
+    <div class="field"><strong>Scope:</strong> 13 TT MY profiles (54-66 + 63 + 67) + 3 Lazada MY (81-83). 67 Kinata SG-only (redirected to seller-sg, skipped per yesterday pattern). 83 Lazada Lovento required auto-relogin (single click, AdsPower auto-fill).</div>
+    <div class="field"><strong>Scan totals:</strong> TT R/R 19 in-window unique (314 Request closed + 478 outside 4-day window skipped); TT FD API 1,408 across 12 alive profiles; TT FD DOM cross-verify 28 "Returning to seller" rows surfaced; Lazada 17 visible rows all outside 4-day cutoff.</div>
+    <div class="field"><strong>Webapp baseline (PHASE 0):</strong> 558 cases / 545 unique OIDs (110 Pending + 423 Withdrawn + 21 Credited + 4 Rejected) on profile 70 k1b44nvg.</div>
+    <div class="field"><strong>Dedupe (PHASE 4):</strong> Dedupe by order_id across ALL refund_state per BIND4. Yesterday's 8 POSTs (C2062-C2069) all confirmed in webapp baseline. **DISCOVERY:** Full FD scan revealed 100+ historical FD-tagged OIDs not in webapp (Adelmar 23, DasNature 100, KarlMobel 250+, MurahYa 380+, Valuesnap 100+, etc — total ~930). Pattern: these are TT FD-tagged orders dating back to 2025-06 likely accumulated when legacy 4-day cutoff silently dropped non-recent FD orders before 4/6 fix.</div>
+    <div class="field"><strong>POST scope (hybrid):</strong> Applied 30-day backfill cutoff (source_date >= 2026-05-11). Catches recent BIND2-pattern silent-drops; defers ~930 older OIDs awaiting user decision. R/R: all NEW in 4-day window POSTed (2 cases). FD: NEW with source_date >= 30d POSTed (11 cases).</div>
+    <div class="field"><strong>POSTed cases (13):</strong>
+      <ul>
+        <li>C2070 TT DasNature 584373459452331579 R/R RM 24.77 (Flysheet Pole, 9/6) — Platform processing</li>
+        <li>C2071 TT MurahYa 584372150333244582 R/R RM 137.92 (Outer Layer Tent, 9/6) — Awaiting customer return</li>
+        <li>C2072 TT Adelmar 584299958877193506 FD RM 243.71 (E scooter 24V, 1/6)</li>
+        <li>C2073 TT Adelmar 584156551473824868 FD RM 775.47 HV (Electric scooter 350w, 23/5)</li>
+        <li>C2074 TT DasNature 584292932622714299 FD RM 15.91 (Solar Fan Light, 31/5)</li>
+        <li>C2075 TT Hiranai 584349870240531888 FD RM 29.00 (Striped Sweater, 3/6)</li>
+        <li>C2076 TT Hiranai 584286900971275940 FD RM 2.70 (Suspender Vest, 31/5)</li>
+        <li>C2077 TT Hiranai 584246168178427577 FD RM 26.00 (Stiletto Shoes, 28/5)</li>
+        <li>C2078 TT KarlMobel 584417844908164345 FD RM 573.38 HV (Adelmar X Evo Scooter, 7/6)</li>
+        <li>C2079 TT KarlMobel 584356481834910790 FD RM 544.49 HV (Skuter Elektrik 350W, 4/6)</li>
+        <li>C2080 TT KarlMobel 584347176847508794 FD RM 598.88 HV (Skuter Elektrik 350W, 3/6)</li>
+        <li>C2081 TT MurahYa 584393996714739552 FD RM 365.02 (HOVERBOARD BT, 6/6)</li>
+        <li>C2082 TT MurahYa 584322877439182297 FD RM 20.60 (Chess Board Set, 2/6)</li>
+      </ul>
+    </div>
+    <div class="field"><strong>PHASE 2.5 DOM cross-verify:</strong> 0 silent-drop bugs detected across 13 TT MY profiles. All "In transit + Returning to seller" rows in DOM scrape were also present in PHASE 2 API result for same profile. Safety net held.</div>
+    <div class="field"><strong>PHASE 7a auto-crosscheck:</strong> 13/13 CONFIRMED. OID present in webapp ✓ &middot; refund_amount_rm match ✓ &middot; refund_state=Pending ✓ &middot; audit-trail token in last_remark ✓. 0 RECLASSIFIED / 0 RETRACTED / 0 DISCREPANCY. return_status + action_needed + followup_dt blank by design — populated by tomorrow's 11/6 08:55 ttparcelclaim run.</div>
+    <div class="field"><strong>Audit-trail PATCH:</strong> 13 cases stamped with remark token "[POST 2026-06-10 parcelclaim-auto 09:45 scheduled — 13 NEW intake full paginated sweep + Phase 2.5 DOM dedupe + 30d FD cutoff for backfill scope]". C2070 needed 1 retry (HTTP 502 first), HTTP 200 second attempt.</div>
+    <div class="field"><strong>Deferred backfill (NOT POSTed today):</strong> ~930 FD-tagged OIDs older than 30 days NEW to webapp (Adelmar 21 / DasNature 99 / Hiranai 25-30 / HiranaiMY 45 / JagerArmor 1 / JagerSafety 2 / KarlMobel 250 / MurahYa 380 / Valuesnap 100 / JagerHelmet 5). Per report Section 5b, user decides: full historical backfill vs treat-as-resolved-noise.</div>
+    <div class="field"><strong>state.json:</strong> Updated last_run=2026-06-10T12:00:00+08:00 / posted=13 / RM=3357.85 / seen_count=128. 13 new seen[] entries (TT DasNature/MurahYa/Adelmar/Hiranai/KarlMobel|rr or failed_delivery|OID).</div>
+    <div class="field"><strong>Report:</strong> C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-10.md (full evidence table + DOM cross-verify section + crosscheck verdict).</div>
+    <div class="field"><strong>Thursday 11/6 P0:</strong> (a) ttparcelclaim 08:55 should pick up C2070-C2082 and assign return_status + action_needed + followup_dt; (b) C2078-C2080 HV KarlMobel total RM 1,716.75 needs WH inspection on parcel return; (c) C2073 Adelmar HV RM 775.47 Day 18 — chase carrier; (d) Decide on ~930 historical FD backfill scope; (e) Lazada Lovento 83 monitor (relogin held today).</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 13/13 POSTs success / 13/13 crosscheck CONFIRMED / 0 errors / 0 DOM silent-drops / state persisted.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-10" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, KarlMobel, Lovento MY, Luxbin, MurahYa, JagerHelmet, Adelmar, Emas Gift, Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
