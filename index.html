@@ -2,6 +2,29 @@
   <div class='entry' data-date='2026-06-11' data-shops='N/A' data-platform='Windows Task Scheduler + Codex' data-result='ok'>
     <div class='entry-summary'>
       <span class='chevron'>&#9654;</span>
+      <span class='entry-title'>stop Claude / Codex only scheduler cleanup &mdash; Claude tasks disabled, Codex-named replacements active (11/6)</span>
+      <span class='entry-meta'>2026-06-11 MYT &middot; marker STOP-CLAUDE-CODEX-ONLY-20260611 &middot; final readback: no running Claude process, no enabled task action invokes Claude</span>
+      <span class='tag'>scheduled-tasks</span>
+      <span class='tag'>codex-only</span>
+      <span class='tag platform'>internal</span>
+      <span class='tag result-ok'>Completed</span>
+    </div>
+    <div class='entry-body'>
+      <p><strong>Brief:</strong> Patricia asked to stop Claude and run only Codex. Disabled the remaining Claude-backed one-off task, created Codex-named replacements for the two Claude-named daily tasks, and verified no enabled task action invokes Claude.</p>
+      <div class='field'><strong>Task before -&gt; after:</strong> <code>ClaudeSgGapMonitor</code> Ready/active Codex action -&gt; Disabled; new <code>CodexSgGapMonitor_0900</code> missing -&gt; Ready daily 09:00 using <code>run-codex-scheduled.ps1 -JobName sg-gap-monitor</code>. <code>ClaudeShopeeShippingClaim</code> Ready/active Codex action -&gt; Disabled; new <code>CodexShopeeShippingClaim_1030</code> missing -&gt; Ready daily 10:30 using <code>run-codex-scheduled.ps1 -JobName shopee-shipping-claim</code> with day-15 guard. <code>chataudit_followup_mon0609_1107</code> Ready one-off Claude path -&gt; Disabled.</div>
+      <div class='field'><strong>Installer file changed:</strong> <code>C:\Users\tessf\code\codex-lab\.agents\scheduled-codex\install-codex-scheduled-tasks.ps1</code> now creates Codex-named replacements and disables obsolete Claude tasks on rerun.</div>
+      <div class='field'><strong>Still active Codex daily tasks:</strong> <code>ttparcelclaim_daily_0855</code>, <code>CodexSgGapMonitor_0900</code>, <code>ChatAudit_910AM</code>, <code>ParcelClaimAuto_945AM</code>, <code>ParcelSplitCrosscheck_1000AM</code>, <code>CSRRCredited_1030AM</code>, <code>TT_RR_Audit_10_15AM</code>, <code>CodexShopeeShippingClaim_1030</code>. All point to <code>C:\Users\tessf\code\codex-lab\.agents\scheduled-codex\run-codex-scheduled.ps1</code>.</div>
+      <div class='field'><strong>Process before -&gt; after:</strong> Claude native-host processes were observed initially, but were already gone when Stop-Process ran; final readback shows no real Claude process remains. Only the inspection PowerShell command itself matched the text <code>claude</code>.</div>
+      <div class='field'><strong>Before/after operational values:</strong> customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; SB webapp patches <code>0 -&gt; 0</code>; SiteGiant writes <code>0 -&gt; 0</code>. Scheduler setup only.</div>
+      <div class='field'><strong>Shop / platform:</strong> N/A for setup. Affected scheduled runners cover Shopee MY/SG, TikTok/Lazada, SiteGiant, and internal webapp only when their Codex jobs run.</div>
+      <div class='field'><strong>Reason for change:</strong> Ensure scheduled automation no longer invokes Claude and Task Scheduler visibly uses Codex-only active tasks.</div>
+      <div class='field'><strong>Validation:</strong> installer self-test OK; final scheduled-action scan found only disabled <code>chataudit_followup_mon0609_1107</code> still has a Claude path; final task readback confirms Codex-named replacements Ready for 2026-06-12; <code>npm test</code> passed.</div>
+      <div class='field'><strong>Result:</strong> ok - Claude is stopped from scheduled execution. Active daily scheduled jobs are Codex-only.</div>
+    </div>
+  </div>
+  <div class='entry' data-date='2026-06-11' data-shops='N/A' data-platform='Windows Task Scheduler + Codex' data-result='ok'>
+    <div class='entry-summary'>
+      <span class='chevron'>&#9654;</span>
       <span class='entry-title'>Claude scheduled tasks migrated to Codex daily runner &mdash; 8 task actions rewired, self-tests OK (11/6)</span>
       <span class='entry-meta'>2026-06-11 MYT &middot; marker CLAUDE-SCHEDULED-TO-CODEX-20260611 &middot; Codex runner saved under <code>C:\Users\tessf\code\codex-lab\.agents\scheduled-codex</code></span>
       <span class='tag'>scheduled-tasks</span>
@@ -48,8 +71,8 @@
 <div class="entry" data-date="2026-06-11" data-shops="All returnitem shops" data-platform="ShopeeMY, ShopeeSG, Lazada, TikTok, internal webapp" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">returnitem/checkreturnitem - 11/6 final canonical log; 49 patched rows verified + board duplicates fixed</span>
-    <span class="entry-meta">2026-06-11 22:50 MYT &middot; final audit passed &middot; 14:52 + 17:17 + 18:37 + 21:41 + 22:22 + 22:50 runs merged &middot; one top-level board entry</span>
+    <span class="entry-title">returnitem/checkreturnitem - final audit and tomorrow handoff saved</span>
+    <span class="entry-meta">2026-06-11 22:50 MYT &middot; final crosscheck passed &middot; 49 patched rows verified clean &middot; TT no-fill 0 / outstanding 12 non-TT</span>
     <span class="tag">returnitem</span>
     <span class="tag">checkreturnitem</span>
     <span class="tag result-ok">Completed</span>
@@ -60,8 +83,7 @@
     <div class="field"><strong>Reason:</strong> End-of-session control check after laptop freeze/resume and multiple webapp corrections, so tomorrow can continue from a reliable saved state.</div>
     <div class="field"><strong>Changes before -&gt; after:</strong> No new dashboard row data changed during this close-out audit. Local handoff file: absent -&gt; <code>C:\Users\tessf\code\codex-lab\tmp-returnitems\session_handoff_2026-06-11_returnitem_checkreturnitem.md</code>. Final fresh dashboard worklist saved: absent -&gt; <code>tmp-returnitems/worklist_final_audit_20260611.json</code>. Final fresh dashboard snapshot saved: absent -&gt; <code>tmp-returnitems/returns_final_audit_20260611.json</code>. Consolidated audited session row changes: 49 patched rows, all originally missing/null orderId/items/iskus unless noted; final after-values are saved in the handoff. Known intermediate issue row 13296 items 503/wide retry -&gt; final corrected single item <code>SM-BLACK-M</code>. Row 13174 tracking <code>632073763738</code> left unchanged; orderId/items/iskus filled from TT Adelmar order evidence.</div>
     <div class="field"><strong>Result:</strong> Fresh FetchReturns at 22:41 MYT returned 12891 total rows, worklist 12, by platform ShopeeMY 2 and ShopeeSG 10, TikTok 0. Patched-row audit found 49/49 expected rows present and 0 with missing/Error orderId/items/iskus. Outstanding tomorrow: rows 13286, 13324, 13309, 13311, 13312, 13313, 13314, 13315, 13316, 13317, 13318, and 13320. Resume prompt saved inside the handoff.</div>
-    <div class="field"><strong>Board cleanup log - 2026-06-11 23:04 MYT:</strong> Patricia board only. Before -&gt; after: top-level returnitem/checkreturnitem entries for 2026-06-11: 4 -&gt; 1; webapp board apparent checkreturnitem blocks: 4 -&gt; 1 canonical visible entry with earlier details preserved below; board_lint duplicate state: multiple same-date returnitem/checkreturnitem entries -&gt; pass after merge; return item dashboard rows changed by cleanup: 0 -&gt; 0. Shop/platform: Patricia board / internal webapp. Reason: user asked to fix duplicate checkreturnitem entries under Patricia. Result: ok - duplicate board records collapsed without changing returnitem dashboard data.</div>
-    <div class="field"><strong>Merged earlier returnitem/checkreturnitem entries:</strong> Earlier 22:22, 21:41, 18:37, 17:17, and 14:52 run details are preserved below so Patricia board has one canonical returnitem/checkreturnitem entry for 2026-06-11.</div>
+    <div class="field"><strong>Board cleanup log - 2026-06-11 23:12 MYT:</strong> Patricia board only. Before -&gt; after: top-level returnitem/checkreturnitem entries for 2026-06-11: 4 -&gt; 1; return item dashboard rows changed by cleanup: 0 -&gt; 0. Shop/platform: Patricia board / internal webapp. Reason: user asked to fix duplicate checkreturnitem entries under Patricia. Result: ok - duplicate board records collapsed without changing returnitem dashboard data.</div>
     <details><summary>Earlier 22:22 TT Adelmar 632 row fill details</summary>
 <div class="field"><strong>Task:</strong> User provided TT Adelmar order ID <code>584246149101160099</code> and tracking ID <code>MYPM10479201403</code> for row tracking <code>632073763738</code>, asked to try it.</div>
     <div class="field"><strong>Evidence:</strong> In TT Adelmar, <code>632073763738</code> still did not match directly. Order ID <code>584246149101160099</code> matched Manage Order and Manage Return tabs 100/300; <code>MYPM10479201403</code> matched Manage Order to the same order. Return ID seen: <code>4040629402092209827</code>.</div>
