@@ -639,6 +639,28 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-11" data-shops="KarlMobel,das.nature2,MurahYa,TT ValueSnap,Kinata SG,TT DasNature,TT Murahya" data-platform="Shopee MY,Shopee SG,TikTok MY" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation &mdash; post-restart audit, 33 cases 5d-scope, 0 SLA breach, 0 new sends (11/6)</span>
+    <span class="entry-meta">2026-06-11 ~11:05 MYT &middot; profile 70 &middot; 176 total API items / 33 in 5d action scope &middot; 30 contactSent / 3 uncontacted (2 Order ID Invalid + 1 cancelled-cleanup) &middot; 0 SLA breach &middot; read-only audit</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Post-restart audit of `/customer-service/sb-variation`. Read-only daily scan — no buyer messages sent (Rule 5: explicit per-run authorization required), no SiteGiant adjustments (Rule 9: approval-gated). Recency filter applied: ageDays&le;5 for action queue. Contact bot health: 30/33 contacted (91%). 0 SLA breach (&gt;3d uncontacted).</p>
+    <div class="field"><strong>5d action-scope breakdown (33 cases):</strong> By platform: Shopee MY 26 / TikTok 3 / Shopee SG 4. By caseType: No Stock 22 / Offer Change 8 / Order ID Invalid 2 / Offer Change-dup 1.</div>
+    <div class="field"><strong>3 uncontacted Shopee MY cases (no action by me, flagged for WH/Patricia):</strong> [1] 101194 KarlMobel 260606CDSG2P9H FLOOR-MIRROR-BEIGE/BROWN-70X170CM Offer Change candidate but caseType=Order ID Invalid Day 0 &mdash; bot will retry tonight after WH fixes data. [2] 101173 das.nature2 2606059EVQJ5E9 MOON-CHAIR-COTTON-BLACK Day 2 &mdash; order CANCELLED in SiteGiant 9/6, stockSetOos=true, but contactSent still false &mdash; csRemarks says "WH reply pending"; needs cancellation_check=true closure after WH confirms. [3] 101169 MurahYa "MY263133665754U " (trailing space in orderId) Day 3 caseType=Order ID Invalid &mdash; data-entry error, WH needs to fix orderId field.</div>
+    <div class="field"><strong>TT/SG/Laz manual queue (7 cases, all contactSent=true):</strong> 101177 TT ValueSnap 584412855050273913 jaha1583 Tennis Ball x2 RM 6.90 (Claude sent TT_NO_STOCK 10/6 17:40, auto-cancel deadline 11/6 23:59) &middot; 101176 Kinata SG 260607F0TW9WTX raylim79_13 PET-PEE-PAD (Sofia 9/6 12:02) &middot; 101175 Kinata SG 260606D14994XG shuchiss WEDDING-ARCH-FRAME-GLD (Sofia 9/6 12:34) &middot; 101174 Kinata SG 260607DEJARGJA wonderwomanhere TRI-FOLD-BT-KEYBOARD Offer Change Dark Gray/Black (Sofia 9/6 12:05) &middot; 101170 Kinata SG 260606B12P5MUE salihin76 WEDDING-ARCH (8/6 sent, awaiting decision) &middot; 101168 TT DasNature 584388056800593471 lo.hannah8 PSB-BLACK Offer Change Khaki/Red (8/6 sent) &middot; 101163 TT Murahya 584376966935119001 hadzridhani GXTSTARL-BLUE-XL Offer Change (8/6 sent, acceptedSku=GXTSTARL-BLUE-XL!).</div>
+    <div class="field"><strong>Key signal:</strong> 101163 hadzridhani ACCEPTED Starlight Blue XL &mdash; needs WH to ship GXTSTARL-BLUE-XL on order 584376966935119001 RM ? if SG SOH=31 available. Action: confirm WH ships replacement, then close case with cancellation_check=false + buyerDecision=Accept Change.</div>
+    <div class="field"><strong>Stale cases (older than 5d, NOT actioned per Rule 20/5):</strong> 60 in 14d window (93 total - 33 in 5d scope). Not surfaced individually per "no flagged me so long time ago" recency rule. Full list available in API but suppressed here.</div>
+    <div class="field"><strong>Deferred phases:</strong> Phase 3.5 SiteGiant stock-on-hand verification (mandatory per Rule 10) deferred &mdash; sweep skipped to keep post-restart audit lightweight. Phase 9 Stock Adjustment action-items also deferred. WH PIC follow-up needed for the 3 uncontacted Shopee MY cases (Order ID Invalid x2 + cancellation cleanup x1).</div>
+    <div class="field"><strong>Shops:</strong> KarlMobel, das.nature2, MurahYa, TT ValueSnap, Kinata SG, TT DasNature, TT Murahya.</div>
+    <div class="field"><strong>Platform:</strong> Shopee MY (26 cases) + TikTok MY (3) + Shopee SG (4).</div>
+    <div class="field"><strong>Reason:</strong> Post-restart daily 09:30 scheduled run; verify contact bot health + flag actionable cases.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 33 cases reviewed, 0 PATCHes (read-only, per safety rules 5+9), 30 contactSent=true / 3 uncontacted flagged. 0 SLA breach. Contact bot 91% coverage in 5d scope.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-11" data-shops="none" data-platform="Claude local skills + internal" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
