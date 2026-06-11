@@ -639,6 +639,31 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-11" data-shops="KarlMobel,MurahYa,ValueSnap,Luxbin" data-platform="Shopee MY (webapp FBS dashboard + Google Sheet)" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checkfbsclaims &mdash; 2nd run, 0 NEW PATCHes (FBS team not filled new rows); 6/7 GRBT-427 OIDs landed; 273 idempotent skips verified (11/6)</span>
+    <span class="entry-meta">2026-06-11 MYT &middot; Sheet 504 rows / Webapp 496 cases (487 OIDs) &middot; 0 PATCHes / 0 fail &middot; 273 idempotent skips (yesterday's PATCHes confirmed in place) &middot; 8 new webapp cases need sheet rows &middot; GRBT-427 In Progress 6/7 done &middot; GRBT-428 Pipeline 1</span>
+    <span class="tag">checkfbsclaims</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Second run of the FBS sheet&rarr;webapp sync to catch any overnight fills from FBS team. Idempotency confirmed; 0 NEW PATCHes today. Tracked Jira ticket movement.</p>
+    <div class="field"><strong>Sheet (source):</strong> Google Sheet <code>1_-YmjGYiC-dG1832cFN73l2gqpQHBiVymG9Zqum-Jmc</code> &mdash; 4 tabs scanned in full: Murahya Claim Progress (148 data rows) + Karlmobel (153) + Valuesnap (191) + Luxbin (12). Total 504 OID-bearing rows scanned (vs 279 yesterday before FBS team appended 222 blank-E/F/G rows).</div>
+    <div class="field"><strong>Webapp (target):</strong> <code>employee.awesomeree.com.my/customer-service/fbs-claim-progress</code> via <code>GET /api/fbs-claims?pageSize=10000</code> &mdash; 496 cases / 487 unique OIDs / 9 OIDs with 2 case_ids each. Up from yesterday's 488 cases / 479 OIDs (+8 new webapp cases overnight from bot crawl).</div>
+    <div class="field"><strong>BINDING column mapping (from <code>feedback_fbs_sheet_webapp_column_mapping.md</code>):</strong> Sheet col E QC Judgement &rarr; webapp QC Judgement enum; col F Status &rarr; webapp Claim Status enum; col G &rarr; webapp Latest Remark (PATCH type:"remark" value:[string]). NEVER swap. NEVER touch webapp Action column (user briefs separately).</div>
+    <div class="field"><strong>Diff result:</strong> 0 NEW PATCHes &mdash; FBS team has not yet filled in QC Judgement / Status / Latest Remark on any of the 222 appended sheet rows since yesterday. 273 idempotent skips confirm yesterday's PATCHes are still applied verbatim on webapp (no drift, no manual overrides reversed).</div>
+    <div class="field"><strong>NEW webapp cases overnight (8) &mdash; need sheet rows from FBS team:</strong> KarlMobel 260609JHGHKDTD (compensation_credited) + 260606CRDMC0P2 (in_return); ValueSnap 260526D5HERG0N (request_refunded) + 5 in_return (260606CFRYE49G, 260607DNT4FGTE, 260606C6C26QFX, 260606D9THPNDC, 260605A4SJ535F). Inserted by today's parcelclaim-auto / bot crawl. Sheet entries will follow in FBS team's normal workflow.</div>
+    <div class="field"><strong>GRBT-427 (form-810) "add 7 historic Shopee MY orders":</strong> Status <code>IN PROGRESS</code> (Mohammed, updated 09:35 MYT today). 6 of 7 OIDs already landed in webapp overnight: 2505296R94QWS7 (KM), 260403TBN50EBN (MY), 2603157AHJ9MQ9 + 260424K74UFFH1 + 260420B4G9RSXX + 260424MPFMU0SB (VS). Only 1 outstanding: <strong>2603131GNJ321K (KarlMobel)</strong> &mdash; also blocked by GRBT-428 BD Level enum.</div>
+    <div class="field"><strong>GRBT-428 (form-812) "add Disposed + BD Level enums":</strong> Status <code>PIPELINE 1</code> (Mohammed, not started). No enum change shipped. 11 unsupported sheet values unchanged in scope (6 KarlMobel + 5 ValueSnap) plus 1 new row 2603131GNJ321K (KM BD Level &mdash; same OID as GRBT-427 holdout). No re-sync action needed yet; will re-sync once enum codes ship.</div>
+    <div class="field"><strong>In sheet not in webapp (16, down from 22 yesterday):</strong> 6 KarlMobel + 10 ValueSnap, mostly historical RR Cancelled rows the sheet documents but the bot crawl window did not include. Drop of 6 = the 6 GRBT-427 orders Mohammed shipped overnight (+ 2603131GNJ321K still missing). No action; tracked.</div>
+    <div class="field"><strong>Idempotency mechanics:</strong> Diff script (<code>diff.py</code> in <code>Documents/fbs-sync-2026-06-11/</code>) compares each sheet row's (qc, cs, lr) value against webapp's current state per case_id; PATCHes only if webapp differs from sheet. 273 skips today = exactly yesterday's PATCH count, proving no PATCHes were lost or reverted server-side.</div>
+    <div class="field"><strong>Action column:</strong> UNTOUCHED. User has not yet briefed Action enum rules. Skill <code>checkfbsclaims.md</code> BINDING RULE remains: never PATCH type:"action" until user briefs.</div>
+    <div class="field"><strong>Files saved:</strong> <code>C:\Users\tessf\Documents\fbs-sync-2026-06-11\</code> &mdash; <code>webapp_cases.json</code> (94KB / 496 cases), <code>murahya.csv</code> + <code>karlmobel.csv</code> + <code>valuesnap.csv</code> + <code>luxbin.csv</code> (fresh gviz pulls), <code>diff.py</code> (idempotent diff script), <code>plan.json</code> (empty plan + skip list + 11 unsupported + 16 not_in_webapp + 8 in_webapp_not_in_sheet), <code>report.md</code>.</div>
+    <div class="field"><strong>Tools/sessions used:</strong> AdsPower profile 70 (k1b44nvg Patricia, MY session, already-active connect via ws://127.0.0.1:52889). Sheets fetched via gviz CSV (PowerShell Invoke-WebRequest for VS+Luxbin, browser fetch for MY+KM &mdash; both methods returned identical byte counts). Jira at awesomeree.atlassian.net (browse/GRBT-427 + GRBT-428).</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; clean idempotent re-run, no surprises, both Jira tickets accounted for, no manual action required from CS team this round. Next run will catch FBS team's fills.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-11" data-shops="ValueSnap,MasonGym,BahEmas,das.nature,das.nature2,Hiranai,KarlMobel,Lovento,Luxbin,MurahYa,Emas Gift,JagerHelmet,Adelmar,Kinata SG" data-platform="Shopee MY + Shopee SG (CS chat)" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
