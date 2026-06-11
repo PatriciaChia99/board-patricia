@@ -639,6 +639,46 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-11" data-shops="none" data-platform="Claude local skills + internal" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">returnitems/checkreturnitems skill audit &mdash; Claude local skill review (11/6)</span>
+    <span class="entry-meta">2026-06-11 MYT &middot; review only &middot; no production data changes &middot; no skill-file edits</span>
+    <span class="tag">returnitems</span>
+    <span class="tag">checkreturnitems</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Audited the Claude local returnitems and checkreturnitems skills built on 10/6. Verified discovery in C:\Users\tessf\CLAUDE.md entries #29 and #30, reviewed both SKILL.md files, README, carry-forward prompt, smoke-test note, references, Claude memory, pending Claude task records, and Windows scheduled-task presence.</p>
+    <div class="field"><strong>Changes made:</strong> No operational or skill-file changes. Before &rarr; after: Claude skill files unchanged; return webapp unchanged; platform seller centers unchanged; Stock In Bot unchanged; Bot 1 unchanged.</div>
+    <div class="field"><strong>Shop(s):</strong> none directly affected; reviewed skill coverage for TT shops, Shopee MY/SG, SG Kinata, Valuesnap SG, and Lazada only as documentation scope.</div>
+    <div class="field"><strong>Platform(s):</strong> Claude local skills + internal board logging; no marketplace write actions.</div>
+    <div class="field"><strong>Reason:</strong> User asked to check Claude's returnitems and checkreturnitems skills from yesterday and identify whether they are present, discoverable, and internally consistent.</div>
+    <div class="field"><strong>Findings:</strong> Skills exist under C:\Users\tessf\.claude\skills\returnitems and C:\Users\tessf\.claude\skills\checkreturnitems, and Claude global CLAUDE.md indexes them as #29/#30. Review found documentation drift risks: some references still mention TODO/likely endpoints and dry-run signoff while SKILL.md and memory say live PATCH endpoint and 30 confirmed rows; runtime support files state.json/config.json/audit_sample_log.json were not present; Claude task reminders are pending, not scheduled automation; no Windows scheduled task matching returnitems/checkreturnitems was found.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; audit completed; no data or code changed except this required board log entry.</div>
+  </div>
+</div>
+<div class="entry" data-date="2026-06-11" data-shops="TT Adelmar,TT Valuesnap" data-platform="TikTok MY" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">ttparcelclaim &mdash; post-restart partial: webapp cleanup sweep only, 2 PATCHes 0 fail (11/6)</span>
+    <span class="entry-meta">2026-06-11 ~10:50 MYT &middot; profile 70 &middot; user force-restarted laptop AM &middot; 103 Pending swept &middot; Step 2b terminal-orphan sweep: 2/2 PATCHes HTTP 200 &middot; per-case TT-side verification deferred (TT profiles not reopened)</span>
+    <span class="tag">ttparcelclaim</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Post-restart resumed session. User force-restarted laptop AM due to lag; profile 70 Shopee SC + SiteGiant + webapp verified logged-in via authenticated API (`/api/v3/general/get_shop_basic_info` shop_id:422263284). TT shop profiles 54-67 not reopened &mdash; per-case Trigger A/B TT-side verification deferred to tomorrow's 08:55 scheduled run. Ran webapp-only Step 2 cleanup sweeps per skill spec Rule 12.</p>
+    <div class="field"><strong>Cleanup sweeps performed:</strong> Step 2a closeable Pending&rarr;terminal scan = 12 candidates BUT remarks indicated still in transit / Processing / dispute open &mdash; rejected per "When in doubt, KEEP OPEN" rule. Step 2b terminal-state orphans = 2 cases flipped action&rarr;Closed. Step 2c reverse-orphans (Pending+Closed) = 0.</div>
+    <div class="field"><strong>2 PATCHes HTTP 200 / 0 fail (Step 2b):</strong> C1930 TT Adelmar OID 584192803849078280 refund_state=Credited+remark "APPROVED AND CREDITED" &rarr; action: WH Evidence&rarr;Closed. C2020 TT Valuesnap OID 584107244429805118 refund_state=Rejected+remark "compensation cannot be processed because the package did not comply with our packaging guidelines" &rarr; action: WH Evidence&rarr;Closed.</div>
+    <div class="field"><strong>Pending pool snapshot:</strong> 103 Pending (Adelmar 15, DasNature 6, JagerSafety 1, Jager 2, KarlMobel 34, MurahYa 18, Valuesnap 10, JagerHelmet 5, Hiranai 9, Laz MurahYa 3). 48 fu=today, 55 future, 0 overdue. By action: WH Evidence 7 / CS Action 34 / WH Action 19 / CS Follow Up 43. By return_status: Delivery Done 34 / Preparing 28 / Pick Up Done 41. nullFu=0 / nullRs=0 / nullAction=0 ALL CLEAN.</div>
+    <div class="field"><strong>Top 15 due-today by amount (P0 carry-overs for 12/6 08:55 scheduled run):</strong> C2051 KM 950.97 Scooter HV approval + C1972 KM 859.95 Pick Up Done D5 + C1876 KM 847.70 IB verdict ETA TODAY + C2073 Adelmar 775.47 file Ticket Log Reimb Coverage + C1860 KM 746.15 DISPUTE DAMAGE PENDING EVI monitor + C1842 KM 739.66 IB verdict ETA TODAY + C1929 KM 683.30 VHV Skuter Yorry WH inbound D10 + C2038 Laz MurahYa 633.59 HV B1 Lazada return + C1506 KM 632.73 SR Return tracker verify or LOSS + C2026 KM 543.28 buyer prep + C1697 KM 351.07 file NEW TT ticket TODAY wrong-OID bind + C1839 Adelmar 343.75 2nd dispute IN DISPUTE 10/6 + C2055 Adelmar 339.67 carrier trace D14+ + C2049 Adelmar 335.18 Hoverboard prep + C2039 Adelmar 315.05 Hoverboard CS contact. RM ~9,096 at risk.</div>
+    <div class="field"><strong>Why per-case deferred:</strong> Force-restart wiped all open AdsPower profiles. Reopening 11 TT profiles + per-case Trigger A/B verification (Ticket Log lookup + IB verdict check + dispute file) = 4-6 hours operator workload, infeasible mid-day. Cases retain correct followup_dt=2026-06-11 and will be picked up by tomorrow's 08:55 scheduled ttparcelclaim run. NO data lost; only the 1-day delay on per-case decisions.</div>
+    <div class="field"><strong>Shops:</strong> TT Adelmar + TT Valuesnap (cleanup PATCHes). 103 Pending pool spans 9 TT shops + Lazada MurahYa.</div>
+    <div class="field"><strong>Platform:</strong> TikTok MY (primary), Lazada MY (3 cases).</div>
+    <div class="field"><strong>Reason:</strong> Force-restart recovery; complete webapp-side cleanup that can be done without reopening TT profiles, defer per-case decisions to next scheduled run.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 2 PATCHes HTTP 200 / 0 fail (both verified Closed via re-GET); 12 false-positive closeable candidates rejected per safety rule; per-case processing carried to 12/6 08:55.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-11" data-shops="Chairsy,dutchgaming,Flashree,Solaree,Gameniture,Atlusrack,Stationarylah,KEDAI GARDEN,FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
