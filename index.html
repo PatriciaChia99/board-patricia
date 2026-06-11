@@ -639,6 +639,57 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-11" data-shops="TT Adelmar, KarlMobel SG" data-platform="Awesomeree Return Items + TikTok MY + Shopee SG + SiteGiant" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">returnitem/checkreturnitem - recovery checkpoint after forced shutdown</span>
+      <span class="entry-meta">2026-06-11 12:33 MYT - read-only recovery - tmp-returnitems found - 65-row worklist - 2 patch payload sets found - 0 operational writes by recovery</span>
+      <span class="tag">returnitem</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body"><div class="field"><pre>Date: 2026-06-11 12:33 MYT
+Task: returnitem/checkreturnitem recovery after laptop force shutdown.
+Shop/platform: TT Adelmar / TikTok; KarlMobel SG / Shopee SG + SiteGiant. Remaining worklist spans 65 rows across TikTok, Shopee MY, Shopee SG, and Lazada.
+Reason for change: User asked to show where returnitem/checkreturnitem left off after forced shutdown.
+Dashboard/marketplace changes by this recovery: none.
+Before -&gt; After values:
+- Recovery state: unknown after forced shutdown -&gt; reconstructed from tmp-returnitems artifacts.
+- Return-item API snapshot: not loaded in this session -&gt; found tmp-returnitems/returns_20260611.json written 2026-06-11 11:31:24 MYT, 8,255,531 bytes.
+- Return-item worklist: unknown -&gt; found tmp-returnitems/worklist_20260611.json written 2026-06-11 11:31:27 MYT with 65 rows missing orderId since cutoff 2026-06-01T16:00:00Z.
+- Row 13288 / MYPM10702341402 / TT Adelmar / TikTok / Resell: orderId null, items null, iskus null -&gt; patch payload prepared for items [&quot;Hoverboard 10 inch Chinese Red Combo&quot;] and iskus [&quot;HOVERBOARD-C-RED-W-HANDLE-10INCH&quot;]; no readback artifact found.
+- Row 13227 / SHSMMYSG26051035JDQ3RM / KarlMobel SG / ShopeeSG / Resell: orderId null, items null, iskus null -&gt; patch payload prepared for orderId &quot;26051035JDQ3RM&quot;, items [&quot;Luxbin Dustbin 30L OrionX Black&quot;], and iskus [&quot;BLKRTNGL-30L&quot;]; no readback artifact found.
+- checkreturnitem artifacts: not found -&gt; no separate checkreturnitem output found in repo, shell history, or C:\tmp scan.
+Result: Recovery summary only; no employee dashboard PATCH, marketplace write, SiteGiant write, or customer contact performed in this task. Resume by verifying whether rows 13288 and 13227 patch payloads were actually applied, then continue the 65-row worklist.</pre></div></div>
+  </div>
+<div class="entry" data-date="2026-06-11" data-shops="ValueSnap, Murahya, Karlmobel, MasonGym, KarlMobel" data-platform="Shopee MY + SiteGiant + SB webapp" data-result="warn" data-marker="SBVAR-SCHEDULED-20260611-FINAL">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation - 11/6 final run: 176 rows / 6 SB updates / 0 messages / 5 stock action items</span>
+    <span class="entry-meta">2026-06-11 12:55 MYT &middot; marker SBVAR-SCHEDULED-20260611-FINAL &middot; checked 33 candidates &middot; sent 0 &middot; skipped-cancelled 5 &middot; SB PATCH 6 &middot; stock writes 0</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-warn">Partial</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Fresh scheduled SB Variation continuation for 2026-06-11 MYT. Pulled live <code>/api/sb-variation</code> through AdsPower employee profile <code>k1b44nvg</code>: 176 rows, newest <code>101194</code>. Compared against the 11:00 recovery snapshot and found 3 live field deltas. Refreshed SiteGiant order and exact-iSKU evidence, then made only safe SB webapp cleanup updates. No buyer messages, SiteGiant stock/status/reserved writes, Jira/forms, seller-portal writes, WhatsApp/off-platform contact, or non-template wording.</p>
+    <div class="field"><strong>SB webapp changes, before &rarr; after:</strong>
+      <ul>
+        <li><code>101190 / 260609KPB2NCRE / ValueSnap / Shopee MY / Offer Change</code>: live <code>newShipBy</code> <code>null</code> &rarr; <code>[&quot;2026-06-11&quot;]</code>; SiteGiant order #1428128 verified <strong>Shipped/Paid/Fulfilled</strong>, tracking <code>SPXMY067990412436</code>. Exact original <code>CRC-PINK-BUKT</code> <code>0/0/0/0</code> OOS; accepted <code>CRC-RED-BUKT</code> <code>1/1/0/0</code> Available. <code>whConfirmStatus</code> <code>[&quot;Pending WH Confirm&quot;]</code> &rarr; <code>[&quot;WH Confirmed Can Pack&quot;]</code>; <code>stockAdjustmentStatus</code> stayed <code>[&quot;Not Adjusted&quot;]</code>; remark appended. Result: WH cleanup only; stock action item -1 pending approval.</li>
+        <li><code>101182 / 260608H2W8QUC6 / Murahya / Shopee MY / No Stock</code>: buyer_response <code>null</code> &rarr; <code>yes</code>, but SiteGiant order #1426218 verified <strong>Cancelled/Paid/Fulfilled</strong>. Exact <code>BLKTNT</code> <code>3/3/0/0</code> OOS. <code>buyerDecision</code> <code>null</code> &rarr; <code>[&quot;Cancelled&quot;]</code>; <code>whConfirmStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; <code>stockAdjustmentStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; remark appended. Result: cancellation cleanup only.</li>
+        <li><code>101155 / 2606058F6XED84 / Murahya / Shopee MY / No Stock</code>: buyer_response <code>null</code> &rarr; <code>yes</code>, but SiteGiant order #1418875 verified <strong>Cancelled/Paid/Fulfilled</strong>. Exact <code>FB-BLUE-L</code> <code>1/1/0/0</code> OOS. <code>buyerDecision</code> <code>null</code> &rarr; <code>[&quot;Cancelled&quot;,&quot;Cancelled&quot;]</code>; <code>whConfirmStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; <code>stockAdjustmentStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; remark appended. Result: cancellation cleanup only.</li>
+        <li><code>101183 / 260606CKY20X4R / Murahya / Shopee MY / No Stock</code>: SiteGiant order #1422456 verified <strong>Cancelled/Paid/Fulfilled</strong>. Exact <code>FB-BLUE-S</code> <code>1/1/0/0</code> OOS. <code>buyerDecision</code> <code>null</code> &rarr; <code>[&quot;Cancelled&quot;]</code>; <code>whConfirmStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; <code>stockAdjustmentStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; remark appended. Result: cancellation cleanup only.</li>
+        <li><code>101179 / 260607EXJRFKT3 / Karlmobel / Shopee MY / No Stock</code>: SiteGiant order #1424633 verified <strong>Cancelled/Paid/Fulfilled</strong>. Exact <code>BLKTNT</code> <code>3/3/0/0</code> OOS. <code>buyerDecision</code> <code>null</code> &rarr; <code>[&quot;Cancelled&quot;]</code>; <code>whConfirmStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; <code>stockAdjustmentStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; remark appended. Result: cancellation cleanup only.</li>
+        <li><code>101178 / 260606D85C9YBK / Karlmobel / Shopee MY / No Stock</code>: SiteGiant order #1423396 verified <strong>Cancelled/Paid/Fulfilled</strong>. Exact <code>BLKTNT</code> <code>3/3/0/0</code> OOS. <code>buyerDecision</code> <code>null</code> &rarr; <code>[&quot;Cancelled&quot;]</code>; <code>whConfirmStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; <code>stockAdjustmentStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; remark appended. Result: cancellation cleanup only.</li>
+      </ul>
+    </div>
+    <div class="field"><strong>Skipped/no-send cases:</strong> 0 customer messages sent. Thursday is outside the weekend standing contact lane; cancelled orders were not messaged; already-contacted rows were not duplicated. <code>260606CDSG2P9H</code> remains ambiguous because SB says KarlMobel / Order ID Invalid / no SKU while SiteGiant finds a Murahya mirror order.</div>
+    <div class="field"><strong>Stock action items, no writes:</strong> <code>CRC-RED-BUKT</code> accepted-change deduction <code>1/1/0/0</code> -> proposed -1 after approval; <code>AHG-BLACK-COUNTER</code> <code>2/2/0/0</code> OOS-label mismatch; <code>BLKTNT</code> <code>3/3/0/0</code> OOS-label mismatch; <code>FB-BLUE-S</code> <code>1/1/0/0</code> OOS-label mismatch; <code>FB-BLUE-L</code> <code>1/1/0/0</code> OOS-label mismatch after prior SA-19064.</div>
+    <div class="field"><strong>Evidence:</strong> report <code>C:/Users/tessf/Documents/sbvariation-reports/sbvariation-scheduled-2026-06-11.md</code>; raw before/current/after snapshots <code>_raw_scheduled_2026-06-11-current.json</code> and <code>_raw_scheduled_2026-06-11-after-final-patch.json</code>; SiteGiant files <code>_sitegiant_orders_final_2026-06-11.json</code>, <code>_sitegiant_items_final_2026-06-11.json</code>, <code>_sitegiant_orders_retry_2026-06-11.json</code>; SB patch files <code>_sb_patch_results_2026-06-11-final.json</code> and <code>_sb_patch_verify_2026-06-11-final.json</code>.</div>
+    <div class="field"><strong>Reason / trigger:</strong> Required scheduled daily/weekend SB Variation run for 2026-06-11 MYT after earlier same-day partial recovery. Live marketplace order status verified before every buyerDecision change. Exact original/affected iSKU checked in SiteGiant before stock conclusions.</div>
+    <div class="field"><strong>Outstanding follow-up:</strong> Patricia/WH stock-check approval before any SiteGiant cleanup for <code>AHG-BLACK-COUNTER</code>, <code>BLKTNT</code>, <code>FB-BLUE-S</code>, or <code>FB-BLUE-L</code>; Patricia approval before <code>CRC-RED-BUKT</code> -1 accepted-change deduction; WH/CS clarification for <code>260606CDSG2P9H</code> shop/order mismatch; weekday-send approval if Patricia wants customer contact outside the weekend lane.</div>
+    <div class="field"><strong>Result:</strong> partial but operationally updated: 6 SB webapp updates completed and verified, 0 customer messages, 0 stock writes, 5 stock action items carried forward.</div>
+  </div>
+</div>
+
 <div class="entry" data-date="2026-06-11" data-shops="TT KarlMobel,TT MurahYa,TT Adelmar,TT Hiranai,TT Valuesnap,TT DasNature,TT JagerSafety" data-platform="TikTok MY" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
