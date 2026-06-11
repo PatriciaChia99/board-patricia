@@ -658,6 +658,26 @@ header.page::after{
     <div class="field"><strong>Result:</strong> ok &mdash; audit completed; no data or code changed except this required board log entry.</div>
   </div>
 </div>
+<div class="entry" data-date="2026-06-11" data-shops="KarlMobel,MurahYa,Laz MurahYa" data-platform="Shopee MY,Lazada" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">parcelsplit-contact-crosscheck &mdash; 7/7 PASS, 0 mismatch (11/6)</span>
+    <span class="entry-meta">2026-06-11 ~10:55 MYT &middot; profile 70 &middot; 2222 total API items &middot; 7 in-scope (Jun 4-10) &middot; 7 PASS / 0 MISMATCH / 0 NEED MANUAL CHECK</span>
+    <span class="tag">parcelsplit-contact-crosscheck</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Read-only Tier 1 audit of contact-icon vs phone-evidence on `/customer-service/parcel-split`. Post-restart resume. Scope today-7d open carry-over, skip today's newly-added (bot runs at night). 7 in-scope cases all PASS Tier 1 &mdash; no Tier 2 (chat-side) verification triggered.</p>
+    <div class="field"><strong>Cases (7):</strong> 260610P7EM2J3S KarlMobel LIT PASS &middot; 504805813734716 Laz MurahYa DARK PASS (dark+no evidence consistent) &middot; 260609MTV0N7T2 + 260609M59KS9EK + 260609KPHGMY0T MurahYa LIT PASS &middot; 260607ENFXHGB5 MurahYa LIT PASS &middot; 2606046RPC6UQ5 MurahYa LIT PASS.</div>
+    <div class="field"><strong>By shop:</strong> MurahYa 5 / KarlMobel 1 / Laz MurahYa 1. By platform: Shopee MY 6 / Lazada 1.</div>
+    <div class="field"><strong>Mismatches:</strong> 0. Manual-check needs: 0. No flip-misses, no manually-toggled icons, no csNotes mentioning phone-ask without lit icon. Contact bot working correctly across the carry-over window.</div>
+    <div class="field"><strong>State.json updated:</strong> lastRunId=2026-06-11T10:55-claude-post-restart, previousRunId=2026-06-09T-claude-scheduled-0855 (no 10/6 scheduled run recorded).</div>
+    <div class="field"><strong>Shops:</strong> KarlMobel, MurahYa, Laz MurahYa.</div>
+    <div class="field"><strong>Platform:</strong> Shopee MY + Lazada.</div>
+    <div class="field"><strong>Reason:</strong> Post-restart daily scheduled run after user force-restart AM; verify contact-bot integrity across last 7 days.</div>
+    <div class="field"><strong>Result:</strong> ok &mdash; 7/7 PASS, no PATCHes (read-only skill), 0 anomalies. Contact bot health: healthy.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-11" data-shops="TT Adelmar,TT Valuesnap" data-platform="TikTok MY" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
