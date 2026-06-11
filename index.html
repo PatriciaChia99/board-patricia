@@ -358,9 +358,30 @@ C2081 584393996714739552 TT MurahYa RM 365.02 action: WH Action -&gt; CS Action 
   </div>
 </div>
 
-<section class="board-entry" data-marker="SBVAR-SESSION-CLOSEOUT-20260611">
-  <h2>2026-06-11 18:25 MYT - SB Variation session closeout saved</h2>
-  <p><strong>Task:</strong> End session, crosscheck completed SB Variation work, save tomorrow handoff prompt, and verify board logs.</p>
+<div class="entry" data-date="2026-06-11" data-shops="N/A" data-platform="Patricia board" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">board format-fix - convert raw SB Variation board-entry sections</span>
+    <span class="entry-meta">2026-06-11 MYT &middot; raw sections 4&rarr;0 &middot; normal entries 203&rarr;208 &middot; dashboard data unchanged</span>
+    <span class="tag">board format-fix</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <div class="field"><strong>Task:</strong> Fix Patricia board rendering where raw SB Variation <code>section.board-entry</code> blocks were visible in the web UI instead of collapsed activity cards.</div>
+    <div class="field"><strong>Changes before -&gt; after:</strong> Raw visible SB Variation board sections: 4 -&gt; 0; normal Patricia <code>.entry</code> records: 203 -&gt; 208, including this format-fix log; <code>returnitem/checkreturnitem</code> top-level entries remain 1 -&gt; 1; dashboard/business data changed: 0 -&gt; 0.</div>
+    <div class="field"><strong>Shop/platform:</strong> N/A / Patricia board. <strong>Reason:</strong> The board linter only validates <code>div.entry</code> blocks and missed legacy <code>section.board-entry</code> markup, causing the page to render raw tables at the top. <strong>Result:</strong> ok - converted the four SBVAR sections to standard collapsible cards and preserved their full details.</div>
+  </div>
+</div>
+<div class="entry" data-date="2026-06-11" data-shops="N/A" data-platform="Codex workspace + Patricia board" data-result="ok" data-marker="SBVAR-SESSION-CLOSEOUT-20260611">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation - SB Variation session closeout saved</span>
+    <span class="entry-meta">2026-06-11 18:25 MYT - SB Variation session closeout saved &middot; closeout handoff + marker verification</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Task:</strong> End session, crosscheck completed SB Variation work, save tomorrow handoff prompt, and verify board logs.</p>
   <table>
     <thead><tr><th>Change</th><th>Before</th><th>After</th><th>Shop</th><th>Platform</th><th>Reason</th><th>Result</th></tr></thead>
     <tbody>
@@ -368,10 +389,18 @@ C2081 584393996714739552 TT MurahYa RM 365.02 action: WH Action -&gt; CS Action 
       <tr><td>Board marker verification</td><td>SA-19070 marker missing during crosscheck</td><td>Markers present: SBVAR-SA19070-20260611; SBVAR-CANCEL-SWEEP-20260611; SBVAR-CLOSEOUT-HYGIENE-20260611</td><td>N/A</td><td>Patricia board</td><td>Ensure board-rule compliance before closing session</td><td>Missing SA-19070 audit entry restored; final board marker check passed</td></tr>
     </tbody>
   </table>
-</section>
-<section class="board-entry" data-marker="SBVAR-SA19070-20260611">
-  <h2>2026-06-11 MYT - SB Variation SiteGiant stock adjustment SA-19070</h2>
-  <p><strong>Task:</strong> Apply approved original no-stock adjustments to 0/OOS and accepted offer-change shipped deduction, then update SB Variation rows.</p>
+  </div>
+</div>
+<div class="entry" data-date="2026-06-11" data-shops="Murahya, ValueSnap" data-platform="Shopee MY + SiteGiant + SB Variation webapp" data-result="ok" data-marker="SBVAR-SA19070-20260611">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation - SB Variation SiteGiant stock adjustment SA-19070</span>
+    <span class="entry-meta">2026-06-11 MYT - SB Variation SiteGiant stock adjustment SA-19070 &middot; SA-19070 stock adjustment + SB row updates</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Task:</strong> Apply approved original no-stock adjustments to 0/OOS and accepted offer-change shipped deduction, then update SB Variation rows.</p>
   <p><strong>Evidence:</strong> SiteGiant stock adjustment SA-19070 / internal 9725614; SB readback verified after patch. No buyer messages sent.</p>
   <table>
     <thead><tr><th>Order ID</th><th>Case ID</th><th>Shop</th><th>Platform</th><th>iSKU</th><th>Before</th><th>After</th><th>Reason</th><th>Result</th></tr></thead>
@@ -381,10 +410,18 @@ C2081 584393996714739552 TT MurahYa RM 365.02 action: WH Action -&gt; CS Action 
 <tr><td>260609KPB2NCRE</td><td>101190</td><td>ValueSnap</td><td>Shopee/SiteGiant</td><td>CRC-RED-BUKT</td><td>SiteGiant stock SOH/Sellable/Reserved/Allocated/Non-sellable: 1/1/0/0/0 Available; SB buyerDecision Accept Change; WH status pending/stale before cleanup</td><td>SiteGiant stock 0/0/0/0/0 Out Of Stock; SB buyerDecision Accept Change; whConfirmStatus WH Confirmed Can Pack; stockAdjustmentStatus Adjusted; stockId SA-19070; stockUrl saved</td><td>User confirmed accepted offer-change shipped; deduct 1 and mark OOS</td><td>Deducted 1 to 0/OOS, SB marked adjusted, order left as shipped/accept-change</td></tr>
     </tbody>
   </table>
-</section>
-<section class="board-entry" data-marker="SBVAR-CLOSEOUT-HYGIENE-20260611">
-  <h2>2026-06-11 18:07 MYT - SB Variation closeout status-array hygiene/readback</h2>
-  <p><strong>Task:</strong> Crosscheck duplicate/blank SB status chips found during session closeout and record actual readback.</p>
+  </div>
+</div>
+<div class="entry" data-date="2026-06-11" data-shops="Murahya, das.nature2, das.nature, ValueSnap, Hiranai" data-platform="Shopee MY + SiteGiant + SB Variation webapp" data-result="ok" data-marker="SBVAR-CLOSEOUT-HYGIENE-20260611">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation - SB Variation closeout status-array hygiene/readback</span>
+    <span class="entry-meta">2026-06-11 18:07 MYT - SB Variation closeout status-array hygiene/readback &middot; 6 rows patched/read back; no buyer messages</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Task:</strong> Crosscheck duplicate/blank SB status chips found during session closeout and record actual readback.</p>
   <p><strong>Result:</strong> 6 rows patched/read back. The API preserves per-affected-item status slots, so repeated same-value statuses are treated as per-item state, not an outstanding business-status error. No buyer messages sent. No SiteGiant stock quantities changed.</p>
   <table>
     <thead><tr><th>Order ID</th><th>Case ID</th><th>Shop</th><th>Platform</th><th>Case type</th><th>Before</th><th>Readback after</th><th>Reason</th><th>Result</th></tr></thead>
@@ -397,10 +434,18 @@ C2081 584393996714739552 TT MurahYa RM 365.02 action: WH Action -&gt; CS Action 
 <tr><td>2605127A3K1AHV</td><td>101016</td><td>das.nature2</td><td>Shopee/SiteGiant</td><td>&quot;No Stock&quot;</td><td>{&quot;buyerDecision&quot;:[&quot;Other&quot;,&quot;&quot;,&quot;&quot;],&quot;whConfirmStatus&quot;:[&quot;Manual Review&quot;,&quot;&quot;,&quot;&quot;],&quot;stockAdjustmentStatus&quot;:[&quot;Manual Review&quot;,&quot;&quot;,&quot;&quot;]}</td><td>{&quot;buyerDecision&quot;:[&quot;Other&quot;,&quot;Other&quot;,&quot;Other&quot;],&quot;whConfirmStatus&quot;:[&quot;Manual Review&quot;],&quot;stockAdjustmentStatus&quot;:[&quot;Manual Review&quot;]}</td><td>Closeout data hygiene: remove duplicate/blank status chips while preserving semantic status</td><td>Patched but readback mismatch; API appears to preserve per-affected-item status slots, so repeated same-value statuses are not treated as outstanding business-status errors. No buyer message and no stock quantity changed.</td></tr>
     </tbody>
   </table>
-</section>
-<section class="board-entry" data-marker="SBVAR-CANCEL-SWEEP-20260611">
-  <h2>2026-06-11 17:55 MYT - SB Variation cancelled-order cleanup sweep</h2>
-  <p><strong>Task:</strong> Close old SB Variation CS action hangovers only where SiteGiant marketplace order was verified cancelled/canceled.</p>
+  </div>
+</div>
+<div class="entry" data-date="2026-06-11" data-shops="ValueSnap, Karlmobel, Kinata SG, Laz MurahYa, Murahya, DasNatureSG2, MasonGym, Hiranai, TT Murahya" data-platform="Shopee MY + Shopee SG + Lazada + TikTok + SiteGiant + SB Variation webapp" data-result="ok" data-marker="SBVAR-CANCEL-SWEEP-20260611">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation - SB Variation cancelled-order cleanup sweep</span>
+    <span class="entry-meta">2026-06-11 17:55 MYT - SB Variation cancelled-order cleanup sweep &middot; 81 rows updated; 45 active skipped; 2 invalid skipped</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Task:</strong> Close old SB Variation CS action hangovers only where SiteGiant marketplace order was verified cancelled/canceled.</p>
   <p><strong>Scope checked:</strong> 128 open/non-closed SB rows. <strong>Updated:</strong> 81. <strong>Skipped still active/not cancelled:</strong> 45. <strong>Skipped not found/invalid:</strong> 2.</p>
   <p><strong>Operational result:</strong> buyerDecision set to Cancelled, WH confirm set to Not Required, stock adjustment set to Not Required. No buyer messages sent. No SiteGiant stock quantities changed.</p>
   <details open>
@@ -499,7 +544,8 @@ C2081 584393996714739552 TT MurahYa RM 365.02 action: WH Action -&gt; CS Action 
 <li>TUBCOVER / case 101106 / KarlMobel: Left unchanged because no exact SiteGiant marketplace order match was found</li>
     </ul>
   </details>
-</section>
+  </div>
+</div>
 <div class="entry" data-date="2026-06-11" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
