@@ -639,11 +639,26 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
-<<<<<<< HEAD
+  <div class="entry" data-date="2026-06-15" data-shops="TT Murahya" data-platform="TikTok documentation" data-result="success">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">returnitems prompt encoding-safe correction 2026-06-15</span>
+      <span class="entry-meta">2026-06-15 MYT &middot; prompt correction &middot; documentation only</span>
+      <span class="tag">returnitems-lookup</span>
+      <span class="tag result-success">Success</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Corrected the saved ReturnItems continuation prompt and closeout note so row 13354 uses an ASCII-safe normalized tracking instruction.</p>
+      <div class="field"><strong>Every change before -&gt; after:</strong> <code>tmp-returnitems\tomorrow_prompt_2026-06-16_returnitems.md</code> row 13354 text before: non-ASCII Greek-lookalike tracking display -&gt; after: <code>source row uses Greek-lookalike tracking; normalize/search as MYPM10069011401</code>. <code>tmp-returnitems\session_closeout_2026-06-15_returnitems.md</code> row 13354 text before: non-ASCII Greek-lookalike tracking display -&gt; after: same ASCII-safe normalized lookup wording. Documents-folder copies before -&gt; after: refreshed from corrected workspace files.</div>
+      <div class="field"><strong>Shop / platform:</strong> TT Murahya / TikTok, documentation only. No Return Items webapp fields changed.</div>
+      <div class="field"><strong>Reason:</strong> PowerShell readback can render the Greek-lookalike tracking as mojibake, so tomorrow's scheduled/user prompt now gives the normalized ASCII value explicitly.</div>
+      <div class="field"><strong>Result:</strong> success. Operational writes remain unchanged: Return Items PATCH 0, stockIds 0, stock-in 0, SiteGiant stock writes 0, marketplace writes 0.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-15" data-shops="All ReturnItems shops in today scope" data-platform="Return Items workflow documentation + scheduled Codex prompt" data-result="success">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">returnitems session closeout saved prompts logs and schedule update 2026-06-15</span>
+      <span class="entry-title">returnitems-closeout saved prompts logs and schedule update 2026-06-15</span>
       <span class="entry-meta">2026-06-15 MYT &middot; closeout saved &middot; tomorrow prompt saved &middot; error logs updated &middot; scheduled prompt updated</span>
       <span class="tag">returnitems-lookup</span>
       <span class="tag result-success">Success</span>
@@ -659,32 +674,6 @@ header.page::after{
       <div class="field"><strong>Closeout note:</strong> <code>C:\Users\tessf\Documents\returnitems-reports\session-closeout-2026-06-15-returnitems.md</code>.</div>
     </div>
   </div>
-=======
-<div class="entry" data-date="2026-06-15" data-shops="Adelmar, JagerHelmet, MasonGym, Kinata SG, KarlMobel SG, ValueSnap" data-platform="Codex workspace + scheduled Codex runner + csrrcredited/csrrcreditedcheck + Patricia board" data-result="completed">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">session closeout - csrrcredited error log, scheduled prompt, tomorrow handoff saved</span>
-      <span class="entry-meta">2026-06-15 MYT &middot; closeout saved &middot; tomorrow prompt saved &middot; schedule self-test OK</span>
-      <span class="tag">session-closeout</span>
-      <span class="tag">csrrcredited</span>
-      <span class="tag">csrrcreditedcheck</span>
-      <span class="tag">chase-rr</span>
-      <span class="tag result-ok">Completed</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Ended the CSRRCredited session by saving the corrected closeout, durable error-log rule, tomorrow continuation prompt, and scheduled-runner prevention guardrails after Patricia challenged the incomplete csrrcreditedcheck verification.</p>
-      <div class="field"><strong>Date:</strong> 2026-06-15 MYT.</div>
-      <div class="field"><strong>Task:</strong> Save everything done so far, remember the mistake in the error log, update future scheduled prompt behavior, identify outstanding items for tomorrow, and log Patricia board automatically.</div>
-      <div class="field"><strong>Before -&gt; after values:</strong><ul><li>error-log entry absent -&gt; added CSRRCreditedCheck Coverage Correction with exact mistake, correction, shop IDs, and required future closeout check</li><li>csrrcredited MY shop manifest missing Adelmar/JagerHelmet -&gt; added Adelmar 826077906 and JagerHelmet 1156006182</li><li>scheduled csrrcredited prompt did not mention error log or unmapped/UNVERIFIED gap rule -&gt; added error-log read requirement and explicit partial/outstanding rule</li><li>session closeout absent -&gt; saved C:\Users\tessf\Documents\session-closeouts\session-closeout-2026-06-15-csrrcreditedcheck-final.md</li><li>tomorrow csrrcredited/chase-rr continuation prompt absent -&gt; saved C:\Users\tessf\Documents\session-closeouts\continue-2026-06-16-csrrcredited-chase-rr-prompt.md</li><li>CSRRCredited_1030AM scheduled task prompt wiring unchecked -&gt; self-test OK; task Ready; next run 2026-06-16 10:30 MYT</li><li>validation pending -&gt; py_compile passed; npm test passed; Patricia board lint passed</li></ul></div>
-      <div class="field"><strong>Shop:</strong> Adelmar, JagerHelmet, MasonGym for the corrected verification guardrail; Kinata SG, KarlMobel SG, and ValueSnap for tomorrow ChaseRR pending list.</div>
-      <div class="field"><strong>Platform:</strong> Shopee MY/SG, Codex workspace, Windows scheduled task <code>CSRRCredited_1030AM</code>, Patricia board.</div>
-      <div class="field"><strong>Reason for change:</strong> Patricia requested this mistake be remembered permanently and asked to end the session with saved handoff, schedule prompt update, accuracy crosscheck, and board logging.</div>
-      <div class="field"><strong>Result:</strong> completed. Current session has no unresolved csrrcreditedcheck verification gaps. Outstanding for tomorrow is ChaseRR pending only; no chase was sent today. Scheduled task remains Ready for 2026-06-16 10:30 MYT and uses the updated runner prompt.</div>
-      <div class="field"><strong>Evidence:</strong> Closeout <code>C:\Users\tessf\Documents\session-closeouts\session-closeout-2026-06-15-csrrcreditedcheck-final.md</code>; prompt <code>C:\Users\tessf\Documents\session-closeouts\continue-2026-06-16-csrrcredited-chase-rr-prompt.md</code>; error log <code>.agents/error-log.md</code>; runner <code>.agents/scheduled-codex/run-codex-scheduled.ps1</code>; tests <code>npm test</code> passed.</div>
-    </div>
-  </div>
-  
->>>>>>> 9f57c58 (Trim board to 7-day archive (1.13MB -> 354KB) + fix duplicate lint)
 <div class="entry" data-date="2026-06-15" data-shops="Adelmar, JagerHelmet, MasonGym" data-platform="csrrcreditedcheck + Shopee MY Seller Center + Patricia board" data-result="completed">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -705,6 +694,7 @@ header.page::after{
       <div class="field"><strong>Reason for change:</strong> User challenged whether csrrcreditedcheck truly ran and who should verify. Correct answer: Codex must verify directly with live wallet/order evidence, not leave Patricia to verify manually.</div>
       <div class="field"><strong>Result:</strong> completed. Focused csrrcreditedcheck verified 7/7 gap rows live, made 0 status flips, wrote 1 clawback remark for 260528KBVX3EPN, and reconciled 1/1 write. No chase sent.</div>
       <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\csrrcredited-reports\csrrcreditedcheck-gap-verify-2026-06-15.md</code>; raw JSON <code>C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcreditedcheck_gap_verify_2026-06-15.json</code>; reconciliation [{&#x27;order_id&#x27;: &#x27;260528KBVX3EPN&#x27;, &#x27;shop&#x27;: &#x27;Adelmar&#x27;, &#x27;ok&#x27;: True, &#x27;state&#x27;: &#x27;Pending&#x27;, &#x27;remark_ok&#x27;: True}].</div>
+      <div class="field"><strong>Closeout addendum:</strong> Session ended after saving the corrected closeout, tomorrow prompt, error-log rule, and scheduled-runner prevention guardrails. Before -&gt; after: error-log entry absent -&gt; added CSRRCreditedCheck Coverage Correction; MY shop manifest missing Adelmar/JagerHelmet -&gt; added Adelmar 826077906 and JagerHelmet 1156006182; scheduled prompt missing error-log/unmapped-row guardrail -&gt; added explicit read and partial/outstanding rule; closeout absent -&gt; saved <code>C:\Users\tessf\Documents\session-closeouts\session-closeout-2026-06-15-csrrcreditedcheck-final.md</code>; tomorrow prompt absent -&gt; saved <code>C:\Users\tessf\Documents\session-closeouts\continue-2026-06-16-csrrcredited-chase-rr-prompt.md</code>; schedule wiring unchecked -&gt; self-test OK, task Ready, next run 2026-06-16 10:30 MYT. Shops: Adelmar, JagerHelmet, MasonGym for corrected verification; Kinata SG, KarlMobel SG, ValueSnap for tomorrow ChaseRR pending list. Platform: Shopee MY/SG, Codex workspace, Windows scheduled task <code>CSRRCredited_1030AM</code>, Patricia board. Reason: Patricia requested the mistake be remembered and future tasks auto-log after crosscheck. Result: completed; no unresolved csrrcreditedcheck verification gaps; ChaseRR remains pending tomorrow only; no chase sent today.</div>
     </div>
   </div>
   
@@ -919,7 +909,7 @@ header.page::after{
   </div><div class="entry" data-date="2026-06-15" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG + local reports + Patricia board" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">session-closeout chataudit - saved 2026-06-15 chataudit and tomorrow prompt</span>
+    <span class="entry-title">session closeout - saved 2026-06-15 chataudit and tomorrow prompt</span>
     <span class="entry-meta">2026-06-15 21:28:58 +08:00 &middot; crosscheck saved &middot; tomorrow prompt saved &middot; 0 operational writes</span>
     <span class="tag">session-closeout</span>
     <span class="tag">chataudit</span>
@@ -1209,7 +1199,6 @@ Addendum 2026-06-15 16:09 MYT: the exact TT Murahya thread for order `5844975147
 
     <div class="field"><strong>SB webapp changes, before &rarr; after:</strong>
       <ul>
-        <li>2026-06-15: csrrcredited session closeout saved; scheduled prompt/error-log guardrails updated</li>
         <li><code>101164 / 260605AFA9Q1SW / ValueSnap / Shopee MY / No Stock</code>: SiteGiant order #1420104 verified <strong>Cancelled / Paid / Fulfilled</strong>. <code>buyerDecision</code> <code>null</code> &rarr; <code>[&quot;Cancelled&quot;]</code>; <code>whConfirmStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; <code>stockAdjustmentStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; <code>csRemarks</code> <code>null</code> &rarr; evidence remark. Exact iSKU <code>ADJ-WALL-PROJ-STAND-305-FLR-TRAY</code> was <code>1/1/0/0</code> Out Of Stock. Result: cancellation cleanup only.</li>
         <li><code>101167 / 260604853MYXRE / Karlmobel / Shopee MY / No Stock</code>: SiteGiant order #1418595 verified <strong>Cancelled / Paid / Fulfilled</strong>. <code>buyerDecision</code> <code>null</code> &rarr; <code>[&quot;Cancelled&quot;]</code>; <code>whConfirmStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; <code>stockAdjustmentStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; <code>csRemarks</code> <code>null</code> &rarr; evidence remark. Exact iSKU <code>RSB-WHT40</code> was <code>4/4/0/0</code> Out Of Stock. Result: cancellation cleanup only.</li>
         <li><code>101170 / 260606B12P5MUE / Kinata SG / Shopee SG / No Stock</code>: SiteGiant order #1421061 verified <strong>Cancelled / Paid / Fulfilled</strong>. <code>buyerDecision</code> <code>null</code> &rarr; <code>[&quot;Cancelled&quot;]</code>; <code>whConfirmStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; <code>stockAdjustmentStatus</code> <code>null</code> &rarr; <code>[&quot;Not Required&quot;]</code>; <code>csRemarks</code> gained a third evidence remark. Exact order-detail iSKU <code>WEDDING-ARCH-FRAME-GLD-1-5M-2M-SG</code>, but SiteGiant inventory search returned 0 rows. Result: cancellation cleanup only; inventory verification still blocked.</li>
