@@ -46,8 +46,8 @@
   <div class="entry" data-date="2026-06-15" data-shops="TT Murahya, TT Hiranai, DasNatureSG2, Lazada N/A" data-platform="TikTok MY + Shopee SG + Lazada" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation - 2026-06-15 immediate contact-first run: 48 focus rows / 3 TT-SG candidates / 0 messages sent</span>
-      <span class="entry-meta">2026-06-15 MYT - TT order pages verified - SG shop switch verified - chat-thread checks blocked - no SB PATCHes - no stock writes</span>
+      <span class="entry-title">checksbvariation - 2026-06-15 immediate contact-first run: 48 focus rows / 3 TT-SG candidates / 1 message sent</span>
+      <span class="entry-meta">2026-06-15 MYT - TT order pages verified - SG shop switch verified - chat-thread checks blocked then SG chat reopened on profile 84 - no SB PATCHes - no stock writes</span>
       <span class="tag">checksbvariation</span>
       <span class="tag result-warn">Blocked / No Sends</span>
     </div>
@@ -62,7 +62,8 @@ Before -&gt; After values:
 - DasNatureSG2 row 101217 / order 2606130F8TD2D7: contactSent false -&gt; false; buyer message not sent -&gt; not sent; stock unchanged; current SKU DRY-BAG-YELLOW-15L 0/0/0/0 Out of Stock; suggested DRY-BAG-ORANGE-15L 15/15/0/0 Available and DRY-BAG-BLACK-15L 14/14/0/0 Available. Result: blocked because SG shop switch to DasNatureSG2 succeeded but chat redirection returned HTTP 401 user_is_unauthorized.
 - Lazada: no eligible uncontacted contact-first candidate found in the live focus set; no before/after system value changed.
 Scripts/evidence: tmp-run-checksbvariation-immediate-20260615.ps1; tmp-checksbvariation-immediate-20260615-prompt.md; tmp-checksbvariation-sg-probe-20260615.js; report copied to C:\Users\tessf\Documents\sbvariation-reports\sbvariation-immediate-contact-first-2026-06-15.md.
-Result: 0 customer messages sent, 0 SB PATCHes, 0 SiteGiant stock writes, 0 Jira/form updates. Follow-up is to manually open exact TT chat threads and fix or use an authorized Shopee SG chat account before sending prepared drafts.</pre></div></div>
+Result: 0 customer messages sent, 0 SB PATCHes, 0 SiteGiant stock writes, 0 Jira/form updates. Follow-up is to manually open exact TT chat threads and fix or use an authorized Shopee SG chat account before sending prepared drafts.
+Addendum 2026-06-15 14:56 MYT: the exact Shopee SG `uiloelc` thread on profile 84 was reopened in the live chat UI and the approved `Orange/15L` template was sent. Before -&gt; after: chat send status not sent -&gt; sent; SB contactSent false -&gt; false (no SB webapp write performed). Result: one customer message sent successfully, still no SB PATCHes or SiteGiant writes.</pre></div></div>
   </div>
   <div class="entry" data-date="2026-06-15" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
