@@ -454,7 +454,7 @@ header.page::after{
 }
 .static-fallback ul{margin:0;padding-left:18px}
 .static-fallback li{margin:4px 0;color:var(--text)}
-.js-ready .static-fallback{display:none}
+.js-ready .static-fallback{display:block}
 /* Legacy 2-column grid layout â€” only when field uses the <span class="field-label">+<span class="field-value"> structure */
 .field:has(> .field-label){
   display:grid;grid-template-columns:118px 1fr;gap:13px;
@@ -592,6 +592,17 @@ header.page::after{
 </style>
 </head>
 <body>
+  <div id="emergencyBoardVisible" style="display:block;margin:0;padding:14px 18px;background:#fff7ed;color:#111827;border-bottom:4px solid #f97316;font-family:Arial,Helvetica,sans-serif;line-height:1.45;position:relative;z-index:99999;">
+    <div style="font-weight:700;font-size:18px;margin-bottom:6px;">Patricia board visible fallback - 2026-06-15 22:20 MYT</div>
+    <div style="font-size:14px;margin-bottom:8px;">If the normal board below is blank, these latest logs are still present in the board file and public mirror:</div>
+    <ul style="margin:0;padding-left:20px;font-size:14px;">
+      <li>returnitems-lookup SG TikTok Lazada and Shopee MY errors 2026-06-15</li>
+      <li>scope correction returnitems excluded from parcelclaim closeout 2026-06-15</li>
+      <li>ttparcelclaim handoff saved schedule closeout 2026-06-15</li>
+      <li>parcelclaim-auto and ttparcelclaim rerun completed after Lazada relogin 2026-06-15</li>
+      <li>checksbvariation immediate contact-first run logged once</li>
+    </ul>
+  </div>
   <div class="wrapper">
     <header class="page">
       <div class="brand">
@@ -654,6 +665,7 @@ header.page::after{
     <div class="static-fallback" id="staticFallback">
       <div class="fallback-title">Latest board entries are available. If the interactive board is blank, use this visible fallback and hard refresh once.</div>
       <ul>
+        <li>2026-06-15: csrrcredited quick cleanup mapped 6 MY unknown rows; chase-rr pending for 16/6 only</li>
         <li>2026-06-15: returnitems-lookup SG TikTok Lazada and Shopee MY errors</li>
         <li>2026-06-15: ttparcelclaim handoff saved schedule closeout</li>
         <li>2026-06-15: parcelclaim-auto and ttparcelclaim rerun completed after Lazada relogin</li>
@@ -661,6 +673,30 @@ header.page::after{
       </ul>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-15" data-shops="Adelmar, JagerHelmet, KarlMobel SG, MasonGym" data-platform="csrrcredited + csrrcreditedcheck + Shopee MY/SG Seller Center + Patricia board" data-result="pending">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">csrrcredited quick cleanup - 15/6: 6 MY unknown rows mapped / 2 of 3 rechecks verified / chase pending 16/6</span>
+      <span class="entry-meta">2026-06-15 MYT &middot; no status flips &middot; no chase sent &middot; report <code>C:\Users\tessf\Documents\csrrcredited-reports\csrrcredited-quick-cleanup-2026-06-15.md</code></span>
+      <span class="tag">csrrcredited</span>
+      <span class="tag">csrrcreditedcheck</span>
+      <span class="tag">chase-rr</span>
+      <span class="tag result-warn">Pending</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Quick cleanup after the full csrrcredited recovery run. Identified the remaining unknown MY shop rows, rechecked the three unresolved target IDs with live wallet/order evidence where reachable, and kept chase-rr as a tomorrow-only pending list.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-15 MYT.</div>
+      <div class="field"><strong>Task:</strong> Complete remaining csrrcredited/csrrcreditedcheck cleanup quickly, with no status changes unless fully verified and no chase send today.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> unknown MY rows 6 -&gt; 6 identified for mapping; unknown SG rows 0 -&gt; 0; target rechecks unresolved 3 -&gt; 2/3 live-verified; status flips 0 -&gt; 0; chase sends 0 -&gt; 0; chase list remains pending for 2026-06-16 only.</div>
+      <div class="field"><strong>Every quick-cleanup change:</strong><ul><li>260608JB1BPHME Adelmar: Pending -&gt; Pending; amount 651.46; case C19087; result mapped to shop for tomorrow/manual live-wallet verification.</li><li>260612UBBJ6RK8 Adelmar: Pending -&gt; Pending; amount 298.81; case C19137; result mapped to shop for tomorrow/manual live-wallet verification.</li><li>26052371RDBNTY Adelmar: Pending -&gt; Pending; amount 231.53; case C18206; result mapped to shop for tomorrow/manual live-wallet verification.</li><li>260606D0MB0B5H Adelmar: Pending -&gt; Pending; amount 253.50; case C18908; result mapped to shop for tomorrow/manual live-wallet verification.</li><li>260528KBVX3EPN Adelmar: Pending -&gt; Pending; amount 230.78; case C18464; result mapped to shop for tomorrow/manual live-wallet verification.</li><li>260609MFSQAEAS JagerHelmet: Pending -&gt; Pending; amount 101.15; case C19097; result mapped to shop for tomorrow/manual live-wallet verification.</li><li>260602114T7VNV KarlMobel SG Shopee SG: Pending -&gt; Pending; verdict NO_ADJUSTMENT; net 0.0; evidence total_adjustment=+0.00; amount_after_adjustment=-31.76; result hold.</li><li>260518NDMWKF7S KarlMobel SG Shopee SG: Pending -&gt; Pending; verdict CLAWBACK_FIRED; net -26.37; evidence total_adjustment=-26.37; amount_after_adjustment=-6.33; result remark.</li><li>260609MURTUVWE MasonGym Shopee MY: Pending -&gt; Pending; verdict UNVERIFIED; net 0; evidence no match; result hold.</li></ul></div>
+      <div class="field"><strong>Shop:</strong> Adelmar and JagerHelmet unknown MY rows; KarlMobel SG and MasonGym target rechecks.</div>
+      <div class="field"><strong>Platform:</strong> Shopee MY, Shopee SG, csrrcredited/csrrcreditedcheck reports, Patricia board.</div>
+      <div class="field"><strong>Reason for change:</strong> User asked whether anything was missed and whether chase-rr should be done now or tomorrow. Chase-rr stays tomorrow pending because no chase should be sent today without approval.</div>
+      <div class="field"><strong>Result:</strong> pending. 2/3 target IDs live-verified; 260609MURTUVWE MasonGym remains unverified/no wallet match after AbortError; six MY unknown-shop rows are now identified as 5 Adelmar + 1 JagerHelmet and held pending mapping/live-wallet verification. No status changes and no chase sent.</div>
+      <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\csrrcredited-reports\csrrcredited-quick-cleanup-2026-06-15.md</code>; raw JSON <code>C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_quick_cleanup_2026-06-15.json</code>.</div>
+    </div>
+  </div>
+  
 <div class="entry" data-date="2026-06-15" data-shops="TT DasNature, Hiranai, KarlMobel, MurahYa, Valuesnap; Lazada MurahYa, das.nature, Lovento" data-platform="Codex workspace + ttparcelclaim skill docs + Patricia board" data-result="corrected">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -6276,4 +6312,3 @@ document.documentElement.classList.add('js-ready');
 </script>
 </body>
 </html>
-
