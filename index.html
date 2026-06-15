@@ -659,7 +659,32 @@ header.page::after{
     <div class="field"><strong>Result:</strong> completed. The skill run was already logged once, no duplicate checksbvariation task was inserted, and this board-health audit was added as a separate user-session entry.</div>
   </div>
 </div>
-<div class="entry" data-date="2026-06-15" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG + local reports + Patricia board" data-result="ok">
+<div class="entry" data-date="2026-06-15" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerSafety, TT KarlMobel, TT Lovento, TT MurahYa, TT Valuesnap, TT JagerHelmet, TT Kinata, Lazada MurahYa, Laz das.nature, Lazada Lovento" data-platform="parcelclaim-auto + ttparcelclaim + TikTok Seller Center + Lazada Seller Center + internal webapp" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto and ttparcelclaim rerun completed after Lazada relogin 2026-06-15</span>
+      <span class="entry-meta">2026-06-15 20:58-21:50 MYT &middot; Lazada relogin passed &middot; parcelclaim-auto OK &middot; 12 FD posted &middot; ttparcelclaim partial</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag">ttparcelclaim</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> After Patricia relogged the Lazada profiles, reran the login gate, then ran parcelclaim-auto for all configured TikTok/Lazada profiles and immediately reran ttparcelclaim + ttparcelclaimcheck against the refreshed webapp state. Claude and legacy launchers were not executed.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-15 MYT.</div>
+      <div class="field"><strong>Task:</strong> Run parcelclaim-auto now for all TikTok and Lazada shops, both R/R and FD sections, only after confirming all accounts are logged in; dedupe before POST; then rerun ttparcelclaim and ttparcelclaimcheck with live webapp verification and no WhatsApp.</div>
+      <div class="field"><strong>Login gate before -&gt; after:</strong> Lazada profile blockers 3 -&gt; 0. Profile 81 Lazada MurahYa, 82 Laz das.nature, and 83 Lazada Lovento all reached <code>/apps/order/reverse?tab=All</code>; parsed rows were 9, 6, and 1 respectively. Full parcelclaim-auto profile scope scanned OK 0/16 -&gt; 16/16.</div>
+      <div class="field"><strong>parcelclaim-auto before -&gt; after:</strong> webapp rows 481 -&gt; 493; candidates after dedupe 0 -&gt; 12; NEW POSTed 0 -&gt; 12; posted value RM0.00 -&gt; RM2735.62; duplicate observations 0 -&gt; 153; FD DOM-only catches 0 -&gt; 0; held invalid 0 -&gt; 0; POST skips/failures 0 -&gt; 0; crosscheck 0/0 -&gt; 12/12 CONFIRMED.</div>
+      <div class="field"><strong>New parcelclaim-auto cases:</strong> C2137 TT DasNature 584425615331526393 RM9.73; C2138 TT Hiranai 583931008031163436 RM44.04; C2139 TT KarlMobel 584499244356175361 RM1566.20; C2140 TT MurahYa 584476798015931734 RM245.75; C2141 TT MurahYa 584459175958513655 RM20.10; C2142 TT MurahYa 584426175052416160 RM59.34; C2143 TT MurahYa 584424881440785655 RM12.49; C2144 TT MurahYa 584416069291706170 RM354.77; C2145 TT MurahYa 584415748691429128 RM243.93; C2146 TT MurahYa 584414725423138498 RM0.01; C2147 TT Valuesnap 584520160334021990 RM24.08; C2148 TT Valuesnap 584441466917521144 RM155.18.</div>
+      <div class="field"><strong>ttparcelclaim before -&gt; after:</strong> records 493 -&gt; 493; Pending pool 106 -&gt; 105; Pending RM 25024.72 -&gt; 24980.68; due today/overdue 91 -&gt; 91; missing followup_dt 12 -&gt; 0; missing return_status 20 -&gt; 19; missing action_needed 0 -&gt; 0; terminal-state orphans 0 -&gt; 0; reverse orphans 0 -&gt; 0; hard action mismatches 0 -&gt; 0; closeable resell 1 -&gt; 0.</div>
+      <div class="field"><strong>ttparcelclaim PATCHes:</strong> webapp PATCHes 0 -&gt; 15, all HTTP 200. C2138 was cleaned from Pending to Withdrawn/Closed with remark <code>[15/6 WITHDRAW - WH confirmed resellable.]</code>. C2137 and C2139-C2148 received followup_dt blank -&gt; 2026-06-18.</div>
+      <div class="field"><strong>Operational counters:</strong> customer messages 0 -&gt; 0; WhatsApp 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace writes 0 -&gt; 0; parcelclaim-auto webapp creates 481 -&gt; 493; parcelclaim-auto remark patches 0 -&gt; 12; ttparcelclaim PATCHes 0 -&gt; 15.</div>
+      <div class="field"><strong>Reports:</strong> <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-15.md</code>; <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-15.md</code>; <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-15.md</code>. Lazada recheck evidence: <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-lazada-recheck-2026-06-15.json</code>.</div>
+      <div class="field"><strong>Shop:</strong> all configured TikTok and Lazada parcelclaim-auto shops plus TT Parcel Claim webapp scope.</div>
+      <div class="field"><strong>Platform:</strong> AdsPower, TikTok Seller Center, Lazada Seller Center, internal TT Parcel Claim webapp, Patricia board.</div>
+      <div class="field"><strong>Reason:</strong> User rejected the earlier partial/dry-run schedule outcome, relogged Lazada profiles, and asked to proceed quickly with parcelclaim-auto followed by ttparcelclaim/ttparcelclaimcheck.</div>
+      <div class="field"><strong>Result:</strong> partial overall. parcelclaim-auto is OK with 12/12 confirmed new FD cases. ttparcelclaim refreshed coverage/WH reports and all 16 profiles were alive, but result remains partial because 19 null return_status orphans remain for future classification and local board commit was blocked by a pre-existing unrelated board HTML lint issue. No helper processes remained after completion.</div>
+    </div>
+  </div><div class="entry" data-date="2026-06-15" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG + local reports + Patricia board" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">session closeout - saved 2026-06-15 chataudit and tomorrow prompt</span>
