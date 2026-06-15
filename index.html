@@ -649,9 +649,38 @@ header.page::after{
           <div class="dropdown-options" id="resultList"></div>
         </div>
       </div>
-      <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
+<button class="clear-btn" id="clearBtn" type="button">Clear all</button>
+    </div>
+    <div class="static-fallback" id="staticFallback">
+      <div class="fallback-title">Latest board entries are available. If the interactive board is blank, use this visible fallback and hard refresh once.</div>
+      <ul>
+        <li>2026-06-15: returnitems-lookup SG TikTok Lazada and Shopee MY errors</li>
+        <li>2026-06-15: ttparcelclaim handoff saved schedule closeout</li>
+        <li>2026-06-15: parcelclaim-auto and ttparcelclaim rerun completed after Lazada relogin</li>
+        <li>2026-06-15: checksbvariation immediate contact-first run: 48 focus rows / 3 TT-SG candidates / 2 messages sent</li>
+      </ul>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-15" data-shops="TT DasNature, Hiranai, KarlMobel, MurahYa, Valuesnap; Lazada MurahYa, das.nature, Lovento" data-platform="Codex workspace + ttparcelclaim skill docs + Patricia board" data-result="corrected">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">scope correction returnitems excluded from parcelclaim closeout 2026-06-15</span>
+      <span class="entry-meta">2026-06-15 MYT &middot; over-scoped handoff corrected &middot; ReturnItems excluded</span>
+      <span class="tag">scope-correction</span>
+      <span class="tag">handoff</span>
+      <span class="tag result-ok">Corrected</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Corrected the closeout handoff because ReturnItems and other separate-session skills were incorrectly included. The session closeout is now scoped only to schedule/parcelclaim/ttparcelclaim. ReturnItems remains ongoing in another session.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-15 MYT.</div>
+      <div class="field"><strong>Task:</strong> Correct closeout scope and remove ReturnItems/other parallel workflow instructions from tomorrow prompt.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> tomorrow prompt included <code>returnitems-lookup</code>, <code>csrrcredited</code>, <code>checksbvariation</code>, and <code>chataudit</code> instructions -&gt; prompt now includes parcelclaim-auto and ttparcelclaim/ttparcelclaimcheck only. Session closeout listed unrelated outstanding items -&gt; now states ReturnItems is excluded because it is ongoing in another session. Error log missing over-scope mistake -&gt; added correction entry. External ttparcelclaim prompt old broad scope -&gt; replaced with corrected narrow scope. Operational counters stayed messages <code>0 -&gt; 0</code>, WhatsApp <code>0 -&gt; 0</code>, stock writes <code>0 -&gt; 0</code>, marketplace writes <code>0 -&gt; 0</code>, webapp patches <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Shop:</strong> TT DasNature, TT Hiranai, TT KarlMobel, TT MurahYa, TT Valuesnap, Lazada MurahYa, Lazada das.nature, Lazada Lovento for this parcelclaim/ttparcelclaim closeout only.</div>
+      <div class="field"><strong>Platform:</strong> Codex workspace, ttparcelclaim skill docs, Patricia board. ReturnItems platform/work remains excluded.</div>
+      <div class="field"><strong>Reason for change:</strong> Patricia clarified that ReturnItems is still ongoing in another session and should not be concluded or prompted from this session.</div>
+      <div class="field"><strong>Result:</strong> corrected. Continue tomorrow prompt now only covers parcelclaim-auto and ttparcelclaim/ttparcelclaimcheck. ReturnItems is explicitly excluded.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-15" data-shops="SG, TikTok, Lazada, Shopee MY" data-platform="Return Items + SiteGiant + TikTok Seller Centre + Shopee Seller Centre" data-result="success">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -6241,6 +6270,7 @@ renderTodaySummary();
 buildTabs();
 buildFilters();
 bindCollapsibles();
+document.documentElement.classList.add('js-ready');
 })();
 </script>
 </body>
