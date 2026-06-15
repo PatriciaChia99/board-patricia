@@ -639,6 +639,30 @@ header.page::after{
       <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-15" data-shops="Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer, ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Windows Task Scheduler + Codex scheduled runner + AdsPower + Shopee MY/SG + SiteGiant" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">remaining scheduled rerun closeout after usage reset 2026-06-15</span>
+      <span class="entry-meta">2026-06-15 13:51-17:47 MYT &middot; sg-gap completed &middot; chataudit finalized partial &middot; 2 missing reports now present</span>
+      <span class="tag">scheduled-codex</span>
+      <span class="tag">usage-reset-rerun</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> After Patricia confirmed usage had reset, reran and closed out the two remaining missing scheduled jobs from the earlier rerun batch: <code>CodexSgGapMonitor_0900</code> and <code>ChatAudit_910AM</code>. No customer messages, stock writes, marketplace edits, or webapp patches were made.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-15 MYT.</div>
+      <div class="field"><strong>Task:</strong> Complete the remaining scheduled reruns that were still missing reports after the first 2026-06-15 rerun batch.</div>
+      <div class="field"><strong>Reports before -&gt; after:</strong> expected missing reports 2 -&gt; 0. <code>sg-gap-monitor-2026-06-15.md</code> missing -&gt; present at <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-06-15.md</code>. <code>chataudit-summary-2026-06-15.md</code> missing -&gt; present at <code>C:\Users\tessf\Documents\chataudit-reports\chataudit-summary-2026-06-15.md</code>.</div>
+      <div class="field"><strong>sg-gap before -&gt; after:</strong> Task Scheduler <code>CodexSgGapMonitor_0900</code> running/result <code>267009</code> -&gt; ready/result <code>0</code>; report absent -&gt; present; final wrapper absent -&gt; present at <code>C:\Users\tessf\Documents\codex-scheduled-logs\sg-gap-monitor\sg-gap-monitor-final-20260615-142242.md</code>; Patricia board entry absent -&gt; committed and pushed as <code>957f03f</code>. Business result: Shopee MY shops 27 -&gt; 27, SiteGiant ShopeeMY channels 18 -&gt; 18, ShopeeSG channels 8 -&gt; 8, unlinked gap 9 -&gt; 9, new latest order IDs none -&gt; none, active To Ship/Shipping risk none -&gt; none.</div>
+      <div class="field"><strong>chataudit before -&gt; after:</strong> Task Scheduler <code>ChatAudit_910AM</code> running/result <code>267009</code> -&gt; ready/result <code>267014</code> after long helper retries and scheduler termination; report absent -&gt; present via manual finalizer; final wrapper file absent -&gt; still absent because the scheduler wrapper was terminated before final output. Patricia board entry absent -&gt; committed and pushed as <code>304dc50</code>. Raw evidence before -&gt; after: cs1/cs2 only -&gt; cs1 OK, cs2 OK, cs3 OK, cs4 PARTIAL, cs5 ERROR/login page. Date-window sweep completed for 5/5 profiles; deep-reviewed 450; confirmed misses 0; manual-review candidates 5.</div>
+      <div class="field"><strong>Helper/process changes before -&gt; after:</strong> stale orphaned <code>cs3</code> helper processes 2 -&gt; 0 stopped; stuck <code>cs4</code> helper 1 -&gt; 0 stopped; scheduled helper processes remaining 1 -&gt; 0. Local chataudit helper safety before -&gt; after: AdsPower HTTP calls had no explicit timeout and no existing-DevTools recovery path -&gt; timeout, known debug-port reuse, skip-stop guard, and progress snapshots added in <code>tools\chataudit_codex_20260613.js</code>; dependencies unchanged.</div>
+      <div class="field"><strong>Operational counters before -&gt; after:</strong> Shopee customer messages 0 -&gt; 0; WhatsApp messages 0 -&gt; 0; stock writes 0 -&gt; 0; SiteGiant writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp patches 0 -&gt; 0; scheduler manual starts for these two remaining tasks 0 -&gt; 2.</div>
+      <div class="field"><strong>Shop:</strong> sg-gap: Chairsy, dutchgaming, Flashree, Solaree, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer. chataudit: ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG.</div>
+      <div class="field"><strong>Platform:</strong> Windows Task Scheduler, Codex scheduled runner, AdsPower, Shopee MY, Shopee SG, SiteGiant, Patricia board.</div>
+      <div class="field"><strong>Reason:</strong> The earlier 2026-06-15 rerun batch left sg-gap-monitor and chataudit missing after Codex usage-limit failures. Patricia confirmed usage reset, so the remaining two were run and closed out.</div>
+      <div class="field"><strong>Result:</strong> partial overall. sg-gap-monitor completed OK and pushed board log <code>957f03f</code>. chataudit produced a partial report and pushed board log <code>304dc50</code>; cs5 could not be audited because profile <code>k1arw890</code> landed on Shopee SG login, and cs4 had 3 CDP timeouts but still deep-reviewed 177 in-window chats. No operational writes were made.</div>
+    </div>
+  </div>
 <div class="entry" data-date="2026-06-15" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
