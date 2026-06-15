@@ -742,29 +742,6 @@ header.page::after{
 <div class="field"><strong>Result:</strong> warn - after recovery: 18/18 planned shops swept, 32 total remark PATCHes today (14 initial + 18 recovery), 0 status flips, 27/28 recovery crosscheck rows live-confirmed, 5 chase candidates queued for 16/6 only, no chase sent.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-06-15" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerSafety, TT KarlMobel, TT Lovento, TT MurahYa, TT Valuesnap, TT JagerHelmet, TT Kinata, Lazada MurahYa, Laz das.nature, Lazada Lovento" data-platform="AdsPower + TikTok Seller Center + Lazada Seller Center + parcelclaim-auto" data-result="blocked">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">parcelclaim-auto login gate stopped Lazada 2026-06-15</span>
-      <span class="entry-meta">2026-06-15 20:27-20:50 MYT &middot; TT 13/13 login OK &middot; Lazada 0/3 login OK &middot; audit stopped before writes</span>
-      <span class="tag">parcelclaim-auto</span>
-      <span class="tag">login-gate</span>
-      <span class="tag result-blocked">Blocked</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Patricia asked to run parcelclaim-auto immediately for all TikTok and Lazada shops, both R/R and FD sections, but only after confirming every TT/Lazada account is logged in. A fresh AdsPower/CDP login preflight was performed before any parcelclaim-auto POST/PATCH or ttparcelclaim PATCH work.</p>
-      <div class="field"><strong>Date:</strong> 2026-06-15 MYT.</div>
-      <div class="field"><strong>Task:</strong> Verify every parcelclaim-auto TT/Lazada account login first; stop and report before audit if any account is not logged in; then run parcelclaim-auto and ttparcelclaim only if gate passes.</div>
-      <div class="field"><strong>Before -&gt; after:</strong> login profiles checked 0 -&gt; 16; TikTok login-ready profiles 0 -&gt; 13; Lazada login-ready profiles 0 -&gt; 0; blockers 0 -&gt; 3. Parcelclaim-auto business audit started 0 -&gt; 0; ttparcelclaim rerun started 0 -&gt; 0; webapp POSTs 0 -&gt; 0; webapp PATCHes 0 -&gt; 0; customer messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace writes 0 -&gt; 0.</div>
-      <div class="field"><strong>Passed TT profiles:</strong> 54 TT Adelmar, 55 TT DasNature, 56 TT Hiranai, 58 TT HiranaiMY, 59 TT Jager, 60 TT JagerArmor, 61 TT JagerSafety, 62 TT KarlMobel, 63 TT Lovento, 64 TT MurahYa, 65 TT Valuesnap, 66 TT JagerHelmet all passed R/R and FD route checks. 67 TT Kinata passed R/R login; current runner marks FD route not applicable for SG seller-center.</div>
-      <div class="field"><strong>Blocked Lazada profiles:</strong> 81 Lazada MurahYa <code>k1bl6lfs</code> stayed on <code>sellercenter.lazada.com.my/apps/seller/login</code> after relogin click; 82 Laz das.nature <code>k1bo5a45</code> stayed on login after relogin click; 83 Lazada Lovento <code>k1bo5bqa</code> stayed on login after relogin click.</div>
-      <div class="field"><strong>Shop:</strong> TikTok shops in parcelclaim-auto scope plus Lazada MurahYa, Laz das.nature, Lazada Lovento.</div>
-      <div class="field"><strong>Platform:</strong> AdsPower, TikTok Seller Center, Lazada Seller Center, parcelclaim-auto, TT Parcel Claim webapp.</div>
-      <div class="field"><strong>Reason:</strong> User explicitly required every TT/Lazada account to be logged in first and instructed to stop/report if any account is not logged in.</div>
-      <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-login-preflight-2026-06-15.md</code> and matching JSON show the 16-profile gate result.</div>
-      <div class="field"><strong>Result:</strong> blocked as instructed. No parcelclaim-auto audit, no ttparcelclaim rerun, no POST/PATCH, no messages, no stock writes, and no marketplace changes were performed after the failed Lazada login gate. Operator relogin is required for Lazada profiles 81, 82, and 83 before rerunning all-shops parcelclaim-auto.</div>
-    </div>
-  </div>
 <div class="entry" data-date="2026-06-15" data-shops="MurahYa, KarlMobel, Hiranai, ValueSnap, MasonGym, das.nature2, BahEmas, Luxbin, das.nature, JagerHelmet, Emas Gift, Wilmermobel" data-platform="Shopee MY" data-result="partial">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
