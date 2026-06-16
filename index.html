@@ -639,6 +639,83 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-16" data-shops="BahEmas, Murahya, das.nature2, Karlmobel, TT DasNature" data-platform="Shopee MY, TikTok MY, SiteGiant, SB Variation" data-result="success">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation weekend stock adjustment SA-19406 2026-06-16</span>
+      <span class="entry-meta">2026-06-16 11:26 MYT &middot; SiteGiant SA-19406 &middot; 8 stock lines adjusted &middot; 5 SB rows patched &middot; CPCL-BLACK skipped</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-success">Success</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia approved the weekend/yesterday accepted-change stock cleanup. Codex submitted SiteGiant stock adjustment <code>SA-19406</code>, cleared reserved stock for the two original OOS iSKUs that had reserved stock, skipped accepted iSKU <code>CPCL-BLACK</code> per instruction, then patched the five SB Variation rows with the stock adjustment evidence.</p>
+      <div class="field"><strong>Every stock change before -&gt; after:</strong><ul>
+        <li><code>260612US17V2E3</code> BahEmas / Shopee MY: original OOS <code>HAMSTER-CAGE-BLUE</code> reserved <code>1 -&gt; 0</code>, then SOH/Sellable/Reserved/Allocated/NonSellable <code>1/1/0/0/0 -&gt; 0/0/0/0/0</code>; accepted <code>HAMSTER-CAGE-PINK</code> <code>10/10/0/0/0 -&gt; 9/9/0/0/0</code>.</li>
+        <li><code>260612TVDVM8T4</code> Murahya / Shopee MY: display original <code>DF-BLU-RED-24-26</code> stayed <code>0/0/0/0/0</code>; structured affected/OOS <code>DF-WHITE-PINK-24-26</code> <code>1/1/0/0/0 -&gt; 0/0/0/0/0</code>; accepted <code>DF-BLU-L-BLUE-24-26</code> <code>26/26/0/0/0 -&gt; 25/25/0/0/0</code>.</li>
+        <li><code>260611S25DTKWG</code> das.nature2 / Shopee MY: original OOS <code>CPCL-SILVER</code> reserved <code>2 -&gt; 0</code>, then <code>2/2/0/0/0 -&gt; 0/0/0/0/0</code>; accepted <code>CPCL-BLACK</code> skipped and stayed <code>0/0/0/0/0</code> per Patricia.</li>
+        <li><code>260610P7VKAWD1</code> Karlmobel / Shopee MY: original OOS <code>NGC-RED-WOLR</code> <code>3/1/0/0/2 -&gt; 2/0/0/0/2</code>; accepted <code>NGC-PINK-WOLR</code> <code>4/4/0/0/0 -&gt; 3/3/0/0/0</code>.</li>
+        <li><code>584459341023840196</code> TT DasNature / TikTok MY: original OOS <code>FISHING-BUCKET-BLUE-35CM-WITH-HANDLE</code> stayed <code>0/0/0/0/0</code>; accepted <code>FISHING-BUCKET-GREY-35CM-WITH-HANDLE</code> <code>19/18/1/0/0 -&gt; 18/17/1/0/0</code>, preserving Reserved 1.</li>
+      </ul></div>
+      <div class="field"><strong>Every SB webapp change before -&gt; after:</strong><ul>
+        <li>Rows <code>101225</code>, <code>101209</code>, <code>101208</code>, <code>101199</code>, and <code>101196</code>: <code>whConfirmStatus</code> <code>Pending WH Confirm -&gt; WH Confirmed Can Pack</code>; <code>stockAdjustmentStatus</code> <code>Not Adjusted -&gt; Adjusted</code>; <code>stockId</code> blank <code>-&gt; SA-19406</code>; <code>stockUrl</code> blank <code>-&gt; https://sitegiant.co/inventory-adjustment/stock-adjustment/9770142/edit</code>; dated CS remark appended per row.</li>
+      </ul></div>
+      <div class="field"><strong>Shop / platform:</strong> BahEmas, Murahya, das.nature2, Karlmobel on Shopee MY; TT DasNature on TikTok MY; SiteGiant Inventory and SB Variation webapp.</div>
+      <div class="field"><strong>Reason for change:</strong> Customers accepted the changed iSKU and warehouse had weekend/yesterday New Ship By dates, but accepted-change stock deduction and original OOS zeroing were still pending.</div>
+      <div class="field"><strong>Result:</strong> success with one follow-up note. SiteGiant stock adjustment <code>SA-19406</code> succeeded with no failed item IDs; SB PATCHes <code>0 -&gt; 25</code> field writes across 5 rows, all HTTP ok and read back. <code>CPCL-BLACK</code> intentionally skipped per Patricia.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-sbvariation-live-20260616\sitegiant-stock-adjustment-execute-20260616.json</code>, <code>tmp-sbvariation-live-20260616\employee-sbvariation-stock-patch-20260616.json</code>, <code>tmp-sbvariation-live-20260616\sbvariation-weekend-stock-adjustment-2026-06-16.md</code>.</div>
+      <div class="field"><strong>Outstanding:</strong> <code>NGC-RED-WOLR</code> sellable is now 0, but Non-Sellable 2 remains, so total SOH is still 2. Do not clear non-sellable stock without warehouse/non-sellable approval. Row <code>101209</code> still has display original <code>DF-BLU-RED-24-26</code> versus structured affected <code>DF-WHITE-PINK-24-26</code>; both were preserved in remarks/evidence.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-06-16" data-shops="Murahya, Karlmobel, Valuesnap" data-platform="Shopee MY Seller Center live wallet + FBS Claim webapp + Google Sheet" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">fbs-claim live wallet verification 2026-06-16</span>
+      <span class="entry-meta">2026-06-16 MYT &middot; live Seller Center wallet API verification &middot; no operational writes</span>
+      <span class="tag">checkfbsclaims</span>
+      <span class="tag">wallet</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia asked whether Closed meant credited and whether the bot/webapp amounts were correct. Codex live-verified Seller Center wallet transactions for all 22 unique FBS orders that had closeable credited evidence in the current webapp pull. No sheet, webapp, marketplace, or customer-message writes were made.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-16 MYT.</div>
+      <div class="field"><strong>Task:</strong> Verify live wallet against bot/webapp credited evidence and confirm whether sheet Status synced to webapp.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> Webapp PATCHes <code>0 -&gt; 0</code>; sheet PATCHes <code>0 -&gt; 0</code>; wallet verification <code>unchecked -&gt; 22/22 live checked</code>; bot/webapp net match <code>unchecked -&gt; 22/22 confirmed</code>; pending sheet Status PATCHes <code>unchecked -&gt; 0</code>. Code: no live-wallet verifier -&gt; <code>tools/fbs_claim_wallet_verify_20260616.js</code>.</div>
+      <div class="field"><strong>Summary by shop:</strong><br>KarlMobel: 5 order(s), RM 588.44<br>MurahYa: 12 order(s), RM 2779.45<br>ValueSnap: 5 order(s), RM 117.64</div>
+      <div class="field"><strong>Wallet verification rows:</strong>
+        <table><thead><tr><th>Shop</th><th>Order ID</th><th>Case</th><th>Action</th><th>Bot/Webapp Net</th><th>Live Wallet Net</th><th>Verdict</th></tr></thead><tbody>
+        <tr><td>KarlMobel</td><td>250708KREPKAP6</td><td>403</td><td>closed</td><td>RM 221.89</td><td>RM 221.89</td><td>WALLET_NET_CONFIRMED_WITH_DEDUCTION</td></tr>
+        <tr><td>KarlMobel</td><td>250928N9B9HR1E</td><td>429</td><td>closed</td><td>RM 195.5</td><td>RM 195.5</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>KarlMobel</td><td>2604077JVANY15</td><td>423</td><td>closed</td><td>RM 24.55</td><td>RM 24.55</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>KarlMobel</td><td>26040891JTJRYP</td><td>422</td><td>closed</td><td>RM 31.9</td><td>RM 31.9</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>KarlMobel</td><td>260409C4NG05SJ</td><td>424</td><td>closed</td><td>RM 114.6</td><td>RM 114.6</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>MurahYa</td><td>250415BAPA1GEX</td><td>103</td><td>closed</td><td>RM 191</td><td>RM 191</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>MurahYa</td><td>2505054BV69CT6</td><td>77</td><td>pending_fbs</td><td>RM 40.48</td><td>RM 40.48</td><td>WALLET_NET_CONFIRMED_WITH_DEDUCTION</td></tr>
+        <tr><td>MurahYa</td><td>25060822BEF6RA</td><td>102</td><td>closed</td><td>RM 32.14</td><td>RM 32.14</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>MurahYa</td><td>2508198XKHN5U2</td><td>95</td><td>closed</td><td>RM 94.64</td><td>RM 94.64</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>MurahYa</td><td>250831A3PQA9CV</td><td>93</td><td>closed</td><td>RM 89.91</td><td>RM 89.91</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>MurahYa</td><td>251113NH5WV93E</td><td>64</td><td>pending_fbs</td><td>RM 65</td><td>RM 65</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>MurahYa</td><td>260425QR46V6H9</td><td>3371</td><td>pending_fbs</td><td>RM 219.25</td><td>RM 219.25</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>MurahYa</td><td>260514C85KPK0F</td><td>3350</td><td>closed</td><td>RM 757.95</td><td>RM 757.95</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>MurahYa</td><td>260515FKSVTVBS</td><td>3373</td><td>closed</td><td>RM 762.82</td><td>RM 762.82</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>MurahYa</td><td>260515G26KP54B</td><td>3358</td><td>closed</td><td>RM 175.42</td><td>RM 175.42</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>MurahYa</td><td>260520VFK4PJB9</td><td>3367</td><td>closed</td><td>RM 175.42</td><td>RM 175.42</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>MurahYa</td><td>2605223YDTHG3N</td><td>3363</td><td>closed</td><td>RM 175.42</td><td>RM 175.42</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>ValueSnap</td><td>250803TJ5D881P</td><td>284</td><td>closed</td><td>RM 35.74</td><td>RM 35.74</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>ValueSnap</td><td>251203C0DTTHDB</td><td>283</td><td>closed</td><td>RM 27.91</td><td>RM 27.91</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>ValueSnap</td><td>260226QSVM7GYC</td><td>262</td><td>closed</td><td>RM 12.98</td><td>RM 12.98</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>ValueSnap</td><td>2603049NXWWPVG</td><td>271</td><td>closed</td><td>RM 8.62</td><td>RM 8.62</td><td>WALLET_CONFIRMED</td></tr>
+        <tr><td>ValueSnap</td><td>260312VFH2VMYH</td><td>185</td><td>closed</td><td>RM 32.39</td><td>RM 32.39</td><td>WALLET_NET_CONFIRMED_WITH_DEDUCTION</td></tr>
+        </tbody></table>
+      </div>
+      <div class="field"><strong>Net confirmed with deductions:</strong><br>KarlMobel <code>250708KREPKAP6</code>: wallet net RM 221.89 matches bot/webapp despite deduction rows<br>MurahYa <code>2505054BV69CT6</code>: wallet net RM 40.48 matches bot/webapp despite deduction rows<br>ValueSnap <code>260312VFH2VMYH</code>: wallet net RM 32.39 matches bot/webapp despite deduction rows</div>
+      <div class="field"><strong>Sheet Status sync result:</strong> Supported Column F Status values had <code>0</code> pending webapp patches. The only supported sheet plan left was ValueSnap <code>260330G9KHCK01</code> Latest Remark blank -&gt; <code>?</code>, which stayed skipped. Unsupported sheet values remain: 15; sheet rows not in webapp: 17; webapp cases not in sheet: 100.</div>
+      <div class="field"><strong>Shop:</strong> Murahya, Karlmobel, Valuesnap.</div>
+      <div class="field"><strong>Platform:</strong> Shopee MY Seller Center live wallet, FBS Claim webapp, Google Sheet.</div>
+      <div class="field"><strong>Reason for change:</strong> Verify whether bot/webapp credited evidence was correct before treating Closed/credited cases as recovered.</div>
+      <div class="field"><strong>Result:</strong> completed. 19 orders had exact positive wallet amount matches; 3 orders had deduction rows but live wallet net still matched bot/webapp net exactly. No no-match, positive mismatch, clawback, or API error found in the 22 checked orders.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-returnitems\fbs-wallet-verify-2026-06-16\wallet_verified.json</code>; <code>wallet_sweep_KarlMobel.json</code>; <code>wallet_sweep_MurahYa.json</code>; <code>wallet_sweep_ValueSnap.json</code>; <code>fbs-wallet-verify-report-2026-06-16.md</code>.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-16" data-shops="11 TT shops" data-platform="TikTok MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
