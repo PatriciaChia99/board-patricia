@@ -639,6 +639,101 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-16" data-shops="SB Variation all focused shops" data-platform="SB Variation + SiteGiant + Shopee MY + Shopee SG + TikTok MY" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation scheduled run 2026-06-16: 51 rows / 31 stock action items / 0 sends</span>
+      <span class="entry-meta">2026-06-16 MYT &middot; marker SBVAR-SCHEDULED-20260616 &middot; live rows 185 max 101232 &middot; orders 51/51 &middot; iSKU 104/104 &middot; cancelled 33 &middot; messages 0-&gt;0 &middot; writes 0-&gt;0</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Ran the scheduled daily SB Variation review for 2026-06-16 MYT. Pulled live <code>/api/sb-variation</code>, checked recent/outstanding SB Variation, offer-change, no-stock, and invalid-order rows using marketplace order IDs first, then verified exact original/affected or SiteGiant order-product fallback iSKUs in SiteGiant. No buyer message, SB webapp PATCH, SiteGiant stock/status/reserved write, Jira/form submission, seller-portal change, WhatsApp/off-platform contact, or non-template wording was performed.</p>
+      <div class="field"><strong>Date/time:</strong> 2026-06-16 MYT closeout.</div>
+      <div class="field"><strong>Task:</strong> Scheduled daily/weekend SB Variation run for 2026-06-16 MYT.</div>
+      <div class="field"><strong>Before -&gt; after operational values:</strong> buyer messages <code>0 -&gt; 0</code>; SB webapp PATCHes <code>0 -&gt; 0</code>; SiteGiant stock writes <code>0 -&gt; 0</code>; SiteGiant item-status writes <code>0 -&gt; 0</code>; reserved-stock edits <code>0 -&gt; 0</code>; Jira/form submissions <code>0 -&gt; 0</code>; seller-portal changes <code>0 -&gt; 0</code>; WhatsApp/off-platform contact <code>0 -&gt; 0</code>; live SB rows checked <code>0 -&gt; 185</code>; focused cases reviewed <code>0 -&gt; 51</code>; SiteGiant order evidence <code>0 -&gt; 51/51</code>; exact iSKU evidence <code>0 -&gt; 104/104</code>; stock action items <code>0 -&gt; 31</code>; cancelled buyerDecision action items <code>0 -&gt; 27</code>; WH stock-check items <code>0 -&gt; 10</code>.</div>
+      <div class="field"><strong>Shop:</strong> Focused rows across Shopee MY, Shopee SG, and TikTok MY shops in the live SB Variation feed; see report for per-order shop names.</div>
+      <div class="field"><strong>Platform:</strong> SB Variation webapp API, SiteGiant inventory/order API, Shopee MY, Shopee SG, TikTok MY.</div>
+      <div class="field"><strong>Reason for change:</strong> Required scheduled 2026-06-16 SB Variation run. The 2026-06-05 standing customer-contact approval is weekend-only, and 2026-06-16 is Tuesday MYT, so contact and operational writes stayed approval-gated.</div>
+      <div class="field"><strong>Stock action values queued:</strong><ul>
+        <li><code>260612USSAE4YE</code> / Karlmobel / ShopeeMY: <code>REW-BLK-LEAD-AC</code> 2/2/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260612UR34MPP8</code> / das.nature2 / ShopeeMY: <code>CAMPING-ROPE-LIGHT-GREEN</code> 45/45/0/0 available -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260612UR34MPP8</code> / das.nature2 / ShopeeMY: <code>FH-BLACK</code> 1/1/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260612UN474T25</code> / Murahya / ShopeeMY: <code>INTXFILTR</code> 9/9/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260612UN474T25</code> / Murahya / ShopeeMY: <code>INTX530GPH</code> 2/1/1/0 out_of_stock -&gt; 1/0/1/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260612US17V2E3</code> / BahEmas / ShopeeMY: <code>HAMSTER-CAGE-PINK</code> 10/10/0/0 available -&gt; deduct 1; reason accepted_change_new_ship_by_deduction; result queued only, no stock write.</li>
+        <li><code>260612U9HEFWWN</code> / MurahYa / ShopeeMY: <code>DRIFT-TRICKER-SCOOTER-COLORFUL</code> 1/1/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260611SU5M0DM4</code> / MasonGym / ShopeeMY: <code>YOGA-KNEE-ELBOW-PAD-BLUE</code> 8/8/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260611SU5M0DM4</code> / MasonGym / ShopeeMY: <code>SPRING-HULA-HOOP-MIX</code> 3/3/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260612V0N5KVGY</code> / ValueSnap / ShopeeMY: <code>KIDS-TENT-BLUE-UNICORN</code> 1/1/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260611S7H4X4X6</code> / Emas Gift / ShopeeMY: <code>ORANGE-TULIPS-3-STEM</code> 1/1/0/0 available -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260611S7H4X4X6</code> / Emas Gift / ShopeeMY: <code>PINK-TULIPS-3-STEM</code> 1/1/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260611REVA5BQS</code> / e_masgift.sg / ShopeeSG: <code>SEQUIN-BACKDROP-SILVER-30X30CM</code> 7/7/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260610Q4VUF2JY</code> / Luxbin / ShopeeMY: <code>JAPAN-STYLE-WHT-12L</code> 4/2/2/0 out_of_stock -&gt; 2/0/2/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260611SRR5ENVX</code> / Karlmobel / ShopeeMY: <code>JAPAN-STYLE-WHT-12L</code> 4/2/2/0 out_of_stock -&gt; 2/0/2/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260611S8PPKG7H</code> / Murahya / ShopeeMY: <code>OFFICE-CHAIR-HR-WHLS-WHT-BLK</code> 1/1/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260612TVDVM8T4</code> / Murahya / ShopeeMY: <code>DF-BLU-L-BLUE-24-26</code> 26/26/0/0 available -&gt; deduct 1; reason accepted_change_new_ship_by_deduction; result queued only, no stock write.</li>
+        <li><code>260611S25DTKWG</code> / das.nature2 / ShopeeMY: <code>CPCL-BLACK</code> 0/0/0/0 available -&gt; deduct 2; reason accepted_change_new_ship_by_deduction; result queued only, no stock write.</li>
+        <li><code>260611RGHWSEAB</code> / MasonGym / ShopeeMY: <code>INV-WEIGHT-VEST-3KG</code> 1/1/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260610Q0R2SM9W</code> / Hiranai / ShopeeMY: <code>MATERNITY-PANTS-BLACK-XL</code> 1/1/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260611RGA8N69F</code> / Hiranai / ShopeeMY: <code>FWSB-PINK</code> 1/1/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260610N1QTVPBG</code> / Karlmobel / ShopeeMY: <code>LUGGAGE-BLK-24INCH</code> 3/3/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260610P7VKAWD1</code> / Karlmobel / ShopeeMY: <code>NGC-PINK-WOLR</code> 4/4/0/0 available -&gt; deduct 1; reason accepted_change_new_ship_by_deduction; result queued only, no stock write.</li>
+        <li><code>260610NV0K2HY6</code> / Karlmobel / ShopeeMY: <code>NGC-RED-WOLR</code> 3/1/0/0 out_of_stock -&gt; 2/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260609M6VQBETJ</code> / Murahya / ShopeeMY: <code>FU-BLK-RED-2.4M</code> 61/61/0/0 available -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>584459341023840196</code> / TT DasNature / TikTokMY: <code>FISHING-BUCKET-GREY-35CM-WITH-HANDLE</code> 19/18/1/0 available -&gt; deduct 1; reason accepted_change_new_ship_by_deduction; result queued only, no stock write.</li>
+        <li><code>260609MC446CH2</code> / MasonGym / ShopeeMY: <code>BOXING-SANDBAG-125CM-SET</code> 1/1/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260606CDSG2P9H</code> / MurahYa / ShopeeMY: <code>FLOOR-MIRROR-BROWN-70X170CM-STAND-WALL</code> 1/1/0/0 out_of_stock -&gt; 0/0/0/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260606D5XYQEBQ</code> / ValueSnap / ShopeeMY: <code>HIGH-ELASTICITY-TRAINING-TENNIS-BALL-NO-VARIATION</code> 27/24/3/0 available -&gt; 3/0/3/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>260606DBEWANE5</code> / Karlmobel / ShopeeMY: <code>MBS-BLK-LOW</code> 6/2/4/0 out_of_stock -&gt; 4/0/4/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+        <li><code>584412855050273913</code> / TT ValueSnap / TikTokMY: <code>HIGH-ELASTICITY-TRAINING-TENNIS-BALL-NO-VARIATION</code> 27/24/3/0 available -&gt; 3/0/3/0; reason cancellation_stock_return_cleanup; result queued only, no stock write.</li>
+      </ul></div>
+      <div class="field"><strong>Cancelled buyerDecision values queued:</strong><ul>
+        <li><code>260612USSAE4YE</code> / Karlmobel / ShopeeMY row 101232: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260612UR34MPP8</code> / das.nature2 / ShopeeMY row 101231: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>26061305QWB4C1</code> / Karlmobel / ShopeeMY row 101227: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260612UN474T25</code> / Murahya / ShopeeMY row 101226: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260612U9HEFWWN</code> / MurahYa / ShopeeMY row 101224: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260611SU5M0DM4</code> / MasonGym / ShopeeMY row 101222: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260612V0N5KVGY</code> / ValueSnap / ShopeeMY row 101221: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260611S7H4X4X6</code> / Emas Gift / ShopeeMY row 101220: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260612UFBK3SBX</code> / MasonGym / ShopeeMY row 101219: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260611REVA5BQS</code> / e_masgift.sg / ShopeeSG row 101215: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260610Q4VUF2JY</code> / Luxbin / ShopeeMY row 101214: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260611SRR5ENVX</code> / Karlmobel / ShopeeMY row 101212: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260611S8PPKG7H</code> / Murahya / ShopeeMY row 101210: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260611RGHWSEAB</code> / MasonGym / ShopeeMY row 101207: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260610Q0R2SM9W</code> / Hiranai / ShopeeMY row 101205: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260611RGA8N69F</code> / Hiranai / ShopeeMY row 101203: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260610N1QTVPBG</code> / Karlmobel / ShopeeMY row 101201: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260610NV0K2HY6</code> / Karlmobel / ShopeeMY row 101198: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260609M6VQBETJ</code> / Murahya / ShopeeMY row 101197: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260609MC446CH2</code> / MasonGym / ShopeeMY row 101195: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260606CDSG2P9H</code> / MurahYa / ShopeeMY row 101194: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260608H7PCNW9B</code> / Murahya / ShopeeMY row 101192: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260606DBEWANE5</code> / Karlmobel / ShopeeMY row 101187: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260608JC7237YD</code> / ValueSnap / ShopeeMY row 101186: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260607EJ0NG0A7</code> / Murahya / ShopeeMY row 101184: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>260608G2QHCW9F</code> / Karlmobel / ShopeeMY row 101180: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+        <li><code>584412855050273913</code> / TT ValueSnap / TikTokMY row 101177: buyerDecision=- -&gt; buyerDecision=Cancelled; result queued only, no SB webapp PATCH.</li>
+      </ul></div>
+      <div class="field"><strong>WH stock-check / mismatch values queued:</strong><ul>
+        <li><code>2606142Q654178</code> / Murahya / ShopeeMY: <code>DF-WHITE-PINK-27-29</code> 3/3/0/0 available; reason WH stock check / system mismatch; result queued for WH confirmation.</li>
+        <li><code>260612US17V2E3</code> / BahEmas / ShopeeMY: <code>HAMSTER-CAGE-BLUE</code> 1/0/1/0 out_of_stock; reason WH stock check / system mismatch; result queued for WH confirmation.</li>
+        <li><code>2606130F8TD2D7</code> / DasNatureSG2 / ShopeeSG: <code>DRY-BAG-YELLOW-15L</code> 20/20/0/0 available; reason WH stock check / system mismatch; result queued for WH confirmation.</li>
+        <li><code>260612TYG7SFVK</code> / Murahya / ShopeeMY: <code>RATTAN-LAUNDRY-BASKET-D-WOOD-WHT</code> 7/7/0/0 available; reason WH stock check / system mismatch; result queued for WH confirmation.</li>
+        <li><code>260612TVDVM8T4</code> / Murahya / ShopeeMY: <code>DF-WHITE-PINK-24-26</code> 1/1/0/0 out_of_stock; reason WH stock check / system mismatch; result queued for WH confirmation.</li>
+        <li><code>260611S25DTKWG</code> / das.nature2 / ShopeeMY: <code>CPCL-SILVER</code> 2/0/2/0 out_of_stock; reason WH stock check / system mismatch; result queued for WH confirmation.</li>
+        <li><code>260610Q8NA4RFN</code> / KarlMobel SG / ShopeeSG: <code>CB-GREEN</code> 31/27/4/0 available; reason WH stock check / system mismatch; result queued for WH confirmation.</li>
+        <li><code>260610P7VKAWD1</code> / Karlmobel / ShopeeMY: <code>NGC-RED-WOLR</code> 3/1/0/0 out_of_stock; reason WH stock check / system mismatch; result queued for WH confirmation.</li>
+        <li><code>260609KFMJ2XXX</code> / Murahya / ShopeeMY: <code>BTNT</code> 0/0/0/0 available; reason WH stock check / system mismatch; result queued for WH confirmation.</li>
+        <li><code>260608H3X9B15W</code> / MasonGym / ShopeeMY: <code>SOFT-WALL-BALL-4KG</code> 7/7/0/0 out_of_stock; reason WH stock check / system mismatch; result queued for WH confirmation.</li>
+      </ul></div>
+      <div class="field"><strong>Evidence:</strong> Daily report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-scheduled-2026-06-16.md</code>; raw SB API <code>C:\Users\tessf\Documents\sbvariation-reports\_raw_scheduled_2026-06-16-20260616014630.json</code>; focus analysis <code>C:\Users\tessf\Documents\sbvariation-reports\_analysis_focus_2026-06-16.json</code>; SiteGiant order evidence <code>C:\Users\tessf\Documents\sbvariation-reports\_sitegiant_orders_api_2026-06-16.json</code>; SiteGiant item evidence <code>C:\Users\tessf\Documents\sbvariation-reports\_sitegiant_items_api_2026-06-16.json</code>; derived action summary <code>C:\Users\tessf\Documents\sbvariation-reports\_sbvariation_derived_2026-06-16.json</code>.</div>
+      <div class="field"><strong>Result:</strong> partial/read-only. Checked 51 focused rows, sent 0 messages, skipped/no-send 3 contact-not-sent rows, identified 33 cancelled/canceled watch rows, queued 31 stock action items and 27 cancelled buyerDecision updates. Board entry inserted; stock and webapp writes remain pending explicit Patricia approval.</div>
+      <div class="field"><strong>Outstanding:</strong> Need Patricia approval before any stock cleanup/deduction, reserved-stock cleanup, SB webapp buyerDecision PATCH, SB stock-column toggle, Jira/form write, seller-portal change, or customer manual message. Do not clear Reserved unless explicitly approved.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-16" data-shops="BahEmas, Murahya, das.nature2, Karlmobel, TT DasNature" data-platform="Shopee MY, TikTok MY, SiteGiant, SB Variation" data-result="partial">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -745,6 +840,7 @@ header.page::after{
       <div class="field"><strong>Reason:</strong> Daily scheduled intake of new TikTok/Lazada parcel-claim cases so CS does not miss R/R or failed-delivery cases. Historical FD rows older than 30 days remain deferred pending user approval.</div>
       <div class="field"><strong>Evidence:</strong> Report saved at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-16.md</code>; raw JSON at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-06-16.json</code>.</div>
       <div class="field"><strong>Result:</strong> fail - 0 posted, 1 errors, board logged by Codex.</div>
+      <div class="field"><strong>Codex addendum:</strong> parcelclaim-auto - 16/6 Codex run: 14 new / 14 posted / 0 DOM-only-catches / 3 errors. Report: <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-16.md</code>. Crosscheck: 14/14 CONFIRMED; .</div>
     </div>
   </div>
 <div class="entry" data-date="2026-06-16" data-shops="TT Hiranai, TT JagerHelmet, TT KarlMobel, TT Valuesnap" data-platform="TikTok/Lazada + internal webapp" data-result="warn">
