@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <base href="/api/board/patricia/file/">
@@ -638,8 +638,27 @@ header.page::after{
       </div>
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
-<<<<<<< HEAD
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-16" data-shops="KarlMobel, MurahYa, Laz MurahYa" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck - Codex 16/6: 31 rows in 7d / 0 active / 0 writes</span>
+      <span class="entry-meta">2026-06-16 10:00 MYT &middot; profile 70 k1b44nvg active &middot; fresh /api/parcel-split 2239 rows &middot; report C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-06-16.md</span>
+      <span class="tag">parcelsplit-contact-crosscheck</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Codex ran the scheduled Parcel Split contact crosscheck for 2026-06-16 MYT without invoking Claude or the legacy launcher. Fresh dashboard API data had 31 rows in the 7-day MYT window and 0 active unshipped rows, so no Shopee MY bot mismatches, TikTok/Lazada customer messages, phone backfills, icon updates, or marketplace profile checks were required.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-16 MYT.</div>
+      <div class="field"><strong>Task:</strong> Scheduled Parcel Split contact crosscheck for Shopee MY + TikTok + Lazada using Codex.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> API rows <code>2236 -&gt; 2239</code>; 7-day window rows <code>40 -&gt; 31</code>; active unshipped in-window rows <code>0 -&gt; 0</code>; Shopee MY active pass/mismatch/manual <code>0/0/0 -&gt; 0/0/0</code>; Shopee MY today skipped <code>0 -&gt; 0</code>; TT/Lazada messages <code>0 -&gt; 0</code>; phone updates <code>0 -&gt; 0</code>; icon updates <code>0 -&gt; 0</code>; messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; webapp patches <code>0 -&gt; 0</code>. One shipped KarlMobel row <code>260612UQ1QHA3B</code> changed phone count <code>0 -&gt; 1</code> in the source data; no workflow action was taken because it was already shipped.</div>
+      <div class="field"><strong>Shop:</strong> KarlMobel, MurahYa, Laz MurahYa. TikTok had no 7-day Parcel Split rows in this pull.</div>
+      <div class="field"><strong>Platform:</strong> Shopee MY + TikTok + Lazada + Parcel Split webapp. Profile 70 <code>k1b44nvg</code> stayed open.</div>
+      <div class="field"><strong>Reason for change:</strong> Daily scheduled Parcel Split contact audit after replacing the old Claude launcher with Codex; safety rules required same-date report, state write, Patricia board log, and explicit zero counters when no operational system changed.</div>
+      <div class="field"><strong>Evidence:</strong> Raw API evidence <code>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_raw_2026-06-16.json</code>; fetch metadata <code>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_fetch_meta_2026-06-16.json</code>; report <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-06-16.md</code>.</div>
+      <div class="field"><strong>Result:</strong> completed. No active in-scope rows remained unverified or blocked; no customer duplicate-message risk because no TT/Lazada send lane was entered.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-16" data-shops="Murahya, Karlmobel, Valuesnap, Luxbin" data-platform="Shopee MY FBS Claim webapp + Google Sheet + Claude memory + Patricia board" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -662,29 +681,6 @@ header.page::after{
       <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\.claude\projects\C--Users-tessf\memory\project_session_jun11_checkfbsclaims_action_flip.md</code>; <code>C:\Users\tessf\.claude\projects\C--Users-tessf\memory\project_session_jun11_checkfbsclaims.md</code>; <code>C:\Users\tessf\.claude\projects\C--Users-tessf\memory\project_session_jun10_checkfbsclaims_first_sync.md</code>; <code>C:\Users\tessf\Documents\fbs-sync-2026-06-11\report.md</code>; <code>C:\Users\tessf\Documents\fbs-sync-2026-06-11\action_plan.json</code>; <code>C:\Users\tessf\Documents\fbs-sync-2026-06-10\report.md</code>.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-06-16" data-shops="Murahya, Karlmobel, Valuesnap, Luxbin" data-platform="Shopee MY FBS Claim sheet + wallet evidence + Codex workspace" data-result="partial">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">fbs-claim last-run status check 2026-06-16</span>
-      <span class="entry-meta">2026-06-16 MYT &middot; read-only evidence check &middot; no operational changes</span>
-      <span class="tag">checkfbsclaims</span>
-      <span class="tag">fbs-claim</span>
-      <span class="tag">status-check</span>
-      <span class="tag result-partial">Partial</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Checked the last recorded FBS claim run evidence. This was a read-only status check across repo files, Patricia board traces, scheduled-job config, and FBS claim artifacts. No FBS Claim sheet, Shopee wallet, webapp, marketplace, customer-message, stock, or WhatsApp changes were made.</p>
-      <div class="field"><strong>Date:</strong> 2026-06-16 MYT.</div>
-      <div class="field"><strong>Task:</strong> Check the last run for the FBS claim workflow.</div>
-      <div class="field"><strong>Before -&gt; after values:</strong> FBS operational evidence known to current session: unchecked -&gt; last operational evidence identified as <code>C:\Users\tessf\Documents\fbs-claims-may5\verify_15may</code>. FBS sheet/wallet/webapp changes: <code>0 -&gt; 0</code>. Marketplace changes: <code>0 -&gt; 0</code>. WhatsApp/customer messages: <code>0 -&gt; 0</code>. New FBS claim submissions: <code>0 -&gt; 0</code>. Repo error log FBS status-check entry: absent -&gt; appended.</div>
-      <div class="field"><strong>Shop:</strong> Murahya, Karlmobel, Valuesnap, Luxbin.</div>
-      <div class="field"><strong>Platform:</strong> Shopee MY FBS Claim sheet, Shopee wallet evidence, Codex workspace, Patricia board.</div>
-      <div class="field"><strong>Reason for change:</strong> Patricia asked to check the last FBS claim run; closeout rules require durable board/error-log evidence even for read-only checks.</div>
-      <div class="field"><strong>Result:</strong> partial status found. Last completed operational FBS claim evidence is 2026-05-15: 109 H-column rows across 4 tabs and 48 F-status flips, verified 0 mismatch per handoff. No <code>verify_16may</code> continuation folder was found, so the fresh wallet pull and remaining review/no-wallet/escalation/claim-file follow-ups are still outstanding unless handled manually outside this repo.</div>
-      <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\fbs-claims-may5\verify_15may\TOMORROW_PROMPT_16MAY.md</code>; <code>C:\Users\tessf\Documents\fbs-claims-may5\verify_15may\actions_15may.json</code>; <code>C:\Users\tessf\Documents\fbs-claims-may5\verify_15may\crosscheck_results_15may.json</code>; <code>C:\Users\tessf\Documents\fbs-claims-may5\verify_14may\CLAIMS_TO_FILE_35.tsv</code>; <code>C:\Users\tessf\code\codex-lab\FBS Claim Progress JIRA Final 2026-05-29.md</code> confirmed as later JIRA/spec work, not a fresh operational run.</div>
-    </div>
-=======
-        <!-- ENTRIES_START -->
 <div class="entry" data-date="2026-06-16" data-shops="Profile 70 / Kmall:Patricia" data-platform="AdsPower + Codex scheduled automation" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -725,7 +721,6 @@ header.page::after{
       <div class="field"><strong>Evidence:</strong> Report saved at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-16.md</code>; raw JSON at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-06-16.json</code>.</div>
       <div class="field"><strong>Result:</strong> fail - 0 posted, 1 errors, board logged by Codex.</div>
     </div>
->>>>>>> 4032856 (Add 2026-06-16 profile 70 guard log)
   </div>
 <div class="entry" data-date="2026-06-16" data-shops="TT Hiranai, TT JagerHelmet, TT KarlMobel, TT Valuesnap" data-platform="TikTok/Lazada + internal webapp" data-result="warn">
   <div class="entry-summary">
@@ -792,7 +787,7 @@ header.page::after{
       <div class="field"><strong>Closeout addendum:</strong> Session ended after saving the corrected closeout, tomorrow prompt, error-log rule, and scheduled-runner prevention guardrails. Before -&gt; after: error-log entry absent -&gt; added CSRRCreditedCheck Coverage Correction; MY shop manifest missing Adelmar/JagerHelmet -&gt; added Adelmar 826077906 and JagerHelmet 1156006182; scheduled prompt missing error-log/unmapped-row guardrail -&gt; added explicit read and partial/outstanding rule; closeout absent -&gt; saved <code>C:\Users\tessf\Documents\session-closeouts\session-closeout-2026-06-15-csrrcreditedcheck-final.md</code>; tomorrow prompt absent -&gt; saved <code>C:\Users\tessf\Documents\session-closeouts\continue-2026-06-16-csrrcredited-chase-rr-prompt.md</code>; schedule wiring unchecked -&gt; self-test OK, task Ready, next run 2026-06-16 10:30 MYT. Shops: Adelmar, JagerHelmet, MasonGym for corrected verification; Kinata SG, KarlMobel SG, ValueSnap for tomorrow ChaseRR pending list. Platform: Shopee MY/SG, Codex workspace, Windows scheduled task <code>CSRRCredited_1030AM</code>, Patricia board. Reason: Patricia requested the mistake be remembered and future tasks auto-log after crosscheck. Result: completed; no unresolved csrrcreditedcheck verification gaps; ChaseRR remains pending tomorrow only; no chase sent today.</div>
     </div>
   </div>
-  
+
   <div class="entry" data-date="2026-06-15" data-shops="TikTok, Shopee SG, Shopee MY, Lazada" data-platform="Return Items + SiteGiant + TikTok Seller Centre + Parcel Claim" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -1112,7 +1107,6 @@ Addendum 2026-06-15 16:09 MYT: the exact TT Murahya thread for order `5844975147
   </div>
 </div>
 
-    
 <details class="archive-block">
   <summary>📦 Archive (167 earlier entries, 2026-05-20 – 2026-06-08) — click to expand</summary>
 <div class="entry" data-date="2026-06-08" data-shops="Kinata SG, DasNatureSG2, TT DasNature, TT Murahya, Laz MurahYa, ValueSnap, TT Adelmar, das.nature, das.nature2, TT KarlMobel" data-platform="Shopee SG + Shopee MY + TikTok MY + Lazada MY" data-result="ok">
@@ -1125,10 +1119,6 @@ Addendum 2026-06-15 16:09 MYT: the exact TT Murahya thread for order `5844975147
       </div>
       <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
     </div>
-    
-    
-
-    
 
     <div class="entry" data-date="2026-06-08" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
       <div class="entry-summary">
@@ -2179,7 +2169,7 @@ Addendum 2026-06-15 16:09 MYT: the exact TT Murahya thread for order `5844975147
     </div>
     <div class="entry-body"><div class="field"><em>Archived &mdash; full body trimmed for space. See git history for full text.</em></div></div>
   </div>
-  
+
 <div class="entry" data-date="2026-05-28" data-shops="N/A (board infrastructure)" data-platform="GitHub + Awesomeree Board" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
