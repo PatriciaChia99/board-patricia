@@ -639,6 +639,150 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-16" data-shops="Karlmobel, das.nature2, Murahya, MurahYa, MasonGym, ValueSnap, Emas Gift, e_masgift.sg, Luxbin, Hiranai, TT ValueSnap, TT DasNature, TT KarlMobel" data-platform="Shopee MY, Shopee SG, TikTok MY, SiteGiant, SB Variation" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation cancelled CS action cleanup 2026-06-16</span>
+      <span class="entry-meta">2026-06-16 14:34 MYT &middot; 192 SB rows &middot; 190 SiteGiant orders found &middot; 144 cancelled &middot; 29 CS-action rows patched &middot; stock writes 0-&gt;0</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia asked whether Codex had deducted stock for <code>584376966935119001</code> and <code>260611RJVY4YNK</code>, and asked to update SB CS action when orders are already cancelled. Codex pulled live SB Variation rows, verified current order statuses through SiteGiant, patched the cancelled CS action rows, and corrected remarks to match actual readback values.</p>
+      <div class="field"><strong>Stock deduction check:</strong><ul>
+        <li><code>584376966935119001</code> / row <code>101163</code> / TT Murahya: no SiteGiant stock deduction by Codex. Current SB <code>stockAdjustmentStatus=[&quot;Not Adjusted&quot;]</code>, <code>stockId=null</code>. Prior evidence was only <code>stockSetOos false -&gt; true</code> plus CS remark; current order is Shipped/Paid/Fulfilled.</li>
+        <li><code>260611RJVY4YNK</code> / row <code>101206</code> / ValueSnap: no SiteGiant stock deduction by Codex. Current SB <code>stockAdjustmentStatus=[&quot;Not Adjusted&quot;,&quot;&quot;]</code>, <code>stockId=null</code>. Prior evidence was only <code>stockSetOos false -&gt; true</code> plus CS remark; current order is Completed/Paid/Fulfilled.</li>
+      </ul></div>
+      <div class="field"><strong>Cancelled-order scan:</strong> SiteGiant showed <code>144</code> SB orders cancelled; <code>115</code> were already marked Cancelled in SB; <code>29</code> rows needed CS action cleanup and were patched. Buyer-decision readback: <code>29/29</code> now Cancelled. Remarks readback: <code>29/29</code> corrected with actual values. No SiteGiant stock, item status, seller-platform, or buyer-message write was made.</div>
+      <div class="field"><strong>Every patched row before -&gt; after:</strong><ul>
+        <li><code>260612USSAE4YE</code> row <code>101232</code> Karlmobel No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added.</li>
+        <li><code>260612UR34MPP8</code> row <code>101231</code> das.nature2 Offer Change: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;,&quot;Cancelled&quot;,&quot;Cancelled&quot;,&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;x4]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Adjusted&quot;x4]</code>; CS remark added.</li>
+        <li><code>26061305QWB4C1</code> row <code>101227</code> Karlmobel No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added.</li>
+        <li><code>260612UN474T25</code> row <code>101226</code> Murahya No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added.</li>
+        <li><code>260612U9HEFWWN</code> row <code>101224</code> MurahYa Order ID Invalid: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Not Required&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added.</li>
+        <li><code>260611SU5M0DM4</code> row <code>101222</code> MasonGym No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;x5]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;x5]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;x5]</code>; CS remark added.</li>
+        <li><code>260612V0N5KVGY</code> row <code>101221</code> ValueSnap Offer Change: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Adjusted&quot;]</code>; CS remark added.</li>
+        <li><code>260611S7H4X4X6</code> row <code>101220</code> Emas Gift Offer Change: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Adjusted&quot;]</code>; CS remark added.</li>
+        <li><code>260612UFBK3SBX</code> row <code>101219</code> MasonGym No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;,&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;,&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;,&quot;Not Required&quot;]</code>; CS remark added.</li>
+        <li><code>260611REVA5BQS</code> row <code>101215</code> e_masgift.sg Offer Change: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Adjusted&quot;]</code>; CS remark added.</li>
+        <li><code>260610Q4VUF2JY</code> row <code>101214</code> Luxbin No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added.</li>
+        <li><code>260611SRR5ENVX</code> row <code>101212</code> Karlmobel No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added.</li>
+        <li><code>260611S8PPKG7H</code> row <code>101210</code> Murahya No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added.</li>
+        <li><code>260611RGHWSEAB</code> row <code>101207</code> MasonGym No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added.</li>
+        <li><code>260610Q0R2SM9W</code> row <code>101205</code> Hiranai Offer Change: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Adjusted&quot;]</code>; CS remark added.</li>
+        <li><code>260611RTW5UCK2</code> row <code>101204</code> Hiranai Offer Change x3: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;x3]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;x3]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Adjusted&quot;x3]</code>; CS remark added.</li>
+        <li><code>260611RGA8N69F</code> row <code>101203</code> Hiranai No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added.</li>
+        <li><code>260610N1QTVPBG</code> row <code>101201</code> Karlmobel Offer Change: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Adjusted&quot;]</code>; CS remark added.</li>
+        <li><code>260610NV0K2HY6</code> row <code>101198</code> Karlmobel Offer Change: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Adjusted&quot;]</code>; CS remark added.</li>
+        <li><code>260609M6VQBETJ</code> row <code>101197</code> Murahya Offer Change: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Adjusted&quot;]</code>; CS remark added.</li>
+        <li><code>260609MC446CH2</code> row <code>101195</code> MasonGym No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added.</li>
+        <li><code>260608H7PCNW9B</code> row <code>101192</code> Murahya No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added; existing <code>SA-19151</code> evidence retained.</li>
+        <li><code>260606DBEWANE5</code> row <code>101187</code> Karlmobel No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added.</li>
+        <li><code>260608JC7237YD</code> row <code>101186</code> ValueSnap No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added; existing <code>SA-19151</code> evidence retained.</li>
+        <li><code>260607EJ0NG0A7</code> row <code>101184</code> Murahya No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added; existing <code>SA-19151</code> evidence retained.</li>
+        <li><code>260608G2QHCW9F</code> row <code>101180</code> Karlmobel No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added; existing <code>SA-19151</code> evidence retained.</li>
+        <li><code>584412855050273913</code> row <code>101177</code> TT ValueSnap No Stock: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Required&quot;]</code>; CS remark added.</li>
+        <li><code>584388056800593471</code> row <code>101168</code> TT DasNature Offer Change: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Adjusted&quot;]</code>; CS remark added.</li>
+        <li><code>584332958100784574</code> row <code>101147</code> TT KarlMobel Offer Change: <code>buyerDecision null -&gt; [&quot;Cancelled&quot;]</code>; <code>whConfirmStatus null -&gt; [&quot;Pending WH Confirm&quot;]</code>; <code>stockAdjustmentStatus null -&gt; [&quot;Not Adjusted&quot;]</code>; CS remark added.</li>
+      </ul></div>
+      <div class="field"><strong>Result:</strong> partial/success. The requested CS action field is updated: <code>buyerDecision=Cancelled</code> on all 29 target rows. The SB API retained some WH/stock workflow fields as Pending/Not Adjusted; Codex corrected remarks to record the actual readback instead of the requested value. No stock deduction was submitted.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-sbvariation-cancel-check-20260616\sbvariation-cancelled-audit-dryrun-20260616.json</code>, <code>tmp-sbvariation-cancel-check-20260616\sbvariation-cancelled-audit-apply-20260616.json</code>, <code>tmp-sbvariation-cancel-check-20260616\sbvariation-cancelled-remarks-correction-20260616.json</code>, <code>tmp-sbvariation-cancel-check-20260616\sbvariation-cancelled-order-cleanup-2026-06-16.md</code>.</div>
+      <div class="field"><strong>Outstanding:</strong> If Patricia wants WH/stock workflow fields forced to Not Required on rows where the SB API retained Pending/Not Adjusted, this needs a separate webapp/API behavior check. Cancelled-order stock-return cleanup was not performed in this task.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-06-16" data-shops="Murahya, Karlmobel, Valuesnap, Luxbin" data-platform="FBS Claim webapp + Google Sheet" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">fbs-claim final current refresh 2026-06-16</span>
+      <span class="entry-meta">2026-06-16 MYT &middot; blank actions fixed &middot; append plan refreshed after sheet changed</span>
+      <span class="tag">checkfbsclaims</span>
+      <span class="tag">webapp</span>
+      <span class="tag result-warn">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Final FBS refresh after Patricia's sheet/update questions. Codex found 7 newly present webapp cases with blank Action, patched only those blanks to <code>pending_fbs</code>, confirmed the two user-approved recovered closures stayed closed, and refreshed the sheet append remainder after the sheet changed during the run.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-16 MYT.</div>
+      <div class="field"><strong>Task:</strong> Catch any missed FBS current cases, keep approved closures closed, and refresh the per-shop sheet append remainder.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> blank webapp Action rows <code>7 -&gt; 0</code>; <code>pending_fbs</code> <code>367 -&gt; 374</code>; approved recovered closures <code>2 closed -&gt; 2 closed</code>; Google Sheet rows written by Codex <code>0 -&gt; 0</code>; append-ready unique orders after sheet refresh <code>98 stale -&gt; 61 current</code>.</div>
+      <div class="field"><strong>Final webapp Action distribution:</strong> closed: 79; in_progress: 18; pending_credited: 24; pending_fbs: 374; pending_seller: 22.</div>
+      <div class="field"><strong>Blank Action fixes:</strong>
+        <table><thead><tr><th>Shop</th><th>Order ID</th><th>Case</th><th>Before</th><th>After</th><th>HTTP</th></tr></thead><tbody>
+        <tr><td>KarlMobel</td><td><code>2505296R94QWS7</code></td><td>19304</td><td>blank</td><td>pending_fbs</td><td>200</td></tr>
+        <tr><td>KarlMobel</td><td><code>2603131GNJ321K</code></td><td>19303</td><td>blank</td><td>pending_fbs</td><td>200</td></tr>
+        <tr><td>MurahYa</td><td><code>260403TBN50EBN</code></td><td>19305</td><td>blank</td><td>pending_fbs</td><td>200</td></tr>
+        <tr><td>ValueSnap</td><td><code>2603157AHJ9MQ9</code></td><td>19306</td><td>blank</td><td>pending_fbs</td><td>200</td></tr>
+        <tr><td>ValueSnap</td><td><code>260420B4G9RSXX</code></td><td>19308</td><td>blank</td><td>pending_fbs</td><td>200</td></tr>
+        <tr><td>ValueSnap</td><td><code>260424K74UFFH1</code></td><td>19307</td><td>blank</td><td>pending_fbs</td><td>200</td></tr>
+        <tr><td>ValueSnap</td><td><code>260424MPFMU0SB</code></td><td>19309</td><td>blank</td><td>pending_fbs</td><td>200</td></tr>
+        </tbody></table>
+      </div>
+      <div class="field"><strong>Approved closure readback:</strong><br>KarlMobel <code>250728BSE4MCTM</code> case <code>400</code>: action <code>closed</code>, claim_status <code>closed</code><br>ValueSnap <code>260330G9KHCK01</code> case <code>167</code>: action <code>closed</code>, claim_status <code>closed</code></div>
+      <div class="field"><strong>Current sheet append remainder by shop:</strong> MurahYa: 40; KarlMobel: 11; ValueSnap: 10; Luxbin: 0.</div>
+      <div class="field"><strong>Sheet status meaning:</strong> The sheet does have status values. MurahYa has a shifted layout because of the extra <code>OID</code> column, and the current sheet pull has 63 unsupported/free-text values, so those are not safe to patch automatically.</div>
+      <div class="field"><strong>Shop:</strong> Murahya, Karlmobel, Valuesnap, Luxbin.</div>
+      <div class="field"><strong>Platform:</strong> FBS Claim webapp and Google Sheet.</div>
+      <div class="field"><strong>Reason for change:</strong> Avoid leaving fresh current cases with blank Action while not undoing user-approved recovered closures.</div>
+      <div class="field"><strong>Result:</strong> partial. Webapp current-case cleanup completed. Sheet append remains blocked for Codex because the Google Drive connector failed before mutation; current append files are ready for 61 remaining unique orders.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-returnitems\fbs-sync-2026-06-16\blank_action_plan.json</code>; <code>blank_action_patch_results.json</code>; <code>webapp_cases_final_flat.json</code>; <code>tmp-returnitems\fbs-sheet-append-2026-06-16\append-plan.json</code>.</div>
+      <div class="field"><strong>Outstanding:</strong> Append the remaining 61 orders to the Google Sheet through a working connector or supervised UI paste, then rerun the sync read-only. Do not apply the old E/F/G status mapping blindly to MurahYa until the shifted columns are confirmed.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-06-16" data-shops="Murahya, Karlmobel, Valuesnap, Luxbin" data-platform="FBS Claim webapp + Google Sheet" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">fbs-claim sheet append plan and approved closures 2026-06-16</span>
+      <span class="entry-meta">2026-06-16 MYT &middot; approved closures applied &middot; sheet append payload prepared</span>
+      <span class="tag">checkfbsclaims</span>
+      <span class="tag">sheet</span>
+      <span class="tag result-warn">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia approved adding all missing FBS webapp cases into the Google Sheet by shop and approved the two suspect recovered cases for closure. Codex applied the approved webapp closures and prepared the per-shop sheet append payload. Direct Google Sheet writing did not complete because the Google Drive connector returned a tool-name/resource mismatch before any write occurred.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-16 MYT.</div>
+      <div class="field"><strong>Task:</strong> Add missing FBS cases to the sheet by shop, answer current sheet-status meaning, and close approved recovered cases.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> Approved webapp closures <code>0 -&gt; 2</code>; Google Sheet appended rows <code>0 -&gt; 0</code> because connector write was blocked; append-ready unique orders <code>0 -&gt; 98</code>; supported sheet Status patches pending <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Sheet append plan by shop:</strong> MurahYa: 77; KarlMobel: 11; ValueSnap: 10; Luxbin: 0.</div>
+      <div class="field"><strong>Approved webapp closures:</strong>
+        <table><thead><tr><th>Shop</th><th>Order ID</th><th>Case</th><th>Before Action</th><th>After Action</th><th>Reason</th></tr></thead><tbody>
+        <tr><td>KarlMobel</td><td><code>250728BSE4MCTM</code></td><td>400</td><td>pending_credited</td><td>closed</td><td>User approved as credited/recovered on 2026-06-16</td></tr>
+        <tr><td>ValueSnap</td><td><code>260330G9KHCK01</code></td><td>167</td><td>pending_credited</td><td>closed</td><td>User approved as credited/recovered on 2026-06-16</td></tr>
+        </tbody></table>
+      </div>
+      <div class="field"><strong>Status meaning:</strong> The Google Sheet does have status values. The risky part is mapping: MurahYa currently includes an extra <code>OID</code> column, so the old locked E/F/G claim-status mapping is shifted on that tab. Also, 15 sheet values use unsupported labels such as operational/free-text statuses outside the current safe enum, so they were not patched automatically.</div>
+      <div class="field"><strong>Shop:</strong> Murahya, Karlmobel, Valuesnap, Luxbin.</div>
+      <div class="field"><strong>Platform:</strong> FBS Claim webapp and Google Sheet.</div>
+      <div class="field"><strong>Reason for change:</strong> Keep webapp recovery status aligned after wallet verification, and prepare missing current cases for the sheet without guessing unsafe column mappings.</div>
+      <div class="field"><strong>Result:</strong> partial. Webapp closure writes succeeded for KarlMobel <code>250728BSE4MCTM</code> case <code>400</code> and ValueSnap <code>260330G9KHCK01</code> case <code>167</code>. Sheet append files and batch payload are ready, but no Google Sheet rows were written due to connector failure.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-returnitems\fbs-sync-2026-06-16\approved_closure_results.json</code>; <code>tmp-returnitems\fbs-sheet-append-2026-06-16\append-plan.json</code>; per-shop append TSV/CSV files; <code>batch-append-requests-trimmed.json</code>.</div>
+      <div class="field"><strong>Outstanding:</strong> Use a working Google Sheets connector or a supervised sheet UI paste to append the 98 unique orders. Reconfirm MurahYa's shifted columns before applying any future E/F/G status automation to that tab.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-06-16" data-shops="Kinata SG" data-platform="Shopee SG, SB Variation" data-result="success">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation Kinata SG no stock send 2026-06-16</span>
+      <span class="entry-meta">2026-06-16 13:04 MYT &middot; order 2606131Q9MDMQP &middot; buyer aidilmodker &middot; messages 0-&gt;1 &middot; SB row 101233 patched</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-success">Success</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia approved sending the No Stock message for today's checksbvariation contact candidate. Codex verified the live Shopee SG order, exact Kinata SG buyer thread, and no-prior-message state, sent the approved message, then patched the SB Variation row contact tracking.</p>
+      <div class="field"><strong>Shop / platform:</strong> Kinata SG / Shopee SG; SB Variation webapp row <code>101233</code>.</div>
+      <div class="field"><strong>Order / buyer:</strong> <code>2606131Q9MDMQP</code>; Shopee order id <code>235059379208950</code>; buyer <code>aidilmodker</code>; conversation <code>1175900225572907924</code>; message id <code>2419228079398748529</code>.</div>
+      <div class="field"><strong>Every operational change before -&gt; after:</strong><ul>
+        <li>Shopee SG buyer messages for this thread: <code>0 -&gt; 1</code>. Sent approved No Stock message; preflight thread had <code>0</code> messages, post-send readback had message id <code>2419228079398748529</code>.</li>
+        <li>SB row <code>101233</code> <code>contactSent</code>: <code>false -&gt; true</code>.</li>
+        <li>SB row <code>101233</code> <code>csRemarks</code>: <code>null -&gt; dated send evidence remark</code> containing conversation and message ids.</li>
+        <li>SB row <code>101233</code> stock fields stayed unchanged: <code>stockSetOos=false</code>, <code>stockAdjustmentStatus=null</code>, <code>stockId=null</code>, <code>stockUrl=null</code>.</li>
+        <li>SiteGiant stock writes: <code>0 -&gt; 0</code>. Seller-portal order edits, Jira/form writes, and SiteGiant stock adjustments also stayed <code>0 -&gt; 0</code>.</li>
+      </ul></div>
+      <div class="field"><strong>Reason for change:</strong> Row <code>101233</code> was a live No Stock contact candidate with Ship By <code>2026-06-15</code>, order still <code>To Ship</code>, no prior Shopee SG message, and user-approved send text.</div>
+      <div class="field"><strong>Result:</strong> success. Buyer message sent and verified; SB webapp PATCHes returned HTTP 200 and read back <code>contactSent=true</code>.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-sbvariation-contact-check-20260616\_send_current_cs5_kinata_sg_no_stock_2606131Q9MDMQP_20260616.json</code>, <code>tmp-sbvariation-contact-check-20260616\employee-sbvariation-contact-sent-2606131Q9MDMQP-20260616.json</code>, <code>tmp-sbvariation-contact-check-20260616\sbvariation-kinata-sg-send-2026-06-16.md</code>.</div>
+      <div class="field"><strong>Outstanding:</strong> <code>INSULATED-BEVERAGE-DISPENSER-BLK-XTK-6L-SG</code> quantity is already <code>0/0/0/0</code>, but SiteGiant stock status remains <code>available</code>. WH/SiteGiant status confirmation is still needed before marking the SB stock column or changing stock status.</div>
+      <div class="field"><strong>Attempt note:</strong> Earlier guarded send attempts failed closed before sending because Shopee's order route intermittently loaded only the shell page or lost the webchat conversation. One current-thread attempt left the exact message in the composer after an SVG click limitation; a probe confirmed message count was still <code>0</code>, then the corrected click path sent and verified the message.</div>
+    </div>
+  </div>
 <div class="entry" data-date="2026-06-16" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -818,7 +962,6 @@ header.page::after{
       <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\tiktokrraudit-reports\tiktokrraudit-report-2026-06-16.md</code>; raw JSON <code>C:\Users\tessf\Documents\tiktokrraudit-reports\_codex_tiktokrraudit_2026-06-16.json</code>; upstream <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-16.md</code>.</div>
       <div class="field"><strong>Result:</strong> ok - board logged locally by Codex.</div>
     </div>
-  </div>
   </div>
   <div class="entry" data-date="2026-06-16" data-shops="Murahya, Karlmobel, Valuesnap" data-platform="Shopee MY FBS Claim webapp wallet adjustment evidence" data-result="partial">
     <div class="entry-summary">
