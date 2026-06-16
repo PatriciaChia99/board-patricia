@@ -638,7 +638,74 @@ header.page::after{
       </div>
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
+<<<<<<< HEAD
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-16" data-shops="Murahya, Karlmobel, Valuesnap, Luxbin" data-platform="Shopee MY FBS Claim webapp + Google Sheet + Claude memory + Patricia board" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">fbs-claim last-run status correction 2026-06-16</span>
+      <span class="entry-meta">2026-06-16 MYT &middot; corrected last-run lookup after wider Claude memory search &middot; no operational changes</span>
+      <span class="tag">checkfbsclaims</span>
+      <span class="tag">fbs-claim</span>
+      <span class="tag">correction</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Corrected the prior read-only FBS last-run check. The first check only searched repo/FBS-May artifacts and therefore stopped too early at 2026-05-15. A wider search found newer Claude memory and report artifacts for the IT-shipped FBS Claim Progress webapp sync on 2026-06-10 and the follow-up/action derivation on 2026-06-11. No FBS Claim sheet, Shopee wallet, webapp, marketplace, customer-message, stock, or WhatsApp changes were made by this correction.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-16 MYT.</div>
+      <div class="field"><strong>Task:</strong> Correct the FBS claim last-run status check.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> Last-run answer candidate: 2026-05-15 FBS-May continuation -&gt; corrected to 2026-06-11 checkfbsclaims second run plus Action-column pass. Operational changes by this correction remained FBS sheet <code>0 -&gt; 0</code>, wallet pulls <code>0 -&gt; 0</code>, webapp patches <code>0 -&gt; 0</code>, marketplace changes <code>0 -&gt; 0</code>, WhatsApp/customer messages <code>0 -&gt; 0</code>. Error log status-check section: stale May-only finding -&gt; corrected June 10/11 chain.</div>
+      <div class="field"><strong>Shop:</strong> Murahya, Karlmobel, Valuesnap, Luxbin.</div>
+      <div class="field"><strong>Platform:</strong> Shopee MY FBS Claim Progress webapp, Google Sheet, Claude memory, Patricia board, Codex workspace.</div>
+      <div class="field"><strong>Reason for change:</strong> The first closeout note was too narrow and missed newer off-repo Claude memory evidence. Correcting it prevents future FBS runs from resuming from stale May artifacts.</div>
+      <div class="field"><strong>Result:</strong> completed correction. Latest operational evidence found: 2026-06-11. 14:30 run scanned 504 sheet rows and 496 webapp cases, produced 0 new PATCHes and 273 idempotent skips. 17:00 Action pass applied 492 Action PATCHes with 0 fail; pass 2 applied 11 Pending Credited to Closed patches after the user confirmed recovery-remark rules. Final Action distribution: 349 Pending FBS, 77 Closed, 26 Pending Credited, 22 Pending Seller, 22 In Progress. Outstanding: 1 true suspect remains, ValueSnap order <code>260330G9KHCK01</code>; GRBT-427 had 1 outstanding OID <code>2603131GNJ321K</code>; GRBT-428 still not started; 8 new webapp cases need FBS team sheet rows.</div>
+      <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\.claude\projects\C--Users-tessf\memory\project_session_jun11_checkfbsclaims_action_flip.md</code>; <code>C:\Users\tessf\.claude\projects\C--Users-tessf\memory\project_session_jun11_checkfbsclaims.md</code>; <code>C:\Users\tessf\.claude\projects\C--Users-tessf\memory\project_session_jun10_checkfbsclaims_first_sync.md</code>; <code>C:\Users\tessf\Documents\fbs-sync-2026-06-11\report.md</code>; <code>C:\Users\tessf\Documents\fbs-sync-2026-06-11\action_plan.json</code>; <code>C:\Users\tessf\Documents\fbs-sync-2026-06-10\report.md</code>.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-06-16" data-shops="Murahya, Karlmobel, Valuesnap, Luxbin" data-platform="Shopee MY FBS Claim sheet + wallet evidence + Codex workspace" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">fbs-claim last-run status check 2026-06-16</span>
+      <span class="entry-meta">2026-06-16 MYT &middot; read-only evidence check &middot; no operational changes</span>
+      <span class="tag">checkfbsclaims</span>
+      <span class="tag">fbs-claim</span>
+      <span class="tag">status-check</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Checked the last recorded FBS claim run evidence. This was a read-only status check across repo files, Patricia board traces, scheduled-job config, and FBS claim artifacts. No FBS Claim sheet, Shopee wallet, webapp, marketplace, customer-message, stock, or WhatsApp changes were made.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-16 MYT.</div>
+      <div class="field"><strong>Task:</strong> Check the last run for the FBS claim workflow.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> FBS operational evidence known to current session: unchecked -&gt; last operational evidence identified as <code>C:\Users\tessf\Documents\fbs-claims-may5\verify_15may</code>. FBS sheet/wallet/webapp changes: <code>0 -&gt; 0</code>. Marketplace changes: <code>0 -&gt; 0</code>. WhatsApp/customer messages: <code>0 -&gt; 0</code>. New FBS claim submissions: <code>0 -&gt; 0</code>. Repo error log FBS status-check entry: absent -&gt; appended.</div>
+      <div class="field"><strong>Shop:</strong> Murahya, Karlmobel, Valuesnap, Luxbin.</div>
+      <div class="field"><strong>Platform:</strong> Shopee MY FBS Claim sheet, Shopee wallet evidence, Codex workspace, Patricia board.</div>
+      <div class="field"><strong>Reason for change:</strong> Patricia asked to check the last FBS claim run; closeout rules require durable board/error-log evidence even for read-only checks.</div>
+      <div class="field"><strong>Result:</strong> partial status found. Last completed operational FBS claim evidence is 2026-05-15: 109 H-column rows across 4 tabs and 48 F-status flips, verified 0 mismatch per handoff. No <code>verify_16may</code> continuation folder was found, so the fresh wallet pull and remaining review/no-wallet/escalation/claim-file follow-ups are still outstanding unless handled manually outside this repo.</div>
+      <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\fbs-claims-may5\verify_15may\TOMORROW_PROMPT_16MAY.md</code>; <code>C:\Users\tessf\Documents\fbs-claims-may5\verify_15may\actions_15may.json</code>; <code>C:\Users\tessf\Documents\fbs-claims-may5\verify_15may\crosscheck_results_15may.json</code>; <code>C:\Users\tessf\Documents\fbs-claims-may5\verify_14may\CLAIMS_TO_FILE_35.tsv</code>; <code>C:\Users\tessf\code\codex-lab\FBS Claim Progress JIRA Final 2026-05-29.md</code> confirmed as later JIRA/spec work, not a fresh operational run.</div>
+    </div>
+=======
+        <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-16" data-shops="Profile 70 / Kmall:Patricia" data-platform="AdsPower + Codex scheduled automation" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">profile 70 closure guard - keep Patricia browser open</span>
+    <span class="entry-meta">2026-06-16 09:58:55 +08:00 &middot; k1b44nvg reopened &middot; cleanup guards patched &middot; 0 operational writes</span>
+    <span class="tag">profile70</span>
+    <span class="tag">adspower</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <div class="field"><strong>Date:</strong> 2026-06-16 MYT.</div>
+    <div class="field"><strong>Task:</strong> Investigate Patricia report that profile 70 keeps closing while she is using it as her Chrome replacement, then prevent Codex cleanup from closing it again.</div>
+    <div class="field"><strong>Before -&gt; after values:</strong> AdsPower profile 70 <code>k1b44nvg</code> was <code>Active</code>, then a live stop command made it <code>Inactive</code>; reopened to <code>Active</code> on debug port <code>53787</code>. Cleanup behavior changed from <code>browser/stop</code> allowed for profile 70 -&gt; profile 70 skipped as user-owned and left open. Scheduled runner instruction changed from close AdsPower automation where applicable -&gt; close automation except profile 70. Operational counters: messages <code>0 -&gt; 0</code>, stock writes <code>0 -&gt; 0</code>, marketplace changes <code>0 -&gt; 0</code>, webapp patches <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Shop:</strong> Profile 70 / Kmall:Patricia browser context.</div>
+    <div class="field"><strong>Platform:</strong> AdsPower profile 70, local Chrome/Chromedriver, Codex scheduled automation.</div>
+    <div class="field"><strong>Reason for change:</strong> Patricia is using profile 70 as her working browser because normal Google Chrome cannot be used; Codex must not close that browser during cleanup, retries, or closeout.</div>
+    <div class="field"><strong>Files changed:</strong> scheduled runner prompt plus dated ttparcelclaim, parcelclaim-auto, tiktokrraudit, csrrcredited, and chataudit cleanup helpers now skip <code>k1b44nvg</code>.</div>
+    <div class="field"><strong>Evidence:</strong> closeout report <code>C:\Users\tessf\code\codex-lab\session-closeout-2026-06-16-profile70-closure-guard.md</code>; verification passed <code>python -m py_compile</code>, <code>node --check</code>, <code>npm test</code>, and final profile 70 active check.</div>
+    <div class="field"><strong>Result:</strong> completed. Profile 70 is active and profile-70 stop paths are guarded for future Codex scheduled cleanup.</div>
+  </div>
+</div>
   <div class="entry" data-date="2026-06-16" data-shops="multiple" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="fail">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -658,6 +725,7 @@ header.page::after{
       <div class="field"><strong>Evidence:</strong> Report saved at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-16.md</code>; raw JSON at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-06-16.json</code>.</div>
       <div class="field"><strong>Result:</strong> fail - 0 posted, 1 errors, board logged by Codex.</div>
     </div>
+>>>>>>> 4032856 (Add 2026-06-16 profile 70 guard log)
   </div>
 <div class="entry" data-date="2026-06-16" data-shops="TT Hiranai, TT JagerHelmet, TT KarlMobel, TT Valuesnap" data-platform="TikTok/Lazada + internal webapp" data-result="warn">
   <div class="entry-summary">
