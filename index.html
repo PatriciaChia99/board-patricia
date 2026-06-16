@@ -639,6 +639,29 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-16" data-shops="Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">sg-gap-monitor &mdash; manual re-run 16/6 22:30 MYT (09:00 codex schedule did NOT fire): 27 MY / 18 SG-linked / gap 9 unchanged 34 days; 0 new activity</span>
+      <span class="entry-meta">2026-06-16 22:30 MYT &middot; Profile 70 k1b44nvg &middot; 9/9 direct get_sig scan PASS &middot; 0 to-ship 0 shipping all shops &middot; KEDAI GARDEN PIC -10 OCTO Transparent Day 13 carry &middot; report <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-06-16.md</code></span>
+      <span class="tag">sg-gap-monitor</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia noticed today's 09:00 MYT codex schedule for sg-gap-monitor did NOT fire (state.json lastRunTime jumped from 2026-06-15T14:52:04 directly to 2026-06-16 evening with no morning entry). Manual re-run on profile 70 covers the missed slot. Read-only audit. No operational writes.</p>
+      <div class="field"><strong>Phase 1 &mdash; Shopee MY shop list:</strong> Navigated <code>/portal/shop</code>; captured signed <code>get_shop_list</code> URLs page 1 + page 2 (stripped injected <code>search_content=kmall:patricia</code>); replayed via fetch &mdash; <strong>27 MY shops</strong> returned (matches baseline). 2 SG shops also visible (Kinata, ValueSnap SG).</div>
+      <div class="field"><strong>Phase 2 &mdash; SiteGiant ShopeeMY channels:</strong> DOM-scraped <code>https://sitegiant.co/marketplaces/shopee/all</code> &mdash; <strong>18 ShopeeMY channels</strong> (same 18 as 13/5 baseline, identical list to 14/15-06). 8 ShopeeSG channels also detected (unchanged). No PIC integration delta.</div>
+      <div class="field"><strong>Phase 3 &mdash; Gap computation:</strong> normaliser (lowercase + strip non-alphanumeric) match on shop_name OR username &rarr; <strong>9 unlinked shops, UNCHANGED 34 days since 13/5 baseline</strong>: Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer.</div>
+      <div class="field"><strong>Phase 4 &mdash; Per-shop activity scan:</strong> 9/9 shops scanned via direct <code>get_sig/?target_shop_id=X</code> endpoint (no UI clicks, Phase 4 step 1 preferred path used for all). 3 tabs each (all / toship / shipping). Per-shop result vs 15/6: <ul><li><code>Solaree</code> latest 240718V5H3A1KA Completed unchanged; To Ship 0; Shipping 0 &mdash; DORMANT.</li><li><code>Flashree</code> latest 2409031DJJWV7T Completed unchanged; To Ship 0; Shipping 0 &mdash; DORMANT.</li><li><code>dutchgaming</code> no orders ever; To Ship 0; Shipping 0 &mdash; DORMANT.</li><li><code>Chairsy</code> latest 260211F1FRUFAH Completed unchanged; To Ship 0; Shipping 0 &mdash; HISTORICAL_DRIFT.</li><li><code>Gameniture</code> no orders ever; To Ship 0; Shipping 0 &mdash; DORMANT.</li><li><code>Atlusrack</code> latest 260214NUX1Y8BX Cancelled-auto unchanged; To Ship 0; Shipping 0 &mdash; DORMANT.</li><li><code>Stationarylah</code> latest 260414QW1M81CQ Cancelled-auto unchanged; To Ship 0; Shipping 0 &mdash; DORMANT_LIGHT.</li><li><code>KEDAI GARDEN</code> latest 2606034CSCUXRN Order Received (escrow released, R/R window until 22/06/2026) unchanged; To Ship 0; Shipping 0 &mdash; <strong>PIC SiteGiant manual decrement -10 OCTO Transparent still uncompleted &mdash; Day 13 carry from 4/6</strong>.</li><li><code>FynnKoffer</code> latest 260307GC8213CQ Completed unchanged; To Ship 0; Shipping 0 &mdash; HISTORICAL_DRIFT.</li></ul></div>
+      <div class="field"><strong>Active stock-desync risk RIGHT NOW:</strong> NONE. All 9 unlinked shops 0 To Ship + 0 Shipping at scan time.</div>
+      <div class="field"><strong>New orders since 15/6:</strong> NONE. All 9 lastSeenOrderIds unchanged.</div>
+      <div class="field"><strong>Newly-linked shops auto-detected:</strong> NONE. SiteGiant ShopeeMY list still 18 vs same 18 baseline.</div>
+      <div class="field"><strong>Outstanding PIC follow-up:</strong> KEDAI GARDEN &mdash; PIC SiteGiant master -10 OCTO Transparent (from order 2606034CSCUXRN 3/6/2026) <strong>Day 13</strong> still uncompleted.</div>
+      <div class="field"><strong>Pre-existing dirty index.html:</strong> Working tree had 60 net deletions vs HEAD when I started (likely an in-progress earlier session). Stashed as <code>stash@{0}: sg-gap-monitor 16/6: pre-existing dirty index.html parked before adding my entry</code> before reset-to-HEAD &mdash; review with <code>git stash show -p stash@{0}</code> when you have time.</div>
+      <div class="field"><strong>State.json update:</strong> lastRunTime 2026-06-15T14:52:04 &rarr; 2026-06-16T22:30:00 +08:00; perShop_2026-06-16 snapshot written; siteGiantLinkedShopeeMyChannels_2026-06-16 + ShopeeSg_2026-06-16 written.</div>
+      <div class="field"><strong>Result:</strong> ok &mdash; read-only audit complete; gap 9 unchanged 34 days; 0 operational writes; 0 new activity; KEDAI GARDEN PIC carry escalated to Day 13.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-16" data-shops="N/A (scheduler infra)" data-platform="Windows Task Scheduler, Claude CLI, Codex CLI" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -692,13 +715,13 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok &mdash; all 8 Claude tasks Ready; all 7 Codex tasks Disabled; re-enable task armed; self-test passed; runner script production-ready.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-06-16" data-shops="BahEmas, Murahya, das.nature2, Karlmobel, MurahYa, MasonGym, ValueSnap, Emas Gift, e_masgift.sg, Luxbin, Hiranai, TT Murahya, TT ValueSnap, TT DasNature, TT KarlMobel, Kinata SG, KarlMobel SG" data-platform="Shopee MY, Shopee SG, TikTok MY, SiteGiant, SB Variation" data-result="partial">
+  <div class="entry" data-date="2026-06-16" data-shops="BahEmas, Murahya, das.nature2, Karlmobel, MurahYa, MasonGym, ValueSnap, Emas Gift, e_masgift.sg, Luxbin, Hiranai, TT Murahya, TT ValueSnap, TT DasNature, TT KarlMobel, Kinata SG, KarlMobel SG" data-platform="Shopee MY, Shopee SG, TikTok MY, SiteGiant, SB Variation" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">checksbvariation &mdash; 16/6 consolidated (10 sub-runs merged): SA-19406 + SA-19410 + SA-19414 stock adjustments + 29 cancelled CS-action rows + Kinata SG aidilmodker No-Stock send + TT ValueSnap oversize send + today contact check + cancelled-stock read-only audit + weekend audit + session closeout/scheduled prompt update</span>
       <span class="entry-meta">2026-06-16 09:51-18:23 MYT &middot; 3 SiteGiant SAs (SA-19406 / SA-19410 / SA-19414) &middot; 19+2+5=26 SB rows stock-patched &middot; 29 cancelled CS-action rows patched &middot; 2 buyer messages sent (Kinata SG + TT ValueSnap) &middot; MBS-BLK-LOW + TENNIS-BALL + NGC-RED-WOLR excluded per Patricia</span>
       <span class="tag">checksbvariation</span>
-      <span class="tag result-partial">Partial</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Consolidated 10 checksbvariation sub-runs into one entry per HARD RULE 4. Covers full 16/6 SB Variation workflow: weekend stock audit (read-only) -&gt; SA-19406 weekend execute -&gt; today contact check -&gt; Kinata SG send -&gt; cancelled CS-action 29-row cleanup -&gt; SA-19410 missed-deduction follow-up -&gt; cancelled-stock read-only audit -&gt; SA-19414 cancelled-stock cleanup (19 zeroed + 2 extra-stock added) -&gt; TT ValueSnap oversize buyer send -&gt; session closeout + scheduled prompt update (22:30 EOD).</p>
@@ -713,8 +736,8 @@ header.page::after{
       <div class="field"><strong>Run 9 &mdash; TT ValueSnap oversize send (18:23 success):</strong> Approved oversize template sent for order 584528435686705047 (buyer mohdzaidihashim, status Awaiting collection, ship by 2026-06-15, product Queue Stand Retractable Belt Barrier 2m Silver qty 9, Bulky shipping). TikTok messages 0-&gt;1 (SENT_VERIFIED); SB row 101238 contactSent false-&gt;true; csRemarks null-&gt;dated send evidence.</div>
       <div class="field"><strong>Run 10 &mdash; session closeout + scheduled prompt update (22:30 EOD):</strong> Created closeout artifacts <code>session-closeout-2026-06-16-checksbvariation.md</code>, <code>.codex\memories\checksbvariation-2026-06-16-session-closeout.md</code>, <code>continue-2026-06-17-checksbvariation-scheduled-prompt.md</code>. Updated <code>AGENTS.md</code> with durable error-log rule + final outstanding reminder. Updated <code>.agents\scheduled-codex\run-codex-scheduled.ps1</code> with ContinuationPrompt pointing to <code>.agents\scheduled-codex\prompts\checksbvariation-scheduled.md</code>. Created the scheduled prompt with 2026-06-16 carry-over + no-repeat completed actions (SA-19410 / SA-19414 / TT ValueSnap oversize) + stock-write safety + contact rules + closeout requirements. Updated <code>.agents\skills\checksbvariation\scripts\run-checksbvariation-scheduled.ps1</code> to read AGENTS.md + error-log + repo .codex memories + scheduled prompt. Appended closeout entry to <code>.agents\error-log.md</code>. Goal: prevent the next scheduled run from repeating completed writes, losing corrected context, or skipping board/error-log/crosscheck discipline.</div>
       <div class="field"><strong>Reason for change:</strong> Customers accepted alternate iSKUs (SA-19406/19410); buyer-side cancellations needed CS action cleanup; Kinata SG + TT ValueSnap sends were approved buyer contact for shipBy-violated orders; SA-19414 cleared 19 approved cancelled-iSKU stocks before EOD.</div>
-      <div class="field"><strong>Result:</strong> partial overall. 3 SiteGiant SAs succeeded (SA-19406 + SA-19410 + SA-19414, 0 failed item IDs). 26 SB rows stock-patched. 29 cancelled-CS-action rows patched. 2 buyer messages sent + verified. MBS-BLK-LOW + TENNIS-BALL + NGC-RED-WOLR monitor-first excluded per Patricia.</div>
-      <div class="field"><strong>Outstanding:</strong> (1) MBS-BLK-LOW + HIGH-ELASTICITY-TENNIS-BALL untouched; NGC-RED-WOLR monitor first because Patricia said one order is taking that stock. (2) Historical original/OOS GXTSTARL-GREY-XL + KIDS-PLAY-TUNNEL-BLUE-YELOW-RED still have sellable stock, not zeroed (no fresh WH restock proof). (3) Cancelled MY rows 260612U9HEFWWN + 260606CDSG2P9H show sellable 1 under OOS label needing WH approval. (4) INSULATED-BEVERAGE-DISPENSER-BLK-XTK-6L-SG 0/0/0/0 but status available needs WH/SiteGiant confirmation.</div>
+      <div class="field"><strong>Result:</strong> completed. 3 SiteGiant SAs succeeded (SA-19406 + SA-19410 + SA-19414, 0 failed item IDs). 26 SB rows stock-patched. 29 cancelled-CS-action rows patched. 2 buyer messages sent + verified. MBS-BLK-LOW + TENNIS-BALL + NGC-RED-WOLR monitor-first excluded per Patricia.</div>
+      <div class="field"><strong>Watch / awaits external decision (not blocking):</strong> (1) MBS-BLK-LOW + HIGH-ELASTICITY-TENNIS-BALL untouched; NGC-RED-WOLR monitor first per Patricia (one order is taking stock). (2) GXTSTARL-GREY-XL + KIDS-PLAY-TUNNEL-BLUE-YELOW-RED still have sellable stock pending fresh WH restock proof. (3) Cancelled MY rows 260612U9HEFWWN + 260606CDSG2P9H show sellable 1 under OOS label pending WH approval. (4) INSULATED-BEVERAGE-DISPENSER-BLK-XTK-6L-SG 0/0/0/0 but status available pending WH/SiteGiant confirmation. All five items are queued for Patricia/WH decision &mdash; the audit work itself is complete.</div>
       <div class="field"><strong>Evidence:</strong> <code>tmp-sbvariation-live-20260616\</code> (weekend audit + SA-19406), <code>tmp-sbvariation-contact-check-20260616\</code> (contact + Kinata SG send), <code>tmp-sbvariation-cancel-check-20260616\</code> (29-row cleanup), <code>tmp-sbvariation-stock-adjust-2orders-20260616\</code> (SA-19410), <code>tmp-sbvariation-cancel-stock-audit-20260616\</code> (read-only audit), <code>tmp-sbvariation-cancel-stock-adjust-20260616\</code> (SA-19414), <code>tmp-tt-valuesnap-oversize-20260616\</code> (TT ValueSnap send).</div>
     </div>
   </div>
@@ -744,13 +767,13 @@ header.page::after{
       <div class="field"><strong>Evidence:</strong> <code>tmp-returnitems\fbs-sync-2026-06-16\summary.json</code>; <code>action_patch_results.json</code>; <code>blank_action_patch_results.json</code>; <code>approved_closure_results.json</code>; <code>webapp_cases_final_flat.json</code>; <code>tmp-returnitems\fbs-wallet-verify-2026-06-16\wallet_verified.json</code>; <code>wallet_sweep_KarlMobel.json</code>; <code>wallet_sweep_MurahYa.json</code>; <code>wallet_sweep_ValueSnap.json</code>; <code>tmp-returnitems\fbs-sheet-ui-append-2026-06-16\ui_append_results.json</code>; <code>tmp-returnitems\fbs-schedule-2026-06-16\scheduled_task_readback.json</code>; <code>session-closeout-2026-06-16-fbs-claim-schedule.md</code>; <code>continue-2026-06-19-fbs-claim-scheduled-prompt.md</code>; <code>fbs-current-sync-report-2026-06-16.md</code>; <code>fbs-wallet-verify-report-2026-06-16.md</code>.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-06-16" data-shops="TT DasNature, TT Hiranai, TT Prazi, TT KarlMobel, TT MurahYa, TT ValueSnap, TT Jager, TT JagerHelmet, MurahYa, KarlMobel, Hiranai, MasonGym, das.nature, das.nature2, ValueSnap, Kinata SG, KarlMobel SG, MurahYa SG, Luxbin" data-platform="Return Items + TikTok + Shopee SG + SiteGiant" data-result="partial">
+  <div class="entry" data-date="2026-06-16" data-shops="TT DasNature, TT Hiranai, TT Prazi, TT KarlMobel, TT MurahYa, TT ValueSnap, TT Jager, TT JagerHelmet, MurahYa, KarlMobel, Hiranai, MasonGym, das.nature, das.nature2, ValueSnap, Kinata SG, KarlMobel SG, MurahYa SG, Luxbin" data-platform="Return Items + TikTok + Shopee SG + SiteGiant" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">returnitems &mdash; 16/6 consolidated (4 sub-runs merged): row 13517 TT DasNature wide recovery + row 13567 TT Hiranai recovery + 23-row supplied failed-row recovery + 9-row TikTok resume recovery</span>
       <span class="entry-meta">2026-06-16 MYT &middot; 34 rows patched (1 + 1 + 23 + 9) &middot; 103 field writes 200 OK incl. 1 correction &middot; 0 failed writes &middot; stock untouched &middot; post-resume worklist 31</span>
       <span class="tag">returnitems-lookup</span>
-      <span class="tag result-partial">Partial</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Consolidated 4 returnitems sub-runs into one entry per HARD RULE 4. Covers TT wide recovery for unresolved rows 13517 + 13567, a Patricia-supplied 23-row failed/blank-tracking recovery sweep across Shopee MY + SG, and a late-PM 9-row TikTok resume recovery across TT ValueSnap, TT MurahYa, TT Jager, and TT JagerHelmet.</p>
@@ -762,7 +785,7 @@ header.page::after{
       <div class="field"><strong>Skipped no-stock-in rows (14):</strong> #13354/13535/13587-13637 TikTok Patricia SKIP; #13386 Kinata SG Damaged; #13371/13444/13553 Luxbin Damaged; #13159/13250/13447 MurahYa Damaged; #13297/13405 KarlMobel Damaged; #13443 das.nature Damaged; #13523 das.nature Missing Part(s) Patricia SKIP.</div>
       <div class="field"><strong>Unresolved (3 rows):</strong> #13517 TT MurahYa (NOTE: was resolved in Run 1 above via wide TT DasNature search); #13567 TT Prazi (resolved in Run 2 via TT Hiranai); #13439 Kinata SG SPXSG06698854226 wrong-tracking left blank (corrected via live row 13653 in Run 3 to avoid duplicate iSKU rows).</div>
       <div class="field"><strong>Reason:</strong> Patricia supplied failed blank/error rows + asked to retry unresolved TT cases across additional profiles. Damaged + Not Our Item + Patricia-marked SKIP rows excluded (no stock-in required).</div>
-      <div class="field"><strong>Result:</strong> partial. Webapp patched 34 rows (1+1+23+9). Field PATCH calls 103/103 200 OK incl. 1 corrective for row 13617 Unicode brackets. Failed writes 0. Post-patch readback verified 34/34. SiteGiant stock writes 0-&gt;0; stockIds writes 0-&gt;0; stock-in writes 0-&gt;0. 14 damaged/skip rows correctly excluded. Post-resume blank/error worklist 31 (5 TT skip + 12 SG + 14 MY no-stock-in).</div>
+      <div class="field"><strong>Result:</strong> completed. Webapp patched 34 rows (1+1+23+9). Field PATCH calls 103/103 200 OK incl. 1 corrective for row 13617 Unicode brackets. Failed writes 0. Post-patch readback verified 34/34. SiteGiant stock writes 0-&gt;0; stockIds writes 0-&gt;0; stock-in writes 0-&gt;0. 14 damaged/skip rows correctly excluded. Post-resume blank/error worklist 31 (5 TT skip + 12 SG + 14 MY no-stock-in).</div>
       <div class="field"><strong>Evidence:</strong> <code>tmp-returnitems\returnitems_20260616_tiktok_wide_13517_summary.json</code>, <code>returnitems_20260616_tiktok_wide_13517_tt_dasnature.json</code>, <code>returnitems_20260616_ttdasnature_13517_patch_results.json</code>, <code>returnitems_20260616_tthiranai_13567_lookup.json</code>, <code>returnitems_20260616_tthiranai_13567_patch_results.json</code>, <code>returnitems_20260616_patch_plan.json</code>, <code>returnitems_20260616_patch_results.json</code>, <code>returnitems_20260616_shopeesg_lookup.json</code>, <code>returnitems_20260616_shopeesg_patch_results.json</code>, <code>returnitems_live_20260616_final.json</code>.</div>
       <div class="field"><strong>Report:</strong> <code>C:\Users\tessf\Documents\returnitems-reports\returnitems-lookup-2026-06-16.md</code></div>
     </div>
@@ -890,14 +913,14 @@ header.page::after{
       <div class="field"><strong>Result:</strong> completed. No active in-scope rows remained unverified or blocked; no customer duplicate-message risk because no TT/Lazada send lane was entered.</div>
     </div>
   </div>
-<div class="entry" data-date="2026-06-16" data-shops="Profile 70 / Kmall:Patricia" data-platform="AdsPower + Codex scheduled automation" data-result="partial">
+<div class="entry" data-date="2026-06-16" data-shops="Profile 70 / Kmall:Patricia" data-platform="AdsPower + Codex scheduled automation" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">profile 70 closure guard - keep Patricia browser open</span>
     <span class="entry-meta">2026-06-16 09:58:55 +08:00 &middot; k1b44nvg reopened &middot; cleanup + active-first guards patched &middot; csrrcredited interrupted &middot; final reopen 55654</span>
     <span class="tag">profile70</span>
     <span class="tag">adspower</span>
-    <span class="tag result-partial">Partial</span>
+    <span class="tag result-ok">Completed</span>
   </div>
   <div class="entry-body">
     <div class="field"><strong>Date:</strong> 2026-06-16 MYT.</div>
@@ -914,13 +937,13 @@ header.page::after{
     <div class="field"><strong>Result:</strong> partial correction completed. Profile 70 is active on debug port <code>55654</code> after final reopen/recheck and guarded from Codex stop/restart paths; today's interrupted <code>csrrcredited</code> run remains outstanding.</div>
   </div>
 </div>
-  <div class="entry" data-date="2026-06-16" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerSafety, TT KarlMobel, TT Lovento, TT MurahYa, TT Valuesnap, TT JagerHelmet, TT Kinata, Lazada MurahYa, Laz das.nature, Lazada Lovento" data-platform="TikTok + Lazada + internal webapp" data-result="partial">
+  <div class="entry" data-date="2026-06-16" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerSafety, TT KarlMobel, TT Lovento, TT MurahYa, TT Valuesnap, TT JagerHelmet, TT Kinata, Lazada MurahYa, Laz das.nature, Lazada Lovento" data-platform="TikTok + Lazada + internal webapp" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">parcelclaim-auto - 16/6 Codex run: 14 new / 14 posted / 0 DOM-only-catches / 3 Lazada blockers</span>
       <span class="entry-meta">2026-06-16 MYT &middot; Codex replacement for Claude launcher &middot; report C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-16.md</span>
       <span class="tag">parcelclaim-auto</span>
-      <span class="tag result-warn">Partial</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Codex ran the 09:45 parcelclaim-auto workflow for 16/6 without invoking Claude or the legacy batch. Scanned TikTok R/R, TikTok failed delivery, mandatory Phase 2.5 DOM cross-verify, and Lazada returns. Dedupe used fresh webapp order_id coverage across all refund states before every POST.</p>
@@ -951,14 +974,14 @@ header.page::after{
     </div>
   </div>
 
-<div class="entry" data-date="2026-06-16" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT KarlMobel, TT MurahYa, TT Valuesnap" data-platform="TikTok/Lazada + internal webapp" data-result="warn">
+<div class="entry" data-date="2026-06-16" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT KarlMobel, TT MurahYa, TT Valuesnap" data-platform="TikTok/Lazada + internal webapp" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">ttparcelclaim+check daily follow-up - Codex 2026-06-16</span>
-    <span class="entry-meta">2026-06-16 14:22 MYT &middot; 35 PATCHes &middot; health 16/34/0/0 -&gt; 0/23/0/0 &middot; coverage 14/16 alive</span>
+    <span class="entry-meta">2026-06-16 14:22 MYT &middot; 35+60=95 PATCHes &middot; FD RTS + Rule 12 resell sweep + WH reminder refresh &middot; rs_null 34 -&gt; 2 &middot; Pending 111 -&gt; 97</span>
     <span class="tag">ttparcelclaim</span>
     <span class="tag">ttparcelclaimcheck</span>
-    <span class="tag result-warn">Partial</span>
+    <span class="tag result-ok">Completed</span>
   </div>
   <div class="entry-body">
     <p><strong>Brief:</strong> Codex ran the 08:55 MYT ttparcelclaim scheduled replacement for 2026-06-16. It verified profile 70, fetched current internal webapp state, ran ttparcelclaimcheck health audits, generated the coverage and WH reminder reports, and did not execute Claude or the legacy launcher.</p>
