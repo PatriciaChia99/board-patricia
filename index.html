@@ -639,6 +639,25 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-16" data-shops="Kinata SG, KarlMobel SG, MurahYa" data-platform="Shopee SG, Shopee MY, SiteGiant, SB Variation" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation today contact check 2026-06-16</span>
+      <span class="entry-meta">2026-06-16 12:23 MYT &middot; 186 SB rows &middot; 52 focus rows &middot; 1 likely SG contact candidate &middot; sends 0-&gt;0</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia asked whether today's checksbvariation run had any customers to contact. Codex pulled the live SB Variation API, checked recent/open cases, and verified all focus orders/iSKUs through SiteGiant read-only. No buyer message, SB PATCH, SiteGiant write, seller-portal write, or Jira/form update was made.</p>
+      <div class="field"><strong>Before -&gt; after operational counts:</strong> live SB rows known <code>0 -&gt; 186</code>; focus rows checked <code>0 -&gt; 52</code>; SiteGiant order verification <code>0 -&gt; 52/52</code>; SiteGiant iSKU verification <code>0 -&gt; 105/105</code>; likely manual-contact candidates <code>0 -&gt; 1</code>; buyer messages sent <code>0 -&gt; 0</code>; SB webapp PATCHes <code>0 -&gt; 0</code>; SiteGiant writes <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Contact candidate:</strong> <code>2606131Q9MDMQP</code> / Kinata SG / Shopee SG / No Stock. SB row <code>101233</code> has <code>contactSent=false</code>; SiteGiant order is Processed/Paid; product is <code>Water Dispenser Hot and Cold Drink Dispenser with Tap Water Jug Beverage Dispenser Insulated Stainless Steel 6L 10L 12L</code>; iSKU <code>INSULATED-BEVERAGE-DISPENSER-BLK-XTK-6L-SG</code> is <code>0/0/0/0</code> but stock status still <code>available</code>. Result: likely contact candidate, pending Shopee SG thread/no-prior-contact verification and current send approval.</div>
+      <div class="field"><strong>Not contact candidates:</strong> <code>260610Q8NA4RFN</code> / KarlMobel SG is shipped and CS remark says <code>got stock already</code>; <code>260612U9HEFWWN</code> and <code>260606CDSG2P9H</code> / Shopee MY are cancelled/order-invalid paths and should not be manually contacted.</div>
+      <div class="field"><strong>Draft prepared only:</strong> No Stock template for <code>2606131Q9MDMQP</code>; not sent because Tuesday is outside the weekend auto-send lane and the Shopee SG thread/no-prior-contact proof is still pending.</div>
+      <div class="field"><strong>Reason:</strong> User asked for today's contact check after the stock-adjustment closeout.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-sbvariation-contact-check-20260616\_raw_scheduled_2026-06-16-20260616-contact-sitegiant.json</code>, <code>tmp-sbvariation-contact-check-20260616\_analysis_focus_2026-06-16.json</code>, <code>tmp-sbvariation-contact-check-20260616\_sitegiant_orders_api_2026-06-16.json</code>, <code>tmp-sbvariation-contact-check-20260616\_sitegiant_items_api_2026-06-16.json</code>, <code>tmp-sbvariation-contact-check-20260616\sbvariation-today-contact-check-2026-06-16.md</code>.</div>
+      <div class="field"><strong>Outstanding:</strong> Verify Shopee SG chat/no-prior-contact for <code>2606131Q9MDMQP</code> and get current approval before sending; WH/SiteGiant status check for <code>INSULATED-BEVERAGE-DISPENSER-BLK-XTK-6L-SG</code> because quantity is 0 but status is available; cancelled Shopee MY rows <code>260612U9HEFWWN</code> and <code>260606CDSG2P9H</code> show sellable 1 under OOS label and need WH approval before any cleanup.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-16" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
