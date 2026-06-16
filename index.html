@@ -639,6 +639,31 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-16" data-shops="BahEmas, Murahya, das.nature2, Karlmobel, TT DasNature" data-platform="Shopee MY, TikTok MY, SiteGiant, SB Variation" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation weekend accepted-change stock audit 2026-06-16</span>
+      <span class="entry-meta">2026-06-16 09:51-10:10 MYT &middot; 185 SB rows checked &middot; 5 accepted/not-adjusted weekend New Ship By rows &middot; 4 ready deductions &middot; 1 CPCL blocked &middot; writes 0-&gt;0</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Checked SB Variation cases from last weekend through today and filtered accepted-change rows whose Ship By/New Ship By date fell from 2026-06-13 through 2026-06-15. Pulled live SB API and verified exact target iSKU stock through the visible SiteGiant Inventory UI after direct inventoryapi2 fetch returned Failed to fetch. No SiteGiant stock write, SB webapp PATCH, customer message, Jira/form update, or seller-portal write was performed.</p>
+      <div class="field"><strong>Every stock value checked / proposed:</strong><ul>
+        <li><code>260612US17V2E3</code> BahEmas / Shopee MY: original <code>HAMSTER-CAGE-BLUE</code> current SOH/Sellable/Reserved/Allocated <code>1/0/1/0</code>, status Out Of Stock. Accepted <code>HAMSTER-CAGE-PINK</code> current <code>10/10/0/0</code> -&gt; proposed after approved deduction <code>9/9/0/0</code> for shipQty 1. SB stockAdjustmentStatus stayed <code>Not Adjusted</code> -&gt; <code>Not Adjusted</code> because no write was submitted.</li>
+        <li><code>260612TVDVM8T4</code> Murahya / Shopee MY: display original <code>DF-BLU-RED-24-26</code> current <code>0/0/0/0</code>, status Out Of Stock; structured affected original <code>DF-WHITE-PINK-24-26</code> current <code>1/1/0/0</code>, status Out Of Stock. Accepted <code>DF-BLU-L-BLUE-24-26</code> current <code>26/26/0/0</code> -&gt; proposed <code>25/25/0/0</code> for shipQty 1. Data issue flagged before any write.</li>
+        <li><code>260611S25DTKWG</code> das.nature2 / Shopee MY: original <code>CPCL-SILVER</code> current <code>2/0/2/0</code>, status Out Of Stock. Accepted <code>CPCL-BLACK</code> current <code>0/0/0/0</code>, status Available; proposed <code>-2</code> is blocked because sellable is 0. WH/SiteGiant reconciliation needed before stock adjustment. SB stockAdjustmentStatus stayed <code>Not Adjusted</code> -&gt; <code>Not Adjusted</code>.</li>
+        <li><code>260610P7VKAWD1</code> Karlmobel / Shopee MY: original <code>NGC-RED-WOLR</code> current <code>3/1/0/0</code> plus Non-Sellable 2, status Out Of Stock. Accepted <code>NGC-PINK-WOLR</code> current <code>4/4/0/0</code> -&gt; proposed <code>3/3/0/0</code> for shipQty 1. Original sellable 1 needs WH-confirmed cleanup if it must remain OOS.</li>
+        <li><code>584459341023840196</code> TT DasNature / TikTok MY: original <code>FISHING-BUCKET-BLUE-35CM-WITH-HANDLE</code> current <code>0/0/0/0</code>, status Out Of Stock. Accepted <code>FISHING-BUCKET-GREY-35CM-WITH-HANDLE</code> current <code>19/18/1/0</code> -&gt; proposed <code>18/17/1/0</code> for shipQty 1, preserving Reserved 1.</li>
+      </ul></div>
+      <div class="field"><strong>Shop / platform:</strong> BahEmas, Murahya, das.nature2, Karlmobel on Shopee MY; TT DasNature on TikTok MY; stock source SiteGiant Inventory UI; case source SB Variation API.</div>
+      <div class="field"><strong>Reason:</strong> Customer accepted changed iSKU and warehouse inserted weekend New Ship By dates, but stockAdjustmentStatus still showed Not Adjusted.</div>
+      <div class="field"><strong>Result:</strong> partial/read-only. Identified 5 weekend/yesterday action rows, 4 deductions ready for approval/execution, 1 blocked because accepted iSKU has 0 sellable. External writes stayed 0 -&gt; 0.</div>
+      <div class="field"><strong>Report:</strong> <code>tmp-sbvariation-live-20260616\sbvariation-weekend-stock-audit-2026-06-16.md</code></div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-sbvariation-live-20260616\_raw_scheduled_2026-06-16-20260616-current-audit.json</code>, <code>tmp-sbvariation-live-20260616\_analysis_focus_2026-06-16.json</code>, <code>tmp-sbvariation-live-20260616\sitegiant-ui-stock-targets-20260616.json</code>.</div>
+      <div class="field"><strong>Outstanding:</strong> Need explicit stock-write approval/execution for safe deductions; resolve CPCL-BLACK 0-sellable blocker; clarify row 101209 original iSKU conflict; live SiteGiant order API status was not refreshed because direct fetch failed.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-16" data-shops="KarlMobel, MurahYa, Laz MurahYa" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
