@@ -639,6 +639,39 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-16" data-shops="TT ValueSnap, TT Murahya, ValueSnap, SB Variation" data-platform="TikTok MY, Shopee MY, SiteGiant, SB Variation, scheduled Codex" data-result="success">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation session closeout + scheduled prompt update 2026-06-16</span>
+      <span class="entry-meta">2026-06-16 22:30 MYT &middot; closeout saved &middot; scheduled prompt updated &middot; error log updated</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag">closeout</span>
+      <span class="tag result-success">Success</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia asked to end the checksbvariation session, preserve all work, make the automatic board/error-log/crosscheck rule durable, and update the next scheduled prompt so future runs continue with today's context.</p>
+      <div class="field"><strong>Shop / platform scope:</strong> TT ValueSnap / TikTok MY; TT Murahya / TikTok MY; ValueSnap / Shopee MY; SB Variation; SiteGiant inventory; scheduled Codex runner.</div>
+      <div class="field"><strong>Every closeout change before -&gt; after:</strong><ul>
+        <li><code>AGENTS.md</code>: no explicit corrected-tooling-mistake memory rule -&gt; added durable error-log rule and final missed/outstanding reminder.</li>
+        <li><code>.agents\scheduled-codex\run-codex-scheduled.ps1</code>: checksbvariation job had no dedicated continuation prompt -&gt; added <code>ContinuationPrompt</code> pointing to <code>.agents\scheduled-codex\prompts\checksbvariation-scheduled.md</code> and expanded safety requirements for board/error-log/crosscheck.</li>
+        <li><code>.agents\skills\checksbvariation\scripts\run-checksbvariation-scheduled.ps1</code>: scheduled prompt used skill and home memory only -&gt; now reads <code>AGENTS.md</code>, <code>.agents\error-log.md</code>, repo <code>.codex\memories</code>, and the dedicated scheduled prompt; self-test verifies the prompt file exists.</li>
+        <li><code>.agents\scheduled-codex\prompts\checksbvariation-scheduled.md</code>: absent -&gt; created with 2026-06-16 carry-over, no-repeat completed actions, stock/write safety, contact rules, and closeout requirements.</li>
+        <li><code>session-closeout-2026-06-16-checksbvariation.md</code>: absent -&gt; created as the human-readable session closeout.</li>
+        <li><code>.codex\memories\checksbvariation-2026-06-16-session-closeout.md</code>: absent -&gt; created as repo memory for future scheduled runs.</li>
+        <li><code>continue-2026-06-17-checksbvariation-scheduled-prompt.md</code>: absent -&gt; created as the manual continuation prompt.</li>
+        <li><code>.agents\error-log.md</code>: no closeout/scheduler-update entry -&gt; appended the session-closeout and scheduler-prompt lesson with saved files and outstanding items.</li>
+      </ul></div>
+      <div class="field"><strong>Completed session results preserved:</strong><ul>
+        <li><code>SA-19410</code>: accepted iSKU deductions complete for orders <code>584376966935119001</code> and <code>260611RJVY4YNK</code>; do not repeat.</li>
+        <li><code>SA-19414</code>: cancelled-order stock cleanup complete; 19 cleanup iSKUs zeroed; <code>LUGGAGE-BLK-20INCH</code> increased <code>0/0/0/0/0 -&gt; 2/2/0/0/0</code>; <code>REW-BLK-LITHUM-BATRY</code> increased <code>27/27/0/0/0 -&gt; 30/30/0/0/0</code>; do not repeat.</li>
+        <li>TT ValueSnap oversize order <code>584528435686705047</code> / row <code>101238</code>: approved oversize template sent and SB contact tracking updated; do not resend.</li>
+      </ul></div>
+      <div class="field"><strong>Reason:</strong> prevent the next scheduled run from repeating completed writes, losing corrected context, or skipping the required automatic board/error-log/crosscheck discipline.</div>
+      <div class="field"><strong>Result:</strong> closeout artifacts saved locally, scheduled prompt updated, runner prompts updated, and error log updated. This entry records the closeout work itself on the Patricia board.</div>
+      <div class="field"><strong>Evidence:</strong> <code>session-closeout-2026-06-16-checksbvariation.md</code>, <code>.codex\memories\checksbvariation-2026-06-16-session-closeout.md</code>, <code>continue-2026-06-17-checksbvariation-scheduled-prompt.md</code>, <code>.agents\scheduled-codex\prompts\checksbvariation-scheduled.md</code>, <code>.agents\error-log.md</code>, <code>tmp-tt-valuesnap-oversize-20260616\tt-valuesnap-oversize-send-2026-06-16.md</code>, <code>tmp-sbvariation-cancel-stock-adjust-20260616\sbvariation-cancelled-stock-adjust-summary-20260616.md</code>, <code>tmp-sbvariation-stock-adjust-2orders-20260616\sbvariation-2orders-stock-adjust-summary-20260616.md</code>.</div>
+      <div class="field"><strong>Outstanding / watch only:</strong> no active approved write remains. Monitor or require fresh Patricia/WH approval before stock action on <code>NGC-RED-WOLR</code> <code>2/0/0/0/2</code>, <code>MBS-BLK-LOW</code> <code>3/3/0/0/0</code>, <code>HIGH-ELASTICITY-TRAINING-TENNIS-BALL-NO-VARIATION</code> <code>24/24/0/0/0</code>, <code>GXTSTARL-GREY-XL</code> <code>24/24/0/0/0</code>, and <code>KIDS-PLAY-TUNNEL-BLUE-YELOW-RED</code> <code>11/11/0/0/0</code>. TT ValueSnap order <code>584528435686705047</code> remains operationally awaiting collection/shipment overdue, but buyer contact is complete.</div>
+    </div>
+  </div>
 <!-- codex-csrrcredited-session-closeout-20260616-start -->
   <div class="entry" data-date="2026-06-16" data-shops="ValueSnap, Kinata SG, MurahYa SG, DasNatureSG2" data-platform="Codex scheduler, csrrcredited, csrrcreditedcheck, Patricia board" data-result="completed">
     <div class="entry-summary">
@@ -939,6 +972,7 @@ header.page::after{
     <div class="field"><strong>Evidence:</strong> Profile 70 host guard passed; live API fetched 443 records; coverage probe 14/16 ALIVE, 2 LOGIN_EXPIRED, 0 NOT_PROBED; reports saved to <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-16.md</code> and <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-16.md</code>.</div>
     <div class="field"><strong>Result:</strong> partial - reports generated, WH URL refreshed locally, crosscheck health fu_null=0 / rs_null=23 / an_null=0 / orphan_2b=0 / orphan_2c=0 / hard_action_mismatch=0.</div>
     <div class="field"><strong>Codex addendum - TT R/R parcel-claim follow-up:</strong> Date 2026-06-16 MYT. Task: TT RR Parcel Claim backlog follow-up after parcelclaim-auto -&gt; ttparcelclaim -&gt; tiktokrraudit. Every change: C2163 / 584480041828058774 / TT Hiranai / TikTok MY / RM 20.83 return_status blank -&gt; Preparing; refund_state Pending -&gt; Pending; action — -&gt; —; followup_dt 2026-06-19 -&gt; 2026-06-19. Reason: same-day parcelclaim-auto R/R intake and live R/R in-window evidence. Result: HTTP 200 and live readback verified. Counters: records 443 -&gt; 443; Pending all 106 -&gt; 106; TT blank return_status 23 -&gt; 22; TT WH Action/Evidence 18 -&gt; 18; webapp creates 0 -&gt; 0; messages/stock/marketplace writes 0 -&gt; 0. Outstanding: 22 TT blank return_status rows remain FD/other with no safe derived status; 18 TT WH reminder rows remain not sent by Codex. Evidence: <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-rr-followup-2026-06-16.md</code>, <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-rr-followup-2026-06-16.json</code>, and patch evidence <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-rr-status-patch-2026-06-16.json</code>.</div>
+    <div class="field"><strong>Codex addendum - current outstanding queue refresh:</strong> Date 2026-06-16 MYT. Task: check both remaining TT parcel-claim outstanding items. Before -&gt; after: TT blank return_status 22 -&gt; 22; safe status patches 0 -&gt; 0; TT WH Action/Evidence reminder rows 18 -&gt; 18; stable WH reminder page old 20-row report -&gt; current 18-row report; webapp patches/messages/stock/marketplace writes all 0 -&gt; 0. Shops: TT Adelmar, TT DasNature, TT Jager, TT KarlMobel, TT MurahYa, TT Valuesnap, TT JagerHelmet. Platform: TikTok MY + internal parcel-claim webapp + Patricia board WH reminder page. Reason: Patricia asked to handle both outstanding TT parcel-claim queues now; FD blank rows only had numeric TikTok FD API patterns without an approved local return_status mapping, so Codex did not guess. Result: current WH reminder staged for CS forwarding; WhatsApp not sent by Codex under ttparcelclaim safety rule. Evidence: <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-fd-blank-status-evidence-2026-06-16.md</code>, <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-current-2026-06-16.md</code>, and <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-current-outstanding-2026-06-16.json</code>.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-15" data-shops="N/A - no active rows in 7d window" data-platform="Shopee MY + TikTok + Lazada + internal parcel-split webapp" data-result="ok">
