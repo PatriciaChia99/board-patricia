@@ -665,8 +665,8 @@ header.page::after{
   <div class="entry" data-date="2026-06-16" data-shops="N/A (scheduler infra)" data-platform="Windows Task Scheduler, Claude CLI, Codex CLI" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">claude-scheduled-mirror &mdash; one-time 17/6 Claude mirror installed: 7 Claude tasks registered + 7 Codex tasks disabled + auto re-enable at 13:30 (16/6)</span>
-      <span class="entry-meta">2026-06-16 MYT &middot; 7 Claude one-time tasks Ready &middot; 7 Codex daily tasks Disabled &middot; auto re-enable scheduled 17/6 13:30 &middot; self-test 7/7 pass &middot; runner script + install script + re-enable script created</span>
+      <span class="entry-title">claude-scheduled-mirror &mdash; one-time 17/6 Claude mirror installed: 8 Claude tasks + checksbvariation CONTACT-ONLY + 8 Codex disabled + auto re-enable @13:30 (16/6)</span>
+      <span class="entry-meta">2026-06-16 MYT &middot; 8 Claude one-time tasks Ready &middot; 8 Codex daily tasks Disabled &middot; auto re-enable scheduled 17/6 13:30 &middot; self-test 8/8 pass &middot; checksbvariation added at 09:30 in CONTACT-ONLY (weekend-style) safety scope</span>
       <span class="tag">claude-scheduled-mirror</span>
       <span class="tag result-ok">Completed</span>
     </div>
@@ -686,9 +686,10 @@ header.page::after{
           <li><code>Claude_ChatAudit_OneTime_17Jun_0910</code>: missing -&gt; Ready, next 17/6 09:10, job <code>chataudit</code></li>
           <li><code>Claude_ParcelClaimAuto_OneTime_17Jun_0945</code>: missing -&gt; Ready, next 17/6 09:45, job <code>parcelclaim-auto</code></li>
           <li><code>Claude_ParcelSplitCrosscheck_OneTime_17Jun_1000</code>: missing -&gt; Ready, next 17/6 10:00, job <code>parcelsplit-contact-crosscheck</code></li>
+          <li><code>Claude_SBVariation_OneTime_17Jun_0930</code>: missing -&gt; Ready, next 17/6 09:30, job <code>checksbvariation</code> &mdash; <strong>CONTACT-ONLY scope</strong> (mirrors weekend safety even though 17/6 is Wed): Shopee SG/TT/Laz approved-template contact only after live verification; Shopee MY flag/report only; NO SiteGiant stock writes / item-status changes / reserved-stock edits / SB stock-column toggles / Jira/forms / accepted-change/New Ship By stock deductions unless Patricia re-approves the exact write in current conversation</li>
           <li><code>Claude_CSRRCredited_OneTime_17Jun_1030</code>: missing -&gt; Ready, next 17/6 10:30, job <code>csrrcredited</code></li>
           <li><code>Claude_TTRRAudit_OneTime_17Jun_1130</code>: missing -&gt; Ready, next 17/6 11:30, job <code>tiktokrraudit</code></li>
-          <li><code>Claude_ReenableCodexTasks_OneTime_17Jun_1330</code>: missing -&gt; Ready, next 17/6 13:30, re-enables all 7 Codex tasks below and self-unregisters</li>
+          <li><code>Claude_ReenableCodexTasks_OneTime_17Jun_1330</code>: missing -&gt; Ready, next 17/6 13:30, re-enables all 8 Codex tasks below and self-unregisters</li>
         </ul>
       </div>
       <div class="field"><strong>Codex daily tasks disabled for 17/6 only (before -&gt; after):</strong>
@@ -696,6 +697,7 @@ header.page::after{
           <li><code>ttparcelclaim_daily_0855</code>: Ready -&gt; Disabled</li>
           <li><code>CodexSgGapMonitor_0900</code>: Ready -&gt; Disabled</li>
           <li><code>ChatAudit_910AM</code>: Ready -&gt; Disabled</li>
+          <li><code>SBVariationAudit_930AM</code>: Ready -&gt; Disabled</li>
           <li><code>ParcelClaimAuto_945AM</code>: Ready -&gt; Disabled</li>
           <li><code>ParcelSplitCrosscheck_1000AM</code>: Ready -&gt; Disabled</li>
           <li><code>CSRRCredited_1030AM</code>: Ready -&gt; Disabled</li>
@@ -709,7 +711,7 @@ header.page::after{
           <li><code>Codex_ReturnItems_Weekend_1030</code>: Ready, next 20/6 10:30 (Sat/Sun only)</li>
         </ul>
       </div>
-      <div class="field"><strong>Self-test:</strong> 7/7 jobs PASS (<code>ttparcelclaim, chataudit, sg-gap-monitor, parcelclaim-auto, parcelsplit-contact-crosscheck, tiktokrraudit, csrrcredited</code>); Claude 2.1.153 detected.</div>
+      <div class="field"><strong>Self-test:</strong> 8/8 jobs PASS (<code>ttparcelclaim, chataudit, sg-gap-monitor, checksbvariation, parcelclaim-auto, parcelsplit-contact-crosscheck, tiktokrraudit, csrrcredited</code>); Claude 2.1.153 detected.</div>
       <div class="field"><strong>Reason:</strong> User said "i ran codex schedule task recently, i want to move to claude tomorrow" and "REALLY MAKE SURE U RUN SUCCESSFULLY LIKE CODEX". One-time mirror tomorrow, then Codex auto-resumes 18/6 normally.</div>
       <div class="field"><strong>Risk callout (Claude scheduled task history):</strong> Past Claude scheduled tasks (e.g. parcelsplit 10:00 on 16/6 earlier in week) failed on CLI usage-limit. Runner now retries once after 120s and uses <code>--fallback-model sonnet</code> to survive opus overload.</div>
       <div class="field"><strong>Result:</strong> ok &mdash; all 8 Claude tasks Ready; all 7 Codex tasks Disabled; re-enable task armed; self-test passed; runner script production-ready.</div>
