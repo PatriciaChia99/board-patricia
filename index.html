@@ -639,6 +639,58 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-17" data-shops="TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT KarlMobel, TT MurahYa, TT Valuesnap" data-platform="TikTok MY + internal webapp" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">ttparcelclaim &mdash; Claude one-time test 17/6: 11 cases cleaned (1 orphan-2b + 1 Rule24 + 7 an_null + 2 rs_null), 0 fresh-evidence advances (17/6)</span>
+      <span class="entry-meta">2026-06-17 MYT &middot; profile 70 host-guard PASS &middot; 14 PATCHes HTTP 200 / 0 fails &middot; 0 ttchaserr &middot; 0 NEW closures &middot; final health fu_null=0 / rs_null=0 / an_null=0 / orphan_2b=0 / orphan_2c=0 / Rule24_misclass=0 &middot; pending 96 / RM 23,718.19 &middot; reports <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-17.md</code> + <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-17.md</code></span>
+      <span class="tag">ttparcelclaim</span>
+      <span class="tag">ttparcelclaimcheck</span>
+      <span class="tag result-warn">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Scheduled Codex job replaced by Claude one-time test today. Routine 1 host-guard PASS on profile 70 (employee.awesomeree.com.my). Routine 2 cleanup ran fully: 14 PATCHes / 11 cases / HTTP 200 / 0 fails — 1 orphan_2b sweep (C2098), 1 Rule 24 misclass fix (C2150 Preparing+WH Action &rarr; CS Action + concise remark), 7 an_null fills on fresh Preparing intake, 2 rs_null+an_null fills on FD intake. Routine 3 (per-shop session probes) NOT_PROBED for 15 non-70 profiles &rarr; PARTIAL. Routine 4 case-advances skipped per tomorrow_prompt instruction "do not mechanically advance without fresh CS/WH/TT/Lazada evidence" (no live operator session). Crosscheck verdict CONFIRMED — all 11 cases held stable post-30s settle, all health checks PASS.</p>
+      <div class="field"><strong>PATCHes (case_id / OID / shop / RM / before &rarr; after):</strong>
+        <ul>
+          <li>C2098 / orphan (Withdrawn) / RM 588.48 / action_needed: CS Follow Up &rarr; <strong>Closed</strong> &mdash; orphan_2b sweep (Rule 12b: refund_state=Withdrawn but action stuck)</li>
+          <li>C2150 / 584192587534075812 / TT DasNature / RM 72.96 / action_needed: WH Action &rarr; <strong>CS Action</strong> + remark: appended <code>[17/6 - Preparing LV, CS Action passive monitor.]</code> &mdash; Rule 24 (Preparing rs should not be WH-owned, LV passive)</li>
+          <li>C2163 / 584480041828058774 / TT Hiranai / RM 20.83 / action_needed: &mdash; &rarr; <strong>CS Action</strong> &mdash; an_null fix, LV Preparing passive</li>
+          <li>C2156 / 584007202226407066 / TT KarlMobel / RM 2.45 / action_needed: &mdash; &rarr; <strong>CS Action</strong> &mdash; an_null fix, LV Preparing passive</li>
+          <li>C2155 / 584442796592236251 / TT KarlMobel / RM 1,393.42 / action_needed: &mdash; &rarr; <strong>CS Follow Up</strong> &mdash; an_null fix, HV Preparing active chase</li>
+          <li>C2154 / 584499997269263803 / TT KarlMobel / RM 17.06 / action_needed: &mdash; &rarr; <strong>CS Action</strong> &mdash; an_null fix, LV Preparing passive</li>
+          <li>C2152 / 584523518647960896 / TT Jager / RM 129.00 / action_needed: &mdash; &rarr; <strong>CS Action</strong> &mdash; an_null fix, MV Preparing passive</li>
+          <li>C2151 / 584467498620454550 / TT HiranaiMY / RM 18.31 / action_needed: &mdash; &rarr; <strong>CS Action</strong> &mdash; an_null fix, LV Preparing passive</li>
+          <li>C2120 / 584304956661466443 / TT MurahYa / RM 38.60 / action_needed: &mdash; &rarr; <strong>CS Action</strong> &mdash; an_null fix, LV Preparing passive</li>
+          <li>C2147 / 584520160334021990 / TT Valuesnap / RM 24.08 / return_status: (blank) &rarr; <strong>Preparing</strong>, action_needed: &mdash; &rarr; <strong>CS Action</strong> &mdash; rs_null+an_null FD fresh D3 intake</li>
+          <li>C2123 / 584319300219537222 / TT MurahYa / RM 369.46 / return_status: (blank) &rarr; <strong>Pick Up Done</strong>, action_needed: &mdash; &rarr; <strong>CS Action</strong> &mdash; rs_null+an_null FD D11 with active tracking 3248609418983409478</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Operational changes summary:</strong>
+        <ul>
+          <li>Messages 0 &rarr; 0 &mdash; WhatsApp suppressed per safety rules; CS forwards WH reminder manually.</li>
+          <li>Stock writes 0 &rarr; 0 &mdash; no Stock In Bot interaction.</li>
+          <li>Marketplace changes 0 &rarr; 0 &mdash; no TT/Lazada seller-side actions, 0 ttchaserr triggers.</li>
+          <li>Webapp PATCHes 0 &rarr; 14 &mdash; cleanup-only, no fresh-evidence state flips.</li>
+          <li>Webapp creates (POSTs) 0 &rarr; 0 &mdash; parcelclaim-auto handles intake, not ttparcelclaim.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Pending pool snapshot (after cleanup):</strong> 96 cases / RM 23,718.19. Buckets: WH Action 8 / RM 2,081.65 &middot; WH Evidence 14 / RM 2,792.42 &middot; CS Action 42 / RM 9,641.35 &middot; CS Follow Up 28 / RM 9,064.90 &middot; Wait Shopee 4 / RM 137.87. RS: Pick Up Done 36 / Preparing 28 / Delivery Done 32.</div>
+      <div class="field"><strong>Shops:</strong> TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT KarlMobel, TT MurahYa, TT Valuesnap (cases touched). All 13 TT MY + 3 Lazada MY profiles NOT_PROBED for session liveness this run (graceful degradation — Claude one-time test did not run per-shop login probes).</div>
+      <div class="field"><strong>Platform:</strong> TikTok MY + internal webapp (Awesomeree).</div>
+      <div class="field"><strong>Reason:</strong> Scheduled Codex ttparcelclaim 2026-06-17 replaced by Claude one-time test (per runner script). Routine 2 cleanup ran to fix correctness orphans + Rule 24 misclass + null-field intake fills. Per tomorrow_prompt 17JUN: "Process only cases with fresh evidence" &mdash; the 81 overdue + 2 due-today Pending cases were NOT auto-advanced because no live operator session collected fresh TT/Laz seller-side evidence this run.</div>
+      <div class="field"><strong>Crosscheck verdict (ttparcelclaimcheck embedded):</strong> CONFIRMED &mdash; 11/11 cleanups held stable post-30s settle, 0 auto-classifier reversion, 0 orphans (2b/2c), 0 nulls (fu/rs/an), 0 Rule 24 misclassification. PASS.</div>
+      <div class="field"><strong>Outstanding (carry to 18/6 if Codex resumes):</strong>
+        <ul>
+          <li>15 shop profiles UNVERIFIED (probe before 09:45 parcelclaim-auto fire).</li>
+          <li>Confirm 2026-06-17 parcelclaim-auto 09:45 fire happened &mdash; no <code>parcelclaim-auto-report-2026-06-17.md</code> present at run time.</li>
+          <li>81 overdue Pending cases (RM 20,717.14) need fresh evidence advance &mdash; top-3: C2155 KarlMobel RM 1393.42, C2051 KarlMobel RM 950.97, C1972 KarlMobel RM 859.95.</li>
+          <li>2 due-today cases (C2104 Jager RM 115.99, C2105 KarlMobel RM 38.83) &mdash; verify tracking + reset followup_dt.</li>
+          <li>WH PIC reminder file (22 cases: 8 WH Action + 14 WH Evidence) needs manual CS forward via WhatsApp / email.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Result:</strong> partial &mdash; cleanup 14 PATCHes HTTP 200 / 0 fails, 0 NEW closures (no fresh-evidence advances), 15 profiles UNVERIFIED, crosscheck CONFIRMED. FINAL_STATUS: PARTIAL in both report files.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-16" data-shops="Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
