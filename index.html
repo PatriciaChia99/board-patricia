@@ -639,6 +639,56 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-17" data-shops="11 TT MY shops + Lazada MurahYa" data-platform="TikTok MY + internal webapp" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">tiktokrraudit &mdash; Claude one-time test 17/6 (attempt 2): 0 NEW LOSS, 1 NEW WIN RM 588.48, 6 audit-trail PATCHes, PHASE 2 + 1.5 deferred (PARTIAL)</span>
+      <span class="entry-meta">2026-06-17 MYT &middot; profile 70 k1b44nvg attached existing browser &middot; webapp 392 rows / Pending 95 / RM 23,682.03 &middot; 6 remark PATCHes HTTP 200 (4 audit + 2 corrective) / 0 fails &middot; 12/12 crosscheck CONFIRMED &middot; report <code>C:\Users\tessf\Documents\tiktokrraudit-reports\tiktokrraudit-report-2026-06-17.md</code></span>
+      <span class="tag">tiktokrraudit</span>
+      <span class="tag">tiktokrrauditcheck</span>
+      <span class="tag result-warn">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Codex daily run replaced by Claude one-time test today. Attempt 1 hit stream-idle API timeout at 12:56 (~1h26m). Attempt 2 (this run) scoped down to: PHASE 1 carry-over re-query on profile 70 + PHASE 1b/1c FD review from internal data + PHASE 3-4 PATCH-only + PHASE 5 report + PHASE 5b inline crosscheck + PHASE 6 board log + PHASE 7 memory. PHASE 2 (11-shop TT seller-side NEW sweep) and PHASE 1.5 (TT Help Center Ticket Log lookup) NOT PERFORMED &mdash; deferred to 18/6.</p>
+      <div class="field"><strong>Internal PATCHes (DB id / OID / shop / RM / type / before-tail &rarr; after-tail):</strong>
+        <ul>
+          <li>id 2149 / 584361363147293777 / TT Adelmar / RM 219.70 / remark (audit) &mdash; <code>[PENDING OPEN 17/6]</code> &rarr; appended <code>[[AUDIT 2026-06-17 &mdash; C2149 Day 0 FD Pending Open WH inspect TODAY...]]</code> &mdash; HTTP 200</li>
+          <li>id 2104 / 584343353695176246 / TT Jager / RM 115.99 / remark (audit) &mdash; <code>[RTS PENDING OPEN 17/6]</code> &rarr; appended <code>[[AUDIT 2026-06-17 &mdash; C2104 Day 5 FD RTS PENDING OPEN WH inspect TODAY...]]</code> &mdash; HTTP 200</li>
+          <li>id 2105 / 584332599234365105 / TT KarlMobel / RM 38.83 / remark (audit) &mdash; <code>[RTS IN TRANSIT 12/6]</code> &rarr; appended <code>[[AUDIT 2026-06-17 &mdash; C2105 Day 5 FD RTS IN TRANSIT 5+ days, CS chase carrier TODAY...]]</code> &mdash; HTTP 200</li>
+          <li>id 1366 / 583381706383197812 / TT KarlMobel / RM 608.61 / remark (audit) &mdash; <code>[IN DISPUTE 12/6]</code> &rarr; appended <code>[[AUDIT 2026-06-17 &mdash; C1366 Day 64 OVERDUE Ticket 202604300712202673 Day 48 Processing. Escalate TT-AM TODAY or book LOSS Thu 18/6...]]</code> &mdash; HTTP 200</li>
+          <li>id 2147 / 584520160334021990 / TT Valuesnap / RM 24.08 / remark (CORRECTION) &mdash; misposted KarlMobel line earlier in this run &rarr; appended <code>[[CORRECTION 2026-06-17 &mdash; THIS row is TT Valuesnap C2147 RM 24.08 FD RTS IN TRANSIT 17/6...]]</code> &mdash; HTTP 200</li>
+          <li>id 2148 / 584441466917521144 / TT Valuesnap / RM 155.18 / remark (CORRECTION) &mdash; misposted Jager line earlier in this run &rarr; appended <code>[[CORRECTION 2026-06-17 &mdash; THIS row is TT Valuesnap C2148 RM 155.18 FD RTS IN TRANSIT 17/6...]]</code> &mdash; HTTP 200</li>
+          <li>id 1957 / 584284424751843116 / TT Jager / RM 130.56 / remark (CORRECTION) &mdash; misposted C1366 KarlMobel line earlier in this run &rarr; appended <code>[[CORRECTION 2026-06-17 &mdash; THIS row is TT Jager C1957 RM 130.56 Withdrawn auto-flow...]]</code> &mdash; HTTP 200</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Operational changes summary:</strong>
+        <ul>
+          <li>Messages 0 &rarr; 0 &mdash; WhatsApp suppressed per safety rules.</li>
+          <li>Stock writes 0 &rarr; 0 &mdash; no Stock In Bot / SiteGiant interaction.</li>
+          <li>Marketplace changes 0 &rarr; 0 &mdash; no TT / Lazada seller-side action; no ttchaserr trigger.</li>
+          <li>Webapp state flips 0 &rarr; 0 &mdash; no refund_state / action_needed / followup_dt edits.</li>
+          <li>Webapp creates (POSTs) 0 &rarr; 0 &mdash; intake belongs to parcelclaim-auto; today's auto-bot run failed (Unknown command).</li>
+          <li>Webapp remark PATCHes 0 &rarr; 6 &mdash; 4 fresh audit + 2 corrective recovery from id-mapping error.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Money picture:</strong> NEW LOSS 0 / RM 0.00 &middot; NEW WIN 1 (584407052894307649 TT Adelmar RM 588.48 Withdrawn via "Refund Not Authorize 17/6", TT denied buyer R/R unilaterally &mdash; seller wins by attrition, no payout) &middot; Carry-over Credited wins re-verified 3 / RM 556.03 refund, RM 652.62 comp (584151386512459066 KarlMobel + 584085690306364830 KarlMobel + 584192803849078280 Adelmar; no clawback) &middot; Pending pool 95 cases / RM 23,682.03 &middot; Overdue 80 cases / RM 20,680.98 &middot; Due today 2 cases / RM 154.82.</div>
+      <div class="field"><strong>Shops:</strong> 11 TT MY shops (KarlMobel 96 / MurahYa 100 / Hiranai 48 / Valuesnap 42 / Adelmar 28 / DasNature 28 / Jager 28 / JagerHelmet 11 / HiranaiMY 5 / JagerSafety 1 / Kinata 1) + Lazada MurahYa 4. Total 392 webapp rows.</div>
+      <div class="field"><strong>Platform:</strong> TikTok MY + internal Awesomeree webapp.</div>
+      <div class="field"><strong>Reason:</strong> Codex tiktokrraudit 2026-06-17 disabled; replaced by Claude one-time test per scheduled-claude-mirror plan. Attempt 1 timed out on API stream-idle; attempt 2 narrowed scope to preserve PHASE 5/6/7 completion. Upstream parcelclaim-auto Claude one-time run FAILED at 11:01:57 MYT (Unknown command: /parcelclaim-auto) so PHASE 1b/1c lost fresh same-day seller-side evidence.</div>
+      <div class="field"><strong>Inline crosscheck verdict (tiktokrrauditcheck embedded):</strong> CONFIRMED &mdash; 12/12 flags verified against fresh internal API after PATCH batch, 0 reclassified / 0 retracted / 0 discrepancy. Arithmetic OK. See report section "tiktokrrauditcheck inline crosscheck".</div>
+      <div class="field"><strong>Outstanding (carry to 18/6 Codex resume):</strong>
+        <ul>
+          <li><strong>PHASE 2 NEW seller-side sweep across 11 TT MY profiles (54/55/56/58/59/60/61/62/63/64/65) NOT PERFORMED</strong> &mdash; resume tomorrow once parcelclaim-auto is healthy.</li>
+          <li><strong>PHASE 1.5 TT Help Center Ticket Log lookup NOT PERFORMED</strong> &mdash; priority C1366 ticket 202604300712202673 Day 48 verdict still unknown beyond webapp trail; book LOSS 18/6 if no verdict.</li>
+          <li>Upstream parcelclaim-auto Claude one-time run FAILED &mdash; re-run manually or Codex restore before 18/6 cycle.</li>
+          <li>80 overdue Pending RM 20,680.98 &mdash; top: 584442796592236251 KarlMobel RM 1,393.42 / 584222402186937754 KarlMobel RM 950.97 / 584250852466525760 KarlMobel RM 859.95.</li>
+          <li>4 IN DISPUTE 17/6: 583847713187529896 JagerSafety RM 213.60 / 584383221507196250 DasNature RM 10.21 / 584373459452331579 DasNature RM 24.77 / 584157554901288128 Adelmar RM 288.16.</li>
+          <li>Skill note for next run: ALWAYS do <code>cases.find(c =&gt; c.order_id === target).id</code> &mdash; never assume <code>id === int(case_id strip C)</code>. 3 PATCHes this run misposted because of this assumption.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Result:</strong> partial &mdash; 6 PATCHes HTTP 200 / 0 fails &middot; 0 state flips &middot; PHASE 2 + 1.5 deferred (timeout-risk mitigation, no fresh seller-side evidence available from upstream parcelclaim-auto) &middot; 12/12 crosscheck CONFIRMED &middot; FINAL_STATUS: PARTIAL in report file.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-17" data-shops="TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT KarlMobel, TT MurahYa, TT Valuesnap" data-platform="TikTok MY + internal webapp" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
