@@ -643,16 +643,19 @@ header.page::after{
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">scheduled rerun and TT Parcel Claim follow-up consolidated 2026-06-18</span>
-      <span class="entry-meta">2026-06-18 MYT &middot; 4 progress logs merged &middot; TT Parcel Claim blanks resolved &middot; 6 rows Pending follow-up 2026-06-19</span>
+      <span class="entry-meta">2026-06-18 MYT &middot; 7 progress logs merged &middot; TT Parcel Claim blanks resolved &middot; 6 rows Pending follow-up 2026-06-19</span>
       <span class="tag">scheduled-codex</span>
       <span class="tag">ttparcelclaim</span>
       <span class="tag">tiktokrraudit</span>
       <span class="tag result-partial">Pending Follow-Up</span>
     </div>
     <div class="entry-body">
-      <p><strong>Board cleanup:</strong> merged four same-day progress entries into this single current-status entry: scheduled sweep after account switch, Lazada-relogin partial fix, final partial fix and Ticket Log lookup, and Pending follow-up classification. Those were continuation logs for the same recovery chain, not four separate active tasks.</p>
+      <p><strong>Board cleanup:</strong> merged seven same-day progress/warn entries into this single current-status entry: scheduled sweep after account switch, parcelclaim-auto scheduled run, ttparcelclaim daily follow-up, tiktokrraudit scheduled rerun, Lazada-relogin partial fix, final partial fix and Ticket Log lookup, and Pending follow-up classification. Those were continuation logs for the same recovery chain, not separate active tasks.</p>
       <div class="field"><strong>What changed before -&gt; after:</strong><ul>
         <li>Scheduled recovery: account-limit/stale scheduled state -&gt; 10 Codex wrapper invocations or same-day artifact checks completed, with guarded non-due jobs skipped safely.</li>
+        <li>Original parcelclaim-auto scheduled entry: 20 new / 20 posted / 2 errors -&gt; later rerun verified Lazada profile blockers cleared and no duplicate POSTs were made.</li>
+        <li>Original ttparcelclaim+check warning entry: 15 rows outstanding -&gt; later safe follow-up passes reduced active blank return_status/followup_dt gaps to 0 in this subset.</li>
+        <li>Original tiktokrraudit warning entry: 18 audit remarks verified and 55/55 crosscheck -&gt; later Ticket Log lookup still had no definitive visible verdict, so it remains a follow-up item rather than a separate stale warning.</li>
         <li>Parcelclaim-auto: Lazada profile blockers 82/83 login-expired -&gt; 16/16 profiles scanned OK on the later rerun; new POSTs stayed <code>0</code>.</li>
         <li>TT Parcel Claim resell closeout: later same-day blank rows <code>20 -&gt; 15</code>; Pending pool <code>111 -&gt; 106</code>; webapp PATCHes <code>0 -&gt; 15</code> across <code>C2167</code>, <code>C2171</code>, <code>C2175</code>, <code>C2178</code>, and <code>C2179</code>; all readback verified as Withdrawn + Closed.</li>
         <li>TT Parcel Claim FD/follow-up pass: missing return_status <code>11 -&gt; 6</code>; missing followup_dt <code>14 -&gt; 6</code>; webapp PATCHes <code>0 -&gt; 23</code>; all HTTP 200 and readback verified.</li>
@@ -1027,61 +1030,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok - wins 1, clawbacks 23, unresolved 0, reconciliation 60/60, focused recovery 1/1 Lovento checked with no additional patch needed.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-06-18" data-shops="multiple" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="partial">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">parcelclaim-auto - 18/6 Codex run: 20 new / 20 posted / 0 DOM-only-catches / 2 errors</span>
-      <span class="entry-meta">2026-06-18 MYT &middot; Codex replacement for Claude launcher &middot; report C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-18.md</span>
-      <span class="tag">parcelclaim-auto</span>
-      <span class="tag result-ok">Partial</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Codex ran the 09:45 parcelclaim-auto workflow for 18/6 without invoking Claude or the legacy batch. Scanned TikTok R/R, TikTok failed delivery, mandatory Phase 2.5 DOM cross-verify, and Lazada returns. Dedupe used fresh webapp order_id coverage across all refund states before every POST.</p>
-      <div class="field"><strong>Before -&gt; after operational counters:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp creates 354 -&gt; 374; webapp remark patches 0 -&gt; 20.</div>
-      <div class="field"><strong>POST changes:</strong><ul><li>C2165 TT Adelmar rr 584503957060158760 - RM 327.99 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2166 TT Hiranai rr 584503889872520903 - RM 8.30 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2167 TT Hiranai failed_delivery 584044847928607962 - RM 29.01 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2168 TT Jager rr 584520774756370303 - RM 140.00 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2169 TT Jager failed_delivery 584540604786771302 - RM 129.00 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2170 TT Jager failed_delivery 584411872854443354 - RM 27.28 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2171 TT Jager failed_delivery 584166412403116024 - RM 118.68 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2172 TT KarlMobel failed_delivery 584505687181133421 - RM 33.27 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2173 TT KarlMobel failed_delivery 584430389427013160 - RM 801.60 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2174 TT KarlMobel failed_delivery 584305116546369088 - RM 738.05 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2175 TT KarlMobel failed_delivery 584045129385936336 - RM 68.97 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2176 TT MurahYa rr 584522745002296652 - RM 387.62 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2177 TT MurahYa failed_delivery 584480015645181424 - RM 29.06 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2178 TT MurahYa failed_delivery 584062100775405152 - RM 18.50 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2179 TT MurahYa failed_delivery 584061804607473206 - RM 243.14 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2180 TT Valuesnap failed_delivery 584503319660824069 - RM 25.00 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2181 TT Valuesnap failed_delivery 584468251615134848 - RM 12.91 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2182 TT Valuesnap failed_delivery 584045351416137366 - RM 76.44 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2183 Lazada MurahYa rr 504624090494832 - RM 705.99 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2184 Lazada MurahYa rr 508373355388110 - RM 63.06 - before not in webapp -&gt; after Pending with audit remark</li></ul></div>
-      <div class="field"><strong>Evidence table:</strong><pre>54 TT Adelmar: RR 88 cards / 1 in-window / 1 posted; FD 33 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
-55 TT DasNature: RR 0 cards / 0 in-window / 0 posted; FD 105 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
-56 TT Hiranai: RR 292 cards / 2 in-window / 1 posted; FD 167 API + 3 DOM pages / Returning 0 / 1 posted / DOM-only 0
-58 TT HiranaiMY: RR 154 cards / 1 in-window / 0 posted; FD 45 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
-59 TT Jager: RR 103 cards / 2 in-window / 1 posted; FD 67 API + 3 DOM pages / Returning 0 / 3 posted / DOM-only 0
-60 TT JagerArmor: RR 6 cards / 0 in-window / 0 posted; FD 1 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
-61 TT JagerSafety: RR 55 cards / 0 in-window / 0 posted; FD 1 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
-62 TT KarlMobel: RR 0 cards / 0 in-window / 0 posted; FD 296 API + 1 DOM pages / Returning 0 / 4 posted / DOM-only 0
-63 TT Lovento: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
-64 TT MurahYa: RR 50 cards / 1 in-window / 1 posted; FD 435 API + 1 DOM pages / Returning 0 / 3 posted / DOM-only 0
-65 TT Valuesnap: RR 0 cards / 0 in-window / 0 posted; FD 270 API + 1 DOM pages / Returning 0 / 3 posted / DOM-only 0
-66 TT JagerHelmet: RR 0 cards / 0 in-window / 0 posted; FD 10 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
-67 TT Kinata: RR 3 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
-81 Lazada MurahYa: Lazada 9 rows / 2 in-window / 2 posted
-82 Laz das.nature: Lazada 0 rows / 0 in-window / 0 posted
-83 Lazada Lovento: Lazada 0 rows / 0 in-window / 0 posted</pre></div>
-      <div class="field"><strong>DOM cross-verify:</strong> 0 DOM-only catches. None.</div>
-      <div class="field"><strong>Crosscheck:</strong> 20/20 CONFIRMED; </div>
-      <div class="field"><strong>Outstanding blockers:</strong> Profile 82 Laz das.nature and profile 83 Lazada Lovento remained login_expired after auto-relogin, so those Lazada shops are not complete for 2026-06-18 until operator relogin and rerun/recheck.</div>
-      <div class="field"><strong>Reason:</strong> Daily scheduled intake of new TikTok/Lazada parcel-claim cases so CS does not miss R/R or failed-delivery cases. Historical FD rows older than 30 days remain deferred pending user approval.</div>
-      <div class="field"><strong>Evidence:</strong> Report saved at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-18.md</code>; raw JSON at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-06-18.json</code>.</div>
-      <div class="field"><strong>Result:</strong> partial - 20 posted, 2 errors, board logged by Codex.</div>
-    </div>
-  </div>
   <div class="entry" data-date="2026-06-18" data-shops="KarlMobel, Laz MurahYa, MurahYa" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -1102,80 +1050,7 @@ header.page::after{
       <div class="field"><strong>Result:</strong> completed. Blockers/outstanding: None.</div>
     </div>
   </div>
-<div class="entry" data-date="2026-06-18" data-shops="TT Hiranai, TT Jager, TT KarlMobel, TT MurahYa, TT Valuesnap" data-platform="TikTok/Lazada + internal webapp" data-result="warn">
-  <div class="entry-summary">
-    <span class="chevron">&#9654;</span>
-    <span class="entry-title">ttparcelclaim+check daily follow-up - Codex 2026-06-18</span>
-    <span class="entry-meta">2026-06-18 09:22 + 15:14 MYT &middot; 18 PATCHes total &middot; current Pending 106 / RM 26839.96 &middot; 15 rows outstanding</span>
-    <span class="tag">ttparcelclaim</span>
-    <span class="tag">ttparcelclaimcheck</span>
-    <span class="tag result-warn">Partial</span>
-  </div>
-  <div class="entry-body">
-    <p><strong>Brief:</strong> Codex ran the 08:55 MYT ttparcelclaim scheduled replacement for 2026-06-18. It verified profile 70, fetched current internal webapp state, ran ttparcelclaimcheck health audits, generated the coverage and WH reminder reports, and did not execute Claude or the legacy launcher.</p>
-    <div class="field"><strong>Date:</strong> 2026-06-18 MYT.</div>
-    <div class="field"><strong>Task:</strong> ttparcelclaim+check daily follow-up.</div>
-    <div class="field"><strong>Every webapp PATCH before -&gt; after:</strong><br>C2034 / 584321414311282586 / TT Valuesnap / RM 19.14: action Closed -&gt; WH Evidence; refund_state Pending -&gt; Pending; action Closed -&gt; WH Evidence; followup_dt 2026-06-15 -&gt; 2026-06-15; return_status Delivery Done -&gt; Delivery Done. Reason: Rule 12b reverse-orphan sweep. Evidence: Live refund_state is Pending while action_needed is Closed. Result: HTTP 200<br>C2147 / 584520160334021990 / TT Valuesnap / RM 24.08: action CS Action -&gt; Closed; refund_state Withdrawn -&gt; Withdrawn; action CS Action -&gt; Closed; followup_dt 2026-06-18 -&gt; 2026-06-18; return_status Delivery Done -&gt; Delivery Done. Reason: Rule 12b terminal-state orphan sweep. Evidence: Live refund_state is terminal but action_needed is not Closed. Result: HTTP 200<br>C2163 / 584480041828058774 / TT Hiranai / RM 20.83: action WH Action -&gt; CS Follow Up; refund_state Pending -&gt; Pending; action WH Action -&gt; CS Follow Up; followup_dt 2026-06-19 -&gt; 2026-06-19; return_status Pick Up Done -&gt; Pick Up Done. Reason: Rule 24 action dichotomy correction. Evidence: return_status=Pick Up Done cannot map to action_needed=WH Action. Result: HTTP 200</div>
-    <div class="field"><strong>Operational counters before -&gt; after:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp creates/POSTs 0 -&gt; 0; webapp patches 0 -&gt; 3.</div>
-    <div class="field"><strong>Webapp health before -&gt; after:</strong> records 354 -&gt; 354; Pending 91 -&gt; 91; Pending RM 23334.39 -&gt; 23334.39; due 89 -&gt; 89; fu_null 0 -&gt; 0; rs_null 0 -&gt; 0; an_null 0 -&gt; 0; orphan_2b 1 -&gt; 0; orphan_2c 1 -&gt; 0; Rule 24 hard mismatches 1 -&gt; 0.</div>
-    <div class="field"><strong>Shops:</strong> TT Hiranai, TT Valuesnap.</div>
-    <div class="field"><strong>Platform:</strong> TikTok/Lazada + internal webapp.</div>
-    <div class="field"><strong>Reason:</strong> Scheduled daily follow-up, Rule 12/12b cleanup, Rule 8/18/24 health crosscheck, Rule 15 coverage, and Rule 16 WH reminder refresh.</div>
-    <div class="field"><strong>Evidence:</strong> Profile 70 host guard passed; live API fetched 354 records; coverage probe 11/16 ALIVE, 3 LOGIN_EXPIRED, 2 NOT_PROBED; reports saved to <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-18.md</code> and <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-18.md</code>.</div>
-    <div class="field"><strong>Result:</strong> partial - reports generated, WH URL refreshed locally, crosscheck health fu_null=0 / rs_null=0 / an_null=0 / orphan_2b=0 / orphan_2c=0 / hard_action_mismatch=0.</div>
-      <div class="field"><strong>Codex duplicate-safe addendum - 15:14 MYT:</strong> Live re-read found later same-day parcelclaim-auto intake C2165-C2184 after the 09:22 report. Codex did not blindly replay the morning run; only five live <code>return_type=resell</code> rows were safe to close under Rule 12. Profile 70 was attached active-first and left open.</div>
-      <div class="field"><strong>Duplicate-safe webapp PATCHes before -&gt; after:</strong><ul>
-        <li><strong>C2179</strong> / <code>584061804607473206</code> / TT MurahYa / RM 243.14: remark_tail existing POST/AUDIT tail -&gt; same tail + <code>[[18/6 WITHDRAW - WH confirmed resellable.]]</code>; refund_state <code>Pending -&gt; Withdrawn</code>; action <code>— -&gt; Closed</code>; return_status <code>(blank) -&gt; (blank)</code>; followup_dt <code>(blank) -&gt; (blank)</code>. Reason: return_type=resell Rule 12 closeable cleanup. Result: 3 PATCHes HTTP 200 and readback verified.</li>
-        <li><strong>C2178</strong> / <code>584062100775405152</code> / TT MurahYa / RM 18.50: remark_tail existing POST/AUDIT tail -&gt; same tail + <code>[[18/6 WITHDRAW - WH confirmed resellable.]]</code>; refund_state <code>Pending -&gt; Withdrawn</code>; action <code>— -&gt; Closed</code>; return_status <code>(blank) -&gt; (blank)</code>; followup_dt <code>(blank) -&gt; (blank)</code>. Reason: return_type=resell Rule 12 closeable cleanup. Result: 3 PATCHes HTTP 200 and readback verified.</li>
-        <li><strong>C2175</strong> / <code>584045129385936336</code> / TT KarlMobel / RM 68.97: remark_tail existing POST/AUDIT tail -&gt; same tail + <code>[[18/6 WITHDRAW - WH confirmed resellable.]]</code>; refund_state <code>Pending -&gt; Withdrawn</code>; action <code>— -&gt; Closed</code>; return_status <code>(blank) -&gt; (blank)</code>; followup_dt <code>(blank) -&gt; (blank)</code>. Reason: return_type=resell Rule 12 closeable cleanup. Result: 3 PATCHes HTTP 200 and readback verified.</li>
-        <li><strong>C2171</strong> / <code>584166412403116024</code> / TT Jager / RM 118.68: remark_tail existing POST/AUDIT tail -&gt; same tail + <code>[[18/6 WITHDRAW - WH confirmed resellable.]]</code>; refund_state <code>Pending -&gt; Withdrawn</code>; action <code>— -&gt; Closed</code>; return_status <code>(blank) -&gt; (blank)</code>; followup_dt <code>(blank) -&gt; (blank)</code>. Reason: return_type=resell Rule 12 closeable cleanup. Result: 3 PATCHes HTTP 200 and readback verified.</li>
-        <li><strong>C2167</strong> / <code>584044847928607962</code> / TT Hiranai / RM 29.01: remark_tail existing POST/AUDIT tail -&gt; same tail + <code>[[18/6 WITHDRAW - WH confirmed resellable.]]</code>; refund_state <code>Pending -&gt; Withdrawn</code>; action <code>— -&gt; Closed</code>; return_status <code>(blank) -&gt; (blank)</code>; followup_dt <code>(blank) -&gt; (blank)</code>. Reason: return_type=resell Rule 12 closeable cleanup. Result: 3 PATCHes HTTP 200 and readback verified.</li>
-      </ul></div>
-      <div class="field"><strong>Addendum operational counters before -&gt; after:</strong> messages/customer messages/WhatsApp <code>0 -> 0</code>; stock writes <code>0 -> 0</code>; marketplace changes <code>0 -> 0</code>; webapp POSTs <code>0 -> 0</code>; webapp PATCHes <code>0 -> 15</code>.</div>
-      <div class="field"><strong>Addendum webapp health before -&gt; after:</strong> records <code>374 -&gt; 374</code>; Pending <code>111 -&gt; 106</code>; Pending RM <code>27318.26 -&gt; 26839.96</code>; due <code>89 -&gt; 89</code>; fu_null <code>20 -&gt; 15</code>; rs_null <code>20 -&gt; 15</code>; an_null <code>0 -&gt; 0</code>; orphan_2b <code>0 -&gt; 0</code>; orphan_2c <code>0 -&gt; 0</code>; hard_action_mismatch <code>0 -&gt; 0</code>; closeable_resell <code>5 -&gt; 0</code>.</div>
-      <div class="field"><strong>Addendum outstanding / not complete:</strong> 15 same-day intake rows remain Pending with blank return_status/followup_dt and need PM absorption/fresh classification, not blind scheduled replay: <code>C2183</code> / <code>504624090494832</code> / Lazada MurahYa / RM 705.99 / RR intake needs PM absorption/B0 classification; not blindly derived.; <code>C2184</code> / <code>508373355388110</code> / Lazada MurahYa / RM 63.06 / RR intake needs PM absorption/B0 classification; not blindly derived.; <code>C2165</code> / <code>584503957060158760</code> / TT Adelmar / RM 327.99 / RR intake needs PM absorption/B0 classification; not blindly derived.; <code>C2166</code> / <code>584503889872520903</code> / TT Hiranai / RM 8.30 / RR intake needs PM absorption/B0 classification; not blindly derived.; <code>C2170</code> / <code>584411872854443354</code> / TT Jager / RM 27.28 / FD intake needs approved return_status evidence beyond intake remark.; <code>C2168</code> / <code>584520774756370303</code> / TT Jager / RM 140.00 / RR intake needs PM absorption/B0 classification; not blindly derived.; <code>C2169</code> / <code>584540604786771302</code> / TT Jager / RM 129.00 / FD intake needs approved return_status evidence beyond intake remark.; <code>C2174</code> / <code>584305116546369088</code> / TT KarlMobel / RM 738.05 / FD intake needs approved return_status evidence beyond intake remark.; <code>C2173</code> / <code>584430389427013160</code> / TT KarlMobel / RM 801.60 / FD intake needs approved return_status evidence beyond intake remark.; <code>C2172</code> / <code>584505687181133421</code> / TT KarlMobel / RM 33.27 / FD intake needs approved return_status evidence beyond intake remark.; <code>C2177</code> / <code>584480015645181424</code> / TT MurahYa / RM 29.06 / FD intake needs approved return_status evidence beyond intake remark.; <code>C2176</code> / <code>584522745002296652</code> / TT MurahYa / RM 387.62 / RR intake needs PM absorption/B0 classification; not blindly derived.; <code>C2182</code> / <code>584045351416137366</code> / TT Valuesnap / RM 76.44 / FD intake needs approved return_status evidence beyond intake remark.; <code>C2181</code> / <code>584468251615134848</code> / TT Valuesnap / RM 12.91 / FD intake needs approved return_status evidence beyond intake remark.; <code>C2180</code> / <code>584503319660824069</code> / TT Valuesnap / RM 25.00 / FD intake needs approved return_status evidence beyond intake remark..</div>
-      <div class="field"><strong>Addendum evidence:</strong> raw addendum <code>C:\Users\tessf\Documents\ttparcelclaim-reports\_codex_ttparcelclaim_duplicate_safe_resell_closeout_2026-06-18.json</code>; refreshed coverage <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-18.md</code>; refreshed WH reminder <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-18.md</code>; profile 70 remained active and was not stopped.</div>
-  </div>
-</div>
 
-          <div class="entry" data-date="2026-06-18" data-shops="11 TT shops" data-platform="TikTok MY" data-result="warn">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">tiktokrraudit - 18/6 Codex rerun: 0 NEW LOSS + 0 NEW WIN + 18 audit remarks verified / 55/55 crosscheck</span>
-      <span class="entry-meta">2026-06-18 MYT &middot; Codex replacement for Claude launcher &middot; report <code>C:\Users\tessf\Documents\tiktokrraudit-reports\tiktokrraudit-report-2026-06-18.md</code></span>
-      <span class="tag">tiktokrraudit</span>
-      <span class="tag">tiktokrrauditcheck</span>
-      <span class="tag result-warn">Partial</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Codex ran TikTok R/R audit for 18/6 without invoking Claude or the legacy BAT. Fresh internal API was used before every audit remark PATCH. Same-day parcelclaim-auto supplied seller-profile evidence for the TT sweep.</p>
-      <div class="field"><strong>Before -&gt; after operational counters:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp state flips 0 -&gt; 0; new webapp remark patches 0 -&gt; 0; existing audit tokens 18 -&gt; 18 verified.</div>
-      <div class="field"><strong>Every change:</strong><ul><li>584503957060158760 TT Adelmar TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 54 TT Adelmar live R/R in-window evidence from parcelclaim-auto; source 2026-06-17 12:55:25; no state flip; no WhatsApp.; evidence profile 54 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584503889872520903 TT Hiranai TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 56 TT Hiranai live R/R in-window evidence from parcelclaim-auto; source 2026-06-16 15:38:00; no state flip; no WhatsApp.; evidence profile 56 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584044847928607962 TT Hiranai TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 56 TT Hiranai live FD API evidence from parcelclaim-auto; tracking 3233428064378520794; source 2026-05-19 17:30:55; triage pending; no state flip; no WhatsApp.; evidence profile 56 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584520774756370303 TT Jager TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 59 TT Jager live R/R in-window evidence from parcelclaim-auto; source 2026-06-16 16:48:32; no state flip; no WhatsApp.; evidence profile 59 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584540604786771302 TT Jager TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 59 TT Jager live FD API evidence from parcelclaim-auto; tracking 3261430606343406950; source 2026-06-17 06:47:13; triage pending; no state flip; no WhatsApp.; evidence profile 59 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584411872854443354 TT Jager TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 59 TT Jager live FD API evidence from parcelclaim-auto; tracking 3253729023670191450; source 2026-06-11 11:42:08; triage pending; no state flip; no WhatsApp.; evidence profile 59 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584166412403116024 TT Jager TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 59 TT Jager live FD API evidence from parcelclaim-auto; tracking 3240213259774756856; source 2026-05-27 13:17:40; triage pending; no state flip; no WhatsApp.; evidence profile 59 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584505687181133421 TT KarlMobel TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 62 TT KarlMobel live FD API evidence from parcelclaim-auto; tracking 3259614208467568237; source 2026-06-16 07:45:36; triage pending; no state flip; no WhatsApp.; evidence profile 62 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584430389427013160 TT KarlMobel TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 62 TT KarlMobel live FD API evidence from parcelclaim-auto; tracking 3254762942443193896; source 2026-06-13 10:42:06; triage pending; no state flip; no WhatsApp.; evidence profile 62 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584305116546369088 TT KarlMobel TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 62 TT KarlMobel live FD API evidence from parcelclaim-auto; tracking 3247804095402247744; source 2026-06-03 10:43:42; triage pending; no state flip; no WhatsApp.; evidence profile 62 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584045129385936336 TT KarlMobel TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 62 TT KarlMobel live FD API evidence from parcelclaim-auto; tracking 3233464286840194512; source 2026-05-19 17:30:33; triage pending; no state flip; no WhatsApp.; evidence profile 62 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584522745002296652 TT MurahYa TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 64 TT MurahYa live R/R in-window evidence from parcelclaim-auto; source 2026-06-17 13:58:57; no state flip; no WhatsApp.; evidence profile 64 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584480015645181424 TT MurahYa TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 64 TT MurahYa live FD API evidence from parcelclaim-auto; tracking 3257987530606347760; source 2026-06-14 07:54:38; triage pending; no state flip; no WhatsApp.; evidence profile 64 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584062100775405152 TT MurahYa TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 64 TT MurahYa live FD API evidence from parcelclaim-auto; tracking 3234482298653673056; source 2026-05-20 12:51:59; triage pending; no state flip; no WhatsApp.; evidence profile 64 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584061804607473206 TT MurahYa TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 64 TT MurahYa live FD API evidence from parcelclaim-auto; tracking 3234468643965535798; source 2026-05-20 12:52:44; triage pending; no state flip; no WhatsApp.; evidence profile 64 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584503319660824069 TT Valuesnap TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 65 TT Valuesnap live FD API evidence from parcelclaim-auto; tracking 3259493439415485957; source 2026-06-17 14:26:45; triage pending; no state flip; no WhatsApp.; evidence profile 65 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584468251615134848 TT Valuesnap TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 65 TT Valuesnap live FD API evidence from parcelclaim-auto; tracking 3257210720195937408; source 2026-06-14 11:20:41; triage pending; no state flip; no WhatsApp.; evidence profile 65 same-day parcelclaim-auto + fresh internal API; result already_present</li>
-<li>584045351416137366 TT Valuesnap TikTok MY: refund_state Pending -&gt; Pending; action — -&gt; —; remark present -&gt; present; reason 18/6 AUDIT - TT profile 65 TT Valuesnap live FD API evidence from parcelclaim-auto; tracking 3233503852806178454; source 2026-05-20 14:55:42; triage pending; no state flip; no WhatsApp.; evidence profile 65 same-day parcelclaim-auto + fresh internal API; result already_present</li></ul></div>
-      <div class="field"><strong>Money picture:</strong> new loss RM 0.00; new win RM 0.00; same-day Pending intake tagged 20 cases / RM 3983.87; prior credited wins reverified 3 / RM 556.03.</div>
-      <div class="field"><strong>Coverage:</strong> core TT MY profiles 11/11 alive via same-day parcelclaim-auto; FD DOM-only catches 0.</div>
-      <div class="field"><strong>CROSSCHECK:</strong> Total 55 / Confirmed 55 / Reclassified 0 / Retracted 0 / Discrepancy 0.</div>
-      <div class="field"><strong>Reason:</strong> Daily scheduled TikTok R/R overlay after parcelclaim-auto and ttparcelclaim. No seller-platform write and no WhatsApp.</div>
-      <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\tiktokrraudit-reports\tiktokrraudit-report-2026-06-18.md</code>; raw JSON <code>C:\Users\tessf\Documents\tiktokrraudit-reports\_codex_tiktokrraudit_2026-06-18.json</code>; upstream <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-18.md</code>.</div>
-      <div class="field"><strong>Result:</strong> warn - board logged locally by Codex.</div>
-    </div>
-  </div>
   <div class="entry" data-date="2026-06-17" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
