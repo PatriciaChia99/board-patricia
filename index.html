@@ -639,6 +639,30 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-18" data-shops="TT Hiranai, TT Valuesnap" data-platform="TikTok/Lazada + internal webapp" data-result="warn">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">ttparcelclaim+check daily follow-up - Codex 2026-06-18</span>
+    <span class="entry-meta">2026-06-18 09:22 MYT &middot; 3 PATCHes &middot; health 0/0/1/1 -&gt; 0/0/0/0 &middot; coverage 11/16 alive</span>
+    <span class="tag">ttparcelclaim</span>
+    <span class="tag">ttparcelclaimcheck</span>
+    <span class="tag result-warn">Partial</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Codex ran the 08:55 MYT ttparcelclaim scheduled replacement for 2026-06-18. It verified profile 70, fetched current internal webapp state, ran ttparcelclaimcheck health audits, generated the coverage and WH reminder reports, and did not execute Claude or the legacy launcher.</p>
+    <div class="field"><strong>Date:</strong> 2026-06-18 MYT.</div>
+    <div class="field"><strong>Task:</strong> ttparcelclaim+check daily follow-up.</div>
+    <div class="field"><strong>Every webapp PATCH before -&gt; after:</strong><br>C2034 / 584321414311282586 / TT Valuesnap / RM 19.14: action Closed -&gt; WH Evidence; refund_state Pending -&gt; Pending; action Closed -&gt; WH Evidence; followup_dt 2026-06-15 -&gt; 2026-06-15; return_status Delivery Done -&gt; Delivery Done. Reason: Rule 12b reverse-orphan sweep. Evidence: Live refund_state is Pending while action_needed is Closed. Result: HTTP 200<br>C2147 / 584520160334021990 / TT Valuesnap / RM 24.08: action CS Action -&gt; Closed; refund_state Withdrawn -&gt; Withdrawn; action CS Action -&gt; Closed; followup_dt 2026-06-18 -&gt; 2026-06-18; return_status Delivery Done -&gt; Delivery Done. Reason: Rule 12b terminal-state orphan sweep. Evidence: Live refund_state is terminal but action_needed is not Closed. Result: HTTP 200<br>C2163 / 584480041828058774 / TT Hiranai / RM 20.83: action WH Action -&gt; CS Follow Up; refund_state Pending -&gt; Pending; action WH Action -&gt; CS Follow Up; followup_dt 2026-06-19 -&gt; 2026-06-19; return_status Pick Up Done -&gt; Pick Up Done. Reason: Rule 24 action dichotomy correction. Evidence: return_status=Pick Up Done cannot map to action_needed=WH Action. Result: HTTP 200</div>
+    <div class="field"><strong>Operational counters before -&gt; after:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp creates/POSTs 0 -&gt; 0; webapp patches 0 -&gt; 3.</div>
+    <div class="field"><strong>Webapp health before -&gt; after:</strong> records 354 -&gt; 354; Pending 91 -&gt; 91; Pending RM 23334.39 -&gt; 23334.39; due 89 -&gt; 89; fu_null 0 -&gt; 0; rs_null 0 -&gt; 0; an_null 0 -&gt; 0; orphan_2b 1 -&gt; 0; orphan_2c 1 -&gt; 0; Rule 24 hard mismatches 1 -&gt; 0.</div>
+    <div class="field"><strong>Shops:</strong> TT Hiranai, TT Valuesnap.</div>
+    <div class="field"><strong>Platform:</strong> TikTok/Lazada + internal webapp.</div>
+    <div class="field"><strong>Reason:</strong> Scheduled daily follow-up, Rule 12/12b cleanup, Rule 8/18/24 health crosscheck, Rule 15 coverage, and Rule 16 WH reminder refresh.</div>
+    <div class="field"><strong>Evidence:</strong> Profile 70 host guard passed; live API fetched 354 records; coverage probe 11/16 ALIVE, 3 LOGIN_EXPIRED, 2 NOT_PROBED; reports saved to <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-18.md</code> and <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-18.md</code>.</div>
+    <div class="field"><strong>Result:</strong> partial - reports generated, WH URL refreshed locally, crosscheck health fu_null=0 / rs_null=0 / an_null=0 / orphan_2b=0 / orphan_2c=0 / hard_action_mismatch=0.</div>
+  </div>
+</div>
+
   <div class="entry" data-date="2026-06-18" data-shops="11 TT shops" data-platform="TikTok MY" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
