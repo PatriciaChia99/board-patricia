@@ -639,6 +639,32 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-18" data-shops="TT Parcel Claim, TikTok R/R Audit, Parcelclaim-Auto" data-platform="Patricia board + TikTok MY + Lazada MY + internal parcel-claim webapp" data-result="complete">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">board visibility check for ttparcelclaim tiktokrraudit parcelclaim-auto 2026-06-18</span>
+      <span class="entry-meta">2026-06-18 MYT &middot; readback check &middot; original cards were consolidated, not missing</span>
+      <span class="tag">board-check</span>
+      <span class="tag">ttparcelclaim</span>
+      <span class="tag">tiktokrraudit</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-success">Complete</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia asked whether <code>ttparcelclaim</code>, <code>tiktokrraudit</code>, and <code>parcelclaim-auto</code> ran and why they were not visible as separate board cards. I checked the run reports, raw evidence, same-day board snapshots, and the dedupe evidence.</p>
+      <div class="field"><strong>Every change before -&gt; after:</strong><ul>
+        <li>Run evidence check: unknown -&gt; all three 2026-06-18 reports/raw files found.</li>
+        <li>Board visibility check: separate cards expected -&gt; intentionally consolidated under <code>scheduled rerun and TT Parcel Claim follow-up consolidated 2026-06-18</code>.</li>
+        <li>Removed-card evidence: unknown -&gt; <code>tmp-schedule-rerun-20260618\board_dedupe_removed_entries_20260618.json</code> lists the removed individual titles for <code>parcelclaim-auto</code>, <code>ttparcelclaim+check</code>, and <code>tiktokrraudit</code>.</li>
+        <li>Operational writes from this check stayed <code>0 -&gt; 0</code>; this was a readback/board-explanation task only.</li>
+      </ul></div>
+      <div class="field"><strong>Shop / platform:</strong> TT Parcel Claim, TikTok R/R Audit, Parcelclaim-Auto; TikTok MY, Lazada MY, internal parcel-claim webapp, Patricia board.</div>
+      <div class="field"><strong>Reason:</strong> the board cleanup merged same-day progress/warn entries into one current-status entry so old partial/warning cards would not look like separate active tasks.</div>
+      <div class="field"><strong>Result:</strong> not missing. The entries were first posted individually, then the 2026-06-18 dedupe pass removed the individual cards and preserved their status inside the consolidated current-status entry.</div>
+      <div class="field"><strong>Evidence:</strong> reports/raw under <code>C:\Users\tessf\Documents\ttparcelclaim-reports</code>, <code>C:\Users\tessf\Documents\tiktokrraudit-reports</code>, and <code>C:\Users\tessf\Documents\parcelclaim-auto-reports</code>; board removed-card evidence <code>tmp-schedule-rerun-20260618\board_dedupe_removed_entries_20260618.json</code>; latest checked board snapshot <code>tmp-returnitems\board_patricia_index_after_returnitems_parcelclaim_remark_rr_20260618.html</code>.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> no board-log gap found for these three runs. Active operational follow-up from the consolidated entry remains the six TT/Lazada rows scheduled for CS follow-up on <code>2026-06-19</code> and the non-definitive Ticket Log lookup for <code>583381706383197812</code>.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-18" data-shops="N/A" data-platform="Google Sheets / Product Video Library / Profile 50 / Codex closeout" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
