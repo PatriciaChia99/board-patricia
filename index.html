@@ -639,6 +639,37 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-18" data-shops="SB Variation, SiteGiant" data-platform="SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation approved stock adjustment 2026-06-18 SA-19534</span>
+      <span class="entry-meta">2026-06-18 MYT &middot; SiteGiant <code>SA-19534</code> &middot; stock lines 0-&gt;9 &middot; SB row patches 0-&gt;10 &middot; messages 0-&gt;0</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag">stock</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Executed Patricia-approved SB Variation stock cleanup and accepted-change deductions, then recorded durable false-flag corrections.</p>
+      <div class="field"><strong>Evidence:</strong> report <code>tmp-sbvariation-question-20260618/sbvariation-approved-stock-adjustment-2026-06-18.md</code>; SiteGiant evidence <code>tmp-sbvariation-question-20260618/sitegiant-approved-stock-adjust-20260618.json</code>; SB readback <code>tmp-sbvariation-question-20260618/employee-approved-stock-patch-20260618.json</code>; final exact stock lookup <code>tmp-sbvariation-question-20260618/sitegiant-approved-stock-final-lookup-20260618.json</code>; SiteGiant URL <code>https://sitegiant.co/inventory-adjustment/stock-adjustment/9800852/edit</code>.</div>
+      <div class="field"><strong>Every stock change before -&gt; after:</strong><ul>
+        <li><code>2606179EXFSP9S</code> / <code>DF-BLU-RED-36-38</code>: <code>1/0/1/0/0</code> OOS -&gt; <code>0/0/0/0/0</code> OOS; reserved moved sellable, then deducted.</li>
+        <li><code>26061449JE0820</code> / <code>HDT-150KG</code>: <code>1/1/0/0/0</code> OOS -&gt; <code>0/0/0/0/0</code> OOS.</li>
+        <li><code>2606131Q9MDMQP</code> / <code>INSULATED-BEVERAGE-DISPENSER-BLK-XTK-6L-SG</code>: <code>0/0/0/0/0</code> OOS -&gt; <code>0/0/0/0/0</code> OOS; already zero before write, no SA product line.</li>
+        <li><code>2606142Q654178</code> and <code>260612TVDVM8T4</code> / <code>DF-BLU-RED-24-26</code>: <code>1/1/0/0/0</code> OOS -&gt; <code>0/0/0/0/0</code> OOS.</li>
+        <li><code>260613VJYK2V96</code> / <code>BUCKLE-THICK-MEDIUM-HEEL-PINK-35</code>: <code>1/1/0/0/0</code> OOS -&gt; <code>0/0/0/0/0</code> OOS.</li>
+        <li><code>260611RGHWSEAB</code> / <code>INV-WEIGHT-VEST-3KG</code>: <code>1/1/0/0/0</code> OOS -&gt; <code>0/0/0/0/0</code> OOS.</li>
+        <li><code>260606CDSG2P9H</code> / <code>FLOOR-MIRROR-BROWN-70X170CM-STAND-WALL</code>: <code>1/1/0/0/0</code> OOS -&gt; <code>0/0/0/0/0</code> OOS.</li>
+        <li><code>260609KFMJ2XXX</code> / <code>BTNT</code>: <code>1/1/0/0/0</code> OOS -&gt; <code>0/0/0/0/0</code> OOS.</li>
+        <li><code>2606155TXSE893</code> / <code>BKHKITNT</code>: <code>31/26/4/0/1</code> Available -&gt; <code>30/25/4/0/1</code> Available; accepted deduction -1, reserved and non-sellable untouched.</li>
+        <li><code>584497514798548545</code> / <code>CWS-4F-WHITE-UPGRADE</code>: <code>12/12/0/0/0</code> Available -&gt; <code>11/11/0/0/0</code> Available; accepted deduction -1.</li>
+      </ul></div>
+      <div class="field"><strong>SB webapp changes:</strong> row patches <code>0 -&gt; 10</code>; stock ID appended <code>SA-19534</code>; failed patches <code>0</code>; older stock IDs preserved where present.</div>
+      <div class="field"><strong>Shop/platform:</strong> SB Variation across Shopee MY, Shopee SG, TikTok MY; SiteGiant inventory adjustment.</div>
+      <div class="field"><strong>Reason/result:</strong> Patricia approved stock-to-zero/OOS cleanup and both accepted-change deductions. Result: approved stock writes complete and verified; false-flag corrections recorded.</div>
+      <div class="field"><strong>Outstanding / held:</strong> <code>SPV-200W-10MPC</code> remains pending WH check; <code>TRAINING-HURDLE-NGREEN-15CM</code>, <code>DF-WHITE-PINK-27-29</code>, <code>NGC-RED-WOLR</code>, and <code>SOFT-WALL-BALL-4KG</code> are false/stale flags for the cited cases; <code>ELASTIC-GYM-BAND-GREEN</code> is the corrected no-stock iSKU for <code>260608H3X9B15W</code>.</div>
+      <div class="field"><strong>Tooling correction:</strong> first SiteGiant write attempt hit <code>socket closed</code> after the POST landed; correction was to reopen Profile 70, verify live stock, recover <code>SA-19534</code> from SiteGiant, and reconstruct evidence without making a duplicate adjustment.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-18" data-shops="Lazada MurahYa, Laz das.nature, Lazada Lovento, TT shops, Shopee MY unlinked gap shops" data-platform="Scheduled Codex wrappers, Lazada MY, TikTok MY, Shopee MY, SiteGiant" data-result="partial">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
