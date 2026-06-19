@@ -639,6 +639,53 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<<<<<<< HEAD
+  <div class="entry" data-date="2026-06-19" data-shops="MurahYa, Emas Gift, Adelmar, das.nature2, Hiranai" data-platform="Shopee MY + AdsPower + Codex chataudit" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">chataudit cs4/cs2 focused rerun closeout 2026-06-19</span>
+      <span class="entry-meta">2026-06-19 MYT &middot; cs4 partial 160/301 &middot; cs2 newest-50 blocker &middot; read-only</span>
+      <span class="tag">chataudit</span>
+      <span class="tag">Shopee MY</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia asked Codex to rerun quickly after cs2/cs4 were logged in and to deep-review cs4 because current replies were handled by new CS staff. Codex used the corrected 2026-06-19 chataudit window, kept the run read-only, and skipped stopping the logged-in profiles.</p>
+      <div class="field"><strong>Every before -&gt; after value:</strong> cs4 processed conversations <code>0 -&gt; 160/301</code>; cs4 scheduled-window in-scope rows in partial <code>0 -&gt; 33</code>; cs4 confirmed misses in processed partial <code>0 -&gt; 0</code>; cs4 human-review flags <code>0 -&gt; 1</code>; cs4 current Sky/new-staff rows found <code>0 -&gt; 115</code>; risk-filtered Sky/new-staff rows <code>0 -&gt; 62</code>; cs4 carry-over targets found <code>0 -&gt; 2/3</code>; cs2 exposed newest conversations <code>0 -&gt; 50</code>; messages <code>0 -&gt; 0</code>; WhatsApp <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; webapp patches <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>CS4 deep-review result:</strong> no confirmed miss in the processed partial. Human-review/coaching case: <code>diana9170</code> asked whether cat-cage tyre is sold; generic holding reply came first, then Sky answered no tyre sold. Other current CS4 watchlist from Sky/new-staff replies: <code>aidashahira7</code>, <code>kevinkch129</code>, <code>bragusx</code>, <code>shuhadazakaria09</code>, <code>giethasravindran</code>, <code>eje_1269</code>, <code>buddhagrey</code>, <code>arischa09sofia</code>, and <code>zulazammddahlan</code>.</div>
+      <div class="field"><strong>CS4 carry-over targets:</strong> <code>wee0012</code> found and no new miss from latest visible gas-cylinder exchange; <code>4p5nijv3rn</code> found and no new miss from sparepart/repair exchange; <code>ikmal_sumadi</code> still unverified because CDP timed out.</div>
+      <div class="field"><strong>CS2 result:</strong> latest rerun still could not expose the scheduled audit window. Shopee exposed 50 newest conversations only, oldest <code>2026-06-19T10:51:21+08:00</code>, newest <code>2026-06-19T19:04:06+08:00</code>, while the scheduled window is <code>2026-06-17 17:45</code> to <code>2026-06-18 17:45</code>.</div>
+      <div class="field"><strong>Shop / platform:</strong> CS4 MurahYa, Emas Gift, Adelmar on Shopee MY; CS2 das.nature2 and Hiranai on Shopee MY; AdsPower profiles <code>k1arw4x4</code> and <code>k1arvrqs</code>.</div>
+      <div class="field"><strong>Reason:</strong> User confirmed both accounts were logged in and asked for a quick rerun plus deeper CS4 review due new CS staff replies.</div>
+      <div class="field"><strong>Evidence:</strong> Closeout <code>C:\Users\tessf\code\codex-lab\tmp-chataudit-rerun-20260619\chataudit-cs4-cs2-rerun-closeout-20260619.md</code>; cs4 partial <code>C:\Users\tessf\Documents\chataudit-reports\_codex_chataudit_partial_2026-06-19_cs4.json</code>; cs4 target rerun <code>C:\Users\tessf\Documents\chataudit-reports\_codex_chataudit_targets_rerun_cs4_2026-06-19.json</code>; cs2 partial <code>C:\Users\tessf\Documents\chataudit-reports\_codex_chataudit_partial_2026-06-19_cs2.json</code>.</div>
+      <div class="field"><strong>Result:</strong> partial, not complete. Two stuck chataudit Node processes created by this rerun were identified and stopped. Logged-in CS profiles were left open due <code>CHATAUDIT_SKIP_STOP=1</code>. No customer-facing or marketplace writes were made.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> cs4 still has <code>141/301</code> conversations unprocessed if full current coverage is required; cs4 <code>ikmal_sumadi</code> remains unverified; cs2 scheduled-window coverage remains unverified because only current newest-50 chats loaded.</div>
+    </div>
+  </div>
+    <div class="entry" data-date="2026-06-19" data-shops="TT ValueSnap, TT DasNature" data-platform="Return Items webapp, TikTok" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">returnitems 13749 qty2 patch + 13753 failed-delivery check 2026-06-19</span>
+      <span class="entry-meta">2026-06-19 MYT &middot; 13749 patched after Patricia confirmed 2 returned units &middot; 13753 failed-delivery replay 105 orders no match &middot; stock writes 0</span>
+      <span class="tag">returnitems</span>
+      <span class="tag result-warn">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia confirmed <code>680024678772817</code> returned quantity is 2 units and asked whether the first held case had been searched/checked in TikTok Failed delivery. Fetched fresh Return Items data, patched row <code>13749</code> only after quantity confirmation, then selected TT DasNature TikTok <code>Failed delivery</code> tab and replayed its captured API payload for row <code>13753</code>.</p>
+      <div class="field"><strong>Every Return Items change before -&gt; after:</strong>
+        <ul>
+          <li><code>13749</code> / TikTok / TT ValueSnap / <code>680024678772817</code> / reason Resell: <code>orderId</code> blank -&gt; <code>584520160334021990</code>; <code>items</code> blank -&gt; 2 x <code>Vira Foam PU Foam Polyurethane Spray 750ml Penampal Lubang</code>; <code>iskus</code> blank -&gt; 2 x <code>VIRA</code>; <code>stockIds</code> blank -&gt; blank. Reason: TT ValueSnap order-side match plus Patricia confirmed 2 returned units.</li>
+          <li><code>13753</code> / TikTok / TT DasNature / <code>684200118454823</code> / reason Resell: <code>orderId</code> blank -&gt; blank; <code>items</code> blank -&gt; blank; <code>iskus</code> blank -&gt; blank; <code>stockIds</code> blank -&gt; blank. Reason: TikTok Failed delivery replay found no match, so no patch.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Failed-delivery check:</strong> TT DasNature exact tab selected <code>/order?abnormal_pkg_tag[]=ALL_FAIL_DELIVERY&amp;selected_sort=6&amp;tab=fail_delivery</code>. Captured API body had <code>abnormal_pkg_tag=ALL_FAIL_DELIVERY</code> and <code>search_tab=105</code>. Replayed all <code>105</code> failed-delivery orders across offsets <code>0</code>, <code>50</code>, and <code>100</code>; match count <code>0</code> for <code>684200118454823</code>.</div>
+      <div class="field"><strong>Safety counters:</strong> Return Items PATCHes <code>0 -&gt; 3</code> for row <code>13749</code>; <code>stockIds</code> writes <code>0 -&gt; 0</code>; stock-in <code>0 -&gt; 0</code>; SiteGiant stock writes <code>0 -&gt; 0</code>; marketplace writes/messages <code>0 -&gt; 0</code>. Patch verification <code>ok=true</code>.</div>
+      <div class="field"><strong>Evidence files:</strong> report <code>C:\Users\tessf\Documents\returnitems-reports\returnitems-lookup-2026-06-19.md</code>; 13749 before <code>tmp-returnitems\returnitems_live_20260619_before_13749_qty2_patch.json</code>; 13749 after <code>tmp-returnitems\returnitems_live_20260619_after_13749_qty2_patch.json</code>; patch verification <code>tmp-returnitems\returnitems_20260619_13749_qty2_patch_result.json</code>; TT ValueSnap order evidence <code>tmp-returnitems\returnitems_20260619_tiktok_order_unfiltered_paginate_tt_valuesnap.json</code>; TT DasNature failed-delivery exact replay <code>tmp-returnitems\returnitems_20260619_tiktok_failed_delivery_exact_match_tt_dasnature.json</code>.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> <code>13749</code> is now patched and verified with exactly 2 item/iSKU lines. <code>13753</code> remains unresolved after TikTok Return checks, deep Manage Orders, Shopee Kmall, and TikTok Failed delivery replay.</div>
+    </div>
+  </div>
+<div class="entry" data-date="2026-06-19" data-shops="Patricia board" data-platform="board-patricia" data-result="ok">
+=======
   <div class="entry" data-date="2026-06-19" data-shops="Shopee MY/SG, TikTok MY/SG, Lazada MY" data-platform="csrrcredited, parcelclaim-auto, tiktokrraudit, ttparcelclaim" data-result="partial">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -665,6 +712,7 @@ header.page::after{
   </div>
 
   <div class="entry" data-date="2026-06-19" data-shops="Patricia board" data-platform="board-patricia" data-result="ok">
+>>>>>>> 37550ba (Log 19 Jun relogin closeout)
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">board cleanup - duplicate and partial correction 2026-06-19</span>
