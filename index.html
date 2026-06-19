@@ -639,6 +639,26 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-20" data-shops="Lazada MurahYa, Laz das.nature, Lazada Lovento" data-platform="AdsPower + Lazada MY Seller Center + Codex scheduled runners" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">Lazada saved-password relogin fix for weekend schedule</span>
+      <span class="entry-meta">2026-06-20 00:00-00:26 MYT &middot; Lazada 81/82/83 alive &middot; scheduled preflight wired &middot; ntfy sent</span>
+      <span class="tag">scheduled-codex</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia clarified that Lazada profiles keep logging out due active-time expiry and saved passwords should autofill after a few seconds; Codex should click Login instead of only marking the session expired. Codex ran an assisted saved-password Lazada relogin and wired that same preflight into the weekend scheduled runners that touch Lazada.</p>
+      <div class="field"><strong>Before -&gt; after values:</strong> Lazada MurahYa profile 81 <code>LOGIN_EXPIRED -&gt; ALIVE</code>; Laz das.nature profile 82 <code>LOGIN_EXPIRED -&gt; ALIVE</code>; Lazada Lovento profile 83 <code>LOGIN_EXPIRED -&gt; ALIVE</code>; scheduled Lazada saved-password preflight <code>absent -&gt; present</code> for <code>parcelclaim-auto</code>, <code>parcelsplit-contact-crosscheck</code>, <code>returnitems-lookup</code>, and standalone <code>checksbvariation</code>.</div>
+      <div class="field"><strong>Action:</strong> waited for saved browser credentials, did not read or log password values, pressed/clicked Lazada Login, then verified Seller Center index pages. The first generic click worked for profile 82; a targeted Enter + real mouse-click retry fixed profiles 81 and 83.</div>
+      <div class="field"><strong>Files changed:</strong> <code>.agents\scheduled-codex\run-codex-scheduled.ps1</code>; <code>.agents\skills\checksbvariation\scripts\run-checksbvariation-scheduled.ps1</code>; temporary evidence/helpers under <code>tmp-schedule-rerun-20260619</code>.</div>
+      <div class="field"><strong>Verification:</strong> Lazada retry report shows profile 81 and 83 <code>ALIVE</code>; profile 82 was already <code>ALIVE</code> after the first assisted relogin. Full account preflight after the fix confirmed all three Lazada profiles <code>ALIVE</code>. Runner self-tests passed for <code>parcelclaim-auto</code>, <code>returnitems-lookup</code>, and standalone <code>checksbvariation</code>; checksbvariation self-test ntfy also sent.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-schedule-rerun-20260619\lazada-saved-password-relogin-2026-06-19.md</code>; <code>tmp-schedule-rerun-20260619\lazada-blocked-retry-2026-06-20.md</code>; <code>tmp-schedule-rerun-20260619\account-login-preflight-now-2026-06-19.md</code>; raw JSON files beside each report.</div>
+      <div class="field"><strong>Operational counters:</strong> customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace business writes <code>0 -&gt; 0</code>; webapp writes <code>0 -&gt; 0</code>. Login/session action only.</div>
+      <div class="field"><strong>Result:</strong> Lazada fix OK. NTFY sent as <code>Codex Lazada relogin OK</code>. The board card is marked partial only because a broader full-account recheck after the Lazada fix hit AdsPower/CDP <code>NOT_PROBED</code> errors on TikTok/cs5 profiles; those are probe/runtime errors, not Lazada login expiry, and same-night earlier evidence had those TikTok profiles alive.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Watch AdsPower/CDP stability for TikTok/cs5 during the actual scheduled runs. Lazada 81/82/83 are no longer the blocker, but the broad all-account final recheck did not complete cleanly because AdsPower returned dead/refused debug ports for some non-Lazada profiles.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-19" data-shops="Profile 70, Shopee chat profiles, TikTok seller profiles, Lazada profiles" data-platform="AdsPower + Shopee + TikTok + Lazada + SiteGiant + employee webapp" data-result="partial">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -968,22 +988,23 @@ header.page::after{
     <div class="field"><strong>Result:</strong> completed. Wins <code>2</code> (+RM41.34 MY / +SGD0.00 SG); clawbacks flagged <code>23</code> (-RM153.00 MY / -SGD209.52 SG); flagged cases <code>88</code>; focused webapp/live readback <code>30/30</code> OK; no active csrr unverified row remains.</div>
   </div>
 </div>
-<div class="entry" data-date="2026-06-19" data-shops="TT Jager, TT KarlMobel, TT MurahYa, TT Hiranai, TT ValueSnap, TT JagerHelmet, TT Kinata" data-platform="TikTok MY + TikTok SG + Lazada MY + internal webapp" data-result="warn">
+<div class="entry" data-date="2026-06-19" data-shops="TT Jager, TT KarlMobel, TT MurahYa, TT Hiranai, TT ValueSnap, TT JagerHelmet, TT Kinata" data-platform="TikTok MY + TikTok SG + Lazada MY + internal webapp" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">parcelclaim-auto consolidated 2026-06-19 - posted rows complete, Kinata login restored, old FD gated</span>
-    <span class="entry-meta">2026-06-19 MYT &middot; 13 posted/readback &middot; profile 67 now alive by TT recheck &middot; old failed-delivery backlog not bulk-posted</span>
+    <span class="entry-title">parcelclaim-auto consolidated 2026-06-19 - posted rows complete; old FD out of scope</span>
+    <span class="entry-meta">2026-06-19 MYT &middot; 13 recent/current rows posted/readback &middot; old failed-delivery backlog not scraped or bulk-posted</span>
     <span class="tag">parcelclaim-auto</span>
-    <span class="tag result-warn">Completed rows; old FD approval gate</span>
+    <span class="tag result-ok">Completed recent/current scope</span>
   </div>
   <div class="entry-body">
-    <p><strong>Brief:</strong> Consolidated the scheduled parcelclaim-auto run, no-duplicate closeout recheck, relogin addendum, and Patricia's later Kinata-login correction. The existing same-day posted rows remain complete/readback-confirmed; the later TT recheck shows profile 67 TT Kinata alive, so the earlier profile-67 login blocker is no longer the active reason this card is gated.</p>
-    <div class="field"><strong>Before -&gt; after values:</strong> scheduled webapp creates <code>0 -&gt; 6</code> for C2185-C2190; relogin webapp creates <code>0 -&gt; 7</code> for C2191-C2197; total posted/readback <code>0 -&gt; 13/13</code>; duplicate recheck extra POSTs <code>0 -&gt; 0</code>; TT Kinata profile 67 login state <code>LOGIN_EXPIRED -&gt; ALIVE</code> by the 23:14 ttparcelclaim recheck; old failed-delivery backlog POSTs <code>0 -&gt; 0</code>; messages, WhatsApp, stock writes, and marketplace changes stayed <code>0 -&gt; 0</code>.</div>
-    <div class="field"><strong>Posted rows:</strong> C2185-C2190 from the scheduled 19/6 report; C2191 TT Hiranai <code>584431221666383317</code>; C2192 TT KarlMobel <code>584441357437011572</code>; C2193 TT MurahYa <code>584420698090145090</code>; C2194 TT ValueSnap <code>584364820010009765</code>; C2195 TT ValueSnap <code>584454984249017893</code>; C2196 TT ValueSnap <code>584107244429805118</code>; C2197 TT JagerHelmet <code>584580707135817077</code>.</div>
-    <div class="field"><strong>Reason:</strong> user requested Codex scheduled replacement, relogin check, and a clear explanation of the old failed-delivery approval gate. Existing same-day created rows were verified instead of duplicated.</div>
-    <div class="field"><strong>Evidence:</strong> scheduled report <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-19.md</code>; scheduled raw <code>_codex_parcelclaim_auto_2026-06-19.json</code>; relogin wrong-date artifact <code>parcelclaim-auto-report-2026-06-14.md</code> and <code>_codex_parcelclaim_auto_2026-06-14.json</code>; closeout readbacks <code>_codex_parcelclaim_auto_codex_recheck_2026-06-19.json</code> and <code>_codex_parcelclaim_auto_closeout_readback_2026-06-19.json</code>; TT Kinata login proof in <code>C:\Users\tessf\Documents\ttparcelclaim-reports\_codex_ttparcelclaim_kinata_recheck_2026-06-19.json</code>.</div>
-    <div class="field"><strong>Result:</strong> completed for C2185-C2197 and for the Kinata login recheck. Old/backfill failed-delivery candidates remain approval-gated: they were detected as older backlog candidates and were not bulk-created because Patricia has not approved the exact count/scope for a large backfill POST.</div>
-    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> no WhatsApp/customer message was sent. The only parcelclaim-auto item still gated is the old failed-delivery backlog scope; it needs explicit quantity/scope approval before any bulk create.</div>
+    <p><strong>Brief:</strong> Consolidated the scheduled parcelclaim-auto run, no-duplicate closeout recheck, relogin addendum, and Patricia's correction that old failed-delivery backlog must not be worked. The same-day recent/current posted rows remain complete/readback-confirmed. Old/backfill failed-delivery rows are out of scope, not a pending work item.</p>
+    <div class="field"><strong>Before -&gt; after values:</strong> scheduled webapp creates <code>0 -&gt; 6</code> for C2185-C2190; relogin webapp creates <code>0 -&gt; 7</code> for C2191-C2197; total posted/readback <code>0 -&gt; 13/13</code>; duplicate recheck extra POSTs <code>0 -&gt; 0</code>; old failed-delivery backlog scrape/add/post <code>0 -&gt; 0</code>; messages, WhatsApp, stock writes, and marketplace changes stayed <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Posted recent/current rows:</strong> C2185-C2190 from the scheduled 19/6 report; C2191 TT Hiranai <code>584431221666383317</code>; C2192 TT KarlMobel <code>584441357437011572</code>; C2193 TT MurahYa <code>584420698090145090</code>; C2194 TT ValueSnap <code>584364820010009765</code>; C2195 TT ValueSnap <code>584454984249017893</code>; C2196 TT ValueSnap <code>584107244429805118</code>; C2197 TT JagerHelmet <code>584580707135817077</code>.</div>
+    <div class="field"><strong>Reason:</strong> user requested completion for current parcelclaim work and corrected that old failed-delivery cases are not to be scraped or added back because they are hard to claim now.</div>
+    <div class="field"><strong>Old failed-delivery standing rule:</strong> out of scope. Do not scrape, bulk-create, or add old failed-delivery backlog. Only recent/current cases are in scope unless Patricia explicitly names a fresh scope.</div>
+    <div class="field"><strong>Evidence:</strong> scheduled report <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-19.md</code>; scheduled raw <code>_codex_parcelclaim_auto_2026-06-19.json</code>; closeout readbacks <code>_codex_parcelclaim_auto_codex_recheck_2026-06-19.json</code> and <code>_codex_parcelclaim_auto_closeout_readback_2026-06-19.json</code>; correction report <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-lazada-login-fix-correction-2026-06-19.md</code>.</div>
+    <div class="field"><strong>Result:</strong> completed for recent/current C2185-C2197. Old failed-delivery backlog is explicitly skipped/out of scope, with old-FD POSTs <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> no old failed-delivery backlog action remains authorized. No WhatsApp/customer message was sent.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-19" data-shops="BahEmas, KarlMobel, MurahYa" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="ok">
@@ -1011,23 +1032,27 @@ header.page::after{
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">ttparcelclaim+check daily follow-up - Codex 2026-06-19</span>
-    <span class="entry-meta">2026-06-20 00:23 MYT &middot; 0 PATCHes &middot; health 0/8/0/0 -&gt; 0/8/0/0 &middot; coverage 3/16 alive</span>
+    <span class="entry-meta">2026-06-20 00:05 MYT correction &middot; reliable login coverage 16/16 alive &middot; Lazada 81/82/83 fixed &middot; health 0/8/0/0 unchanged</span>
     <span class="tag">ttparcelclaim</span>
     <span class="tag">ttparcelclaimcheck</span>
-    <span class="tag result-warn">Partial</span>
+    <span class="tag result-warn">Partial - 8 rule-gated blank return_status</span>
   </div>
   <div class="entry-body">
-    <p><strong>Brief:</strong> Codex ran the 08:55 MYT ttparcelclaim scheduled replacement for 2026-06-19. It verified profile 70, fetched current internal webapp state, ran ttparcelclaimcheck health audits, generated the coverage and WH reminder reports, and did not execute Claude or the legacy launcher.</p>
-    <div class="field"><strong>Date:</strong> 2026-06-19 MYT.</div>
-    <div class="field"><strong>Task:</strong> ttparcelclaim+check daily follow-up.</div>
-    <div class="field"><strong>Every webapp PATCH before -&gt; after:</strong><br>None. Webapp patches 0 -&gt; 0.</div>
-    <div class="field"><strong>Operational counters before -&gt; after:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp creates/POSTs 0 -&gt; 0; webapp patches 0 -&gt; 0.</div>
-    <div class="field"><strong>Webapp health before -&gt; after:</strong> records 344 -&gt; 344; Pending 80 -&gt; 80; Pending RM 19771.72 -&gt; 19771.72; due 75 -&gt; 75; fu_null 0 -&gt; 0; rs_null 8 -&gt; 8; an_null 0 -&gt; 0; orphan_2b 0 -&gt; 0; orphan_2c 0 -&gt; 0; Rule 24 hard mismatches 0 -&gt; 0.</div>
+    <p><strong>Brief:</strong> Codex corrected the Lazada login blocker by using the live AdsPower sessions and verifying profiles 81/82/83 on Lazada Seller Center. The later broad helper rerun is superseded for login coverage because it produced CDP/AdsPower NOT_PROBED noise; it made no webapp/customer/stock/marketplace writes.</p>
+    <div class="field"><strong>Date:</strong> 2026-06-19 run date; correction generated 2026-06-20 00:xx MYT.</div>
+    <div class="field"><strong>Task:</strong> ttparcelclaim+check daily follow-up after Kinata and Lazada login corrections.</div>
+    <div class="field"><strong>Every webapp PATCH before -&gt; after:</strong><br>None. Webapp patches <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Operational counters before -&gt; after:</strong> messages <code>0 -&gt; 0</code>; WhatsApp/off-platform sends <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; webapp creates/POSTs <code>0 -&gt; 0</code>; webapp patches <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Webapp health before -&gt; after:</strong> records <code>344 -&gt; 344</code>; Pending <code>80 -&gt; 80</code>; Pending RM <code>19771.72 -&gt; 19771.72</code>; due <code>75 -&gt; 75</code>; fu_null <code>0 -&gt; 0</code>; rs_null <code>8 -&gt; 8</code>; an_null <code>0 -&gt; 0</code>; orphan_2b <code>0 -&gt; 0</code>; orphan_2c <code>0 -&gt; 0</code>; Rule 24 hard mismatches <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Login coverage before -&gt; after:</strong> TikTok profiles reliable evidence <code>13/13</code> alive from the Kinata recheck; Lazada profiles <code>81/82/83</code> <code>LOGIN_EXPIRED -&gt; ALIVE</code> from the focused 00:05 MYT proof; combined reliable evidence <code>16/16</code> alive.</div>
+    <div class="field"><strong>Lazada fixed rows:</strong><ul><li>Profile <code>81</code> Lazada MurahYa: <code>LOGIN_EXPIRED</code> -&gt; <code>ALIVE</code>; result live Seller Center page <code>Return Orders - Lazada Seller Center</code>.</li>
+<li>Profile <code>82</code> Laz das.nature: <code>LOGIN_EXPIRED</code> -&gt; <code>ALIVE</code>; result live Seller Center page <code>Return Orders - Lazada Seller Center</code>.</li>
+<li>Profile <code>83</code> Lazada Lovento: <code>LOGIN_EXPIRED</code> -&gt; <code>ALIVE</code>; result live Seller Center page <code>Return Orders - Lazada Seller Center</code>.</li></ul></div>
     <div class="field"><strong>Shops:</strong> Laz das.nature, Lazada Lovento, Lazada MurahYa, TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerHelmet, TT JagerSafety, TT KarlMobel, TT Kinata, TT Lovento, TT MurahYa, TT Valuesnap.</div>
     <div class="field"><strong>Platform:</strong> TikTok/Lazada + internal webapp.</div>
-    <div class="field"><strong>Reason:</strong> Scheduled daily follow-up, Rule 12/12b cleanup, Rule 8/18/24 health crosscheck, Rule 15 coverage, and Rule 16 WH reminder refresh.</div>
-    <div class="field"><strong>Evidence:</strong> Profile 70 host guard passed; live API fetched 344 records; coverage probe 3/16 ALIVE, 1 LOGIN_EXPIRED, 12 NOT_PROBED; reports saved to <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-19-lazada-login-fix.md</code> and <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-19-lazada-login-fix.md</code>.</div>
-    <div class="field"><strong>Result:</strong> partial - reports generated, WH URL refreshed locally, crosscheck health fu_null=0 / rs_null=8 / an_null=0 / orphan_2b=0 / orphan_2c=0 / hard_action_mismatch=0.</div>
+    <div class="field"><strong>Reason:</strong> User asked Codex to click the Lazada login button/use the existing logged-in session and to stop carrying old failed-delivery backlog as an active item.</div>
+    <div class="field"><strong>Evidence:</strong> correction report <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-lazada-login-fix-correction-2026-06-19.md</code>; correction raw <code>C:\Users\tessf\Documents\ttparcelclaim-reports\_codex_ttparcelclaim_lazada_login_fix_correction_2026-06-19.json</code>; Lazada focused raw <code>C:\Users\tessf\code\codex-lab\tmp-schedule-rerun-20260619\lazada-click-login-81-82-83-20260619.json</code>; Kinata/TikTok raw <code>C:\Users\tessf\Documents\ttparcelclaim-reports\_codex_ttparcelclaim_kinata_recheck_2026-06-19.json</code>. Superseded noisy broad rerun kept for audit only at <code>C:\Users\tessf\Documents\ttparcelclaim-reports\_codex_ttparcelclaim_lazada_login_fix_2026-06-19.json</code>.</div>
+    <div class="field"><strong>Result:</strong> Lazada login blocker fixed. ttparcelclaim remains partial only because <code>8</code> blank return_status rows remain rule-gated; no Lazada login blocker remains active.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-18" data-shops="TT Parcel Claim, TikTok R/R Audit, Parcelclaim-Auto" data-platform="Patricia board + TikTok MY + Lazada MY + internal parcel-claim webapp" data-result="complete">
