@@ -639,6 +639,33 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-19" data-shops="Customer Service Product Video Library" data-platform="Google Sheets / AdsPower Profile 50" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">Product Video Library Needs Review cleanup 2026-06-19</span>
+      <span class="entry-meta">2026-06-19 MYT &amp; 208 Needs Review rows cleaned &amp; approval gates preserved</span>
+      <span class="tag">product-video-library</span>
+      <span class="tag">google-sheets</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Ran the AI/logic cleanup pass on the Product Video Library master Sheet rows where <code>Review Status = Needs Review</code>. Cleaned product names, issue details, media titles/types, source/storage wording, duplicate/bad-link notes, and review notes while preserving human approval as the publishing gate.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-19 MYT.</div>
+      <div class="field"><strong>Task:</strong> Product Video Library master Sheet cleanup for all Needs Review rows.</div>
+      <div class="field"><strong>Shop:</strong> Customer Service Product Video Library / internal support media index.</div>
+      <div class="field"><strong>Platform:</strong> Google Sheets via AdsPower Profile 50, account <code>kmall.cservice2@gmail.com</code>. Google Drive/Sheets connector was not used for writes because it returned <code>403 PERMISSION_DENIED</code> on this Sheet.</div>
+      <div class="field"><strong>Sheet:</strong> <a href="https://docs.google.com/spreadsheets/d/1hIU0XHYWTFzZkm5Pa30QcsVcNfnumR_uPzofwgMeU4Q/edit">https://docs.google.com/spreadsheets/d/1hIU0XHYWTFzZkm5Pa30QcsVcNfnumR_uPzofwgMeU4Q/edit</a>, tab <code>01_Media Intake</code>.</div>
+      <div class="field"><strong>Every before -&gt; after value:</strong> full per-cell before/after ledger is <code>C:\Users\tessf\code\codex-lab\tmp-product-video-library-cleanup-20260619\media_intake_cleanup_plan.json</code>, containing <code>614</code> exact cell changes. Column totals: <code>Notes 208</code>; <code>Issue Detail / When To Use 208</code>; <code>Product Name (Required) 186</code>; <code>Media Title / File Name 10</code>; <code>Media Type 2</code>.</div>
+      <div class="field"><strong>Gate values before -&gt; after:</strong> Needs Review rows <code>208 -&gt; 208</code>; Approved rows <code>1 -&gt; 1</code>; Ready For Webapp Import = Yes rows <code>1 -&gt; 1</code>; rows promoted to Approved <code>0 -&gt; 0</code>; rows newly set Ready For Webapp Import = Yes <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Key row before -&gt; after values:</strong> <code>M-0001</code> stayed <code>Approved / Ready Yes</code>; <code>M-0208</code> stayed review-gated; <code>M-0209</code> stayed <code>Needs Review / Ready No</code> with parent SKU and iSKU still blank pending approval/mapping.</div>
+      <div class="field"><strong>Final distributions:</strong> Media types <code>YouTube Video=179; YouTube Short=18; Reference Link=9; Douyin Video=1; Google Drive File=1; Google Sheet Reference=1</code>. Issue tags <code>General / Demo=153; Installation / Assembly=28; Display / error code=10; Wheel / tyre issue=5; Cannot fold=4; Unclear=4; Brake issue=3; Cannot charge=2</code>. Product confidence <code>Medium=202; Low=4; High=3</code>.</div>
+      <div class="field"><strong>Reason for change:</strong> Prepare the media intake list for safer human review and future webapp import without publishing unapproved or customer-unsafe items.</div>
+      <div class="field"><strong>Evidence:</strong> before CSV <code>C:\Users\tessf\code\codex-lab\tmp-product-video-library-cleanup-20260619\media_intake_live_before_cleanup.csv</code>; full cleanup ledger <code>C:\Users\tessf\code\codex-lab\tmp-product-video-library-cleanup-20260619\media_intake_cleanup_plan.json</code>; final live CSV <code>C:\Users\tessf\code\codex-lab\tmp-product-video-library-cleanup-20260619\media_intake_live_final_verify.csv</code>; final readback <code>C:\Users\tessf\code\codex-lab\tmp-product-video-library-cleanup-20260619\media_intake_final_readback.json</code>; closeout report <code>C:\Users\tessf\code\codex-lab\product-video-library-cleanup-closeout-2026-06-19.md</code>; error log <code>C:\Users\tessf\code\codex-lab\.agents\error-log.md</code>.</div>
+      <div class="field"><strong>Tooling correction:</strong> first TSV paste used CRLF row endings and misaligned/appended rows. Repaired with LF-only TSV, full range repaste, row deletion for stale rows, and final readback. Failed paste evidence retained at <code>C:\Users\tessf\code\codex-lab\tmp-product-video-library-cleanup-20260619\media_intake_live_after_cleanup.csv</code>.</div>
+      <div class="field"><strong>Result:</strong> completed and verified. Final live Sheet has <code>210</code> rows including header, <code>209</code> data rows, max <code>16</code> columns, no blank Media IDs, no duplicate Media IDs, and matches the cleaned candidate A:P exactly with <code>0</code> mismatches.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> all <code>208</code> Needs Review rows still require human approval before customer-safe publishing or webapp import; <code>M-0209</code> Xiaomi inner-tube video remains unapproved and has blank parent SKU/iSKU; real Drive folder ownership/links for CS storage accounts remain pending; C5 <code>M-0001</code> / R36 game-list external customer sharing still needs confirmation before sending outside logged-in accounts; Google Drive/Sheets connector remains on the wrong account for this Sheet.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-19" data-shops="SB Variation, Karlmobel, MasonGym" data-platform="SB Variation, SiteGiant, Shopee MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
