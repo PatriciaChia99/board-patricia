@@ -639,6 +639,29 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-19" data-shops="CS R/R, TikTok R/R, Parcel Claim Auto" data-platform="Shopee MY/SG + TikTok MY + Lazada MY + internal webapps" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">csrrcredited tiktokrraudit parcelclaim-auto closeout 2026-06-19</span>
+      <span class="entry-meta">2026-06-19 15:20-15:35 MYT &middot; 3 requested runner checks &middot; 1 success-with-watch &middot; 2 partial</span>
+      <span class="tag">csrrcredited</span>
+      <span class="tag">tiktokrraudit</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia asked to do all and make sure <code>csrrcredited</code>, <code>tiktokrraudit</code>, and <code>parcelclaim-auto</code> were completed. I invoked the Codex scheduled runner for all three, then read back their latest final messages, reports, board status, error-log status, and cleanup state.</p>
+      <div class="field"><strong>Every runner action before -&gt; after:</strong> requested runner invocations <code>0 -&gt; 3</code>: <code>csrrcredited</code> at 15:20, <code>tiktokrraudit</code> at 15:25, and <code>parcelclaim-auto</code> at 15:30. Customer messages <code>0 -&gt; 0</code>, stock writes <code>0 -&gt; 0</code>, marketplace changes <code>0 -&gt; 0</code> in this closeout check.</div>
+      <div class="field"><strong>CS R/R Credited result:</strong> success with watch note. Same-day run swept 20/20 shops, had 0 unverified/unmapped/login-blocked rows, wrote evidence remarks <code>0 -&gt; 32</code>, reconciled <code>32 -&gt; 32</code>, and made Codex status writes <code>0 -&gt; 0</code>. Board commit <code>ab29b0cfb480c0de7828784e1bb93b642df3fbe9</code>.</div>
+      <div class="field"><strong>TikTok R/R Audit result:</strong> partial, not complete. Existing same-day run was verified instead of duplicating the 6 audit remark writes. Board readback shows <code>0 NEW LOSS</code>, <code>0 NEW WIN</code>, audit remarks <code>0 -&gt; 6</code>, and crosscheck <code>39 confirmed + 1 reclassified / 40</code>. Board commit <code>36aefdc</code>.</div>
+      <div class="field"><strong>Parcelclaim-auto result:</strong> partial, not complete. Existing same-day live intake was verified instead of duplicate posting. Webapp creates <code>332 -&gt; 338</code>, remark patches <code>0 -&gt; 6</code>, new cases <code>C2185-C2190</code>, RM 1,234.70, readback <code>6/6</code>. Remote board contains the <code>parcelclaim-auto - 19/6 Codex run</code> entry.</div>
+      <div class="field"><strong>Shop / platform:</strong> Shopee MY/SG CS R/R credited workflow; TikTok MY R/R audit; TikTok/Lazada parcelclaim-auto; employee webapps; AdsPower profile 70 and profile 84 where needed.</div>
+      <div class="field"><strong>Reason:</strong> User requested an explicit completion check for the three lanes after the all-run closeout showed partial work.</div>
+      <div class="field"><strong>Reports/evidence:</strong> <code>C:\Users\tessf\Documents\csrrcredited-reports\csrrcredited-report-2026-06-19.md</code>; <code>C:\Users\tessf\Documents\tiktokrraudit-reports\tiktokrraudit-report-2026-06-19.md</code>; <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-19.md</code>; scheduled final logs under <code>C:\Users\tessf\Documents\codex-scheduled-logs</code>.</div>
+      <div class="field"><strong>Result:</strong> partial overall because only <code>csrrcredited</code> is success-with-watch. Profile 70 <code>k1b44nvg</code> remained open and no WebDriver/ChromeDriver helper was left running.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> TikTok R/R still has 6/11 core TT profiles unverified and 89 due Pending + 20 FD due carry-over rows. Parcelclaim-auto still has 11/16 profiles unverified/login-expired and 754 older FD candidates held by approval gate. CS R/R has report-only approval-gated items: 17 clawbacks, 11 resell-refund exclusions, 4 partial/short-pay holds, plus watch note <code>260606CK8RMQFJ</code> was closed by the webapp bot, not by Codex.</div>
+    </div>
+  </div>
     <div class="entry" data-date="2026-06-19" data-shops="TT KarlMobel, TT Prazi, TT DasNature, TT ValueSnap, Kmall profile 78" data-platform="Return Items webapp, Shopee Seller Centre, Kmall" data-result="partial">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
