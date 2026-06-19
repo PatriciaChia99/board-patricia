@@ -653,7 +653,8 @@ header.page::after{
       <div class="field"><strong>Deleted/folded records:</strong> removed redundant 19/6 closeout/recheck/RUN cards after folding their final facts into the current cards for <code>returnitems</code>, <code>chataudit</code>, <code>checksbvariation</code>, <code>parcelclaim-auto</code>, <code>ttparcelclaim</code>, and Product Video Library. Removed the wrong-date <code>2026-06-14</code> parcelclaim card created by the 19/6 run-date mistake. Folded late standalone Return Items, chataudit, and Product Video Library closeout/addendum cards into their consolidated workstream cards.</div>
       <div class="field"><strong>Status correction rule applied:</strong> cards are marked completed only when history showed the work was done. Remaining partials are kept only for real blockers: login-expired/profile coverage, approval-gated rows, or exact evidence still missing.</div>
       <div class="field"><strong>Evidence:</strong> backup <code>tmp-board-cleanup-20260619\board_patricia_index_before_cleanup_20260619.html</code>; after snapshot <code>tmp-board-cleanup-20260619\board_patricia_index_after_cleanup_20260619.html</code>; lint readback passed with balanced divs.</div>
-      <div class="field"><strong>Result:</strong> completed. Current board is lint-clean and the visible 19/6 board section no longer repeats the same workstream through standalone closeout/recheck cards.</div>
+            <div class="field"><strong>Late status correction:</strong> <code>checkfbsclaims</code> card status <code>Partial -&gt; Completed - report-only holds</code> because the operational sync is clean and only approval/report-only holds remain; <code>incomewalletcheck</code> top summary corrected from stale first-sweep login-expired wording to final readback <code>TT MY 14/14</code>, <code>Lazada 1/3 verified + 2 permission-gated</code>. Wallet card remains partial because Hiranai sheet mismatch, Lazada permissions, and Lazada wallet endpoint discovery are still real blockers.</div>
+<div class="field"><strong>Result:</strong> completed. Current board is lint-clean and the visible 19/6 board section no longer repeats the same workstream through standalone closeout/recheck cards.</div>
       <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> this cleanup did not rerun business workflows or change external shop data. It only corrected the board. The real outstanding operational items remain on their consolidated workstream cards.</div>
     </div>
   </div>
@@ -780,13 +781,13 @@ header.page::after{
       <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> all 208 Needs Review rows still require human approval before customer-safe publishing or webapp import; M-0209 remains unapproved; CS storage Drive ownership/links remain pending; C5 M-0001/R36 customer sharing still needs confirmation; Google Drive/Sheets connector remains wrong-account/blocked.</div>
     </div>
   </div>
-<div class="entry" data-date="2026-06-19" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center wallet" data-result="partial">
+<div class="entry" data-date="2026-06-19" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center wallet" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">checkfbsclaims FBS Claim sheet/webapp status sync 2026-06-19</span>
-      <span class="entry-meta">2026-06-19 MYT &amp; 528 webapp cases &amp; sheet plan 0 &amp; action plan 0 &amp; webapp gaps 0 &amp; partial report-only cleanup</span>
+      <span class="entry-meta">2026-06-19 MYT &amp; 528 webapp cases &amp; sheet plan 0 &amp; action plan 0 &amp; webapp gaps 0 &amp; completed sync; report-only approval holds</span>
       <span class="tag">checkfbsclaims</span>
-      <span class="tag result-partial">Partial</span>
+      <span class="tag result-ok">Completed - report-only holds</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Ran the Codex replacement for the FBS Claim Sheet/webapp status sync for MurahYa, KarlMobel, ValueSnap, and Luxbin. Used the locked Sheet/webapp mapping, header-aware duplicate Status handling, shop/order dedupe, webapp readback, Google Sheet readback, and Shopee MY Seller Center wallet evidence for recovered/credited closure support. No WhatsApp or customer messages were sent.</p>
@@ -803,7 +804,7 @@ header.page::after{
       <div class="field"><strong>Operational counters before -&gt; after:</strong> customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; webapp patches <code>0 -&gt; 424</code>; Google Sheet net current-case rows <code>0 -&gt; 11</code>; duplicate current-case rows <code>9 -&gt; 0</code>.</div>
       <div class="field"><strong>Reason for change:</strong> synchronize supported current FBS Claim Sheet statuses/remarks into the employee webapp, add current webapp-only cases to the right shop tabs after dedupe, derive safe Action values, and verify recovered/credited evidence from live wallet data without reopening Patricia-approved recovered closures.</div>
       <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\fbs-claim-reports\fbs-claim-status-2026-06-19.md</code>; raw evidence folder <code>C:\Users\tessf\Documents\fbs-claim-reports\raw-2026-06-19</code>; final counts <code>tmp-returnitems\fbs-sync-2026-06-19\final-counts.json</code>; duplicate/readback <code>tmp-returnitems\fbs-sync-2026-06-19\duplicate-and-append-readback.json</code>; wallet evidence <code>tmp-returnitems\fbs-wallet-verify-2026-06-19</code>.</div>
-      <div class="field"><strong>Result:</strong> partial/outstanding for report-only cleanup. Operational sync is clean: final sheet patch plan <code>0</code>, final Action patch plan <code>0</code>, webapp-only current cases not in Sheet <code>0</code>, duplicate current-case rows <code>0</code>, wallet targets verified <code>24/24</code>.</div>
+      <div class="field"><strong>Result:</strong> completed for operational sync; report-only approval holds remain. Operational sync is clean: final sheet patch plan <code>0</code>, final Action patch plan <code>0</code>, webapp-only current cases not in Sheet <code>0</code>, duplicate current-case rows <code>0</code>, wallet targets verified <code>24/24</code>.</div>
       <div class="field"><strong>Outstanding / Patricia may have missed:</strong> unsupported/free-text Sheet values <code>50</code> were reported and not guessed; Sheet rows with values not in webapp <code>15</code> remain report-only; suspect closures <code>46</code> were flagged/held for explicit approval/evidence. No active requested shop remains unmapped, unverified for the sync, or with a current webapp-only Sheet gap.</div>
     </div>
   </div>
@@ -835,7 +836,7 @@ header.page::after{
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">incomewalletcheck &mdash; AM schedule registration + PM manual run (NEW June sheet 16tZ1D...IK8c) (19/6)</span>
-      <span class="entry-meta">2026-06-19 MYT &middot; AM 10:21 scheduled 16:30 one-time task &middot; PM 15:41 Patricia asked to run NOW on NEW June sheet &middot; 16:30 task disabled to prevent double-run &middot; Shopee MY 27/27 clean + Ads 6/6 &middot; TT MY 10/14 (4 session expired) &middot; Lazada 0/3 (all session expired) &middot; 19/5 Luxbin RESOLVED + DasNature improved + Terrazen=88 KraftMan=104 mapped &middot; NEW anomaly TT Hiranai p56 Ship sheet 0 vs API RM 12,227.37</span>
+      <span class="entry-meta">2026-06-19 MYT &middot; ran early on NEW June sheet &middot; Shopee MY 27/27 clean + Ads 6/6 &middot; TT MY 14/14 verified after correction &middot; Lazada 1/3 verified + 2 permission-gated &middot; partial only for Hiranai Ship mismatch + Lazada permission/wallet endpoint</span>
       <span class="tag">incomewalletcheck</span>
       <span class="tag result-partial">Partial</span>
     </div>
