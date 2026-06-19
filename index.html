@@ -639,7 +639,49 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
-  <div class="entry" data-date="2026-06-19" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
+  <div class="entry" data-date="2026-06-19" data-shops="SB Variation, Karlmobel, MasonGym" data-platform="SB Variation, SiteGiant, Shopee MY" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation stock status review 2026-06-19</span>
+      <span class="entry-meta">2026-06-19 MYT &amp; status only &amp; accepted deduction 0 &amp; SPV recount pending</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-ok">Read-only</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Reviewed Patricia's follow-up question after the 2026-06-19 scheduled checksbvariation run and the later approved <code>SA-19572</code> stock execution. This was a status answer only.</p>
+      <div class="field"><strong>Every change before -&gt; after:</strong> no new external writes in this status check. Customer messages <code>0 -&gt; 0</code>; SiteGiant stock writes <code>0 -&gt; 0</code>; SiteGiant reserved-stock edits <code>0 -&gt; 0</code>; SB webapp patches <code>0 -&gt; 0</code>; seller portal/Jira/form/WhatsApp writes <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Current completed stock context:</strong> earlier approved execution remains completed: <code>WC-CVRED 2/2/0/0/0 -&gt; 0/0/0/0/0</code>, <code>GREER 3/3/0/0/0 -&gt; 0/0/0/0/0</code>, and <code>PNKER 5/5/0/0/0 -&gt; 5/4/1/0/0</code> under <code>SA-19572</code>.</div>
+      <div class="field"><strong>Accepted-change deduction review:</strong> today's scheduled report shows <code>Accepted-change/New Ship By deduction items: 0</code>. No accepted-change deduct-one action remains from today's run; already adjusted accepted-change rows must not be deducted again.</div>
+      <div class="field"><strong>OOS stock review:</strong> report-time OOS-positive and available-status mismatch rows remain approval-gated. They need live SiteGiant recheck, WH count/confirmation, and Patricia approval before any stock write. Do not clear Reserved unless specifically approved.</div>
+      <div class="field"><strong>Evidence:</strong> scheduled report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-scheduled-2026-06-19.md</code>; WH/update audit <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-wh-update-20260619\sbvariation-wh-update-2026-06-19.md</code>; stock execution evidence <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-wh-update-20260619\sitegiant-wc-greer-pnker-execute-20260619.json</code>.</div>
+      <div class="field"><strong>Result:</strong> answered that no accepted-change stock deduction is pending from today's run. OOS cleanup is needed only where WH confirms physical stock/count and Patricia approves the exact iSKU write.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> <code>SPV-200W-10MPC</code> remains the main named open WH recount item and was not adjusted. Other report-only stock flags should stay as WH-confirmation/approval items, not automatic deductions.</div>
+    </div>
+  </div>
+    <div class="entry" data-date="2026-06-19" data-shops="MurahYa, WilmerMobel" data-platform="Return Items webapp, SiteGiant" data-result="completed">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">returnitems shop correction after supplied-order patch 2026-06-19</span>
+      <span class="entry-meta">2026-06-19 12:27 MYT &middot; shop PATCH 3/3 &middot; verified 3/3 &middot; platform writes 0 &middot; stock writes 0</span>
+      <span class="tag">returnitems</span>
+      <span class="tag result-ok">Shop Corrected</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia asked to change the correct platform/shop after the SiteGiant supplied-order correction. Fresh readback showed the marketplace platform was already <code>ShopeeMY</code>; only the selected shop was wrong on three rows.</p>
+      <div class="field"><strong>Before -&gt; after values:</strong>
+        <ul>
+        <li><code>13682</code> / <code>MY2616653922400</code>: platform <code>ShopeeMY -&gt; ShopeeMY</code> (no platform write); shop <code>Hiranai -&gt; MurahYa</code>; orderId/items/iSKU/stockIds unchanged; evidence <code>Murahya / ShopeeMY</code>.</li>
+        <li><code>13718</code> / <code>SPXMY068932728316</code>: platform <code>ShopeeMY -&gt; ShopeeMY</code> (no platform write); shop <code>ValueSnap -&gt; WilmerMobel</code>; orderId/items/iSKU/stockIds unchanged; evidence <code>WilmerMobel / ShopeeMY</code>.</li>
+        <li><code>13673</code> / <code>SPXMY069065045606</code>: platform <code>ShopeeMY -&gt; ShopeeMY</code> (no platform write); shop <code>ValueSnap -&gt; WilmerMobel</code>; orderId/items/iSKU/stockIds unchanged; evidence <code>WilmerMobel / ShopeeMY</code>.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Evidence files:</strong> report <code>C:\Users\tessf\Documents\returnitems-reports\returnitems-lookup-2026-06-19.md</code>; before API <code>tmp-returnitems\returnitems_live_20260619_before_shop_platform_patch.json</code>; patch plan <code>tmp-returnitems\returnitems_20260619_shop_platform_patch_plan.json</code>; patch results <code>tmp-returnitems\returnitems_20260619_shop_platform_patch_results.json</code>; after API <code>tmp-returnitems\returnitems_live_20260619_after_shop_platform_patch.json</code>; verification <code>tmp-returnitems\returnitems_20260619_shop_platform_patch_verification.json</code>; current worklist summary <code>tmp-returnitems\returnitems_20260619_after_shop_platform_patch_actionable_summary.json</code>.</div>
+      <div class="field"><strong>Safety counters:</strong> shop PATCHes <code>0 -&gt; 3</code>; platform writes <code>0 -&gt; 0</code>; <code>orderId</code>, <code>items</code>, <code>iskus</code>, and <code>stockIds</code> unchanged; stock-in, SiteGiant stock, marketplace writes, and messages <code>0 -&gt; 0</code>; failed verification rows <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Today's run state after correction:</strong> live rows <code>13,391</code>; current missing/Error worklist <code>114</code>; actionable <code>72</code>; skipped/out-of-scope <code>42</code>; today-only actionable <code>69</code> split as Lazada <code>1</code>, ShopeeMY <code>51</code>, ShopeeSG <code>1</code>, TikTok <code>16</code>.</div>
+      <div class="field"><strong>Result:</strong> completed for the three shop corrections. The 10 supplied-order rows remain patched and verified. Other live missing/Error rows outside this correction are still not researched in this addendum.</div>
+    </div>
+  </div>
+<div class="entry" data-date="2026-06-19" data-shops="Kinata SG" data-platform="Shopee SG" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">checkkinataorder &mdash; scheduled run AM 19/6 (Kinata SG, profile 70)</span>
