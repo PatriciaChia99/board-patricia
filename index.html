@@ -639,6 +639,26 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-19" data-shops="TT Jager, TT KarlMobel, TT MurahYa, multiple blocked TT/Lazada profiles" data-platform="TikTok MY + TikTok SG + Lazada MY + internal webapp" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto closeout recheck 2026-06-19</span>
+      <span class="entry-meta">2026-06-19 MYT &middot; Codex scheduler replacement closeout &middot; no duplicate live intake launched</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag">TikTok + Lazada</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Codex handled the requested <code>parcelclaim-auto logger</code> run for 2026-06-19 by verifying the same-day live Codex run instead of launching a second unsafe intake. The earlier run already created <code>C2185-C2190</code>; this closeout rechecked the report, raw evidence, live webapp rows, profile 70 status, and board history.</p>
+      <div class="field"><strong>Every before -&gt; after value:</strong> requested new live intake <code>0 -&gt; 0</code>; webapp rows <code>338 -&gt; 338</code>; webapp creates <code>0 -&gt; 0</code>; webapp patches <code>0 -&gt; 0</code>; messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; live readback checks <code>0 -&gt; 6</code>; confirmed posted cases <code>0 -&gt; 6</code>; WhatsApp sends <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Verified rows:</strong><ul><li><code>C2185</code> TT Jager TikTok MY <code>584560295613596862</code>: Pending -&gt; Pending, RM 129.00, audit token present, result confirmed.</li><li><code>C2186</code> TT Jager TikTok MY <code>584514337146832667</code>: Pending -&gt; Pending, RM 129.00, audit token present, result confirmed.</li><li><code>C2187</code> TT Jager TikTok MY <code>584470224490694525</code>: Pending -&gt; Pending, RM 156.00, audit token present, result confirmed.</li><li><code>C2188</code> TT KarlMobel TikTok MY <code>584498668853298934</code>: Pending -&gt; Pending, RM 151.68, audit token present, result confirmed.</li><li><code>C2189</code> TT KarlMobel TikTok MY <code>584085690306364830</code>: Pending -&gt; Pending, RM 312.29, audit token present, result confirmed.</li><li><code>C2190</code> TT MurahYa TikTok MY <code>584541020992014092</code>: Pending -&gt; Pending, RM 356.73, audit token present, result confirmed.</li></ul></div>
+      <div class="field"><strong>Shop / platform:</strong> TikTok MY shops TT Jager, TT KarlMobel, TT MurahYa for verified posted rows; TikTok/Lazada scope still includes the 11 blocked profiles from the original report.</div>
+      <div class="field"><strong>Reason:</strong> User requested the scheduled job run under Codex and required no duplicate POSTs. Existing same-day report/raw evidence showed the scheduled run had already fired, so this closeout preserved dedupe safety and verified the prior live writes.</div>
+      <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-19.md</code>; raw JSON <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-06-19.json</code>; current live readback <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_codex_recheck_2026-06-19.json</code>; prior closeout readback <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_closeout_readback_2026-06-19.json</code>.</div>
+      <div class="field"><strong>Result:</strong> partial, not complete. Profile 70 <code>k1b44nvg</code> was attached through <code>/browser/active</code> on port <code>53549</code>, was not started or stopped, and no WebDriver/ChromeDriver helper was launched by this closeout.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> 11/16 profiles remain unverified/login-expired: TT DasNature 55, TT Hiranai 56, TT JagerArmor 60, TT JagerSafety 61, TT Lovento 63, TT Valuesnap 65, TT JagerHelmet 66, TT Kinata 67, Lazada MurahYa 81, Laz das.nature 82, and Lazada Lovento 83. Older FD approval gate remains: 754 dedupe-new FD candidates older than 30 days were not posted.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-19" data-shops="Murahya, TT Hiranai, Lovento, SB Variation, SiteGiant" data-platform="SB Variation, SiteGiant, Shopee MY, TikTok MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -1039,6 +1059,7 @@ header.page::after{
       <div class="field"><strong>CROSSCHECK:</strong> Total 40 / Confirmed 39 / Reclassified 1 / Retracted 0 / Discrepancy 0.</div>
       <div class="field"><strong>Reason:</strong> Daily scheduled TikTok R/R overlay after parcelclaim-auto and ttparcelclaim. No seller-platform write and no WhatsApp.</div>
       <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\tiktokrraudit-reports\tiktokrraudit-report-2026-06-19.md</code>; raw JSON <code>C:\Users\tessf\Documents\tiktokrraudit-reports\_codex_tiktokrraudit_2026-06-19.json</code>; upstream <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-19.md</code>.</div>
+      <div class="field"><strong>Closeout recheck:</strong> requested Codex closeout verified the same report/raw/upstream files and existing board entry; profile 70 k1b44nvg was active via /browser/active on debug port 53549 and attached read-only by CDP Browser.getVersion; no browser start/stop and no WebDriver/ChromeDriver process remained. Recheck-only operational counters: messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp patches 0 -&gt; 0.</div>
       <div class="field"><strong>Result:</strong> partial - private board entry pushed by Codex; see report for 5/11 TT coverage gap.</div>
     </div>
   </div>
