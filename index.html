@@ -639,6 +639,25 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-19" data-shops="Profile 70, Shopee chat profiles, TikTok seller profiles, Lazada profiles" data-platform="AdsPower + Shopee + TikTok + Lazada + SiteGiant + employee webapp" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">account login preflight for weekend schedule 20-21 Jun 2026</span>
+      <span class="entry-meta">2026-06-19 23:38-23:45 MYT &middot; 23/26 alive &middot; 3 Lazada login-expired &middot; ntfy sent</span>
+      <span class="tag">scheduled-codex</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia asked to check accounts now before the weekend scheduled sequence. Codex ran a read-only AdsPower/CDP login preflight across the weekend scheduled accounts plus the Shopee chat scheduled accounts. No business workflow was started.</p>
+      <div class="field"><strong>Before -&gt; after values:</strong> all-account proof was <code>not complete -&gt; 26 checks completed</code>; alive sessions <code>unknown -&gt; 23/26</code>; login-expired sessions <code>unknown -&gt; 3/26</code>; not-probed sessions <code>unknown -&gt; 0/26</code>; customer messages, stock writes, marketplace writes, and webapp writes stayed <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Alive checks:</strong> profile 70 employee webapp, profile 70 Shopee MY, profile 70 SiteGiant, profile 78 Shopee MY, profile 84 Shopee SG, Shopee chat cs1-cs5, TikTok profiles 54-67 including TT Kinata SG all loaded target pages without login markers.</div>
+      <div class="field"><strong>Login-expired blockers:</strong> Lazada MurahYa profile 81, Laz das.nature profile 82, and Lazada Lovento profile 83 redirected to Lazada seller login/password pages. These need operator relogin before Lazada portions of parcelclaim/returnitems/parcelsplit can be treated as ready.</div>
+      <div class="field"><strong>Shop / platform:</strong> Shopee MY/SG, TikTok MY/SG, Lazada MY, SiteGiant, and employee webapp. Reason: account readiness preflight for the 2026-06-20 and 2026-06-21 scheduled runs.</div>
+      <div class="field"><strong>Evidence:</strong> report <code>tmp-schedule-rerun-20260619\account-login-preflight-now-2026-06-19.md</code>; raw JSON <code>tmp-schedule-rerun-20260619\account-login-preflight-now-2026-06-19.json</code>; ntfy result saved in the raw JSON.</div>
+      <div class="field"><strong>Result:</strong> partial. The scheduler is ready, and most accounts are alive, but all-account readiness is not OK until Lazada profiles 81, 82, and 83 are relogged.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Lazada profile 81/82/83 relogin remains active. Profile 70 was left open; profiles opened by this probe were closed after read-only checks. No customer contact, stock work, marketplace write, or webapp patch was made.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-19" data-shops="All scheduled Patricia lanes" data-platform="Windows Task Scheduler + Codex scheduled runners" data-result="partial">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
