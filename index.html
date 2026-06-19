@@ -639,7 +639,29 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
-  <div class="entry" data-date="2026-06-19" data-shops="Patricia board" data-platform="board-patricia" data-result="ok">
+    <div class="entry" data-date="2026-06-19" data-shops="TT DasNature" data-platform="Return Items webapp, TikTok" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">returnitems 13753 TikTok order ID correction 2026-06-19</span>
+      <span class="entry-meta">2026-06-19 MYT &middot; supersedes prior 13753 no-match note &middot; patched order/items/iSKU 3/3 &middot; stock writes 0</span>
+      <span class="tag">returnitems</span>
+      <span class="tag result-ok">Corrected</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia challenged the prior unresolved result for <code>13753</code> and supplied TikTok order ID <code>584383356259370697</code>. Fresh TT DasNature lookup by order ID and reverse return ID confirmed the returned item. This correction supersedes the earlier board statement that <code>13753</code> was unresolved/no-match.</p>
+      <div class="field"><strong>Root cause of the miss:</strong> The prior TikTok DOM/click-through evidence already showed <code>Order ID : 584383356259370697</code>, but the matcher only treated the courier tracking number <code>684200118454823</code> as a successful hit. It should also have accepted the visible TikTok marketplace order ID and rerun by that ID before reporting unresolved.</div>
+      <div class="field"><strong>Every Return Items change before -&gt; after:</strong>
+        <ul>
+          <li><code>13753</code> / TikTok / TT DasNature / tracking <code>684200118454823</code> / reason Resell: <code>orderId</code> blank -&gt; <code>584383356259370697</code>; <code>items</code> blank -&gt; <code>Das Nature&trade; Hiking Climbing Stick Outdoor Light Weight Trekking Pole Anti-Shock Aluminium Hiking Poles Leg Adjustable</code>; <code>iskus</code> blank -&gt; <code>HCS-SILVER</code>; <code>stockIds</code> blank -&gt; blank.</li>
+        </ul>
+      </div>
+      <div class="field"><strong>Evidence:</strong> TT DasNature Manage Returns retry matched order <code>584383356259370697</code>, reverse return ID <code>4040868471134586569</code>, returned quantity <code>1</code>, seller SKU <code>HCS-SILVER</code>. Earlier missed DOM proof is in <code>tmp-returnitems\returnitems_20260619_dom_probe_tt_dasnature_tab800.json</code>.</div>
+      <div class="field"><strong>Safety counters:</strong> Return Items PATCHes <code>0 -&gt; 3</code> for row <code>13753</code>; <code>stockIds</code> writes <code>0 -&gt; 0</code>; stock-in <code>0 -&gt; 0</code>; SiteGiant stock writes <code>0 -&gt; 0</code>; marketplace writes/messages <code>0 -&gt; 0</code>. Patch verification <code>ok=true</code>.</div>
+      <div class="field"><strong>Evidence files:</strong> report <code>C:\Users\tessf\Documents\returnitems-reports\returnitems-lookup-2026-06-19.md</code>; fresh TikTok retry <code>tmp-returnitems\returnitems_20260619_tiktok_13753_orderid_retry_tt_dasnature.json</code>; before readback <code>tmp-returnitems\returnitems_live_20260619_before_13753_correction_patch.json</code>; after readback <code>tmp-returnitems\returnitems_live_20260619_after_13753_correction_patch.json</code>; patch verification <code>tmp-returnitems\returnitems_20260619_13753_correction_patch_result.json</code>.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> No active outstanding item remains for <code>13753</code> in this correction scope. Future TikTok Return Items checks must accept visible order IDs/reverse return IDs, not only courier tracking matches.</div>
+    </div>
+  </div>
+<div class="entry" data-date="2026-06-19" data-shops="Patricia board" data-platform="board-patricia" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">board cleanup - duplicate and partial correction 2026-06-19</span>
