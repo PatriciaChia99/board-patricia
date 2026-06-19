@@ -639,6 +639,33 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-19" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center wallet" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checkfbsclaims FBS Claim sheet/webapp status sync 2026-06-19</span>
+      <span class="entry-meta">2026-06-19 MYT &amp; 528 webapp cases &amp; sheet plan 0 &amp; action plan 0 &amp; webapp gaps 0 &amp; partial report-only cleanup</span>
+      <span class="tag">checkfbsclaims</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Ran the Codex replacement for the FBS Claim Sheet/webapp status sync for MurahYa, KarlMobel, ValueSnap, and Luxbin. Used the locked Sheet/webapp mapping, header-aware duplicate Status handling, shop/order dedupe, webapp readback, Google Sheet readback, and Shopee MY Seller Center wallet evidence for recovered/credited closure support. No WhatsApp or customer messages were sent.</p>
+      <div class="field"><strong>Scope:</strong> webapp cases <code>528</code>; final Sheet rows scanned MurahYa <code>148</code>, KarlMobel <code>168</code>, ValueSnap <code>208</code>, Luxbin <code>9</code>. Final Action distribution: pending_fbs <code>291</code>, in_progress <code>13</code>, pending_credited <code>69</code>, closed <code>132</code>, pending_seller <code>23</code>.</div>
+      <div class="field"><strong>Every change before -&gt; after:</strong><ul>
+        <li>Webapp supported Sheet sync for MurahYa, KarlMobel, ValueSnap, and Luxbin: supported QC/Claim Status/Remark PATCHes <code>0 -&gt; 302</code> (<code>291</code> initial plus <code>11</code> Luxbin remainder); failed PATCHes <code>0</code>; final sheet sync plan <code>0</code>.</li>
+        <li>Webapp Action derivation: Action PATCHes <code>0 -&gt; 122</code> (<code>119</code> main plus <code>3</code> Luxbin); final Action plan <code>0</code>. New blank-current rows were set to <code>pending_fbs</code>; closures were kept only where accepted/recovery/wallet evidence was safe.</li>
+        <li>Google Sheet current-case append: webapp-only current cases <code>20 -&gt; 0</code> after dedupe/readback; kept net new rows <code>0 -&gt; 11</code>: KarlMobel rows <code>166-169</code> and ValueSnap rows <code>203-209</code>.</li>
+        <li>KarlMobel appended orders: <code>2606047K2WD62W</code>, <code>260607FBJN0A4U</code>, <code>2606154DMPDUEE</code>, <code>2606155YV6R5F2</code>.</li>
+        <li>ValueSnap appended orders: <code>260530QGP13AQA</code>, <code>260606CUERBXGF</code>, <code>2606131JGYPD8P</code>, <code>26061443VBYAT9</code>, <code>2606155U2MDX27</code>, <code>2606156BE4MMJS</code>, <code>2606168XQP7D4D</code>.</li>
+        <li>Luxbin duplicate correction: newly appended duplicate rows <code>11-19</code> were deleted after canonical shop/order duplicate readback showed they duplicated existing Luxbin rows <code>2-10</code>; duplicate count <code>9 -&gt; 0</code>; final Luxbin row count back to <code>10</code> including header.</li>
+        <li>Shopee MY Seller Center wallet verification: recovery/credited targets <code>24 -&gt; 24</code> verified; verdicts <code>21</code> wallet-confirmed and <code>3</code> wallet-net-confirmed-with-deduction; positive mismatches <code>0</code>, no-wallet-match <code>0</code>, errors <code>0</code>.</li>
+      </ul></div>
+      <div class="field"><strong>Operational counters before -&gt; after:</strong> customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; webapp patches <code>0 -&gt; 424</code>; Google Sheet net current-case rows <code>0 -&gt; 11</code>; duplicate current-case rows <code>9 -&gt; 0</code>.</div>
+      <div class="field"><strong>Reason for change:</strong> synchronize supported current FBS Claim Sheet statuses/remarks into the employee webapp, add current webapp-only cases to the right shop tabs after dedupe, derive safe Action values, and verify recovered/credited evidence from live wallet data without reopening Patricia-approved recovered closures.</div>
+      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\fbs-claim-reports\fbs-claim-status-2026-06-19.md</code>; raw evidence folder <code>C:\Users\tessf\Documents\fbs-claim-reports\raw-2026-06-19</code>; final counts <code>tmp-returnitems\fbs-sync-2026-06-19\final-counts.json</code>; duplicate/readback <code>tmp-returnitems\fbs-sync-2026-06-19\duplicate-and-append-readback.json</code>; wallet evidence <code>tmp-returnitems\fbs-wallet-verify-2026-06-19</code>.</div>
+      <div class="field"><strong>Result:</strong> partial/outstanding for report-only cleanup. Operational sync is clean: final sheet patch plan <code>0</code>, final Action patch plan <code>0</code>, webapp-only current cases not in Sheet <code>0</code>, duplicate current-case rows <code>0</code>, wallet targets verified <code>24/24</code>.</div>
+      <div class="field"><strong>Outstanding / Patricia may have missed:</strong> unsupported/free-text Sheet values <code>50</code> were reported and not guessed; Sheet rows with values not in webapp <code>15</code> remain report-only; suspect closures <code>46</code> were flagged/held for explicit approval/evidence. No active requested shop remains unmapped, unverified for the sync, or with a current webapp-only Sheet gap.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-19" data-shops="Customer Service Product Video Library" data-platform="Google Sheets / AdsPower Profile 50" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
