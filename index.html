@@ -639,6 +639,29 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-19" data-shops="TT MurahYa" data-platform="TikTok MY + internal parcel-claim webapp + Patricia board WH reminder page" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">ttparcelclaim closeout recheck addendum 2026-06-19</span>
+      <span class="entry-meta">2026-06-19 MYT &middot; Rule 12b PATCH 1 &middot; orphan_2b 1-&gt;0 &middot; partial</span>
+      <span class="tag">ttparcelclaim</span>
+      <span class="tag">ttparcelclaimcheck</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Codex performed the requested same-day closeout recheck for the 2026-06-19 <code>ttparcelclaim daily follow-up</code> without executing Claude or the legacy launcher. The recheck used active AdsPower profile 70 through <code>/browser/active</code>, verified current webapp state before writing, applied one safe terminal-state orphan cleanup, refreshed the expected reports, and left profile 70 open.</p>
+      <div class="field"><strong>Date / task:</strong> 2026-06-19 MYT. Task: <code>ttparcelclaim daily follow-up</code> Codex closeout recheck.</div>
+      <div class="field"><strong>Every webapp PATCH before -&gt; after:</strong> C2003 / order <code>584346361769395638</code> / TT MurahYa / RM 210.42: action <code>WH Evidence -&gt; Closed</code>; refund_state <code>Credited -&gt; Credited</code>; followup_dt <code>2026-06-12 -&gt; 2026-06-12</code>; return_status <code>Delivery Done -&gt; Delivery Done</code>. Reason: Rule 12b terminal-state orphan sweep during Codex closeout recheck. Evidence: fresh live API showed <code>refund_state=Credited</code> with <code>action_needed=WH Evidence</code> after later same-day automation. Result: HTTP 200 and post-30s readback verified <code>action=Closed</code> with <code>orphan_2b=0</code>.</div>
+      <div class="field"><strong>Operational counters before -&gt; after:</strong> WhatsApp/customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; webapp POST/create operations <code>0 -&gt; 0</code>; webapp PATCHes <code>0 -&gt; 1</code>; profile 70 browser starts/stops <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Health before -&gt; after:</strong> Rule 12b terminal orphan <code>1 -&gt; 0</code>; Rule 12c reverse orphan <code>0 -&gt; 0</code>; blank action_needed <code>0 -&gt; 0</code>; blank followup_dt <code>6 -&gt; 6</code>; blank return_status <code>6 -&gt; 6</code>; normalized hard action mismatch <code>0 -&gt; 0</code>. Pending snapshot moved <code>91 / RM 25,228.04 -&gt; 90 / RM 25,144.75</code> during report generation from concurrent same-day drift; the Codex write in this addendum was only C2003 action close.</div>
+      <div class="field"><strong>WH reminder before -&gt; after:</strong> stable <code>wh-reminder.html</code> and dated report refreshed from the earlier same-day handoff to the current live snapshot. WH Action + WH Evidence rows <code>32 -&gt; 28</code>; C2003 / <code>584346361769395638</code> removed from active WH Evidence and listed under cleaned-up rows. WhatsApp send stayed <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Shop / platform:</strong> TT MurahYa on TikTok MY; internal parcel-claim webapp; Patricia board WH reminder page.</div>
+      <div class="field"><strong>Reason:</strong> Same-day automation after the scheduled run introduced a terminal-state orphan. The closeout rule requires verifying the current webapp state and clearing safe terminal orphans before final WH reminder handoff.</div>
+      <div class="field"><strong>Evidence:</strong> coverage report <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-19.md</code>; WH reminder report <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-19.md</code>; raw closeout evidence <code>C:\Users\tessf\Documents\ttparcelclaim-reports\_codex_ttparcelclaim_closeout_recheck_2026-06-19.json</code>; stable board reminder page <code>wh-reminder.html</code>.</div>
+      <div class="field"><strong>Result:</strong> partial, not complete. Reports and WH reminder were refreshed; the board was updated by this addendum; no WhatsApp, stock, marketplace, or duplicate POST/create operation was performed.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> 11/16 seller profiles remain login-expired from the scheduled coverage report. Six later same-day parcelclaim-auto rows remain blank for next-pass TT verification: <code>C2185-C2190</code> / orders <code>584560295613596862</code>, <code>584514337146832667</code>, <code>584470224490694525</code>, <code>584498668853298934</code>, <code>584085690306364830</code>, and <code>584541020992014092</code>. Current WH reminder remains CS handoff only; Codex did not send WhatsApp.</div>
+    </div>
+  </div>
     <div class="entry" data-date="2026-06-19" data-shops="TT KarlMobel, TT Hiranai" data-platform="Return Items webapp, SiteGiant, TikTok" data-result="done">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
