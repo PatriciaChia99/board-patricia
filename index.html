@@ -639,6 +639,25 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-19" data-shops="All scheduled Patricia lanes" data-platform="Windows Task Scheduler + Codex scheduled runners" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">weekend scheduled order updated for 20-21 Jun 2026</span>
+      <span class="entry-meta">2026-06-19 22:40-23:15 MYT &middot; parcelclaim-auto first &middot; SB contact-only second &middot; Return Items third</span>
+      <span class="tag">scheduled-codex</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia asked to rearrange the weekend sequence so <code>parcelclaim-auto</code> runs first, <code>checksbvariation</code> runs as contact-only next, and <code>returnitems-lookup</code> runs after that. Codex changed the durable scheduler installer, reinstalled/read back Task Scheduler, and updated the relevant prompts. No business workflow was started.</p>
+      <div class="field"><strong>Before -&gt; after values:</strong> <code>ParcelClaimAuto_945AM</code> stayed <code>09:45 -&gt; 09:45</code> Ready; <code>SBVariationAudit_930AM</code> changed <code>09:30 + PT10M random delay -&gt; 10:10 exact</code> Ready; <code>Codex_ReturnItems_Weekend_1030</code> changed <code>Sat/Sun 10:30 -&gt; Sat/Sun 10:50</code> Ready with raw <code>DaysOfWeek=65</code>; Return Items overlap guard <code>absent -&gt; present</code>; customer messages, WhatsApp/off-platform sends, stock writes, marketplace writes, and webapp writes stayed <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>SB Variation weekend rule:</strong> yes, weekend SB Variation is contact-only/report-only for stock matters. Allowed contact lane is Shopee SG/TikTok/Lazada approved templates only after live order/thread/no-prior-contact verification. Shopee MY remains bot/report lane. SiteGiant stock adjustment, item-status change, reserved edit, SB stockSetOos/stock-column toggle, Jira/forms, seller-portal write, accepted-change/New Ship By deduction, and WhatsApp/off-platform contact are held unless Patricia explicitly re-approves the exact write in the current conversation.</div>
+      <div class="field"><strong>Files changed:</strong> <code>.agents\scheduled-codex\install-codex-scheduled-tasks.ps1</code>; <code>.agents\scheduled-codex\run-codex-scheduled.ps1</code>; <code>.agents\scheduled-codex\prompts\checksbvariation-scheduled.md</code>; <code>.agents\scheduled-codex\prompts\returnitems-lookup-scheduled.md</code>; <code>.agents\error-log.md</code>; <code>.agents\skills\returnitems-lookup\references\error-log-and-todo.md</code>.</div>
+      <div class="field"><strong>Verification:</strong> installer applied; exact Task Scheduler readback confirmed the new times/actions; self-tests passed for <code>parcelclaim-auto</code>, standalone <code>checksbvariation</code>, <code>returnitems-lookup</code>, and installer; AdsPower API reachable; profile 70 <code>k1b44nvg</code> active on debug port <code>58751</code>.</div>
+      <div class="field"><strong>Evidence:</strong> summary <code>tmp-schedule-rerun-20260619\scheduled-task-reorder-2026-06-19.md</code>; raw JSON <code>tmp-schedule-rerun-20260619\scheduled-task-reorder-2026-06-19.json</code>; self-test logs under <code>C:\Users\tessf\Documents\codex-scheduled-logs</code> and <code>C:\Users\tessf\Documents\sbvariation-reports\scheduled-logs</code>.</div>
+      <div class="field"><strong>Result:</strong> scheduler reorder OK; future Return Items now waits if parcelclaim-auto or the SB scheduled runner is still active. Overall closeout marked partial only because the broad marketplace account-login probe timed out before complete proof.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> full all-account marketplace-login certification is not complete. The read-only AdsPower seller-profile probe timed out after 7 minutes and saved no complete evidence file. Profile 70 is active; other profiles being closed/inactive in AdsPower is not proof of logged-out state. Separate old/live processes for <code>csrrcredited</code> and <code>sg-gap-monitor</code> were present during this task and were not created by the reorder.</div>
+    </div>
+  </div>
 <!-- SG-GAP-MONITOR-2026-06-19 -->
 <div class="entry" data-date="2026-06-19" data-shops="Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
   <div class="entry-summary">
@@ -927,7 +946,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok - wins 2, clawbacks 23, unverified 1, reconciliation 2/29.</div>
     </div>
   </div>
-  </div>
 <div class="entry" data-date="2026-06-19" data-shops="TT Jager, TT KarlMobel, TT MurahYa, TT Hiranai, TT ValueSnap, TT JagerHelmet, TT Kinata" data-platform="TikTok MY + TikTok SG + Lazada MY + internal webapp" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -966,7 +984,6 @@ header.page::after{
       <div class="field"><strong>Result:</strong> completed. Blockers/outstanding: None.</div>
     </div>
   </div>
-
 
 <div class="entry" data-date="2026-06-19" data-shops="Laz das.nature, Lazada Lovento, Lazada MurahYa, TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerHelmet, TT JagerSafety, TT KarlMobel, TT Kinata, TT Lovento, TT MurahYa, TT Valuesnap" data-platform="TikTok/Lazada + internal webapp" data-result="warn">
   <div class="entry-summary">
