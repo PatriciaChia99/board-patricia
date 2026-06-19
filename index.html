@@ -639,11 +639,52 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-19" data-shops="multiple" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto - 19/6 Codex run: 6 new / 6 posted / 0 DOM-only-catches / 11 errors</span>
+      <span class="entry-meta">2026-06-19 MYT &middot; Codex replacement for Claude launcher &middot; report C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-19.md</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-partial">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Codex ran the 09:45 parcelclaim-auto workflow for 19/6 without invoking Claude or the legacy batch. Scanned TikTok R/R, TikTok failed delivery, mandatory Phase 2.5 DOM cross-verify, and Lazada returns. Dedupe used fresh webapp order_id coverage across all refund states before every POST.</p>
+      <div class="field"><strong>Before -&gt; after operational counters:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp creates 332 -&gt; 338; webapp remark patches 0 -&gt; 6.</div>
+      <div class="field"><strong>POST changes:</strong><ul><li>C2185 TT Jager / TikTok MY failed_delivery 584560295613596862 - RM 129.00 - before not in webapp -&gt; after Pending with audit remark; reason daily parcelclaim-auto intake; result crosscheck CONFIRMED</li>
+<li>C2186 TT Jager / TikTok MY failed_delivery 584514337146832667 - RM 129.00 - before not in webapp -&gt; after Pending with audit remark; reason daily parcelclaim-auto intake; result crosscheck CONFIRMED</li>
+<li>C2187 TT Jager / TikTok MY failed_delivery 584470224490694525 - RM 156.00 - before not in webapp -&gt; after Pending with audit remark; reason daily parcelclaim-auto intake; result crosscheck CONFIRMED</li>
+<li>C2188 TT KarlMobel / TikTok MY rr 584498668853298934 - RM 151.68 - before not in webapp -&gt; after Pending with audit remark; reason daily parcelclaim-auto intake; result crosscheck CONFIRMED</li>
+<li>C2189 TT KarlMobel / TikTok MY failed_delivery 584085690306364830 - RM 312.29 - before not in webapp -&gt; after Pending with audit remark; reason daily parcelclaim-auto intake; result crosscheck CONFIRMED</li>
+<li>C2190 TT MurahYa / TikTok MY failed_delivery 584541020992014092 - RM 356.73 - before not in webapp -&gt; after Pending with audit remark; reason daily parcelclaim-auto intake; result crosscheck CONFIRMED</li></ul></div>
+      <div class="field"><strong>Evidence table:</strong><pre>54 TT Adelmar: RR 88 cards / 1 in-window / 0 posted; FD 33 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
+55 TT DasNature: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+56 TT Hiranai: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+58 TT HiranaiMY: RR 154 cards / 1 in-window / 0 posted; FD 45 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
+59 TT Jager: RR 103 cards / 2 in-window / 0 posted; FD 70 API + 1 DOM pages / Returning 0 / 3 posted / DOM-only 0
+60 TT JagerArmor: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+61 TT JagerSafety: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+62 TT KarlMobel: RR 50 cards / 1 in-window / 1 posted; FD 296 API + 1 DOM pages / Returning 0 / 1 posted / DOM-only 0
+63 TT Lovento: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+64 TT MurahYa: RR 0 cards / 0 in-window / 0 posted; FD 435 API + 1 DOM pages / Returning 0 / 1 posted / DOM-only 0
+65 TT Valuesnap: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+66 TT JagerHelmet: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+67 TT Kinata: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+81 Lazada MurahYa: Lazada 0 rows / 0 in-window / 0 posted
+82 Laz das.nature: Lazada 0 rows / 0 in-window / 0 posted
+83 Lazada Lovento: Lazada 0 rows / 0 in-window / 0 posted</pre></div>
+      <div class="field"><strong>DOM cross-verify:</strong> 0 DOM-only catches. None.</div>
+      <div class="field"><strong>Crosscheck:</strong> 6/6 CONFIRMED; </div>
+      <div class="field"><strong>Reason:</strong> Daily scheduled intake of new TikTok/Lazada parcel-claim cases so CS does not miss R/R or failed-delivery cases. Historical FD rows older than 30 days remain deferred pending user approval.</div>
+      <div class="field"><strong>Evidence:</strong> Report saved at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-19.md</code>; raw JSON at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-06-19.json</code>.</div>
+      <div class="field"><strong>Outstanding:</strong> partial because 11/16 profiles were unverified or login-expired: TT DasNature 55, TT Hiranai 56, TT JagerArmor 60, TT JagerSafety 61, TT Lovento 63, TT Valuesnap 65, TT JagerHelmet 66, TT Kinata 67, Lazada MurahYa 81, Laz das.nature 82, and Lazada Lovento 83. No WhatsApp sent.</div>
+      <div class="field"><strong>Result:</strong> partial - 6 posted, 11 errors, board logged by Codex.</div>
+    </div>
+  </div>
 <div class="entry" data-date="2026-06-19" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">chataudit - scheduled Codex daily chat audit 2026-06-19</span>
-    <span class="entry-meta">2026-06-19 10:13 MYT &middot; window 17/6 17:45 - 18/6 17:45 &middot; 264 deep-reviewed &middot; 0 confirmed &middot; 1 carry-over open</span>
+    <span class="entry-meta">2026-06-19 10:15 MYT &middot; window 17/6 17:45 - 18/6 17:45 &middot; 264 deep-reviewed &middot; 0 confirmed &middot; 1 carry-over open</span>
     <span class="tag">chataudit</span>
     <span class="tag">Shopee chat</span>
     <span class="tag result-warn">Partial</span>
@@ -652,7 +693,7 @@ header.page::after{
     <div class="field"><strong>Date:</strong> 2026-06-19 MYT.</div>
     <div class="field"><strong>Task:</strong> Daily chat audit - 5 cservice accounts scheduled Codex replacement.</div>
     <div class="field"><strong>Before -&gt; after operational counters:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp patches 0 -&gt; 0.</div>
-    <div class="field"><strong>Coverage before -&gt; after:</strong> expected profiles 5 -&gt; 5; report absent for 2026-06-19 -&gt; created; raw evidence absent for 2026-06-19 -&gt; created; target evidence absent for 2026-06-19 -&gt; created; candidate crosscheck absent for 2026-06-19 -&gt; created.</div>
+    <div class="field"><strong>Coverage before -&gt; after:</strong> expected verified profiles 5 -&gt; 3; profile rows recorded 0 -&gt; 5; report absent for 2026-06-19 -&gt; created; raw evidence absent for 2026-06-19 -&gt; created; target evidence absent for 2026-06-19 -&gt; created; candidate crosscheck absent for 2026-06-19 -&gt; created.</div>
     <div class="field"><strong>Per-account evidence:</strong><br>cs1 k1artcxf: loaded 150, opened 132, deep-reviewed 90, raw 5, confirmed 0, human-review 0, status OK_TARGET_VERIFIED<br>cs2 k1arvrqs: loaded 0, opened 0, deep-reviewed 0, raw 0, confirmed 0, human-review 0, status ERROR<br>cs3 k1arw2cs: loaded 304, opened 180, deep-reviewed 161, raw 8, confirmed 0, human-review 0, status OK<br>cs4 k1arw4x4: loaded 0, opened 0, deep-reviewed 0, raw 0, confirmed 0, human-review 0, status ERROR<br>cs5 k1arw890: loaded 50, opened 16, deep-reviewed 13, raw 1, confirmed 0, human-review 0, status OK</div>
     <div class="field"><strong>Carry-over evidence:</strong><br>cs1 m2m2605: RESOLVED_OR_STALE - Historical Sofia follow-up carry-over; no current open issue surfaced by targeted search.<br>cs1 zarinamohdkassim: MONITOR - Historical monitor item only; no new date-window miss counted.<br>cs1 thecreation2020: MONITOR - Historical monitor item only; no new date-window miss counted.<br>cs1 nglimsim1993: FOUND - Found in targeted search.<br>cs2 jue_78: STILL_OPEN - Still appears to end on promise/follow-up language; refund or replacement decision still needs CS owner.<br>cs3 cjplusstore: MONITOR - Missing-screw recovery has follow-up language; confirm actual shipment/tracking if still operationally open.<br>cs3 madperak: FOUND - Found in targeted search.<br>cs3 isabeltan791: FOUND - Found in targeted search.<br>cs4 ikmal_sumadi: NOT_FOUND - CDP timeout Runtime.evaluate<br>cs4 wee0012: NOT_FOUND - CDP timeout Runtime.evaluate<br>cs4 4p5nijv3rn: NOT_FOUND - CDP timeout Runtime.evaluate</div>
     <div class="field"><strong>Shop:</strong> ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG.</div>
@@ -662,8 +703,7 @@ header.page::after{
     <div class="field"><strong>Result:</strong> PARTIAL - 264 deep-reviewed, 0 net-new confirmed misses, 0 manual-review candidates, 1 open carry-over item(s). No operational writes.</div>
   </div>
 </div>
-
-  <div class="entry" data-date="2026-06-19" data-shops="SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY" data-platform="SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY" data-result="partial">
+<div class="entry" data-date="2026-06-19" data-shops="SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY" data-platform="SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY" data-result="partial">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">checksbvariation scheduled daily run 2026-06-19</span>
