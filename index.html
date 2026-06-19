@@ -643,13 +643,13 @@ header.page::after{
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">board cleanup - duplicate and partial correction 2026-06-19</span>
-      <span class="entry-meta">2026-06-19 MYT &middot; conflict markers removed &middot; 25 redundant cards folded/deleted &middot; one current card per workstream</span>
+      <span class="entry-meta">2026-06-19 MYT &middot; conflict markers removed &middot; 25 redundant/stale cards folded/deleted &middot; 14 current visible 19/6 cards</span>
       <span class="tag">board cleanup</span>
       <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Patricia reported the board had duplicate, noisy, and stale partial entries. I checked current board lint, recent board history, report/error-log evidence, and 19/6 workstream cards before cleanup.</p>
-      <div class="field"><strong>Before -&gt; after values:</strong> conflict markers <code>3 -&gt; 0</code>; malformed/orphan entries <code>1 -&gt; 0</code>; visible 19/6 cards <code>36 -&gt; 13</code>; board-lint issues <code>5 -&gt; 0</code>; same-date/same-skill duplicate lint failures <code>1 -&gt; 0</code>.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> conflict markers <code>3 -&gt; 0</code>; malformed/orphan entries <code>1 -&gt; 0</code>; redundant/stale 19/6 standalone cards <code>25 -&gt; 0</code>; current visible 19/6 cards <code>14</code>; board-lint issues <code>5 -&gt; 0</code>; same-date/same-skill duplicate lint failures <code>1 -&gt; 0</code>.</div>
       <div class="field"><strong>Deleted/folded records:</strong> removed redundant 19/6 closeout/recheck/RUN cards after folding their final facts into the current cards for <code>returnitems</code>, <code>chataudit</code>, <code>checksbvariation</code>, <code>parcelclaim-auto</code>, <code>ttparcelclaim</code>, and Product Video Library. Removed the wrong-date <code>2026-06-14</code> parcelclaim card created by the 19/6 run-date mistake. Folded late standalone Return Items, chataudit, and Product Video Library closeout/addendum cards into their consolidated workstream cards.</div>
       <div class="field"><strong>Status correction rule applied:</strong> cards are marked completed only when history showed the work was done. Remaining partials are kept only for real blockers: login-expired/profile coverage, approval-gated rows, or exact evidence still missing.</div>
       <div class="field"><strong>Evidence:</strong> backup <code>tmp-board-cleanup-20260619\board_patricia_index_before_cleanup_20260619.html</code>; after snapshot <code>tmp-board-cleanup-20260619\board_patricia_index_after_cleanup_20260619.html</code>; lint readback passed with balanced divs.</div>
@@ -658,6 +658,26 @@ header.page::after{
     </div>
   </div>
 
+  <div class="entry" data-date="2026-06-19" data-shops="All scheduled Patricia lanes" data-platform="Windows Task Scheduler + Codex scheduled runners" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">scheduled task readback for 20-21 Jun 2026</span>
+      <span class="entry-meta">2026-06-19 22:00-22:20 MYT &middot; Saturday/Sunday scheduler verified &middot; no business workflow started</span>
+      <span class="tag">scheduled-codex</span>
+      <span class="tag result-ok">OK</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia asked Codex to make sure tomorrow and Sunday scheduled tasks are set correctly and to list the scheduled tasks. I refreshed the Codex scheduled-task registrations, performed elevated Task Scheduler readback, verified the separate SB Variation scheduler, and ran self-tests only. No live business run was started.</p>
+      <div class="field"><strong>Before -&gt; after values:</strong> generic Codex scheduled registrations refreshed <code>10 -&gt; 10 Ready</code>; obsolete Claude tasks stayed <code>Disabled -&gt; Disabled</code>; SB Variation standalone scheduler readback <code>unchecked -&gt; Ready</code>; runner self-tests <code>0 -&gt; 11 OK</code>; customer messages, WhatsApp/off-platform sends, stock writes, marketplace writes, and webapp writes stayed <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Tomorrow schedule, 2026-06-20 MYT:</strong> 08:55 <code>ttparcelclaim</code>; 09:00 <code>sg-gap-monitor</code>; 09:10 <code>chataudit</code>; 09:30 + random delay <code>checksbvariation</code>; 09:45 <code>parcelclaim-auto</code>; 10:00 <code>parcelsplit-contact-crosscheck</code>; 10:30 <code>csrrcredited</code>; 10:30 <code>shopee-shipping-claim</code> day-15 guarded skip; 10:30 <code>returnitems-lookup</code>; 11:30 <code>tiktokrraudit</code>.</div>
+      <div class="field"><strong>Sunday confirmation:</strong> <code>Codex_ReturnItems_Weekend_1030</code> is Ready with weekly Saturday/Sunday trigger raw <code>DaysOfWeek=65</code>, so after the Saturday 10:30 run it remains due Sunday 2026-06-21 10:30 MYT. Daily lanes, including SB Variation, also remain due Sunday at their normal times. FBS Claim is not due on the weekend by design; next is Tuesday 2026-06-23 12:15.</div>
+      <div class="field"><strong>Shop / platform:</strong> all Patricia scheduled lanes across Shopee MY/SG, TikTok MY, Lazada MY, SiteGiant, Google Sheet FBS Claim, employee webapps, AdsPower, and Windows Task Scheduler.</div>
+      <div class="field"><strong>Reason:</strong> user requested schedule assurance before the weekend, especially Saturday/Sunday scheduled tasks.</div>
+      <div class="field"><strong>Evidence:</strong> local summary <code>tmp-schedule-rerun-20260619\scheduled-task-readback-2026-06-19.md</code>; raw JSON <code>tmp-schedule-rerun-20260619\scheduled-task-readback-2026-06-19.json</code>; self-test logs under <code>C:\Users\tessf\Documents\codex-scheduled-logs</code>; SB Variation standalone self-test log <code>C:\Users\tessf\Documents\sbvariation-reports\scheduled-logs\checksbvariation-scheduled-20260619-220948.log</code>.</div>
+      <div class="field"><strong>Result:</strong> OK for scheduler registration/readback. No active scheduling-registration gap found.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> schedule registration is healthy, but future business runs can still become partial if AdsPower/login/Codex account/site availability fails. Historical <code>sg-gap-monitor</code> LastTaskResult remains nonzero from an earlier run, but the task is Ready and self-test passed for the next run.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-19" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG + AdsPower + Codex chataudit" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
