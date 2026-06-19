@@ -639,6 +639,29 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-20" data-shops="All scheduled Patricia lanes, Lazada MY, TikTok MY/SG, cs5 Shopee SG, TT Parcel Claim" data-platform="Patricia board + AdsPower + Lazada/TikTok/Shopee evidence + internal webapp" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">stale partial closeout correction after login and ttparcelclaim fix</span>
+      <span class="entry-meta">2026-06-20 01:05 MYT &middot; stale visible partials corrected &middot; current ttparcelclaim blocker rs_null 8-&gt;0</span>
+      <span class="tag">board cleanup</span>
+      <span class="tag">scheduled-codex</span>
+      <span class="tag">ttparcelclaim</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia challenged the board still showing Partial after the login retry and ttparcelclaim closeout. Codex corrected stale current-scope board cards so they reflect the later evidence instead of the earlier failed/partial checkpoints.</p>
+      <div class="field"><strong>Date / task:</strong> 2026-06-20 MYT. Task: board closeout correction for the 19/6-20/6 scheduled/login/ttparcelclaim scope.</div>
+      <div class="field"><strong>Every board status change before -&gt; after:</strong> Lazada saved-password relogin fix <code>Partial -&gt; Completed</code>; account login preflight <code>Partial -&gt; Completed</code>; weekend scheduled order update <code>Partial -&gt; Completed</code>. The current ttparcelclaim completion card was already <code>Completed</code> and remains unchanged.</div>
+      <div class="field"><strong>Business evidence before -&gt; after:</strong> Lazada profiles 81/82/83 <code>LOGIN_EXPIRED -&gt; ALIVE</code>; cs5/TikTok retry blockers <code>NOT_PROBED -&gt; ALIVE</code>; reliable marketplace coverage <code>partial -&gt; 16/16 alive</code>; ttparcelclaim health <code>rs_null 8 -&gt; 0</code>, <code>fu_null 0 -&gt; 0</code>, <code>an_null 0 -&gt; 0</code>, <code>orphan_2b 0 -&gt; 0</code>, <code>orphan_2c 0 -&gt; 0</code>, <code>hard_action_mismatch 0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Shop / platform:</strong> Lazada MurahYa, Laz das.nature, Lazada Lovento, TT seller profiles including Kinata, cs5 Shopee SG chat, TT Parcel Claim webapp. Platform: AdsPower, marketplace seller centers, internal webapp, Patricia board.</div>
+      <div class="field"><strong>Reason:</strong> remove stale Partial labels from the current requested scope after the actual blockers were cleared. Old failed-delivery backlog stays out of scope and was not scraped, posted, or re-added.</div>
+      <div class="field"><strong>Evidence:</strong> account retry report <code>tmp-schedule-rerun-20260619\account-try-first-recheck-2026-06-20.md</code>; Lazada proof <code>tmp-schedule-rerun-20260619\lazada-saved-password-relogin-2026-06-19.md</code>; ttparcelclaim completion report <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-fd-rts-complete-2026-06-20.md</code>; raw <code>_codex_ttparcelclaim_fd_rts_complete_2026-06-20.json</code>.</div>
+      <div class="field"><strong>Operational counters:</strong> board HTML corrections <code>0 -&gt; 3</code>; business/customer messages <code>0 -&gt; 0</code>; WhatsApp/off-platform sends <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace business writes <code>0 -&gt; 0</code>; old FD backlog create/scrape/post <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Result:</strong> completed for the current requested closeout scope. This patch does not mass-flip unrelated historical Partial cards from other workstreams.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> no active current-scope login or ttparcelclaim completion blocker found. Any older unrelated Partial card still visible belongs to a separate historical workstream and was not changed by this correction.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-20" data-shops="Lazada MurahYa, Laz das.nature, Lazada Lovento, cs5 Shopee SG chat, TikTok MY seller profiles" data-platform="AdsPower + Lazada MY Seller Center + Shopee SG + TikTok MY + Codex scheduled runners" data-result="completed">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -658,13 +681,13 @@ header.page::after{
       <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> no active login blocker was found from this try-first pass. Actual scheduled jobs must still report the exact profile if AdsPower repeats dead/refused debug-port failure after the new retry rule.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-06-20" data-shops="Lazada MurahYa, Laz das.nature, Lazada Lovento" data-platform="AdsPower + Lazada MY Seller Center + Codex scheduled runners" data-result="partial">
+  <div class="entry" data-date="2026-06-20" data-shops="Lazada MurahYa, Laz das.nature, Lazada Lovento" data-platform="AdsPower + Lazada MY Seller Center + Codex scheduled runners" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">Lazada saved-password relogin fix for weekend schedule</span>
       <span class="entry-meta">2026-06-20 00:00-00:26 MYT &middot; Lazada 81/82/83 alive &middot; scheduled preflight wired &middot; ntfy sent</span>
       <span class="tag">scheduled-codex</span>
-      <span class="tag result-partial">Partial</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Patricia clarified that Lazada profiles keep logging out due active-time expiry and saved passwords should autofill after a few seconds; Codex should click Login instead of only marking the session expired. Codex ran an assisted saved-password Lazada relogin and wired that same preflight into the weekend scheduled runners that touch Lazada.</p>
@@ -674,17 +697,17 @@ header.page::after{
       <div class="field"><strong>Verification:</strong> Lazada retry report shows profile 81 and 83 <code>ALIVE</code>; profile 82 was already <code>ALIVE</code> after the first assisted relogin. Full account preflight after the fix confirmed all three Lazada profiles <code>ALIVE</code>. Runner self-tests passed for <code>parcelclaim-auto</code>, <code>returnitems-lookup</code>, and standalone <code>checksbvariation</code>; checksbvariation self-test ntfy also sent.</div>
       <div class="field"><strong>Evidence:</strong> <code>tmp-schedule-rerun-20260619\lazada-saved-password-relogin-2026-06-19.md</code>; <code>tmp-schedule-rerun-20260619\lazada-blocked-retry-2026-06-20.md</code>; <code>tmp-schedule-rerun-20260619\account-login-preflight-now-2026-06-19.md</code>; raw JSON files beside each report.</div>
       <div class="field"><strong>Operational counters:</strong> customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace business writes <code>0 -&gt; 0</code>; webapp writes <code>0 -&gt; 0</code>. Login/session action only.</div>
-      <div class="field"><strong>Result:</strong> Lazada fix OK. NTFY sent as <code>Codex Lazada relogin OK</code>. The board card is marked partial only because a broader full-account recheck after the Lazada fix hit AdsPower/CDP <code>NOT_PROBED</code> errors on TikTok/cs5 profiles; those are probe/runtime errors, not Lazada login expiry, and same-night earlier evidence had those TikTok profiles alive.</div>
-      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Watch AdsPower/CDP stability for TikTok/cs5 during the actual scheduled runs. Lazada 81/82/83 are no longer the blocker, but the broad all-account final recheck did not complete cleanly because AdsPower returned dead/refused debug ports for some non-Lazada profiles.</div>
+      <div class="field"><strong>Result:</strong> completed. NTFY sent as <code>Codex Lazada relogin OK</code>; later account try-first recheck confirmed Lazada profiles 81/82/83 <code>ALIVE</code> and cleared the TikTok/cs5 retry blockers that made this card look partial.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> no active Lazada login blocker remains. Actual scheduled jobs must still report the exact profile if AdsPower repeats a dead/refused debug-port failure after the new retry rule.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-06-19" data-shops="Profile 70, Shopee chat profiles, TikTok seller profiles, Lazada profiles" data-platform="AdsPower + Shopee + TikTok + Lazada + SiteGiant + employee webapp" data-result="partial">
+  <div class="entry" data-date="2026-06-19" data-shops="Profile 70, Shopee chat profiles, TikTok seller profiles, Lazada profiles" data-platform="AdsPower + Shopee + TikTok + Lazada + SiteGiant + employee webapp" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">account login preflight for weekend schedule 20-21 Jun 2026</span>
-      <span class="entry-meta">2026-06-19 23:38-23:45 MYT &middot; 23/26 alive &middot; 3 Lazada login-expired &middot; ntfy sent</span>
+      <span class="entry-meta">2026-06-19 23:38-23:45 MYT &middot; initial 23/26 alive &middot; Lazada 3/3 later fixed &middot; ntfy sent</span>
       <span class="tag">scheduled-codex</span>
-      <span class="tag result-partial">Partial</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Patricia asked to check accounts now before the weekend scheduled sequence. Codex ran a read-only AdsPower/CDP login preflight across the weekend scheduled accounts plus the Shopee chat scheduled accounts. No business workflow was started.</p>
@@ -693,17 +716,17 @@ header.page::after{
       <div class="field"><strong>Login-expired blockers:</strong> Lazada MurahYa profile 81, Laz das.nature profile 82, and Lazada Lovento profile 83 redirected to Lazada seller login/password pages. These need operator relogin before Lazada portions of parcelclaim/returnitems/parcelsplit can be treated as ready.</div>
       <div class="field"><strong>Shop / platform:</strong> Shopee MY/SG, TikTok MY/SG, Lazada MY, SiteGiant, and employee webapp. Reason: account readiness preflight for the 2026-06-20 and 2026-06-21 scheduled runs.</div>
       <div class="field"><strong>Evidence:</strong> report <code>tmp-schedule-rerun-20260619\account-login-preflight-now-2026-06-19.md</code>; raw JSON <code>tmp-schedule-rerun-20260619\account-login-preflight-now-2026-06-19.json</code>; ntfy result saved in the raw JSON.</div>
-      <div class="field"><strong>Result:</strong> partial. The scheduler is ready, and most accounts are alive, but all-account readiness is not OK until Lazada profiles 81, 82, and 83 are relogged.</div>
-      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Lazada profile 81/82/83 relogin remains active. Profile 70 was left open; profiles opened by this probe were closed after read-only checks. No customer contact, stock work, marketplace write, or webapp patch was made.</div>
+      <div class="field"><strong>Result:</strong> completed after follow-up. The scheduler was ready from this preflight, and the three Lazada login-expired blockers were later relogged and confirmed alive.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> no active login blocker remains from this preflight after the follow-up Lazada and try-first retry checks. Profile 70 was left open; no customer contact, stock work, marketplace write, or webapp patch was made by the preflight.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-06-19" data-shops="All scheduled Patricia lanes" data-platform="Windows Task Scheduler + Codex scheduled runners" data-result="partial">
+  <div class="entry" data-date="2026-06-19" data-shops="All scheduled Patricia lanes" data-platform="Windows Task Scheduler + Codex scheduled runners" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">weekend scheduled order updated for 20-21 Jun 2026</span>
       <span class="entry-meta">2026-06-19 22:40-23:15 MYT &middot; parcelclaim-auto first &middot; SB contact-only second &middot; Return Items third</span>
       <span class="tag">scheduled-codex</span>
-      <span class="tag result-partial">Partial</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Patricia asked to rearrange the weekend sequence so <code>parcelclaim-auto</code> runs first, <code>checksbvariation</code> runs as contact-only next, and <code>returnitems-lookup</code> runs after that. Codex changed the durable scheduler installer, reinstalled/read back Task Scheduler, and updated the relevant prompts. No business workflow was started.</p>
@@ -712,8 +735,8 @@ header.page::after{
       <div class="field"><strong>Files changed:</strong> <code>.agents\scheduled-codex\install-codex-scheduled-tasks.ps1</code>; <code>.agents\scheduled-codex\run-codex-scheduled.ps1</code>; <code>.agents\scheduled-codex\prompts\checksbvariation-scheduled.md</code>; <code>.agents\scheduled-codex\prompts\returnitems-lookup-scheduled.md</code>; <code>.agents\error-log.md</code>; <code>.agents\skills\returnitems-lookup\references\error-log-and-todo.md</code>.</div>
       <div class="field"><strong>Verification:</strong> installer applied; exact Task Scheduler readback confirmed the new times/actions; self-tests passed for <code>parcelclaim-auto</code>, standalone <code>checksbvariation</code>, <code>returnitems-lookup</code>, and installer; AdsPower API reachable; profile 70 <code>k1b44nvg</code> active on debug port <code>58751</code>.</div>
       <div class="field"><strong>Evidence:</strong> summary <code>tmp-schedule-rerun-20260619\scheduled-task-reorder-2026-06-19.md</code>; raw JSON <code>tmp-schedule-rerun-20260619\scheduled-task-reorder-2026-06-19.json</code>; self-test logs under <code>C:\Users\tessf\Documents\codex-scheduled-logs</code> and <code>C:\Users\tessf\Documents\sbvariation-reports\scheduled-logs</code>.</div>
-      <div class="field"><strong>Result:</strong> scheduler reorder OK; future Return Items now waits if parcelclaim-auto or the SB scheduled runner is still active. Overall closeout marked partial only because the broad marketplace account-login probe timed out before complete proof.</div>
-      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> full all-account marketplace-login certification is not complete. The read-only AdsPower seller-profile probe timed out after 7 minutes and saved no complete evidence file. Profile 70 is active; other profiles being closed/inactive in AdsPower is not proof of logged-out state. Separate old/live processes for <code>csrrcredited</code> and <code>sg-gap-monitor</code> were present during this task and were not created by the reorder.</div>
+      <div class="field"><strong>Result:</strong> completed. Scheduler reorder is OK; future Return Items now waits if parcelclaim-auto or the SB scheduled runner is still active. Later login/retry evidence cleared the account-proof blocker that had made this card partial.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> none for the scheduler reorder. Later account try-first recheck cleared Lazada, cs5, and TikTok retry blockers; scheduled jobs must still report the exact profile if AdsPower repeats a retry failure.</div>
     </div>
   </div>
 <!-- SG-GAP-MONITOR-2026-06-19 -->
