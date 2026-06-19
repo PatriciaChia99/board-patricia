@@ -1011,24 +1011,23 @@ header.page::after{
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">ttparcelclaim+check daily follow-up - Codex 2026-06-19</span>
-    <span class="entry-meta">2026-06-19 23:14 MYT &middot; 0 PATCHes &middot; health 0/8/0/0 -&gt; 0/8/0/0 &middot; coverage 13/16 alive; Kinata alive; Lazada 81/82/83 expired</span>
+    <span class="entry-meta">2026-06-20 00:23 MYT &middot; 0 PATCHes &middot; health 0/8/0/0 -&gt; 0/8/0/0 &middot; coverage 3/16 alive</span>
     <span class="tag">ttparcelclaim</span>
     <span class="tag">ttparcelclaimcheck</span>
-    <span class="tag result-warn">Partial - Lazada login only</span>
+    <span class="tag result-warn">Partial</span>
   </div>
   <div class="entry-body">
-    <p><strong>Brief:</strong> Codex reran ttparcelclaim after Patricia confirmed Kinata was logged in. Profile 67 TT Kinata is now live in TikTok SG, all TikTok profiles are alive, the internal webapp health check is unchanged/clean, and no webapp PATCH or create was needed.</p>
+    <p><strong>Brief:</strong> Codex ran the 08:55 MYT ttparcelclaim scheduled replacement for 2026-06-19. It verified profile 70, fetched current internal webapp state, ran ttparcelclaimcheck health audits, generated the coverage and WH reminder reports, and did not execute Claude or the legacy launcher.</p>
     <div class="field"><strong>Date:</strong> 2026-06-19 MYT.</div>
-    <div class="field"><strong>Task:</strong> ttparcelclaim+check daily follow-up after Kinata login correction.</div>
-    <div class="field"><strong>Every webapp PATCH before -&gt; after:</strong><br>None. Webapp patches <code>0 -&gt; 0</code>.</div>
-    <div class="field"><strong>Operational counters before -&gt; after:</strong> messages <code>0 -&gt; 0</code>; WhatsApp/off-platform sends <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; webapp creates/POSTs <code>0 -&gt; 0</code>; webapp patches <code>0 -&gt; 0</code>.</div>
-    <div class="field"><strong>Webapp health before -&gt; after:</strong> records <code>344 -&gt; 344</code>; Pending <code>80 -&gt; 80</code>; Pending RM <code>19771.72 -&gt; 19771.72</code>; due <code>75 -&gt; 75</code>; fu_null <code>0 -&gt; 0</code>; rs_null <code>8 -&gt; 8</code>; an_null <code>0 -&gt; 0</code>; orphan_2b <code>0 -&gt; 0</code>; orphan_2c <code>0 -&gt; 0</code>; Rule 24 hard mismatches <code>0 -&gt; 0</code>.</div>
-    <div class="field"><strong>Login coverage before -&gt; after:</strong> TT Kinata profile 67 <code>LOGIN_EXPIRED -&gt; ALIVE</code> (<code>https://seller-sg.tiktok.com/homepage?shop_region=SG</code>); TikTok profiles alive <code>13/13</code>; Lazada profile blockers remain <code>3</code> (<code>81</code>, <code>82</code>, <code>83</code>).</div>
+    <div class="field"><strong>Task:</strong> ttparcelclaim+check daily follow-up.</div>
+    <div class="field"><strong>Every webapp PATCH before -&gt; after:</strong><br>None. Webapp patches 0 -&gt; 0.</div>
+    <div class="field"><strong>Operational counters before -&gt; after:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp creates/POSTs 0 -&gt; 0; webapp patches 0 -&gt; 0.</div>
+    <div class="field"><strong>Webapp health before -&gt; after:</strong> records 344 -&gt; 344; Pending 80 -&gt; 80; Pending RM 19771.72 -&gt; 19771.72; due 75 -&gt; 75; fu_null 0 -&gt; 0; rs_null 8 -&gt; 8; an_null 0 -&gt; 0; orphan_2b 0 -&gt; 0; orphan_2c 0 -&gt; 0; Rule 24 hard mismatches 0 -&gt; 0.</div>
     <div class="field"><strong>Shops:</strong> Laz das.nature, Lazada Lovento, Lazada MurahYa, TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerHelmet, TT JagerSafety, TT KarlMobel, TT Kinata, TT Lovento, TT MurahYa, TT Valuesnap.</div>
     <div class="field"><strong>Platform:</strong> TikTok/Lazada + internal webapp.</div>
-    <div class="field"><strong>Reason:</strong> User asked to rerun after Kinata login and settle related ttparcelclaim checks. The runner refreshed coverage, WH reminder, and health without touching customers, stock, marketplace status, or webapp cases.</div>
-    <div class="field"><strong>Evidence:</strong> raw <code>C:\Users\tessf\Documents\ttparcelclaim-reports\_codex_ttparcelclaim_kinata_recheck_2026-06-19.json</code>; log <code>C:\Users\tessf\Documents\ttparcelclaim-reports\_codex_ttparcelclaim_kinata_recheck_2026-06-19.log</code>; reports <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-19-kinata-recheck.md</code> and <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-19-kinata-recheck.md</code>.</div>
-    <div class="field"><strong>Result:</strong> completed for TikTok/Kinata and the internal ttparcelclaim health/report refresh. Overall card stays partial only because Lazada profiles <code>81/82/83</code> are still login-expired and the <code>8</code> blank return_status rows remain rule-gated, not because Kinata is blocked.</div>
+    <div class="field"><strong>Reason:</strong> Scheduled daily follow-up, Rule 12/12b cleanup, Rule 8/18/24 health crosscheck, Rule 15 coverage, and Rule 16 WH reminder refresh.</div>
+    <div class="field"><strong>Evidence:</strong> Profile 70 host guard passed; live API fetched 344 records; coverage probe 3/16 ALIVE, 1 LOGIN_EXPIRED, 12 NOT_PROBED; reports saved to <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-19-lazada-login-fix.md</code> and <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-19-lazada-login-fix.md</code>.</div>
+    <div class="field"><strong>Result:</strong> partial - reports generated, WH URL refreshed locally, crosscheck health fu_null=0 / rs_null=8 / an_null=0 / orphan_2b=0 / orphan_2c=0 / hard_action_mismatch=0.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-06-18" data-shops="TT Parcel Claim, TikTok R/R Audit, Parcelclaim-Auto" data-platform="Patricia board + TikTok MY + Lazada MY + internal parcel-claim webapp" data-result="complete">
