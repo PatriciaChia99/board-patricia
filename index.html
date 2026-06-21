@@ -639,13 +639,13 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
-  <div class="entry" data-date="2026-06-21" data-shops="MurahYa, ValueSnap, Hiranai, KarlMobel, das.nature, das.nature2, Emas Gift, BahEmas, Lovento, Luxbin, MasonGym, Adelmar, JagerHelmet, Kinata SG, HiranaiSG, KarlMobel SG, MurahYa SG, EmasGift SG, DasNature SG, DasNatureSG2" data-platform="Shopee MY + Shopee SG" data-result="ok">
+  <div class="entry" data-date="2026-06-21" data-shops="MurahYa, ValueSnap, Hiranai, KarlMobel, das.nature, das.nature2, Emas Gift, BahEmas, Lovento, Luxbin, MasonGym, Adelmar, JagerHelmet, Kinata SG, HiranaiSG, KarlMobel SG, MurahYa SG, EmasGift SG, DasNature SG, DasNatureSG2" data-platform="Shopee MY + Shopee SG" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">csrrcredited - 21/6 Codex run: 55 PATCHes / 0 wins / 25 clawbacks / 0 unverified</span>
+      <span class="entry-title">csrrcredited - 21/6 Codex run: 55 PATCHes / 0 wins / 25 clawbacks / 52 approval-gated</span>
       <span class="entry-meta">2026-06-21 MYT &middot; Codex replacement for Claude launcher &middot; report <code>C:\Users\tessf\Documents\csrrcredited-reports\csrrcredited-report-2026-06-21.md</code></span>
       <span class="tag">csrrcredited</span>
-      <span class="tag result-ok">Completed</span>
+      <span class="tag result-warn">Partial</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Codex ran the CS R/R credited verification for 21/6 without invoking Claude or the legacy batch. Fresh MY and SG Pending/Credited pulls were used; wallet/order-adjustment checks were performed through AdsPower profiles 70 and 84 where available.</p>
@@ -708,7 +708,9 @@ header.page::after{
       <div class="field"><strong>Coverage:</strong> MY Pending 559, MY Credited 348, SG Pending 96, SG Credited 32. Shops swept 20/20.</div>
       <div class="field"><strong>Reason:</strong> Daily scheduled R/R wallet truth audit to avoid premature Credited status, missed wins, clawbacks, and shipping-only false wins.</div>
       <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\csrrcredited-reports\csrrcredited-report-2026-06-21.md</code>; raw JSON <code>C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_2026-06-21.json</code>. Errors/gaps: None.</div>
-      <div class="field"><strong>Result:</strong> ok - wins 0, clawbacks 25, unverified 0, reconciliation 54/55.</div>
+      <div class="field"><strong>Result:</strong> partial - live sweep and 55/55 readback are reconciled, but 52 approval-gated findings require Patricia approval before any status writes; unverified 0.</div>
+      <div class="field"><strong>Outstanding:</strong> Approval required before status treatment for 52 report-only rows: 25 CLAWBACK_FIRED, 20 PARTIAL_WIN, and 7 RESELL_REFUND_EXPECTED. Additional Pending holds: 3 SHIPPING_ONLY_PARTIAL and 35 REFUND_NO_COMP. No UNVERIFIED/unmapped/login-blocked row found.</div>
+      <div class="field"><strong>Closeout retry:</strong> <code>260610PJV7S0AF</code> ValueSnap first remark PATCH hit RemoteDisconnected; fresh live wallet/R/R retry confirmed CLAWBACK_FIRED NET RM-12.15, retry PATCH HTTP 200, readback Pending with 2026-06-21 LIVE WALLET remark present. Final reconciliation 55/55. Evidence <code>C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_retry_260610PJV7S0AF_2026-06-21.json</code>.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-06-21" data-shops="11 TT shops" data-platform="TikTok MY" data-result="warn">
