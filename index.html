@@ -639,6 +639,30 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-22" data-shops="TT Jager, TT KarlMobel" data-platform="TikTok/Lazada + internal webapp" data-result="warn">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">ttparcelclaim+check daily follow-up - Codex 2026-06-22</span>
+    <span class="entry-meta">2026-06-22 11:50 MYT &middot; 2 PATCHes &middot; health 0/0/1/0 -&gt; 0/0/0/0 &middot; coverage 13/16 alive</span>
+    <span class="tag">ttparcelclaim</span>
+    <span class="tag">ttparcelclaimcheck</span>
+    <span class="tag result-warn">Partial</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Codex ran the 08:55 MYT ttparcelclaim scheduled replacement for 2026-06-22. It verified profile 70, fetched current internal webapp state, ran ttparcelclaimcheck health audits, generated the coverage and WH reminder reports, and did not execute Claude or the legacy launcher.</p>
+    <div class="field"><strong>Date:</strong> 2026-06-22 MYT.</div>
+    <div class="field"><strong>Task:</strong> ttparcelclaim+check daily follow-up.</div>
+    <div class="field"><strong>Every webapp PATCH before -&gt; after:</strong><br>C2186 / 584514337146832667 / TT Jager / RM 129.00: action WH Action -&gt; Closed; refund_state Withdrawn -&gt; Withdrawn; action WH Action -&gt; Closed; followup_dt 2026-06-19 -&gt; 2026-06-19; return_status Delivery Done -&gt; Delivery Done. Reason: Rule 12b terminal-state orphan sweep. Evidence: Live refund_state is terminal but action_needed is not Closed. Result: HTTP 200<br>C2192 / 584441357437011572 / TT KarlMobel / RM 19.37: action WH Evidence -&gt; CS Follow Up; refund_state Pending -&gt; Pending; action WH Evidence -&gt; CS Follow Up; followup_dt 2026-06-19 -&gt; 2026-06-19; return_status Preparing -&gt; Preparing. Reason: Rule 24 action dichotomy correction. Evidence: return_status=Preparing cannot map to action_needed=WH Evidence. Result: HTTP 200</div>
+    <div class="field"><strong>Operational counters before -&gt; after:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp creates/POSTs 0 -&gt; 0; webapp patches 0 -&gt; 2.</div>
+    <div class="field"><strong>Webapp health before -&gt; after:</strong> records 322 -&gt; 322; Pending 72 -&gt; 72; Pending RM 18661.46 -&gt; 18661.46; due 67 -&gt; 67; fu_null 0 -&gt; 0; rs_null 0 -&gt; 0; an_null 0 -&gt; 0; orphan_2b 1 -&gt; 0; orphan_2c 0 -&gt; 0; Rule 24 hard mismatches 1 -&gt; 0.</div>
+    <div class="field"><strong>Shops:</strong> TT Jager, TT KarlMobel.</div>
+    <div class="field"><strong>Platform:</strong> TikTok/Lazada + internal webapp.</div>
+    <div class="field"><strong>Reason:</strong> Scheduled daily follow-up, Rule 12/12b cleanup, Rule 8/18/24 health crosscheck, Rule 15 coverage, and Rule 16 WH reminder refresh.</div>
+    <div class="field"><strong>Evidence:</strong> Profile 70 host guard passed; live API fetched 322 records; coverage probe 13/16 ALIVE, 3 LOGIN_EXPIRED, 0 NOT_PROBED; reports saved to <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-22.md</code> and <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-22.md</code>.</div>
+    <div class="field"><strong>Result:</strong> partial - reports generated, WH URL refreshed locally, crosscheck health fu_null=0 / rs_null=0 / an_null=0 / orphan_2b=0 / orphan_2c=0 / hard_action_mismatch=0.</div>
+  </div>
+</div>
+
   <div class="entry" data-date="2026-06-21" data-shops="MurahYa, ValueSnap, Hiranai, KarlMobel, das.nature, das.nature2, Emas Gift, BahEmas, Lovento, Luxbin, MasonGym, Adelmar, JagerHelmet, Kinata SG, HiranaiSG, KarlMobel SG, MurahYa SG, EmasGift SG, DasNature SG, DasNatureSG2" data-platform="Shopee MY + Shopee SG" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
