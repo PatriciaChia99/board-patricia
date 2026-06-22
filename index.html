@@ -639,6 +639,28 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-22" data-shops="Kinata SG" data-platform="Shopee SG + SB Variation" data-result="complete">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation Kinata SG correction 260620JWTM2R6V 2026-06-22</span>
+      <span class="entry-meta">2026-06-22 MYT &middot; buyer messages 0-&gt;1 &middot; SB contact row 0-&gt;1 &middot; stock writes 0-&gt;0</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag result-ok">Done</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Correction after Patricia challenged order <code>260620JWTM2R6V</code>. Earlier "no active Kinata SG message item" wording was based on saved artifacts and missed fresh live SB row <code>101268</code>.</p>
+      <div class="field"><strong>Shop/platform/reason:</strong> Kinata SG / Shopee SG / SB Variation <code>No Stock</code>.</div>
+      <div class="field"><strong>Live order check:</strong> Shopee SG order <code>260620JWTM2R6V</code> was verified <code>To Ship</code>, not cancelled, buyer <code>jdt_17</code>. Product <code>Retro Game Console Gameboy Advance Handheld Game Console Games for Adults Kids Portable Gaming Console Mini R36S</code>; variation <code>R36S-Black,64GB</code>; iSKU <code>HANDHELD-RETRO-GAME-CONSOLE-TR-BLK-64G-SG</code>; qty <code>1</code>.</div>
+      <div class="field"><strong>Every external change before -&gt; after:</strong><ul>
+        <li>Shopee SG buyer messages for <code>260620JWTM2R6V</code>: <code>0</code> -&gt; <code>1</code>. Sent the approved No Stock template only after live order status was verified not cancelled and no prior SB template was found in the mini-chat.</li>
+        <li>SB row <code>101268</code>: contactSent <code>false</code> -&gt; <code>true</code>; csRemarks count <code>0</code> -&gt; <code>1</code>; buyerDecision <code>null</code> -&gt; <code>null</code>; stockAdjustmentStatus <code>null</code> -&gt; <code>null</code>; stockSetOos <code>false</code> -&gt; <code>false</code>.</li>
+        <li>SiteGiant stock writes <code>0</code> -&gt; <code>0</code>; SiteGiant item-status/reserved edits <code>0</code> -&gt; <code>0</code>; seller-order/Jira/WhatsApp writes <code>0</code> -&gt; <code>0</code>.</li>
+      </ul></div>
+      <div class="field"><strong>Evidence:</strong> correction report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-kinata-sg-260620JWTM2R6V-correction-2026-06-22.md</code>; fresh SB probe <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\employee-kinata-sg-260620JWTM2R6V-probe-20260622.json</code>; Shopee order probe <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\_probe_kinata_sg_order_search_cs5_260620JWTM2R6V_20260622.json</code>; send evidence <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\_send_cs5_kinata_sg_no_stock_260620JWTM2R6V_20260622.json</code>; SB patch/readback <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\employee-kinata-sg-contact-260620JWTM2R6V-20260622.json</code> and <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\employee-kinata-sg-contact-260620JWTM2R6V-readback-20260622.json</code>.</div>
+      <div class="field"><strong>Result:</strong> completed contact correction. Customer is now contacted and SB contact state is patched/read back. No stock adjustment was performed.</div>
+      <div class="field"><strong>Outstanding:</strong> stock/OOS cleanup for <code>HANDHELD-RETRO-GAME-CONSOLE-TR-BLK-64G-SG</code> remains approval-gated and requires fresh SiteGiant before-values before any stock/status/reserved write.</div>
+    </div>
+  </div>
 <div class="entry" data-date="2026-06-22" data-shops="11 TT shops" data-platform="TikTok MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
