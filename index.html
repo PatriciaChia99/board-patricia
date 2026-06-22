@@ -639,6 +639,54 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-22" data-shops="multiple" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto - 22/6 Codex run: 14 new / 14 posted / 0 DOM-only-catches / 3 errors</span>
+      <span class="entry-meta">2026-06-22 MYT &middot; Codex replacement for Claude launcher &middot; report C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-22.md</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-ok">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Codex ran the 09:45 parcelclaim-auto workflow for 22/6 without invoking Claude or the legacy batch. Scanned TikTok R/R, TikTok failed delivery, mandatory Phase 2.5 DOM cross-verify, and Lazada returns. Dedupe used fresh webapp order_id coverage across all refund states before every POST.</p>
+      <div class="field"><strong>Before -&gt; after operational counters:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp creates 322 -&gt; 336; webapp remark patches 0 -&gt; 14.</div>
+      <div class="field"><strong>POST changes:</strong><ul><li>C2198 TT DasNature failed_delivery 584558128245475201 - RM 16.90 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2199 TT Hiranai rr 584262344944879477 - RM 25.40 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2200 TT Hiranai failed_delivery 584508467355485232 - RM 25.50 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2201 TT HiranaiMY rr 584573014585410869 - RM 23.83 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2202 TT Jager rr 584574498441495787 - RM 121.95 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2203 TT KarlMobel rr 584544470594717620 - RM 207.44 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2204 TT KarlMobel failed_delivery 584590536633648718 - RM 27.88 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2205 TT KarlMobel failed_delivery 584136892310848821 - RM 73.70 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2206 TT MurahYa failed_delivery 584604419830679152 - RM 358.03 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2207 TT MurahYa failed_delivery 584572435132285962 - RM 326.33 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2208 TT MurahYa failed_delivery 584561877852653494 - RM 370.49 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2209 TT MurahYa failed_delivery 584559605448148232 - RM 72.00 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2210 TT Valuesnap failed_delivery 584549365899102197 - RM 14.56 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2211 TT Kinata rr 584571925743109149 - RM 10.00 - before not in webapp -&gt; after Pending with audit remark</li></ul></div>
+      <div class="field"><strong>Evidence table:</strong><pre>54 TT Adelmar: RR 88 cards / 0 in-window / 0 posted; FD 33 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
+55 TT DasNature: RR 0 cards / 0 in-window / 0 posted; FD 103 API + 3 DOM pages / Returning 0 / 1 posted / DOM-only 0
+56 TT Hiranai: RR 100 cards / 1 in-window / 1 posted; FD 168 API + 1 DOM pages / Returning 0 / 1 posted / DOM-only 0
+58 TT HiranaiMY: RR 155 cards / 1 in-window / 1 posted; FD 45 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
+59 TT Jager: RR 105 cards / 1 in-window / 1 posted; FD 70 API + 3 DOM pages / Returning 0 / 0 posted / DOM-only 0
+60 TT JagerArmor: RR 6 cards / 0 in-window / 0 posted; FD 1 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+61 TT JagerSafety: RR 55 cards / 0 in-window / 0 posted; FD 1 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+62 TT KarlMobel: RR 50 cards / 2 in-window / 1 posted; FD 296 API + 1 DOM pages / Returning 0 / 2 posted / DOM-only 0
+63 TT Lovento: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+64 TT MurahYa: RR 0 cards / 0 in-window / 0 posted; FD 435 API + 1 DOM pages / Returning 0 / 4 posted / DOM-only 0
+65 TT Valuesnap: RR 0 cards / 0 in-window / 0 posted; FD 269 API + 1 DOM pages / Returning 0 / 1 posted / DOM-only 0
+66 TT JagerHelmet: RR 0 cards / 0 in-window / 0 posted; FD 10 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+67 TT Kinata: RR 4 cards / 1 in-window / 1 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+81 Lazada MurahYa: Lazada 0 rows / 0 in-window / 0 posted
+82 Laz das.nature: Lazada 0 rows / 0 in-window / 0 posted
+83 Lazada Lovento: Lazada 0 rows / 0 in-window / 0 posted</pre></div>
+      <div class="field"><strong>DOM cross-verify:</strong> 0 DOM-only catches. None.</div>
+      <div class="field"><strong>Crosscheck:</strong> 14/14 CONFIRMED; </div>
+      <div class="field"><strong>Reason:</strong> Daily scheduled intake of new TikTok/Lazada parcel-claim cases so CS does not miss R/R or failed-delivery cases. Historical FD rows older than 30 days remain deferred pending user approval.</div>
+      <div class="field"><strong>Evidence:</strong> Report saved at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-22.md</code>; raw JSON at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-06-22.json</code>.</div>
+      <div class="field"><strong>Result:</strong> partial - 14 posted, 3 errors, board logged by Codex.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-22" data-shops="SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY" data-platform="SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY" data-result="partial">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
