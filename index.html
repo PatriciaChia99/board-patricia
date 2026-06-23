@@ -639,6 +639,37 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-23" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center wallet" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checkfbsclaims FBS Claim sheet/webapp status sync 2026-06-23</span>
+      <span class="entry-meta">2026-06-23 MYT &amp; 541 webapp cases &amp; sheet plan 0 &amp; action plan 0 &amp; webapp gaps 0 &amp; FINAL_STATUS PARTIAL</span>
+      <span class="tag">checkfbsclaims</span>
+      <span class="tag result-warn">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Ran the scheduled Codex FBS Claim status sync for MurahYa, KarlMobel, ValueSnap, and Luxbin without invoking Claude or a legacy launcher. Used the locked Sheet/webapp mapping, current Google Sheet metadata and CSV readback, employee FBS Claim API readback, and live Shopee MY Seller Center wallet verification through profile 70. No WhatsApp or customer messages were sent.</p>
+      <div class="field"><strong>Scope:</strong> webapp cases <code>541</code>; final Sheet rows scanned MurahYa <code>148</code>, KarlMobel <code>176</code>, ValueSnap <code>212</code>, Luxbin <code>9</code>. Final Action distribution: pending_fbs <code>304</code>, in_progress <code>11</code>, pending_credited <code>69</code>, closed <code>134</code>, pending_seller <code>23</code>.</div>
+      <div class="field"><strong>Every change before -&gt; after:</strong><ul>
+        <li>Luxbin Sheet-to-webapp Claim Status patches: <code>260514B8W6QPT0</code> case <code>437</code> <code>blank -&gt; closed</code>; <code>260504GPFPQPMT</code> case <code>440</code> <code>blank -&gt; closed</code>. Total supported Sheet mapping patches <code>0 -&gt; 2</code>; failed <code>0</code>; final Sheet patch plan <code>0</code>.</li>
+        <li>Action patches <code>0 -&gt; 19</code>; failed <code>0</code>; final Action plan <code>0</code>. KarlMobel null-to-pending_fbs <code>7</code>, null-to-in_progress <code>1</code>, in_progress-to-pending_fbs <code>2</code>. ValueSnap null-to-pending_fbs <code>4</code>, null-to-in_progress <code>1</code>, in_progress-to-pending_fbs <code>2</code>.</li>
+        <li>KarlMobel Action order IDs: <code>260617BRSR9MAW</code>, <code>260607DYF18W0A</code>, <code>260609KXE5W09C</code>, <code>260607EYA70PS1</code>, <code>2606156EJ571T4</code>, <code>260620JGEN9N7X</code>, <code>260617BM1D38GD</code>, <code>260619EKPKM73V</code>, <code>260607FBJN0A4U</code>, <code>2606154DMPDUEE</code>.</li>
+        <li>ValueSnap Action order IDs: <code>260606CUERBXGF</code>, <code>260619FXN9TXUB</code>, <code>260610Q63WN79W</code>, <code>260618CFKWAJUS</code>, <code>2605249BEB37JS</code>, <code>2606155U2MDX27</code>, <code>26061443VBYAT9</code>.</li>
+        <li>Google Sheet current-case append: webapp-only current cases <code>12 -&gt; 0</code>; rows appended <code>0 -&gt; 12</code>; KarlMobel <code>0 -&gt; 8</code>, ValueSnap <code>0 -&gt; 4</code>, MurahYa <code>0 -&gt; 0</code>, Luxbin <code>0 -&gt; 0</code>.</li>
+        <li>KarlMobel appended orders: <code>260607DYF18W0A</code>, <code>260607EYA70PS1</code>, <code>260609KXE5W09C</code>, <code>2606156EJ571T4</code>, <code>260617BM1D38GD</code>, <code>260617BRSR9MAW</code>, <code>260619EKPKM73V</code>, <code>260620JGEN9N7X</code>.</li>
+        <li>ValueSnap appended orders: <code>2605249BEB37JS</code>, <code>260610Q63WN79W</code>, <code>260618CFKWAJUS</code>, <code>260619FXN9TXUB</code>.</li>
+        <li>Sheet duplicate readback: MurahYa <code>0 -&gt; 0</code>, KarlMobel <code>0 -&gt; 0</code>, ValueSnap <code>0 -&gt; 0</code>, Luxbin <code>0 -&gt; 0</code>. Appended-order missing readback <code>0</code>.</li>
+        <li>Shopee MY Seller Center wallet verification: credited-evidence targets <code>0 -&gt; 25</code>, verified <code>25/25</code>; verdicts <code>22</code> wallet-confirmed and <code>3</code> wallet-net-confirmed-with-deduction; expected/net total <code>RM 3532.78 / RM 3532.78</code>; errors <code>0</code>.</li>
+        <li>Final report status: <code>unknown -&gt; FINAL_STATUS: PARTIAL</code> because report-only/approval-held items remain.</li>
+      </ul></div>
+      <div class="field"><strong>Operational counters before -&gt; after:</strong> customer messages <code>0 -&gt; 0</code>; WhatsApp messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; webapp PATCHes <code>0 -&gt; 21</code>; Google Sheet net current-case rows <code>0 -&gt; 12</code>.</div>
+      <div class="field"><strong>Reason for change:</strong> scheduled twice-weekly FBS Claim status sync, including supported Sheet status propagation, safe Action derivation/backfill, Sheet append of current webapp-only cases, and wallet evidence verification for credited/recovered support.</div>
+      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\fbs-claim-reports\fbs-claim-status-2026-06-23.md</code>; raw evidence folder <code>C:\Users\tessf\Documents\fbs-claim-reports\raw-2026-06-23</code>; sync evidence <code>tmp-returnitems\fbs-sync-2026-06-23</code>; append readback <code>tmp-returnitems\fbs-sync-2026-06-23\duplicate-and-append-readback.json</code>; wallet evidence <code>tmp-returnitems\fbs-wallet-verify-2026-06-23</code>.</div>
+      <div class="field"><strong>Result:</strong> partial. Operational readback is clean: final supported Sheet patch plan <code>0</code>, final Action patch plan <code>0</code>, webapp-only current cases not in Sheet <code>0</code>, duplicate Sheet order rows <code>0</code>, wallet targets verified <code>25/25</code>. The report last line is <code>FINAL_STATUS: PARTIAL</code>.</div>
+      <div class="field"><strong>Outstanding / Patricia may have missed:</strong> unsupported/free-text Sheet values <code>48</code> remain report-only and were not guessed; Sheet rows with values not currently in webapp <code>15</code> remain report-only; suspect closures <code>46</code> remain held for explicit approval/evidence. No current webapp-only Sheet gap remains.</div>
+      <div class="field"><strong>Profile cleanup:</strong> profile 70 <code>k1b44nvg</code> was already active on debug port <code>64317</code>; Codex attached via <code>/browser/active</code> and did not stop it. No non-profile-70 AdsPower profile was opened.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-23" data-shops="11 TT shops" data-platform="TikTok MY" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
