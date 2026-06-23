@@ -639,6 +639,28 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class=""entry"" data-date=""2026-06-23"" data-shops=""Luxbin"" data-platform=""Google Sheet FBS Claim, employee FBS Claim webapp"" data-result=""ok"">
+    <div class=""entry-summary"">
+      <span class=""chevron"">&#9654;</span>
+      <span class=""entry-title"">checkfbsclaims FBS Sheet update comparison follow-up 2026-06-23</span>
+      <span class=""entry-meta"">2026-06-23 MYT &amp; comparison script run &amp; Sheet QC/Status changes 2 &amp; remaining webapp updates 0</span>
+      <span class=""tag"">checkfbsclaims</span>
+      <span class=""tag result-ok"">Completed</span>
+    </div>
+    <div class=""entry-body"">
+      <p><strong>Brief:</strong> Ran <code>node tmp-fbs-claim-20260623/compare_sheet_updates_20260623.js</code> after Patricia challenged the wording around <code>QC Judgement final patch plan 0</code> and <code>Status final patch plan 0</code>. The comparison checked 2026-06-19 vs 2026-06-23 Sheet snapshots and reconciled changed QC/Status cells against the 2026-06-23 webapp apply evidence.</p>
+      <div class=""field""><strong>Every change before -&gt; after:</strong><ul>
+        <li>Luxbin row <code>7</code>, order <code>260514B8W6QPT0</code>, Sheet <code>Status</code>: <code>Pending RR team -&gt; Closed</code>; webapp case <code>437</code> Claim Status had already been applied by the prior run <code>blank -&gt; closed</code> with HTTP <code>200</code>.</li>
+        <li>Luxbin row <code>10</code>, order <code>260504GPFPQPMT</code>, Sheet <code>Status</code>: <code>Pending RR team -&gt; Closed</code>; webapp case <code>440</code> Claim Status had already been applied by the prior run <code>blank -&gt; closed</code> with HTTP <code>200</code>.</li>
+        <li>QC Judgement changed cells <code>0</code>; unsupported-label skips <code>0</code>; already-matching/idempotent changed cells <code>0</code>; Sheet-only/no-webapp-case changed cells <code>0</code>; remaining webapp updates needed <code>0</code>.</li>
+      </ul></div>
+      <div class=""field""><strong>Reason for change:</strong> durable correction to the FBS closeout wording. Final patch plan <code>0</code> means no remaining supported webapp patches after apply, not that the Sheet had no QC/Status updates.</div>
+      <div class=""field""><strong>Safety note:</strong> Patricia's correction still stands: Shopee team only updates Sheet Remark, Status, and QC Judgement, and Shopee said they do not update MurahYa or Luxbin. These Luxbin Sheet changes must not be treated as Shopee-authoritative for future decisions without approval, even though the webapp now matches the Sheet values.</div>
+      <div class=""field""><strong>Evidence:</strong> script <code>tmp-fbs-claim-20260623\compare_sheet_updates_20260623.js</code>; saved output <code>tmp-fbs-claim-20260623\compare_sheet_updates_20260623_result.json</code>; webapp apply evidence <code>tmp-returnitems\fbs-sync-2026-06-23\sheet_patch_results.json</code>.</div>
+      <div class=""field""><strong>Result:</strong> completed follow-up. No additional webapp update is needed from this comparison.</div>
+      <div class=""field""><strong>Outstanding / Patricia may have missed:</strong> the 12 webapp-only cases appended earlier today remain suspect until IT confirms; do not append more webapp-only bot cases to Google Sheet while IT is checking.</div>
+    </div>
+  </div>
 <div class="entry" data-date="2026-06-23" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center wallet" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
