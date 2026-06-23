@@ -639,6 +639,28 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class=""entry"" data-date=""2026-06-23"" data-shops=""MurahYa, KarlMobel, ValueSnap, Luxbin"" data-platform=""Google Sheet FBS Claim"" data-result=""ok"">
+    <div class=""entry-summary"">
+      <span class=""chevron"">&#9654;</span>
+      <span class=""entry-title"">checkfbsclaims FBS live Sheet duplicate readback 2026-06-23</span>
+      <span class=""entry-meta"">2026-06-23 16:33 MYT &amp; live Sheet readback &amp; appended rows 12/12 &amp; duplicates 0</span>
+      <span class=""tag"">checkfbsclaims</span>
+      <span class=""tag result-ok"">Completed</span>
+    </div>
+    <div class=""entry-body"">
+      <p><strong>Brief:</strong> Ran a read-only live CSV readback on the FBS Claim Google Sheet after Patricia asked to make sure the new cases are in the Sheet and no duplicates exist.</p>
+      <div class=""field""><strong>Every value checked before -&gt; after:</strong><ul>
+        <li>Last saved Sheet append/readback timestamp stayed <code>2026-06-23 12:23:05 MYT</code>; this follow-up made no Sheet edits.</li>
+        <li>Expected appended Sheet rows <code>12 -&gt; 12 found exactly once</code>: KarlMobel <code>8/8</code>, ValueSnap <code>4/4</code>, MurahYa <code>0</code>, Luxbin <code>0</code>.</li>
+        <li>Duplicate order IDs across Claim Progress tabs <code>unknown current -&gt; 0</code>: MurahYa <code>0</code>, KarlMobel <code>0</code>, ValueSnap <code>0</code>, Luxbin <code>0</code>.</li>
+        <li>Live data rows: MurahYa <code>148</code>, KarlMobel <code>176</code>, ValueSnap <code>212</code>, Luxbin <code>9</code>.</li>
+      </ul></div>
+      <div class=""field""><strong>Reason for check:</strong> Patricia asked when the last Sheet patch happened and to confirm all new cases are in Google Sheet without duplicates.</div>
+      <div class=""field""><strong>Evidence:</strong> live verification JSON <code>tmp-fbs-claim-20260623\live_sheet_duplicate_check_20260623.json</code>; earlier append/readback <code>tmp-returnitems\fbs-sync-2026-06-23\duplicate-and-append-readback.json</code>.</div>
+      <div class=""field""><strong>Result:</strong> completed. Google Sheet contains all <code>12</code> expected new appended cases exactly once, and no duplicate order IDs were found in the four Claim Progress tabs.</div>
+      <div class=""field""><strong>Outstanding / Patricia may have missed:</strong> the <code>12</code> appended rows are still suspect as webapp-only bot cases until IT confirms. This check only confirms Sheet presence and duplicate count; it does not make those rows Shopee-authoritative.</div>
+    </div>
+  </div>
 <!-- CSRR-SG-CLOSE-CONTINUATION-2026-06-23 -->
 <div class="entry" data-date="2026-06-23" data-shops="MurahYa SG, KarlMobel SG" data-platform="Shopee SG" data-result="warn">
   <div class="entry-summary">
