@@ -639,48 +639,49 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-23" data-shops="Shopee MY monthly shipping claim guard" data-platform="Shopee MY + Seller Center shipping claim + AdsPower profile 70" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">shopee-shipping-claim - 23/6 monthly guard safe skip / 0 writes</span>
+      <span class="entry-meta">2026-06-23 MYT &middot; non-claim day guard &middot; profile 70 k1b44nvg active on debug port 64317 &middot; FINAL_STATUS: OK</span>
+      <span class="tag">shopee-shipping-claim</span>
+      <span class="tag ok">OK</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Codex ran the scheduled Shopee shipping claim monthly guard for 2026-06-23 MYT. The workflow guard allows live claim work only on day 15, so this day-23 run wrote a safe skip report and did not enter Seller Center claim scraping or the Shopee webform.</p>
+      <div class="field"><strong>Date / task:</strong> 2026-06-23 MYT. Task: scheduled Codex job <code>Shopee shipping claim monthly guard</code>.</div>
+      <div class="field"><strong>Shop / platform:</strong> Shopee MY monthly shipping claim lane across all MY shops, via Seller Center shipping claim workflow and AdsPower profile 70 <code>k1b44nvg</code>.</div>
+      <div class="field"><strong>Every before -&gt; after value:</strong> date guard <code>day 23 vs configured day 15 -&gt; SAFE_SKIP_NON_CLAIM_DAY</code>; live Seller Center claim workflow <code>not entered -&gt; not entered</code>; Shopee webform submissions <code>0 -&gt; 0</code>; order SN scrape <code>0 -&gt; 0</code>; claim batches built <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; workflow config mode <code>live -&gt; live unchanged</code>; state.first_run_done <code>true -&gt; true unchanged</code>; expected report <code>absent -&gt; present</code>; raw guard evidence <code>absent -&gt; present</code>.</div>
+      <div class="field"><strong>Reason for change:</strong> Scheduled monthly guard fired on a non-claim day. Safety rules required a same-date skip report, raw evidence, Patricia board log, error-log closeout, and no live claim workflow entry.</div>
+      <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\shopee-shipping-claim-reports\shopee-shipping-claim-2026-06-23.md</code>; raw guard JSON <code>C:\Users\tessf\Documents\shopee-shipping-claim-reports\_codex_shopee_shipping_claim_guard_2026-06-23.json</code>; scheduled prompt <code>C:\Users\tessf\Documents\codex-scheduled-logs\shopee-shipping-claim\shopee-shipping-claim-prompt-20260623-103002.txt</code>; scheduled log <code>C:\Users\tessf\Documents\codex-scheduled-logs\shopee-shipping-claim\shopee-shipping-claim-scheduled-20260623-103002.log</code>; workflow documentation read-only at <code>C:\Users\tessf\.claude\skills\shopee-shipping-fee-claim.md</code>.</div>
+      <div class="field"><strong>Result:</strong> OK guard skip. Profile 70 was attached read-only by <code>/browser/active</code> + CDP <code>Browser.getVersion</code>; <code>/browser/start</code> and <code>/browser/stop</code> were not called; no non-profile-70 AdsPower profiles were opened.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> no active outstanding item found for this guard run. Workflow documentation for this lane still lives under <code>C:\Users\tessf\.claude\skills</code> rather than <code>.agents\skills</code>; this run used it read-only and did not invoke Claude or legacy launchers.</div>
+    </div>
+  </div>
+
   <div class="entry" data-date="2026-06-23" data-shops="multiple" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="partial">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">parcelclaim-auto - 23/6 Codex run: 8 new / 8 posted / 0 DOM-only-catches / 3 errors</span>
-      <span class="entry-meta">2026-06-23 MYT &middot; Codex replacement for Claude launcher &middot; report C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-23.md</span>
+      <span class="entry-title">parcelclaim-auto - 23/6 Codex run: 8 new / 8 posted / 3 profile blockers</span>
+      <span class="entry-meta">2026-06-23 MYT &middot; report <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-23.md</code> &middot; FINAL_STATUS: PARTIAL</span>
       <span class="tag">parcelclaim-auto</span>
-      <span class="tag result-ok">Partial</span>
+      <span class="tag result-warn">Partial</span>
     </div>
     <div class="entry-body">
-      <p><strong>Brief:</strong> Codex ran the 09:45 parcelclaim-auto workflow for 23/6 without invoking Claude or the legacy batch. Scanned TikTok R/R, TikTok failed delivery, mandatory Phase 2.5 DOM cross-verify, and Lazada returns. Dedupe used fresh webapp order_id coverage across all refund states before every POST.</p>
-      <div class="field"><strong>Before -&gt; after operational counters:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp creates 327 -&gt; 335; webapp remark patches 0 -&gt; 8.</div>
-      <div class="field"><strong>POST changes:</strong><ul><li>C2212 TT Adelmar failed_delivery 584167045765957194 - RM 275.00 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2213 TT Adelmar failed_delivery 584156551473824868 - RM 775.47 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2214 TT Adelmar failed_delivery 584134353779263084 - RM 271.32 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2215 TT Hiranai failed_delivery 584147563923342469 - RM 31.20 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2216 TT KarlMobel failed_delivery 584453375169103515 - RM 221.52 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2217 TT KarlMobel failed_delivery 584156727841424401 - RM 68.97 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2218 TT MurahYa failed_delivery 584150316795201488 - RM 683.09 - before not in webapp -&gt; after Pending with audit remark</li>
-<li>C2219 TT JagerHelmet rr 584560065998914919 - RM 119.98 - before not in webapp -&gt; after Pending with audit remark</li></ul></div>
-      <div class="field"><strong>Evidence table:</strong><pre>54 TT Adelmar: RR 88 cards / 0 in-window / 0 posted; FD 33 API + 2 DOM pages / Returning 0 / 3 posted / DOM-only 0
-55 TT DasNature: RR 0 cards / 0 in-window / 0 posted; FD 103 API + 3 DOM pages / Returning 0 / 0 posted / DOM-only 0
-56 TT Hiranai: RR 0 cards / 0 in-window / 0 posted; FD 168 API + 1 DOM pages / Returning 0 / 1 posted / DOM-only 0
-58 TT HiranaiMY: RR 155 cards / 1 in-window / 0 posted; FD 45 API + 3 DOM pages / Returning 0 / 0 posted / DOM-only 0
-59 TT Jager: RR 105 cards / 1 in-window / 0 posted; FD 70 API + 3 DOM pages / Returning 0 / 0 posted / DOM-only 0
-60 TT JagerArmor: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
-61 TT JagerSafety: RR 55 cards / 0 in-window / 0 posted; FD 1 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
-62 TT KarlMobel: RR 0 cards / 0 in-window / 0 posted; FD 297 API + 1 DOM pages / Returning 0 / 2 posted / DOM-only 0
-63 TT Lovento: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
-64 TT MurahYa: RR 0 cards / 0 in-window / 0 posted; FD 435 API + 1 DOM pages / Returning 0 / 1 posted / DOM-only 0
-65 TT Valuesnap: RR 0 cards / 0 in-window / 0 posted; FD 269 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
-66 TT JagerHelmet: RR 222 cards / 2 in-window / 1 posted; FD 10 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
-67 TT Kinata: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
-81 Lazada MurahYa: Lazada 0 rows / 0 in-window / 0 posted
-82 Laz das.nature: Lazada 0 rows / 0 in-window / 0 posted
-83 Lazada Lovento: Lazada 1 rows / 0 in-window / 0 posted</pre></div>
-      <div class="field"><strong>DOM cross-verify:</strong> 0 DOM-only catches. None.</div>
-      <div class="field"><strong>Crosscheck:</strong> 8/8 CONFIRMED; </div>
-      <div class="field"><strong>Reason:</strong> Daily scheduled intake of new TikTok/Lazada parcel-claim cases so CS does not miss R/R or failed-delivery cases. Historical FD rows older than 30 days remain deferred pending user approval.</div>
-      <div class="field"><strong>Evidence:</strong> Report saved at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-23.md</code>; raw JSON at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-06-23.json</code>.</div>
-      <div class="field"><strong>Result:</strong> partial - 8 posted, 3 errors, board logged by Codex.</div>
+      <p><strong>Brief:</strong> Codex ran the 09:45 parcelclaim-auto scheduled replacement for 2026-06-23 MYT without invoking Claude or the legacy launcher. TikTok R/R, TikTok failed-delivery, DOM cross-verify, Lazada returns, fresh webapp dedupe, POST, and crosscheck were performed.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-23 MYT.</div>
+      <div class="field"><strong>Task:</strong> parcelclaim-auto logger.</div>
+      <div class="field"><strong>Platform:</strong> TikTok MY + TikTok SG + Lazada MY + internal Parcel Claim webapp.</div>
+      <div class="field"><strong>Operational counters before -&gt; after:</strong> webapp rows <code>327 -&gt; 335</code>; webapp creates <code>0 -&gt; 8</code>; webapp remark patches <code>0 -&gt; 8</code>; messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Every webapp change before -&gt; after:</strong><ul><li><code>C2212</code> / TikTok / TT Adelmar / failed_delivery / <code>584167045765957194</code>: before <code>not in webapp</code> -&gt; after <code>Pending</code> with audit remark, RM 275.00, remark patch <code>HTTP 200</code>.</li><li><code>C2213</code> / TikTok / TT Adelmar / failed_delivery / <code>584156551473824868</code>: before <code>not in webapp</code> -&gt; after <code>Pending</code> with audit remark, RM 775.47, remark patch <code>HTTP 200</code>.</li><li><code>C2214</code> / TikTok / TT Adelmar / failed_delivery / <code>584134353779263084</code>: before <code>not in webapp</code> -&gt; after <code>Pending</code> with audit remark, RM 271.32, remark patch <code>HTTP 200</code>.</li><li><code>C2215</code> / TikTok / TT Hiranai / failed_delivery / <code>584147563923342469</code>: before <code>not in webapp</code> -&gt; after <code>Pending</code> with audit remark, RM 31.20, remark patch <code>HTTP 200</code>.</li><li><code>C2216</code> / TikTok / TT KarlMobel / failed_delivery / <code>584453375169103515</code>: before <code>not in webapp</code> -&gt; after <code>Pending</code> with audit remark, RM 221.52, remark patch <code>HTTP 200</code>.</li><li><code>C2217</code> / TikTok / TT KarlMobel / failed_delivery / <code>584156727841424401</code>: before <code>not in webapp</code> -&gt; after <code>Pending</code> with audit remark, RM 68.97, remark patch <code>HTTP 200</code>.</li><li><code>C2218</code> / TikTok / TT MurahYa / failed_delivery / <code>584150316795201488</code>: before <code>not in webapp</code> -&gt; after <code>Pending</code> with audit remark, RM 683.09, remark patch <code>HTTP 200</code>.</li><li><code>C2219</code> / TikTok / TT JagerHelmet / rr / <code>584560065998914919</code>: before <code>not in webapp</code> -&gt; after <code>Pending</code> with audit remark, RM 119.98, remark patch <code>HTTP 200</code>.</li></ul></div>
+      <div class="field"><strong>Crosscheck:</strong> 8/8 CONFIRMED;  All 8 posted rows were read back as Pending with expected amount and audit remark.</div>
+      <div class="field"><strong>Reason for change:</strong> Daily scheduled intake of genuinely new parcel-claim cases after fresh order-id dedupe across all refund states; no WhatsApp/customer message action is allowed in this job.</div>
+      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-23.md</code>; raw JSON <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-06-23.json</code>; run log <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-06-23.log</code>.</div>
+      <div class="field"><strong>Result:</strong> partial. Posted value <code>RM 2446.55</code>; duplicate observations <code>169</code>; profile coverage <code>13/16</code>; blocked/unverified profiles <code>3</code>.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong><ul><li>Profile <code>60</code> / TT JagerArmor / platform <code>tt</code>: login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100</li><li>Profile <code>63</code> / TT Lovento / platform <code>tt</code>: login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100</li><li>Profile <code>67</code> / TT Kinata / platform <code>tt</code>: login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-sg.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-sg.tiktok.com%2Forder%2Freturn%3Ftab%3D100</li></ul></div>
     </div>
   </div>
+
   <div class="entry" data-date="2026-06-23" data-shops="BahEmas, KarlMobel, MurahYa, TT Murahya" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
