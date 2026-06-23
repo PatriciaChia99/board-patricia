@@ -639,13 +639,13 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
-  <div class="entry" data-date="2026-06-23" data-shops="BahEmas, KarlMobel, MurahYa, TT Murahya" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="warn">
+  <div class="entry" data-date="2026-06-23" data-shops="BahEmas, KarlMobel, MurahYa, TT Murahya" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">parcelsplit-contact-crosscheck - Codex 23/6 rerun: 28 rows in 7d / 2 active / 0 writes</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck - Codex 23/6 rerun: 28 rows in 7d / 2 active verified / 0 writes</span>
       <span class="entry-meta">2026-06-23T10:03:46+08:00 MYT &middot; profile 70 k1b44nvg active &middot; fresh /api/parcel-split 2267 rows &middot; report <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-06-23.md</code></span>
       <span class="tag">parcelsplit-contact-crosscheck</span>
-      <span class="tag result-warn">Partial</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Codex reran the scheduled Parcel Split contact crosscheck for 2026-06-23 MYT without invoking Claude or the legacy launcher. Fresh dashboard API data had 28 rows in the 7-day MYT window and 2 active unshipped rows.</p>
@@ -655,8 +655,8 @@ header.page::after{
       <div class="field"><strong>Shop:</strong> BahEmas, KarlMobel, MurahYa, TT Murahya.</div>
       <div class="field"><strong>Platform:</strong> Shopee MY + TikTok + Lazada + Parcel Split webapp. Profile 70 <code>k1b44nvg</code> stayed open; marketplace seller profiles were not opened unless an active TT/Lazada row required it.</div>
       <div class="field"><strong>Reason for change:</strong> Manual Codex scheduled-job rerun for Parcel Split contact audit; safety rules required same-date report, state write, Patricia board log, ntfy closeout, and explicit zero counters when no operational system changed.</div>
-      <div class="field"><strong>Evidence:</strong> Raw API evidence <code>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_raw_2026-06-23.json</code>; fetch metadata <code>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_fetch_meta_2026-06-23.json</code>; report <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-06-23.md</code>; state <code>C:\Users\tessf\code\codex-lab\.agents\skills\parcelsplit-contact-crosscheck\state.json</code>.</div>
-      <div class="field"><strong>Result:</strong> partial. Blockers/outstanding: 2 active Shopee MY rows passed the API decision table, but DOM icon sampling was not completed; Shopee mismatch/manual rows 0/0; TT/Lazada blocked rows 0.</div>
+      <div class="field"><strong>Evidence:</strong> Raw API evidence <code>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_raw_2026-06-23.json</code>; fetch metadata <code>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_fetch_meta_2026-06-23.json</code>; DOM sanity <code>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_dom_sanity_2026-06-23.json</code>; report <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-06-23.md</code>; state <code>C:\Users\tessf\code\codex-lab\.agents\skills\parcelsplit-contact-crosscheck\state.json</code>.</div>
+      <div class="field"><strong>Result:</strong> completed. DOM sanity matched the phone/contact icon class for 2/2 active Shopee MY rows; Shopee mismatch/manual rows 0/0; TT/Lazada blocked rows 0; no active outstanding item found.</div>
     </div>
   </div>
   <div class="entry" data-date="2026-06-22" data-shops="Profile 70, TikTok seller profiles 54-67, Lazada profiles 81-83, all Codex scheduled tasks" data-platform="AdsPower + TikTok Seller Center + Lazada Seller Center + Windows Task Scheduler + Codex scheduled runner" data-result="warn">
