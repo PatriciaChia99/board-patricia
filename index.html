@@ -442,7 +442,7 @@ header.page::after{
   transition:border-left-color .15s ease,background .15s ease;
 }
 .field:hover{border-left-color:var(--sky);background:rgba(125,211,252,.04)}
-/* Legacy 2-column grid layout Ã¢â‚¬â€ only when field uses the <span class="field-label">+<span class="field-value"> structure */
+/* Legacy 2-column grid layout - only when field uses the <span class="field-label">+<span class="field-value"> structure */
 .field:has(> .field-label){
   display:grid;grid-template-columns:118px 1fr;gap:13px;
   padding-left:0;border-left:none;
@@ -478,7 +478,7 @@ header.page::after{
   position:relative;padding:3px 0 3px 4px;margin-bottom:2px;line-height:1.55;
 }
 .field > ul > li::before,.entry-body > ul > li::before{
-  content:'Ã¢â€“Â¸';position:absolute;left:-14px;color:var(--sky);font-size:11px;top:4px;
+  content:'\25B8';position:absolute;left:-14px;color:var(--sky);font-size:11px;top:4px;
 }
 .field > ol,.entry-body > ol{counter-reset:fieldol;padding-left:24px;list-style:none}
 .field > ol > li,.entry-body > ol > li{
@@ -639,125 +639,243 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
-  <div class=""entry"" data-date=""2026-06-23"" data-shops=""MurahYa, KarlMobel, ValueSnap, Luxbin"" data-platform=""Google Sheet FBS Claim"" data-result=""ok"">
-    <div class=""entry-summary"">
-      <span class=""chevron"">&#9654;</span>
-      <span class=""entry-title"">checkfbsclaims FBS live Sheet duplicate readback 2026-06-23</span>
-      <span class=""entry-meta"">2026-06-23 16:33 MYT &amp; live Sheet readback &amp; appended rows 12/12 &amp; duplicates 0</span>
-      <span class=""tag"">checkfbsclaims</span>
-      <span class=""tag result-ok"">Completed</span>
-    </div>
-    <div class=""entry-body"">
-      <p><strong>Brief:</strong> Ran a read-only live CSV readback on the FBS Claim Google Sheet after Patricia asked to make sure the new cases are in the Sheet and no duplicates exist.</p>
-      <div class=""field""><strong>Every value checked before -&gt; after:</strong><ul>
-        <li>Last saved Sheet append/readback timestamp stayed <code>2026-06-23 12:23:05 MYT</code>; this follow-up made no Sheet edits.</li>
-        <li>Expected appended Sheet rows <code>12 -&gt; 12 found exactly once</code>: KarlMobel <code>8/8</code>, ValueSnap <code>4/4</code>, MurahYa <code>0</code>, Luxbin <code>0</code>.</li>
-        <li>Duplicate order IDs across Claim Progress tabs <code>unknown current -&gt; 0</code>: MurahYa <code>0</code>, KarlMobel <code>0</code>, ValueSnap <code>0</code>, Luxbin <code>0</code>.</li>
-        <li>Live data rows: MurahYa <code>148</code>, KarlMobel <code>176</code>, ValueSnap <code>212</code>, Luxbin <code>9</code>.</li>
-      </ul></div>
-      <div class=""field""><strong>Reason for check:</strong> Patricia asked when the last Sheet patch happened and to confirm all new cases are in Google Sheet without duplicates.</div>
-      <div class=""field""><strong>Evidence:</strong> live verification JSON <code>tmp-fbs-claim-20260623\live_sheet_duplicate_check_20260623.json</code>; earlier append/readback <code>tmp-returnitems\fbs-sync-2026-06-23\duplicate-and-append-readback.json</code>.</div>
-      <div class=""field""><strong>Result:</strong> completed. Google Sheet contains all <code>12</code> expected new appended cases exactly once, and no duplicate order IDs were found in the four Claim Progress tabs.</div>
-      <div class=""field""><strong>Outstanding / Patricia may have missed:</strong> the <code>12</code> appended rows are still suspect as webapp-only bot cases until IT confirms. This check only confirms Sheet presence and duplicate count; it does not make those rows Shopee-authoritative.</div>
-    </div>
-  </div>
-<!-- CSRR-SG-CLOSE-CONTINUATION-2026-06-23 -->
-<div class="entry" data-date="2026-06-23" data-shops="MurahYa SG, KarlMobel SG" data-platform="Shopee SG" data-result="warn">
+<div class="entry" data-date="2026-06-24" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">csrrcredited SG close continuation - MurahYa SG + KarlMobel SG: 1 closed / 5 held</span>
-    <span class="entry-meta">2026-06-23 MYT &middot; profiles 70 k1b44nvg + 84 k1bpp0sl &middot; webapp patches 0 -&gt; 3 &middot; reconciliation 1/1 &middot; report <code>C:\Users\tessf\code\codex-lab\tmp-csrrcredited-sg-close-20260623\murahya-karlmobel-sg-continuation-6rows-2026-06-23.md</code></span>
-    <span class="tag">csrrcredited</span>
+    <span class="entry-title">chataudit - scheduled Codex daily chat audit 2026-06-24</span>
+    <span class="entry-meta">2026-06-24 10:26 MYT &middot; window 22/6 17:45 - 23/6 17:45 &middot; 414 deep-reviewed &middot; 0 confirmed &middot; 2 carry-over open</span>
+    <span class="tag">chataudit</span>
+    <span class="tag">Shopee chat</span>
     <span class="tag result-warn">Partial</span>
   </div>
   <div class="entry-body">
-    <p><strong>Brief:</strong> Continued the SG Parcel Claim close cleanup for MurahYa SG and KarlMobel SG using fresh webapp reads and profile84 live My Income evidence. Patricia-owned profile 70 was attached active-first and not stopped; profile84 was closed after the check.</p>
-    <div class="field"><strong>Shop / platform:</strong> MurahYa SG and KarlMobel SG on Shopee SG.</div>
-    <div class="field"><strong>Reason for change:</strong> Normalize terminal SG Parcel Claim rows only where live evidence and current remarks make the row terminal; keep partial, no-adjustment, active-CS, and unverified cases open.</div>
-    <div class="field"><strong>Before -&gt; after values:</strong><ul><li><code>260515EXGJUH72</code> KarlMobel SG Shopee SG: Pending / CS Action -&gt; Withdrawn / Closed; reason terminal loss/clawback with no active CS retry in current remarks; result patched; reconcile readback required in report</li></ul></div>
-    <div class="field"><strong>Held / outstanding rows:</strong><ul><li><code>260529KXMYBX71</code> KarlMobel SG: Pending / CS Action; live CLAWBACK_FIRED; held because Patricia instruction: keep Pending because CS chat / 2nd dispute remains active; result keep_pending</li><li><code>260602298UB1JJ</code> MurahYa SG: Pending / CS Action; live PARTIAL_WIN; held because PARTIAL_WIN: partial/no adjustment/unverified evidence stays Pending or action-open; result hold</li><li><code>260423JDAFXN05</code> KarlMobel SG: Pending / CS Action; live NO_ADJUSTMENT; held because NO_ADJUSTMENT: partial/no adjustment/unverified evidence stays Pending or action-open; result hold</li><li><code>260505M0EA5TBJ</code> MurahYa SG: Credited / CS Action; live NO_ADJUSTMENT; held because NO_ADJUSTMENT: partial/no adjustment/unverified evidence stays Pending or action-open; result hold</li><li><code>2604198FQEQ1J8</code> KarlMobel SG: Credited / CS Action; live NO_ADJUSTMENT; held because NO_ADJUSTMENT: partial/no adjustment/unverified evidence stays Pending or action-open; result hold</li></ul></div>
-    <div class="field"><strong>Operational counters:</strong> webapp patches <code>0 -&gt; 3</code>; status/action rows changed <code>0 -&gt; 1</code>; marketplace writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>.</div>
-    <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\code\codex-lab\tmp-csrrcredited-sg-close-20260623\murahya-karlmobel-sg-continuation-6rows-2026-06-23.md</code>; raw <code>C:\Users\tessf\code\codex-lab\tmp-csrrcredited-sg-close-20260623\murahya-karlmobel-sg-continuation-6rows-2026-06-23.json</code>; pending payload <code>C:\Users\tessf\code\codex-lab\tmp-csrrcredited-sg-close-20260623\patricia-board-log-pending-murahya-karlmobel-sg-continuation-6rows-2026-06-23.json</code>.</div>
-    <div class="field"><strong>Result:</strong> <code>260515EXGJUH72</code> reconciled as Withdrawn / Closed and absent from touched-row SG Pending feed. Five rows remain held for the reasons listed above.</div>
+    <div class="field"><strong>Date:</strong> 2026-06-24 MYT.</div>
+    <div class="field"><strong>Task:</strong> Daily chat audit - 5 cservice accounts scheduled Codex replacement.</div>
+    <div class="field"><strong>Before -&gt; after operational counters:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp patches 0 -&gt; 0.</div>
+    <div class="field"><strong>Coverage before -&gt; after:</strong> expected verified profiles 5 -&gt; 5; profile rows recorded 0 -&gt; 5; report absent for 2026-06-24 -&gt; created; raw evidence absent for 2026-06-24 -&gt; created; target evidence absent for 2026-06-24 -&gt; created; candidate crosscheck absent for 2026-06-24 -&gt; created.</div>
+    <div class="field"><strong>Per-account evidence:</strong><br>cs1 k1artcxf: loaded 150, opened 133, deep-reviewed 88, raw 10, confirmed 0, human-review 3, status OK<br>cs2 k1arvrqs: loaded 100, opened 75, deep-reviewed 56, raw 0, confirmed 0, human-review 4, status OK<br>cs3 k1arw2cs: loaded 536, opened 167, deep-reviewed 124, raw 14, confirmed 0, human-review 2, status OK<br>cs4 k1arw4x4: loaded 343, opened 205, deep-reviewed 138, raw 10, confirmed 0, human-review 2, status OK<br>cs5 k1arw890: loaded 50, opened 12, deep-reviewed 8, raw 1, confirmed 0, human-review 0, status OK</div>
+    <div class="field"><strong>Carry-over evidence:</strong><br>cs1 m2m2605: RESOLVED_OR_STALE - Historical Sofia follow-up carry-over; no current open issue surfaced by targeted search.<br>cs1 zarinamohdkassim: MONITOR - Historical monitor item only; no new date-window miss counted.<br>cs1 thecreation2020: MONITOR - Historical monitor item only; no new date-window miss counted.<br>cs2 jue_78: STILL_OPEN - Still appears to end on promise/follow-up language; refund or replacement decision still needs CS owner.<br>cs3 cjplusstore: MONITOR - Missing-screw recovery has follow-up language; confirm actual shipment/tracking if still operationally open.<br>cs4 ikmal_sumadi: STILL_OPEN - No Shopee-side resolution found after the wasabi/WhatsApp pointer; keep carry-over open.<br>cs4 wee0012: MONITOR_TODAY - Buyer reopened after the audit window with a gas-cylinder complaint; CS needs same-day follow-up, not counted as a date-window miss.<br>cs4 4p5nijv3rn: MONITOR_TODAY - Old issue was resolved, but buyer reopened after the audit window with a spare-part request; monitor today&#x27;s CS follow-up.</div>
+    <div class="field"><strong>Shop:</strong> ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG.</div>
+    <div class="field"><strong>Platform:</strong> Shopee MY + SG.</div>
+    <div class="field"><strong>Reason for change:</strong> Replace old Claude scheduled launcher with Codex while preserving read-only chataudit rules, deep-review count, 4-Q pre-flag filter, and Patricia board logging.</div>
+    <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\chataudit-reports\chataudit-summary-2026-06-24.md</code>; raw <code>C:\Users\tessf\Documents\chataudit-reports\_codex_chataudit_raw_2026-06-24.json</code>; target evidence <code>C:\Users\tessf\Documents\chataudit-reports\_codex_chataudit_targets_2026-06-24.json</code>; candidate crosscheck <code>C:\Users\tessf\Documents\chataudit-reports\_codex_chataudit_crosscheck_2026-06-24.json</code>.</div>
+    <div class="field"><strong>Result:</strong> PARTIAL - 414 deep-reviewed, 0 net-new confirmed misses, 11 manual-review candidates, 2 open carry-over item(s). No operational writes.</div>
   </div>
 </div>
-<!-- /CSRR-SG-CLOSE-CONTINUATION-2026-06-23 -->
 
-  <div class="entry" data-date="2026-06-23" data-shops="SB Variation" data-platform="SB Variation, Shopee MY, Shopee SG, TikTok MY" data-result="ok">
+    <div class="entry" data-date="2026-06-23" data-shops="ShopeeMY, ShopeeSG, TikTok" data-platform="Return Items webapp, SiteGiant, scheduled Codex runner, Patricia board" data-result="partial">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation contact-only recheck 2026-06-23</span>
-      <span class="entry-meta">2026-06-23 MYT &amp; contact-only filter &amp; active send-needed rows 0 &amp; messages 0-&gt;0</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag result-ok">OK</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Contact-only recheck against the fresh 2026-06-23 scheduled SB Variation derived data. Stock adjustment review intentionally deferred.</p>
-      <div class="field"><strong>Scope:</strong> reviewed contact status from <code>C:\Users\tessf\Documents\sbvariation-reports\_sbvariation_derived_2026-06-23.json</code>; fresh scheduled report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-scheduled-2026-06-23.md</code>; focused rows <code>72</code>; new rows <code>5</code>.</div>
-      <div class="field"><strong>New row contact status:</strong><ul><li><code>260622QGQQGTD8</code> / row <code>101273</code> / ValueSnap / ShopeeMY: live <code>Processed</code>; contactSent <code>True</code>; buyerDecision <code>null</code>; affected <code>SST-STORAGE-CANS-C-WHT-1.2L</code>.</li>
-<li><code>260621MRQYEA17</code> / row <code>101272</code> / Murahya / ShopeeMY: live <code>Processed</code>; contactSent <code>True</code>; buyerDecision <code>null</code>; affected <code>WASHING-MACHINE-RACK-EXTEND-WHT-120CM</code>.</li>
-<li><code>260619GKQ3E63C</code> / row <code>101270</code> / MurahYa / ShopeeMY: live <code>Cancelled</code>; contactSent <code>False</code>; buyerDecision <code>null</code>; affected <code>PDBN</code>.</li>
-<li><code>260622Q7QN7R88</code> / row <code>101269</code> / Lovento / ShopeeMY: live <code>Processed</code>; contactSent <code>True</code>; buyerDecision <code>null</code>; affected <code>33-STALK-SOAP-ROSES-BOUQUET-LED-LIGHT-PINK-PKG-1</code>.</li>
-<li><code>260620JWTM2R6V</code> / row <code>101268</code> / Kinata SG / ShopeeSG: live <code>Processed</code>; contactSent <code>True</code>; buyerDecision <code>null</code>; affected <code>HANDHELD-RETRO-GAME-CONSOLE-TR-BLK-64G-SG</code>.</li></ul></div>
-      <div class="field"><strong>contactSent=false rows:</strong><ul><li><code>260619GKQ3E63C</code> / row <code>101270</code> / MurahYa / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; no customer contact needed.</li>
-<li><code>584606387103761838</code> / row <code>101259</code> / TT Hiranai / TikTokMY: live <code>Cancelled</code> / <code></code>; no customer contact needed.</li>
-<li><code>260618DGRCV7BQ</code> / row <code>101257</code> / das.nature2 / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; no customer contact needed.</li>
-<li><code>260618DKMGNJMN</code> / row <code>101255</code> / Hiranai / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; no customer contact needed.</li>
-<li><code>260619G5Q7JBVT</code> / row <code>101254</code> / Lovento / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; no customer contact needed.</li>
-<li><code>260617AC4UE045</code> / row <code>101253</code> / MurahYa / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; no customer contact needed.</li>
-<li><code>260617B1H0WPQW</code> / row <code>101251</code> / Karlmobel / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; no customer contact needed.</li>
-<li><code>260617B1W8VBX3</code> / row <code>101250</code> / Hiranai / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; no customer contact needed.</li>
-<li><code>2606168BUBNNQB</code> / row <code>101248</code> / MurahYa / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; no customer contact needed.</li>
-<li><code>260612U9HEFWWN</code> / row <code>101224</code> / MurahYa / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; no customer contact needed.</li>
-<li><code>260610Q8NA4RFN</code> / row <code>101202</code> / KarlMobel SG / ShopeeSG: live <code>Shipped</code> / <code>TO_CONFIRM_RECEIVE</code>; no customer contact needed.</li>
-<li><code>260606CDSG2P9H</code> / row <code>101194</code> / MurahYa / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; no customer contact needed.</li></ul></div>
-      <div class="field"><strong>Every external change before -&gt; after:</strong> customer messages <code>0 -&gt; 0</code>; customer-message drafts <code>0 -&gt; 0</code>; SB webapp patches <code>0 -&gt; 0</code>; SiteGiant stock/status/reserved writes <code>0 -&gt; 0</code>; seller portal/Jira/form/WhatsApp writes <code>0 -&gt; 0</code>; local board/evidence note <code>absent -&gt; present</code>.</div>
-      <div class="field"><strong>Result:</strong> No active customer-contact item found. All active processed new rows are already <code>contactSent=true</code>; every <code>contactSent=false</code> row is cancelled or shipped/completed, so no buyer message should be sent from this pass.</div>
-      <div class="field"><strong>Outstanding:</strong> Stock adjustments and SB stock-column/buyerDecision cleanup remain separate follow-up items; not handled in this contact-only pass.</div>
-    </div>
-  </div>
-  <div class=""entry"" data-date=""2026-06-23"" data-shops=""Luxbin"" data-platform=""Google Sheet FBS Claim, employee FBS Claim webapp"" data-result=""ok"">
-    <div class=""entry-summary"">
-      <span class=""chevron"">&#9654;</span>
-      <span class=""entry-title"">checkfbsclaims FBS Sheet update comparison follow-up 2026-06-23</span>
-      <span class=""entry-meta"">2026-06-23 MYT &amp; comparison script run &amp; Sheet QC/Status changes 2 &amp; remaining webapp updates 0</span>
-      <span class=""tag"">checkfbsclaims</span>
-      <span class=""tag result-ok"">Completed</span>
-    </div>
-    <div class=""entry-body"">
-      <p><strong>Brief:</strong> Ran <code>node tmp-fbs-claim-20260623/compare_sheet_updates_20260623.js</code> after Patricia challenged the wording around <code>QC Judgement final patch plan 0</code> and <code>Status final patch plan 0</code>. The comparison checked 2026-06-19 vs 2026-06-23 Sheet snapshots and reconciled changed QC/Status cells against the 2026-06-23 webapp apply evidence.</p>
-      <div class=""field""><strong>Every change before -&gt; after:</strong><ul>
-        <li>Luxbin row <code>7</code>, order <code>260514B8W6QPT0</code>, Sheet <code>Status</code>: <code>Pending RR team -&gt; Closed</code>; webapp case <code>437</code> Claim Status had already been applied by the prior run <code>blank -&gt; closed</code> with HTTP <code>200</code>.</li>
-        <li>Luxbin row <code>10</code>, order <code>260504GPFPQPMT</code>, Sheet <code>Status</code>: <code>Pending RR team -&gt; Closed</code>; webapp case <code>440</code> Claim Status had already been applied by the prior run <code>blank -&gt; closed</code> with HTTP <code>200</code>.</li>
-        <li>QC Judgement changed cells <code>0</code>; unsupported-label skips <code>0</code>; already-matching/idempotent changed cells <code>0</code>; Sheet-only/no-webapp-case changed cells <code>0</code>; remaining webapp updates needed <code>0</code>.</li>
-      </ul></div>
-      <div class=""field""><strong>Reason for change:</strong> durable correction to the FBS closeout wording. Final patch plan <code>0</code> means no remaining supported webapp patches after apply, not that the Sheet had no QC/Status updates.</div>
-      <div class=""field""><strong>Safety note:</strong> Patricia's correction still stands: Shopee team only updates Sheet Remark, Status, and QC Judgement, and Shopee said they do not update MurahYa or Luxbin. These Luxbin Sheet changes must not be treated as Shopee-authoritative for future decisions without approval, even though the webapp now matches the Sheet values.</div>
-      <div class=""field""><strong>Evidence:</strong> script <code>tmp-fbs-claim-20260623\compare_sheet_updates_20260623.js</code>; saved output <code>tmp-fbs-claim-20260623\compare_sheet_updates_20260623_result.json</code>; webapp apply evidence <code>tmp-returnitems\fbs-sync-2026-06-23\sheet_patch_results.json</code>.</div>
-      <div class=""field""><strong>Result:</strong> completed follow-up. No additional webapp update is needed from this comparison.</div>
-      <div class=""field""><strong>Outstanding / Patricia may have missed:</strong> the 12 webapp-only cases appended earlier today remain suspect until IT confirms; do not append more webapp-only bot cases to Google Sheet while IT is checking.</div>
-    </div>
-  </div>
-    <div class="entry" data-date="2026-06-23" data-shops="ShopeeMY, ShopeeSG, TikTok" data-platform="Return Items webapp, Parcel Claim, SiteGiant, ShopeeMY R/R, Patricia board" data-result="partial">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">returnitems/checkreturnitems wide Resell recheck 2026-06-23</span>
-      <span class="entry-meta">2026-06-23 MYT &middot; scope 33 &middot; patched 2 / 6 fields &middot; verified 2/2 &middot; unresolved/manual 31</span>
+      <span class="entry-title">returnitems session closeout and next scheduled prompt 2026-06-23</span>
+      <span class="entry-meta">2026-06-23 MYT &middot; closeout saved &middot; scheduled prompt updated &middot; manual-check list carried &middot; no new webapp writes in closeout</span>
       <span class="tag">returnitems</span>
       <span class="tag result-warn">Partial</span>
     </div>
     <div class="entry-body">
-      <p><strong>Brief:</strong> Fresh since-Friday wide Resell recheck after Patricia clarified TT/SG/Lazada will be manually filled and ShopeeMY may be bot-filled when verified.</p>
-      <div class="field"><strong>Every Return Items webapp change before -&gt; after:</strong><ul><li><code>13989</code> / das.nature2 / <code>MY264868951053Y</code>: <code>orderId blank -&gt; 2606155A62PWHQ</code>; <code>items blank -&gt; Folding Fishing Bucket Live Fish Bag Oxygen Pump Outdoor Sports Fishing Tackle Box Fishbox Storage Bag Baldi Memancing</code>; <code>iskus blank -&gt; FISHING-BUCKET-BLUE-30CM-NO-HANDLE</code>; evidence Shopee MY Return Refund Cancel return <code>2606190GVKBHWHS</code>.</li>
-<li><code>14002</code> / MurahYa / <code>MY2654175592276</code>: <code>orderId blank -&gt; 260617A8P6D2D1</code>; <code>items blank -&gt; Outer Layer Only Waterproof Outdoor Camping Tent family Tent large Cover Kemah besar Outer Layer 5 8 12 persons</code>; <code>iskus blank -&gt; CT-OUTER-LAYER-BLACK-5-8P</code>; evidence Shopee MY Return Refund Cancel return <code>2606180DCS8G77D</code>.</li></ul></div>
-      <div class="field"><strong>Search coverage before -&gt; after:</strong> fresh Return Items pull <code>0 -&gt; 13565</code> rows read; scoped incomplete Resell rows <code>0 -&gt; 33</code>; Parcel Claim useful non-Return-Items hints <code>0 -&gt; 10</code>; SiteGiant wide coverage <code>0 -&gt; 33/33</code> with matches <code>0</code>; ShopeeMY R/R strict SKU-bearing matches <code>0 -&gt; 2</code>; Shopee order-only SiteGiant second-hop rows <code>0 -&gt; 5</code> with matches <code>0</code>.</div>
-      <div class="field"><strong>Manual/report-only TT/SG/Lazada rows:</strong> <code>13994</code> TikTok/TT Jager <code>680072861782411</code>; <code>13993</code> TikTok/TT Murahya <code>680083650082015</code>; <code>13987</code> TikTok/TT ValueSnap <code>680090287562716</code>; <code>13963</code> ShopeeSG/Kinata SG <code>SPXSG060805578217S</code></div>
-      <div class="field"><strong>ShopeeMY unresolved after wide search:</strong> <code>14003</code> MurahYa <code>260621NM5Q0VSN</code>; <code>14000</code> ValueSnap <code>MY266748033753L</code>; <code>13999</code> Hiranai <code>MY260460796907N</code>; <code>13997</code> Hiranai <code>MY2654790649056</code>; <code>13996</code> MasonGym <code>MY264770329699D</code>; <code>13991</code> KarlMobel <code>MY260525981929N</code>; <code>13990</code> KarlMobel <code>SPXMY061504947676</code>; <code>13986</code> KarlMobel <code>SPXMY063892113016</code>; <code>13985</code> KarlMobel <code>MY2640875433475</code>; <code>13956</code> ValueSnap <code>SPXMY063405732596</code>; <code>13914</code> Luxbin™ <code>MY267747784596O</code>; <code>13882</code> Lovento <code>MY2633123175490</code>; <code>13864</code> MurahYa <code>66668230302001</code>; <code>13863</code> MurahYa <code>SPXMY063750150436</code>; <code>13828</code> MurahYa <code>SPXMY063476032506</code>; <code>13827</code> Hiranai <code>SPXMY062495887476</code>; <code>13821</code> Hiranai <code>SPXMY069366740756</code>; <code>13819</code> Hiranai <code>SPXMY064703529506</code>; <code>13811</code> KarlMobel <code>MY262763829677W</code>; <code>13808</code> das.nature <code>SPXMY061414202826</code>; <code>13807</code> das.nature2 <code>SPXMY066706281986</code>; <code>13793</code> ValueSnap <code>MY268787316498R</code>; <code>13774</code> MurahYa <code>6800034042732914</code>; <code>13770</code> ValueSnap <code>MY268558292670Υ</code>; <code>13762</code> MurahYa <code>SPXMY064714258816</code>; <code>13759</code> das.nature2 <code>SPXMY065598236316</code>; <code>13748</code> KarlMobel <code>SHSMMYSG260606BQ0TR6Q5</code></div>
-      <div class="field"><strong>Safety counters:</strong> Return Items PATCHes <code>0 -&gt; 6</code>; failed PATCHes <code>0</code>; <code>stockIds</code> writes <code>0 -&gt; 0</code>; stock-in <code>0 -&gt; 0</code>; SiteGiant stock writes <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>.</div>
-      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\returnitems-reports\returnitems-wide-resell-recheck-2026-06-23.md</code>; final summary <code>tmp-returnitems\returnitems_20260623_since_friday_final_summary.json</code>; live readback <code>tmp-returnitems\returnitems_live_20260623_after_patch.json</code>; patch results <code>tmp-returnitems\returnitems_20260623_since_friday_patch_results.json</code>; Shopee R/R summary <code>tmp-returnitems\returnitems_20260623_since_friday_shopeemy_rr_profile_summary.json</code>.</div>
-      <div class="field"><strong>Result:</strong> PARTIAL. Two ShopeeMY rows were filled and verified. The remaining 27 ShopeeMY rows need better SKU-bearing marketplace/SiteGiant evidence; 4 TT/SG rows are left for Patricia manual fill per instruction.</div>
+      <p><strong>Brief:</strong> Ended the interrupted Return Items/checkreturnitems session by saving the closeout, updating durable error logs, updating the next scheduled prompt, and carrying the cannot-find/wrong-shop rows forward.</p>
+      <div class="field"><strong>Changes before -&gt; after:</strong> closeout report absent -&gt; saved <code>tmp-returnitems\returnitems-session-closeout-2026-06-23.md</code> and <code>C:\Users\tessf\Documents\returnitems-reports\returnitems-session-closeout-2026-06-23.md</code>; continuation prompt absent -&gt; saved <code>continue-2026-06-27-returnitems-scheduled-prompt.md</code>; scheduled prompt stale 2026-06-19 carry-over -&gt; updated to 2026-06-23 authenticated SiteGiant correction, manual-check list, and wrong-shop carry-over; repo error logs missing this latest closeout reminder -&gt; appended durable rule and session state.</div>
+      <div class="field"><strong>Return Items webapp writes in this closeout:</strong> <code>0 -&gt; 0</code>. Earlier same-session SiteGiant correction writes were already logged under commit <code>500d5e5fc3ab8c22097dbc9995e6c46d0890ae0c</code>: 12 ShopeeMY rows / 36 one-field PATCHes verified, plus earlier same-day rows <code>13989</code> and <code>14002</code> from ShopeeMY R/R.</div>
+      <div class="field"><strong>Shop/platform carry-forward:</strong> manual-check rows are ShopeeMY <code>13956, 13864, 13863, 13828, 13827, 13821, 13819, 13811, 13774, 13770, 13762, 13759</code> and ShopeeSG <code>13963</code>. Wrong-shop/platform rows are <code>13808</code> das.nature -&gt; KarlMobel, <code>13807</code> das.nature2 -&gt; KarlMobel, <code>13793</code> ValueSnap -&gt; Hiranai, and <code>13748</code> ShopeeMY KarlMobel -&gt; ShopeeSG karlmobel.sg.</div>
+      <div class="field"><strong>Reason:</strong> Patricia requested the closeout rule be remembered, error logs updated every task, final crosschecks done before completion, and the next scheduled prompt updated so the next run continues from today&apos;s evidence.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-returnitems\returnitems-session-closeout-2026-06-23.md</code>; <code>continue-2026-06-27-returnitems-scheduled-prompt.md</code>; <code>.agents\scheduled-codex\prompts\returnitems-lookup-scheduled.md</code>; <code>.agents\error-log.md</code>; <code>.agents\skills\returnitems-lookup\references\error-log-and-todo.md</code>; authenticated SiteGiant verification <code>tmp-returnitems\returnitems_20260623_sitegiant_auth_patch_verification.json</code>.</div>
+      <div class="field"><strong>Safety counters:</strong> <code>stockIds</code> writes <code>0 -&gt; 0</code>; stock-in <code>0 -&gt; 0</code>; SiteGiant stock writes <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Result:</strong> PARTIAL closeout because the manual-check and wrong-shop rows remain carried for Patricia/manual review. Scheduler prompt is updated for the next run.</div>
     </div>
   </div>
+<div class="entry" data-date="2026-06-23" data-shops="csrrcredited SG profile84; scheduled partial closeout" data-platform="Employee webapp + AdsPower + Shopee SG" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">csrrcredited retry and scheduled closeout status 2026-06-23</span>
+      <span class="entry-meta">2026-06-23 MYT &middot; retry attempted &middot; employee session 401 blocks final csrrcredited OK</span>
+      <span class="tag">csrrcredited</span>
+      <span class="tag">scheduled-closeout</span>
+      <span class="tag result-warn">partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Patricia asked Codex to retry csrrcredited and confirm the rest of the scheduled partial closeout as done.</p>
+      <div class="field"><strong>Other skills before -&gt; after:</strong> prior stale PARTIAL wording -&gt; corrected as completed/cleared for 2026-06-23 scope. parcelclaim-auto daily/latest intake complete; ttparcelclaim blank Pending return_status <code>3 -&gt; 0</code>; tiktokrraudit <code>43/43 confirmed</code> with <code>0</code> discrepancies; checksbvariation corrected stock cleanup completed with SiteGiant <code>SA-19775</code> and 11 SB webapp rows read back; chataudit has <code>0</code> confirmed misses and Patricia manually cleared review candidates.</div>
+      <div class="field"><strong>csrrcredited retry before -&gt; after:</strong> previous focused profile84 recovery was PARTIAL with five SG <code>get_sig 404</code> shops -&gt; retry launched at 2026-06-23 22:44 MYT, attached profile70 on port <code>60862</code>, but stopped before Shopee SG sweep because employee webapp API returned <code>401 Unauthorized</code> for <code>/api/new-parcel-claims-sg?refund_state=Pending&amp;include_shops=true</code>.</div>
+      <div class="field"><strong>Existing same-day SG cleanup evidence:</strong> MurahYa SG and KarlMobel SG had later same-day continuation cleanup. Close actions changed <code>10</code> rows to Withdrawn/Closed and <code>1</code> Credited action to Closed with <code>32/32</code> patch HTTP OK and <code>11/11</code> reconciliation. Later six-row continuation had <code>1</code> additional Withdrawn/Closed patch with <code>3/3</code> HTTP OK and <code>1/1</code> reconciliation. Private board commit <code>f25cd57485ec672f065d0418be858ff1741ec5a5</code>; public mirror commit <code>387ccfce35b416d903297a5f5951a75e5a327382</code>.</div>
+      <div class="field"><strong>Files:</strong> retry closeout <code>tmp-schedule-audit-20260623\csrrcredited-retry-closeout-2026-06-23.md</code>; current retry raw <code>C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_profile84_recovery_2026-06-23.json</code>; main report/raw under <code>C:\Users\tessf\Documents\csrrcredited-reports</code>; SG continuation evidence under <code>tmp-csrrcredited-sg-close-20260623</code>.</div>
+      <div class="field"><strong>Result:</strong> not all-completed. Other scheduled partials are completed/cleared, but csrrcredited remains PARTIAL because the current retry is blocked by employee webapp API 401. No fake OK status was assigned.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> the remaining blocker is employee webapp session refresh/relogin for profile70, not proof that Patricia cannot manually access Shopee SG shops. After employee webapp login is refreshed, rerun <code>python .\tools\csrrcredited_profile84_recovery_20260623.py</code>.</div>
+    </div>
+  </div>
+<!-- BOARD-DEDUP-CLEANUP-2026-06-23 -->
+<div class="entry" data-date="2026-06-23" data-shops="N/A" data-platform="Patricia board" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">boardcleanup duplicate-task lint repair 2026-06-23</span>
+    <span class="entry-meta">2026-06-23 MYT &middot; no duplicate task cards after repair &middot; upper markup fixed &middot; business writes 0 -&gt; 0</span>
+    <span class="tag">admin</span>
+    <span class="tag">boardcleanup</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Fixed Patricia board duplicate same-date same-skill task cards and repaired the broken upper-board markup. No claim, marketplace, customer-message, or stock data was changed.</p>
+    <div class="field"><strong>Before -&gt; after values:</strong><ul><li>2026-06-23 <code>ttparcelclaim</code>: visible task cards <code>2 -&gt; 1</code></li><li>2026-06-23 <code>Scheduled-run</code>: visible task cards <code>2 -&gt; 1</code></li><li>2026-06-23 <code>checksbvariation</code>: visible task cards <code>5 -&gt; 1</code></li><li>2026-06-23 <code>returnitems/checkreturnitems</code>: visible task cards <code>3 -&gt; 1</code></li><li>2026-06-22 <code>returnitems</code>: visible task cards <code>4 -&gt; 1</code></li><li>2026-06-22 <code>checksbvariation</code>: visible task cards <code>5 -&gt; 1</code></li><li>2026-06-23 <code>checkfbsclaims</code>: visible task cards <code>3 -&gt; 1</code></li><li>Upper-board malformed escaped attributes: <code>class=&quot;&quot;...&quot;&quot;</code> / <code>data-date=&quot;&quot;...&quot;&quot;</code> patterns <code>present -&gt; 0</code></li><li>Folded-card summaries: long raw metadata lines <code>present -&gt; compact title list + archive link</code></li></ul></div>
+    <div class="field"><strong>Reason:</strong> Patricia reported the board was messed up and reminded that duplicate task cards are not allowed.</div>
+    <div class="field"><strong>Result:</strong> Board duplicate-task groups were consolidated into one visible card per date and skill. Upper-board quote markup now renders as normal entries, folded summaries are compact, and the board linter passes.</div>
+  </div>
+</div>
+<!-- /BOARD-DEDUP-CLEANUP-2026-06-23 -->
+  <div class="entry" data-date="2026-06-23" data-shops="TT MurahYa, TT Adelmar" data-platform="TikTok MY + Codex scheduled runner + TT parcelclaim webapp; TikTok MY + TT parcelclaim webapp" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">ttparcelclaim consolidated 2026-06-23</span>
+    <span class="entry-meta">2026-06-23 MYT &middot; merged 2 prior same-skill cards &middot; duplicate-task board cleanup</span>
+    <span class="tag">admin</span>
+    <span class="tag result-ok">OK</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Consolidated duplicate same-date <code>ttparcelclaim</code> board cards into one visible task card per Patricia's no-duplicate-task rule. Original card summaries are retained below and the full removed blocks were archived locally.</p>
+    <div class="field"><strong>Before -&gt; after values:</strong> visible cards for <code>ttparcelclaim</code> on <code>2026-06-23</code> <code>2 -&gt; 1</code>.</div>
+    <div class="field"><strong>Folded cards:</strong><ul><li>ttparcelclaim session closeout and scheduled prompt update 2026-06-23</li><li>ttparcelclaim blank return_status monitor closeout 2026-06-23</li></ul></div><div class="field"><strong>Archive:</strong> full removed card HTML saved in <code>tmp-board-dedupe-20260623\removed-duplicate-board-cards-final-2026-06-23.json</code>.</div>
+    <div class="field"><strong>Operational counters for this cleanup:</strong> webapp patches <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Result:</strong> Duplicate board cards folded; use the original reports/raw evidence named inside the folded cards for business-level detail.</div>
+  </div>
+</div>
+  <div class="entry" data-date="2026-06-23" data-shops="All scheduled Patricia partials; TT DasNature; TT MurahYa; TT Valuesnap; TT Adelmar; Lazada MurahYa; Laz das.nature; Lazada Lovento; CS R/R SG profile84 shops; Check SB Variation shops; Patricia scheduled runs; parcelclaim-auto; ttparcelclaim; tiktokrraudit; csrrcredited; checksbvariation; chataudit" data-platform="Codex scheduled evidence + Patricia correction; Employee webapp + AdsPower + TikTok/Lazada/Shopee evidence + Patricia board" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">Scheduled-run consolidated 2026-06-23</span>
+    <span class="entry-meta">2026-06-23 MYT &middot; merged 2 prior same-skill cards &middot; duplicate-task board cleanup</span>
+    <span class="tag">admin</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Consolidated duplicate same-date <code>Scheduled-run</code> board cards into one visible task card per Patricia's no-duplicate-task rule. Original card summaries are retained below and the full removed blocks were archived locally.</p>
+    <div class="field"><strong>Before -&gt; after values:</strong> visible cards for <code>Scheduled-run</code> on <code>2026-06-23</code> <code>2 -&gt; 1</code>.</div>
+    <div class="field"><strong>Folded cards:</strong><ul><li>Scheduled-run partial closeout correction 2026-06-23</li><li>Scheduled-run partial closeout after evidence reruns 2026-06-23</li></ul></div><div class="field"><strong>Archive:</strong> full removed card HTML saved in <code>tmp-board-dedupe-20260623\removed-duplicate-board-cards-final-2026-06-23.json</code>.</div>
+    <div class="field"><strong>Operational counters for this cleanup:</strong> webapp patches <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>csrrcredited retry completed after relogin 23:07:</strong> Patricia refreshed employee webapp login and the focused retry completed. Profile84 target shops recovered <code>5/5</code>; SG Pending feed <code>82 raw / 40 auditable / 42 closed-action skipped</code>; findings <code>5</code>; patches <code>4</code>; crosscheck <code>4/4</code>; errors <code>0</code>. Four claim rows correctly remain Pending by live evidence/approval-gated logic (<code>260529KXMYBX71</code>, <code>260602298UB1JJ</code>, <code>260605A4G9HM4X</code>, <code>260413P0F6D47G</code>), so no fake Credited/Withdrawn status was assigned. Scheduled closeout scope is completed.</div>
+    <div class="field"><strong>Result:</strong> Scheduled-run partial closeout is completed after relogin recovery; original reports/raw evidence remain named inside the folded cards for business-level detail.</div>
+  </div>
+</div>
+<!-- SESSION-CLOSEOUT-CSRR-2026-06-23 -->
+<div class="entry" data-date="2026-06-23" data-shops="N/A" data-platform="Codex scheduler and documentation" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">sessioncloseout csrr schedule prompt saved</span>
+    <span class="entry-meta">2026-06-23 MYT &middot; closeout saved &middot; next-run prompt saved &middot; scheduled self-test OK &middot; webapp patches 0 -&gt; 0</span>
+    <span class="tag">admin</span>
+    <span class="tag">sessioncloseout</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Ended the csrrcredited SG cleanup / skill-share session by saving the closeout, creating the next-run continuation prompt, updating the scheduled csrrcredited prompt, and verifying the scheduled runner wiring.</p>
+    <div class="field"><strong>Reason:</strong> User requested session end, durable error-log reminder, saved closeout, next-run prompt, and scheduled task prompt update.</div>
+    <div class="field"><strong>Before -&gt; after values:</strong><ul><li>Session closeout: No final closeout file for this session. -&gt; Saved tmp-session-closeout-20260623/session-closeout-2026-06-23-csrrcredited-sg-skillshare.md.</li><li>Next-run prompt: No 2026-06-24 csrrcredited + csrrcreditedcheck + chase-rr continuation prompt. -&gt; Saved tmp-session-closeout-20260623/continue-2026-06-24-csrrcredited-csrrcreditedcheck-chaserr-prompt.md and root continue-2026-06-24-csrrcredited-csrrcreditedcheck-chaserr-prompt.md.</li><li>Scheduled csrrcredited prompt: Carry-forward still referenced the 2026-06-16 closeout and did not include the chase-rr gate. -&gt; .agents/scheduled-codex/prompts/csrrcredited-scheduled.md now references the 2026-06-23 closeout, held SG rows, split skill-share files, durable closeout rule, and chase-rr gate.</li><li>Scheduled task verification: Prompt update not self-tested. -&gt; run-codex-scheduled csrrcredited self-test passed; installer self-test showed CSRRCredited_1030AM Ready daily 10:30.</li></ul></div>
+    <div class="field"><strong>Shop / platform:</strong> N/A; Codex scheduler, skill documentation, and Patricia board only.</div>
+    <div class="field"><strong>Operational counters:</strong> webapp patches <code>0 -&gt; 0</code>; claim rows changed <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Result:</strong> Session saved, scheduled prompt updated, scheduler self-tests passed, and no active session outstanding remains.</div>
+  </div>
+</div>
+<!-- /SESSION-CLOSEOUT-CSRR-2026-06-23 -->
+
+  <div class="entry" data-date="2026-06-23" data-shops="SB Variation; SB Variation, SiteGiant; SB Variation, SiteGiant, Shopee MY; SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY; SB Variation, scheduled-codex" data-platform="SB Variation, Shopee MY, Shopee SG, TikTok MY; SB Variation, SiteGiant, Shopee MY; SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY; Windows Task Scheduler, Codex scheduled runner, Patricia board" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation consolidated 2026-06-23</span>
+    <span class="entry-meta">2026-06-23 MYT &middot; merged 5 prior same-skill cards &middot; Patricia corrected status to completed</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Consolidated duplicate same-date <code>checksbvariation</code> board cards into one visible task card per Patricia's no-duplicate-task rule. Original card summaries are retained below and the full removed blocks were archived locally.</p>
+    <div class="field"><strong>Before -&gt; after values:</strong> visible cards for <code>checksbvariation</code> on <code>2026-06-23</code> <code>5 -&gt; 1</code>.</div>
+    <div class="field"><strong>Folded cards:</strong><ul><li>checksbvariation session closeout and next prompt 2026-06-23</li><li>checksbvariation corrected approved stock cleanup 2026-06-23</li><li>checksbvariation OOS stock flow-back recheck 2026-06-23</li><li>checksbvariation contact-only recheck 2026-06-23</li><li>checksbvariation scheduled daily run 2026-06-23</li></ul></div><div class="field"><strong>Archive:</strong> full removed card HTML saved in <code>tmp-board-dedupe-20260623\removed-duplicate-board-cards-final-2026-06-23.json</code>.</div>
+    <div class="field"><strong>Operational counters for this status correction:</strong> webapp patches <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Patricia correction 2026-06-23:</strong> checksbvariation is completed. The approved stock cleanup was completed with SiteGiant <code>SA-19775</code> and final SB readback; old scheduled-run partial/report-only wording should not keep this skill open unless Patricia reopens a specific row.</div><div class="field"><strong>Result:</strong> Completed per Patricia correction. Duplicate board cards remain folded; original reports/raw evidence are archived for detail, but no active same-day checksbvariation blocker is being carried from this board entry.</div>
+  </div>
+</div>
+  
+  
+  
+  <div class="entry" data-date="2026-06-23" data-shops="TT Adelmar, TT MurahYa, TT ValueSnap, Lazada MurahYa, Laz das.nature, Lazada Lovento" data-platform="Codex session audit + ttparcelclaim + Lazada profile reprobe" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">Codex session status check 2026-06-23</span>
+      <span class="entry-meta">2026-06-23 18:33 MYT &middot; latest unclosed local evidence identified &middot; no operational writes</span>
+      <span class="tag">admin</span>
+      <span class="tag">session-check</span>
+      <span class="tag result-warn">Follow-up closeout gap found</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Patricia asked which latest Codex run/session may have been accidentally closed.</p>
+      <div class="field"><strong>Finding:</strong> latest fully logged scheduled closeout found was <code>chataudit</code> catch-up from <code>2026-06-23 13:14</code>. The latest local evidence that looked not fully closed out was the ad-hoc <code>ttparcelclaim Blank return_status Inspect</code> at <code>2026-06-23 18:30</code>, with a related Lazada profile reprobe at <code>18:27</code>.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> latest unclosed local evidence <code>unknown -&gt; tmp-schedule-audit-20260623\ttparcelclaim-blank-return-status-2026-06-23.md</code>; related profile reprobe <code>unknown -&gt; tmp-schedule-audit-20260623\lazada-profile-reprobe-after-ttparcelclaim-2026-06-23.md</code>; board/error-log closeout for those 18:27/18:30 reports <code>not found -&gt; this status-check board/error-log entry added</code>; webapp writes <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>18:30 TT parcelclaim inspect:</strong> blank Pending <code>return_status</code> rows found <code>8</code>; operational changes all <code>0 -&gt; 0</code>; local report says <code>FINAL_STATUS: OK</code> because it was inspect-only.</div>
+      <div class="field"><strong>18:27 Lazada reprobe:</strong> profile <code>81</code> Lazada MurahYa <code>LOGIN_EXPIRED</code>; profile <code>82</code> Laz das.nature <code>LOGIN_EXPIRED</code>; profile <code>83</code> Lazada Lovento <code>ALIVE</code>; report <code>FINAL_STATUS: PARTIAL</code>.</div>
+      <div class="field"><strong>Reason:</strong> user suspected an accidental session close and needed the latest closeout state checked from local logs/evidence before resuming work.</div>
+      <div class="field"><strong>Result:</strong> likely accidentally closed or incomplete closeout was the 18:30 ad-hoc TT parcelclaim blank-status inspect, not the main scheduled runner audit. Local evidence exists; no webapp or marketplace data was changed by this status check.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> the 18:30 inspect found <code>8</code> Pending ttparcelclaim rows still blank for <code>return_status</code> and did not patch them; Lazada profiles <code>81</code> and <code>82</code> still need manual relogin; no active scheduled report gap was found for the 13:14 chataudit closeout.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-schedule-audit-20260623\codex-session-status-check-2026-06-23.md</code>, <code>tmp-schedule-audit-20260623\ttparcelclaim-blank-return-status-2026-06-23.md</code>, <code>tmp-schedule-audit-20260623\lazada-profile-reprobe-after-ttparcelclaim-2026-06-23.md</code>.</div>
+    </div>
+  </div>
+<!-- CSRR-SHARE-PACK-2026-06-23 -->
+<div class="entry" data-date="2026-06-23" data-shops="N/A" data-platform="Skill documentation" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">skilldetail split files - csrr support docs regenerated</span>
+    <span class="entry-meta">2026-06-23 MYT &middot; old combined ZIP removed &middot; three separate Markdown files created &middot; webapp patches 0 -&gt; 0</span>
+    <span class="tag">admin</span>
+    <span class="tag">skilldetail</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Replaced the prior combined share pack with three simplified skill-detail files for sharing and improvement review.</p>
+    <div class="field"><strong>Reason:</strong> User corrected the previous combined evidence pack and requested three separate simplified skill-detail files for csrrcredited, csrrcreditedcheck, and chase-rr.</div>
+    <div class="field"><strong>Before -&gt; after values:</strong><ul><li>Share artifact format: One combined ZIP evidence pack with reports/raw files. -&gt; Three separate simplified Markdown skill-detail files with no schedules, run reports, or raw evidence.</li><li>Old combined files: Downloads ZIP and workspace ZIP/folder existed. -&gt; Old combined ZIP/folder deleted.</li><li>New share files: No separate simplified files in Downloads. -&gt; Created csrrcredited-simplified-skill-details.md, csrrcreditedcheck-simplified-skill-details.md, and chase-rr-simplified-skill-details.md in Downloads.</li></ul></div>
+    <div class="field"><strong>Files:</strong><ul><li><code>C:\Users\tessf\Downloads\csrrcredited-simplified-skill-details.md</code></li><li><code>C:\Users\tessf\Downloads\csrrcreditedcheck-simplified-skill-details.md</code></li><li><code>C:\Users\tessf\Downloads\chase-rr-simplified-skill-details.md</code></li></ul></div>
+    <div class="field"><strong>Operational counters:</strong> webapp patches <code>0 -&gt; 0</code>; claim rows changed <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Result:</strong> Three simplified share files created and verified. No claim data changed.</div>
+  </div>
+</div>
+<!-- /CSRR-SHARE-PACK-2026-06-23 -->
+
+    <div class="entry" data-date="2026-06-23" data-shops="Kinata SG, ValueSnap, Luxbin, Lovento, MurahYa, Hiranai, KarlMobel, das.nature, das.nature2; ShopeeMY, ShopeeSG, TikTok; ShopeeMY, TikTok, ShopeeSG" data-platform="Return Items webapp, Parcel Claim, SiteGiant, ShopeeMY R/R, Patricia board; Return Items webapp, SiteGiant authenticated Orders/Returns/failedDelivery; Return Items webapp, checkreturnitems, Windows Task Scheduler, Patricia board" data-result="partial">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">returnitems/checkreturnitems consolidated 2026-06-23</span>
+    <span class="entry-meta">2026-06-23 MYT &middot; merged 3 prior same-skill cards &middot; duplicate-task board cleanup</span>
+    <span class="tag">returnitems</span>
+    <span class="tag result-warn">Partial</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Consolidated duplicate same-date <code>returnitems/checkreturnitems</code> board cards into one visible task card per Patricia's no-duplicate-task rule. Original card summaries are retained below and the full removed blocks were archived locally.</p>
+    <div class="field"><strong>Before -&gt; after values:</strong> visible cards for <code>returnitems/checkreturnitems</code> on <code>2026-06-23</code> <code>3 -&gt; 1</code>.</div>
+    <div class="field"><strong>Folded cards:</strong><ul><li>returnitems/checkreturnitems SiteGiant authenticated correction 2026-06-23</li><li>returnitems/checkreturnitems wide Resell recheck 2026-06-23</li><li>returnitems/checkreturnitems pending status check 2026-06-23</li></ul></div><div class="field"><strong>Archive:</strong> full removed card HTML saved in <code>tmp-board-dedupe-20260623\removed-duplicate-board-cards-final-2026-06-23.json</code>.</div>
+    <div class="field"><strong>Operational counters for this cleanup:</strong> webapp patches <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Result:</strong> Duplicate board cards folded; use the original reports/raw evidence named inside the folded cards for business-level detail.</div>
+  </div>
+</div>
+
+  <div class="entry" data-date="2026-06-23" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center wallet" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checkfbsclaims consolidated 2026-06-23</span>
+    <span class="entry-meta">2026-06-23 MYT &middot; webapp cases 541 &middot; Sheet readback 12/12 &middot; duplicate count 0 &middot; wallet 25/25</span>
+    <span class="tag">checkfbsclaims</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Consolidated the two same-date FBS Claim board cards into one clean entry after repairing malformed top-board HTML.</p>
+    <div class="field"><strong>Every value checked before -&gt; after:</strong><ul>
+      <li>Live Sheet duplicate readback: appended rows present <code>0/12 -&gt; 12/12</code>; duplicate order IDs <code>unknown -&gt; 0</code>; Sheet edits in this check <code>0 -&gt; 0</code>.</li>
+      <li>Sheet update comparison: Luxbin QC/Status supported changes <code>0 -&gt; 2</code> already matched prior webapp evidence; remaining supported webapp updates <code>0 -&gt; 0</code>.</li>
+      <li>Board duplicate cards: same-date <code>checkfbsclaims</code> entries <code>2 -&gt; 1</code>.</li>
+      <li>Scheduled FBS sync card folded into this entry: webapp cases <code>541</code>; supported Sheet-to-webapp status patches <code>0 -&gt; 2</code>; Action patches <code>0 -&gt; 19</code>; current-case Sheet append rows <code>0 -&gt; 12</code>; wallet evidence targets <code>25/25</code>; final supported Sheet and Action plans <code>0</code>.</li>
+    </ul></div>
+    <div class="field"><strong>Shop / platform:</strong> MurahYa, KarlMobel, ValueSnap, Luxbin; Google Sheet FBS Claim and employee FBS Claim webapp.</div>
+    <div class="field"><strong>Reason:</strong> Patricia asked to confirm the FBS Sheet rows are present without duplicates and later corrected the closeout wording around QC/Status patch counts.</div>
+    <div class="field"><strong>Safety note:</strong> Shopee team only updates Sheet Remark, Status, and QC Judgement. The 12 webapp-only bot cases remain suspect until IT confirms; do not use them as Shopee-authoritative evidence without approval.</div>
+    <div class="field"><strong>Evidence:</strong> <code>tmp-fbs-claim-20260623\live_sheet_duplicate_check_20260623.json</code>; <code>tmp-returnitems\fbs-sync-2026-06-23\duplicate-and-append-readback.json</code>; <code>tmp-fbs-claim-20260623\compare_sheet_updates_20260623_result.json</code>; <code>tmp-returnitems\fbs-sync-2026-06-23\sheet_patch_results.json</code>.</div>
+    <div class="field"><strong>Result:</strong> completed. The Sheet contains all 12 expected appended cases exactly once, and no additional webapp update is needed from the comparison.</div>
+    <div class="field"><strong>Outstanding / Patricia may have missed:</strong> the 12 webapp-only cases still need IT confirmation before future Sheet appends or claim decisions rely on them.</div>
+  </div>
+</div>
+
 <div class="entry" data-date="2026-06-23" data-shops="All scheduled Codex jobs; TT profiles 54-67; Lazada profiles 81-83; Shopee CS profiles; profile70" data-platform="Windows Task Scheduler + Codex scheduled runner + AdsPower + Shopee/TikTok/Lazada evidence" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -772,7 +890,7 @@ header.page::after{
       <div class="field"><strong>Every infrastructure change before -&gt; after:</strong> Check SB scheduled wrapper <code>missing -&gt; .agents\skills\checksbvariation\scripts\run-checksbvariation-scheduled.ps1 present</code>; shared AdsPower coordination <code>per-job only -&gt; Global\CodexScheduled_AdsPower mutex</code>; parcelclaim compatibility wait <code>absent -&gt; later AdsPower jobs wait while ParcelClaimAuto_945AM is running</code>; Check SB report gate <code>absent -&gt; requires sbvariation-scheduled-{today}.md with FINAL_STATUS</code>; generic scheduler self-check coverage <code>not rechecked -&gt; ttparcelclaim, csrrcredited, and Check SB self-tests passed</code>; final validation <code>not run -&gt; npm test passed</code>.</div>
       <div class="field"><strong>Run status before -&gt; after:</strong> chataudit <code>09:10 log only/no 2026-06-23 report -&gt; catch-up report/raw/target/crosscheck/profile cleanup/board final present</code>; Check SB <code>task failed due missing wrapper -&gt; Last Result 0 with report/raw/SiteGiant/board present</code>; ttparcelclaim <code>missed/refused early -&gt; scheduled run completed with report/raw/board present</code>; sg-gap monitor <code>profile70 connection-refused failure -&gt; catch-up OK</code>; parcelclaim-auto, parcelsplit, shipping claim, csrrcredited, tiktokrraudit, and FBS <code>unchecked -&gt; reports and raw evidence verified</code>.</div>
       <div class="field"><strong>Shop / platform profile result:</strong> live probes showed TT/Lazada profiles alive for <code>54,55,56,58,59,61,62,64,65,66,82</code>; login-expired and needing manual relogin for <code>60 TT JagerArmor</code>, <code>63 TT Lovento</code>, <code>67 TT Kinata</code>, <code>81 Lazada MurahYa</code>, and <code>83 Lazada Lovento</code>. Profile 70 stayed active on port <code>64317</code> and was not stopped.</div>
-      <div class="field"><strong>Evidence checked:</strong> parcelclaim-auto <code>FINAL_STATUS: PARTIAL</code>; parcel split <code>OK</code>; shipping claim <code>OK</code>; csrrcredited and profile84 recovery <code>PARTIAL</code>; tiktokrraudit <code>PARTIAL</code>; sg-gap-monitor <code>OK</code>; FBS <code>OK</code>; ttparcelclaim <code>PARTIAL</code>; Check SB <code>PARTIAL</code>; chataudit <code>PARTIAL</code>. Raw evidence and board/readback evidence exist for the completed closeouts.</div>
+      <div class="field"><strong>Evidence checked:</strong> parcelclaim-auto <code>FINAL_STATUS: PARTIAL</code>; parcel split <code>OK</code>; shipping claim <code>OK</code>; csrrcredited and profile84 recovery <code>PARTIAL</code>; tiktokrraudit <code>PARTIAL</code>; sg-gap-monitor <code>OK</code>; FBS <code>OK</code>; ttparcelclaim <code>PARTIAL</code>; Check SB <code>PARTIAL at audit time, later corrected completed by Patricia/SA-19775</code>; chataudit <code>PARTIAL</code>. Raw evidence and board/readback evidence exist for the completed closeouts.</div>
       <div class="field"><strong>Safety counters for this audit before -&gt; after:</strong> customer/WhatsApp messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; audit-layer webapp writes <code>0 -&gt; 0</code>. Business-job writes are only those shown in their own reports, including parcelclaim-auto creates and ttparcelclaim webapp patches.</div>
       <div class="field"><strong>Manual wrapper issue:</strong> csrrcredited and tiktokrraudit wrote business reports/evidence but their scheduler wrappers stayed stuck and were manually ended, leaving scheduler Last Result <code>267014</code>. Treat those as wrapper-closeout defects with business evidence present, not as missing report runs.</div>
       <div class="field"><strong>Result:</strong> today's visible scheduled run set was audited and caught up. The remaining state is operationally clear but not all OK because several business jobs correctly remain partial.</div>
@@ -780,25 +898,7 @@ header.page::after{
       <div class="field"><strong>Evidence files:</strong> error log section <code>2026-06-23 Scheduled Codex Runner Audit And Catch-Up</code>; scheduler files <code>.agents\scheduled-codex\run-codex-scheduled.ps1</code> and <code>.agents\skills\checksbvariation\scripts\run-checksbvariation-scheduled.ps1</code>; reports under <code>C:\Users\tessf\Documents\*-reports</code>; this board payload/readback under <code>tmp-schedule-audit-20260623</code>.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-06-23" data-shops="Kinata SG, ValueSnap, Luxbin, Lovento, MurahYa, Hiranai, KarlMobel, das.nature, das.nature2" data-platform="Return Items webapp, checkreturnitems, Windows Task Scheduler, Patricia board" data-result="partial">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">returnitems/checkreturnitems pending status check 2026-06-23</span>
-      <span class="entry-meta">2026-06-23 MYT &middot; status check only &middot; today run not found &middot; pending carryover 21</span>
-      <span class="tag">returnitems</span>
-      <span class="tag result-warn">Pending</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Patricia asked whether Return Items/checkreturnitems ran today and which yesterday pending cases are not yet done. This was a read-only status check.</p>
-      <div class="field"><strong>Before -&gt; after values:</strong> 2026-06-23 Return Items business-run report <code>absent -&gt; absent</code>; 2026-06-23 returnitems scheduled log <code>absent -&gt; absent</code>; latest returnitems scheduled logs remained 2026-06-22 self-tests with <code>No business workflow started</code>; pending carryover rows <code>21 -&gt; 21</code>; Return Items PATCHes <code>0 -&gt; 0</code>; <code>stockIds</code>, stock-in, SiteGiant stock writes, marketplace writes, and customer messages all <code>0 -&gt; 0</code>.</div>
-      <div class="field"><strong>Shop / platform:</strong> ShopeeMY and ShopeeSG pending rows on Return Items/checkreturnitems; no TikTok unresolved row remains from the searched 2026-06-22 scope.</div>
-      <div class="field"><strong>Reason for change:</strong> Board/status logging required after confirming today did not run and yesterday's 21 ShopeeMY/ShopeeSG cannot-find rows still need follow-up.</div>
-      <div class="field"><strong>Task Scheduler readback:</strong> <code>Codex_ReturnItems_Weekend_1030</code> next run <code>2026-06-27 10:50 MYT</code>; 2026-06-23 is Tuesday, so the weekend task was not expected to run today.</div>
-      <div class="field"><strong>Pending rows:</strong> <code>13963/SPXSG060805578217S/ShopeeSG/Kinata SG; 13956/SPXMY063405732596/ShopeeMY/ValueSnap; 13914/MY267747784596O/ShopeeMY/Luxbin(TM); 13882/MY2633123175490/ShopeeMY/Lovento; 13864/66668230302001/ShopeeMY/MurahYa; 13863/SPXMY063750150436/ShopeeMY/MurahYa; 13828/SPXMY063476032506/ShopeeMY/MurahYa; 13827/SPXMY062495887476/ShopeeMY/Hiranai; 13821/SPXMY069366740756/ShopeeMY/Hiranai; 13819/SPXMY064703529506/ShopeeMY/Hiranai; 13811/MY262763829677W/ShopeeMY/KarlMobel; 13808/SPXMY061414202826/ShopeeMY/das.nature; 13807/SPXMY066706281986/ShopeeMY/das.nature2; 13793/MY268787316498R/ShopeeMY/ValueSnap; 13774/6800034042732914/ShopeeMY/MurahYa; 13770/MY268558292670[live Greek-upsilon-looking char]/ShopeeMY/ValueSnap; 13762/SPXMY064714258816/ShopeeMY/MurahYa; 13759/SPXMY065598236316/ShopeeMY/das.nature2; 13748/SHSMMYSG260606BQ0TR6Q5/ShopeeMY/KarlMobel; 13986/SPXMY063892113016/ShopeeMY/KarlMobel; 13985/MY2640875433475/ShopeeMY/KarlMobel</code></div>
-      <div class="field"><strong>Evidence:</strong> status report <code>tmp-returnitems\returnitems-pending-status-2026-06-23.md</code>; continuation prompt <code>continue-2026-06-23-returnitems-pending-prompt.md</code>; final 2026-06-22 summary <code>tmp-returnitems\returnitems_20260622_after_relogin_final_summary.json</code>; latest scheduled log <code>C:\Users\tessf\Documents\codex-scheduled-logs\returnitems-lookup\returnitems-lookup-scheduled-20260622-220207.log</code>.</div>
-      <div class="field"><strong>Result:</strong> no 2026-06-23 Return Items/checkreturnitems business run found. The 21 carried ShopeeMY/ShopeeSG rows remain pending until a fresh live Return Items pull and follow-up search/patch run is performed.</div>
-    </div>
-  </div>
+  
 <div class="entry" data-date="2026-06-23" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -823,55 +923,7 @@ header.page::after{
   </div>
 </div>
 
-  <div class="entry" data-date="2026-06-23" data-shops="SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY" data-platform="SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY" data-result="partial">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation scheduled daily run 2026-06-23</span>
-      <span class="entry-meta">2026-06-23 13:05:55 +08:00 &amp; MYT &amp; rows 72 reviewed &amp; new 5 &amp; messages 0-&gt;0 &amp; stock writes 0-&gt;0 &amp; SB patches 0-&gt;0</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag result-partial">Partial</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Ran the 2026-06-23 MYT scheduled SB Variation check from live employee rows plus SiteGiant order/item API evidence. Tuesday has no standing customer-contact approval, and the current conversation did not approve stock, SB webapp, seller portal, Jira/form, WhatsApp, or marketplace writes.</p>
-      <div class="field"><strong>Scope:</strong> SB rows <code>185</code>, max id <code>101273</code>; focused rows <code>72</code>; new rows above 2026-06-22 max 101267 <code>5</code>; SiteGiant orders <code>72/72</code>; exact iSKU lookups <code>152/155</code>; order statuses <code>{&quot;Processed&quot;:8,&quot;Cancelled&quot;:44,&quot;Shipped&quot;:7,&quot;Completed&quot;:13}</code>.</div>
-      <div class="field"><strong>New row review:</strong><ul>
-        <li><code>260622QGQQGTD8</code> / row <code>101273</code> / ValueSnap / ShopeeMY: case <code>&quot;Offer Change&quot;</code>; live <code>Processed</code> / <code>PROCESSED</code>; affected <code>SST-STORAGE-CANS-C-WHT-1.2L</code>; suggested <code>SST-STORAGE-CANS-BLK-1.2L, SST-STORAGE-CANS-SLV-1.2L</code>; contactSent <code>True</code>; buyerDecision <code>null</code>; stockSetOos <code>True</code>.</li>
-        <li><code>260621MRQYEA17</code> / row <code>101272</code> / Murahya / ShopeeMY: case <code>&quot;No Stock&quot;</code>; live <code>Processed</code> / <code>PROCESSED</code>; affected <code>WASHING-MACHINE-RACK-EXTEND-WHT-120CM</code>; suggested <code></code>; contactSent <code>True</code>; buyerDecision <code>null</code>; stockSetOos <code>True</code>.</li>
-        <li><code>260619GKQ3E63C</code> / row <code>101270</code> / MurahYa / ShopeeMY: case <code>&quot;Cancelled by System&quot;</code>; live <code>Cancelled</code> / <code>CANCELLED</code>; affected <code>PDBN</code>; suggested <code>BSBN, WDN</code>; contactSent <code>False</code>; buyerDecision <code>null</code>; stockSetOos <code>True</code>.</li>
-        <li><code>260622Q7QN7R88</code> / row <code>101269</code> / Lovento / ShopeeMY: case <code>&quot;Offer Change&quot;</code>; live <code>Processed</code> / <code>PROCESSED</code>; affected <code>33-STALK-SOAP-ROSES-BOUQUET-LED-LIGHT-PINK-PKG-1</code>; suggested <code>33-STALK-SOAP-ROSES-BOUQUET-LED-PINK</code>; contactSent <code>True</code>; buyerDecision <code>null</code>; stockSetOos <code>True</code>.</li>
-        <li><code>260620JWTM2R6V</code> / row <code>101268</code> / Kinata SG / ShopeeSG: case <code>&quot;No Stock&quot;</code>; live <code>Processed</code> / <code>PROCESSED</code>; affected <code>HANDHELD-RETRO-GAME-CONSOLE-TR-BLK-64G-SG</code>; suggested <code></code>; contactSent <code>True</code>; buyerDecision <code>null</code>; stockSetOos <code>True</code>.</li>
-      </ul></div>
-      <div class="field"><strong>Every external change before -&gt; after:</strong> customer messages <code>0 -&gt; 0</code>; SiteGiant stock/status/reserved writes <code>0 -&gt; 0</code>; SB buyerDecision/csRemarks patches <code>0 -&gt; 0</code>; SB stock-column toggles <code>0 -&gt; 0</code>; seller portal/Jira/form/WhatsApp/off-platform writes <code>0 -&gt; 0</code>; local scheduled report/evidence <code>absent/stale -&gt; present for 2026-06-23</code>.</div>
-      <div class="field"><strong>Stock action items, report-only:</strong><ul>
-        <li><code>260619GKQ3E63C</code> / row <code>101270</code> / MurahYa / ShopeeMY &gt; <code>PDBN</code> &gt; before <code>7/3/4/0/0</code> / <code>out_of_stock</code> -&gt; after <code>no write in this run</code>; reason OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>584624621184910753</code> / row <code>101267</code> / TT Murahya / TikTokMY &gt; <code>MEASURING-JUG-WHITE-ROUND-LID-4L</code> &gt; before <code>0/0/0/0/0</code> / <code>out_of_stock</code> -&gt; after <code>no write in this run</code>; reason SB stockSetOos is false even though exact iSKU is already 0/0/OOS; SB stock-column update held without current exact approval</li>
-        <li><code>260619G37Q7UQW</code> / row <code>101258</code> / das.nature2 / ShopeeMY &gt; <code>DF-BLK-39-41</code> &gt; before <code>1/1/0/0/0</code> / <code>out_of_stock</code> -&gt; after <code>no write in this run</code>; reason OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260619G37Q7UQW</code> / row <code>101258</code> / das.nature2 / ShopeeMY &gt; <code>DF-BLK-42-44</code> &gt; before <code>15/12/3/0/0</code> / <code>available</code> -&gt; after <code>no write in this run</code>; reason status not OOS for no-stock/SB affected iSKU; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>584597636825056868</code> / row <code>101256</code> / TT Murahya / TikTokMY &gt; <code>CWS-3F-GREEN-UPGRADE</code> &gt; before <code>0/0/0/0/0</code> / <code>out_of_stock</code> -&gt; after <code>no write in this run</code>; reason SB stockSetOos is false even though exact iSKU is already 0/0/OOS; SB stock-column update held without current exact approval</li>
-        <li><code>2606168BUBNNQB</code> / row <code>101248</code> / MurahYa / ShopeeMY &gt; <code>SKATEBOARD-80CM-DYNASTY-LIGHT</code> &gt; before <code>1/1/0/0/0</code> / <code>out_of_stock</code> -&gt; after <code>no write in this run</code>; reason OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260615656C6S8X</code> / row <code>101236</code> / MasonGym / ShopeeMY &gt; <code>TRAINING-HURDLE-NGREEN-30CM</code> &gt; before <code>6/6/0/0/0</code> / <code>out_of_stock</code> -&gt; after <code>no write in this run</code>; reason OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>2606155N0YDWQ4</code> / row <code>101234</code> / MasonGym / ShopeeMY &gt; <code>TRAINING-HURDLE-PINK-30CM</code> &gt; before <code>6/6/0/0/0</code> / <code>out_of_stock</code> -&gt; after <code>no write in this run</code>; reason OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260612TYG7SFVK</code> / row <code>101213</code> / Murahya / ShopeeMY &gt; <code>RATTAN-LAUNDRY-BASKET-D-WOOD-WHT</code> &gt; before <code>3/3/0/0/0</code> / <code>available</code> -&gt; after <code>no write in this run</code>; reason status not OOS for no-stock/SB affected iSKU; WH stock-check / possible system stock mismatch</li>
-        <li><code>260610Q8NA4RFN</code> / row <code>101202</code> / KarlMobel SG / ShopeeSG &gt; <code>CB-GREEN</code> &gt; before <code>4/6/0/0/-2</code> / <code>available</code> -&gt; after <code>no write in this run</code>; reason status not OOS for no-stock/SB affected iSKU; WH stock-check / possible system stock mismatch</li>
-      </ul></div>
-      <div class="field"><strong>Held / report-only items:</strong><ul>
-        <li><code>260619G5Q7JBVT</code> / row <code>101254</code> / Lovento / ShopeeMY &gt; <code>CUPID-LOVE-FLOWER-13STALK-HOT-PINK</code> &gt; before <code>25/25/0/0/0</code> / <code>available</code> -&gt; after <code>held/report-only</code>; reason status not OOS for no-stock/SB affected iSKU; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>2606169E86G536</code> / row <code>101249</code> / BahEmas / ShopeeMY &gt; <code>BASKETBALL-HOOP-45CM</code> &gt; before <code>1/0/1/0/0</code> / <code>out_of_stock</code> -&gt; after <code>held/report-only</code>; reason OOS status with positive quantity</li>
-        <li><code>26061688KNUJC8</code> / row <code>101243</code> / Karlmobel / ShopeeMY &gt; <code>SPV-200W-10MPC</code> &gt; before <code>5/5/0/0/0</code> / <code>out_of_stock</code> -&gt; after <code>held/report-only</code>; reason OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>2606179JDTR1DN</code> / row <code>101242</code> / Karlmobel / ShopeeMY &gt; <code>SPV-200W-10MPC</code> &gt; before <code>5/5/0/0/0</code> / <code>out_of_stock</code> -&gt; after <code>held/report-only</code>; reason OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-      </ul></div>
-      <div class="field"><strong>Live-cancelled SB buyerDecision pending:</strong><ul>
-        <li><code>260619GKQ3E63C</code> / row <code>101270</code> / MurahYa / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; buyerDecision <code>null</code> -&gt; <code>not patched in this run</code>; affected <code>PDBN</code>; reason Live SiteGiant marketplace-order status is cancelled, but SB buyerDecision is still blank/not Cancelled. Internal SB update is held in this manual run; no seller-portal write was made.</li>
-        <li><code>260619GPYPT8X0</code> / row <code>101264</code> / Murahya / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; buyerDecision <code>null</code> -&gt; <code>not patched in this run</code>; affected <code>OILSP-410</code>; reason Live SiteGiant marketplace-order status is cancelled, but SB buyerDecision is still blank/not Cancelled. Internal SB update is held in this manual run; no seller-portal write was made.</li>
-        <li><code>260619FQVHNRGB</code> / row <code>101260</code> / Hiranai / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; buyerDecision <code>null</code> -&gt; <code>not patched in this run</code>; affected <code>RED-CARDIGAN-JACKET-V2, HEART-SHAPED-CARDIGAN-PINK</code>; reason Live SiteGiant marketplace-order status is cancelled, but SB buyerDecision is still blank/not Cancelled. Internal SB update is held in this manual run; no seller-portal write was made.</li>
-        <li><code>260619G37Q7UQW</code> / row <code>101258</code> / das.nature2 / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; buyerDecision <code>null</code> -&gt; <code>not patched in this run</code>; affected <code>DF-BLK-39-41, DF-BLK-42-44</code>; reason Live SiteGiant marketplace-order status is cancelled, but SB buyerDecision is still blank/not Cancelled. Internal SB update is held in this manual run; no seller-portal write was made.</li>
-        <li><code>260619G5Q7JBVT</code> / row <code>101254</code> / Lovento / ShopeeMY: live <code>Cancelled</code> / <code>CANCELLED</code>; buyerDecision <code>null</code> -&gt; <code>not patched in this run</code>; affected <code>CUPID-LOVE-FLOWER-13STALK-HOT-PINK</code>; reason Live SiteGiant marketplace-order status is cancelled, but SB buyerDecision is still blank/not Cancelled. Internal SB update is held in this manual run; no seller-portal write was made.</li>
-      </ul></div>
-      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-scheduled-2026-06-23.md</code>; raw SB pull <code>C:/Users/tessf/Documents/sbvariation-reports/_raw_scheduled_2026-06-23-20260623125846.json</code>; raw metadata <code>C:/Users/tessf/Documents/sbvariation-reports/_raw_scheduled_2026-06-23-20260623125846-meta.json</code>; focus analysis <code>C:\Users\tessf\Documents\sbvariation-reports\_analysis_focus_2026-06-23.json</code>; SiteGiant orders <code>C:\Users\tessf\Documents\sbvariation-reports\_sitegiant_orders_api_2026-06-23.json</code>; SiteGiant items <code>C:\Users\tessf\Documents\sbvariation-reports\_sitegiant_items_api_2026-06-23.json</code>; derived summary <code>C:\Users\tessf\Documents\sbvariation-reports\_sbvariation_derived_2026-06-23.json</code>; full lookup misses <code>260620HSDG5VRN, 260618DGRCV7BQ, 33-STALK-SOAP-ROSES-BOUQUET-LED- LIGHT-PINK-PKG-1</code>.</div>
-      <div class="field"><strong>Result:</strong> partial, not OK. Verified report and raw evidence exist; no buyer message or external write was attempted. Partial reasons: <code>10</code> stock action items, <code>4</code> held/report-only items, and <code>5</code> live-cancelled rows still needing internal SB buyerDecision handling if Patricia wants webapp patching today.</div>
-      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> TT Murahya <code>584624621184910753</code> is contacted and exact iSKU is already <code>0/0/0/0/0</code>, but SB <code>stockSetOos</code> is false and was not toggled; MurahYa <code>260619GKQ3E63C</code> is live-cancelled with <code>PDBN</code> at <code>7/3/4/0/0</code>; <code>CUPID-LOVE-FLOWER-13STALK-HOT-PINK</code>, <code>SPV-200W-10MPC</code>, <code>BASKETBALL-HOOP-45CM</code>, and <code>260622Q7QN7R88</code> remain held/report-only per current rules.</div>
-    </div>
-  </div>
+  
 <div class="entry" data-date="2026-06-23" data-shops="TT Adelmar, TT Hiranai, TT JagerHelmet, TT KarlMobel, TT MurahYa" data-platform="TikTok/Lazada + internal webapp" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -896,39 +948,7 @@ header.page::after{
   </div>
 </div>
 
-  <div class="entry" data-date="2026-06-23" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center wallet" data-result="ok">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checkfbsclaims FBS Claim sheet/webapp status sync 2026-06-23</span>
-      <span class="entry-meta">2026-06-23 MYT &amp; 541 webapp cases &amp; sheet plan 0 &amp; action plan 0 &amp; webapp gaps 0 &amp; FINAL_STATUS OK</span>
-      <span class="tag">checkfbsclaims</span>
-      <span class="tag result-ok">Completed</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Ran the scheduled Codex FBS Claim status sync for MurahYa, KarlMobel, ValueSnap, and Luxbin without invoking Claude or a legacy launcher. Used the locked Sheet/webapp mapping, current Google Sheet metadata and CSV readback, employee FBS Claim API readback, and live Shopee MY Seller Center wallet verification through profile 70. No WhatsApp or customer messages were sent.</p>
-      <div class="field"><strong>Scope:</strong> webapp cases <code>541</code>; final Sheet rows scanned MurahYa <code>148</code>, KarlMobel <code>176</code>, ValueSnap <code>212</code>, Luxbin <code>9</code>. Final Action distribution: pending_fbs <code>304</code>, in_progress <code>11</code>, pending_credited <code>69</code>, closed <code>134</code>, pending_seller <code>23</code>.</div>
-      <div class="field"><strong>Every change before -&gt; after:</strong><ul>
-        <li>Luxbin Sheet-to-webapp Claim Status patches: <code>260514B8W6QPT0</code> case <code>437</code> <code>blank -&gt; closed</code>; <code>260504GPFPQPMT</code> case <code>440</code> <code>blank -&gt; closed</code>. Total supported Sheet mapping patches <code>0 -&gt; 2</code>; failed <code>0</code>; final Sheet patch plan <code>0</code>.</li>
-        <li>Action patches <code>0 -&gt; 19</code>; failed <code>0</code>; final Action plan <code>0</code>. KarlMobel null-to-pending_fbs <code>7</code>, null-to-in_progress <code>1</code>, in_progress-to-pending_fbs <code>2</code>. ValueSnap null-to-pending_fbs <code>4</code>, null-to-in_progress <code>1</code>, in_progress-to-pending_fbs <code>2</code>.</li>
-        <li>KarlMobel Action order IDs: <code>260617BRSR9MAW</code>, <code>260607DYF18W0A</code>, <code>260609KXE5W09C</code>, <code>260607EYA70PS1</code>, <code>2606156EJ571T4</code>, <code>260620JGEN9N7X</code>, <code>260617BM1D38GD</code>, <code>260619EKPKM73V</code>, <code>260607FBJN0A4U</code>, <code>2606154DMPDUEE</code>.</li>
-        <li>ValueSnap Action order IDs: <code>260606CUERBXGF</code>, <code>260619FXN9TXUB</code>, <code>260610Q63WN79W</code>, <code>260618CFKWAJUS</code>, <code>2605249BEB37JS</code>, <code>2606155U2MDX27</code>, <code>26061443VBYAT9</code>.</li>
-        <li>Google Sheet current-case append: webapp-only current cases <code>12 -&gt; 0</code>; rows appended <code>0 -&gt; 12</code>; KarlMobel <code>0 -&gt; 8</code>, ValueSnap <code>0 -&gt; 4</code>, MurahYa <code>0 -&gt; 0</code>, Luxbin <code>0 -&gt; 0</code>.</li>
-        <li>KarlMobel appended orders: <code>260607DYF18W0A</code>, <code>260607EYA70PS1</code>, <code>260609KXE5W09C</code>, <code>2606156EJ571T4</code>, <code>260617BM1D38GD</code>, <code>260617BRSR9MAW</code>, <code>260619EKPKM73V</code>, <code>260620JGEN9N7X</code>.</li>
-        <li>ValueSnap appended orders: <code>2605249BEB37JS</code>, <code>260610Q63WN79W</code>, <code>260618CFKWAJUS</code>, <code>260619FXN9TXUB</code>.</li>
-        <li>Sheet duplicate readback: MurahYa <code>0 -&gt; 0</code>, KarlMobel <code>0 -&gt; 0</code>, ValueSnap <code>0 -&gt; 0</code>, Luxbin <code>0 -&gt; 0</code>. Appended-order missing readback <code>0</code>.</li>
-        <li>Shopee MY Seller Center wallet verification: credited-evidence targets <code>0 -&gt; 25</code>, verified <code>25/25</code>; verdicts <code>22</code> wallet-confirmed and <code>3</code> wallet-net-confirmed-with-deduction; expected/net total <code>RM 3532.78 / RM 3532.78</code>; errors <code>0</code>.</li>
-        <li>Final report status corrected: <code>FINAL_STATUS: PARTIAL -&gt; FINAL_STATUS: OK</code>; report-only/approval-held items remain visible but active sync blockers are zero.</li>
-      </ul></div>
-      <div class="field"><strong>Operational counters before -&gt; after:</strong> customer messages <code>0 -&gt; 0</code>; WhatsApp messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; webapp PATCHes <code>0 -&gt; 21</code>; Google Sheet net current-case rows <code>0 -&gt; 12</code>.</div>
-      <div class="field"><strong>Reason for change:</strong> scheduled twice-weekly FBS Claim status sync, including supported Sheet status propagation, safe Action derivation/backfill, Sheet append of current webapp-only cases, and wallet evidence verification for credited/recovered support.</div>
-      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\fbs-claim-reports\fbs-claim-status-2026-06-23.md</code>; raw evidence folder <code>C:\Users\tessf\Documents\fbs-claim-reports\raw-2026-06-23</code>; sync evidence <code>tmp-returnitems\fbs-sync-2026-06-23</code>; append readback <code>tmp-returnitems\fbs-sync-2026-06-23\duplicate-and-append-readback.json</code>; wallet evidence <code>tmp-returnitems\fbs-wallet-verify-2026-06-23</code>.</div>
-      <div class="field"><strong>Result:</strong> completed. Operational readback is clean: final supported Sheet patch plan <code>0</code>, final Action patch plan <code>0</code>, webapp-only current cases not in Sheet <code>0</code>, duplicate Sheet order rows <code>0</code>, wallet targets verified <code>25/25</code>, wallet mismatches <code>0</code>, wallet errors <code>0</code>. Report-only/approval-held items remain visible for future approval; the corrected report last line is <code>FINAL_STATUS: OK</code>.</div>
-      <div class="field"><strong>Outstanding / Patricia may have missed:</strong> no active FBS sync blocker found. Report-only notes remain: unsupported/free-text Sheet values <code>48</code> were not guessed; Sheet rows with values not currently in webapp <code>15</code> remain report-only; suspect closures <code>46</code> remain held for explicit approval/evidence. No current webapp-only Sheet gap remains.</div>
-      <div class="field"><strong>Profile cleanup:</strong> profile 70 <code>k1b44nvg</code> was already active on debug port <code>64317</code>; Codex attached via <code>/browser/active</code> and did not stop it. No non-profile-70 AdsPower profile was opened.</div>
-    </div>
-  </div>
-<!-- SG-GAP-MONITOR-2026-06-23 -->
-<div class="entry" data-date="2026-06-23" data-shops="Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
+  <div class="entry" data-date="2026-06-23" data-shops="Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">sg-gap-monitor - 9 unlinked, 0 shops with new activity, 0 actively shipping (23/06)</span>
@@ -1034,249 +1054,41 @@ header.page::after{
       <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Lazada profiles 81/82/83 are still the active login blocker from today's evidence. TikTok profiles must be checked sequentially before calling them logged out; <code>Inactive</code> alone is not logout.</div>
     </div>
   </div>
-    <div class="entry" data-date="2026-06-22" data-shops="Kinata SG, KarlMobel, Hiranai, Luxbin, Lovento, MurahYa, ValueSnap, das.nature, das.nature2, TT DasNature, TT Jager, TT KarlMobel, TT MurahYa, TT Prazi, TT ValueSnap" data-platform="Return Items webapp, Parcel Claim, ShopeeMY R/R, ShopeeSG R/R, TikTok, SiteGiant" data-result="done">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">returnitems after-relogin wide recheck 2026-06-22</span>
-      <span class="entry-meta">2026-06-22 MYT &middot; since 2026-06-19 00:00 MYT &middot; searched 33 &middot; patched 12 rows / 36 field calls &middot; verified 12/12 &middot; completed today &middot; 21 pending tomorrow</span>
-      <span class="tag">returnitems</span>
-      <span class="tag result-done">Completed today</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> After Patricia relogged TikTok and clarified Parcel Claim order-only checks, rebuilt the live since-Friday resellable Return Items scope, searched Parcel Claim MY/SG/TT, ShopeeMY R/R, ShopeeSG R/R, SiteGiant including marketplace order ID, and TikTok Manage Orders / returns.</p>
-      <div class="field"><strong>Every Return Items webapp change before -&gt; after:</strong>
-        <ul>
-        <li><code>13982</code> / TikTok / TT Murahya / <code>680068186592117</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584541020992014092</code>; <code>items</code> <code>blank -&gt; Hoverboard Powerboard Inci Lampu LED Skuter Roda Seimbang Kendiri Hoverboard Powerboard7 Inch LED Light Self Balancing Balance Wheel Scooter 【BLUETOOTH SPEAKER】1 MONTH WARRANTY</code>; <code>iskus</code> <code>blank -&gt; BSBN</code>; evidence <code>TikTok Manage Orders / returnitems_20260622_after_relogin_tiktok_selected_remaining_tt_murahya.json</code>.</li>
-        <li><code>13981</code> / TikTok / TT Murahya / <code>680059485972612</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584559605448148232</code>; <code>items</code> <code>blank -&gt; Topi keledar GXT Motor Muka Terbuka Dua Lensa Flip-Up visor motosikal Helmet Stylish motorcycle helmet open face double layer visor lens</code>; <code>iskus</code> <code>blank -&gt; GXTSTARL-RED-L</code>; evidence <code>TikTok Manage Orders / returnitems_20260622_after_relogin_tiktok_selected_remaining_tt_murahya.json</code>.</li>
-        <li><code>13980</code> / TikTok / TT Jager / <code>680068480242011</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584560295613596862</code>; <code>items</code> <code>blank -&gt; JAGER Helmet motor helmet motorcycle Topi keledar double visor open face motosikal bike helmet moto Stylish dual lens</code>; <code>iskus</code> <code>blank -&gt; JG-WDL-SIRIM</code>; evidence <code>TikTok Manage Orders / returnitems_20260622_after_relogin_tiktok_wide_tt_jager.json</code>.</li>
-        <li><code>13979</code> / TikTok / TT ValueSnap / <code>680046465282718</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584454984249017893</code>; <code>items</code> <code>blank -&gt; Projector Stand Tripod Adjustable Portable Floor Stand DJ Racks Laptop Stand 60-120cm Home Office Studio</code>; <code>iskus</code> <code>blank -&gt; PST-BLACK</code>; evidence <code>TikTok Manage Orders / returnitems_20260622_after_relogin_tiktok_selected_remaining_tt_valuesnap.json</code>.</li>
-        <li><code>13978</code> / TikTok / TT ValueSnap / <code>684200563455223</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584364820010009765</code>; <code>items</code> <code>blank -&gt; Projector Stand Tripod Adjustable Portable Floor Stand DJ Racks Laptop Stand 60-120cm Home Office Studio</code>; <code>iskus</code> <code>blank -&gt; PST-BLACK</code>; evidence <code>TikTok Manage Returns tab 100 / returnitems_20260622_after_relogin_tiktok_selected_remaining_tt_valuesnap.json</code>.</li>
-        <li><code>13977</code> / TikTok / TT KarlMobel / <code>680032090432317</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584590536633648718</code>; <code>items</code> <code>blank -&gt; Diving Mask Anti-Fog Detachable Diving Mask Topeng Snorkeling Berenang Adult Anti-Leak Full Face Snorkeling Mask</code>; <code>iskus</code> <code>blank -&gt; SDM-RED-L-XL</code>; evidence <code>TikTok Manage Orders / returnitems_20260622_after_relogin_tiktok_selected_remaining_tt_karlmobel.json</code>.</li>
-        <li><code>13976</code> / TikTok / TT DasNature / <code>684200093455120</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584584946351703157</code>; <code>items</code> <code>blank -&gt; Newboler 2L 3L Water Bladder TPU BPA-Free Running Hydration Bladder Portable Water Bag For Hiking Cycling Hydration Vest</code>; <code>iskus</code> <code>blank -&gt; WATER-BLADDER-2L</code>; evidence <code>TikTok Manage Returns tab 100 / returnitems_20260622_after_relogin_tiktok_selected_remaining_tt_dasnature.json</code>.</li>
-        <li><code>13975</code> / TikTok / TT DasNature / <code>680047383812818</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584558128245475201</code>; <code>items</code> <code>blank -&gt; Das Nature™ Camping Solar Fan Light Rechargeable Tent Lamp Lantern Outdoor Hiking Survival Kipas Lampu Gantung Khemah</code>; <code>iskus</code> <code>blank -&gt; CSFL-GOLD</code>; evidence <code>TikTok Manage Orders / returnitems_20260622_after_relogin_tiktok_selected_remaining_tt_dasnature.json</code>.</li>
-        <li><code>13974</code> / TikTok / TT KarlMobel / <code>680037572912312</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584505687181133421</code>; <code>items</code> <code>blank -&gt; E-Scooter Accessories Spare parts Inflatable Tube/Inner Tube &amp; Outer Tyre</code>; <code>iskus</code> <code>blank -&gt; ES-OUTER-TYRE</code>; evidence <code>TikTok Manage Orders / returnitems_20260622_after_relogin_tiktok_selected_remaining_tt_karlmobel.json</code>.</li>
-        <li><code>13973</code> / TikTok / TT Prazi / <code>684200182954623</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584503889872520903</code>; <code>items</code> <code>blank -&gt; Women Sandal Simple Women Sandal Kasut Flat Perempuan Wanita Wanita Wedges Selipar Murah</code>; <code>iskus</code> <code>blank -&gt; FLAT-SOLE-WM-SANDALS-BLUE-37</code>; evidence <code>TikTok Manage Returns tab 100 / returnitems_20260622_after_relogin_tiktok_wide_tt_hiranai.json</code>.</li>
-        <li><code>13838</code> / TikTok / TT ValueSnap / <code>680017847672712</code> / reason Unit Resell: <code>orderId</code> <code>blank -&gt; 584368620508775503</code>; <code>items</code> <code>blank -&gt; Automatic Electric Egg Cooker Breakfast Egg Sausage Roll Maker Omelets DIY Mesin Pembuat Gulung Telur Elektrik Automatik</code>; <code>iskus</code> <code>blank -&gt; EGGDOUBLE-YELLOW</code>; evidence <code>TikTok Manage Orders / returnitems_20260622_after_relogin_tiktok_selected_remaining_tt_valuesnap.json</code>.</li>
-        <li><code>13984</code> / TikTok / TT Murahya / <code>680036071012413</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584480015645181424</code>; <code>items</code> <code>blank -&gt; Tikar Lantai Camping Ground Mat Waterproof Double Sided Aluminium Foil Tikar Outdoor Beach Picnic Mats Sleeping Pad Blanket</code>; <code>iskus</code> <code>blank -&gt; CGM-200cmx200cm</code>; evidence <code>TikTok Manage Orders / returnitems_20260622_after_relogin_new_tiktok_murahya_tt_murahya.json</code>.</li>
-        </ul>
-      </div>
-      <div class="field"><strong>Parcel Claim order-only second hop:</strong> searched SiteGiant Orders / marketplace order ID for <code>13914</code> order <code>2606169ACPDXAA</code>, <code>13882</code> order <code>260611RYK6NVXM</code>, and <code>13748</code> order <code>260606BQ0TR6Q5</code>; result <code>0 -&gt; 0</code> SKU-bearing matches, so those rows stayed unpatched.</div>
-      <div class="field"><strong>TikTok result:</strong> after relogin, TikTok searched rows found and patched <code>12</code> total rows across the two patch plans, including catch-up row <code>13984</code>; final TikTok unresolved in searched scope <code>0</code>. Row <code>13973</code> was labeled TT Prazi but found under TT Hiranai.</div>
-      <div class="field"><strong>Safety counters:</strong> field PATCHes <code>36/36</code>; verified live readback <code>12/12</code>; <code>stockIds</code> writes <code>0 -&gt; 0</code>; stock-in, SiteGiant stock writes, marketplace writes, and customer messages <code>0 -&gt; 0</code>.</div>
-      <div class="field"><strong>Pending for 2026-06-23:</strong>
-        <ul>
-        <li><code>13963</code> / ShopeeSG / Kinata SG / <code>SPXSG060805578217S</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13956</code> / ShopeeMY / ValueSnap / <code>SPXMY063405732596</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13914</code> / ShopeeMY / Luxbin™ / <code>MY267747784596O</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13882</code> / ShopeeMY / Lovento / <code>MY2633123175490</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13864</code> / ShopeeMY / MurahYa / <code>66668230302001</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13863</code> / ShopeeMY / MurahYa / <code>SPXMY063750150436</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13828</code> / ShopeeMY / MurahYa / <code>SPXMY063476032506</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13827</code> / ShopeeMY / Hiranai / <code>SPXMY062495887476</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13821</code> / ShopeeMY / Hiranai / <code>SPXMY069366740756</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13819</code> / ShopeeMY / Hiranai / <code>SPXMY064703529506</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13811</code> / ShopeeMY / KarlMobel / <code>MY262763829677W</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13808</code> / ShopeeMY / das.nature / <code>SPXMY061414202826</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13807</code> / ShopeeMY / das.nature2 / <code>SPXMY066706281986</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13793</code> / ShopeeMY / ValueSnap / <code>MY268787316498R</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13774</code> / ShopeeMY / MurahYa / <code>6800034042732914</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13770</code> / ShopeeMY / ValueSnap / <code>MY268558292670Υ</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13762</code> / ShopeeMY / MurahYa / <code>SPXMY064714258816</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13759</code> / ShopeeMY / das.nature2 / <code>SPXMY065598236316</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13748</code> / ShopeeMY / KarlMobel / <code>SHSMMYSG260606BQ0TR6Q5</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13986</code> / ShopeeMY / KarlMobel / <code>SPXMY063892113016</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13985</code> / ShopeeMY / KarlMobel / <code>MY2640875433475</code> / reason Resell: pending 2026-06-23; no SKU-bearing marketplace/SiteGiant evidence yet; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        </ul>
-      </div>
-      <div class="field"><strong>Catch-up:</strong> final live readback found rows <code>13984</code>, <code>13985</code>, and <code>13986</code> arrived after the initial after-relogin scope. Catch-up search found/patched <code>13984</code>; <code>13985</code> and <code>13986</code> remain cannot-find. New rows after final catch-up freeze: <code>0</code>.</div>
-      <div class="field"><strong>Tomorrow continuation:</strong> Carry the 21 ShopeeMY/ShopeeSG pending rows into 2026-06-23 follow-up. Broad TikTok run and selected continuation timed out before all selected profiles completed, but all current TikTok rows in the searched scope were found in completed relevant profiles.</div>
-      <div class="field"><strong>Evidence files:</strong> report <code>C:\Users\tessf\Documents\returnitems-reports\returnitems-after-relogin-wide-recheck-2026-06-22.md</code>; repo report <code>tmp-returnitems\returnitems-after-relogin-wide-recheck-2026-06-22.md</code>; final summary <code>tmp-returnitems\returnitems_20260622_after_relogin_final_summary.json</code>; final live readback <code>tmp-returnitems\returnitems_live_20260622_after_relogin_final.json</code>; patch results <code>returnitems_20260622_after_relogin_tiktok_patch_results.json</code> and <code>returnitems_20260622_after_relogin_new_tiktok_patch_results.json</code>.</div>
-      <div class="field"><strong>Result:</strong> completed for 2026-06-22. All rows with SKU-bearing evidence were patched and verified; the 21 listed tracking IDs are pending for 2026-06-23 follow-up and need better marketplace/SiteGiant evidence or manual SKU confirmation before patching.</div>
-    </div>
+    <div class="entry" data-date="2026-06-22" data-shops="BahEmas, Hiranai, ValueSnap, Luxbin, Kinata SG, TT Jager, TT Adelmar, TT Hiranai; Hiranai, Kinata SG, MurahYa, TT Jager, TT ValueSnap, ValueSnap, ShopeeMY/ShopeeSG/TikTok shops; Kinata SG, KarlMobel, Hiranai, Luxbin, Lovento, MurahYa, ValueSnap, das.nature, das.nature2, TT DasNature, TT Jager, TT KarlMobel, TT MurahYa, TT Prazi, TT ValueSnap; MurahYa, KarlMobel, MasonGym, BahEmas, Hiranai, ValueSnap" data-platform="Return Items webapp, Parcel Claim, ShopeeMY R/R, ShopeeSG R/R, TikTok, SiteGiant; Return Items webapp, Parcel Claim, ShopeeMY R/R, ShopeeSG R/R, TikTok, SiteGiant, Kmall; Return Items webapp, Parcel Claim, SiteGiant, ShopeeMY R/R; Return Items webapp, Parcel Claim, SiteGiant, ShopeeMY R/R, ShopeeSG R/R, Kmall, TikTok" data-result="partial">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">returnitems consolidated 2026-06-22</span>
+    <span class="entry-meta">2026-06-22 MYT &middot; merged 4 prior same-skill cards &middot; duplicate-task board cleanup</span>
+    <span class="tag">returnitems</span>
+    <span class="tag result-warn">Partial</span>
   </div>
-<div class="entry" data-date="2026-06-22" data-shops="Karlmobel, Murahya, Hiranai, TT Hiranai, das.nature2, Kinata SG" data-platform="SB Variation + SiteGiant" data-result="done">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation approved stock adjustments 2026-06-22</span>
-      <span class="entry-meta">2026-06-22 MYT &middot; stock ID SA-19770 &middot; stock lines 10 &middot; webapp rows 10</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag result-done">Stock adjusted</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Patricia approved OOS-positive stock cleanup and Accept Change stock deductions for SB rows since Friday night through current webapp checks.</p>
-      <div class="field"><strong>Stock ID:</strong> <code>SA-19770</code> / <code>https://sitegiant.co/inventory-adjustment/stock-adjustment/9841222/edit</code>.</div>
-      <div class="field"><strong>Every SiteGiant change before -&gt; after:</strong><ul>
-        <li><code>DWRB-WHITE-41S</code> orders <code>260617AXTVR0WG</code> rows <code>101252</code>: qty <code>-7</code>, <code>7/2/5/0/0</code> -&gt; <code>0/0/0/0/0</code>, status <code>out_of_stock</code>; reserved clear <code>7/2/5/0/0</code> -&gt; <code>7/7/0/0/0</code></li>
-        <li><code>BROOM-HOLDER-BLUE</code> orders <code>260620HSDG5VRN</code> rows <code>101266</code>: qty <code>-1</code>, <code>1/1/0/0/0</code> -&gt; <code>0/0/0/0/0</code>, status <code>out_of_stock</code></li>
-        <li><code>RED-CARDIGAN-JACKET-V2</code> orders <code>260620JP3H49N5, 260619FQVHNRGB</code> rows <code>101263, 101260</code>: qty <code>-4</code>, <code>4/4/0/0/0</code> -&gt; <code>0/0/0/0/0</code>, status <code>out_of_stock</code></li>
-        <li><code>SH-KHAKI</code> orders <code>260620JSP3325Q</code> rows <code>101261</code>: qty <code>-1</code>, <code>1/1/0/0/0</code> -&gt; <code>0/0/0/0/0</code>, status <code>out_of_stock</code></li>
-        <li><code>SBL-PINK</code> orders <code>584606387103761838</code> rows <code>101259</code>: qty <code>-6</code>, <code>6/6/0/0/0</code> -&gt; <code>0/0/0/0/0</code>, status <code>out_of_stock</code></li>
-        <li><code>CWS-3F-GREEN-UPGRADE</code> orders <code>260618DGRCV7BQ</code> rows <code>101257</code>: qty <code>-1</code>, <code>1/1/0/0/0</code> -&gt; <code>0/0/0/0/0</code>, status <code>out_of_stock</code></li>
-        <li><code>GREEN-STRIPE-WOMEN-CARDIGAN</code> orders <code>260618DKMGNJMN</code> rows <code>101255</code>: qty <code>-1</code>, <code>1/1/0/0/0</code> -&gt; <code>0/0/0/0/0</code>, status <code>out_of_stock</code></li>
-        <li><code>KHKITNT</code> orders <code>260617AC4UE045</code> rows <code>101253</code>: qty <code>-1</code>, <code>1/1/0/0/0</code> -&gt; <code>0/0/0/0/0</code>, status <code>out_of_stock</code></li>
-        <li><code>DWRB-BLACK-41S</code> orders <code>260617AXTVR0WG</code> rows <code>101252</code>: qty <code>-1</code>, <code>15/13/1/0/1</code> -&gt; <code>14/12/1/0/1</code>, status <code>available</code></li>
-        <li><code>BLK-CARDIGAN-JACKET-V2</code> orders <code>260620JP3H49N5</code> rows <code>101263</code>: qty <code>-1</code>, <code>45/39/5/0/1</code> -&gt; <code>44/38/5/0/1</code>, status <code>available</code></li>
-      </ul></div>
-      <div class="field"><strong>Webapp changes before -&gt; after:</strong> targeted SB rows changed from <code>Not Adjusted</code>, <code>Not Required</code>, or blank stock status to <code>Adjusted</code> with <code>SA-19770</code>, except Kinata SG <code>260620JWTM2R6V</code> changed to <code>Not Required</code> because the iSKU was already <code>0/0/0/0/0</code>. Rows:<ul>
-        <li><code>260617AXTVR0WG</code> row <code>101252</code> Karlmobel / ShopeeMY: <code>DWRB-WHITE-41S, DWRB-BLACK-41S</code>; result <code>Adjusted</code>; stock ID <code>SA-19770</code>; reason OOS original stock cleanup plus accepted-change deduction</li>
-        <li><code>260620HSDG5VRN</code> row <code>101266</code> Murahya / ShopeeMY: <code>BROOM-HOLDER-BLUE</code>; result <code>Adjusted</code>; stock ID <code>SA-19770</code>; reason OOS-positive cleanup</li>
-        <li><code>260620JP3H49N5</code> row <code>101263</code> Hiranai / ShopeeMY: <code>RED-CARDIGAN-JACKET-V2, BLK-CARDIGAN-JACKET-V2</code>; result <code>Adjusted</code>; stock ID <code>SA-19770</code>; reason OOS original stock cleanup plus accepted-change deduction</li>
-        <li><code>260619FQVHNRGB</code> row <code>101260</code> Hiranai / ShopeeMY: <code>RED-CARDIGAN-JACKET-V2</code>; result <code>Adjusted</code>; stock ID <code>SA-19770</code>; reason Shared OOS affected iSKU cleanup</li>
-        <li><code>260620JSP3325Q</code> row <code>101261</code> das.nature2 / ShopeeMY: <code>SH-KHAKI</code>; result <code>Adjusted</code>; stock ID <code>SA-19770</code>; reason OOS-positive cleanup</li>
-        <li><code>584606387103761838</code> row <code>101259</code> TT Hiranai / TikTokMY: <code>SBL-PINK</code>; result <code>Adjusted</code>; stock ID <code>SA-19770</code>; reason Cancelled order OOS-positive cleanup</li>
-        <li><code>260618DGRCV7BQ</code> row <code>101257</code> das.nature2 / ShopeeMY: <code>CWS-3F-GREEN-UPGRADE</code>; result <code>Adjusted</code>; stock ID <code>SA-19770</code>; reason User specified CWS should be adjusted from this order</li>
-        <li><code>260618DKMGNJMN</code> row <code>101255</code> Hiranai / ShopeeMY: <code>GREEN-STRIPE-WOMEN-CARDIGAN</code>; result <code>Adjusted</code>; stock ID <code>SA-19770</code>; reason Cancelled order OOS-positive cleanup</li>
-        <li><code>260617AC4UE045</code> row <code>101253</code> MurahYa / ShopeeMY: <code>KHKITNT</code>; result <code>Adjusted</code>; stock ID <code>SA-19770</code>; reason Cancelled order OOS-positive cleanup</li>
-        <li><code>260620JWTM2R6V</code> row <code>101268</code> Kinata SG / ShopeeSG: <code>HANDHELD-RETRO-GAME-CONSOLE-TR-BLK-64G-SG</code> already <code>0/0/0/0/0</code>; no stock ID assigned; webapp result <code>Not Required</code>.</li>
-      </ul></div>
-      <div class="field"><strong>Held / not adjusted:</strong><ul>
-        <li><code>260619G5Q7JBVT</code> row <code>101254</code>: <code>CUPID-LOVE-FLOWER-13STALK-HOT-PINK</code> <code>24/24/0/0/0</code> <code>out_of_stock</code>; User explicitly excluded/hold</li>
-        <li><code>260622Q7QN7R88</code> row <code>101269</code>: <code>33-STALK-SOAP-ROSES-BOUQUET-LED-LIGHT-PINK-PKG-1</code> <code>0/0/0/0/0</code> <code>out_of_stock</code>; User explicitly said hold first</li>
-        <li><code>260618DGRCV7BQ</code> row <code>101257</code>: <code>CAMPING-SOFT-MAT-WHITE</code> <code>18/5/13/0/0</code> <code>available</code>; Not OOS; user clarified CWS-3F-GREEN-UPGRADE was the stock action from this order</li>
-        <li><code>584597636825056868</code> row <code>101256</code>: <code>CWS-3F-GREEN-UPGRADE</code> <code>0/0/0/0/0</code> <code>out_of_stock</code>; Same iSKU now zeroed by SA-19770 using order 260618DGRCV7BQ; this duplicate row was not separately patched</li>
-      </ul></div>
-      <div class="field"><strong>Fresh rows after earlier checklist:</strong><ul>
-        <li><code>260622QGQQGTD8</code> row <code>101273</code> ValueSnap, shipBy <code>2026-06-23</code>: case <code>Offer Change</code>; no stock write in this batch.</li>
-        <li><code>260621MRQYEA17</code> row <code>101272</code> MurahYa, shipBy <code>2026-06-22</code>: case <code>No Stock</code>; no stock write in this batch.</li>
-        <li><code>260619GKQ3E63C</code> row <code>101270</code> MurahYa, shipBy <code>2026-06-22</code>: case <code>Offer Change</code>; no stock write in this batch.</li>
-      </ul></div>
-      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-approved-stock-adjustments-2026-06-22.md</code>; SiteGiant execute <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\sitegiant-approved-stock-execute-20260622.json</code>; webapp patch/readback <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\employee-approved-stock-patch-20260622.json</code>; current rows <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\employee-current-sb-rows-probe-20260622.json</code>.</div>
-      <div class="field"><strong>Outstanding:</strong> <code>CUPID-LOVE-FLOWER-13STALK-HOT-PINK</code> remains on hold per Patricia; <code>260622Q7QN7R88</code> remains hold-first; <code>260621MRQYEA17</code> has no SKU/affectedItems in SB and needs order-detail lookup before stock action; <code>260619GKQ3E63C</code> has suggested SKUs only and no accepted decision.</div>
-    </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Consolidated duplicate same-date <code>returnitems</code> board cards into one visible task card per Patricia's no-duplicate-task rule. Original card summaries are retained below and the full removed blocks were archived locally.</p>
+    <div class="field"><strong>Before -&gt; after values:</strong> visible cards for <code>returnitems</code> on <code>2026-06-22</code> <code>4 -&gt; 1</code>.</div>
+    <div class="field"><strong>Folded cards:</strong><ul><li>returnitems after-relogin wide recheck 2026-06-22</li><li>returnitems since-Friday resellable correction 2026-06-22</li><li>returnitems since-Friday Resell cannot-find list 2026-06-22</li><li>returnitems and checkreturnitems today wide run 2026-06-22</li></ul></div><div class="field"><strong>Archive:</strong> full removed card HTML saved in <code>tmp-board-dedupe-20260623\removed-duplicate-board-cards-final-2026-06-23.json</code>.</div>
+    <div class="field"><strong>Operational counters for this cleanup:</strong> webapp patches <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Result:</strong> Duplicate board cards folded; use the original reports/raw evidence named inside the folded cards for business-level detail.</div>
   </div>
-  <div class="entry" data-date="2026-06-22" data-shops="SB Variation stock checklist" data-platform="SB Variation + SiteGiant" data-result="partial">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation since Friday night stock checklist 2026-06-22</span>
-      <span class="entry-meta">2026-06-22 MYT &middot; OOS-positive checks 10 &middot; new lookup rows 2 &middot; accept-change adjust-now 0</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag result-partial">Checklist</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Patricia asked for all SB cases from Friday night through now where OOS-labelled iSKUs need stock-level checks/zeroing, plus Accept Change rows that need stock adjustment now.</p>
-      <div class="field"><strong>Scope:</strong> Friday <code>2026-06-19 18:00 MYT</code> through current saved evidence. Scheduled rows <code>14</code>; later rows needing live SiteGiant lookup <code>2</code>.</div>
-      <div class="field"><strong>Every change before -&gt; after:</strong> generated stock checklist report <code>0 -&gt; 1</code>; SiteGiant stock writes <code>0 -&gt; 0</code>; SB webapp stock writes <code>0 -&gt; 0</code>; buyer messages <code>0 -&gt; 0</code>.</div>
-      <div class="field"><strong>OOS label positive-quantity checks:</strong><ul>
-        <li><code>260620HSDG5VRN</code> / row <code>101266</code>: <code>BROOM-HOLDER-BLUE</code> <code>1/1/0/0</code> <code>out_of_stock</code></li>
-        <li><code>260620JP3H49N5</code> / row <code>101263</code>: <code>RED-CARDIGAN-JACKET-V2</code> <code>4/4/0/0</code> <code>out_of_stock</code></li>
-        <li><code>260620JSP3325Q</code> / row <code>101261</code>: <code>SH-KHAKI</code> <code>1/1/0/0</code> <code>out_of_stock</code></li>
-        <li><code>260619FQVHNRGB</code> / row <code>101260</code>: <code>RED-CARDIGAN-JACKET-V2</code> <code>4/4/0/0</code> <code>out_of_stock</code></li>
-        <li><code>584606387103761838</code> / row <code>101259</code>: <code>SBL-PINK</code> <code>6/6/0/0</code> <code>out_of_stock</code></li>
-        <li><code>260618DGRCV7BQ</code> / row <code>101257</code>: <code>CWS-3F-GREEN-UPGRADE</code> <code>1/1/0/0</code> <code>out_of_stock</code></li>
-        <li><code>584597636825056868</code> / row <code>101256</code>: <code>CWS-3F-GREEN-UPGRADE</code> <code>1/1/0/0</code> <code>out_of_stock</code></li>
-        <li><code>260618DKMGNJMN</code> / row <code>101255</code>: <code>GREEN-STRIPE-WOMEN-CARDIGAN</code> <code>1/1/0/0</code> <code>out_of_stock</code></li>
-        <li><code>260619G5Q7JBVT</code> / row <code>101254</code>: <code>CUPID-LOVE-FLOWER-13STALK-HOT-PINK</code> <code>24/24/0/0</code> <code>out_of_stock</code></li>
-        <li><code>260617AC4UE045</code> / row <code>101253</code>: <code>KHKITNT</code> <code>1/1/0/0</code> <code>out_of_stock</code></li>
-      </ul></div>
-      <div class="field"><strong>Newer rows needing live SiteGiant stock lookup:</strong><ul>
-        <li><code>260620JWTM2R6V</code> / row <code>101268</code>: <code>HANDHELD-RETRO-GAME-CONSOLE-TR-BLK-64G-SG</code> - needs live SiteGiant lookup</li>
-        <li><code>260622Q7QN7R88</code> / row <code>101269</code>: <code>33-STALK-SOAP-ROSES-BOUQUET-LED-LIGHT-PINK-PKG-1</code> - needs exact package-SKU check</li>
-      </ul></div>
-      <div class="field"><strong>Accept Change adjustment now:</strong> none found with <code>WH Confirmed Can Pack</code> or <code>New Ship By</code> in this period. Pending row:<ul>
-        <li><code>260620JP3H49N5</code> / row <code>101263</code>: accepted <code>BLK-CARDIGAN-JACKET-V2</code>, qty <code>1</code>; WH <code>Pending WH Confirm</code>; New Ship By <code>blank</code>; do not adjust yet.</li>
-      </ul></div>
-      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-since-friday-night-stock-checklist-2026-06-22.md</code>; JSON <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\sbvariation-since-friday-night-stock-checklist-2026-06-22.json</code>; scheduled derived <code>C:\Users\tessf\Documents\sbvariation-reports\_sbvariation_derived_2026-06-22.json</code>.</div>
-      <div class="field"><strong>Outstanding:</strong> do not zero Reserved/non-sellable buckets without explicit approval and fresh SiteGiant before-values. Kinata <code>260620JWTM2R6V</code> and Lovento <code>260622Q7QN7R88</code> need live exact SiteGiant stock lookup before final zeroing.</div>
-    </div>
+</div>
+<div class="entry" data-date="2026-06-22" data-shops="Karlmobel, Murahya, Hiranai, TT Hiranai, das.nature2, Kinata SG; Kinata SG; SB Variation stock checklist; SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY; TT Murahya, Kinata SG, closed SB stock watch" data-platform="SB Variation + SiteGiant; SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY; Shopee SG + SB Variation; TikTok MY + Shopee SG + SB Variation + SiteGiant" data-result="partial">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation consolidated 2026-06-22</span>
+    <span class="entry-meta">2026-06-22 MYT &middot; merged 5 prior same-skill cards &middot; duplicate-task board cleanup</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag result-warn">Partial</span>
   </div>
-    <div class="entry" data-date="2026-06-22" data-shops="Hiranai, Kinata SG, MurahYa, TT Jager, TT ValueSnap, ValueSnap, ShopeeMY/ShopeeSG/TikTok shops" data-platform="Return Items webapp, Parcel Claim, ShopeeMY R/R, ShopeeSG R/R, TikTok, SiteGiant, Kmall" data-result="partial">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">returnitems since-Friday resellable correction 2026-06-22</span>
-      <span class="entry-meta">2026-06-22 MYT &middot; since 2026-06-19 00:00 MYT &middot; patched 15 rows / 45 field calls &middot; verified 15/15 &middot; unresolved resellable 35</span>
-      <span class="tag">returnitems</span>
-      <span class="tag result-ok">Completed</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Corrected the earlier since-Friday Return Items scope after Patricia supplied Parcel Claim / return IDs and clarified the scope was all resellable rows, not only today or exact <code>Resell</code>. Rebuilt live scope, searched Parcel Claim MY/SG/TT, ShopeeMY R/R, ShopeeSG R/R, TikTok, SiteGiant, and Kmall/Profile78 where applicable.</p>
-      <div class="field"><strong>Every Return Items webapp change before -&gt; after:</strong>
-        <ul>
-        <li><code>13952</code> / ShopeeMY / MasonGym / <code>MY263357105837P</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 2606144AB7DW5H</code>; <code>items</code> <code>blank -&gt; EVA Foam Back Massager Stretcher Pillow Yoga Lumbar Support Pillow Spine Posture Pain Relief Equipment MasonGym™</code>; <code>iskus</code> <code>blank -&gt; STRETCHER-PILLOW-PURPLE</code>; evidence <code>ShopeeMY R/R / returnitems_20260622_since_friday_recheck_shopeemy_rr_cs1.json</code>.</li>
-        <li><code>13856</code> / ShopeeSG / Kinata SG / <code>SPXSG066810375576</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 2606143CNFRFTN</code>; <code>items</code> <code>blank -&gt; Laundry Basket Bag with Wheels Dirty Clothes Laundry Basket With Cover Lid Foldable Laundry Organizer Hamper&#160;Large</code>; <code>iskus</code> <code>blank -&gt; FOLDABLE-LAUNDRY-HAMPER-IVORY-3BAGS-SG</code>; evidence <code>ShopeeSG R/R / returnitems_20260622_since_friday_recheck_shopeesg_orderid_lookup.json</code>.</li>
-        <li><code>13852</code> / ShopeeSG / Kinata SG / <code>SPXSG0625223610426</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 2606167781CE5N</code>; <code>items</code> <code>blank -&gt; Metal Arch Backdrop Stand Wedding Birthday Decoration Curve Flower Stand Outdoor Balloon Arch Party Decoration Gold</code>; <code>iskus</code> <code>blank -&gt; METAL-EVENT-ARCH-MOON-7-2FT-SG</code>; evidence <code>ShopeeSG R/R / returnitems_20260622_since_friday_recheck_shopeesg_orderid_lookup.json</code>.</li>
-        <li><code>13887</code> / TikTok / TT Jager / <code>680054678752811</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584514337146832667</code>; <code>items</code> <code>blank -&gt; JAGER Helmet motor helmet motorcycle Topi keledar double visor open face motosikal bike helmet moto Stylish dual lens</code>; <code>iskus</code> <code>blank -&gt; JG-RBL-SIRIM</code>; evidence <code>TikTok fresh seller lookup / returnitems_20260622_since_friday_recheck_tiktok_tt_jager.json</code>.</li>
-        <li><code>13886</code> / TikTok / TT Jager / <code>680015187112815</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584540604786771302</code>; <code>items</code> <code>blank -&gt; JAGER Helmet motor helmet motorcycle Topi keledar double visor open face motosikal bike helmet moto Stylish dual lens</code>; <code>iskus</code> <code>blank -&gt; JG-SBBL-SIRIM</code>; evidence <code>TikTok fresh seller lookup / returnitems_20260622_since_friday_recheck_tiktok_tt_jager.json</code>.</li>
-        <li><code>13872</code> / TikTok / TT Adelmar / <code>684200231954425</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584503957060158760</code>; <code>items</code> <code>blank -&gt; HOVERBOARD 7&quot;/10&quot; Inci Lampu LED HOVERBOARD 7&quot;/10&quot; Inch LED Light BLUETOOTH SPEAKER Self Balancing elektrik skuter electric scooter</code>; <code>iskus</code> <code>blank -&gt; HOVERBOARD-ICE-FIRE-W-HANDLE-10INCH</code>; evidence <code>TikTok fresh seller lookup / returnitems_20260622_since_friday_recheck_tiktok_tt_adelmar.json</code>.</li>
-        <li><code>13871</code> / TikTok / TT Jager / <code>684200683853825</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584523518647960896</code>; <code>items</code> <code>blank -&gt; JAGER Helmet motor helmet motorcycle Topi keledar double visor open face motosikal bike helmet moto Stylish dual lens</code>; <code>iskus</code> <code>blank -&gt; JG-SBL-SIRIM</code>; evidence <code>TikTok fresh seller lookup / returnitems_20260622_since_friday_recheck_tiktok_tt_jager.json</code>.</li>
-        <li><code>13844</code> / TikTok / TT Hiranai / <code>680081068602110</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584431221666383317</code>; <code>items</code> <code>blank -&gt; American Vintage T-Shirt Male Letter Print Couple Short-Sleeved  Niche Chic Top Early Autumn</code>; <code>iskus</code> <code>blank -&gt; AVTS-BLACK-L</code>; evidence <code>TikTok same-day prior lookup; fresh retry login-blocked / returnitems_20260622_since_friday_tiktok_tt_hiranai.json</code>.</li>
-        <li><code>13968</code> / ShopeeMY / KarlMobel / <code>MY269409706827S</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 260618D4B86FSE</code>; <code>items</code> <code>blank -&gt; GXT Helmet motor Topi keledar visor dwi lapis motosikal Stylish motorcycle helmet open face double layer visor lens</code>; <code>iskus</code> <code>blank -&gt; GXTSTARL-BLUE-L</code>; evidence <code>ShopeeMY R/R / returnitems_20260622_since_friday_recheck_new_13968_shopeemy_rr_cs3.json</code>.</li>
-        <li><code>13966</code> / ShopeeSG / Kinata SG / <code>SPXSG065890738166</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 260617AB40EGH7</code>; <code>items</code> <code>blank -&gt; Laptop Bag Stand 16 Inch Mouse Pad Laptop Sleeve Cover&#160;MacBook Air 13 Inch Case Waterproof Laptop Pouch Leather 3 in 1</code>; <code>iskus</code> <code>blank -&gt; LEATHER-LAPTOP-SLEEVE-DGRN-13IN-SG</code>; evidence <code>ShopeeSG R/R / returnitems_20260622_since_friday_recheck_new_shopeesg_lookup.json</code>.</li>
-        <li><code>13965</code> / ShopeeSG / Kinata SG / <code>SPXSG068440551556</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 260607EJ75E2MJ</code>; <code>items</code> <code>blank -&gt; Transparent Cake Box Plastic Packaging Big Gift Box for Present Cake Container with Lid Dessert Display Tall Cake Box</code>; <code>iskus</code> <code>blank -&gt; CLEAR-CAKE-PACKAGING-BOX-10IN-1L-SG</code>; evidence <code>ShopeeSG R/R / returnitems_20260622_since_friday_recheck_new_shopeesg_lookup.json</code>.</li>
-        <li><code>13962</code> / ShopeeSG / Kinata SG / <code>SPXSG069074098866</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 26061564NCJKAB</code>; <code>items</code> <code>blank -&gt; Dish Drying Rack Stainless Steel 304 Sink Cutlery Organiser Kitchen Sink Drainer Rack Dish Utensil Drying Rack</code>; <code>iskus</code> <code>blank -&gt; SS-DUAL-LAYER-DISH-RACK-DBL-86CM-SG</code>; evidence <code>ShopeeSG R/R / returnitems_20260622_since_friday_recheck_new_shopeesg_lookup.json</code>.</li>
-        <li><code>13964</code> / ShopeeMY / MurahYa / <code>MY267975020482S</code> / reason Pending Repair &amp; Resell: <code>orderId</code> <code>blank -&gt; 26061440X2GX21</code>; <code>items</code> <code>blank -&gt; Adelmar™ Scooter Electric Skuter Elektrik Dewasa 150kg E Scooter Adult Heavy Duty M4 PRO 40km Electric Scooter EV Outdoo</code>; <code>iskus</code> <code>blank -&gt; ES-M4-PRO</code>; evidence <code>ShopeeMY R/R via Parcel Claim order ID / returnitems_20260622_since_friday_recheck_extra_13964_shopeemy_rr_cs4.json</code>.</li>
-        <li><code>13967</code> / ShopeeSG / Kinata SG / <code>SPXSG066636252796</code> / reason Pending Repair &amp; Resell: <code>orderId</code> <code>blank -&gt; 260605AT290PCA</code>; <code>items</code> <code>blank -&gt; Water Dispenser Hot and Cold Drink Dispenser with Tap Water Jug Beverage Dispenser Insulated Stainless Steel 6L 10L 12L</code>; <code>iskus</code> <code>blank -&gt; INSULATED-BEVERAGE-DISPENSER-STL-XTK-10L-SG</code>; evidence <code>ShopeeSG R/R / returnitems_20260622_since_friday_recheck_extra_13967_shopeesg_lookup.json</code>.</li>
-        <li><code>13970</code> / TikTok / TT Jager / <code>684200674254122</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 584520774756370303</code>; <code>items</code> <code>blank -&gt; JAGER Helmet motor helmet motorcycle Topi keledar double visor open face motosikal bike helmet moto Stylish dual lens</code>; <code>iskus</code> <code>blank -&gt; JG-SRBL-SIRIM</code>; evidence <code>TikTok Manage Returns / returnitems_20260622_since_friday_recheck_final_13970_tiktok_tt_jager.json</code>.</li>
-        </ul>
-      </div>
-      <div class="field"><strong>User-supplied IDs:</strong> <code>SPXSG0625223610426</code> was found in Kinata SG R/R by return <code>2606170BTCSX0PW</code> and patched to order <code>2606167781CE5N</code>, iSKU <code>METAL-EVENT-ARCH-MOON-7-2FT-SG</code>. <code>SPXMY067965291216</code> / <code>260617BFBUGPP4</code> and <code>SPXMY060706387376</code> / <code>260616829H2TYN</code> were searched but left unpatched because no SKU-bearing Hiranai ShopeeMY/SiteGiant evidence was found.</div>
-      <div class="field"><strong>TikTok status:</strong> patched original TikTok rows <code>13887</code>, <code>13886</code>, <code>13872</code>, <code>13871</code>, <code>13844</code>, plus newly arrived <code>13970</code>. TT ValueSnap row <code>13838</code> remains blocked by TikTok login; TT Hiranai fresh retry also hit login, but <code>13844</code> had same-day saved SKU-bearing evidence.</div>
-      <div class="field"><strong>Safety counters:</strong> field PATCHes <code>45/45</code>; verified live readback <code>15/15</code>; <code>stockIds</code> writes <code>0 -&gt; 0</code>; stock-in, SiteGiant stock writes, marketplace writes, and customer messages <code>0 -&gt; 0</code>; unexpected stockIds rows <code>0</code>.</div>
-      <div class="field"><strong>Still not found / not patchable:</strong>
-        <ul>
-        <li><code>13969</code> / ShopeeMY / ValueSnap / <code>MY269487404728H</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13963</code> / ShopeeSG / Kinata SG / <code>SPXSG060805578217S</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13960</code> / ShopeeMY / BahEmas / <code>MY260970847491N</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13959</code> / ShopeeMY / Hiranai / <code>MY261078374631E</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13958</code> / ShopeeMY / das.nature2 / <code>MY263908775044M</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13957</code> / ShopeeMY / BahEmas / <code>SPXMY065085221846</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13956</code> / ShopeeMY / ValueSnap / <code>SPXMY063405732596</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13955</code> / ShopeeMY / Hiranai / <code>MY260057573186K</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13954</code> / ShopeeMY / ValueSnap / <code>SPXMY064699119476</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13953</code> / ShopeeMY / Hiranai / <code>MY262699585057C</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13944</code> / ShopeeMY / BahEmas / <code>MY2618284681664</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13942</code> / ShopeeMY / Hiranai / <code>SPXMY067965291216</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13939</code> / ShopeeMY / ValueSnap / <code>MY2640931015150</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13938</code> / ShopeeMY / Hiranai / <code>MY265670593871G</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13937</code> / ShopeeMY / Hiranai / <code>SPXMY060706387376</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13936</code> / ShopeeMY / Hiranai / <code>MY260511860448L</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13934</code> / ShopeeMY / Hiranai / <code>MY2682919150160</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13914</code> / ShopeeMY / Luxbin™ / <code>MY267747784596O</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13882</code> / ShopeeMY / Lovento / <code>MY2633123175490</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13864</code> / ShopeeMY / MurahYa / <code>66668230302001</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13863</code> / ShopeeMY / MurahYa / <code>SPXMY063750150436</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13838</code> / TikTok / TT ValueSnap / <code>680017847672712</code> / reason Unit Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>blank</code> / <code>blank</code> / <code>blank</code>.</li>
-        <li><code>13828</code> / ShopeeMY / MurahYa / <code>SPXMY063476032506</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13827</code> / ShopeeMY / Hiranai / <code>SPXMY062495887476</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13821</code> / ShopeeMY / Hiranai / <code>SPXMY069366740756</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13819</code> / ShopeeMY / Hiranai / <code>SPXMY064703529506</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13811</code> / ShopeeMY / KarlMobel / <code>MY262763829677W</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13808</code> / ShopeeMY / das.nature / <code>SPXMY061414202826</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13807</code> / ShopeeMY / das.nature2 / <code>SPXMY066706281986</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13793</code> / ShopeeMY / ValueSnap / <code>MY268787316498R</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13774</code> / ShopeeMY / MurahYa / <code>6800034042732914</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13770</code> / ShopeeMY / ValueSnap / <code>MY268558292670Υ</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13762</code> / ShopeeMY / MurahYa / <code>SPXMY064714258816</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13759</code> / ShopeeMY / das.nature2 / <code>SPXMY065598236316</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        <li><code>13748</code> / ShopeeMY / KarlMobel / <code>SHSMMYSG260606BQ0TR6Q5</code> / reason Resell: still missing SKU-bearing marketplace/SiteGiant evidence; current order/items/iSKUs remain <code>Error</code> / <code>Error</code> / <code>Error</code>.</li>
-        </ul>
-      </div>
-      <div class="field"><strong>Partial / blockers:</strong> Kmall/Profile78 all-row retry timed out and profile <code>k1bh4lmm</code> was stopped; SiteGiant all-row wide run timed out after chunks 01-04 and was mitigated by all-row fast plus targeted order-ID checks; single-row SiteGiant helper for <code>13969</code> failed before lookup with <code>rows is not iterable</code>; TT ValueSnap and TT Hiranai need login follow-up.</div>
-      <div class="field"><strong>Evidence files:</strong> report <code>C:\Users\tessf\Documents\returnitems-reports\returnitems-since-friday-recheck-2026-06-22.md</code>; repo report <code>tmp-returnitems\returnitems-since-friday-recheck-2026-06-22.md</code>; final summary <code>tmp-returnitems\returnitems_20260622_since_friday_recheck_final_summary.json</code>; verification <code>tmp-returnitems\returnitems_20260622_since_friday_recheck_final_verification.json</code>; final live readback <code>tmp-returnitems\returnitems_live_20260622_since_friday_recheck_final_after_13970_patch.json</code>; raw Parcel Claim, ShopeeMY/SG, TikTok, SiteGiant, and Kmall files saved under <code>tmp-returnitems</code>.</div>
-      <div class="field"><strong>Result:</strong> partial-complete. All rows with SKU-bearing evidence were patched and verified. Remaining rows need login, better marketplace/SiteGiant evidence, or manual SKU confirmation before webapp patching.</div>
-    </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Consolidated duplicate same-date <code>checksbvariation</code> board cards into one visible task card per Patricia's no-duplicate-task rule. Original card summaries are retained below and the full removed blocks were archived locally.</p>
+    <div class="field"><strong>Before -&gt; after values:</strong> visible cards for <code>checksbvariation</code> on <code>2026-06-22</code> <code>5 -&gt; 1</code>.</div>
+    <div class="field"><strong>Folded cards:</strong><ul><li>checksbvariation approved stock adjustments 2026-06-22</li><li>checksbvariation since Friday night stock checklist 2026-06-22</li><li>checksbvariation Kinata SG correction 260620JWTM2R6V 2026-06-22</li><li>checksbvariation follow-up contact + stock checks 2026-06-22</li><li>checksbvariation scheduled daily run 2026-06-22</li></ul></div><div class="field"><strong>Archive:</strong> full removed card HTML saved in <code>tmp-board-dedupe-20260623\removed-duplicate-board-cards-final-2026-06-23.json</code>.</div>
+    <div class="field"><strong>Operational counters for this cleanup:</strong> webapp patches <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Result:</strong> Duplicate board cards folded; use the original reports/raw evidence named inside the folded cards for business-level detail.</div>
   </div>
-<div class="entry" data-date="2026-06-22" data-shops="Kinata SG" data-platform="Shopee SG + SB Variation" data-result="complete">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation Kinata SG correction 260620JWTM2R6V 2026-06-22</span>
-      <span class="entry-meta">2026-06-22 MYT &middot; buyer messages 0-&gt;1 &middot; SB contact row 0-&gt;1 &middot; stock writes 0-&gt;0</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag result-ok">Done</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Correction after Patricia challenged order <code>260620JWTM2R6V</code>. Earlier "no active Kinata SG message item" wording was based on saved artifacts and missed fresh live SB row <code>101268</code>.</p>
-      <div class="field"><strong>Shop/platform/reason:</strong> Kinata SG / Shopee SG / SB Variation <code>No Stock</code>.</div>
-      <div class="field"><strong>Live order check:</strong> Shopee SG order <code>260620JWTM2R6V</code> was verified <code>To Ship</code>, not cancelled, buyer <code>jdt_17</code>. Product <code>Retro Game Console Gameboy Advance Handheld Game Console Games for Adults Kids Portable Gaming Console Mini R36S</code>; variation <code>R36S-Black,64GB</code>; iSKU <code>HANDHELD-RETRO-GAME-CONSOLE-TR-BLK-64G-SG</code>; qty <code>1</code>.</div>
-      <div class="field"><strong>Every external change before -&gt; after:</strong><ul>
-        <li>Shopee SG buyer messages for <code>260620JWTM2R6V</code>: <code>0</code> -&gt; <code>1</code>. Sent the approved No Stock template only after live order status was verified not cancelled and no prior SB template was found in the mini-chat.</li>
-        <li>SB row <code>101268</code>: contactSent <code>false</code> -&gt; <code>true</code>; csRemarks count <code>0</code> -&gt; <code>1</code>; buyerDecision <code>null</code> -&gt; <code>null</code>; stockAdjustmentStatus <code>null</code> -&gt; <code>null</code>; stockSetOos <code>false</code> -&gt; <code>false</code>.</li>
-        <li>SiteGiant stock writes <code>0</code> -&gt; <code>0</code>; SiteGiant item-status/reserved edits <code>0</code> -&gt; <code>0</code>; seller-order/Jira/WhatsApp writes <code>0</code> -&gt; <code>0</code>.</li>
-      </ul></div>
-      <div class="field"><strong>Evidence:</strong> correction report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-kinata-sg-260620JWTM2R6V-correction-2026-06-22.md</code>; fresh SB probe <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\employee-kinata-sg-260620JWTM2R6V-probe-20260622.json</code>; Shopee order probe <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\_probe_kinata_sg_order_search_cs5_260620JWTM2R6V_20260622.json</code>; send evidence <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\_send_cs5_kinata_sg_no_stock_260620JWTM2R6V_20260622.json</code>; SB patch/readback <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\employee-kinata-sg-contact-260620JWTM2R6V-20260622.json</code> and <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\employee-kinata-sg-contact-260620JWTM2R6V-readback-20260622.json</code>.</div>
-      <div class="field"><strong>Result:</strong> completed contact correction. Customer is now contacted and SB contact state is patched/read back. No stock adjustment was performed.</div>
-      <div class="field"><strong>Outstanding:</strong> stock/OOS cleanup for <code>HANDHELD-RETRO-GAME-CONSOLE-TR-BLK-64G-SG</code> remains approval-gated and requires fresh SiteGiant before-values before any stock/status/reserved write.</div>
-    </div>
-  </div>
+</div>
+  
+    
+
 <div class="entry" data-date="2026-06-22" data-shops="11 TT shops" data-platform="TikTok MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -1382,68 +1194,8 @@ header.page::after{
       <div class="field"><strong>Result:</strong> ok - wins 0, clawbacks 24, unverified 3, reconciliation 54/54.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-06-22" data-shops="TT Murahya, Kinata SG, closed SB stock watch" data-platform="TikTok MY + Shopee SG + SB Variation + SiteGiant" data-result="partial">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation follow-up contact + stock checks 2026-06-22</span>
-      <span class="entry-meta">2026-06-22 MYT &middot; buyer messages 0-&gt;2 &middot; SB contact rows 0-&gt;2 &middot; stock writes 0-&gt;0 &middot; accepted-change pending deductions 0</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag result-partial">Partial</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Followed Patricia's correction to contact the two TT Murahya weekday-held customer cases if not cancelled, and to check closed-case OOS/stock cleanup plus accepted-change stock deduction rules.</p>
-      <div class="field"><strong>Every external change before -&gt; after:</strong><ul>
-        <li><code>584597636825056868</code> / row <code>101256</code> / TT Murahya / TikTokMY: contactSent <code>false</code> -&gt; <code>true</code>; csRemarks count <code>0</code> -&gt; <code>1</code>; buyerDecision unchanged <code>null</code>; stockAdjustmentStatus unchanged <code>null</code>; reason: Patricia-approved customer follow-up after weekday held rows were live-verified not cancelled.</li>
-        <li><code>584624621184910753</code> / row <code>101267</code> / TT Murahya / TikTokMY: contactSent <code>false</code> -&gt; <code>true</code>; csRemarks count <code>0</code> -&gt; <code>1</code>; buyerDecision unchanged <code>null</code>; stockAdjustmentStatus unchanged <code>null</code>; reason: Patricia-approved customer follow-up after weekday held rows were live-verified not cancelled.</li>
-      </ul></div>
-      <div class="field"><strong>Buyer messages before -&gt; after:</strong> TikTok customer messages <code>0 -&gt; 2</code>. Sent approved templates only: Offer Change for <code>584597636825056868</code> to buyer <code>imahericimaheric</code>; No Stock for <code>584624621184910753</code> to buyer <code>rumahlekorhm</code>. TikTok readback verified exact sent text visible and empty composer for both.</div>
-      <div class="field"><strong>Kinata SG:</strong> no send. Current/recent Kinata rows checked were already contacted and cancelled: <code>2606131Q9MDMQP</code>, <code>260607F0TW9WTX</code>, <code>260606D14994XG</code>, <code>260607DEJARGJA</code>.</div>
-      <div class="field"><strong>Stock and accepted-change result:</strong> SiteGiant stock writes <code>0 -&gt; 0</code>; item status/reserved edits <code>0 -&gt; 0</code>. Accepted-change rows in current readback were already <code>Adjusted</code>, so pending accepted-change deductions found <code>0</code>. Closed/cancelled cleanup watch remains report-only with <code>27</code> stock lines; deduct sellable only unless Reserved cleanup is explicitly approved.</div>
-      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-followup-contact-stock-2026-06-22.md</code>; TikTok readback <code>tmp-sbvariation-20260622/tt-murahya-contact-readback-both-20260622.json</code>; SB patch evidence <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\employee-tt-murahya-contact-followup-20260622.json</code>; SB readback <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\employee-tt-murahya-contact-followup-readback-20260622.json</code>.</div>
-      <div class="field"><strong>Result:</strong> partial/approval-gated. Customer-contact correction completed for both eligible TT Murahya orders. Stock cleanup still needs exact Patricia/WH approval and fresh live SiteGiant before-values before any quantity or Reserved write.</div>
-      <div class="field"><strong>Outstanding:</strong> closed/cancelled stock-return cleanup list is still active; <code>CWS-3F-GREEN-UPGRADE</code> for open order <code>584597636825056868</code> is OOS status with positive <code>1/1/0/0</code> and needs WH/system-stock decision. No active Kinata SG message item remains.</div>
-    </div>
-  </div>
-    <div class="entry" data-date="2026-06-22" data-shops="BahEmas, Hiranai, ValueSnap, Luxbin, Kinata SG, TT Jager, TT Adelmar, TT Hiranai" data-platform="Return Items webapp, Parcel Claim, SiteGiant, ShopeeMY R/R, ShopeeSG R/R, Kmall, TikTok" data-result="partial">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">returnitems since-Friday Resell cannot-find list 2026-06-22</span>
-      <span class="entry-meta">2026-06-22 MYT &middot; since Friday Resell scope 15 rows &middot; found 6 &middot; unresolved 9 &middot; PATCH 0/0</span>
-      <span class="tag">returnitems</span>
-      <span class="tag result-ok">Completed</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Corrected the Return Items scope after Patricia clarified the cannot-find list must cover Resell rows since Friday 2026-06-19 MYT, not only today's rows. Checked fresh Return Items, Parcel Claim, SiteGiant chunked lookup, ShopeeMY R/R, ShopeeSG R/R, Kmall/Profile78, and TikTok seller profiles for the relevant shops.</p>
-      <div class="field"><strong>Every Return Items change before -&gt; after:</strong> no field patch was made in this correction pass. <code>orderId</code> writes <code>0 -&gt; 0</code>; <code>items</code> writes <code>0 -&gt; 0</code>; <code>iskus</code> writes <code>0 -&gt; 0</code>; <code>stockIds</code> writes <code>0 -&gt; 0</code>; stock-in, SiteGiant stock writes, marketplace writes, and customer messages <code>0 -&gt; 0</code>.</div>
-      <div class="field"><strong>Reason for no webapp changes:</strong> Patricia asked for the list of tracking IDs that still cannot be found. Rows found during this correction were recorded as evidence-only and were not patched in this pass.</div>
-      <div class="field"><strong>Still not found after wide search:</strong>
-        <ul>
-        <li><code>13944</code> / ShopeeMY / BahEmas / <code>MY2618284681664</code>: still not found after wide search; Parcel Claim C19528, order <code>260617B28M7M23</code>, product Cocktail Shaker Set Stainless Steel Mixer Jigger Ice Tong Pourer Bar Set 550ml/750ml 9 Pieces Utensils Bartender Kit.</li>
-        <li><code>13942</code> / ShopeeMY / Hiranai / <code>SPXMY067965291216</code>: still not found after wide search; no Parcel Claim external evidence.</li>
-        <li><code>13939</code> / ShopeeMY / ValueSnap / <code>MY2640931015150</code>: still not found after wide search; Parcel Claim C19540, order <code>260619FH6JA8GH</code>, product Digital Camera 4K 48MP Photography Camera Rechargeable Cameras 2.4 inch 180&#176; Flip Screen Selfile Camera.</li>
-        <li><code>13938</code> / ShopeeMY / Hiranai / <code>MY265670593871G</code>: still not found after wide search; Parcel Claim C19120, order <code>260611RAKX31Y3</code>, product Baju Kemeja Lelaki Lengan Pendek Short Sleeve Shirt Men Baju Lelaki Berkolar Plain Collar Shirt Kemeja Oversize Lelaki.</li>
-        <li><code>13937</code> / ShopeeMY / Hiranai / <code>SPXMY060706387376</code>: still not found after wide search; no Parcel Claim external evidence.</li>
-        <li><code>13936</code> / ShopeeMY / Hiranai / <code>MY260511860448L</code>: still not found after wide search; Parcel Claim C19562, order <code>2606168JAMDD42</code>, product Skirt Extender Muslimah Skirt Cover Punggung Skirt Extender Cotton Blouse Shirt Extender Women Clothes Korean Style.</li>
-        <li><code>13934</code> / ShopeeMY / Hiranai / <code>MY2682919150160</code>: still not found after wide search; Parcel Claim C19484, order <code>260617AUC4YHH9</code>, product Long Sleeved Jacket Tops UPF 50+ UV Sun Protection Cloth Original Ice Silk Cool Feeling Outdoor Loose Slim Breathable.</li>
-        <li><code>13914</code> / ShopeeMY / Luxbin(TM) / <code>MY267747784596O</code>: still not found after wide search; Parcel Claim C19478, order <code>2606169ACPDXAA</code>, product Tong Sampah Bertutup Bathroom Dustbin Kitchen Stainless Steel Trash Can Bedroom Rubbish Bin Living Room 5L 6L 7L 8L 10L.</li>
-        <li><code>13852</code> / ShopeeSG / Kinata SG / <code>SPXSG0625223610426</code>: still not found after wide search; no Parcel Claim external evidence.</li>
-        </ul>
-      </div>
-      <div class="field"><strong>Found during since-Friday check, not patched in this pass:</strong>
-        <ul>
-        <li><code>13887</code> / TikTok / TT Jager / <code>680054678752811</code>: found evidence in TikTok (returnitems_20260622_since_friday_tiktok_tt_jager.json); not patched in this correction pass.</li>
-        <li><code>13886</code> / TikTok / TT Jager / <code>680015187112815</code>: found evidence in TikTok (returnitems_20260622_since_friday_tiktok_tt_jager.json); not patched in this correction pass.</li>
-        <li><code>13872</code> / TikTok / TT Adelmar / <code>684200231954425</code>: found evidence in TikTok (returnitems_20260622_since_friday_tiktok_tt_adelmar.json); not patched in this correction pass.</li>
-        <li><code>13871</code> / TikTok / TT Jager / <code>684200683853825</code>: found evidence in TikTok (returnitems_20260622_since_friday_tiktok_tt_jager.json); not patched in this correction pass.</li>
-        <li><code>13856</code> / ShopeeSG / Kinata SG / <code>SPXSG066810375576</code>: found evidence in ShopeeSG R/R (returnitems_20260622_since_friday_shopeesg_lookup.json); not patched in this correction pass.</li>
-        <li><code>13844</code> / TikTok / TT Hiranai / <code>680081068602110</code>: found evidence in TikTok (returnitems_20260622_since_friday_tiktok_tt_hiranai.json); not patched in this correction pass.</li>
-        </ul>
-      </div>
-      <div class="field"><strong>Evidence files:</strong> report <code>C:\Users\tessf\Documents\returnitems-reports\returnitems-since-friday-resell-unresolved-2026-06-22.md</code>; repo report <code>tmp-returnitems\returnitems-since-friday-resell-unresolved-2026-06-22.md</code>; consolidated summary <code>tmp-returnitems\returnitems_20260622_since_friday_unresolved_summary.json</code>; fresh live API <code>tmp-returnitems\returnitems_live_20260622_since_friday_check.json</code>; Parcel Claim <code>tmp-returnitems\returnitems_20260622_since_friday_parcel_claim_wide_lookup.json</code>; SiteGiant chunk files <code>01</code>-<code>05</code>; ShopeeMY/ShopeeSG/Kmall outputs; TikTok expected-shop outputs.</div>
-      <div class="field"><strong>Tooling corrections logged:</strong> today's prior closeout was too narrow for the clarified since-Friday scope; SiteGiant all-row timeout was split into chunks; TikTok broad timeout happened after all relevant TikTok rows were already found in expected-shop outputs.</div>
-      <div class="field"><strong>Result:</strong> partial. The corrected cannot-find list is 9 tracking IDs. 6 older since-Friday rows have evidence but remain unpatched because this correction pass was list/report-only.</div>
-    </div>
-  </div>
+  
+    
 <div class="entry" data-date="2026-06-22" data-shops="BahEmas, KarlMobel, MurahYa, TT Murahya" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -1512,79 +1264,7 @@ header.page::after{
       <div class="field"><strong>Result:</strong> partial - 14 posted, 3 errors, board logged by Codex.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-06-22" data-shops="SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY" data-platform="SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY" data-result="partial">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation scheduled daily run 2026-06-22</span>
-      <span class="entry-meta">2026-06-22 13:54:35 +08:00 &amp; MYT run &amp; 67 reviewed &amp; 10 SB buyerDecision patches &amp; messages 0-&gt;0 &amp; stock writes 0-&gt;0</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag result-partial">Partial</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Ran the 2026-06-22 MYT scheduled SB Variation check from live employee rows and SiteGiant evidence. Monday is outside the weekend-only contact lane, so no customer messages were sent. Live-cancelled focused rows missing buyerDecision were patched to Cancelled and read back.</p>
-      <div class="field"><strong>Scope:</strong> SB rows <code>180</code>, max id <code>101267</code>; focused/reviewed <code>67</code>; SiteGiant orders <code>67/67</code>; exact iSKUs <code>141/144</code>; new rows above session max 101238: <code>28</code>.</div>
-      <div class="field"><strong>Every webapp change before -&gt; after:</strong><ul>
-        <li><code>584606387103761838</code> / row <code>101259</code> / TT Hiranai / TikTokMY: buyerDecision <code>null</code> -&gt; <code>&quot;Cancelled&quot;</code>; csRemarks count <code>1</code> -&gt; <code>1</code>; whConfirmStatus <code>null</code> -&gt; <code>&quot;Pending WH Confirm&quot;</code>; stockAdjustmentStatus <code>null</code> -&gt; <code>&quot;Not Adjusted&quot;</code>.</li>
-        <li><code>260618DGRCV7BQ</code> / row <code>101257</code> / das.nature2 / ShopeeMY: buyerDecision <code>null</code> -&gt; <code>&quot;Cancelled&quot;</code>; csRemarks count <code>1</code> -&gt; <code>1</code>; whConfirmStatus <code>null</code> -&gt; <code>&quot;Pending WH Confirm&quot;</code>; stockAdjustmentStatus <code>null</code> -&gt; <code>&quot;Not Required&quot;</code>.</li>
-        <li><code>260618DKMGNJMN</code> / row <code>101255</code> / Hiranai / ShopeeMY: buyerDecision <code>null</code> -&gt; <code>&quot;Cancelled&quot;</code>; csRemarks count <code>1</code> -&gt; <code>1</code>; whConfirmStatus <code>null</code> -&gt; <code>&quot;Pending WH Confirm&quot;</code>; stockAdjustmentStatus <code>null</code> -&gt; <code>&quot;Not Adjusted&quot;</code>.</li>
-        <li><code>260617AC4UE045</code> / row <code>101253</code> / MurahYa / ShopeeMY: buyerDecision <code>null</code> -&gt; <code>&quot;Cancelled&quot;</code>; csRemarks count <code>1</code> -&gt; <code>1</code>; whConfirmStatus <code>null</code> -&gt; <code>&quot;Pending WH Confirm&quot;</code>; stockAdjustmentStatus <code>null</code> -&gt; <code>&quot;Not Adjusted&quot;</code>.</li>
-        <li><code>260617B1H0WPQW</code> / row <code>101251</code> / Karlmobel / ShopeeMY: buyerDecision <code>null</code> -&gt; <code>&quot;Cancelled&quot;</code>; csRemarks count <code>1</code> -&gt; <code>1</code>; whConfirmStatus <code>&quot;Pending WH Confirm&quot;</code> -&gt; <code>&quot;Not Required&quot;</code>; stockAdjustmentStatus <code>&quot;Not Required&quot;</code> -&gt; <code>&quot;Not Required&quot;</code>.</li>
-        <li><code>260617B1W8VBX3</code> / row <code>101250</code> / Hiranai / ShopeeMY: buyerDecision <code>null</code> -&gt; <code>&quot;Cancelled&quot;</code>; csRemarks count <code>1</code> -&gt; <code>1</code>; whConfirmStatus <code>&quot;Pending WH Confirm&quot;</code> -&gt; <code>&quot;Pending WH Confirm&quot;</code>; stockAdjustmentStatus <code>&quot;Not Required&quot;</code> -&gt; <code>&quot;Not Required&quot;</code>.</li>
-        <li><code>2606168BUBNNQB</code> / row <code>101248</code> / MurahYa / ShopeeMY: buyerDecision <code>null</code> -&gt; <code>&quot;Cancelled&quot;</code>; csRemarks count <code>1</code> -&gt; <code>1</code>; whConfirmStatus <code>null</code> -&gt; <code>&quot;Pending WH Confirm&quot;</code>; stockAdjustmentStatus <code>null</code> -&gt; <code>&quot;Not Adjusted&quot;</code>.</li>
-        <li><code>260617ASE9466W</code> / row <code>101246</code> / das.nature2 / ShopeeMY: buyerDecision <code>&quot;,&quot;</code> -&gt; <code>[&quot;Cancelled&quot;,&quot;&quot;]</code>; csRemarks count <code>1</code> -&gt; <code>1</code>; whConfirmStatus <code>[&quot;Pending WH Confirm&quot;,&quot;Not Required&quot;]</code> -&gt; <code>[&quot;Pending WH Confirm&quot;,&quot;Not Required&quot;]</code>; stockAdjustmentStatus <code>[&quot;Not Adjusted&quot;,&quot;Not Required&quot;]</code> -&gt; <code>[&quot;Not Adjusted&quot;,&quot;Not Required&quot;]</code>.</li>
-        <li><code>2606179EXFSP9S</code> / row <code>101245</code> / Murahya / ShopeeMY: buyerDecision <code>null</code> -&gt; <code>&quot;Cancelled&quot;</code>; csRemarks count <code>1</code> -&gt; <code>2</code>; whConfirmStatus <code>&quot;WH Confirmed Can Pack&quot;</code> -&gt; <code>&quot;WH Confirmed Can Pack&quot;</code>; stockAdjustmentStatus <code>&quot;Adjusted&quot;</code> -&gt; <code>&quot;Adjusted&quot;</code>. Correction: buyerDecision PATCH briefly recalculated stock status to <code>&quot;Pending WH Confirm&quot;</code> / <code>&quot;Not Adjusted&quot;</code>; restored final stock status to <code>&quot;WH Confirmed Can Pack&quot;</code> / <code>&quot;Adjusted&quot;</code> because <code>SA-19534</code> was already completed.</li>
-        <li><code>2606179JDTR1DN</code> / row <code>101242</code> / Karlmobel / ShopeeMY: buyerDecision <code>null</code> -&gt; <code>&quot;Cancelled&quot;</code>; csRemarks count <code>1</code> -&gt; <code>1</code>; whConfirmStatus <code>null</code> -&gt; <code>&quot;Pending WH Confirm&quot;</code>; stockAdjustmentStatus <code>null</code> -&gt; <code>&quot;Not Required&quot;</code>.</li>
-      </ul></div>
-      <div class="field"><strong>Operational counters before -&gt; after:</strong> buyer messages <code>0 -&gt; 0</code>; SiteGiant stock writes <code>0 -&gt; 0</code>; SiteGiant item-status/reserved writes <code>0 -&gt; 0</code>; SB stock-column toggles <code>0 -&gt; 0</code>; seller portal/Jira/form/WhatsApp writes <code>0 -&gt; 0</code>; SB webapp buyerDecision/csRemarks rows patched <code>0 -&gt; 10</code>; SB stock-status correction fields after buyerDecision side effect <code>0 -&gt; 1</code>.</div>
-      <div class="field"><strong>Reason for webapp changes:</strong> live SiteGiant marketplace-order evidence showed 10 focused orders were Cancelled while SB buyerDecision was still blank/null or incomplete.</div>
-      <div class="field"><strong>Stock action items, report-only:</strong><ul>
-        <li><code>260620HSDG5VRN</code> &gt; <code>BROOM-HOLDER-BLUE</code> &gt; <code>1/1/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity</li>
-        <li><code>260620JP3H49N5</code> &gt; <code>RED-CARDIGAN-JACKET-V2</code> &gt; <code>4/4/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; WH stock-check / possible system stock mismatch</li>
-        <li><code>260620JSP3325Q</code> &gt; <code>SH-KHAKI</code> &gt; <code>1/1/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; WH stock-check / possible system stock mismatch</li>
-        <li><code>260619FQVHNRGB</code> &gt; <code>RED-CARDIGAN-JACKET-V2</code> &gt; <code>4/4/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity</li>
-        <li><code>584606387103761838</code> &gt; <code>SBL-PINK</code> &gt; <code>6/6/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260618DGRCV7BQ</code> &gt; <code>CWS-3F-GREEN-UPGRADE</code> &gt; <code>1/1/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260618DGRCV7BQ</code> &gt; <code>CAMPING-SOFT-MAT-WHITE</code> &gt; <code>18/5/13/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>584597636825056868</code> &gt; <code>CWS-3F-GREEN-UPGRADE</code> &gt; <code>1/1/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; WH stock-check / possible system stock mismatch</li>
-        <li><code>260618DKMGNJMN</code> &gt; <code>GREEN-STRIPE-WOMEN-CARDIGAN</code> &gt; <code>1/1/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260619G5Q7JBVT</code> &gt; <code>CUPID-LOVE-FLOWER-13STALK-HOT-PINK</code> &gt; <code>24/24/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; WH stock-check / possible system stock mismatch</li>
-        <li><code>260617AC4UE045</code> &gt; <code>KHKITNT</code> &gt; <code>1/1/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260617AXTVR0WG</code> &gt; <code>DWRB-WHITE-41S</code> &gt; <code>7/2/5/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; WH stock-check / possible system stock mismatch</li>
-        <li><code>260617B1H0WPQW</code> &gt; <code>NGC-PINK-WOLR</code> &gt; <code>2/2/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260617B1W8VBX3</code> &gt; <code>BLOCK-HEEL-SANDAL-BLACK-41</code> &gt; <code>1/1/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>2606169E86G536</code> &gt; <code>BASKETBALL-HOOP-45CM</code> &gt; <code>1/0/1/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity</li>
-        <li><code>2606168BUBNNQB</code> &gt; <code>SKATEBOARD-80CM-DYNASTY-LIGHT</code> &gt; <code>1/1/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260618DD4H075J</code> &gt; <code>33-STALK-SOAP-ROSES-BOUQUET-LED-LIGHT-PINK</code> &gt; <code>7/7/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; WH stock-check / possible system stock mismatch</li>
-        <li><code>260617ASE9466W</code> &gt; <code>PSB-BLACK-1.3KG</code> &gt; <code>1/1/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260617ASE9466W</code> &gt; <code>INFLATABLE-PILLOW-BLACK</code> &gt; <code>165/161/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>2606179EXFSP9S</code> &gt; <code>DF-BLU-RED-36-38</code> &gt; <code>1/1/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>26061688KNUJC8</code> &gt; <code>SPV-200W-10MPC</code> &gt; <code>5/5/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>2606179JDTR1DN</code> &gt; <code>SPV-200W-10MPC</code> &gt; <code>5/5/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>584528435686705047</code> &gt; <code>SQueue</code> &gt; <code>326/326/0/0</code> &gt; <code>available</code> &gt; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>2606143M25U1P7</code> &gt; <code>ELASTIC-GYM-BAND-PURPLE</code> &gt; <code>4/4/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; WH stock-check / possible system stock mismatch</li>
-        <li><code>2606143M25U1P7</code> &gt; <code>SLED-WORKOUT-HARNESS-BLK</code> &gt; <code>3/3/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; WH stock-check / possible system stock mismatch</li>
-        <li><code>2606143M25U1P7</code> &gt; <code>DOOR-PULLUP-BAR-TRI-73-100CM</code> &gt; <code>3/3/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; WH stock-check / possible system stock mismatch</li>
-        <li><code>260615656C6S8X</code> &gt; <code>TRAINING-HURDLE-NGREEN-30CM</code> &gt; <code>6/6/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>26061313YTR7W3</code> &gt; <code>TRAINING-HURDLE-RED-30CM</code> &gt; <code>5/5/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>26061313YTR7W3</code> &gt; <code>TRAINING-HURDLE-NGREEN-30CM</code> &gt; <code>6/6/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>2606155N0YDWQ4</code> &gt; <code>TRAINING-HURDLE-PINK-30CM</code> &gt; <code>6/6/0/0</code> &gt; <code>out_of_stock</code> &gt; OOS status with positive quantity; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260612UR34MPP8</code> &gt; <code>TRAVEL-URINE-BAG</code> &gt; <code>907/899/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260612UR34MPP8</code> &gt; <code>CAMPING-ROPE-LIGHT-GREEN</code> &gt; <code>21/21/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260612UR34MPP8</code> &gt; <code>FISHING-BUCKET-GREY-35CM-WITH-HANDLE</code> &gt; <code>15/13/1/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260612UN474T25</code> &gt; <code>INTX530GPH</code> &gt; <code>22/22/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260612UN474T25</code> &gt; <code>INTXFILTR</code> &gt; <code>6/6/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260612TYG7SFVK</code> &gt; <code>RATTAN-LAUNDRY-BASKET-D-WOOD-WHT</code> &gt; <code>3/3/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; WH stock-check / possible system stock mismatch</li>
-        <li><code>260610Q8NA4RFN</code> &gt; <code>CB-GREEN</code> &gt; <code>5/7/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; WH stock-check / possible system stock mismatch</li>
-        <li><code>260606D5XYQEBQ</code> &gt; <code>HIGH-ELASTICITY-TRAINING-TENNIS-BALL-NO-VARIATION</code> &gt; <code>80/80/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260606DBEWANE5</code> &gt; <code>MBS-BLK-LOW</code> &gt; <code>31/29/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>260606CKY20X4R</code> &gt; <code>FB-BLUE-S</code> &gt; <code>18/18/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-        <li><code>584412855050273913</code> &gt; <code>HIGH-ELASTICITY-TRAINING-TENNIS-BALL-NO-VARIATION</code> &gt; <code>80/80/0/0</code> &gt; <code>available</code> &gt; status not OOS for no-stock/SB affected iSKU; cancellation stock-return cleanup action item; deduct sellable only unless Reserved cleanup is explicitly approved</li>
-      </ul></div>
-      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-scheduled-2026-06-22.md</code>; raw SB pull <code>C:\Users\tessf\Documents\sbvariation-reports\_raw_scheduled_2026-06-22-20260622000000.json</code>; SB readback <code>C:/Users/tessf/Documents/sbvariation-reports/_raw_scheduled_2026-06-22-readback-after-101245-restore.json</code>; SiteGiant orders <code>C:\Users\tessf\Documents\sbvariation-reports\_sitegiant_orders_api_2026-06-22.json</code>; SiteGiant items <code>C:\Users\tessf\Documents\sbvariation-reports\_sitegiant_items_api_2026-06-22.json</code>; webapp readback <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\employee-cancelled-buyerdecision-patch-2026-06-22.json</code>; stock-status correction <code>C:\Users\tessf\code\codex-lab\tmp-sbvariation-20260622\employee-restore-101245-stock-status-2026-06-22.json</code>; derived <code>C:\Users\tessf\Documents\sbvariation-reports\_sbvariation_derived_2026-06-22.json</code>.</div>
-      <div class="field"><strong>Result:</strong> partial/approval-gated. Customer messages stayed <code>0 -&gt; 0</code>; stock writes stayed <code>0 -&gt; 0</code>; cancelled buyerDecision readback completed for 10 rows; row <code>101245</code> status side effect was restored to <code>WH Confirmed Can Pack</code> / <code>Adjusted</code>; stock cleanup/deduction remains action-item only pending Patricia approval. Durable corrections applied: no repeat of known false flags for <code>TRAINING-HURDLE-NGREEN-15CM</code>, <code>DF-WHITE-PINK-27-29</code>, <code>SOFT-WALL-BALL-4KG</code>, or old non-sellable <code>NGC-RED-WOLR</code>.</div>
-      <div class="field"><strong>Outstanding:</strong> 41 stock action items need WH/Patricia approval before any SiteGiant write. <code>SPV-200W-10MPC</code> remains a WH-check/approval item and was not adjusted. Do not clear Reserved unless Patricia explicitly approves Reserved cleanup.</div>
-    </div>
-  </div>
+  
 <div class="entry" data-date="2026-06-22" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -1610,53 +1290,7 @@ header.page::after{
 </div>
 
 <!-- SG-GAP-MONITOR-2026-06-22 -->
-  <div class="entry" data-date="2026-06-22" data-shops="MurahYa, KarlMobel, MasonGym, BahEmas, Hiranai, ValueSnap" data-platform="Return Items webapp, Parcel Claim, SiteGiant, ShopeeMY R/R" data-result="partial">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">returnitems and checkreturnitems today wide run 2026-06-22</span>
-      <span class="entry-meta">2026-06-22 MYT &middot; today scope 18 missing/Error &middot; patched 8 rows &middot; verified 8/8 &middot; API PATCH 24/24 &middot; outstanding actionable 7 &middot; skipped damaged 3</span>
-      <span class="tag">returnitems</span>
-      <span class="tag result-ok">Completed</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Ran today's Return Items + checkreturnitems wide search. Checked fresh Return Items, Parcel Claim MY/SG/TT, SiteGiant exact/variant/order-ID searches, ShopeeMY R/R shop groups plus order-ID retry, Kmall/Profile78, and a focused enhanced row <code>13940</code> lookup.</p>
-      <div class="field"><strong>Every Return Items change before -&gt; after:</strong>
-        <ul>
-        <li><code>13951</code> / ShopeeMY / MurahYa / <code>MY261840293378O</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 260617AQUE4AG0</code>; <code>items</code> <code>blank -&gt; Handheld Inkjet Printer Wireless Date Time Coder Code Label Maker on Galss Metal Plastic Printer for Printing Production</code>; <code>iskus</code> <code>blank -&gt; HIP-PRINTER+INK</code>; evidence <code>tmp-returnitems/returnitems_20260622_shopeemy_rr_cs4.json</code>.</li>
-        <li><code>13949</code> / ShopeeMY / MurahYa / <code>MY269437450501D</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 260610P4V3B2AR</code>; <code>items</code> <code>blank -&gt; Dining Chair Kerusi Makan Modern Cushion Armchair Heavy Duty Solid Back Chair Wooden Chair Kerusi Kayu Nordic Chair</code>; <code>iskus</code> <code>blank -&gt; NDC-WOOD-COLOR-GREY</code>; evidence <code>tmp-returnitems/returnitems_20260622_shopeemy_rr_cs4.json</code>.</li>
-        <li><code>13946</code> / ShopeeMY / MurahYa / <code>MY262109913975X</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 260610PDUCRD01</code>; <code>items</code> <code>blank -&gt; Tudung Saji Besar Food Cover Penutup Makanan Tudung Saji Besi Bulat Dish Cover Net Round Rectangle</code>; <code>iskus</code> <code>blank -&gt; FOOD-COVER-RECTANGLE-WHT-WITH-BUBBLE-WRAP</code>; evidence <code>tmp-returnitems/returnitems_20260622_shopeemy_rr_cs4.json</code>.</li>
-        <li><code>13945</code> / ShopeeMY / MurahYa / <code>MY2608927537947</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 26061424F39T4A</code>; <code>items</code> <code>blank -&gt; GXT™ Helmet Motor GXT Helmet Double Visor Topi keledar Motorcycle Helmet Motosikal Bike Motor Helmet Murah 頭盔</code>; <code>iskus</code> <code>blank -&gt; GXTSRBM</code>; evidence <code>tmp-returnitems/returnitems_20260622_shopeemy_rr_cs4.json</code>.</li>
-        <li><code>13943</code> / ShopeeMY / KarlMobel / <code>MY260695225610R</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 260617B0CR9EGV</code>; <code>items</code> <code>blank -&gt; Kasut Roda Budak Roller Sneakers Shoes Murah Kasut Ada Roda Kick Roller Skates Shoes Murah Roller Shoes Kids Detachable</code>; <code>iskus</code> <code>blank -&gt; DWRB-WHITE-43S</code>; evidence <code>tmp-returnitems/returnitems_20260622_shopeemy_rr_cs3.json</code>.</li>
-        <li><code>13941</code> / ShopeeMY / MasonGym / <code>MY2655276187950</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 260617AB26AHA8</code>; <code>items</code> <code>blank -&gt; Double Kick Pad Taekwondo Equipment Kicking Target Latihan MMA Kicking Pad Taekwondo Boxing Pad 跆拳道 护具 MasonGym™ | Double Kick Pad Taekwondo Equipment Kicking Target Latihan MMA Kicking Pad Taekwondo Boxing Pad 跆拳道 护具 MasonGym™</code>; <code>iskus</code> <code>blank -&gt; DOUBLE-KICKPAD-BLUE | DOUBLE-KICKPAD-BLUE</code>; evidence <code>tmp-returnitems/returnitems_20260622_shopeemy_rr_cs1.json</code>.</li>
-        <li><code>13940</code> / ShopeeMY / MasonGym / <code>SPXMY065237700416</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 260610Q0TUFYMY</code>; <code>items</code> <code>blank -&gt; Pembalut Tangan Boxing Hand Wrap Muay Thai Hand Wrap MMA Wrist Wrap Velcro Boxing Equipment Alat Tinju Wrap MasonGym™</code>; <code>iskus</code> <code>blank -&gt; BHW-BLK-1.5M</code>; evidence <code>tmp-returnitems/returnitems_20260622_shopeemy_rr_row13940_full_retry_cs1.json</code>.</li>
-        <li><code>13935</code> / ShopeeMY / MasonGym / <code>SPXMY061933304796</code> / reason Resell: <code>orderId</code> <code>blank -&gt; 260618CQ7EPK0H</code>; <code>items</code> <code>blank -&gt; MMA Glove Boxing Sarung Tangan Tinju Training Half Finger Glove Muay Thai Kickboxing Sport Equipment 拳击手套 MasonGym™</code>; <code>iskus</code> <code>blank -&gt; MMA-BOXING-GLOVE-BLACK</code>; evidence <code>tmp-returnitems/returnitems_20260622_shopeemy_rr_cs1.json</code>.</li>
-        </ul>
-      </div>
-      <div class="field"><strong>Reason for changes:</strong> rows were updated only where ShopeeMY Seller Centre Return Refund Cancel evidence supplied exact order, product, iSKU, and return tracking/order match. Row <code>13941</code> has two item/iSKU lines because R/R returned quantity was 2.</div>
-      <div class="field"><strong>Safety counters:</strong> <code>orderId/items/iskus</code> field PATCH calls <code>24/24</code>; verified live readback <code>8/8</code>; <code>stockIds</code> writes <code>0 -&gt; 0</code>; stock-in, SiteGiant writes, marketplace writes, and messages <code>0 -&gt; 0</code>.</div>
-      <div class="field"><strong>Outstanding actionable rows:</strong>
-        <ul>
-        <li><code>13944</code> / ShopeeMY / BahEmas / <code>MY2618284681664</code>: not patched because no SKU-bearing R/R or SiteGiant evidence after wide search. Parcel Claim C19528, order 260617B28M7M23, product Cocktail Shaker Set Stainless Steel Mixer Jigger Ice Tong Pourer Bar Set 550ml/750ml 9 Pieces Utensils Bartender Kit.</li>
-        <li><code>13942</code> / ShopeeMY / Hiranai / <code>SPXMY067965291216</code>: not patched because no SKU-bearing R/R or SiteGiant evidence after wide search. no Parcel Claim match.</li>
-        <li><code>13939</code> / ShopeeMY / ValueSnap / <code>MY2640931015150</code>: not patched because no SKU-bearing R/R or SiteGiant evidence after wide search. Parcel Claim C19540, order 260619FH6JA8GH, product Digital Camera 4K 48MP Photography Camera Rechargeable Cameras 2.4 inch 180&#176; Flip Screen Selfile Camera.</li>
-        <li><code>13938</code> / ShopeeMY / Hiranai / <code>MY265670593871G</code>: not patched because no SKU-bearing R/R or SiteGiant evidence after wide search. Parcel Claim C19120, order 260611RAKX31Y3, product Baju Kemeja Lelaki Lengan Pendek Short Sleeve Shirt Men Baju Lelaki Berkolar Plain Collar Shirt Kemeja Oversize Lelaki.</li>
-        <li><code>13937</code> / ShopeeMY / Hiranai / <code>SPXMY060706387376</code>: not patched because no SKU-bearing R/R or SiteGiant evidence after wide search. no Parcel Claim match.</li>
-        <li><code>13936</code> / ShopeeMY / Hiranai / <code>MY260511860448L</code>: not patched because no SKU-bearing R/R or SiteGiant evidence after wide search. Parcel Claim C19562, order 2606168JAMDD42, product Skirt Extender Muslimah Skirt Cover Punggung Skirt Extender Cotton Blouse Shirt Extender Women Clothes Korean Style.</li>
-        <li><code>13934</code> / ShopeeMY / Hiranai / <code>MY2682919150160</code>: not patched because no SKU-bearing R/R or SiteGiant evidence after wide search. Parcel Claim C19484, order 260617AUC4YHH9, product Long Sleeved Jacket Tops UPF 50+ UV Sun Protection Cloth Original Ice Silk Cool Feeling Outdoor Loose Slim Breathable.</li>
-        </ul>
-      </div>
-      <div class="field"><strong>Standing skipped rows:</strong>
-        <ul>
-        <li><code>13950</code> / ShopeeMY / MasonGym / <code>MY265318632171Z</code>: Damaged, skipped under standing reason rule; no field changes.</li>
-        <li><code>13948</code> / ShopeeMY / MurahYa / <code>MY2630272169756</code>: Damaged, skipped under standing reason rule; no field changes.</li>
-        <li><code>13947</code> / ShopeeMY / KarlMobel / <code>MY264879353914D</code>: Damaged, skipped under standing reason rule; no field changes.</li>
-        </ul>
-      </div>
-      <div class="field"><strong>Evidence files:</strong> report <code>C:\Users\tessf\Documents\returnitems-reports\returnitems-lookup-2026-06-22.md</code>; repo report <code>tmp-returnitems\returnitems-lookup-2026-06-22.md</code>; scope <code>tmp-returnitems\returnitems_scope_20260622_today_actionable.json</code>; skips <code>tmp-returnitems\returnitems_skip_reasons_20260622.json</code>; Parcel Claim <code>tmp-returnitems\returnitems_20260622_parcel_claim_summary.json</code>; SiteGiant exact/variant/order-ID outputs; ShopeeMY R/R profile outputs; Kmall/Profile78 output; patch plan/results/verification <code>tmp-returnitems\returnitems_20260622_patch_plan_safe.json</code>, <code>tmp-returnitems\returnitems_20260622_patch_results.json</code>, <code>tmp-returnitems\returnitems_20260622_patch_verification.json</code>; final live API <code>tmp-returnitems\returnitems_live_20260622_after_repatch.json</code>.</div>
-      <div class="field"><strong>Tooling corrections logged:</strong> SiteGiant serial pass timed out and was split into exact/variant/order-ID searches; row <code>13940</code> single-row R/R expression was normalized and rerun; one stale debug-port retry was clean-started; initial UTF-8 patch runner briefly wrote mojibake for four item strings, then explicit UTF-8 repatch corrected and verified them live.</div>
-      <div class="field"><strong>Result:</strong> partial-complete. Patchable today Resell rows are handled and verified. Patricia may still need manual/SKU evidence follow-up for the 7 actionable unresolved rows plus separate handling for the 3 Damaged rows.</div>
-    </div>
-  </div>
+  
 <div class="entry" data-date="2026-06-22" data-shops="Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
