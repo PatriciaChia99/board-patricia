@@ -639,8 +639,48 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
-
-  <!-- CHECKSBVARIATION-CONSOLIDATED-2026-06-24 -->
+<!-- PARCELCLAIM-AUTO-2026-06-25 -->
+  <div class="entry" data-date="2026-06-25" data-shops="multiple" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto - 2026-06-25 Codex run: 5 new / 5 posted / 0 DOM-only-catches / 7 errors</span>
+      <span class="entry-meta">2026-06-25 MYT &middot; Codex replacement for Claude launcher &middot; report C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-25.md</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-ok">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Codex ran the 09:45 parcelclaim-auto workflow for 2026-06-25 without invoking Claude or the legacy batch. Scanned TikTok R/R, TikTok failed delivery, mandatory Phase 2.5 DOM cross-verify, and Lazada returns. Dedupe used fresh webapp order_id coverage across all refund states before every POST.</p>
+      <div class="field"><strong>Before -&gt; after operational counters:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp creates 330 -&gt; 335; webapp remark patches 0 -&gt; 5.</div>
+      <div class="field"><strong>POST changes:</strong><ul><li>C2237 TT Adelmar failed_delivery 584190053015586074 - RM 239.13 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2238 TT DasNature rr 584656053364492276 - RM 19.00 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2239 TT Hiranai rr 584473693946611233 - RM 22.62 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2240 TT Valuesnap failed_delivery 584664061733930967 - RM 36.88 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2241 TT Valuesnap failed_delivery 584184478434559917 - RM 10.99 - before not in webapp -&gt; after Pending with audit remark</li></ul></div>
+      <div class="field"><strong>Evidence table:</strong><pre>54 TT Adelmar: RR 88 cards / 0 in-window / 0 posted; FD 33 API + 3 DOM pages / Returning 0 / 1 posted / DOM-only 0
+55 TT DasNature: RR 202 cards / 2 in-window / 1 posted; FD 103 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
+56 TT Hiranai: RR 100 cards / 2 in-window / 1 posted; FD 167 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
+58 TT HiranaiMY: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+59 TT Jager: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+60 TT JagerArmor: RR 6 cards / 0 in-window / 0 posted; FD 1 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+61 TT JagerSafety: RR 55 cards / 0 in-window / 0 posted; FD 1 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+62 TT KarlMobel: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+63 TT Lovento: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+64 TT MurahYa: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+65 TT Valuesnap: RR 0 cards / 0 in-window / 0 posted; FD 269 API + 1 DOM pages / Returning 0 / 2 posted / DOM-only 0
+66 TT JagerHelmet: RR 222 cards / 1 in-window / 0 posted; FD 10 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
+67 TT Kinata: RR 4 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+81 Lazada MurahYa: Lazada 0 rows / 0 in-window / 0 posted
+82 Laz das.nature: Lazada 0 rows / 0 in-window / 0 posted
+83 Lazada Lovento: Lazada 0 rows / 0 in-window / 0 posted</pre></div>
+      <div class="field"><strong>DOM cross-verify:</strong> 0 DOM-only catches. None.</div>
+      <div class="field"><strong>Crosscheck:</strong> 5/5 CONFIRMED; </div>
+      <div class="field"><strong>Reason:</strong> Daily scheduled intake of new TikTok/Lazada parcel-claim cases so CS does not miss R/R or failed-delivery cases. Historical FD rows older than 30 days remain deferred pending user approval.</div>
+      <div class="field"><strong>Evidence:</strong> Report saved at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-25.md</code>; raw JSON at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-06-25.json</code>.</div>
+      <div class="field"><strong>Codex date correction:</strong> Launch quoting wrote <code>1995</code> -&gt; corrected to <code>2026-06-25</code> without rerunning live intake. Audit remarks for C2237-C2241 were patched HTTP 200 from <code>POST 1995</code> to include <code>POST 2026-06-25</code>; correction evidence <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_date_correction_2026-06-25.json</code>. Original misdated raw/report/log retained for audit.</div>
+      <div class="field"><strong>Result:</strong> partial - 5 posted, 7 errors, board logged by Codex.</div>
+    </div>
+  </div>
+<!-- CHECKSBVARIATION-CONSOLIDATED-2026-06-24 -->
   <div class="entry" data-date="2026-06-25" data-shops="Laz das.nature, Lazada Lovento, Lazada MurahYa, TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerHelmet, TT JagerSafety, TT KarlMobel, TT Kinata, TT Lovento, TT MurahYa, TT Valuesnap" data-platform="TikTok/Lazada + internal webapp" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
