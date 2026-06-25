@@ -11,18 +11,18 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
 :root{
-  --bg-deep:#f6f4fb;
-  --bg-mid:#fbfaff;
-  --panel:rgba(255,255,255,.78);
-  --panel-strong:rgba(255,255,255,.92);
-  --panel-hover:rgba(255,255,255,.88);
-  --border:rgba(168,170,215,.28);
-  --border-strong:rgba(140,150,210,.42);
-  --border-bright:rgba(125,211,252,.55);
-  --text:#3f4866;
-  --text-bright:#1f2638;
-  --muted:#8590ad;
-  --dim:#a5acc4;
+  --bg-deep:#f7f8fb;
+  --bg-mid:#ffffff;
+  --panel:rgba(255,255,255,.9);
+  --panel-strong:rgba(255,255,255,.98);
+  --panel-hover:#ffffff;
+  --border:#d9deea;
+  --border-strong:#c7cfdf;
+  --border-bright:#7fb7e8;
+  --text:#384152;
+  --text-bright:#161b26;
+  --muted:#6f7a8d;
+  --dim:#9aa4b4;
   --sky:#60a5fa;
   --lavender:#a78bfa;
   --rose:#f0abfc;
@@ -36,8 +36,8 @@
   --warn-glow:rgba(251,191,36,.2);
   --danger:#fb7185;
   --danger-glow:rgba(251,113,133,.2);
-  --shadow:0 8px 28px rgba(120,130,180,.14);
-  --shadow-sm:0 3px 10px rgba(120,130,180,.1);
+  --shadow:0 12px 30px rgba(24,35,66,.08);
+  --shadow-sm:0 4px 14px rgba(24,35,66,.06);
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -61,7 +61,7 @@ body::before{
     radial-gradient(ellipse 65% 45% at 85% 12%,rgba(125,211,252,.18),transparent 58%),
     radial-gradient(ellipse 85% 50% at 50% 100%,rgba(244,114,182,.12),transparent 62%),
     linear-gradient(180deg,var(--bg-deep) 0%,var(--bg-mid) 100%);
-  animation:aurora 28s ease-in-out infinite alternate;
+  animation:none;
 }
 body::after{
   content:'';
@@ -74,14 +74,14 @@ body::after{
   mask-image:radial-gradient(ellipse at center,black 28%,transparent 100%);
 }
 @keyframes aurora{0%{filter:hue-rotate(0deg) saturate(1)}100%{filter:hue-rotate(22deg) saturate(1.08)}}
-.wrapper{max-width:1240px;margin:0 auto;padding:22px 22px 80px;position:relative}
+.wrapper{max-width:1280px;margin:0 auto;padding:18px 18px 64px;position:relative}
 header.page{
   display:flex;align-items:center;justify-content:space-between;gap:18px;
   padding:14px 18px;margin-bottom:14px;
   background:var(--panel);
   backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
   border:1px solid var(--border);
-  border-radius:14px;
+  border-radius:10px;
   box-shadow:var(--shadow);
   position:relative;overflow:hidden;
 }
@@ -92,8 +92,8 @@ header.page::before{
 }
 header.page::after{
   content:'';position:absolute;inset:-60% -30% auto auto;width:220px;height:220px;
-  background:radial-gradient(circle,var(--glow-lav),transparent 60%);
-  filter:blur(36px);pointer-events:none;
+  background:linear-gradient(135deg,rgba(125,211,252,.16),rgba(167,139,250,.12));
+  filter:blur(24px);pointer-events:none;
 }
 .brand{display:flex;align-items:center;gap:12px;min-width:0;flex:1}
 .brand-mark{
@@ -361,9 +361,9 @@ header.page::after{
 .entry{
   background:var(--panel);
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border:1px solid var(--border);border-radius:11px;
+  border:1px solid var(--border);border-radius:8px;
   margin-bottom:7px;box-shadow:var(--shadow-sm);
-  overflow:hidden;transition:all .25s;position:relative;
+  overflow:hidden;transition:border-color .18s ease,box-shadow .18s ease,background .18s ease;position:relative;
 }
 .entry::before{
   content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
@@ -372,8 +372,7 @@ header.page::after{
 }
 .entry:hover{
   border-color:var(--border-strong);
-  box-shadow:var(--shadow),0 0 18px rgba(125,211,252,.14);
-  transform:translateY(-1px);background:var(--panel-hover);
+  box-shadow:var(--shadow);background:var(--panel-hover);
 }
 .entry:hover::before{opacity:1}
 .entry.open{
@@ -430,8 +429,9 @@ header.page::after{
   background:rgba(251,113,133,.16);color:#b91c1c;border-color:rgba(251,113,133,.4);
   box-shadow:0 0 8px var(--danger-glow);
 }
-.entry-body{display:none;padding:6px 16px 16px 38px;border-top:1px solid var(--border)}
-.entry.open .entry-body{display:block}
+.entry-body{display:block;padding:6px 16px 16px 38px;border-top:1px solid var(--border)}
+.js-ready .entry-body{display:none}
+.js-ready .entry.open .entry-body{display:block}
 .full-tags{display:flex;gap:5px;flex-wrap:wrap;padding:10px 0 6px}
 .field{
   display:block;
@@ -663,6 +663,29 @@ header.page::after{
   </div>
 </div>
 
+  <!-- BOARD-HARD-FIX-2026-06-25 -->
+  <div class="entry open" data-date="2026-06-25" data-shops="N/A (Patricia board infrastructure)" data-platform="Local board HTML + GitHub private/public board + AdsPower profile 70" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">board-patricia hard fix - blank board repaired, fail-open display, smoother design (25/06)</span>
+      <span class="entry-meta">2026-06-25 MYT &middot; root cause: local active checkout had unresolved conflict markers + duplicate HTML document &middot; profile 70 render verified &middot; lint/mirror guard added</span>
+      <span class="tag">board-infra</span>
+      <span class="tag">profile70</span>
+      <span class="tag result-ok">Fixed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia reported the board still showed nothing after repeated fixes. The hard fix repaired the active board file, preserved current June 25 cards from the latest main board history, made the entry list fail open when JavaScript breaks, and reduced the visual treatment so the interface is smoother and less fragile.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-25 MYT.</div>
+      <div class="field"><strong>Task:</strong> Hard fix Patricia activity board blank render and smooth the design.</div>
+      <div class="field"><strong>Every board infrastructure change before -&gt; after:</strong><ul><li>Active local <code>index.html</code> conflict markers <code>3 -&gt; 0</code>.</li><li>Full HTML documents inside the active local board file <code>2 -&gt; 1</code>.</li><li>Private main board cards from current 2026-06-25 history <code>preserved -&gt; preserved</code>, including tiktokrraudit, shipping-claim guard, sg-gap-monitor, parcelsplit, csrrcredited, parcelclaim-auto, checksbvariation, ttparcelclaim, and returnitems.</li><li>Entry body CSS <code>hidden even if JS fails -&gt; visible until <code>js-ready</code>, then normal collapsible behavior</code>.</li><li>Visual treatment <code>animated aurora/heavy glow -&gt; calmer static background, softer panels, 8px entries, steadier hover states</code>.</li><li><code>board_lint.py</code> conflict-marker guard <code>absent -&gt; present</code>.</li><li><code>sync-mirror.sh</code> lint gate before public copy <code>absent -&gt; present</code>.</li><li>Profile 70 render evidence <code>not confirmed -&gt; OK_RENDERED</code>.</li></ul></div>
+      <div class="field"><strong>Shop:</strong> N/A - Patricia board infrastructure only.</div>
+      <div class="field"><strong>Platform:</strong> Local board HTML, private GitHub board, public board mirror, and AdsPower profile 70 <code>k1b44nvg</code>.</div>
+      <div class="field"><strong>Reason for change:</strong> The recurring blank-board issue was caused by structural file damage in the active checkout and by a UI rule that hid all entry bodies before JavaScript completed. This makes future JS/CSS problems show content instead of a blank board and blocks conflict markers during lint/sync.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-board-hard-fix-20260625\profile70-board-verify-2026-06-25.json</code>, <code>tmp-board-hard-fix-20260625\profile70-board-verify-2026-06-25.png</code>, and <code>tmp-board-hard-fix-20260625\board-hard-fix-evidence-2026-06-25.json</code>.</div>
+      <div class="field"><strong>Result:</strong> fixed. Profile 70 rendered the board with entries visible, no conflict markers, current June 25 entries preserved, and lint/tests passed.</div>
+    </div>
+  </div>
+  <!-- /BOARD-HARD-FIX-2026-06-25 -->
   <!-- TIKTOKRRAUDIT-2026-06-25 -->
   <div class="entry" data-date="2026-06-25" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT Valuesnap; core TikTok MY profiles" data-platform="TikTok MY + internal Parcel Claim webapp" data-result="partial">
     <div class="entry-summary">
