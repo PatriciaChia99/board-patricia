@@ -639,6 +639,27 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-26" data-shops="Shopee MY monthly shipping claim lane" data-platform="Shopee MY + Seller Center shipping claim" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">shopee-shipping-fee-claim - monthly guard safe skip 2026-06-26</span>
+      <span class="entry-meta">2026-06-26 MYT &middot; day 26 vs claim day 15 &middot; Seller Center/webform not entered &middot; profile 70 active via /browser/active &middot; FINAL_STATUS OK</span>
+      <span class="tag">shopee-shipping-claim</span>
+      <span class="tag ok">OK</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Codex ran the scheduled Shopee shipping claim monthly guard for 2026-06-26 MYT. The workflow guard allows live claim work only on day 15, so this day-26 run wrote a safe skip report and did not enter Seller Center claim scraping or the Shopee help webform.</p>
+      <div class="field"><strong>Marker:</strong> <code>SHOPEE-SHIPPING-CLAIM-GUARD-2026-06-26</code>.</div>
+      <div class="field"><strong>Date / task:</strong> 2026-06-26 MYT. Task: scheduled Codex job <code>Shopee shipping claim monthly guard</code>.</div>
+      <div class="field"><strong>Shop / platform:</strong> Shopee MY monthly shipping claim lane across all MY shops, via Seller Center shipping claim workflow and AdsPower profile 70 <code>k1b44nvg</code>.</div>
+      <div class="field"><strong>Every before -&gt; after value:</strong> date guard <code>day 26 vs configured day 15 -&gt; SAFE_SKIP_NON_CLAIM_DAY</code>; live Seller Center claim workflow <code>not entered -&gt; not entered</code>; Shopee webform submissions <code>0 -&gt; 0</code>; order SN scrape <code>0 -&gt; 0</code>; claim batches built <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; workflow config mode <code>live -&gt; live unchanged</code>; state.first_run_done <code>true -&gt; true unchanged</code>; state.last_run <code>2026-06-15T16:30:00+08:00 -&gt; unchanged</code>; expected report <code>absent -&gt; present</code>; raw guard evidence <code>absent -&gt; present</code>; profile cleanup evidence <code>absent -&gt; present</code>.</div>
+      <div class="field"><strong>Reason for change:</strong> Scheduled monthly guard fired on a non-claim day. Safety rules required a same-date skip report, raw evidence, Patricia board log, error-log closeout, and no live claim workflow entry.</div>
+      <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\shopee-shipping-claim-reports\shopee-shipping-claim-2026-06-26.md</code>; raw guard JSON <code>C:\Users\tessf\Documents\shopee-shipping-claim-reports\_codex_shopee_shipping_claim_guard_2026-06-26.json</code>; profile cleanup JSON <code>C:\Users\tessf\Documents\shopee-shipping-claim-reports\_codex_shopee_shipping_claim_profile_cleanup_2026-06-26.json</code>; manual Codex prompt evidence <code>C:\Users\tessf\Documents\codex-scheduled-logs\shopee-shipping-claim\shopee-shipping-claim-prompt-20260626-codex-manual.txt</code>; manual Codex run log <code>C:\Users\tessf\Documents\codex-scheduled-logs\shopee-shipping-claim\shopee-shipping-claim-scheduled-20260626-codex-manual.log</code>; workflow documentation read-only at <code>C:\Users\tessf\.claude\skills\shopee-shipping-fee-claim.md</code>.</div>
+      <div class="field"><strong>Result:</strong> OK guard skip. Profile 70 was attached read-only by <code>/browser/active</code> + CDP <code>Browser.getVersion</code> on debug port <code>51452</code>; <code>/browser/start</code> and <code>/browser/stop</code> were not called; no non-profile-70 AdsPower profiles were opened.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> no active outstanding item found for this guard run. Workflow documentation for this lane still lives under <code>C:\Users\tessf\.claude\skills</code> rather than <code>.agents\skills</code>; this run used it read-only and did not invoke Claude or legacy launchers.</div>
+    </div>
+  </div>
+
 <!-- PARCELCLAIM-AUTO-2026-06-26 -->
   <div class="entry" data-date="2026-06-26" data-shops="multiple" data-platform="TikTok + Lazada" data-result="partial">
     <div class="entry-summary">
