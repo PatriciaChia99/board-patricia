@@ -639,6 +639,26 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-26" data-shops="KarlMobel, MurahYa, TT Murahya" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelsplit-contact-crosscheck - Codex 26/6 scheduled run: 31 rows in 7d / 10 active / 5 today skipped / 0 writes</span>
+      <span class="entry-meta">2026-06-26T14:53 MYT &middot; profile 70 k1b44nvg active via /browser/active &middot; fresh /api/parcel-split 2285 rows &middot; DOM 10/10 matched &middot; report <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-06-26.md</code></span>
+      <span class="tag">parcelsplit-contact-crosscheck</span>
+      <span class="tag result-warn">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Codex ran the scheduled Parcel Split contact crosscheck for 2026-06-26 MYT without invoking Claude or any legacy launcher. Fresh dashboard API data had 31 rows in the 7-day MYT window and 10 active unshipped rows. Shopee MY carry-over rows passed the bot-contact decision table and DOM icon sanity; same-day Shopee MY rows remain pending tonight's bot run. No TikTok/Lazada row entered the send or phone-backfill lane.</p>
+      <div class="field"><strong>Date:</strong> 2026-06-26 MYT.</div>
+      <div class="field"><strong>Task:</strong> Scheduled Parcel Split contact crosscheck for Shopee MY + TikTok + Lazada.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> API rows <code>2280 -&gt; 2285</code>; 7-day window rows <code>31 -&gt; 31</code>; active unshipped rows <code>6 -&gt; 10</code>; new today rows <code>4 -&gt; 5</code>; new today active rows <code>4 -&gt; 5</code>; Shopee MY active pass/mismatch/manual <code>2/0/0 -&gt; 5/0/0</code>; Shopee MY today skipped <code>4 -&gt; 5</code>; TT/Lazada open rows <code>0 -&gt; 0</code>; TT/Lazada messages <code>0 -&gt; 0</code>; phone updates <code>0 -&gt; 0</code>; icon updates <code>0 -&gt; 0</code>; messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; webapp patches <code>0 -&gt; 0</code>; DOM sanity <code>0/0 -&gt; 10/10</code>; profile 70 <code>Active -&gt; Active</code>; profile 70 stop calls <code>0 -&gt; 0</code>; non-profile-70 profiles opened <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Shop:</strong> KarlMobel, MurahYa, TT Murahya.</div>
+      <div class="field"><strong>Platform:</strong> Shopee MY + TikTok + Lazada + Parcel Split webapp. Profile 70 <code>k1b44nvg</code> stayed active on debug port <code>51452</code>; marketplace seller profiles 54-67 and 81-83 were not opened because there were no active TT/Lazada rows.</div>
+      <div class="field"><strong>Reason for change:</strong> Scheduled same-date Parcel Split contact audit and evidence closeout; no operational webapp, marketplace, stock, or customer-message write was required.</div>
+      <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-06-26.md</code>; raw API <code>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_raw_2026-06-26.json</code>; fetch metadata <code>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_fetch_meta_2026-06-26.json</code>; DOM sanity <code>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_dom_sanity_2026-06-26.json</code>; profile cleanup <code>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_profile_cleanup_2026-06-26.json</code>; state <code>C:\Users\tessf\code\codex-lab\.agents\skills\parcelsplit-contact-crosscheck\state.json</code>.</div>
+      <div class="field"><strong>Result:</strong> PARTIAL. Same-day Shopee MY rows pending tonight's bot run: <code>260623SGY0N3H5, 260623SWS552R7, 260623S6M5X0EU, 260622R5XEEFEJ, 26062408AUCGSN</code>. No Shopee mismatch/manual row and no TT/Lazada blocked row remained.</div>
+    </div>
+  </div>
 <!-- CSRR-CREDITED-DAILY-2026-06-26 -->
 <div class="entry" data-date="2026-06-26" data-shops="Shopee MY + SG" data-platform="Shopee MY, Shopee SG" data-result="warn">
   <div class="entry-summary">
