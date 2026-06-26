@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <base href="/api/board/patricia/file/">
@@ -639,6 +639,161 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-26" data-shops="All scheduled Patricia jobs" data-platform="Windows Task Scheduler + Documents report folders + Patricia board" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">scheduled task audit 2026-06-26</span>
+      <span class="entry-meta">2026-06-26 MYT &middot; all tasks exist &middot; two early jobs failed/refused &middot; several jobs still running</span>
+      <span class="tag">scheduled-codex</span>
+      <span class="tag">scheduler</span>
+      <span class="tag result-warn">PARTIAL</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Patricia asked about the other scheduled-run tasks after the Check SB webapp follow-up. This was a read-only audit of Windows Task Scheduler, live scheduled PowerShell processes, and expected report files.</p>
+      <div class="field"><strong>Scheduler before -&gt; after:</strong> expected scheduled tasks <code>11 -&gt; 11 present</code>; scheduler repair <code>0 -&gt; 0</code>; business reruns <code>0 -&gt; 0</code>; customer/WhatsApp messages <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Failed/refused today:</strong> <code>ttparcelclaim_daily_0855</code> / <code>ttparcelclaim</code> ran at <code>2026-06-26 09:08:03</code> with result <code>-2147020576 / 0x800710E0</code> and report <code>missing -&gt; missing</code>. <code>CodexSgGapMonitor_0900</code> / <code>sg-gap-monitor</code> had the same run time/result and report <code>missing -&gt; missing</code>.</div>
+      <div class="field"><strong>Confirmed partial today:</strong> <code>chataudit</code> scheduler result <code>0</code>, report <code>PARTIAL</code>: 439 in-window chats reviewed, 0 net-new confirmed misses, 18 manual-review candidates, 2 carry-over items open. <code>parcelclaim-auto</code> report <code>PARTIAL</code>: webapp rows <code>320 -&gt; 338</code>, 18 new candidates created, blockers on <code>TT JagerHelmet</code>, <code>Lazada MurahYa</code>, <code>Laz das.nature</code>, and <code>Lazada Lovento</code>.</div>
+      <div class="field"><strong>Still running at readback:</strong> <code>ParcelClaimAuto_945AM</code>, <code>SBVariationAudit_930AM</code>, <code>ParcelSplitCrosscheck_1000AM</code>, <code>CSRRCredited_1030AM</code>, <code>CodexShopeeShippingClaim_1030</code>, and <code>Codex_ReturnItems_Weekend_1030</code> all showed result <code>267009 / 0x00041301</code>. Missing final 2026-06-26 reports for parcel split, csrrcredited, shipping claim, and returnitems are therefore not called complete yet.</div>
+      <div class="field"><strong>Check SB note:</strong> the report path has <code>FINAL_STATUS: OK</code> from the earlier <code>SA-19905</code> webapp follow-up, but the 10:10 scheduled Check SB process still showed Running, so that OK file is not treated as proof that the scheduled process finished.</div>
+      <div class="field"><strong>Not due yet at readback:</strong> <code>TT_RR_Audit_10_15AM</code> next run <code>2026-06-26 11:30</code>; <code>Codex_FBSClaim_TueFri_1215</code> next run <code>2026-06-26 12:15</code>.</div>
+      <div class="field"><strong>Evidence:</strong> audit report <code>tmp-schedule-audit-20260626\scheduled-task-audit-2026-06-26.md</code>; scheduler readback <code>tmp-schedule-audit-20260626\scheduled-tasks-readback-latest-20260626.json</code>; report readback <code>tmp-schedule-audit-20260626\scheduled-report-status-latest-20260626.json</code>; live process readback <code>tmp-schedule-audit-20260626\scheduled-powershell-processes-20260626.json</code>; recent reports <code>tmp-schedule-audit-20260626\recent-scheduled-reports-20260626.json</code>.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> <code>ttparcelclaim</code> and <code>sg-gap-monitor</code> need a deliberate manual rerun decision; still-running tasks need later readback before completion; <code>chataudit</code> and <code>parcelclaim-auto</code> are confirmed partial today. Result: <code>AUDIT_PARTIAL_NO_MANUAL_RERUN</code>.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-06-26" data-shops="N/A" data-platform="Patricia board private/public/local" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">board cleanup active checkout and CheckSB duplicate repair 2026-06-26</span>
+      <span class="entry-meta">2026-06-26 &middot; active checkout conflict cleared &middot; CheckSB duplicate cards folded &middot; lint/public sync OK</span>
+      <span class="tag">board cleanup</span>
+      <span class="tag">board-infra</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Patricia reported the board still showed the same issue after the employee webapp came back. The active board checkout, private board source, and public mirror were repaired and crosschecked.</p>
+      <div class="field"><strong>Root cause:</strong> the active local board checkout was still conflicted at <code>index.html</code> and had not cleanly consumed the morning <code>SA-19905</code> board commits. Separate same-date CheckSB cards also kept the board source lint-failing.</div>
+      <div class="field"><strong>Before -&gt; after board infrastructure:</strong> active <code>index.html</code> conflict markers <code>3 -&gt; 0</code>; tracked file state <code>UU -&gt; resolved on main</code>; board lint <code>failed with 9 issues -&gt; ok, 286 entries / 2190 divs balanced</code>; private board head <code>missing repair -&gt; a971302cd25fdc639654106f9b47d38fb96fc397</code>; public mirror head <code>missing repair -&gt; 35d4e690cf331623d612ae1c9c8c9c17ee6c0d25</code>.</div>
+      <div class="field"><strong>Before -&gt; after board content:</strong> 2026-06-26 CheckSB cards <code>2 -&gt; 1</code>; 2026-06-25 CheckSB cards <code>5 -&gt; 1</code>; active conflicted 2026-06-25 chataudit block <code>2 versions -&gt; current origin/main version</code>; local/private/public title readback for consolidated CheckSB cards <code>missing/stale -&gt; present</code>.</div>
+      <div class="field"><strong>Every operational counter:</strong> employee webapp writes <code>0 -&gt; 0</code>; SiteGiant writes <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; customer/WhatsApp messages <code>0 -&gt; 0</code>; board entries folded <code>7 -&gt; 2</code>; new board cleanup card <code>0 -&gt; 1</code>.</div>
+      <div class="field"><strong>Evidence:</strong> backup <code>tmp-board-repair-20260626\active-index-conflicted-before-20260626.html</code>; repaired HTML <code>tmp-board-repair-20260626\patricia-board-index-repaired-20260626.html</code>; folded-card archive <code>tmp-board-repair-20260626\checksbvariation-folded-cards-20260625-20260626.json</code>; publish summary <code>tmp-board-repair-20260626\publish-summary-20260626.json</code>; error-log closeout in <code>.agents\error-log.md</code>.</div>
+      <div class="field"><strong>Result:</strong> completed. The board source now has no active conflict markers, passes lint, contains the 2026-06-26 <code>SA-19905</code> completion card, and is synced to the public mirror.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> old untracked helper/backup files remain in the board repos and were not deleted. Public GitHub Pages can lag the pushed public mirror commit briefly. CheckSB held/excluded items remain as logged: <code>CWS-3F-GREEN-UPGRADE</code>, <code>RATTAN-LAUNDRY-BASKET-D-WOOD-WHT</code>, <code>CB-GREEN</code>, and reserved-only <code>BASKETBALL-HOOP-45CM</code>.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-06-26" data-shops="multiple" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto - 26/6 Codex run: 18 new / 18 posted / 0 DOM-only-catches / 4 errors</span>
+      <span class="entry-meta">2026-06-26 MYT &middot; Codex replacement for Claude launcher &middot; report C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-26.md</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-ok">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Codex ran the 09:45 parcelclaim-auto workflow for 26/6 without invoking Claude or the legacy batch. Scanned TikTok R/R, TikTok failed delivery, mandatory Phase 2.5 DOM cross-verify, and Lazada returns. Dedupe used fresh webapp order_id coverage across all refund states before every POST.</p>
+      <div class="field"><strong>Before -&gt; after operational counters:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp creates 320 -&gt; 338; webapp remark patches 0 -&gt; 18.</div>
+      <div class="field"><strong>POST changes:</strong><ul><li>C2242 TT Adelmar failed_delivery 584681974690972754 - RM 291.36 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2243 TT Jager rr 584654491726677929 - RM 15.68 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2244 TT Jager rr 584677972331824665 - RM 14.11 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2245 TT Jager failed_delivery 584604496193160730 - RM 113.52 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2246 TT Jager failed_delivery 584214924801967852 - RM 116.10 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2247 TT Jager failed_delivery 584214779460617964 - RM 16.08 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2248 TT KarlMobel failed_delivery 584204748229805423 - RM 472.69 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2249 TT KarlMobel failed_delivery 584200798949705092 - RM 232.68 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2250 TT KarlMobel failed_delivery 584170877186639816 - RM 262.46 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2251 TT MurahYa failed_delivery 584641125531289521 - RM 344.77 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2252 TT MurahYa failed_delivery 584622361820694036 - RM 100.28 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2253 TT MurahYa failed_delivery 584206079397955128 - RM 59.90 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2254 TT MurahYa failed_delivery 584195682585642313 - RM 105.35 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2255 TT MurahYa failed_delivery 584183823112242679 - RM 180.00 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2256 TT Valuesnap rr 584666823306151832 - RM 33.80 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2257 TT Valuesnap rr 584672154467140783 - RM 16.00 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2258 TT Valuesnap rr 584670522959431535 - RM 18.60 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2259 TT Valuesnap failed_delivery 584675412943209740 - RM 27.60 - before not in webapp -&gt; after Pending with audit remark</li></ul></div>
+      <div class="field"><strong>Evidence table:</strong><pre>54 TT Adelmar: RR 88 cards / 0 in-window / 0 posted; FD 34 API + 2 DOM pages / Returning 0 / 1 posted / DOM-only 0
+55 TT DasNature: RR 150 cards / 1 in-window / 0 posted; FD 102 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
+56 TT Hiranai: RR 0 cards / 0 in-window / 0 posted; FD 167 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+58 TT HiranaiMY: RR 155 cards / 0 in-window / 0 posted; FD 45 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+59 TT Jager: RR 107 cards / 2 in-window / 2 posted; FD 69 API + 1 DOM pages / Returning 0 / 3 posted / DOM-only 0
+60 TT JagerArmor: RR 6 cards / 0 in-window / 0 posted; FD 1 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+61 TT JagerSafety: RR 55 cards / 0 in-window / 0 posted; FD 1 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+62 TT KarlMobel: RR 50 cards / 0 in-window / 0 posted; FD 295 API + 3 DOM pages / Returning 0 / 3 posted / DOM-only 0
+63 TT Lovento: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+64 TT MurahYa: RR 0 cards / 0 in-window / 0 posted; FD 435 API + 1 DOM pages / Returning 0 / 5 posted / DOM-only 0
+65 TT Valuesnap: RR 100 cards / 3 in-window / 3 posted; FD 269 API + 1 DOM pages / Returning 0 / 1 posted / DOM-only 0
+66 TT JagerHelmet: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+67 TT Kinata: RR 4 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+81 Lazada MurahYa: Lazada 0 rows / 0 in-window / 0 posted
+82 Laz das.nature: Lazada 0 rows / 0 in-window / 0 posted
+83 Lazada Lovento: Lazada 0 rows / 0 in-window / 0 posted</pre></div>
+      <div class="field"><strong>DOM cross-verify:</strong> 0 DOM-only catches. None.</div>
+      <div class="field"><strong>Crosscheck:</strong> 18/18 CONFIRMED; </div>
+      <div class="field"><strong>Reason:</strong> Daily scheduled intake of new TikTok/Lazada parcel-claim cases so CS does not miss R/R or failed-delivery cases. Historical FD rows older than 30 days remain deferred pending user approval.</div>
+      <div class="field"><strong>Evidence:</strong> Report saved at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-26.md</code>; raw JSON at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-06-26.json</code>.</div>
+      <div class="field"><strong>Result:</strong> partial - 18 posted, 4 errors, board logged by Codex.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-06-26" data-shops="TT Murahya, Murahya, Lovento" data-platform="SB webapp + SiteGiant evidence + scheduled prompts" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation SA-19905 webapp follow-up consolidated 2026-06-26</span>
+      <span class="entry-meta">2026-06-26 &middot; rows 101267/101265/101247 read back OK &middot; carry-forward cleared</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag">webapp</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Patricia asked to check whether the employee webapp was back and update the Check SB Variation rows left partial after SiteGiant <code>#SA-19905</code>. This consolidated card replaces the separate 2026-06-26 CheckSB webapp and prompt-cleanup cards so the board keeps one CheckSB entry for the date.</p>
+      <div class="field"><strong>Webapp/API before -&gt; after:</strong> employee webapp DNS/API blocked on 2026-06-25 -&gt; authenticated <code>/api/sb-variation</code> returned <code>200</code> on 2026-06-26 and accepted/read back all PATCHes. Browser shell note: <code>/sb-variation</code> still displayed a <code>404</code> body in profile 70, so API write/readback is OK but the UI route was not overstated as fully normal.</div>
+      <div class="field"><strong>Every carried row before -&gt; after:</strong></div>
+      <ul>
+        <li><code>584624621184910753</code> / row <code>101267</code> / TT Murahya / TikTokMY / <code>MEASURING-JUG-WHITE-ROUND-LID-4L</code>: stock evidence <code>2/2/0/0/0 out_of_stock -&gt; 0/0/0/0/0 out_of_stock</code>; webapp stockId <code>null -&gt; SA-19905</code>; whConfirmStatus <code>null -&gt; WH Confirmed Can Pack</code>; stockAdjustmentStatus <code>null -&gt; Adjusted</code>; stockSetOos <code>true -&gt; true</code>; buyerDecision <code>null -&gt; null</code>.</li>
+        <li><code>260620JWJPCP10</code> / row <code>101265</code> / Murahya / ShopeeMY / <code>CC-3L-BLACK-101CM</code>: stock evidence <code>1/1/0/0/0 out_of_stock -&gt; 0/0/0/0/0 out_of_stock</code>; webapp stockId <code>null -&gt; SA-19905</code>; whConfirmStatus <code>Pending WH Confirm -&gt; WH Confirmed Can Pack</code>; stockAdjustmentStatus <code>Not Adjusted -&gt; Adjusted</code>; stockSetOos <code>true -&gt; true</code>; buyerDecision <code>null -&gt; null</code>.</li>
+        <li><code>260618DD4H075J</code> / row <code>101247</code> / Lovento / ShopeeMY / <code>33-STALK-SOAP-ROSES-BOUQUET-LED-LIGHT-PINK</code>: stock evidence <code>1/1/0/0/0 out_of_stock -&gt; 0/0/0/0/0 out_of_stock</code>; webapp stockId <code>null -&gt; SA-19905</code>; whConfirmStatus <code>Pending WH Confirm -&gt; WH Confirmed Can Pack</code>; stockAdjustmentStatus <code>Not Adjusted -&gt; Adjusted</code>; stockSetOos <code>true -&gt; true</code>; buyerDecision <code>null -&gt; null</code>.</li>
+      </ul>
+      <div class="field"><strong>Prompt cleanup before -&gt; after:</strong> scheduled prompt mandatory next-run follow-up for rows <code>101267/101265/101247</code> -&gt; completed/readback note; dated continue prompt no completion addendum -&gt; addendum added and memory copy refreshed. Do not repeat unless fresh evidence shows a new mismatch.</div>
+      <div class="field"><strong>Operational counters:</strong> SiteGiant stock writes in this retry <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; seller portal/Jira/WhatsApp writes <code>0 -&gt; 0</code>; excluded/held SKU writes <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-scheduled-2026-06-26.md</code>; raw patch <code>tmp-sbvariation-20260626\employee-sa19905-webapp-patch-20260626.json</code>; readback <code>tmp-sbvariation-20260626\employee-sa19905-webapp-readback-20260626.json</code>; SiteGiant evidence <code>tmp-sbvariation-20260625\sitegiant-approved-remaining-stock-execute-20260625.json</code>; prompt evidence <code>.agents\scheduled-codex\prompts\checksbvariation-scheduled.md</code> and <code>continue-2026-06-26-checksbvariation-scheduled-prompt.md</code>.</div>
+      <div class="field"><strong>Folded cards:</strong> checksbvariation SA-19905 webapp follow-up 2026-06-26; checksbvariation SA-19905 prompt carry-forward cleanup 2026-06-26.</div>
+      <div class="field"><strong>Result:</strong> completed. The three <code>SA-19905</code> SB webapp rows are no longer partial and the old mandatory carry-forward wording is cleared.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> still not touched: <code>CWS-3F-GREEN-UPGRADE</code> held at live <code>5/4/1/0/0 available</code>, explicit no-need exclusions <code>RATTAN-LAUNDRY-BASKET-D-WOOD-WHT</code> and <code>CB-GREEN</code>, and reserved-only <code>BASKETBALL-HOOP-45CM</code> without Reserved cleanup approval.</div>
+    </div>
+  </div>
+  <div class="entry" data-date="2026-06-26" data-shops="Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, KarlMobel, FynnKoffer, MurahYa, Adelmar, Wilmermobel, Flashree, dutchgaming, Chairsy, ValueSnap" data-platform="Shopee MY Seller Center profile 70" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">shopee my shipping address audit 2026-06-26</span>
+      <span class="entry-meta">2026-06-26 MYT &middot; profile 70 k1b44nvg &middot; 27/27 shops checked &middot; 13 address issues &middot; no writes</span>
+      <span class="tag">Shopee MY</span>
+      <span class="tag">address-audit</span>
+      <span class="tag result-warn">Issues found</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Patricia asked to use profile 70 and check all shop shipping addresses are <code>Jalan Industri 5</code>, not <code>Jalan Industri 4</code>, then list shops with issues.</p>
+      <div class="field"><strong>Scope:</strong> all <code>27</code> live Shopee MY shops returned by profile 70 Seller Center shop list. Profile 70 was active on debug port <code>51452</code> at closeout and was not stopped.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> address evidence per shop <code>unknown -&gt; live Seller Center get_shop_address/get_address readback</code>; seller writes <code>0 -&gt; 0</code>; webapp writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; code dependencies <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Issue shops:</strong><ul>
+<li><strong>Gameniture</strong> (<code>gameniture</code>, shop_id <code>373454740</code>): JALAN_INDUSTRI_4_ON_SHIPPING, SHIPPING_NOT_JALAN_INDUSTRI_5; shipping/pickup delivery_address_id #200013922: <code>unknown -&gt; AL-2513 (GNT), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; pickup_address_id #200013922: <code>unknown -&gt; AL-2513 (GNT), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; return observed <code>AL262C, Lot 638, Jalan Industri 5, Kampung Baru Sungai Buloh, 47000, Sungai Buloh, Selangor., Petaling, Selangor, 47000</code></li>
+<li><strong>Atlusrack</strong> (<code>atlusrack</code>, shop_id <code>336726327</code>): JALAN_INDUSTRI_4_ON_SHIPPING, SHIPPING_NOT_JALAN_INDUSTRI_5; shipping/pickup delivery_address_id #200014266: <code>unknown -&gt; AL-2513 (AR), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; pickup_address_id #200014266: <code>unknown -&gt; AL-2513 (AR), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; return observed <code>AL262C, Lot 638, Jalan Industri 5, Kampung Baru Sungai Buloh, 47000, Sungai Buloh, Selangor., Petaling, Selangor, 47000</code></li>
+<li><strong>Stationarylah</strong> (<code>stationarylah</code>, shop_id <code>321734518</code>): JALAN_INDUSTRI_4_ON_SHIPPING, SHIPPING_NOT_JALAN_INDUSTRI_5; shipping/pickup delivery_address_id #200014576: <code>unknown -&gt; AL-2513 (SL), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; pickup_address_id #200014576: <code>unknown -&gt; AL-2513 (SL), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; return observed <code>AL262C, Lot 638, Jalan Industri 5, Kampung Baru Sungai Buloh, 47000, Sungai Buloh, Selangor., Petaling, Selangor, 47000</code></li>
+<li><strong>KEDAI GARDEN</strong> (<code>garden.mall</code>, shop_id <code>289957447</code>): JALAN_INDUSTRI_4_ON_SHIPPING, SHIPPING_NOT_JALAN_INDUSTRI_5; shipping/pickup delivery_address_id #200014220: <code>unknown -&gt; AL-2513 (KG), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; pickup_address_id #200014220: <code>unknown -&gt; AL-2513 (KG), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; return observed <code>AL262C, Lot 638, Jalan Industri 5, Kampung Baru Sungai Buloh, 47000, Sungai Buloh, Selangor., Petaling, Selangor, 47000</code></li>
+<li><strong>KarlMobel</strong> (<code>karlmobel</code>, shop_id <code>252419950</code>): SHIPPING_NOT_JALAN_INDUSTRI_5; shipping/pickup delivery_address_id #200055123: <code>unknown -&gt; 10, Jalan Tasik Raja Lumu L U4/L, Shah Alam, Selangor, 46000</code>; pickup_address_id #200055123: <code>unknown -&gt; 10, Jalan Tasik Raja Lumu L U4/L, Shah Alam, Selangor, 46000</code>; return observed <code>Al-262, Jalan Industri 5, Kampung Baru Sungai Buloh, 47000, Sungai Buloh, Petaling, Selangor, Malaysia, Shah Alam, Selangor, 47000</code></li>
+<li><strong>FynnKoffer</strong> (<code>fynnkoffer</code>, shop_id <code>214632596</code>): JALAN_INDUSTRI_4_ON_SHIPPING, SHIPPING_NOT_JALAN_INDUSTRI_5; shipping/pickup delivery_address_id #200013912: <code>unknown -&gt; 262 (FK), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; pickup_address_id #200013912: <code>unknown -&gt; 262 (FK), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; return observed <code>AL262C, Lot 638, Jalan Industri 5, Kampung Baru Sungai Buloh, 47000, Sungai Buloh, Selangor., Petaling, Selangor, 47000</code></li>
+<li><strong>MurahYa</strong> (<code>murahya</code>, shop_id <code>139072319</code>): JALAN_INDUSTRI_4_ON_SHIPPING, SHIPPING_NOT_JALAN_INDUSTRI_5; shipping/pickup delivery_address_id #200002506: <code>unknown -&gt; 262 (MY), Jalan Industri 4, Kampung Baru Sungai Buloh, Sungai Buloh, Petaling, Selangor, 47000</code>; pickup_address_id #200002506: <code>unknown -&gt; 262 (MY), Jalan Industri 4, Kampung Baru Sungai Buloh, Sungai Buloh, Petaling, Selangor, 47000</code>; return observed <code>AL-262-C (MY), Jalan Industri 5, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code></li>
+<li><strong>Adelmar</strong> (<code>adelmarmy</code>, shop_id <code>826077906</code>): SHIPPING_NOT_JALAN_INDUSTRI_5; shipping/pickup delivery_address_id #200013527: <code>unknown -&gt; 10, Jalan Tasik Raja Lumu M U4/M, U4, 40160 Shah Alam, Selangor, Petaling, Selangor, 40160</code>; pickup_address_id #200013527: <code>unknown -&gt; 10, Jalan Tasik Raja Lumu M U4/M, U4, 40160 Shah Alam, Selangor, Petaling, Selangor, 40160</code>; return observed <code>Lot 638, Jalan Industri 5, Kampung Baru Sungai Buloh, 47000, Petaling, Selangor, Malaysia, Petaling, Selangor, 47000</code></li>
+<li><strong>Wilmermobel</strong> (<code>wilmermobel</code>, shop_id <code>741362022</code>): SHIPPING_NOT_JALAN_INDUSTRI_5; shipping/pickup delivery_address_id #200014351: <code>unknown -&gt; Jalan Kampung Industri 5, Kampung Baru Sungai Buloh, 47000, Sungai Buloh, Petaling, Selangor, Malaysia, Petaling, Selangor, 47000</code>; pickup_address_id #200014351: <code>unknown -&gt; Jalan Kampung Industri 5, Kampung Baru Sungai Buloh, 47000, Sungai Buloh, Petaling, Selangor, Malaysia, Petaling, Selangor, 47000</code>; return observed <code>Lot 638, Jalan Industri 5, Kampung Baru Sungai Buloh, 47000, Petaling, Selangor, Malaysia, Petaling, Selangor, 47000</code></li>
+<li><strong>Flashree</strong> (<code>flashree</code>, shop_id <code>738554401</code>): JALAN_INDUSTRI_4_ON_SHIPPING, SHIPPING_NOT_JALAN_INDUSTRI_5; shipping/pickup delivery_address_id #200013688: <code>unknown -&gt; 262 (FR), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; pickup_address_id #200013688: <code>unknown -&gt; 262 (FR), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; return observed <code>AL262C (FR), Lot 638, Jalan Industri 5, Kampung Baru Sungai Buloh, 47000, Sungai Buloh, Selangor., Petaling, Selangor, 47000</code></li>
+<li><strong>dutchgaming</strong> (<code>dutch_gaming</code>, shop_id <code>503721641</code>): JALAN_INDUSTRI_4_ON_SHIPPING, SHIPPING_NOT_JALAN_INDUSTRI_5; shipping/pickup delivery_address_id #200015716: <code>unknown -&gt; 262 (DG), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; pickup_address_id #200015716: <code>unknown -&gt; 262 (DG), Jalan Industri 4, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; return observed <code>AL-262-C, Jalan Industri 5, Kampung Baru Sungai Buloh, Sungai Buloh, 47000, Selangor, Petaling, Selangor, 47000</code></li>
+<li><strong>Chairsy</strong> (<code>chairsy</code>, shop_id <code>429078278</code>): JALAN_INDUSTRI_4_ON_SHIPPING, SHIPPING_NOT_JALAN_INDUSTRI_5; shipping/pickup delivery_address_id #200013114: <code>unknown -&gt; 262 (CS), Jalan Industri 4, Kampung Baru Sungai Buloh, Sungai Buloh, Petaling, Selangor, 47000</code>; pickup_address_id #200013114: <code>unknown -&gt; 262 (CS), Jalan Industri 4, Kampung Baru Sungai Buloh, Sungai Buloh, Petaling, Selangor, 47000</code>; return observed <code>AL262C, Lot 638, Jalan Industri 5, Kampung Baru Sungai Buloh,  47000, Sungai Buloh, Selangor., Petaling, Selangor, 47000</code></li>
+<li><strong>ValueSnap</strong> (<code>valuesnap</code>, shop_id <code>422263284</code>): SHIPPING_NOT_JALAN_INDUSTRI_5; shipping/pickup delivery_address_id #200033262: <code>unknown -&gt; No. 2, Jalan Nusaria 1 J/3, Taman Nusantara, Jelutong, Johor Bahru, Johor, Malaysia, Johor Bahru, Johor, 81550</code>; pickup_address_id #200015665: <code>unknown -&gt; 262 (VS), Jalan Industri 5, Kampung Baru Sungai Buloh, 47000 Sungai Buloh, Selangor, Petaling, Selangor, 47000</code>; return observed <code>AL262C, Lot 638, Jalan Industri 5, Kampung Baru Sungai Buloh, 47000, Sungai Buloh, Selangor., Petaling, Selangor, 47000</code></li>
+      </ul></div>
+      <div class="field"><strong>OK shops:</strong> 14 shops had shipping/pickup address on <code>Jalan Industri 5</code> or valid abbreviation <code>Jln Industri 5</code>.</div>
+      <div class="field"><strong>Reason:</strong> verify shipping/pickup address configuration before using wrong warehouse/street details.</div>
+      <div class="field"><strong>Result:</strong> <code>OK_WITH_ISSUES</code>; 27/27 checked, 13 issue shops found, no address or marketplace data changed.</div>
+      <div class="field"><strong>Evidence:</strong> report <code>tmp-address-audit-20260626\shopee-my-address-audit-report-2026-06-26.md</code>; raw <code>tmp-address-audit-20260626\shopee-my-address-audit-raw-2026-06-26.json</code>.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> issue shops still need manual Seller Center address correction or approval before changing. This run was read-only.</div>
+    </div>
+  </div>
+
 <div class="entry" data-date="2026-06-26" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -662,7 +817,56 @@ header.page::after{
     <div class="field"><strong>Result:</strong> PARTIAL - 439 deep-reviewed, 0 net-new confirmed misses, 18 manual-review candidates, 2 open carry-over item(s). No operational writes.</div>
   </div>
 </div>
+  <div class="entry" data-date="2026-06-25" data-shops="SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY" data-platform="SB Variation + SiteGiant + employee webapp + scheduled prompts" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checksbvariation consolidated 2026-06-25</span>
+      <span class="entry-meta">2026-06-25 &middot; scheduled run + DNS-blocked retries + SiteGiant #SA-19905 + closeout &middot; FINAL_STATUS PARTIAL</span>
+      <span class="tag">checksbvariation</span>
+      <span class="tag">board-repair</span>
+      <span class="tag result-warn">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Consolidated all 2026-06-25 Check SB Variation board cards into one lint-clean entry. This preserves the scheduled daily run, the DNS-blocked rerun/action summary, the approved SiteGiant <code>#SA-19905</code> stock cleanup, and the session closeout that carried webapp updates to 2026-06-26.</p>
+      <div class="field"><strong>Scheduled run before -&gt; after:</strong> SB rows <code>186</code>, focused rows <code>82</code>, new rows <code>3</code>; messages <code>0 -&gt; 0</code>; SiteGiant writes in scheduled run <code>0 -&gt; 0</code>; SB webapp patches in scheduled run <code>0 -&gt; 0</code>; result <code>FINAL_STATUS: PARTIAL</code>.</div>
+      <div class="field"><strong>Approved SiteGiant stock adjustment:</strong> <code>#SA-19905</code> / internal <code>9876424</code> posted after Patricia excluded <code>RATTAN-LAUNDRY-BASKET-D-WOOD-WHT</code> and <code>CB-GREEN</code>. Stock writes before -&gt; after:</div>
+      <ul>
+        <li><code>584624621184910753</code> / row <code>101267</code> / TT Murahya / TikTokMY / <code>MEASURING-JUG-WHITE-ROUND-LID-4L</code>: <code>2/2/0/0/0 out_of_stock -&gt; 0/0/0/0/0 out_of_stock</code>; reason cancellation stock-return cleanup.</li>
+        <li><code>260620JWJPCP10</code> / row <code>101265</code> / Murahya / ShopeeMY / <code>CC-3L-BLACK-101CM</code>: <code>1/1/0/0/0 out_of_stock -&gt; 0/0/0/0/0 out_of_stock</code>; reason cancellation stock-return cleanup.</li>
+        <li><code>260618DD4H075J</code> / row <code>101247</code> / Lovento / ShopeeMY / <code>33-STALK-SOAP-ROSES-BOUQUET-LED-LIGHT-PINK</code>: <code>1/1/0/0/0 out_of_stock -&gt; 0/0/0/0/0 out_of_stock</code>; reason approved no-stock positive-SOH cleanup.</li>
+      </ul>
+      <div class="field"><strong>Held / skipped:</strong> <code>584597636825056868</code> / <code>CWS-3F-GREEN-UPGRADE</code> expected <code>1/1/0/0/0 out_of_stock</code> but fresh live readback was <code>5/4/1/0/0 available</code>, so no write; <code>2606169E86G536</code> / <code>BASKETBALL-HOOP-45CM</code> stayed held at <code>1/0/1/0/0 out_of_stock</code> because Reserved cleanup lacked explicit approval; <code>260612TYG7SFVK</code> and <code>260610Q8NA4RFN</code> were explicit no-need exclusions.</div>
+      <div class="field"><strong>Webapp/DNS before -&gt; after on 2026-06-25:</strong> fresh <code>/api/sb-variation</code> rerun attempt failed before HTTP with DNS unresolved; SB rows fetched <code>0 -&gt; 0</code>; SB webapp patches <code>0 -&gt; 0</code>. Rows <code>101267</code>, <code>101265</code>, and <code>101247</code> were carried to the next run instead of falsely marked complete.</div>
+      <div class="field"><strong>Closeout before -&gt; after:</strong> session closeout <code>absent -&gt; session-closeout-2026-06-25-checksbvariation.md</code>; continue prompt <code>absent -&gt; continue-2026-06-26-checksbvariation-scheduled-prompt.md</code>; scheduled prompt retry context <code>absent -&gt; present</code>; scheduled runner references <code>2026-06-25 only -&gt; 2026-06-26 plus 2026-06-25 closeout</code>.</div>
+      <div class="field"><strong>Safety counters:</strong> customer messages <code>0 -&gt; 0</code>; drafts <code>0 -&gt; 0</code>; seller portal/Jira/form/WhatsApp writes <code>0 -&gt; 0</code>; SB stock-column toggles <code>0 -&gt; 0</code> on 2026-06-25.</div>
+      <div class="field"><strong>Evidence:</strong> scheduled report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-scheduled-2026-06-25.md</code>; approved-stock report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-approved-remaining-stock-2026-06-25.md</code>; SiteGiant execute raw <code>tmp-sbvariation-20260625\sitegiant-approved-remaining-stock-execute-20260625.json</code>; DNS raw <code>tmp-sbvariation-20260625\webapp-sb-api-recheck-after-stock-20260625.json</code>; closeout prompt files in root and <code>.codex\memories</code>.</div>
+      <div class="field"><strong>Folded cards:</strong> checksbvariation approved remaining stock cleanup 2026-06-25; checksbvariation action summary from saved report 2026-06-25; checksbvariation rerun attempt DNS blocked 2026-06-25; checksbvariation scheduled daily run 2026-06-25; checksbvariation session closeout and 2026-06-26 scheduled prompt update.</div>
+      <div class="field"><strong>Result:</strong> 2026-06-25 remains correctly marked <code>PARTIAL</code> because the employee webapp was still DNS-blocked that day. The carried SB webapp rows were completed on 2026-06-26 in the consolidated card above.</div>
+    </div>
+  </div>
 
+  <div class="entry" data-date="2026-06-25" data-shops="N/A" data-platform="employee webapp DNS + local codex-lab port check" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">webapp local and DNS status check 2026-06-25</span>
+      <span class="entry-meta">2026-06-25 21:10 MYT &middot; employee webapp DNS unresolved &middot; no operational writes</span>
+      <span class="tag">admin</span>
+      <span class="tag">webapp-status</span>
+      <span class="tag result-warn">Likely DNS outage</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Patricia asked, "webapp is it down?"</p>
+      <div class="field"><strong>Finding:</strong> <code>employee.awesomeree.com.my</code> failed before HTTP. Base URL plus <code>/api/parcel-split</code>, <code>/api/sb-variation</code>, and <code>/api/return-items</code> all returned DNS resolution failure from this machine.</div>
+      <div class="field"><strong>DNS readback:</strong> local router DNS returned <code>Format error</code>; Google DNS <code>8.8.8.8</code> and Cloudflare DNS <code>1.1.1.1</code> returned server failure; control lookup <code>google.com</code> resolved successfully.</div>
+      <div class="field"><strong>Local repo check:</strong> <code>codex-lab</code> has no webapp start script; <code>package.json</code> only defines <code>npm test</code>. Common dev ports <code>3000</code>, <code>3001</code>, <code>4173</code>, <code>5173</code>, <code>8000</code>, and <code>8080</code> were not reachable. Port <code>20725</code> was AdsPower JSON, not this repo; port <code>7070</code> was AnyDesk.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> employee webapp reachability <code>unknown -&gt; DNS unresolved</code>; employee webapp HTTP status <code>unknown -&gt; none because DNS failed first</code>; local repo webapp <code>unknown -&gt; not defined/running</code>; webapp data writes <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; customer messages <code>0 -&gt; 0</code>; dependencies/code changes <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Shop/platform:</strong> shop <code>N/A</code>; platform <code>employee webapp DNS + local codex-lab/Windows process and port check</code>.</div>
+      <div class="field"><strong>Reason:</strong> user asked whether the webapp is down.</div>
+      <div class="field"><strong>Result:</strong> likely down or unreachable at DNS for <code>employee.awesomeree.com.my</code>; local repo dev webapp is also not running/defined. <code>npm test</code> passed.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> external DNS/hosting needs IT/provider check. No shop/account workflow was run, no browser profile was opened, and no webapp data was changed.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-webapp-status-20260625\webapp-status-check-2026-06-25.md</code>.</div>
+    </div>
+  </div>
 <div class="entry" data-date="2026-06-25" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -861,49 +1065,9 @@ header.page::after{
       <div class="field"><strong>Evidence:</strong> Report saved at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-25.md</code>; raw JSON at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-06-25.json</code>.</div>
       <div class="field"><strong>Codex date correction:</strong> Launch quoting wrote <code>1995</code> -&gt; corrected to <code>2026-06-25</code> without rerunning live intake. Audit remarks for C2237-C2241 were patched HTTP 200 from <code>POST 1995</code> to include <code>POST 2026-06-25</code>; correction evidence <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_date_correction_2026-06-25.json</code>. Original misdated raw/report/log retained for audit.</div>
       <div class="field"><strong>Result:</strong> partial - 5 posted, 7 errors, board logged by Codex.</div>
-      <div class="field"><strong>Codex addendum:</strong> parcelclaim-auto - 25/6 Codex run: 0 new / 0 posted / 0 DOM-only-catches / 1 errors. Report: <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-25.md</code>. Crosscheck: run failed before POST.</div>
-    </div>
-  </div>
-<div class="entry" data-date="2026-06-25" data-shops="SB Variation, SiteGiant, Shopee MY, Shopee SG, TikTok MY" data-platform="SB Variation + SiteGiant + profile 70" data-result="partial">
-    <div class="entry-summary">
-      <span class="chevron">&#9654;</span>
-      <span class="entry-title">checksbvariation scheduled daily run 2026-06-25</span>
-      <span class="entry-meta">2026-06-25 13:04:50 +08:00 &amp; MYT &amp; rows 82 reviewed &amp; new 3 &amp; messages 0-&gt;0 &amp; stock writes 0-&gt;0 &amp; SB patches 0-&gt;0 &amp; FINAL_STATUS PARTIAL</span>
-      <span class="tag">checksbvariation</span>
-      <span class="tag result-partial">Partial</span>
-    </div>
-    <div class="entry-body">
-      <p><strong>Brief:</strong> Ran the 2026-06-25 MYT scheduled SB Variation check from authenticated live employee rows and SiteGiant order/item API evidence. Thursday has no standing customer-contact lane. Current safety rules held stock writes, SB stock-column toggles, customer messages, seller portal/Jira/form changes, and WhatsApp/off-platform contact.</p>
-      <div class="field"><strong>Scope:</strong> SB rows <code>186</code>, max id <code>101283</code>; focused rows <code>82</code>; new rows above 2026-06-24 max <code>101280</code>: <code>3</code>; SiteGiant orders <code>82/82</code>; exact iSKU lookups <code>170/171</code>; missing affected references <code>0</code>.</div>
-      <div class="field"><strong>New row review:</strong><ul>
-        <li><code>260624UDGC7VHR</code> / row <code>101283</code> / Karlmobel / ShopeeMY: <code>No Stock</code>; live <code>Processed</code>; payment <code>Unpaid</code>; affected <code>FSLS-BBQG-X-MINI</code>; suggested <code></code>; contactSent <code>True</code>; stockSetOos <code>True</code>.</li>
-        <li><code>260624UCFRVEAS</code> / row <code>101282</code> / ValueSnap / ShopeeMY: <code>Available</code>; live <code>Processed</code>; payment <code>Paid</code>; affected <code>SOAP-DISPENSER-WHITE</code>; suggested <code>SOAP-DISPENSER-BEIGE, SOAP-DISPENSER-GREEN</code>; contactSent <code>True</code>; stockSetOos <code>True</code>.</li>
-        <li><code>260623TTSD98CT</code> / row <code>101281</code> / das.nature2 / ShopeeMY: <code>Offer Change</code>; live <code>Processed</code>; payment <code>Paid</code>; affected <code>CT-OUTER-LAYER-BLACK-5-8P</code>; suggested <code>CT-OUTER-LAYER-A.GREEN-5-8P, CT-OUTER-LAYER-D.GREEN-5-8P</code>; contactSent <code>True</code>; stockSetOos <code>True</code>.</li>
-      </ul></div>
-      <div class="field"><strong>Every external change before -&gt; after:</strong> customer messages <code>0 -&gt; 0</code>; SiteGiant stock/status/reserved writes <code>0 -&gt; 0</code>; SB buyerDecision/csRemarks patches <code>0 -&gt; 0</code>; SB stock-column toggles <code>0 -&gt; 0</code>; seller portal/Jira/form/WhatsApp/off-platform writes <code>0 -&gt; 0</code>; local scheduled report/evidence <code>absent/stale -&gt; present for 2026-06-25</code>.</div>
-      <div class="field"><strong>Stock action items, report-only:</strong><ul>
-        <li><code>584624621184910753</code> / row <code>101267</code> / TT Murahya / TikTokMY &gt; <code>MEASURING-JUG-WHITE-ROUND-LID-4L</code> &gt; before <code>2/2/0/0/0</code> / <code>out_of_stock</code> -&gt; after <code>no write in this run</code>; reason live-cancelled order with sellable stock; cancellation stock-return cleanup/WH decision needed before any write; OOS status with positive quantity</li>
-        <li><code>260620JWJPCP10</code> / row <code>101265</code> / Murahya / ShopeeMY &gt; <code>CC-3L-BLACK-101CM</code> &gt; before <code>1/1/0/0/0</code> / <code>out_of_stock</code> -&gt; after <code>no write in this run</code>; reason live-cancelled order with sellable stock; cancellation stock-return cleanup/WH decision needed before any write; OOS status with positive quantity</li>
-        <li><code>584597636825056868</code> / row <code>101256</code> / TT Murahya / TikTokMY &gt; <code>CWS-3F-GREEN-UPGRADE</code> &gt; before <code>1/1/0/0/0</code> / <code>out_of_stock</code> -&gt; after <code>no write in this run</code>; reason live-cancelled order with sellable stock; cancellation stock-return cleanup/WH decision needed before any write; OOS status with positive quantity</li>
-        <li><code>260618DD4H075J</code> / row <code>101247</code> / Lovento / ShopeeMY &gt; <code>33-STALK-SOAP-ROSES-BOUQUET-LED-LIGHT-PINK</code> &gt; before <code>1/1/0/0/0</code> / <code>out_of_stock</code> -&gt; after <code>no write in this run</code>; reason affected iSKU has positive sellable for no-stock/SB case; WH stock-check or approval-gated cleanup needed; OOS status with positive quantity</li>
-        <li><code>260612TYG7SFVK</code> / row <code>101213</code> / Murahya / ShopeeMY &gt; <code>RATTAN-LAUNDRY-BASKET-D-WOOD-WHT</code> &gt; before <code>3/3/0/0/0</code> / <code>available</code> -&gt; after <code>no write in this run</code>; reason affected iSKU has positive sellable for no-stock/SB case; WH stock-check or approval-gated cleanup needed; stock status not OOS for no-stock/SB affected iSKU</li>
-        <li><code>260610Q8NA4RFN</code> / row <code>101202</code> / KarlMobel SG / ShopeeSG &gt; <code>CB-GREEN</code> &gt; before <code>4/5/0/0/-1</code> / <code>available</code> -&gt; after <code>no write in this run</code>; reason affected iSKU has positive sellable for no-stock/SB case; WH stock-check or approval-gated cleanup needed; stock status not OOS for no-stock/SB affected iSKU</li>
-      </ul></div>
-      <div class="field"><strong>Held / report-only items:</strong><ul>
-        <li><code>2606169E86G536</code> / row <code>101249</code> / BahEmas / ShopeeMY &gt; <code>BASKETBALL-HOOP-45CM</code> &gt; before <code>1/0/1/0/0</code> / <code>out_of_stock</code> -&gt; after <code>held/report-only</code>; reason reserved-only hold; do not clear Reserved without explicit approval</li>
-      </ul></div>
-      <div class="field"><strong>Live-cancelled SB buyerDecision pending:</strong><ul>
-        <li><code>584624621184910753</code> / row <code>101267</code> / TT Murahya / TikTokMY: live <code>Cancelled</code>; buyerDecision <code>null</code> -&gt; <code>not patched</code>; affected <code>MEASURING-JUG-WHITE-ROUND-LID-4L</code>; reason live cancelled but SB buyerDecision is blank/incomplete; internal SB patch held in this read-only run</li>
-        <li><code>260620JWJPCP10</code> / row <code>101265</code> / Murahya / ShopeeMY: live <code>Cancelled</code>; buyerDecision <code>null</code> -&gt; <code>not patched</code>; affected <code>CC-3L-BLACK-101CM</code>; reason live cancelled but SB buyerDecision is blank/incomplete; internal SB patch held in this read-only run</li>
-        <li><code>584597636825056868</code> / row <code>101256</code> / TT Murahya / TikTokMY: live <code>Cancelled</code>; buyerDecision <code>null</code> -&gt; <code>not patched</code>; affected <code>CWS-3F-GREEN-UPGRADE</code>; reason live cancelled but SB buyerDecision is blank/incomplete; internal SB patch held in this read-only run</li>
-      </ul></div>
-      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\sbvariation-reports\sbvariation-scheduled-2026-06-25.md</code>; raw SB pull <code>C:\Users\tessf\Documents\sbvariation-reports\_raw_scheduled_2026-06-25-20260625125346-codex.json</code>; raw metadata <code>C:\Users\tessf\Documents\sbvariation-reports\_raw_scheduled_2026-06-25-20260625125346-codex-meta.json</code>; focus analysis <code>C:\Users\tessf\Documents\sbvariation-reports\_analysis_focus_2026-06-25.json</code>; SiteGiant orders <code>C:\Users\tessf\Documents\sbvariation-reports\_sitegiant_orders_api_2026-06-25.json</code>; SiteGiant items <code>C:\Users\tessf\Documents\sbvariation-reports\_sitegiant_items_api_2026-06-25.json</code>; profile cleanup <code>C:\Users\tessf\Documents\sbvariation-reports\_sbvariation_profile_cleanup_2026-06-25.json</code>; derived summary <code>C:\Users\tessf\Documents\sbvariation-reports\_sbvariation_derived_2026-06-25.json</code>.</div>
-      <div class="field"><strong>Result:</strong> partial, not OK. Partial reasons: <code>6</code> stock action items, <code>1</code> reserved/report-only hold, and <code>3</code> live-cancelled rows still needing internal SB buyerDecision handling if Patricia wants webapp patching today.</div>
-      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> TT Murahya <code>584624621184910753</code> has <code>MEASURING-JUG-WHITE-ROUND-LID-4L</code> at <code>2/2/0/0/0</code> while SiteGiant status remains OOS; <code>584597636825056868</code> / <code>CWS-3F-GREEN-UPGRADE</code> and <code>260620JWJPCP10</code> / <code>CC-3L-BLACK-101CM</code> also show returned sellable stock while live-cancelled; <code>BASKETBALL-HOOP-45CM</code> remains reserved-only; old adjusted rows and CUPID were intentionally not relisted.</div>
     </div>
   </div>
 
-  <!-- CHECKSBVARIATION-CONSOLIDATED-2026-06-24 -->
   <div class="entry" data-date="2026-06-25" data-shops="Laz das.nature, Lazada Lovento, Lazada MurahYa, TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerHelmet, TT JagerSafety, TT KarlMobel, TT Kinata, TT Lovento, TT MurahYa, TT Valuesnap" data-platform="TikTok/Lazada + internal webapp" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
