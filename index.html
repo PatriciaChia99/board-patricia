@@ -639,6 +639,34 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-26" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center wallet" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checkfbsclaims Patricia FBS rule correction 2026-06-26</span>
+      <span class="entry-meta">2026-06-26 MYT &amp; Sheet plan 0 &amp; webapp gaps 0 &amp; wallet checked 242 &amp; FINAL_STATUS OK</span>
+      <span class="tag">checkfbsclaims</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Applied Patricia's corrected FBS closure rules after the initial completed closeout. Closed status now requires wallet evidence except explicit 2025 RTS closure rows; local-seller and RR-cancelled rows are excluded from Claim Progress; LOST rows require full product-credit confirmation.</p>
+      <div class="field"><strong>Scope:</strong> shops MurahYa, KarlMobel, ValueSnap, Luxbin; platform Google Sheet FBS Claim + employee FBS Claim webapp + Shopee MY wallet profile 70. Final readback webapp cases <code>536</code>; Sheet rows MurahYa <code>108</code>, KarlMobel <code>175</code>, ValueSnap <code>204</code>, Luxbin <code>9</code>.</div>
+      <div class="field"><strong>Operational counters before -&gt; after:</strong> Sheet status updates <code>0 -&gt; 18</code>; no-claim Sheet rows deleted <code>0 -&gt; 55</code>; webapp rule-correction patches <code>0 -&gt; 103</code>; Sheet-to-webapp status patches <code>0 -&gt; 96</code>; safe non-closed action patches <code>0 -&gt; 37</code>; failed webapp patches <code>1 -&gt; 0</code> after retry; wallet targets checked <code>0 -&gt; 242</code>; latest webapp cases missing from Sheet <code>unknown -&gt; 0</code>.</div>
+      <div class="field"><strong>Every correction before -&gt; after:</strong><ul>
+        <li><strong>MurahYa / Shopee MY / 2025 RTS rule:</strong> <code>250907U3FGW3ED</code>, <code>250717D333KNE0</code>, <code>2507011DKT2D1F</code>: Sheet Status <code>RTS -&gt; Closed</code>; webapp <code>action pending_seller -&gt; closed</code> and <code>claim_status pending_seller_collect_item -&gt; closed</code>. Reason: Patricia approved 2025 RTS closure exception. Result: applied/readback OK.</li>
+        <li><strong>MurahYa / Shopee MY / wallet-first closure:</strong> <code>260423J00YF11S</code>: Sheet Status <code>Closed -&gt; Not Yet Credited</code>; webapp <code>claim_status closed -&gt; pending_rr_submit_compensation</code>, <code>action closed/pending_credited -&gt; pending_credited</code>. Wallet verdict <code>NO_WALLET_MATCH</code>. Result: not closed.</li>
+        <li><strong>ValueSnap and MurahYa / Shopee MY / pending FBS mapping:</strong> <code>2603254E9F5WKA</code> and <code>260425QJGN0A4C</code>: webapp claim status <code>blank -&gt; qc_in_progress</code>, action stayed <code>pending_fbs</code>. Wallet verdict <code>NO_WALLET_MATCH</code>. Result: not closed.</li>
+        <li><strong>KarlMobel / Shopee MY / LOST full-credit rule:</strong> <code>260330GVW84PJW</code>: webapp stayed <code>pending_fbs</code> / <code>qc_in_progress</code>; wallet net <code>RM 47.87</code> vs product price <code>RM 48.59</code>. Reason: LOST must credit full product amount. Result: not closed.</li>
+        <li><strong>MurahYa / Google Sheet / no-claim local seller rows:</strong> 40 rows including <code>260425QR46V6H9</code> changed from present in Claim Progress with remark <code>Fufilled by local seller</code> to removed from Claim Progress. Reason: fulfilled by local seller is not FBS claim scope. Result: deleted/readback not found.</li>
+        <li><strong>KarlMobel + ValueSnap / Google Sheet / RR Cancelled rows:</strong> KarlMobel 5 rows and ValueSnap 10 rows changed from present in Claim Progress to removed. Reason: RR Cancelled does not need FBS claim. Result: deleted/readback not found.</li>
+        <li><strong>All shops / webapp status sync:</strong> 96 Sheet claim-status mappings changed from blank/stale to current Sheet statuses; one <code>401</code> on <code>250821DG7ACXPA</code> retried to OK. Reason: webapp must match cleaned Claim Progress. Result: final Sheet-to-webapp plan <code>0</code>.</li>
+        <li><strong>All shops / webapp action sync:</strong> 37 non-closed actions changed to mapped pending states. Closed wallet-confirmed rows were not reopened. Reason: update pending states without overriding wallet-confirmed closures. Result: applied/readback OK.</li>
+      </ul></div>
+      <div class="field"><strong>Wallet evidence:</strong> broad wallet check <code>242</code> targets; verdicts <code>WALLET_CONFIRMED 92</code>, <code>WALLET_NET_CONFIRMED_WITH_DEDUCTION 67</code>, <code>WALLET_CONFIRMED_FULL_PRODUCT 2</code>, <code>NO_WALLET_MATCH 77</code>, <code>WALLET_POSITIVE_MISMATCH 4</code>. Remaining closed action-plan rows <code>55</code> are report-only because wallet evidence confirms them: <code>45 WALLET_CONFIRMED</code>, <code>10 WALLET_NET_CONFIRMED_WITH_DEDUCTION</code>.</div>
+      <div class="field"><strong>Report-only / Patricia may have missed:</strong> unsupported/free-text Sheet values <code>48</code>; closed Sheet-only rows <code>3</code> (<code>250615J9VMRV4J</code>, <code>2504149VXXPQPP</code>, <code>2604064C3V9W6W</code>); suspect closures shown by generic sync <code>54</code> but wallet-crosschecked. No latest webapp case needs adding to Sheet; final webapp-not-in-Sheet count <code>0</code>.</div>
+      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\fbs-claim-reports\fbs-claim-status-2026-06-26.md</code>; closeout <code>tmp-fbs-claim-20260626\closeout_crosscheck_post_user_rules_20260626.json</code>; final readback <code>C:\Users\tessf\Documents\fbs-claim-reports\raw-2026-06-26\fbs-sync-final-after-safe-actions-2026-06-26</code>; wallet evidence <code>C:\Users\tessf\Documents\fbs-claim-reports\raw-2026-06-26\fbs-wallet-broad-verify-2026-06-26-combined</code>.</div>
+      <div class="field"><strong>Validation:</strong> <code>node --check</code> passed for FBS scripts and <code>npm test</code> passed. Main report last line remains <code>FINAL_STATUS: OK</code>.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-26" data-shops="Shopee MY monthly shipping claim lane" data-platform="Shopee MY + Seller Center shipping claim" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
