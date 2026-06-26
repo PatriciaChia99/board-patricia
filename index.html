@@ -639,6 +639,25 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-26" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Shopee MY Seller Center, Google Sheet FBS Claim, employee FBS Claim webapp" data-result="warn">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checkfbsclaims Shopee source FBS audit 2026-06-26</span>
+      <span class="entry-meta">2026-06-26 MYT &amp; profile 70 source check &amp; FD exhausted &amp; 1 Sheet row added</span>
+      <span class="tag">checkfbsclaims</span>
+      <span class="tag result-warn">Completed with webapp watch</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Patricia asked to double-check Shopee source directly because the bot/webapp might have missed FBS cases for KarlMobel/Kmall, ValueSnap, and the other shops. Codex used profile 70 to switch all four shops, checked Return/Refund via the Shopee FBS response marker, found the corrected Failed Delivery API bucket, and appended the only claim-pending source-only row to Claim Progress.</p>
+      <div class="field"><strong>Profile / shop access:</strong> profile <code>70 / k1b44nvg</code> switched MurahYa, ValueSnap, KarlMobel/Kmall, and Luxbin successfully. Profile 78 was not used because profile 70 had the needed Kmall/KarlMobel access.</div>
+      <div class="field"><strong>Every change before -&gt; after:</strong><ul><li><strong>ValueSnap / Google Sheet FBS Claim / <code>260513B5W8W7CR</code>:</strong> Claim Progress row <code>absent</code> -&gt; <code>present row 206</code>; Duplicate Check <code>blank</code> -&gt; <code>1</code>; Status <code>blank</code> -&gt; <code>Request Refunded</code>; Reason <code>blank</code> -&gt; <code>Delivery failed</code>; Latest Remark <code>blank</code> -&gt; <code>26/6 source audit: FBS; forward logistics Delivery Failed; refund RM10.99; missing from webapp/sheet; FBS team to check claim/credit.</code> Reason: Shopee source showed FBS marker plus forward logistics Delivery Failed and the order was absent from both Sheet and captured webapp. Result: readback row 206, duplicate check 1.</li></ul></div>
+      <div class="field"><strong>Return/Refund source findings:</strong> FBS-marker source rows missing from Sheet: MurahYa <code>2</code>, ValueSnap <code>189</code>, KarlMobel/Kmall <code>219</code>, Luxbin <code>31</code>. Only <code>1</code> row was claim-pending/actionable after status/logistic rules; the rest were buyer-cancelled/refund-only/no-claim patterns and were not pasted.</div>
+      <div class="field"><strong>Failed Delivery source findings:</strong> Corrected Shopee params <code>flow_tab=1</code>, <code>case_tab=3</code>. Fully paged to exhaustion: MurahYa <code>31</code> FBS / <code>0</code> missing, ValueSnap <code>62</code> FBS / <code>0</code> missing, KarlMobel/Kmall <code>35</code> FBS / <code>0</code> missing, Luxbin <code>0</code> FBS / <code>0</code> missing.</div>
+      <div class="field"><strong>Webapp status:</strong> captured FBS webapp still has <code>0</code> rows for <code>260513B5W8W7CR</code>. No forced webapp create was done because the verified FBS tooling only has GET/PATCH existing cases, not a safe create endpoint. Result: watch next bot/webapp import.</div>
+      <div class="field"><strong>Evidence:</strong> source audit folder <code>tmp-fbs-claim-20260626\shopee-source-marker-audit-20260626</code>; closeout <code>tmp-fbs-claim-20260626\closeout_crosscheck_source_audit_20260626.json</code>; report <code>C:\Users\tessf\Documents\fbs-claim-reports\fbs-claim-status-2026-06-26.md</code>.</div>
+      <div class="field"><strong>Validation:</strong> <code>node --check</code> passed for the source audit script; <code>npm test</code> passed.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-26" data-shops="All scheduled Patricia lanes" data-platform="Windows Task Scheduler + Codex scheduled runners + AdsPower profile audit" data-result="partial">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
