@@ -639,6 +639,35 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-26" data-shops="MurahYa, KarlMobel/Kmall, ValueSnap, Luxbin" data-platform="Scheduled Codex runner, Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center, Patricia board" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">checkfbsclaims schedule prompt source-audit closeout 2026-06-26</span>
+      <span class="entry-meta">2026-06-26 MYT &amp; prompt updated &amp; self-test OK &amp; task Ready &amp; source evidence saved</span>
+      <span class="tag">checkfbsclaims</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Closed the FBS session after Patricia asked to save the work, remember the corrected rules, update the future scheduled prompt, crosscheck completion, and record anything outstanding.</p>
+      <div class="field"><strong>Scope:</strong> shops MurahYa, KarlMobel/Kmall, ValueSnap, Luxbin; platforms scheduled Codex prompt/runner, Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center wallet/source, Patricia board.</div>
+      <div class="field"><strong>Reason:</strong> Patricia requested the next scheduled <code>checkfbsclaims</code> run to automatically use today&apos;s source-audit lessons and the mandatory closeout rule: board log, error log, evidence/readback crosscheck, and outstanding-items statement after every task.</div>
+      <div class="field"><strong>Every change before -&gt; after:</strong><ul>
+        <li><strong>Scheduled prompt / local repo:</strong> <code>.agents\scheduled-codex\prompts\checkfbsclaims-scheduled.md</code> changed from no durable direct-Shopee source crosscheck requirement to requiring all four shops checked directly in Shopee source, Return/Refund using <code>rr_fbs_label</code> / <code>Fulfilled by Shopee</code>, and Failed Delivery using <code>flow_tab=1</code>, <code>case_tab=3</code>.</li>
+        <li><strong>Scheduled prompt / local repo:</strong> source-only handling changed from implicit webapp/sheet-only coverage to explicit rule: add only actionable FBS claim rows after status, logistics, reason, refund/compensation, sheet/webapp coverage, and wallet check. Non-claim buyer-cancelled, RR-cancelled, refund-only, and fulfilled-by-local-seller rows stay out of Claim Progress.</li>
+        <li><strong>Scheduled prompt / local repo:</strong> closure rule changed from generic closed sync to wallet-backed closure only, except Patricia-approved 2025 RTS closure; LOST requires full product credit before closure.</li>
+        <li><strong>Scheduled prompt / local repo:</strong> added the 2026-06-26 example <code>ValueSnap 260513B5W8W7CR</code>, Sheet row 206, wallet verdict <code>NO_WALLET_MATCH</code>, and rule not to force-create webapp rows without a verified safe create endpoint.</li>
+        <li><strong>Error log / local repo:</strong> <code>.agents\error-log.md</code> changed from no session-closeout durability reminder to a new reminder requiring automatic Patricia board logging, error-log lessons, readback crosscheck, and explicit outstanding/missed statement after every task.</li>
+        <li><strong>Session handoff / local evidence:</strong> closeout note changed from absent to saved at <code>tmp-fbs-claim-20260626\session_closeout_checkfbsclaims_source_audit_20260626.md</code>.</li>
+        <li><strong>Scheduled runner / Windows Task Scheduler:</strong> runner verification changed from unchecked to <code>SelfTest OK for checkfbsclaims</code>; no business workflow started.</li>
+        <li><strong>Windows Task Scheduler:</strong> task state changed from unchecked to <code>Codex_FBSClaim_TueFri_1215 Ready</code>, last task result <code>0</code>, last run <code>2026-06-26 12:15 MYT</code>, next run <code>2026-06-30 12:15 MYT</code>.</li>
+        <li><strong>ValueSnap / Google Sheet FBS Claim:</strong> source-only actionable row <code>260513B5W8W7CR</code> changed from absent in Sheet/webapp coverage to appended on <code>Valuesnap Claim Progress</code> row 206; wallet stayed <code>NO_WALLET_MATCH</code>; webapp stayed not force-created because no verified create endpoint exists.</li>
+      </ul></div>
+      <div class="field"><strong>Crosscheck result:</strong> main report exists and ends <code>FINAL_STATUS: OK</code>; raw source evidence exists; wallet evidence exists for <code>260513B5W8W7CR</code>; scheduled prompt readback contains <code>rr_fbs_label</code>, <code>flow_tab=1</code>, and <code>260513B5W8W7CR</code>; error-log readback contains the closeout durability reminder; scheduled runner self-test passed; Task Scheduler readback saved.</div>
+      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\fbs-claim-reports\fbs-claim-status-2026-06-26.md</code>; closeout JSON <code>tmp-fbs-claim-20260626\closeout_crosscheck_source_audit_20260626.json</code>; handoff note <code>tmp-fbs-claim-20260626\session_closeout_checkfbsclaims_source_audit_20260626.md</code>; Task Scheduler readback <code>tmp-fbs-claim-20260626\scheduled_task_checkfbsclaims_readback_20260626.json</code>; scheduled prompt <code>.agents\scheduled-codex\prompts\checkfbsclaims-scheduled.md</code>; error log <code>.agents\error-log.md</code>.</div>
+      <div class="field"><strong>Validation:</strong> <code>.\ .agents\scheduled-codex\run-codex-scheduled.ps1 -JobName checkfbsclaims -SelfTest</code> returned OK; no app/package code was changed during this closeout.</div>
+      <div class="field"><strong>Outstanding / Patricia may have missed:</strong> active FBS item <code>260513B5W8W7CR</code> remains not credited and not in captured webapp data, so watch next bot/webapp import or FBS team credit. No additional latest actionable FBS source-only row was found in this source audit. Separate same-day non-FBS partials remain only where recorded in <code>.agents\error-log.md</code>.</div>
+    </div>
+  </div>
   <div class="entry" data-date="2026-06-26" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Shopee MY Seller Center, Google Sheet FBS Claim, employee FBS Claim webapp" data-result="warn">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
