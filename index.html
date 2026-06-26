@@ -663,13 +663,13 @@ header.page::after{
   </div>
 </div>
 
-  <div class="entry" data-date="2026-06-26" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center wallet" data-result="warn">
+  <div class="entry" data-date="2026-06-26" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center wallet" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">checkfbsclaims FBS Claim sheet/webapp status sync 2026-06-26</span>
-      <span class="entry-meta">2026-06-26 MYT &amp; 536 webapp cases &amp; sheet plan 0 &amp; action plan 0 &amp; webapp gaps 0 &amp; FINAL_STATUS PARTIAL</span>
+      <span class="entry-meta">2026-06-26 MYT &amp; 536 webapp cases &amp; sheet plan 0 &amp; action plan 0 &amp; webapp gaps 0 &amp; FINAL_STATUS OK</span>
       <span class="tag">checkfbsclaims</span>
-      <span class="tag result-warn">Partial</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Ran the scheduled Codex FBS Claim status sync for MurahYa, KarlMobel, ValueSnap, and Luxbin without invoking Claude or a legacy launcher. Used locked Sheet/webapp mapping, live Google Sheet header/metadata grounding, employee FBS Claim API readback, and Shopee MY Seller Center wallet verification through profile 70. No WhatsApp or customer messages were sent.</p>
@@ -1055,8 +1055,8 @@ header.page::after{
       </ul></div>
       <div class="field"><strong>Reason for change:</strong> scheduled twice-weekly FBS Claim status sync, including supported Sheet status propagation, safe Action derivation/backfill, Sheet append of current webapp-only cases, and wallet evidence verification for credited/recovered support.</div>
       <div class="field"><strong>Evidence:</strong> report <code>C:/Users/tessf/Documents/fbs-claim-reports/fbs-claim-status-2026-06-26.md</code>; raw evidence folder <code>C:/Users/tessf/Documents/fbs-claim-reports/raw-2026-06-26</code>; consolidated ledger <code>C:/Users/tessf/Documents/fbs-claim-reports/raw-2026-06-26/fbs_claim_changes_20260626.json</code>; final readback <code>C:/Users/tessf/Documents/fbs-claim-reports/raw-2026-06-26/fbs-sync-2026-06-26-final-readback-after-append</code>; append readback <code>C:/Users/tessf/Documents/fbs-claim-reports/raw-2026-06-26/fbs-sheet-append-2026-06-26/duplicate-and-append-readback.json</code>; wallet evidence <code>C:/Users/tessf/Documents/fbs-claim-reports/raw-2026-06-26/fbs-wallet-verify-2026-06-26</code>.</div>
-      <div class="field"><strong>Result:</strong> partial. Operational readback is clean: final supported Sheet patch plan <code>0</code>, final Action patch plan <code>0</code>, webapp-only current cases not in Sheet <code>0</code>, duplicate Sheet order rows <code>0</code>, wallet targets verified <code>24/24</code>, wallet errors <code>0</code>, wallet mismatches <code>0</code>. The report last line is <code>FINAL_STATUS: PARTIAL</code>.</div>
-      <div class="field"><strong>Outstanding / Patricia may have missed:</strong> unsupported/free-text Sheet values <code>148</code> remain report-only and were not guessed; Sheet rows with values not currently in webapp <code>26</code> remain report-only; suspect closures <code>97</code> remain approval-held. No current webapp-only Sheet gap remains.</div>
+      <div class="field"><strong>Result:</strong> completed. Operational readback is clean: final supported Sheet patch plan <code>0</code>, final Action patch plan <code>0</code>, webapp-only current cases not in Sheet <code>0</code>, duplicate Sheet order rows <code>0</code>, wallet targets verified <code>24/24</code>, wallet errors <code>0</code>, wallet mismatches <code>0</code>. The report last line is <code>FINAL_STATUS: OK</code> after Patricia status correction.</div>
+      <div class="field"><strong>Report-only visibility / Patricia may have missed:</strong> unsupported/free-text Sheet values <code>148</code>, Sheet-only rows <code>26</code>, and suspect closures <code>97</code> remain visible for review but are not active sync blockers. No current webapp-only Sheet gap remains.</div>
       <div class="field"><strong>Profile cleanup:</strong> profile 70 <code>k1b44nvg</code> was already active on debug port <code>51452</code>; Codex attached via <code>/browser/active</code> and did not stop it. No non-profile-70 AdsPower profile was opened.</div>
     </div>
   </div>
