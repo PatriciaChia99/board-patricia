@@ -639,6 +639,30 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-06-27" data-shops="TT Adelmar, TT Jager, TT Valuesnap" data-platform="TikTok/Lazada + internal webapp" data-result="ok">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">ttparcelclaim+check daily follow-up - Codex 2026-06-27</span>
+    <span class="entry-meta">2026-06-27 09:06 MYT &middot; 5 PATCHes &middot; health 0/0/2/0 -&gt; 0/0/0/0 &middot; coverage 16/16 alive</span>
+    <span class="tag">ttparcelclaim</span>
+    <span class="tag">ttparcelclaimcheck</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Codex ran the 08:55 MYT ttparcelclaim scheduled replacement for 2026-06-27. It verified profile 70, fetched current internal webapp state, ran ttparcelclaimcheck health audits, generated the coverage and WH reminder reports, and did not execute Claude or the legacy launcher.</p>
+    <div class="field"><strong>Date:</strong> 2026-06-27 MYT.</div>
+    <div class="field"><strong>Task:</strong> ttparcelclaim+check daily follow-up.</div>
+    <div class="field"><strong>Every webapp PATCH before -&gt; after:</strong><br>C1882 / 584135475465389928 / TT Adelmar / RM 244.09: action WH Evidence -&gt; Closed; refund_state Withdrawn -&gt; Withdrawn; action WH Evidence -&gt; Closed; followup_dt 2026-06-12 -&gt; 2026-06-12; return_status Delivery Done -&gt; Delivery Done. Reason: Rule 12b terminal-state orphan sweep. Evidence: Live refund_state is terminal but action_needed is not Closed. Result: HTTP 200<br>C2032 / 584302178891171093 / TT Jager / RM 99.90: action CS Follow‑Up -&gt; Closed; refund_state Credited -&gt; Credited; action CS Follow‑Up -&gt; Closed; followup_dt 2026-06-12 -&gt; 2026-06-12; return_status Lost -&gt; Lost. Reason: Rule 12b terminal-state orphan sweep. Evidence: Live refund_state is terminal but action_needed is not Closed. Result: HTTP 200<br>C2240 / 584664061733930967 / TT Valuesnap / RM 36.88: remark [[POST 1995 parcelclaim-auto Codex scheduled - failed_delivery intake; dedupe-by-order_id all refund_states; no WhatsApp]][[POST 2026-06-25 parcelclaim-auto Codex scheduled - failed_delivery intake; dedupe-by-order_id all refund_states; no WhatsApp; corrected audit date from 1995 launch-env typo]][25/6 AUDIT - TT profile 65 TT Valuesnap live FD API evidence from parcelclaim-auto; tracking 3268265426148952023; source 2026-06-24 11:14:30; triage pending; no state flip; no WhatsApp.][RTS PENDING OPEN 26/6] -&gt; [27/6 WITHDRAW - WH confirmed resellable.]; refund_state Pending -&gt; Pending; action WH Action -&gt; WH Action; followup_dt 2026-06-26 -&gt; 2026-06-26; return_status Delivery Done -&gt; Delivery Done. Reason: Rule 12 closeable cleanup. Evidence: return_type=resell or explicit WH PIC RESELL token. Result: HTTP 200<br>C2240 / 584664061733930967 / TT Valuesnap / RM 36.88: refund_state Pending -&gt; Withdrawn; refund_state Pending -&gt; Withdrawn; action WH Action -&gt; WH Action; followup_dt 2026-06-26 -&gt; 2026-06-26; return_status Delivery Done -&gt; Delivery Done. Reason: Rule 12 closeable cleanup. Evidence: WH resell confirmation is present. Result: HTTP 200<br>C2240 / 584664061733930967 / TT Valuesnap / RM 36.88: action WH Action -&gt; Closed; refund_state Pending -&gt; Pending; action WH Action -&gt; Closed; followup_dt 2026-06-26 -&gt; 2026-06-26; return_status Delivery Done -&gt; Delivery Done. Reason: Rule 12 closeable cleanup. Evidence: Case moved to terminal Withdrawn. Result: HTTP 200</div>
+    <div class="field"><strong>Operational counters before -&gt; after:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp creates/POSTs 0 -&gt; 0; webapp patches 0 -&gt; 5.</div>
+    <div class="field"><strong>Webapp health before -&gt; after:</strong> records 323 -&gt; 323; Pending 62 -&gt; 61; Pending RM 17322.37 -&gt; 17285.49; due 62 -&gt; 61; fu_null 0 -&gt; 0; rs_null 0 -&gt; 0; an_null 0 -&gt; 0; orphan_2b 2 -&gt; 0; orphan_2c 0 -&gt; 0; Rule 24 hard mismatches 0 -&gt; 0.</div>
+    <div class="field"><strong>Shops:</strong> TT Adelmar, TT Jager, TT Valuesnap.</div>
+    <div class="field"><strong>Platform:</strong> TikTok/Lazada + internal webapp.</div>
+    <div class="field"><strong>Reason:</strong> Scheduled daily follow-up, Rule 12/12b cleanup, Rule 8/18/24 health crosscheck, Rule 15 coverage, and Rule 16 WH reminder refresh.</div>
+    <div class="field"><strong>Evidence:</strong> Profile 70 host guard passed; live API fetched 323 records; coverage probe 16/16 ALIVE, 0 LOGIN_EXPIRED, 0 NOT_PROBED; reports saved to <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-06-27.md</code> and <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-06-27.md</code>.</div>
+    <div class="field"><strong>Result:</strong> ok - reports generated, WH URL refreshed locally, crosscheck health fu_null=0 / rs_null=0 / an_null=0 / orphan_2b=0 / orphan_2c=0 / hard_action_mismatch=0.</div>
+  </div>
+</div>
+
 <!-- POST-RELOGIN-BUSINESS-CLOSEOUT-2026-06-26 -->
   <div class="entry" data-date="2026-06-26" data-shops="TikTok, Lazada, ShopeeMY, ShopeeSG" data-platform="Parcel Claim, Return Items, CSRR, AdsPower" data-result="partial">
     <div class="entry-summary">
