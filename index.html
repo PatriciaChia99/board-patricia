@@ -624,6 +624,19 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-30" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="FBS Claim webapp artifacts, Google Sheet FBS Claim, report closeout" data-result="ok">
+    <details open>
+      <summary><span class="entry-title">checkfbsclaims pending credited amount clarification 2026-06-30</span></summary>
+      <p><strong>Brief:</strong> Followed up on Patricia's correction that `pending_seller` is pending us to take back the item, not pending wallet credit. Separated the remaining held Action suggestions into 55 `pending_credited` money-in checks and 1 `pending_seller` item-takeback row.</p>
+      <div class="field"><strong>Before -&gt; after values:</strong><ul><li>Remaining Action suggestions interpretation: <code>56 held together -&gt; 55 pending_credited + 1 pending_seller item-takeback</code>.</li><li>Pending credited case-level net total: <code>unknown -&gt; RM3537.62</code> across 55 cases.</li><li>Pending credited product-price total: <code>unknown -&gt; RM5483.91</code> across 53 cases with product price present.</li><li>Wallet Adjustment remark amount total: <code>unknown -&gt; RM980.31</code> across 9 rows; Seller escrow released remark net total <code>RM2803.22</code> across 45 rows; no-remark net total <code>RM35.74</code> across 1 row.</li><li>Unsupported Sheet values: <code>48 unspecified -&gt; all qc_judgement values</code>: DELIVERY FAILED 35, LOST 3, Refund Only 3, Disposed 2, Dispute 2, 12/5 Judged 1, Failed Delivery 1, In Transit 1.</li></ul></div>
+      <div class="field"><strong>Shop / platform:</strong> MurahYa, KarlMobel, ValueSnap, Luxbin; FBS Claim webapp artifacts and FBS Claim Google Sheet report artifacts.</div>
+      <div class="field"><strong>Reason for change:</strong> Patricia asked how much wallet/money-in amount is represented by the pending credited cases and what the 48 unsupported values are. User correction recorded that pending seller remains item retrieval.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-fbs-claim-20260630/pending_credited_amounts_unsupported_20260630.md</code>; <code>tmp-fbs-claim-20260630/held_pending_credited_amounts_20260630.csv</code>; <code>tmp-fbs-claim-20260630/unsupported_sheet_values_summary_20260630.csv</code>; updated report <code>C:\Users\tessf\Documents\fbs-claim-reports\fbs-claim-status-2026-06-30.md</code>.</div>
+      <div class="field"><strong>Result:</strong> <code>OK_WITH_ACTION_ITEMS</code>. No business writes were made; this was a reporting/error-log correction.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> The RM3537.62 total is from case-level <code>net_amount_rm</code>, not an independent Shopee wallet ledger reconciliation. Need wallet ledger/source check before closing pending credited rows as paid. Pending seller remains item-takeback.</div>
+    </details>
+  </div>
+
   <div class="entry" data-date="2026-06-30" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Shopee MY Seller Center source, AdsPower profile 70, Google Sheet FBS Claim, employee FBS Claim webapp" data-result="ok">
     <details open>
       <summary><span class="entry-title">checkfbsclaims source login recovery safe updates 2026-06-30</span></summary>
