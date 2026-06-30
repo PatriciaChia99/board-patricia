@@ -624,6 +624,21 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+    <div class="entry" data-date="2026-06-30" data-status="completed" data-skill="checkfbsclaims">
+      <div class="entry-summary">
+        <span class="entry-title">checkfbsclaims QC logic cleanup 2026-06-30</span>
+        <span class="entry-status">completed</span>
+      </div>
+      <div class="entry-body">
+        <div class="field"><strong>Task:</strong> Patricia asked whether the 48 unsupported Sheet QC values could be settled by logic using current employee FBS webapp state. Applied only the supported, unambiguous webapp QC cleanup.</div>
+        <div class="field"><strong>Shop/platform:</strong> KarlMobel and Luxbin on employee FBS Claim webapp. No Sheet, wallet, source, Action, Claim Status, customer-message, WhatsApp, stock, marketplace, or webapp-create writes were made.</div>
+        <div class="field"><strong>Before -&gt; after values:</strong><ul><li>KarlMobel QC <code>blank -&gt; received</code> for case/order: <code>416/260425PQ7TRUGT</code>, <code>420/260410E9JK9DXK</code>, <code>425/260323T4ES31P0</code>, <code>426/2604051MPAY5F9</code>, <code>375/2601153VJ098G1</code>, <code>366/2603047T7K0VK1</code>, <code>410/2605249EMDFFA6</code>, <code>306/260524972S1ES7</code>, <code>414/260502CBQ73W0W</code>, <code>428/260222D07FXGJD</code>, <code>432/25081854NSP3KC</code>, <code>433/250716APM72H0C</code>, <code>434/250601BY2XJJMX</code>, and <code>25488/2606047K2WD62W</code>. Reason: Sheet QC had delivery-failed free text but Sheet remark said <code>Received &gt; Done</code>.</li><li>KarlMobel QC <code>blank -&gt; liquidate</code> for case/order: <code>417/260414S180J9B2</code>, <code>413/260516HA2N3DN3</code>, and <code>427/2603049HY9C82H</code>. Reason: Sheet QC had delivery-failed free text but Sheet remark said <code>Liquidate &gt; Done</code>.</li><li>Luxbin QC <code>blank -&gt; rts</code> for case/order <code>439/260504GS82B2BH</code>. Reason: Sheet Status was <code>RTS</code>, webapp Claim Status was <code>pending_seller_collect_item</code>, webapp Action was <code>pending_seller</code>, and Patricia approved the inference.</li><li>Patch result <code>0 applied -&gt; 18 applied</code>; readback <code>0 -&gt; 18/18</code>; failures <code>0</code>.</li><li>Post-patch dry-run stayed clean: Sheet plan <code>0</code>, Action plan <code>0</code>, suspect closures <code>0</code>, webapp-not-in-Sheet <code>0</code>, Sheet-only rows <code>4</code>, unsupported Sheet values <code>48</code>.</li></ul></div>
+        <div class="field"><strong>Evidence:</strong> patch plan <code>tmp-fbs-claim-20260630/fbs_qc_logic_cleanup_patch_plan_20260630.json</code>; patch/readback <code>tmp-fbs-claim-20260630/fbs-qc-logic-cleanup-20260630/manual_patch_results.json</code>; post-patch dry-run <code>tmp-fbs-claim-20260630/fbs-sync-2026-06-30-after-qc-cleanup/summary.json</code>; closeout report <code>tmp-fbs-claim-20260630/fbs-qc-logic-cleanup-20260630.md</code>.</div>
+        <div class="field"><strong>Result:</strong> Completed. The webapp QC fields that could be logically mapped to supported enums were settled. Remaining unsupported Sheet QC/free-text values stay report-only unless Patricia approves exact Sheet cleanup or a future run finds another unambiguous supported QC value.</div>
+        <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> No webapp-not-in-Sheet gap remains. Four Sheet-only rows remain: KarlMobel <code>250615J9VMRV4J</code>, <code>2504149VXXPQPP</code>, <code>2604064C3V9W6W</code>, and ValueSnap <code>260513B5W8W7CR</code>. The unsupported Sheet count still displays <code>48</code> because Sheet cells were not changed; this cleanup was webapp-only.</div>
+      </div>
+    </div>
+
   <div class="entry" data-date="2026-06-30" data-shops="N/A" data-platform="Windows Task Scheduler + Codex scheduled runner" data-result="complete">
     <span class="entry-title">scheduleautomation upgrade 2026-06-30</span>
     <span class="entry-meta">2026-06-30 21:35 MYT - tooling schedule upgrade - N/A - Windows Task Scheduler + Codex</span>
