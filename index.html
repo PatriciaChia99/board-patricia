@@ -624,6 +624,25 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-30" data-shops="N/A" data-platform="Windows Task Scheduler + Codex scheduled runner" data-result="complete">
+    <span class="entry-title">scheduleautomation upgrade 2026-06-30</span>
+    <span class="entry-meta">2026-06-30 21:35 MYT - tooling schedule upgrade - N/A - Windows Task Scheduler + Codex</span>
+    <span class="tag">schedule</span>
+    <div class="entry-summary">Added the 09:10 profile-login preflight gate, non-clashing scheduled skill times, Codex TT Ratings coverage, shared profile locks, and weekend SB contact-only/no-stock enforcement.</div>
+    <div class="entry-body">
+      <div class="field"><strong>Task:</strong> Improve the daily/weekend skill schedule setup with compulsory profile-login preflight, profile-clash prevention, TT Ratings coverage, weekend SB contact-only handling, and clearer blocked/partial logging.</div>
+      <div class="field"><strong>Shop:</strong> N/A. <strong>Platform:</strong> Windows Task Scheduler, Codex scheduled runner, PowerShell wrappers, AdsPower profile gates.</div>
+      <div class="field"><strong>Before -&gt; after:</strong> Codex runner scheduled jobs <code>11 -&gt; 13</code>; compulsory profile preflight scheduled tasks <code>0 -&gt; 3</code> at <code>09:10/09:25/09:40</code>; TT Ratings Codex scheduled coverage <code>missing -&gt; checkttrating at 13:50</code>; old <code>TTSessionPreflight_830AM</code> <code>Ready -&gt; Disabled</code>; old <code>TTRatingCheck_5PM</code> <code>Ready -&gt; Disabled</code>; Return Items schedule <code>10:50 -&gt; 16:10 daily</code>; Parcel Split <code>10:00 -&gt; 16:55 daily</code>; SB Variation <code>10:10 -&gt; 14:55 daily</code>; CSRR Credited <code>10:30 -&gt; 13:50 daily</code>; Parcelclaim auto <code>09:45 -&gt; 10:20 daily</code>; TT RR Audit <code>11:30 -&gt; 11:55 daily</code>; TT Parcel Claim <code>08:55 -&gt; 12:30 daily</code>; business/customer/stock/marketplace/webapp writes <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Reason for change:</strong> Patricia starts work around 09:00-09:10, so 08:00/08:30 gates were unsafe; the old schedule clustered profile 70, TT, Lazada, profile 84, Return Items, and SB work too tightly; TT Ratings was outside the Codex runner and the old 5 PM task had failure history.</div>
+      <div class="field"><strong>Result:</strong> <code>COMPLETE_SCHEDULE_UPGRADE</code>. Added <code>profile-requirements.json</code>, preflight and TT Ratings scheduled prompts, runner profile gate/block reports, resource locks, SB weekend contact-only/no-stock wrapper guard, and installed updated Windows triggers.</div>
+      <div class="field"><strong>Evidence:</strong> runner self-test showed all configured prompts present including <code>profile-login-preflight</code> and <code>checkttrating</code>; installer verification showed new task times and old TT tasks disabled; parser checks passed for runner/installer/SB wrapper; <code>npm test</code> passed <code>4/4</code>; backups saved under <code>tmp-schedule-upgrade-20260630\backups-20260630-implement</code>.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> the new profile preflight has not yet performed tomorrow's live login verification; if skill files are edited again after this closeout, re-run the latest-file audit before further schedule edits. No business workflow was run by this tooling change.</div>
+    </div>
+  </div>
+
+
+
+
 <!-- SG-GAP-MONITOR-2026-06-30 -->
 <div class="entry" data-date="2026-06-30" data-shops="Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok-with-action-items">
   <div class="entry-summary">
