@@ -624,6 +624,19 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-30" data-shops="N/A" data-platform="Windows Task Scheduler + Codex scheduled runner" data-result="complete">
+    <h2>codex terminal stop investigation and runner repair 2026-06-30</h2>
+    <div class="meta">2026-06-30 - tooling repair - N/A - Windows Task Scheduler + Codex</div>
+    <p><strong>Brief:</strong> Patricia reported Codex was stopping the terminal/skills mid-run without consent. I checked repo stop commands, scheduler evidence, stale sidecar cleanup evidence, and the scheduled runner configuration.</p>
+    <div class="field"><strong>Task:</strong> Identify why scheduled skills were interrupted and restore reliable scheduled-runner behavior.</div>
+    <div class="field"><strong>Shop:</strong> N/A. <strong>Platform:</strong> Windows Task Scheduler + Codex scheduled runner + PowerShell.</div>
+    <div class="field"><strong>Before -&gt; after:</strong> direct terminal-kill commands <code>0 found -&gt; 0 found</code>; generic scheduled runner <code>missing -&gt; restored</code>; supported runner jobs <code>0 usable generic runner -&gt; 10 mapped jobs self-test OK</code>; scheduled stop evidence <code>11 tasks Ready -&gt; Disabled</code> at <code>2026-06-30 09:18 MYT</code>; re-enable task <code>absent -&gt; Ready</code> for <code>2026-07-01 00:05 MYT</code>; business/customer/stock/marketplace/webapp writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Reason for change:</strong> scheduled jobs were vulnerable because the generic runner file referenced by Task Scheduler was missing, and the same-day stop/disable action can terminate hidden scheduled jobs mid-run.</div>
+    <div class="field"><strong>Result:</strong> <code>COMPLETE_TOOLING_REPAIR_WITH_SCHEDULER_CAUSE_IDENTIFIED</code>. Restored <code>.agents\scheduled-codex\run-codex-scheduled.ps1</code> with prompt-backed, direct Python, and monthly-guard job handling plus mutex/failure artifacts.</div>
+    <div class="field"><strong>Evidence:</strong> closeout <code>tmp-codex-terminal-stop-20260630\codex-terminal-stop-investigation-2026-06-30.md</code>; scheduler stop readback <code>tmp-schedule-stop-20260630\scheduler-stop-readback-20260630.json</code>; final readback <code>tmp-schedule-stop-20260630\final-scheduler-readback-20260630.json</code>; sidecar cleanup closeout <code>tmp-sidecar-cleanup-20260630\sidecar-hang-cleanup-closeout-2026-06-30.md</code>; parser/self-test logs under <code>C:\Users\tessf\Documents\codex-scheduled-logs</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> live Scheduler reads still need elevated/admin access for full current-state inventory; the temporary hold re-enable is expected at <code>2026-07-01 00:05 MYT</code>; monthly <code>shopee-shipping-claim</code> due-day still needs a Codex-native runner/prompt before day 15.</div>
+  </div>
+
   <div class="entry" data-date="2026-06-30" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Shopee MY Seller Center source, AdsPower profile 70, Google Sheet FBS Claim, employee FBS Claim webapp" data-result="partial">
     <details open>
       <summary><span class="entry-title">checkfbsclaims source login retry still blocked 2026-06-30</span></summary>
