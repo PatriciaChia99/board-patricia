@@ -624,6 +624,22 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-30" data-shops="N/A" data-platform="Codex local sidecars" data-result="complete">
+    <h2>codex skill sidecar hang cleanup 2026-06-30</h2>
+    <div class="meta">2026-06-30 - tooling cleanup - N/A - Codex local sidecars</div>
+    <p><strong>Brief:</strong> Patricia reported that the skills running beside Codex were hanging. I inspected the local process tree, stopped stale Codex resume/session sidecars, and left the active Codex session intact.</p>
+    <div class="field"><strong>Result:</strong> <code>COMPLETE_TOOLING_CLEANUP</code>. Business writes <code>0 -&gt; 0</code>. Customer/WhatsApp messages <code>0 -&gt; 0</code>. Stock/marketplace writes <code>0 -&gt; 0</code>. Webapp writes <code>0 -&gt; 0</code>.</div>
+    <ul>
+      <li><strong>Active session:</strong> <code>42904 -&gt; 33584 -&gt; 13964</code> present before cleanup -&gt; still present after cleanup. Shop/platform: N/A / Codex local CLI. Reason: avoid stopping the current Codex work session. Result: preserved.</li>
+      <li><strong>Stale resume/session trees:</strong> <code>7 -&gt; 0</code>. Shop/platform: N/A / Codex local CLI. Reason: older resume trees from 12:15, 12:17, 12:22, 15:05, 15:25, and 16:25 MYT were still alive. Result: stopped.</li>
+      <li><strong>Stale target processes:</strong> <code>44 -&gt; 0</code>. Includes stale <code>codex.exe</code>, <code>node.exe</code>, <code>node_repl.exe</code>, and PowerShell shell-worker children. Shop/platform: N/A / local sidecars. Reason: clear hung skill processes. Result: stopped and read back absent.</li>
+      <li><strong>Hanging SiteGiant daily child:</strong> <code>process 41440 running under old 34508 tree -&gt; stopped</code>. Shop/platform: returnitems tooling / SiteGiant daily lookup. Reason: child remained alive under a stale Codex tree. Result: stopped; rerun deliberately if still needed.</li>
+      <li><strong>Final sidecar state:</strong> stale MCP bundles <code>6 -&gt; 0</code>, stale node REPLs <code>7 -&gt; 0</code>, stale shell workers <code>7 -&gt; 0</code>. Current session kept one MCP bundle, one node REPL, and one shell worker.</li>
+      <li><strong>Error log:</strong> no current sidecar-hang lesson -&gt; <code>.agents/error-log.md</code> updated. Reason: durable correction. Result: logged.</li>
+    </ul>
+    <div class="field"><strong>Evidence:</strong> closeout report <code>tmp-sidecar-cleanup-20260630\sidecar-hang-cleanup-closeout-2026-06-30.md</code>; board logger <code>tmp-sidecar-cleanup-20260630\log_patricia_board_sidecar_cleanup_20260630.ps1</code>; board readback result <code>tmp-sidecar-cleanup-20260630\board_update_result_sidecar_cleanup_20260630.json</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> no active local sidecar hang remains in the checked process tree. If the stopped old SiteGiant daily child was expected to finish useful returnitems work, rerun it deliberately from a fresh session instead of trusting the hung process.</div>
+  </div>
   <div class="entry" data-date="2026-06-30" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center source" data-result="partial">
     <h2>checkfbsclaims source login blocker closeout 2026-06-30</h2>
     <div class="meta">2026-06-30 - checkfbsclaims - MurahYa, KarlMobel, ValueSnap, Luxbin - Shopee MY / FBS Claim</div>
