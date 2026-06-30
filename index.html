@@ -645,6 +645,27 @@ header.page::after{
   <div class="entry" data-date="2026-06-30" data-shops="all configured parcelclaim-auto shops" data-platform="TikTok MY + Lazada MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto final 2026-06-30 - completed, report corrected to 10 current cases</span>
+      <span class="entry-meta">2026-06-30 MYT &middot; FINAL_STATUS OK &middot; 16/16 profiles OK &middot; C2323-C2332 readback 10/10</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Corrected the official parcelclaim-auto report file after the final verification pass overwrote the visible posted-count summary. The employee webapp data was not reposted; C2323-C2332 were already present and read back successfully.</p>
+      <div class="field"><strong>Before -&gt; after values:</strong> official report <code>NEW POSTed this run 0 -&gt; 10</code>; posted value <code>RM 0.00 -&gt; RM 3121.18</code>; webapp rows <code>331 -&gt; 341</code>; closeout status <code>verification posted_count 0 -&gt; consolidated posted_count 10</code>; final verification remaining new cases <code>0</code>; profile errors <code>0</code>; post skips <code>0</code>.</div>
+      <div class="field"><strong>Current cases posted/readback:</strong> C2323, C2324, C2325, C2326, C2327, C2328, C2329, C2330, C2331, C2332. Readback confirmed <code>10/10</code>.</div>
+      <div class="field"><strong>Shop / platform:</strong> TikTok shops DasNature, Hiranai, KarlMobel, MurahYa, Valuesnap for the posted cases; full verification covered all configured TikTok profiles 54-67 and Lazada profiles 81-83; destination employee webapp profile 70.</div>
+      <div class="field"><strong>Reason:</strong> Patricia requested the file issue fixed and the 10 current cases shown as completed. The stale summary came from a later dedupe-only verification run, not from missing posts.</div>
+      <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-06-30.md</code>; closeout <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_final_closeout_2026-06-30.json</code>; posted-case readback <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_posted_c2323_c2332_readback_2026-06-30.json</code>; cleanup <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_profile_cleanup_2026-06-30.json</code>.</div>
+      <div class="field"><strong>Validation:</strong> report readback shows <code>NEW POSTed this run | 10</code> and <code>FINAL_STATUS: OK</code>; closeout readback shows <code>posted_count: 10</code> and final verification <code>remaining_new_cases: 0</code>; C2323-C2332 are listed in the report as Pending/confirmed.</div>
+      <div class="field"><strong>Result:</strong> completed.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> none for today's parcelclaim-auto. Final verification found 0 remaining new current/latest cases.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-date="2026-06-30" data-shops="all configured parcelclaim-auto shops" data-platform="TikTok MY + Lazada MY" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
       <span class="entry-title">parcelclaim-auto final 2026-06-30 - completed after current FD/RR rerun</span>
       <span class="entry-meta">2026-06-30 MYT &middot; FINAL_STATUS OK &middot; 16/16 profiles OK &middot; same-session posts C2323-C2332 readback 10/10</span>
       <span class="tag">parcelclaim-auto</span>
