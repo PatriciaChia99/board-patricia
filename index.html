@@ -624,6 +624,27 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<!-- PARCELCLAIM-AUTO-SKILL-UPDATE-2026-06-30 -->
+  <div class="entry" data-date="2026-06-30" data-shops="TikTok all configured, Lazada all configured" data-platform="TikTok MY + Lazada MY + Codex skill" data-result="ok">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto skill update - current FD/RR direct-post rule locked</span>
+      <span class="entry-meta">2026-06-30 MYT &middot; latest/current TikTok + Lazada parcelclaim-auto only &middot; old FD out of scope</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-ok">Completed</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Updated the Codex parcelclaim-auto workflow so future runs use Patricia's standing instruction: create/patch latest/current TikTok failed-delivery, TikTok R/R, and Lazada R/R cases directly after login verification and all-state order_id dedupe; do not ask approval for those in-scope current cases.</p>
+      <div class="field"><strong>Task/date:</strong> 2026-06-30 parcelclaim-auto skill/workflow update.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> Codex skill <code>absent -&gt; .agents/skills/parcelclaim-auto/SKILL.md</code>; skill UI metadata <code>absent -&gt; agents/openai.yaml</code>; legacy FD cutoff config <code>source_date_cutoff_days_fd null -&gt; 30</code>; old FD status rule <code>could be treated as partial blocker -&gt; evidence-only out of scope</code>; status regression test <code>absent -&gt; tools/parcelclaim_auto_status_test.py</code>.</div>
+      <div class="field"><strong>Shop / platform:</strong> all configured TikTok MY profiles 54-67 and Lazada MY profiles 81-83; destination employee webapp profile 70.</div>
+      <div class="field"><strong>Approval rule:</strong> latest/current dedupe-new TikTok FD, TikTok R/R, and Lazada R/R cases may be posted and remark-patched directly. Old/backfill FD, customer messages, WhatsApp, stock writes, SiteGiant/seller writes, and non-parcelclaim actions still require explicit scope/approval.</div>
+      <div class="field"><strong>Reason:</strong> Patricia clarified this skill exists to ensure all latest/current FD and R/R cases for TikTok and Lazada shops are patched without repeated approval prompts, while old FD backlog should not be worked.</div>
+      <div class="field"><strong>Evidence / validation:</strong> <code>.agents/skills/parcelclaim-auto/SKILL.md</code>, <code>C:\Users\tessf\.claude\skills\parcelclaim-auto\config.json</code>, and <code>tools/parcelclaim_auto_status_test.py</code>. Validation: Python py_compile passed, status regression test passed, npm test passed, git diff --check passed with existing AGENTS.md LF/CRLF warning. Skill quick_validate could not run because local Python lacks PyYAML; manual frontmatter/metadata check passed.</div>
+      <div class="field"><strong>Result:</strong> completed. Current/latest parcelclaim-auto posting does not need a separate approval ask; old FD backlog remains out of scope unless Patricia explicitly names it.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> June 29 parcelclaim-auto posted/readback rows were confirmed, but official all-shop lane was not a clean OK artifact because the post-login finalizer hung and the earlier report had login blockers. June 30 parcelclaim-auto is the clean OK baseline after the fix.</div>
+    </div>
+  </div>
 <!-- TTPARCELCLAIM-CONTINUATION-2026-06-30 -->
   <div class="entry" data-date="2026-06-30" data-shops="TT Hiranai, TT Jager, TT KarlMobel, TT Valuesnap, TT JagerHelmet, Lazada MurahYa" data-platform="TikTok/Lazada + internal webapp" data-result="ok">
     <div class="entry-summary">
