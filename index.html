@@ -624,6 +624,20 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-06-30" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Shopee MY Seller Center source, AdsPower profile 70, Google Sheet FBS Claim, employee FBS Claim webapp" data-result="partial">
+    <details open>
+      <summary><span class="entry-title">checkfbsclaims source login retry still blocked 2026-06-30</span></summary>
+      <p><strong>Brief:</strong> Continued the FBS Claim run after Patricia asked to first confirm source login, rerun source rows, and only then apply verified safe updates. Profile 70 was opened from inactive state and the read-only Shopee source probe was retried. Seller Center source login still failed for all four required shops, so no FBS business writes were applied.</p>
+      <div class="field"><strong>Before -&gt; after values:</strong><ul><li>AdsPower profile 70 <code>k1b44nvg</code>: <code>Inactive -&gt; Active</code> on debug port <code>59171</code>.</li><li>Shopee source login: <code>blocked earlier -&gt; still blocked</code>; all four required shops returned <code>not_logged_in_or_missing_spc_cds</code>.</li><li>Source shops verified: <code>0/4 -&gt; 0/4</code>.</li><li>Source Return/Refund and Failed Delivery rows trusted: <code>0 -&gt; 0</code> because missing <code>SPC_CDS</code> is not valid zero-row evidence.</li><li>Employee FBS webapp Action patches: <code>planned 61 -&gt; applied 0</code>.</li><li>Google Sheet appends for ValueSnap webapp-only rows: <code>planned 4 -&gt; applied 0</code>.</li><li>Customer messages, WhatsApp, stock writes, marketplace writes, and business webapp creates: <code>0 -&gt; 0</code>.</li></ul></div>
+      <div class="field"><strong>Shop / platform:</strong> MurahYa, KarlMobel, ValueSnap, Luxbin; Shopee MY Seller Center source through AdsPower profile 70; employee FBS Claim webapp and Google Sheet FBS Claim remained held from writes.</div>
+      <div class="field"><strong>Reason for change:</strong> Patricia asked to continue checkfbsclaim but not apply blind updates. The source gate stayed blocked after reopening profile 70, so the safe result is another partial closeout with explicit retry evidence.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-fbs-claim-20260630/shopee-network-probe-20260630-retry/shopee_network_probe_summary.json</code>; continuation report <code>tmp-fbs-claim-20260630/fbs-claim-source-login-retry-2026-06-30.md</code>; original report <code>C:\Users\tessf\Documents\fbs-claim-reports\fbs-claim-status-2026-06-30.md</code>.</div>
+      <div class="field"><strong>Result:</strong> <code>PARTIAL_SOURCE_LOGIN_BLOCKED_RETRY</code>. No live business writes were applied.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> profile 70 Shopee Seller Center still needs manual re-login; the 61 webapp Action patches and 4 ValueSnap Sheet appends remain unapplied; ValueSnap <code>260513B5W8W7CR</code> remains pending FBS/team credit check; unsupported/free-text Sheet values remain report-only and are not today's active blocker.</div>
+    </details>
+  </div>
+
+
   <div class="entry" data-date="2026-06-30" data-shops="N/A" data-platform="Codex local sidecars" data-result="complete">
     <h2>codex skill sidecar hang cleanup 2026-06-30</h2>
     <div class="meta">2026-06-30 - tooling cleanup - N/A - Codex local sidecars</div>
