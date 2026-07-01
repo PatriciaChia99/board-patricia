@@ -624,6 +624,54 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-07-01" data-shops="multiple" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="partial">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto - 1/7 Codex run: 13 new / 13 posted / 0 DOM-only-catches / 2 errors</span>
+      <span class="entry-meta">2026-07-01 MYT &middot; Codex replacement for Claude launcher &middot; report C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-07-01.md</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-ok">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Brief:</strong> Codex ran the 09:45 parcelclaim-auto workflow for 1/7 without invoking Claude or the legacy batch. Scanned TikTok R/R, TikTok failed delivery, mandatory Phase 2.5 DOM cross-verify, and Lazada returns. Dedupe used fresh webapp order_id coverage across all refund states before every POST.</p>
+      <div class="field"><strong>Before -&gt; after operational counters:</strong> messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp creates 325 -&gt; 338; webapp remark patches 0 -&gt; 13.</div>
+      <div class="field"><strong>POST changes:</strong><ul><li>C2333 TT DasNature failed_delivery 584292932622714299 - RM 15.91 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2334 TT Hiranai failed_delivery 584286900971275940 - RM 2.70 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2335 TT Hiranai failed_delivery 584285329644291166 - RM 26.40 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2336 TT Hiranai failed_delivery 584224201450358249 - RM 16.64 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2337 TT Jager rr 584748098626684385 - RM 99.27 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2338 TT KarlMobel failed_delivery 584720831962842883 - RM 317.01 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2339 TT MurahYa failed_delivery 584757172728530564 - RM 7.39 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2340 TT MurahYa failed_delivery 584714019475588419 - RM 336.49 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2341 TT MurahYa failed_delivery 584294283548395010 - RM 270.82 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2342 TT MurahYa failed_delivery 584279797110507261 - RM 287.66 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2343 TT Valuesnap failed_delivery 584710796585764724 - RM 30.74 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2344 TT Valuesnap failed_delivery 584618385578297323 - RM 13.00 - before not in webapp -&gt; after Pending with audit remark</li>
+<li>C2345 TT JagerHelmet rr 584737624470488353 - RM 15.68 - before not in webapp -&gt; after Pending with audit remark</li></ul></div>
+      <div class="field"><strong>Evidence table:</strong><pre>54 TT Adelmar: RR 89 cards / 0 in-window / 0 posted; FD 34 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+55 TT DasNature: RR 204 cards / 1 in-window / 0 posted; FD 100 API + 1 DOM pages / Returning 0 / 1 posted / DOM-only 0
+56 TT Hiranai: RR 0 cards / 0 in-window / 0 posted; FD 169 API + 2 DOM pages / Returning 0 / 3 posted / DOM-only 0
+58 TT HiranaiMY: RR 0 cards / 0 in-window / 0 posted; FD 45 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+59 TT Jager: RR 110 cards / 3 in-window / 1 posted; FD 70 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+60 TT JagerArmor: RR 7 cards / 1 in-window / 0 posted; FD 1 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+61 TT JagerSafety: RR 0 cards / 0 in-window / 0 posted; FD 1 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+62 TT KarlMobel: RR 0 cards / 0 in-window / 0 posted; FD 297 API + 1 DOM pages / Returning 0 / 1 posted / DOM-only 0
+63 TT Lovento: RR 0 cards / 0 in-window / 0 posted; FD 0 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+64 TT MurahYa: RR 0 cards / 0 in-window / 0 posted; FD 437 API + 1 DOM pages / Returning 0 / 4 posted / DOM-only 0
+65 TT Valuesnap: RR 222 cards / 3 in-window / 0 posted; FD 271 API + 3 DOM pages / Returning 0 / 2 posted / DOM-only 0
+66 TT JagerHelmet: RR 226 cards / 3 in-window / 1 posted; FD 10 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
+67 TT Kinata: RR 4 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
+81 Lazada MurahYa: Lazada 0 rows / 0 in-window / 0 posted
+82 Laz das.nature: Lazada 0 rows / 0 in-window / 0 posted
+83 Lazada Lovento: Lazada 0 rows / 0 in-window / 0 posted</pre></div>
+      <div class="field"><strong>DOM cross-verify:</strong> 0 DOM-only catches. None.</div>
+      <div class="field"><strong>Crosscheck:</strong> 13/13 CONFIRMED; </div>
+      <div class="field"><strong>Reason:</strong> Daily scheduled intake of new TikTok/Lazada parcel-claim cases so CS does not miss R/R or failed-delivery cases.</div>
+      <div class="field"><strong>Evidence:</strong> Report saved at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-07-01.md</code>; raw JSON at <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-07-01.json</code>.</div>
+      <div class="field"><strong>Result:</strong> partial - 13 posted, 2 errors, board logged by Codex.</div>
+      <div class="field" data-board-log-id="parcelclaim-auto-20260701-closeout"><strong>Closeout / outstanding:</strong> FINAL_STATUS <code>PARTIAL</code>. TikTok scope completed: 13 new webapp rows <code>C2333-C2345</code> created and 13 audit remarks patched; crosscheck read back <code>13/13 CONFIRMED</code> with Pending state and matching amounts. Lazada scope remains partial: profile <code>81 Lazada MurahYa</code> and <code>83 Lazada Lovento</code> stayed on Lazada login after saved-password Enter/mouse retry (<code>login_expired</code>); profile <code>82 Laz das.nature</code> opened a Lazada chat page and returned 0 reverse rows, so no Lazada R/R row was posted. Profile cleanup readback left profile70 <code>Active -&gt; Active</code> on port <code>61713</code>; all source profiles <code>Inactive -&gt; Inactive</code>. Evidence: report <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-07-01.md</code>; raw <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-07-01.json</code>; stdout/stderr logs <code>_codex_parcelclaim_auto_2026-07-01.run.stdout.log</code>/<code>.stderr.log</code>; cleanup <code>_codex_parcelclaim_auto_profile_cleanup_2026-07-01.json</code>.</div>
+    </div>
+  </div>
 <div class="entry" data-date="2026-07-01" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Shopee MY Seller Center source, employee FBS webapp, Google Sheet FBS Claim" data-result="ok-with-action-items">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
