@@ -624,6 +624,26 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-07-01" data-shops="All scheduled Patricia skills" data-platform="Windows Task Scheduler + Codex scheduled runner + Patricia board" data-result="warn">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">scheduled skills manual rerun - 2026-07-01 all 13 reports present, scheduler repair needed</span>
+    <span class="entry-meta">2026-07-01 MYT &middot; manual rerun completed &middot; future scheduler wrapper missing</span>
+    <span class="tag">scheduled-codex</span>
+    <span class="tag">manual-rerun</span>
+    <span class="tag result-warn">Partial</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Codex manually reran the configured Patricia scheduled-skill scope after the registered Windows tasks had no current same-day report/log evidence and the central scheduled runner files were found missing.</p>
+    <div class="field" data-board-log-id="scheduled-skills-manual-rerun-20260701"><strong>Task/date:</strong> 2026-07-01 MYT scheduled skills manual rerun and scheduler-health closeout.</div>
+    <div class="field"><strong>Before -&gt; after scheduler state:</strong> same-day configured reports <code>missing/partial placeholders -&gt; 13/13 reports present</code>; central runner <code>.agents\scheduled-codex\run-codex-scheduled.ps1 present/expected -&gt; missing</code>; helper scripts <code>expected -&gt; .agents\scheduled-codex\scripts emptied</code>; restore attempt <code>needed -&gt; ACL denied writes</code>; operational runner <code>missing -&gt; restored copy used at tmp-schedule-rerun-20260701\manual-rerun-20260701-105130\run-codex-scheduled-restored.ps1</code>; stale blocked placeholders <code>4 active -&gt; quarantined</code>.</div>
+    <div class="field"><strong>Report status after rerun:</strong> profile-login-preflight <code>PARTIAL</code>; chataudit <code>PARTIAL</code>; sg-gap-monitor <code>OK_WITH_ACTION_ITEMS</code>; shopee-shipping-claim <code>OK</code>; parcelclaim-auto <code>PARTIAL</code>; tiktokrraudit <code>PARTIAL</code>; ttparcelclaim <code>PARTIAL</code>; checkttrating <code>OK</code>; csrrcredited <code>PARTIAL</code>; checksbvariation <code>PARTIAL</code>; checkfbsclaims <code>OK_WITH_ACTION_ITEMS</code>; returnitems-lookup <code>OK_WITH_ACTION_ITEMS</code>; parcelsplit-contact-crosscheck <code>COMPLETE</code>.</div>
+    <div class="field"><strong>Board/guard correction before -&gt; after:</strong> tiktokrraudit active board card <code>extra closing div / guard failed -&gt; repaired and guard passed</code>; private/public tiktokrraudit board card <code>local-only/dirty checkout -&gt; clean-clone private/public readback</code>; private/public blob <code>mismatch -&gt; bf5087ac82d883ac628c173cb5977fc582f99936 matched</code>; active display <code>330 stale entries -&gt; 345 validated entries</code>.</div>
+    <div class="field"><strong>Business safety counters for orchestration:</strong> customer messages <code>0 -&gt; 0</code>; WhatsApp/off-platform messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace writes <code>0 -&gt; 0</code>; destructive scheduler actions <code>0 -&gt; 0</code>. Individual skill reports list their own approved webapp/Sheet changes.</div>
+    <div class="field"><strong>Evidence:</strong> summary report <code>C:\Users\tessf\Documents\codex-scheduled-logs\manual-rerun-2026-07-01\manual-rerun-summary-2026-07-01.md</code>; summary JSON <code>C:\Users\tessf\Documents\codex-scheduled-logs\manual-rerun-2026-07-01\manual-rerun-summary-2026-07-01.json</code>; restored runner folder <code>tmp-schedule-rerun-20260701\manual-rerun-20260701-105130</code>; tiktokrraudit board sync evidence <code>tmp-board-public-resync-tiktokrraudit-20260701-195916\public-resync-readback-20260701.json</code>.</div>
+    <div class="field"><strong>Result / outstanding:</strong> manual rerun scope is closed for today at <code>FINAL_STATUS: PARTIAL</code>. Patricia may have missed that tomorrow's Windows scheduled runs should not be trusted until <code>.agents\scheduled-codex\run-codex-scheduled.ps1</code> and required scripts are restored with working ACLs and scheduled self-tests pass.</div>
+  </div>
+</div>
     <div class="entry" data-date="2026-07-01" data-shops="11 TT shops" data-platform="TikTok MY" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5438,5 +5458,6 @@ document.documentElement.classList.add('js-ready');
 </script>
 </body>
 </html>
+
 
 
