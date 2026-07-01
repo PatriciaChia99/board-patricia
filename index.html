@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <base href="/api/board/patricia/file/">
@@ -1065,6 +1065,24 @@ un-codex-scheduled.ps1</code> is missing and this session is denied write access
       <div class="field"><strong>Safety:</strong> Patched only <code>orderId/items/iskus</code>; iSKU source is ShopeeSG returned <code>product_items[].model.sku</code>. stockIds writes <code>0</code>; stock-in <code>0</code>; SiteGiant inventory writes <code>0</code>; marketplace/customer-message writes <code>0</code>. Profile70 was left active.</div>
       <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\returnitems-reports\returnitems-kinata-sg-profile70-rerun-2026-07-01.md</code>; lookup <code>tmp-returnitems\returnitems_20260701_profile70_kinata_shopeesg_keyword_lookup.json</code>; before <code>tmp-returnitems\returnitems_live_20260701_profile70_sg_before_patch.json</code>; plan <code>tmp-returnitems\returnitems_20260701_profile70_kinata_sg_patch_plan.json</code>; after <code>tmp-returnitems\returnitems_live_20260701_profile70_sg_after_patch.json</code>; verification <code>tmp-returnitems\returnitems_20260701_profile70_kinata_sg_patch_verification.json</code>.</div>
       <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> No active outstanding item remains for these six Kinata SG rows. Separate outstanding item: the schedule fix is still not handled in this correction pass.</div>
+      <div class="field" data-board-log-id="returnitems-session-closeout-schedule-fix-20260701"><strong>returnitems/checkreturnitems session closeout and schedule fix 2026-07-01:</strong> <span class="tag result-ok">Completed</span></div>
+      <div class="field"><strong>Task:</strong> End the 2026-07-01 returnitems/checkreturnitems session, save handoff, update the next scheduled prompt, and verify the Windows scheduled task.</div>
+      <div class="field"><strong>Shop/platform:</strong> Return Items webapp; ShopeeMY, TikTok, ShopeeSG; Kinata SG / ShopeeSG profile70 for the final correction.</div>
+      <div class="field"><strong>Reason:</strong> Patricia asked to save the session, remember the corrected SG/TikTok/search lessons, log mistakes automatically, and make the next schedule run with the corrected prompt.</div>
+      <div class="field"><strong>Every change before -&gt; after:</strong><ul>
+        <li>Scheduled prompt continuation pointer <code>continue-2026-07-01-returnitems-scheduled-prompt.md</code> -&gt; <code>continue-2026-07-02-returnitems-scheduled-prompt.md</code>.</li>
+        <li>Scheduled prompt carry-over stale SG no-found context -&gt; current 2026-07-01 closeout context with Kinata SG profile70 rows <code>14307-14312</code> marked found/patched/verified.</li>
+        <li>Installer runner path <code>.agents\scheduled-codex\run-codex-scheduled.ps1</code> -&gt; <code>.agents\scheduled-codex-runner\run-codex-scheduled.ps1</code>.</li>
+        <li>Windows task action <code>-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File &quot;C:\Users\tessf\code\codex-lab\.agents\scheduled-codex-runner\run-codex-scheduled.ps1&quot; -JobName returnitems-lookup</code> -&gt; <code>-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File &quot;C:\Users\tessf\code\codex-lab\.agents\scheduled-codex-runner\run-codex-scheduled.ps1&quot; -JobName returnitems-lookup</code>; task state <code>Ready</code> -&gt; <code>Ready</code>.</li>
+        <li>Windows task trigger <code>MSFT_TaskDailyTrigger:2026-07-01T15:50:00+08:00</code> -&gt; <code>MSFT_TaskDailyTrigger:2026-07-01T15:50:00+08:00</code>; installer self-test schedule <code>Daily 15:50</code>.</li>
+        <li>Main report SG rows <code>14307-14312 earlier not-found</code> -&gt; <code>final addendum supersedes as found/patched/verified</code>.</li>
+        <li>Error-log habit user correction <code>manual reminder needed</code> -&gt; <code>auto-log board and error logs at every closeout</code>.</li>
+      </ul></div>
+      <div class="field"><strong>Schedule verification:</strong> runner self-test prompt exists <code>true</code>; Codex command exists <code>true</code>; board guard exists <code>true</code>; task action <code>powershell.exe</code>; next run remains the next daily <code>15:50 MYT</code> run.</div>
+      <div class="field"><strong>Evidence saved:</strong> closeout report <code>C:\Users\tessf\Documents\returnitems-reports\session-closeout-2026-07-01-returnitems.md</code>; repo closeout <code>tmp-returnitems\session-closeout-2026-07-01-returnitems.md</code>; continuation prompt <code>continue-2026-07-02-returnitems-scheduled-prompt.md</code>; scheduled prompt <code>.agents\scheduled-codex\prompts\returnitems-lookup-scheduled.md</code>; task readback <code>tmp-returnitems\returnitems_20260701_schedule_task_readback.json</code>; self-tests <code>tmp-returnitems\returnitems_20260701_schedule_selftests.json</code>.</div>
+      <div class="field"><strong>Result:</strong> Session saved, schedule prompt/installer corrected, scheduled task readback verified, main report addendum saved, and error logs updated.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> No active unhandled item found from the SG/profile70 correction. The legacy Windows task name still contains <code>Weekend</code>, but the trigger is daily at <code>15:50 MYT</code>; next run should process only fresh/current rows or rows fresh readback proves still incomplete.</div>
+
 
 
     </div>
