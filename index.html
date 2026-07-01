@@ -5066,6 +5066,21 @@ profile 83 / Lazada Lovento / Lazada MY: ALIVE</pre></div>
   </div>
 
 </details>
+<div class="entry" data-date="2026-07-01" data-shops="All scheduled jobs" data-platform="Windows Task Scheduler,Codex scheduled logs" data-result="warn" data-skill="schedule-health">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">schedule health check - TT R/R audit and partial-status review 2026-07-01</span>
+    <span class="entry-meta">2026-07-01 MYT &middot; read-only check &middot; tiktokrraudit ran 14:02 PARTIAL &middot; checkttrating incomplete &middot; scheduler readback not approved</span>
+    <span class="entry-tags"><span class="tag">schedule-health</span><span class="tag">tiktokrraudit</span><span class="tag">checkttrating</span><span class="tag result-warn">Read-only review</span></span>
+  </div>
+  <div class="entry-body">
+    <div class="field" data-board-log-id="schedule-health-check-20260701"><strong>Task:</strong> Patricia asked whether TT R/R audit is scheduled to run later and why many scheduled skills show partial. This was a read-only schedule/log/report review.</div>
+    <div class="field"><strong>Before -&gt; after values:</strong> Windows Task Scheduler live readback <code>requested -&gt; not approved</code>; installer mapping for <code>TT_RR_Audit_10_15AM</code> found as job <code>tiktokrraudit</code> at <code>11:55</code>; today tiktokrraudit evidence <code>unknown -&gt; ran 14:02 and FINAL_STATUS PARTIAL</code>; checkttrating evidence <code>unknown -&gt; scheduled log exists but no 2026-07-01 report/final file</code>; business writes stayed <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Result:</strong> Main partial causes were classified: early placeholder partials from missing same-day profile preflight; real profile/source partials for chataudit, parcelclaim-auto, tiktokrraudit, and checksbvariation; business/approval partials for ttparcelclaim and csrrcredited; incomplete/unclear checkttrating. OK items: shopee-shipping-claim OK, sg-gap-monitor OK_WITH_ACTION_ITEMS, checkfbsclaims OK_WITH_ACTION_ITEMS, returnitems-lookup OK_WITH_ACTION_ITEMS.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> TikTok R/R audit already ran today but was partial because same-day TikTok seller-source evidence was unavailable/incomplete at audit time. TT Ratings appears incomplete because no <code>ttrating-report-2026-07-01.md</code> or final message file was found. Live Windows Task Scheduler next-run state still needs approval to verify directly.</div>
+    <div class="field"><strong>Evidence:</strong> <code>tmp-schedule-health-20260701/schedule-health-check-20260701.md</code>; tiktokrraudit report/log under <code>C:\Users\tessf\Documents\tiktokrraudit-reports</code> and <code>C:\Users\tessf\Documents\codex-scheduled-logs\tiktokrraudit</code>; current scheduled prompt installer mapping <code>.agents\scheduled-codex\install-codex-scheduled-tasks.ps1</code>.</div>
+  </div>
+</div>
 <!-- ENTRIES_END -->
     <div class="empty-state" id="emptyState" style="display:none;">No entries match your filters.</div>
   </div>
