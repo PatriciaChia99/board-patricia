@@ -1082,6 +1082,21 @@ un-codex-scheduled.ps1</code> is missing and this session is denied write access
       <div class="field"><strong>Evidence saved:</strong> closeout report <code>C:\Users\tessf\Documents\returnitems-reports\session-closeout-2026-07-01-returnitems.md</code>; repo closeout <code>tmp-returnitems\session-closeout-2026-07-01-returnitems.md</code>; continuation prompt <code>continue-2026-07-02-returnitems-scheduled-prompt.md</code>; scheduled prompt <code>.agents\scheduled-codex\prompts\returnitems-lookup-scheduled.md</code>; task readback <code>tmp-returnitems\returnitems_20260701_schedule_task_readback.json</code>; self-tests <code>tmp-returnitems\returnitems_20260701_schedule_selftests.json</code>.</div>
       <div class="field"><strong>Result:</strong> Session saved, schedule prompt/installer corrected, scheduled task readback verified, main report addendum saved, and error logs updated.</div>
       <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> No active unhandled item found from the SG/profile70 correction. The legacy Windows task name still contains <code>Weekend</code>, but the trigger is daily at <code>15:50 MYT</code>; next run should process only fresh/current rows or rows fresh readback proves still incomplete.</div>
+      <div class="field" data-board-log-id="returnitems-final-schedule-runner-correction-20260701"><strong>returnitems/checkreturnitems final schedule runner correction 2026-07-01:</strong> <span class="tag result-ok">Completed</span></div>
+      <div class="field"><strong>Task:</strong> Final scheduler readback repair after the missing runner directory was found during closeout.</div>
+      <div class="field"><strong>Shop/platform:</strong> scheduled returnitems/checkreturnitems; Return Items webapp and seller/source systems.</div>
+      <div class="field"><strong>Reason:</strong> The task target must be executable for the next daily run. The final valid target is the restored fixed runner.</div>
+      <div class="field"><strong>Every change before -&gt; after:</strong><ul>
+        <li>Runner target <code>missing scheduled-codex-runner path / broken fixed shim</code> -&gt; <code>.agents\scheduled-codex\run-codex-scheduled-fixed.ps1</code> restored as a self-contained scheduled runner.</li>
+        <li>Task action <code>-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File &quot;C:\Users\tessf\code\codex-lab\.agents\scheduled-codex\run-codex-scheduled-fixed.ps1&quot; -JobName returnitems-lookup</code> -&gt; <code>-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File &quot;C:\Users\tessf\code\codex-lab\.agents\scheduled-codex\run-codex-scheduled-fixed.ps1&quot; -JobName returnitems-lookup</code>.</li>
+        <li>Runner length <code>16269</code> -&gt; <code>16269</code>; task state <code>Ready</code> -&gt; <code>Ready</code>.</li>
+        <li>Installer self-test arguments -&gt; <code>-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File &quot;C:\Users\tessf\code\codex-lab\.agents\scheduled-codex\run-codex-scheduled-fixed.ps1&quot; -JobName returnitems-lookup</code>; schedule -&gt; <code>Daily 15:50</code>.</li>
+      </ul></div>
+      <div class="field"><strong>Verification:</strong> runner self-test prompt exists <code>true</code>; Codex command exists <code>true</code>; board guard exists <code>true</code>; next run <code>2026-07-02 15:50:00 MYT</code>.</div>
+      <div class="field"><strong>Evidence:</strong> <code>tmp-returnitems\returnitems_20260701_schedule_task_readback.json</code>; <code>tmp-returnitems\returnitems_20260701_schedule_selftests.json</code>; <code>.agents\scheduled-codex\run-codex-scheduled-fixed.ps1</code>; <code>.agents\scheduled-codex\prompts\returnitems-lookup-scheduled.md</code>.</div>
+      <div class="field"><strong>Result:</strong> Returnitems scheduled task is Ready, daily at 15:50 MYT, using the restored fixed runner.</div>
+      <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> The task name still says Weekend, but the trigger is daily. No active SG/profile70 item remains open from this session.</div>
+
 
 
 
