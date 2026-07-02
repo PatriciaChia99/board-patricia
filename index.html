@@ -624,28 +624,27 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
-<div class="entry" data-date="2026-07-02" data-shops="Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn" data-skill="sg-gap-monitor">
+<!-- SG-GAP-MONITOR-2026-07-02 -->
+<div class="entry" data-date="2026-07-02" data-shops="Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">sg-gap-monitor 2026-07-02 - PARTIAL login/session blocker</span>
-    <span class="entry-meta">2026-07-02 17:49-18:41 MYT; profile 70 + profile 78 attempted; preserved 4/9 row-level scans; no business writes</span>
+    <span class="entry-title">sg-gap-monitor - 9 unlinked, 0 shops with new activity, 1 actively shipping (02/07)</span>
+    <span class="entry-meta">2026-07-02 20:02 MYT &middot; 70 (kmall:patricia) k1b44nvg attached &middot; Shopee MY 27 / SiteGiant ShopeeMY 18 &middot; full scan 9/9 &middot; report <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-07-02.md</code></span>
     <span class="tag">sg-gap-monitor</span>
-    <span class="tag result-warn">PARTIAL</span>
+    <span class="tag result-warn">Partial</span>
   </div>
   <div class="entry-body">
-    <div class="field" data-board-log-id="sg-gap-monitor-20260702"><strong>Board log id:</strong> sg-gap-monitor-20260702</div>
-    <p><strong>Brief:</strong> Daily SiteGiant integration-gap monitor was rerun with Codex only. Profile 70 completed the shop-list and SiteGiant phases but did not finish a reliable 9/9 persisted scan; profile 78 fallback was login-expired. No Shopee, SiteGiant, customer-message, stock, marketplace, or webapp write was made.</p>
-    <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
-    <div class="field"><strong>Task:</strong> Daily SiteGiant integration-gap order monitor.</div>
-    <div class="field"><strong>Before -&gt; after values:</strong> stale clean-clone partial card <code>present -&gt; merged into this same-day card</code>; wrapper path <code>missing -&gt; direct Python runner with progress logging</code>; profile 70 scan <code>hung/unverified -&gt; Phase 1 OK, SiteGiant OK, 4/9 preserved row-level results</code>; profile 78 fallback <code>not checked -&gt; Shopee login expired</code>; verified active risk <code>unknown -&gt; 0 To Ship / 0 Shipping on preserved verified rows</code>; business writes <code>0 -&gt; 0</code>.</div>
-    <div class="field"><strong>Verified rows:</strong> Chairsy <code>260211F1FRUFAH</code> To Ship <code>0</code> Shipping <code>0</code> Completed; Gameniture <code>(no orders)</code> To Ship <code>0</code> Shipping <code>0</code>; Atlusrack <code>260214NUX1Y8BX</code> To Ship <code>0</code> Shipping <code>0</code> Cancelled; FynnKoffer <code>260307GC8213CQ</code> To Ship <code>0</code> Shipping <code>0</code> Completed.</div>
-    <div class="field"><strong>Shop / platform:</strong> Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer. Platform: Shopee MY Seller Center + SiteGiant.</div>
-    <div class="field"><strong>Reason for change:</strong> Run the requested same-day sg-gap-monitor scope and record the true blocker instead of leaving the earlier hung-run placeholder.</div>
-    <div class="field"><strong>Result:</strong> PARTIAL. Profile 70 later showed Shopee login redirects and profile 78 was login-expired; Stationarylah and KEDAI GARDEN remain unverified in persisted row-level evidence.</div>
-    <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-07-02.md</code>; raw evidence <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\_codex_sg_gap_monitor_2026-07-02.json</code>; run log <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\_codex_sg_gap_monitor_2026-07-02.log</code>.</div>
-    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Relogin Shopee Seller Center for profile 70 or profile 78, then rerun SG gap monitor specifically for Stationarylah and KEDAI GARDEN before treating the gap as clear.</div>
+    <p><strong>Brief:</strong> Daily SiteGiant integration-gap monitor run using Codex as the scheduled replacement. Read-only audit over Shopee MY Seller Center and SiteGiant channel list. No Shopee, SiteGiant, customer-message, marketplace, or webapp write endpoint was called.</p>
+    <div class="field"><strong>Shop / platform:</strong> Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer. Platform: Shopee MY + SiteGiant. 70 (kmall:patricia) <code>k1b44nvg</code> stayed open; only temporary CDP tabs were closed.</div>
+    <div class="field"><strong>Reason for change:</strong> Run the 2026-07-02 scheduled sg-gap-monitor coverage using Codex as the replacement for the old Claude launcher.</div>
+    <div class="field"><strong>Before -&gt; after values:</strong> Solaree <code>240718V5H3A1KA</code> -> <code>240718V5H3A1KA</code>; To Ship <code>0</code>, Shipping <code>0</code>, status Completed; Flashree <code>2409031DJJWV7T</code> -> <code>2409031DJJWV7T</code>; To Ship <code>0</code>, Shipping <code>0</code>, status Completed; dutchgaming <code>(none)</code> -> <code>(no orders)</code>; To Ship <code>0</code>, Shipping <code>0</code>, status No orders; Chairsy <code>260211F1FRUFAH</code> -> <code>260211F1FRUFAH</code>; To Ship <code>0</code>, Shipping <code>0</code>, status Completed; Gameniture <code>(none)</code> -> <code>(no orders)</code>; To Ship <code>0</code>, Shipping <code>0</code>, status No orders; Atlusrack <code>260214NUX1Y8BX</code> -> <code>260214NUX1Y8BX</code>; To Ship <code>0</code>, Shipping <code>0</code>, status Cancelled; Stationarylah <code>260414QW1M81CQ</code> -> <code>260414QW1M81CQ</code>; To Ship <code>0</code>, Shipping <code>0</code>, status Cancelled; KEDAI GARDEN <code>260629B9EGVQGR</code> -> <code>260629B9EGVQGR</code>; To Ship <code>0</code>, Shipping <code>1</code>, status Delivered; Shipping IDs 260629B9EGVQGR; FynnKoffer <code>260307GC8213CQ</code> -> <code>260307GC8213CQ</code>; To Ship <code>0</code>, Shipping <code>0</code>, status Completed.</div>
+    <div class="field"><strong>Operational counters:</strong> messages <code>0 -&gt; 0</code>, stock writes <code>0 -&gt; 0</code>, marketplace changes <code>0 -&gt; 0</code>, webapp patches <code>0 -&gt; 0</code>, Shopee writes <code>0 -&gt; 0</code>, SiteGiant writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-07-02.md</code>; raw evidence <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\_codex_sg_gap_monitor_2026-07-02.json</code>; state <code>C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json</code>.</div>
+    <div class="field"><strong>Result:</strong> PARTIAL - gap 9, new activity 0, active stock-desync risk 1, blockers 0.</div>
+    <div class="field"><strong>Outstanding:</strong> KEDAI GARDEN (garden.mall) has active unlinked To Ship 0 / Shipping 1 (Shipping IDs 260629B9EGVQGR)</div>
   </div>
 </div>
+<!-- /SG-GAP-MONITOR-2026-07-02 -->
 <div class="entry" data-date="2026-07-02" data-shops="Shopee MY shipping-claim scope" data-platform="Shopee MY" data-result="ok" data-skill="shopee-shipping-claim">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
