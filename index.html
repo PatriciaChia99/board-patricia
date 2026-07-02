@@ -690,27 +690,68 @@ header.page::after{
     <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> No active capture/sheet/profile blocker found; metric flags are report-only.</div>
   </div>
 </div>
-<div class="entry" data-date="2026-07-02" data-shops="ValueSnap, MasonGym, Lovento, Kinata SG, DasNature SG, Shopee MY/SG shops" data-platform="Shopee MY + Shopee SG + wallet + employee claim webapp" data-result="warn" data-skill="csrrcredited">
+<div class="entry" data-date="2026-07-02" data-shops="MurahYa, ValueSnap, Hiranai, KarlMobel, das.nature, das.nature2, Emas Gift, BahEmas, Lovento, Luxbin, MasonGym, Adelmar, JagerHelmet, Kinata SG, HiranaiSG, KarlMobel SG, MurahYa SG, EmasGift SG, DasNature SG, DasNatureSG2" data-platform="Shopee MY + Shopee SG + Shopee wallet + employee claim webapp" data-result="ok-with-action-items" data-skill="csrrcredited">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">csrrcredited wallet audit 2026-07-02 - PARTIAL</span>
-    <span class="entry-meta">2026-07-02 MYT; 19/20 shops; 0 wins; 15 clawbacks; 54 flags; 3 unverified rows</span>
+    <span class="entry-title">csrrcredited wallet audit 2026-07-02 - completed recovery, 0 unverified</span>
+    <span class="entry-meta">2026-07-02 MYT &middot; shops swept 20/20 &middot; 34 initial patches verified + 2 recovery remarks &middot; FINAL_STATUS OK_WITH_ACTION_ITEMS</span>
     <span class="tag">csrrcredited</span>
-    <span class="tag result-warn">PARTIAL</span>
+    <span class="tag">csrrcreditedcheck</span>
+    <span class="tag result-warn">OK_WITH_ACTION_ITEMS</span>
   </div>
   <div class="entry-body">
     <div class="field" data-board-log-id="csrrcredited-20260702"><strong>Board log id:</strong> csrrcredited-20260702</div>
-    <p><strong>Brief:</strong> CSRR credited ran the live wallet/RR audit and verified reconciliation patches, but stayed PARTIAL due unverified rows and ValueSnap sweep timeouts/no-target errors.</p>
+    <p><strong>Brief:</strong> CS R/R credited was retried through the full same-day scope, recovered the previous coverage gaps, directly rechecked the remaining Luxbin and das.nature2 rows against live Shopee wallet context, patched recovery remarks, and read back the affected rows.</p>
     <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
     <div class="field"><strong>Task:</strong> csrrcredited Shopee compensation and wallet verification audit.</div>
-    <div class="field"><strong>Before -&amp;gt; after values:</strong> planned shops <code>0 -&gt; 20</code>; shops with live profile evidence <code>0 -&gt; 19/20</code>; profiles used <code>0 -&gt; 70+84</code>; wins <code>0 -&gt; 0</code>; MY clawbacks <code>RM0.00 -&gt; RM57.26</code>; SG clawbacks <code>SGD0.00 -&gt; SGD40.82</code>; flagged cases <code>0 -&gt; 54</code>; reconciliation patches verified <code>0/34 -&gt; 34/34</code>; unverified rows <code>0 -&gt; 3</code>; approval-gated rows <code>0 -&gt; 28</code>.</div>
+    <div class="field"><strong>Before -&gt; after operational counters:</strong> final status <code>PARTIAL -&gt; OK_WITH_ACTION_ITEMS</code>; shops with live evidence <code>19/20 -&gt; 20/20</code>; full coverage <code>False -&gt; True</code>; unverified rows <code>3 -&gt; 0</code>; error rows <code>1 -&gt; 0</code>; blocking search hits <code>4 -&gt; 0</code>; same-run reconciliation <code>34/34 initial -&gt; 1/1 recovery</code>; board log <code>partial/stale -&gt; corrected same-day card</code>.</div>
+    <div class="field"><strong>Prevention fixes implemented:</strong> runner board target <code>placeholder/missing -&gt; CSRRCREDITED_BOARD_INDEX real board path</code>; MY browser sweep retry <code>single failed chunk -&gt; missing-order recovery batches 2/1/1</code>; focused wallet proof <code>browser context drift risk -&gt; force-switch shop context + cookie-backed wallet POST in the same script</code>.</div>
     <div class="field"><strong>Shop:</strong> MurahYa, ValueSnap, Hiranai, KarlMobel, das.nature, das.nature2, Emas Gift, BahEmas, Lovento, Luxbin, MasonGym, Adelmar, JagerHelmet, Kinata SG, HiranaiSG, KarlMobel SG, MurahYa SG, EmasGift SG, DasNature SG, DasNatureSG2.</div>
     <div class="field"><strong>Platform:</strong> Shopee MY, Shopee SG, Shopee wallet, employee claim webapp.</div>
-    <div class="field"><strong>Reason for change:</strong> Verify credited/withdrawn/clawback state against live wallet/RR evidence before claim status changes.</div>
-    <div class="field"><strong>Result:</strong> PARTIAL. No wins; 15 clawbacks logged; 54 flagged cases; three rows remain unverified.</div>
-    <div class="field"><strong>Unverified rows:</strong> <code>260530Q1QE1HTE</code> ValueSnap AbortError; <code>2606277JNBHTCC</code> Lovento AbortError; <code>260612V89EW3HN</code> MasonGym AbortError. ValueSnap sweep also hit WebSocket timeouts/no-target errors.</div>
-    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\csrrcredited-reports\csrrcredited-report-2026-07-02.md</code>; raw and schedule logs under <code>C:\Users\tessf\Documents\csrrcredited-reports</code>.</div>
-    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Complete the unverified rows before making further status changes.</div>
+    <div class="field"><strong>Reason for change:</strong> Verify credited, withdrawn, clawback, shipping-only, and partial-win states against live wallet/R/R evidence before claim status or remark changes.</div>
+    <div class="field"><strong>Initial verified webapp changes, before -&gt; after:</strong><ul>
+      <li><code>260505KC0T29T9</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason non-shipping compensation exists but NET is below refund; result patch_ok=<code>True</code></li>
+      <li><code>26043072GPJWEJ</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason non-shipping compensation exists but NET is below refund; result patch_ok=<code>True</code></li>
+      <li><code>2604293VHVFV88</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason wallet/RR shows negative NET or type 411 clawback; result patch_ok=<code>True</code></li>
+      <li><code>260504HNS9QP51</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason non-shipping compensation exists but NET is below refund; result patch_ok=<code>True</code></li>
+      <li><code>260520TDW7X37U</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason non-shipping compensation exists but NET is below refund; result patch_ok=<code>True</code></li>
+      <li><code>260610PJV7S0AF</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason wallet/RR shows negative NET or type 411 clawback; result patch_ok=<code>True</code></li>
+      <li><code>260505KUDTNFG8</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason non-shipping compensation exists but NET is below refund; result patch_ok=<code>True</code></li>
+      <li><code>260507RPCHMYVP</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason wallet/RR shows negative NET or type 411 clawback; result patch_ok=<code>True</code></li>
+      <li><code>260515E075R5NC</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason non-shipping compensation exists but NET is below refund; result patch_ok=<code>True</code></li>
+      <li><code>260513ADQFP59N</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason non-shipping compensation exists but NET is below refund; result patch_ok=<code>True</code></li>
+      <li><code>26052360JE4AWT</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason wallet/RR shows negative NET or type 411 clawback; result patch_ok=<code>True</code></li>
+      <li><code>2604282A5A43MQ</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason non-shipping compensation exists but NET is below refund; result patch_ok=<code>True</code></li>
+      <li><code>2605249KWKG8X3</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason non-shipping compensation exists but NET is below refund; result patch_ok=<code>True</code></li>
+      <li><code>260520VRUG1392</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason non-shipping compensation exists but NET is below refund; result patch_ok=<code>True</code></li>
+      <li><code>260609KHS3JYQS</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason non-shipping compensation exists but NET is below refund; result patch_ok=<code>True</code></li>
+      <li><code>260606DA5EQJNJ</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason non-shipping compensation exists but NET is below refund; result patch_ok=<code>True</code></li>
+      <li><code>2605090H4XV5GC</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason wallet/RR shows negative NET or type 411 clawback; result patch_ok=<code>True</code></li>
+      <li><code>260519T8A0HBWC</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason wallet/RR shows negative NET or type 411 clawback; result patch_ok=<code>True</code></li>
+      <li><code>260519QY9VWHHY</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason non-shipping compensation exists but NET is below refund; result patch_ok=<code>True</code></li>
+      <li><code>260506MEEJE2BS</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason wallet/RR shows negative NET or type 411 clawback; result patch_ok=<code>True</code></li>
+      <li><code>2606010GJXX6DU</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason wallet/RR shows negative NET or type 411 clawback; result patch_ok=<code>True</code></li>
+      <li><code>260606D060A4VV</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason wallet/RR shows negative NET or type 411 clawback; result patch_ok=<code>True</code></li>
+      <li><code>260502B367730N</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason wallet/RR shows negative NET or type 411 clawback; result patch_ok=<code>True</code></li>
+      <li><code>260515F4G17URG</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason wallet/RR shows negative NET or type 411 clawback; result patch_ok=<code>True</code></li>
+      <li><code>260531U3D8EBVG</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>SHIPPING_ONLY_PARTIAL</code>; reason positive wallet rows are shipping reimbursement only; result patch_ok=<code>True</code></li>
+      <li><code>260504HGQM3SQ7</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>SHIPPING_ONLY_PARTIAL</code>; reason positive wallet rows are shipping reimbursement only; result patch_ok=<code>True</code></li>
+      <li><code>260606D9THPNDC</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>SHIPPING_ONLY_PARTIAL</code>; reason positive wallet rows are shipping reimbursement only; result patch_ok=<code>True</code></li>
+      <li><code>2605091454HTHV</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>SHIPPING_ONLY_PARTIAL</code>; reason positive wallet rows are shipping reimbursement only; result patch_ok=<code>True</code></li>
+      <li><code>260526DPCJR0J4</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>SHIPPING_ONLY_PARTIAL</code>; reason positive wallet rows are shipping reimbursement only; result patch_ok=<code>True</code></li>
+      <li><code>2605102PYWSEWH</code> | ValueSnap | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>SHIPPING_ONLY_PARTIAL</code>; reason positive wallet rows are shipping reimbursement only; result patch_ok=<code>True</code></li>
+      <li><code>2606035HQJ8YKH</code> | MasonGym | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason wallet/RR shows negative NET or type 411 clawback; result patch_ok=<code>True</code></li>
+      <li><code>2606130EB2KGJK</code> | Kinata SG | Shopee SG: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason negative SG order adjustment; result patch_ok=<code>True</code></li>
+      <li><code>260606BUQNB93N</code> | Kinata SG | Shopee SG: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason negative SG order adjustment; result patch_ok=<code>True</code></li>
+      <li><code>260611S8PHRJFQ</code> | DasNature SG | Shopee SG: <code>Pending -&gt; Pending</code>; verdict <code>CLAWBACK_FIRED</code>; reason negative SG order adjustment; result patch_ok=<code>True</code></li>
+    </ul></div>
+    <div class="field"><strong>Focused recovery changes, before -&gt; after:</strong><ul>
+      <li><code>260624VWQS30K2</code> | Luxbin | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>NO_MATCH</code>; reason direct live wallet POST in confirmed luxbiin context returned no matching order_sn; no compensation credited yet; result HTTP <code>200</code>, readback_ok=<code>True</code>; evidence direct Luxbin wallet POST: total=20 wallet rows, matching=0 for order_sn 260624VWQS30K2</li>
+      <li><code>2606035JQS76KB</code> | das.nature2 | Shopee MY: <code>Pending -&gt; Pending</code>; verdict <code>PARTIAL_WIN</code>; reason direct live wallet POST in confirmed das.nature2 context matched compensation RM14.13 and debit RM10.38; NET below refund; result HTTP <code>200</code>, readback_ok=<code>True</code>; evidence type 415 +14.13 2026-06-12 reason=; type 102 -10.38 2026-06-12 reason=</li>
+    </ul></div>
+    <div class="field"><strong>Evidence:</strong> final report <code>C:\Users\tessf\Documents\csrrcredited-reports\csrrcredited-report-2026-07-02.md</code>; final raw JSON <code>C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_2026-07-02.json</code>; recovery readback <code>tmp-csrrcredited-20260702\finalize-recovery-readback-20260702.json</code>; Luxbin proof <code>tmp-csrrcredited-20260702\force-switch-cookie-wallet-20260702.json</code>; das.nature2 proof <code>tmp-csrrcredited-20260702\force-switch-cookie-wallet-dasnature2-20260702.json</code>.</div>
+    <div class="field"><strong>Result:</strong> <code>OK_WITH_ACTION_ITEMS</code>. Shops swept <code>20/20</code>; unverified rows <code>0</code>; error rows <code>0</code>; blocking search hits <code>0</code>; Patricia action required <code>none</code>. Audit action-items <code>29</code> remain monitored claim states, not missing execution or login blockers.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> no active user action required from this csrrcredited run after recovery. The remaining claim-state action items are monitoring/chase workflow inputs, not a partial-run blocker.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-07-02" data-shops="TT Adelmar, TT Hiranai, TT MurahYa, TT Valuesnap" data-platform="TikTok MY + employee parcel-claim webapp" data-result="warn" data-skill="ttparcelclaim">
@@ -899,9 +940,6 @@ header.page::after{
       <div class="field"><strong>Evidence:</strong> before <code>tmp-returnitems\returnitems_live_20260702_14222_before_patch_result.json</code>; SiteGiant <code>tmp-returnitems\returnitems_20260702_14222_candidate_sitegiant_summary.json</code>; ShopeeMY R/R <code>tmp-returnitems\returnitems_20260702_14222_karlmobel_shopeemy_rr.json</code>; patch plan <code>tmp-returnitems\returnitems_20260702_14222_patch_plan.json</code>; patch result <code>tmp-returnitems\returnitems_20260702_14222_patch_result.json</code>; after <code>tmp-returnitems\returnitems_live_20260702_14222_after_patch_result.json</code>; report <code>C:\Users\tessf\Documents\returnitems-reports\returnitems-lookup-2026-07-02.md</code>.</div>
       <div class="field"><strong>Result / outstanding:</strong> row <code>14222</code> is patched and verified. No active unhandled item remains from this supplied correction.</div>
 
-
-
-
     </div>
   </div>
 <div class="entry" data-date="2026-07-02" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="ok">
@@ -987,9 +1025,6 @@ header.page::after{
     <div class="field"><strong>Notes / what Patricia may have missed:</strong> What was missed in the first closeout: Codex repeated the raw 48 free-text Sheet QC count as unresolved instead of applying the 2026-07-01 mapping discussion. Corrected with 11 QC patches and readback. Patricia clarified that FBS-owned Sheet values should not be amended: Sheet values/remarks/status are authority for updating internal webapp fields only. The raw Sheet free-text count still prints as 48 because Sheet cells were intentionally not rewritten. The 4 Sheet-only rows are retained as traceability notes, not active action items from today. MurahYa source had a recoverable browser-template issue on the first broad probe; marker-audit retry captured MurahYa source data, but the marker-audit browser target closed before continuing to the other shops. No active customer/marketplace action was taken.</div>
   </div>
 </div>
-
-
-
 
 <div class="entry" data-date="2026-07-01" data-shops="11 TT shops" data-platform="TikTok MY" data-result="ok">
     <div class="entry-summary">
@@ -1286,10 +1321,6 @@ header.page::after{
       <div class="field"><strong>21:05 MYT current full preflight:</strong> re-probed all <code>24</code> configured profile keys sequentially using the current scheduled prompt rules. Profile70 was attach/no-stop and remained active; non-profile70 profile cleanup/readback was saved. Lazada <code>81/82/83</code> opened seller-center order pages without login blockers; Shopee chat <code>cs2/cs5</code> opened seller chat pages; all required profiles for all configured jobs are now <code>READY</code>.</div>
       <div class="field"><strong>Result:</strong> <code>READY</code> / <code>FINAL_STATUS: OK</code>. All configured scheduled jobs may pass the profile-login gate from the current 21:05 MYT state.</div>
       <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> no active outstanding profile-login blocker was found. Non-blocking note: profile78 remains fallback/readback-only <code>UNKNOWN</code> and must not be used as a replacement for profile70.</div>
-
-
-
-
 
     </div>
   </div>
@@ -5576,5 +5607,4 @@ document.documentElement.classList.add('js-ready');
 </script>
 </body>
 </html>
-
 
