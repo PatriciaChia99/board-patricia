@@ -624,26 +624,26 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
-<div class="entry" data-date="2026-07-02" data-shops="Shopee SG/SiteGiant integration-gap scope" data-platform="SiteGiant + Shopee SG" data-result="warn" data-skill="sg-gap-monitor">
+<div class="entry" data-date="2026-07-02" data-shops="Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="warn" data-skill="sg-gap-monitor">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">sg-gap-monitor clean-clone attempt 2026-07-02 - PARTIAL</span>
-    <span class="entry-meta">2026-07-02 MYT; clean clone succeeded; Python authority hung; no scan count reported</span>
+    <span class="entry-title">sg-gap-monitor 2026-07-02 - PARTIAL login/session blocker</span>
+    <span class="entry-meta">2026-07-02 17:49-18:41 MYT; profile 70 + profile 78 attempted; preserved 4/9 row-level scans; no business writes</span>
     <span class="tag">sg-gap-monitor</span>
     <span class="tag result-warn">PARTIAL</span>
   </div>
   <div class="entry-body">
     <div class="field" data-board-log-id="sg-gap-monitor-20260702"><strong>Board log id:</strong> sg-gap-monitor-20260702</div>
-    <p><strong>Brief:</strong> SG Gap monitor clean-clone setup succeeded, but the Python authority hung without producing same-day report/raw. The run was stopped and logged as a true partial with no business writes.</p>
+    <p><strong>Brief:</strong> Daily SiteGiant integration-gap monitor was rerun with Codex only. Profile 70 completed the shop-list and SiteGiant phases but did not finish a reliable 9/9 persisted scan; profile 78 fallback was login-expired. No Shopee, SiteGiant, customer-message, stock, marketplace, or webapp write was made.</p>
     <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
     <div class="field"><strong>Task:</strong> Daily SiteGiant integration-gap order monitor.</div>
-    <div class="field"><strong>Before -&amp;gt; after values:</strong> scheduled wrapper path <code>missing/broken -&gt; local clean-clone wrapper</code>; clean board clone <code>0 -&gt; 1 succeeded</code>; same-day scan result <code>unknown -&gt; unverified</code>; report/raw <code>missing -&gt; partial blocker files written</code>; messages, stock writes, marketplace changes, webapp patches, Shopee writes, SiteGiant writes, board writes <code>0 -&gt; 0</code>.</div>
-    <div class="field"><strong>Shop:</strong> Shopee SG/SiteGiant integration-gap scope.</div>
-    <div class="field"><strong>Platform:</strong> SiteGiant, Shopee SG, Patricia board clean clone.</div>
-    <div class="field"><strong>Reason for change:</strong> Avoid reporting unreliable gap counts when the Python runner produced no output for about 10 minutes after clone.</div>
-    <div class="field"><strong>Result:</strong> PARTIAL. Current gap count, active To Ship/Shipping IDs, and profile-78 fallback remain unverified.</div>
-    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-07-02.md</code>; <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\_codex_sg_gap_monitor_2026-07-02.json</code>; wrapper logs in <code>C:\Users\tessf\code\codex-lab\tmp-sg-gap-20260702</code>.</div>
-    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Inspect/add timeout logging around <code>tools\sg_gap_monitor_codex_20260618.py</code> CDP/SiteGiant wait point, then rerun with a clean board clone.</div>
+    <div class="field"><strong>Before -&gt; after values:</strong> stale clean-clone partial card <code>present -&gt; merged into this same-day card</code>; wrapper path <code>missing -&gt; direct Python runner with progress logging</code>; profile 70 scan <code>hung/unverified -&gt; Phase 1 OK, SiteGiant OK, 4/9 preserved row-level results</code>; profile 78 fallback <code>not checked -&gt; Shopee login expired</code>; verified active risk <code>unknown -&gt; 0 To Ship / 0 Shipping on preserved verified rows</code>; business writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Verified rows:</strong> Chairsy <code>260211F1FRUFAH</code> To Ship <code>0</code> Shipping <code>0</code> Completed; Gameniture <code>(no orders)</code> To Ship <code>0</code> Shipping <code>0</code>; Atlusrack <code>260214NUX1Y8BX</code> To Ship <code>0</code> Shipping <code>0</code> Cancelled; FynnKoffer <code>260307GC8213CQ</code> To Ship <code>0</code> Shipping <code>0</code> Completed.</div>
+    <div class="field"><strong>Shop / platform:</strong> Solaree, Flashree, dutchgaming, Chairsy, Gameniture, Atlusrack, Stationarylah, KEDAI GARDEN, FynnKoffer. Platform: Shopee MY Seller Center + SiteGiant.</div>
+    <div class="field"><strong>Reason for change:</strong> Run the requested same-day sg-gap-monitor scope and record the true blocker instead of leaving the earlier hung-run placeholder.</div>
+    <div class="field"><strong>Result:</strong> PARTIAL. Profile 70 later showed Shopee login redirects and profile 78 was login-expired; Stationarylah and KEDAI GARDEN remain unverified in persisted row-level evidence.</div>
+    <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-07-02.md</code>; raw evidence <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\_codex_sg_gap_monitor_2026-07-02.json</code>; run log <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\_codex_sg_gap_monitor_2026-07-02.log</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Relogin Shopee Seller Center for profile 70 or profile 78, then rerun SG gap monitor specifically for Stationarylah and KEDAI GARDEN before treating the gap as clear.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-07-02" data-shops="Shopee MY shipping-claim scope" data-platform="Shopee MY" data-result="ok" data-skill="shopee-shipping-claim">
@@ -758,26 +758,27 @@ header.page::after{
     <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Relogin required before full source coverage: 55 TT DasNature, 56 TT Hiranai, 58 TT HiranaiMY, 59 TT Jager, 61 TT JagerSafety, 62 TT KarlMobel, 65 TT Valuesnap.</div>
   </div>
 </div>
-<div class="entry" data-date="2026-07-02" data-shops="TT Adelmar, TT KarlMobel, TT Jager, TT MurahYa, TT Valuesnap" data-platform="TikTok MY + employee parcel-claim/RR webapp" data-result="warn" data-skill="tiktokrraudit">
+<div class="entry" data-date="2026-07-02" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerSafety, TT KarlMobel, TT Lovento, TT MurahYa, TT Valuesnap" data-platform="TikTok MY + employee parcel-claim/RR webapp" data-result="ok" data-skill="tiktokrraudit">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">tiktokrraudit scheduled audit 2026-07-02 - PARTIAL</span>
-    <span class="entry-meta">2026-07-02 MYT; 321 webapp rows; 32 flags; 29 confirmed; seller evidence 0/11</span>
+    <span class="entry-title">tiktokrraudit scheduled audit 2026-07-02 - OK</span>
+    <span class="entry-meta">2026-07-02 17:24-17:25 MYT; coverage 11/11; crosscheck 30 confirmed / 2 terminal archived / 0 discrepancy</span>
     <span class="tag">tiktokrraudit</span>
-    <span class="tag result-warn">PARTIAL</span>
+    <span class="tag">tiktokrrauditcheck</span>
+    <span class="tag result-ok">OK</span>
   </div>
   <div class="entry-body">
     <div class="field" data-board-log-id="tiktokrraudit-20260702"><strong>Board log id:</strong> tiktokrraudit-20260702</div>
-    <p><strong>Brief:</strong> TikTok R/R audit ran read-only and produced a same-day report, but stayed PARTIAL because seller-side same-day evidence was not available when it ran.</p>
+    <p><strong>Brief:</strong> TikTok R/R audit was rerun after same-day parcelclaim-auto evidence reached 11/11 core TikTok MY seller profiles. The report is now OK; no customer, marketplace, stock, or webapp write was made by this rerun.</p>
     <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
     <div class="field"><strong>Task:</strong> tiktokrraudit scheduled TikTok MY return/refund audit.</div>
-    <div class="field"><strong>Before -&amp;gt; after values:</strong> webapp rows <code>0 -&gt; 321 fresh</code>; refund states <code>Credited 25 / Pending 79 / Rejected 5 / Withdrawn 212</code>; core TT seller-profile coverage <code>0/11 -&gt; 0/11 same-day evidence</code>; new FD rows posted <code>0 -&gt; 0</code>; total flags <code>0 -&gt; 32</code>; confirmed flags <code>0 -&gt; 29</code>; arithmetic issues <code>0 -&gt; 0</code>; messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace writes 0 -&gt; 0; webapp patches <code>0 -&gt; 0</code>.</div>
-    <div class="field"><strong>Shop:</strong> TT Adelmar, TT KarlMobel, TT Jager, TT MurahYa, TT Valuesnap and other TikTok MY R/R worklist shops from the report.</div>
-    <div class="field"><strong>Platform:</strong> TikTok MY, employee parcel-claim/RR webapp.</div>
-    <div class="field"><strong>Reason for change:</strong> Scheduled audit evidence capture and classification only; no live marketplace or customer write was safe without same-day seller evidence.</div>
-    <div class="field"><strong>Result:</strong> PARTIAL. No new TT-side loss/win/appealable flag was asserted from seller data.</div>
-    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\tiktokrraudit-reports\tiktokrraudit-report-2026-07-02.md</code>; <code>C:\Users\tessf\Documents\tiktokrraudit-reports\_codex_tiktokrraudit_2026-07-02.json</code>.</div>
-    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Same-day seller-profile evidence was 0/11 when this job ran. The later parcelclaim-auto run created upstream evidence, but tiktokrraudit was not rerun afterward.</div>
+    <div class="field"><strong>Before -&gt; after values:</strong> report status <code>PARTIAL -&gt; OK</code>; core TT seller-profile coverage <code>0/11 -&gt; 11/11</code>; crosscheck discrepancy <code>2 -&gt; 0</code>; terminal archived carry-over rows <code>0 -&gt; 2</code>; confirmed flags <code>30 -&gt; 30</code>; webapp rows <code>327 -&gt; 327</code>; webapp patches <code>0 -&gt; 0</code>; messages, stock writes, marketplace writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Shop:</strong> TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerSafety, TT KarlMobel, TT Lovento, TT MurahYa, TT Valuesnap.</div>
+    <div class="field"><strong>Platform:</strong> TikTok MY seller evidence and employee parcel-claim/RR webapp.</div>
+    <div class="field"><strong>Reason for change:</strong> Complete the requested rerun after upstream seller-profile evidence became available; classify two prior terminal carry-over rows as archived/not active instead of unresolved discrepancies.</div>
+    <div class="field"><strong>Result:</strong> OK. New loss <code>0</code>; new win <code>0</code>; same-day TikTok posts <code>0</code>; crosscheck total <code>32</code>, confirmed <code>30</code>, retracted/archived terminal <code>2</code>, discrepancy <code>0</code>.</div>
+    <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\tiktokrraudit-reports\tiktokrraudit-report-2026-07-02.md</code>; raw evidence <code>C:\Users\tessf\Documents\tiktokrraudit-reports\_codex_tiktokrraudit_2026-07-02.json</code>; same-day parcelclaim-auto raw evidence supplied the 11/11 profile coverage.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> No active TikTok R/R audit blocker remains from this rerun. Lazada 81/82/83 are outside this TikTok MY audit and should be read from parcelclaim-auto evidence.</div>
   </div>
 </div>
   <div class="entry" data-date="2026-07-02" data-shops="BahEmas, KarlMobel, Laz MurahYa, MurahYa" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="ok">
