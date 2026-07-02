@@ -753,49 +753,53 @@ header.page::after{
     <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> no active user action required from this csrrcredited run after recovery. The remaining claim-state action items are monitoring/chase workflow inputs, not a partial-run blocker.</div>
   </div>
 </div>
-<div class="entry" data-date="2026-07-02" data-shops="TT Adelmar, TT Hiranai, TT MurahYa, TT Valuesnap" data-platform="TikTok MY + employee parcel-claim webapp" data-result="warn" data-skill="ttparcelclaim">
+<div class="entry" data-date="2026-07-02" data-shops="Laz das.nature, Lazada Lovento, Lazada MurahYa, TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerHelmet, TT JagerSafety, TT KarlMobel, TT Kinata, TT Lovento, TT MurahYa, TT Valuesnap" data-platform="TikTok/Lazada + employee parcel-claim webapp" data-result="ok" data-skill="ttparcelclaim">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">ttparcelclaim follow-up 2026-07-02 - PARTIAL</span>
-    <span class="entry-meta">2026-07-02 MYT; pending 85 -&gt; 71; nulls 9/6/6 -&gt; 0/0/0; 54 patches</span>
+    <span class="entry-title">ttparcelclaim+check recovery 2026-07-02 - OK</span>
+    <span class="entry-meta">2026-07-02 18:06 MYT; 16/16 profiles alive; health 0/0/0/0/0/0; 61 total PATCHes across recovery</span>
     <span class="tag">ttparcelclaim</span>
-    <span class="tag result-warn">PARTIAL</span>
+    <span class="tag">ttparcelclaimcheck</span>
+    <span class="tag result-ok">OK</span>
   </div>
   <div class="entry-body">
     <div class="field" data-board-log-id="ttparcelclaim-20260702"><strong>Board log id:</strong> ttparcelclaim-20260702</div>
-    <p><strong>Brief:</strong> ttparcelclaim follow-up cleaned the webapp health gaps and patched 54 fields, but stayed PARTIAL because the same seven TikTok seller profiles needed relogin.</p>
+    <p><strong>Brief:</strong> Codex reran ttparcelclaim+check after Patricia relogged. The first recovery pass repaired the remaining webapp rows, and the final pass read back all configured seller profiles alive with no null/orphan/action health gaps.</p>
     <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
-    <div class="field"><strong>Task:</strong> ttparcelclaim follow-up and coverage check.</div>
-    <div class="field"><strong>Before -&amp;gt; after values:</strong> records fetched <code>327 -&gt; 327</code>; pending pool <code>85 -&gt; 71</code>; pending RM <code>RM23066.58 -&gt; RM21488.16</code>; due rows <code>73 -&gt; 64</code>; missing followup_dt <code>9 -&gt; 0</code>; missing return_status <code>6 -&gt; 0</code>; missing action_needed <code>6 -&gt; 0</code>; terminal-state orphans <code>1 -&gt; 0</code>; reverse orphans <code>0 -&gt; 0</code>; hard action mismatches <code>0 -&gt; 0</code>; webapp creates <code>0 -&gt; 0</code>; webapp patches <code>0 -&gt; 54</code>.</div>
-    <div class="field"><strong>Shop:</strong> TT Adelmar, TT Hiranai, TT MurahYa, TT Valuesnap and the login-expired TikTok MY shops: 55 TT DasNature, 56 TT Hiranai, 58 TT HiranaiMY, 59 TT Jager, 61 TT JagerSafety, 62 TT KarlMobel, 65 TT Valuesnap.</div>
-    <div class="field"><strong>Platform:</strong> TikTok MY and employee parcel-claim webapp.</div>
-    <div class="field"><strong>Reason for change:</strong> Apply Rule 8 null follow-up cleanup, Rule 12 closeable cleanup, and Rule 18 monitor fallback so rows are not left blank.</div>
-    <div class="field"><strong>Result:</strong> PARTIAL. Webapp health is clean, but seven seller profiles still need relogin.</div>
-    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-07-02.md</code>; raw and schedule logs under <code>C:\Users\tessf\Documents\ttparcelclaim-reports</code>.</div>
-    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Carry-over monitor rows remain for <code>C2351</code> and <code>C2353</code> with followup_dt <code>2026-07-03</code>; operator relogin required for the seven TikTok profiles.</div>
+    <div class="field"><strong>Task:</strong> ttparcelclaim follow-up plus ttparcelclaimcheck health/readback.</div>
+    <div class="field"><strong>Before -&gt; after values:</strong> seller profile coverage <code>partial/login-expired -&gt; 16/16 ALIVE</code>; webapp records <code>336 -&gt; 336</code>; pending pool <code>72 -&gt; 70</code> during recovery, final readback <code>70</code>; missing followup_dt <code>2 -&gt; 0</code>; missing return_status <code>2 -&gt; 0</code>; missing action_needed <code>2 -&gt; 0</code>; terminal-state orphans <code>1 -&gt; 0</code>; reverse orphans <code>0 -&gt; 0</code>; hard action mismatches <code>0 -&gt; 0</code>; webapp patches today <code>54 initial + 7 recovery -&gt; 61 total</code>; final pass patches <code>0</code>.</div>
+    <div class="field"><strong>Recovery PATCHes after relogin:</strong> <code>C2361</code> action <code>blank -&gt; Closed</code>; <code>C2362</code> remark close, refund_state <code>Pending -&gt; Withdrawn</code>, action <code>blank -&gt; Closed</code>; <code>C2363</code> remark close, refund_state <code>Pending -&gt; Withdrawn</code>, action <code>blank -&gt; Closed</code>.</div>
+    <div class="field"><strong>Shop:</strong> TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerHelmet, TT JagerSafety, TT KarlMobel, TT Kinata, TT Lovento, TT MurahYa, TT Valuesnap, Lazada MurahYa, Laz das.nature, Lazada Lovento.</div>
+    <div class="field"><strong>Platform:</strong> TikTok MY/SG, Lazada MY login coverage probe, and employee parcel-claim webapp.</div>
+    <div class="field"><strong>Reason for change:</strong> Convert the stale partial after relogin by completing Rule 12/12b cleanup and Rule 14-17 health/readback checks.</div>
+    <div class="field"><strong>Result:</strong> OK. Operational webapp health is clean: followup_dt/null return_status/null action/orphan/action-mismatch readback is <code>0/0/0/0/0/0</code>. The report file still says PARTIAL only because the earlier active dirty board checkout failed lint/commit; this clean-clone closeout replaces that stale board state.</div>
+    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-07-02.md</code>; <code>C:\Users\tessf\Documents\ttparcelclaim-reports\_codex_ttparcelclaim_followup_2026-07-02.json</code>; WH reminder <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-wh-reminder-2026-07-02.md</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> No active ttparcelclaim execution blocker found. Carry-over WH/CS follow-up rows remain normal work queue items, not a failed run.</div>
   </div>
 </div>
-<div class="entry" data-date="2026-07-02" data-shops="TT Adelmar, TT MurahYa, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerSafety, TT KarlMobel, TT Valuesnap" data-platform="TikTok MY + employee parcel-claim webapp" data-result="warn" data-skill="parcelclaim-auto">
+
+<div class="entry" data-date="2026-07-02" data-shops="Laz das.nature, Lazada Lovento, Lazada MurahYa, TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerHelmet, TT JagerSafety, TT KarlMobel, TT Kinata, TT Lovento, TT MurahYa, TT Valuesnap" data-platform="TikTok MY/SG + Lazada MY + employee parcel-claim webapp" data-result="warn" data-skill="parcelclaim-auto">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">parcelclaim-auto scheduled intake 2026-07-02 - PARTIAL</span>
-    <span class="entry-meta">2026-07-02 MYT; 6 new cases; RM2383.30; 6/6 confirmed; 7 login-expired profiles</span>
+    <span class="entry-title">parcelclaim-auto retry 2026-07-02 - PARTIAL: Lazada reverse login</span>
+    <span class="entry-meta">2026-07-02 20:05 MYT; TikTok complete; 15 same-day posts total; C2355-C2363 added after relogin; Lazada 81-83 blocked</span>
     <span class="tag">parcelclaim-auto</span>
     <span class="tag result-warn">PARTIAL</span>
   </div>
   <div class="entry-body">
     <div class="field" data-board-log-id="parcelclaim-auto-20260702"><strong>Board log id:</strong> parcelclaim-auto-20260702</div>
-    <p><strong>Brief:</strong> parcelclaim-auto completed the actionable TikTok posting subset and crosschecked every new case, but stayed PARTIAL because seven TikTok seller profiles were login-expired.</p>
+    <p><strong>Brief:</strong> Codex retried parcelclaim-auto after Patricia relogged. TikTok source coverage recovered and the retry posted 9 additional dedupe-passing TikTok cases, but the all-shop run cannot be marked complete because Lazada profiles 81, 82, and 83 still land on the Lazada login page for the reverse-order route.</p>
     <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
-    <div class="field"><strong>Task:</strong> parcelclaim-auto TikTok/Lazada parcel-claim intake.</div>
-    <div class="field"><strong>Before -&amp;gt; after values:</strong> profiles in scope <code>0 -&gt; 16</code>; profiles scanned OK <code>0 -&gt; 9</code>; profile errors <code>0 -&gt; 7</code>; webapp rows <code>321 -&gt; 327</code>; new POSTed cases <code>0 -&gt; 6</code>; new POSTed value <code>RM0.00 -&gt; RM2383.30</code>; crosscheck <code>0/6 -&gt; 6/6 CONFIRMED</code>; webapp creates <code>321 -&gt; 327</code>; webapp remark patches <code>0 -&gt; 6</code>; messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace writes 0 -&gt; 0.</div>
-    <div class="field"><strong>Posted cases:</strong> <code>C2349</code> TT Adelmar FD 584304778366780709 RM299.71; <code>C2350</code> TT Adelmar FD 584299958877193506 RM243.71; <code>C2351</code> TT MurahYa R/R 584779831354754908 RM1253.60; <code>C2352</code> TT MurahYa FD 584301862689932355 RM27.80; <code>C2353</code> TT MurahYa FD 584301709677791026 RM270.82; <code>C2354</code> TT MurahYa FD 584273764418946333 RM287.66.</div>
-    <div class="field"><strong>Shop:</strong> TT Adelmar and TT MurahYa posted; login-expired shops: 55 TT DasNature, 56 TT Hiranai, 58 TT HiranaiMY, 59 TT Jager, 61 TT JagerSafety, 62 TT KarlMobel, 65 TT Valuesnap.</div>
-    <div class="field"><strong>Platform:</strong> TikTok MY seller center and employee parcel-claim webapp.</div>
-    <div class="field"><strong>Reason for change:</strong> Create only genuinely new parcel claims after dedupe, then add audit-trail remarks and crosscheck the new rows.</div>
-    <div class="field"><strong>Result:</strong> PARTIAL because seven TikTok MY seller profiles require operator relogin; the six posted cases are confirmed.</div>
-    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-07-02.md</code>; raw files under <code>C:\Users\tessf\Documents\parcelclaim-auto-reports</code>.</div>
-    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Relogin required before full source coverage: 55 TT DasNature, 56 TT Hiranai, 58 TT HiranaiMY, 59 TT Jager, 61 TT JagerSafety, 62 TT KarlMobel, 65 TT Valuesnap.</div>
+    <div class="field"><strong>Task:</strong> parcelclaim-auto TikTok/Lazada parcel-claim intake and post-create readback.</div>
+    <div class="field"><strong>Before -&gt; after values:</strong> stale profile blocker <code>7 TikTok login-expired -&gt; 0 TikTok login-expired</code>; TikTok profiles scanned <code>partial -&gt; 13/13 OK</code>; Lazada reverse profiles <code>0/3 OK -&gt; 0/3 OK</code>; webapp rows after same-day posts <code>327 -&gt; 336</code>; same-day new cases <code>6 -&gt; 15 total</code>; retry new cases <code>0 -&gt; 9</code>; retry value <code>RM0.00 -&gt; RM1731.89</code>; retry crosscheck <code>0/9 -&gt; 9/9 CONFIRMED</code>; final canonical rerun new posts <code>0</code> after dedupe; messages/stock/marketplace writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Retry POST changes:</strong> <code>C2355</code> TT Hiranai FD 584778058157884629 RM25.00; <code>C2356</code> TT Jager FD 584302594664335173 RM96.74; <code>C2357</code> TT Jager FD 584302314092201136 RM150.00; <code>C2358</code> TT KarlMobel R/R 584750381773719450 RM323.92; <code>C2359</code> TT KarlMobel FD 584687429769135912 RM16.86; <code>C2360</code> TT KarlMobel FD 584310678917580530 RM54.82; <code>C2361</code> TT KarlMobel FD 584308055049799160 RM222.68; <code>C2362</code> TT KarlMobel FD 584302775231153742 RM633.08; <code>C2363</code> TT KarlMobel FD 584295158381905181 RM208.79.</div>
+    <div class="field"><strong>Lazada blocker before -&gt; after:</strong> profile 81 Lazada MurahYa <code>login page -&gt; login page</code>; profile 82 Laz das.nature <code>login page -&gt; login page</code>; profile 83 Lazada Lovento <code>login page -&gt; login page</code>. The runner saw password fields filled and tried saved-password Enter plus mouse-click Login, but the reverse route stayed on <code>/apps/seller/login?redirect_url=.../apps/order/reverse?tab=All</code>.</div>
+    <div class="field"><strong>Shop:</strong> TikTok posts from TT Hiranai, TT Jager, and TT KarlMobel after relogin; Lazada blocker on Lazada MurahYa, Laz das.nature, and Lazada Lovento.</div>
+    <div class="field"><strong>Platform:</strong> TikTok MY/SG seller center, Lazada MY Seller Center reverse orders, and employee parcel-claim webapp.</div>
+    <div class="field"><strong>Reason for change:</strong> Recover the stale partial after relogin and post only current/latest dedupe-passing parcel claims; stop short of OK because Lazada source coverage remains unavailable.</div>
+    <div class="field"><strong>Result:</strong> PARTIAL. TikTok intake is complete and deduped; Lazada is not complete. Do not call parcelclaim-auto all-shop complete until profiles 81, 82, and 83 are manually logged into <code>/apps/order/reverse?tab=All</code> and a rerun reads rows or a valid zero-row page.</div>
+    <div class="field"><strong>Evidence:</strong> Canonical report <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-07-02.md</code>; canonical raw <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-07-02.json</code>; runner log <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-07-02.log</code>; continuation <code>C:\Users\tessf\code\codex-lab\.agents\continuations\parcelclaim-ttparcelclaim-20260702.md</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Lazada 81, 82, and 83 need manual reverse-page relogin. Open each profile directly to <code>https://sellercenter.lazada.com.my/apps/order/reverse?tab=All</code>, confirm it is not the login page, then rerun parcelclaim-auto.</div>
   </div>
 </div>
 <div class="entry" data-date="2026-07-02" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerSafety, TT KarlMobel, TT Lovento, TT MurahYa, TT Valuesnap" data-platform="TikTok MY + employee parcel-claim/RR webapp" data-result="ok" data-skill="tiktokrraudit">
