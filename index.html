@@ -624,6 +624,162 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-07-02" data-shops="Shopee SG/SiteGiant integration-gap scope" data-platform="SiteGiant + Shopee SG" data-result="warn" data-skill="sg-gap-monitor">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">sg-gap-monitor clean-clone attempt 2026-07-02 - PARTIAL</span>
+    <span class="entry-meta">2026-07-02 MYT; clean clone succeeded; Python authority hung; no scan count reported</span>
+    <span class="tag">sg-gap-monitor</span>
+    <span class="tag result-warn">PARTIAL</span>
+  </div>
+  <div class="entry-body">
+    <div class="field" data-board-log-id="sg-gap-monitor-20260702"><strong>Board log id:</strong> sg-gap-monitor-20260702</div>
+    <p><strong>Brief:</strong> SG Gap monitor clean-clone setup succeeded, but the Python authority hung without producing same-day report/raw. The run was stopped and logged as a true partial with no business writes.</p>
+    <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
+    <div class="field"><strong>Task:</strong> Daily SiteGiant integration-gap order monitor.</div>
+    <div class="field"><strong>Before -&amp;gt; after values:</strong> scheduled wrapper path <code>missing/broken -&gt; local clean-clone wrapper</code>; clean board clone <code>0 -&gt; 1 succeeded</code>; same-day scan result <code>unknown -&gt; unverified</code>; report/raw <code>missing -&gt; partial blocker files written</code>; messages, stock writes, marketplace changes, webapp patches, Shopee writes, SiteGiant writes, board writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Shop:</strong> Shopee SG/SiteGiant integration-gap scope.</div>
+    <div class="field"><strong>Platform:</strong> SiteGiant, Shopee SG, Patricia board clean clone.</div>
+    <div class="field"><strong>Reason for change:</strong> Avoid reporting unreliable gap counts when the Python runner produced no output for about 10 minutes after clone.</div>
+    <div class="field"><strong>Result:</strong> PARTIAL. Current gap count, active To Ship/Shipping IDs, and profile-78 fallback remain unverified.</div>
+    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-07-02.md</code>; <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\_codex_sg_gap_monitor_2026-07-02.json</code>; wrapper logs in <code>C:\Users\tessf\code\codex-lab\tmp-sg-gap-20260702</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Inspect/add timeout logging around <code>tools\sg_gap_monitor_codex_20260618.py</code> CDP/SiteGiant wait point, then rerun with a clean board clone.</div>
+  </div>
+</div>
+<div class="entry" data-date="2026-07-02" data-shops="Shopee MY shipping-claim scope" data-platform="Shopee MY" data-result="ok" data-skill="shopee-shipping-claim">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">shopee-shipping-claim guard 2026-07-02 - OK</span>
+    <span class="entry-meta">2026-07-02 MYT; day 2; claim day 15; safe skip</span>
+    <span class="tag">shopee-shipping-claim</span>
+    <span class="tag result-ok">OK</span>
+  </div>
+  <div class="entry-body">
+    <div class="field" data-board-log-id="shopee-shipping-claim-20260702"><strong>Board log id:</strong> shopee-shipping-claim-20260702</div>
+    <p><strong>Brief:</strong> Shopee shipping-claim guard ran and safely skipped the workflow because 2026-07-02 is not the configured monthly claim day.</p>
+    <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
+    <div class="field"><strong>Task:</strong> Shopee MY shipping-claim due-day guard.</div>
+    <div class="field"><strong>Before -&amp;gt; after values:</strong> configured claim day <code>15 -&gt; 15</code>; current day <code>2 -&gt; 2</code>; claim workflow launch <code>pending check -&gt; skipped</code>; business/customer/marketplace/stock/webapp writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Shop:</strong> Shopee MY shipping-claim scope.</div>
+    <div class="field"><strong>Platform:</strong> Shopee MY.</div>
+    <div class="field"><strong>Reason for change:</strong> Do not launch monthly claim workflow on a non-claim day.</div>
+    <div class="field"><strong>Result:</strong> OK. Next expected claim-day execution is 2026-07-15 unless Patricia changes the schedule.</div>
+    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\shopee-shipping-claim-reports\shopee-shipping-claim-2026-07-02.md</code>; <code>C:\Users\tessf\Documents\shopee-shipping-claim-reports\_codex_shopee_shipping_claim_guard_2026-07-02.json</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> No active shipping-claim item is due today.</div>
+  </div>
+</div>
+<div class="entry" data-date="2026-07-02" data-shops="Adelmar, Das Nature, Hiranai, HiranaiMY, Jager, KarlMobel, Murahya, Valuesnap, Kinata SG, Lovento" data-platform="TikTok MY/SG + Google Sheets" data-result="ok" data-skill="checkttrating">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checkttrating sheet update 2026-07-02 - OK</span>
+    <span class="entry-meta">2026-07-02 15:47-16:07 MYT; captured 13/13; wrote TIKTOK rows 446-458</span>
+    <span class="tag">checkttrating</span>
+    <span class="tag result-ok">OK</span>
+  </div>
+  <div class="entry-body">
+    <div class="field" data-board-log-id="checkttrating-20260702"><strong>Board log id:</strong> checkttrating-20260702</div>
+    <p><strong>Brief:</strong> checkttrating captured all configured TikTok MY/SG shop-health profiles and wrote the Google Sheet rows with readback and red metric flags verified.</p>
+    <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
+    <div class="field"><strong>Task:</strong> checkttrating TikTok shop-health capture and CS TT Shop Rating sheet update.</div>
+    <div class="field"><strong>Before -&amp;gt; after values:</strong> profiles captured <code>0/13 -&gt; 13/13</code>; login blockers <code>0 -&gt; 0</code>; raw evidence files <code>0 -&gt; 26</code>; Google Sheet rows <code>A446:J458 blank -&gt; populated</code>; red formatted cells <code>0 -&gt; 7</code>; profile cleanup <code>12/13 inactive -&gt; 13/13 inactive</code>; business/customer/marketplace/stock writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Shop:</strong> Adelmar, Das Nature, Hiranai, HiranaiMY, Jager, JagerSafety, JagerArmor, JagerHelmet, KarlMobel, Murahya, Valuesnap, Kinata SG, Lovento.</div>
+    <div class="field"><strong>Platform:</strong> TikTok MY/SG, Google Sheets CS TT Shop Rating.</div>
+    <div class="field"><strong>Reason for change:</strong> Daily report-only shop-health capture; red flags identify metrics requiring attention without customer or marketplace writes.</div>
+    <div class="field"><strong>Result:</strong> OK. Report-only flags remain for Adelmar, Hiranai, JagerHelmet, KarlMobel, Murahya, and Kinata SG.</div>
+    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\ttrating-reports\ttrating-report-2026-07-02.md</code>; <code>C:\Users\tessf\code\codex-lab\tmp-ttrating-20260702\sheet-readback-2026-07-02.json</code>; <code>C:\Users\tessf\code\codex-lab\tmp-ttrating-20260702\profile-cleanup-readback-2026-07-02.json</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> No active capture/sheet/profile blocker found; metric flags are report-only.</div>
+  </div>
+</div>
+<div class="entry" data-date="2026-07-02" data-shops="ValueSnap, MasonGym, Lovento, Kinata SG, DasNature SG, Shopee MY/SG shops" data-platform="Shopee MY + Shopee SG + wallet + employee claim webapp" data-result="warn" data-skill="csrrcredited">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">csrrcredited wallet audit 2026-07-02 - PARTIAL</span>
+    <span class="entry-meta">2026-07-02 MYT; 19/20 shops; 0 wins; 15 clawbacks; 54 flags; 3 unverified rows</span>
+    <span class="tag">csrrcredited</span>
+    <span class="tag result-warn">PARTIAL</span>
+  </div>
+  <div class="entry-body">
+    <div class="field" data-board-log-id="csrrcredited-20260702"><strong>Board log id:</strong> csrrcredited-20260702</div>
+    <p><strong>Brief:</strong> CSRR credited ran the live wallet/RR audit and verified reconciliation patches, but stayed PARTIAL due unverified rows and ValueSnap sweep timeouts/no-target errors.</p>
+    <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
+    <div class="field"><strong>Task:</strong> csrrcredited Shopee compensation and wallet verification audit.</div>
+    <div class="field"><strong>Before -&amp;gt; after values:</strong> planned shops <code>0 -&gt; 20</code>; shops with live profile evidence <code>0 -&gt; 19/20</code>; profiles used <code>0 -&gt; 70+84</code>; wins <code>0 -&gt; 0</code>; MY clawbacks <code>RM0.00 -&gt; RM57.26</code>; SG clawbacks <code>SGD0.00 -&gt; SGD40.82</code>; flagged cases <code>0 -&gt; 54</code>; reconciliation patches verified <code>0/34 -&gt; 34/34</code>; unverified rows <code>0 -&gt; 3</code>; approval-gated rows <code>0 -&gt; 28</code>.</div>
+    <div class="field"><strong>Shop:</strong> MurahYa, ValueSnap, Hiranai, KarlMobel, das.nature, das.nature2, Emas Gift, BahEmas, Lovento, Luxbin, MasonGym, Adelmar, JagerHelmet, Kinata SG, HiranaiSG, KarlMobel SG, MurahYa SG, EmasGift SG, DasNature SG, DasNatureSG2.</div>
+    <div class="field"><strong>Platform:</strong> Shopee MY, Shopee SG, Shopee wallet, employee claim webapp.</div>
+    <div class="field"><strong>Reason for change:</strong> Verify credited/withdrawn/clawback state against live wallet/RR evidence before claim status changes.</div>
+    <div class="field"><strong>Result:</strong> PARTIAL. No wins; 15 clawbacks logged; 54 flagged cases; three rows remain unverified.</div>
+    <div class="field"><strong>Unverified rows:</strong> <code>260530Q1QE1HTE</code> ValueSnap AbortError; <code>2606277JNBHTCC</code> Lovento AbortError; <code>260612V89EW3HN</code> MasonGym AbortError. ValueSnap sweep also hit WebSocket timeouts/no-target errors.</div>
+    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\csrrcredited-reports\csrrcredited-report-2026-07-02.md</code>; raw and schedule logs under <code>C:\Users\tessf\Documents\csrrcredited-reports</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Complete the unverified rows before making further status changes.</div>
+  </div>
+</div>
+<div class="entry" data-date="2026-07-02" data-shops="TT Adelmar, TT Hiranai, TT MurahYa, TT Valuesnap" data-platform="TikTok MY + employee parcel-claim webapp" data-result="warn" data-skill="ttparcelclaim">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">ttparcelclaim follow-up 2026-07-02 - PARTIAL</span>
+    <span class="entry-meta">2026-07-02 MYT; pending 85 -&gt; 71; nulls 9/6/6 -&gt; 0/0/0; 54 patches</span>
+    <span class="tag">ttparcelclaim</span>
+    <span class="tag result-warn">PARTIAL</span>
+  </div>
+  <div class="entry-body">
+    <div class="field" data-board-log-id="ttparcelclaim-20260702"><strong>Board log id:</strong> ttparcelclaim-20260702</div>
+    <p><strong>Brief:</strong> ttparcelclaim follow-up cleaned the webapp health gaps and patched 54 fields, but stayed PARTIAL because the same seven TikTok seller profiles needed relogin.</p>
+    <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
+    <div class="field"><strong>Task:</strong> ttparcelclaim follow-up and coverage check.</div>
+    <div class="field"><strong>Before -&amp;gt; after values:</strong> records fetched <code>327 -&gt; 327</code>; pending pool <code>85 -&gt; 71</code>; pending RM <code>RM23066.58 -&gt; RM21488.16</code>; due rows <code>73 -&gt; 64</code>; missing followup_dt <code>9 -&gt; 0</code>; missing return_status <code>6 -&gt; 0</code>; missing action_needed <code>6 -&gt; 0</code>; terminal-state orphans <code>1 -&gt; 0</code>; reverse orphans <code>0 -&gt; 0</code>; hard action mismatches <code>0 -&gt; 0</code>; webapp creates <code>0 -&gt; 0</code>; webapp patches <code>0 -&gt; 54</code>.</div>
+    <div class="field"><strong>Shop:</strong> TT Adelmar, TT Hiranai, TT MurahYa, TT Valuesnap and the login-expired TikTok MY shops: 55 TT DasNature, 56 TT Hiranai, 58 TT HiranaiMY, 59 TT Jager, 61 TT JagerSafety, 62 TT KarlMobel, 65 TT Valuesnap.</div>
+    <div class="field"><strong>Platform:</strong> TikTok MY and employee parcel-claim webapp.</div>
+    <div class="field"><strong>Reason for change:</strong> Apply Rule 8 null follow-up cleanup, Rule 12 closeable cleanup, and Rule 18 monitor fallback so rows are not left blank.</div>
+    <div class="field"><strong>Result:</strong> PARTIAL. Webapp health is clean, but seven seller profiles still need relogin.</div>
+    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\ttparcelclaim-reports\ttparcelclaim-coverage-2026-07-02.md</code>; raw and schedule logs under <code>C:\Users\tessf\Documents\ttparcelclaim-reports</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Carry-over monitor rows remain for <code>C2351</code> and <code>C2353</code> with followup_dt <code>2026-07-03</code>; operator relogin required for the seven TikTok profiles.</div>
+  </div>
+</div>
+<div class="entry" data-date="2026-07-02" data-shops="TT Adelmar, TT MurahYa, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerSafety, TT KarlMobel, TT Valuesnap" data-platform="TikTok MY + employee parcel-claim webapp" data-result="warn" data-skill="parcelclaim-auto">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">parcelclaim-auto scheduled intake 2026-07-02 - PARTIAL</span>
+    <span class="entry-meta">2026-07-02 MYT; 6 new cases; RM2383.30; 6/6 confirmed; 7 login-expired profiles</span>
+    <span class="tag">parcelclaim-auto</span>
+    <span class="tag result-warn">PARTIAL</span>
+  </div>
+  <div class="entry-body">
+    <div class="field" data-board-log-id="parcelclaim-auto-20260702"><strong>Board log id:</strong> parcelclaim-auto-20260702</div>
+    <p><strong>Brief:</strong> parcelclaim-auto completed the actionable TikTok posting subset and crosschecked every new case, but stayed PARTIAL because seven TikTok seller profiles were login-expired.</p>
+    <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
+    <div class="field"><strong>Task:</strong> parcelclaim-auto TikTok/Lazada parcel-claim intake.</div>
+    <div class="field"><strong>Before -&amp;gt; after values:</strong> profiles in scope <code>0 -&gt; 16</code>; profiles scanned OK <code>0 -&gt; 9</code>; profile errors <code>0 -&gt; 7</code>; webapp rows <code>321 -&gt; 327</code>; new POSTed cases <code>0 -&gt; 6</code>; new POSTed value <code>RM0.00 -&gt; RM2383.30</code>; crosscheck <code>0/6 -&gt; 6/6 CONFIRMED</code>; webapp creates <code>321 -&gt; 327</code>; webapp remark patches <code>0 -&gt; 6</code>; messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace writes 0 -&gt; 0.</div>
+    <div class="field"><strong>Posted cases:</strong> <code>C2349</code> TT Adelmar FD 584304778366780709 RM299.71; <code>C2350</code> TT Adelmar FD 584299958877193506 RM243.71; <code>C2351</code> TT MurahYa R/R 584779831354754908 RM1253.60; <code>C2352</code> TT MurahYa FD 584301862689932355 RM27.80; <code>C2353</code> TT MurahYa FD 584301709677791026 RM270.82; <code>C2354</code> TT MurahYa FD 584273764418946333 RM287.66.</div>
+    <div class="field"><strong>Shop:</strong> TT Adelmar and TT MurahYa posted; login-expired shops: 55 TT DasNature, 56 TT Hiranai, 58 TT HiranaiMY, 59 TT Jager, 61 TT JagerSafety, 62 TT KarlMobel, 65 TT Valuesnap.</div>
+    <div class="field"><strong>Platform:</strong> TikTok MY seller center and employee parcel-claim webapp.</div>
+    <div class="field"><strong>Reason for change:</strong> Create only genuinely new parcel claims after dedupe, then add audit-trail remarks and crosscheck the new rows.</div>
+    <div class="field"><strong>Result:</strong> PARTIAL because seven TikTok MY seller profiles require operator relogin; the six posted cases are confirmed.</div>
+    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-07-02.md</code>; raw files under <code>C:\Users\tessf\Documents\parcelclaim-auto-reports</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Relogin required before full source coverage: 55 TT DasNature, 56 TT Hiranai, 58 TT HiranaiMY, 59 TT Jager, 61 TT JagerSafety, 62 TT KarlMobel, 65 TT Valuesnap.</div>
+  </div>
+</div>
+<div class="entry" data-date="2026-07-02" data-shops="TT Adelmar, TT KarlMobel, TT Jager, TT MurahYa, TT Valuesnap" data-platform="TikTok MY + employee parcel-claim/RR webapp" data-result="warn" data-skill="tiktokrraudit">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">tiktokrraudit scheduled audit 2026-07-02 - PARTIAL</span>
+    <span class="entry-meta">2026-07-02 MYT; 321 webapp rows; 32 flags; 29 confirmed; seller evidence 0/11</span>
+    <span class="tag">tiktokrraudit</span>
+    <span class="tag result-warn">PARTIAL</span>
+  </div>
+  <div class="entry-body">
+    <div class="field" data-board-log-id="tiktokrraudit-20260702"><strong>Board log id:</strong> tiktokrraudit-20260702</div>
+    <p><strong>Brief:</strong> TikTok R/R audit ran read-only and produced a same-day report, but stayed PARTIAL because seller-side same-day evidence was not available when it ran.</p>
+    <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
+    <div class="field"><strong>Task:</strong> tiktokrraudit scheduled TikTok MY return/refund audit.</div>
+    <div class="field"><strong>Before -&amp;gt; after values:</strong> webapp rows <code>0 -&gt; 321 fresh</code>; refund states <code>Credited 25 / Pending 79 / Rejected 5 / Withdrawn 212</code>; core TT seller-profile coverage <code>0/11 -&gt; 0/11 same-day evidence</code>; new FD rows posted <code>0 -&gt; 0</code>; total flags <code>0 -&gt; 32</code>; confirmed flags <code>0 -&gt; 29</code>; arithmetic issues <code>0 -&gt; 0</code>; messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace writes 0 -&gt; 0; webapp patches <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Shop:</strong> TT Adelmar, TT KarlMobel, TT Jager, TT MurahYa, TT Valuesnap and other TikTok MY R/R worklist shops from the report.</div>
+    <div class="field"><strong>Platform:</strong> TikTok MY, employee parcel-claim/RR webapp.</div>
+    <div class="field"><strong>Reason for change:</strong> Scheduled audit evidence capture and classification only; no live marketplace or customer write was safe without same-day seller evidence.</div>
+    <div class="field"><strong>Result:</strong> PARTIAL. No new TT-side loss/win/appealable flag was asserted from seller data.</div>
+    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\tiktokrraudit-reports\tiktokrraudit-report-2026-07-02.md</code>; <code>C:\Users\tessf\Documents\tiktokrraudit-reports\_codex_tiktokrraudit_2026-07-02.json</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Same-day seller-profile evidence was 0/11 when this job ran. The later parcelclaim-auto run created upstream evidence, but tiktokrraudit was not rerun afterward.</div>
+  </div>
+</div>
   <div class="entry" data-date="2026-07-02" data-shops="BahEmas, KarlMobel, Laz MurahYa, MurahYa" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -5113,21 +5269,26 @@ profile 83 / Lazada Lovento / Lazada MY: ALIVE</pre></div>
     <div class="field"><strong>Evidence:</strong> <code>tmp-schedule-health-20260701/schedule-health-check-20260701.md</code>; tiktokrraudit report/log under <code>C:\Users\tessf\Documents\tiktokrraudit-reports</code> and <code>C:\Users\tessf\Documents\codex-scheduled-logs\tiktokrraudit</code>; current scheduled prompt installer mapping <code>.agents\scheduled-codex\install-codex-scheduled-tasks.ps1</code>.</div>
   </div>
 </div>
-<div class="entry" data-date="2026-07-02" data-shops="All scheduled jobs" data-platform="Windows Task Scheduler,Codex scheduled logs" data-result="warn" data-skill="scheduled-codex">
+<div class="entry" data-date="2026-07-02" data-shops="All scheduled jobs" data-platform="Windows Task Scheduler + Codex scheduled runner" data-result="warn" data-skill="scheduled-codex">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">scheduled-codex stop-again repair - runner fallback and task reinstall 2026-07-02</span>
-    <span class="entry-meta">2026-07-02 MYT &middot; chataudit stopped at 3/5 login proof &middot; 14 tasks missing -&gt; 15 Ready &middot; fallback runner in scripts</span>
-    <span class="entry-tags"><span class="tag">scheduled-codex</span><span class="tag">chataudit</span><span class="tag result-warn">Repair complete, chataudit outstanding</span></span>
+    <span class="entry-title">scheduled-codex resume and stop-again repair closeout 2026-07-02</span>
+    <span class="entry-meta">2026-07-02 MYT; runner restored; stale processes 4 -&gt; 0; skipped SBVariation/ReturnItems reruns by request</span>
+    <span class="tag">scheduled-codex</span>
+    <span class="tag result-warn">PARTIAL</span>
   </div>
   <div class="entry-body">
-    <div class="field" data-board-log-id="scheduled-codex-stop-repair-20260702"><strong>Task:</strong> Patricia asked why the schedule run stopped again. Diagnosis and scheduler repair only; no business, customer, stock, marketplace, or webapp workflow was manually started.</div>
-    <div class="field"><strong>Stop reason found:</strong> 2026-07-02 09:45 <code>chataudit</code> wrote only <code>_codex_chataudit_login_preflight_2026-07-02.json</code>. Readback was <code>okCount 3 / targetCount 5 / allLoggedIn false</code>; <code>cs1</code>, <code>cs2</code>, and <code>cs3</code> were OK, but <code>cs4</code>/<code>cs5</code> never completed. No same-day chataudit summary/raw/crosscheck/closeout/board readback exists.</div>
-    <div class="field"><strong>Scheduler defect found:</strong> Live Task Scheduler readback showed generic Codex tasks including <code>ChatAudit_910AM</code> missing; only <code>SBVariationAudit_930AM</code> was Ready. The configured runner path <code>.agents\scheduled-codex\run-codex-scheduled-fixed.ps1</code> was also missing and ACL-denied even when restored with elevation.</div>
-    <div class="field"><strong>Before -&gt; after values:</strong> runner <code>missing/ACL-denied -&gt; scripts\run-codex-scheduled-fixed.ps1</code> present, 28,350 bytes; installer fallback <code>missing -&gt; scripts\install-codex-scheduled-tasks-fixed.ps1</code>; scheduled tasks <code>14 generic missing + 1 Ready -&gt; 15 expected Ready</code>; generic task actions now point to <code>scripts\run-codex-scheduled-fixed.ps1</code>; obsolete Claude tasks stayed disabled; business/customer/marketplace writes <code>0 -&gt; 0</code>.</div>
-    <div class="field"><strong>Validation:</strong> runner self-test passed for all configured jobs; per-job self-tests passed for <code>chataudit</code> and <code>profile-login-preflight</code>; fallback installer self-test passed; final Task Scheduler readback saved; <code>npm test</code> passed <code>4/4</code>.</div>
-    <div class="field"><strong>Evidence:</strong> <code>scripts\run-codex-scheduled-fixed.ps1</code>; <code>scripts\install-codex-scheduled-tasks-fixed.ps1</code>; <code>tmp-schedule-health-20260702\scheduled-task-readback-after-repair-20260702.json</code>; <code>C:\Users\tessf\Documents\codex-scheduled-logs\chataudit\chataudit-scheduled-20260702-094502.log</code>; <code>C:\Users\tessf\Documents\chataudit-reports\_codex_chataudit_login_preflight_2026-07-02.json</code>.</div>
-    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Today&apos;s <code>chataudit</code> remains incomplete and needs a separate rerun/closeout if required. The 2026-07-02 profile-login-preflight still has Lazada profile <code>82</code> blocked for Lazada82-dependent jobs. Early jobs due before this repair now next run on 2026-07-03; later 2026-07-02 jobs remain scheduled from 11:55 onward.</div>
+    <div class="field" data-board-log-id="scheduled-codex-closeout-20260702"><strong>Board log id:</strong> scheduled-codex-closeout-20260702</div>
+    <p><strong>Brief:</strong> Codex resumed the 2026-07-02 scheduled recovery after Patricia reported the run stopped again and after the laptop restart. The scheduler path was repaired, skipped jobs were restored for future runs, and same-day artifacts were crosschecked without rerunning CheckSBVariation or Return Items.</p>
+    <div class="field"><strong>Date:</strong> 2026-07-02 MYT.</div>
+    <div class="field"><strong>Task:</strong> Scheduled-codex stop-again repair, resumed scheduled scope, stale-process cleanup, and closeout board logging.</div>
+    <div class="field"><strong>Before -&amp;gt; after values:</strong> broken installer action <code>run-codex-scheduled-fixed.ps1</code> -&gt; <code>scripts\run-codex-scheduled-runner.ps1</code>; scheduled task readback for current jobs <code>mixed/missing</code> -&gt; <code>Ready with runner path</code>; chataudit same-day status <code>partial login proof only</code> -&gt; <code>FINAL_STATUS OK</code>; stale direct-run processes <code>4</code> -&gt; <code>0</code>; SBVariation and ReturnItems direct reruns by this resumed prompt <code>not skipped</code> -&gt; <code>skipped by Patricia request</code>; reports checked <code>0 -&gt; 9</code>.</div>
+    <div class="field"><strong>Shop:</strong> All scheduled Patricia shops/accounts in the affected scheduled run.</div>
+    <div class="field"><strong>Platform:</strong> Windows Task Scheduler, Codex scheduled runner, Patricia board, Shopee MY/SG, TikTok MY/SG, Lazada MY, SiteGiant, Google Sheets, employee webapp.</div>
+    <div class="field"><strong>Reason for change:</strong> Restore the expected runner after the scheduled wrapper stopped early and complete board/error-log closeout after the manual resumed runs.</div>
+    <div class="field"><strong>Result:</strong> Scheduler repair complete for future runs. Same-day business results are logged in their skill cards. Known partials remain: TikTok seller logins expired for parcelclaim/ttparcelclaim, CSRR unverified rows, and SG Gap monitor hang.</div>
+    <div class="field"><strong>Evidence:</strong> <code>scripts\run-codex-scheduled-runner.ps1</code>; <code>scripts\install-codex-scheduled-tasks-fixed.ps1</code>; <code>tmp-schedule-health-20260702</code>; scheduled logs under <code>C:\Users\tessf\Documents\codex-scheduled-logs</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> The 16:30 automatic ParcelSplit scheduled wrapper failed on an abandoned profile70 mutex after the direct ParcelSplit run had already completed; SG Gap monitor did not complete; CheckSBVariation and Return Items were not rerun in this resumed prompt by request.</div>
   </div>
 </div>
 <!-- ENTRIES_END -->
