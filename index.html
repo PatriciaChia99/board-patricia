@@ -5293,7 +5293,24 @@ profile 83 / Lazada Lovento / Lazada MY: ALIVE</pre></div>
     <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> TikTok R/R audit already ran today but was partial because same-day TikTok seller-source evidence was unavailable/incomplete at audit time. TT Ratings appears incomplete because no <code>ttrating-report-2026-07-01.md</code> or final message file was found. Live Windows Task Scheduler next-run state still needs approval to verify directly.</div>
     <div class="field"><strong>Evidence:</strong> <code>tmp-schedule-health-20260701/schedule-health-check-20260701.md</code>; tiktokrraudit report/log under <code>C:\Users\tessf\Documents\tiktokrraudit-reports</code> and <code>C:\Users\tessf\Documents\codex-scheduled-logs\tiktokrraudit</code>; current scheduled prompt installer mapping <code>.agents\scheduled-codex\install-codex-scheduled-tasks.ps1</code>.</div>
   </div>
-</div><!-- ENTRIES_END -->
+</div><div class="entry" data-date="2026-07-02" data-shops="All scheduled jobs" data-platform="Windows Task Scheduler,Codex scheduled logs" data-result="warn" data-skill="scheduled-codex">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">scheduled-codex stop-again repair - runner fallback and task reinstall 2026-07-02</span>
+    <span class="entry-meta">2026-07-02 MYT &middot; chataudit stopped at 3/5 login proof &middot; 14 tasks missing -&gt; 15 Ready &middot; fallback runner in scripts</span>
+    <span class="entry-tags"><span class="tag">scheduled-codex</span><span class="tag">chataudit</span><span class="tag result-warn">Repair complete, chataudit outstanding</span></span>
+  </div>
+  <div class="entry-body">
+    <div class="field" data-board-log-id="scheduled-codex-stop-repair-20260702"><strong>Task:</strong> Patricia asked why the schedule run stopped again. Diagnosis and scheduler repair only; no business, customer, stock, marketplace, or webapp workflow was manually started.</div>
+    <div class="field"><strong>Stop reason found:</strong> 2026-07-02 09:45 <code>chataudit</code> wrote only <code>_codex_chataudit_login_preflight_2026-07-02.json</code>. Readback was <code>okCount 3 / targetCount 5 / allLoggedIn false</code>; <code>cs1</code>, <code>cs2</code>, and <code>cs3</code> were OK, but <code>cs4</code>/<code>cs5</code> never completed. No same-day chataudit summary/raw/crosscheck/closeout/board readback exists.</div>
+    <div class="field"><strong>Scheduler defect found:</strong> Live Task Scheduler readback showed generic Codex tasks including <code>ChatAudit_910AM</code> missing; only <code>SBVariationAudit_930AM</code> was Ready. The configured runner path <code>.agents\scheduled-codex\run-codex-scheduled-fixed.ps1</code> was also missing and ACL-denied even when restored with elevation.</div>
+    <div class="field"><strong>Before -&gt; after values:</strong> runner <code>missing/ACL-denied -&gt; scripts\run-codex-scheduled-fixed.ps1</code> present, 28,350 bytes; installer fallback <code>missing -&gt; scripts\install-codex-scheduled-tasks-fixed.ps1</code>; scheduled tasks <code>14 generic missing + 1 Ready -&gt; 15 expected Ready</code>; generic task actions now point to <code>scripts\run-codex-scheduled-fixed.ps1</code>; obsolete Claude tasks stayed disabled; business/customer/marketplace writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Validation:</strong> runner self-test passed for all configured jobs; per-job self-tests passed for <code>chataudit</code> and <code>profile-login-preflight</code>; fallback installer self-test passed; final Task Scheduler readback saved; <code>npm test</code> passed <code>4/4</code>.</div>
+    <div class="field"><strong>Evidence:</strong> <code>scripts\run-codex-scheduled-fixed.ps1</code>; <code>scripts\install-codex-scheduled-tasks-fixed.ps1</code>; <code>tmp-schedule-health-20260702\scheduled-task-readback-after-repair-20260702.json</code>; <code>C:\Users\tessf\Documents\codex-scheduled-logs\chataudit\chataudit-scheduled-20260702-094502.log</code>; <code>C:\Users\tessf\Documents\chataudit-reports\_codex_chataudit_login_preflight_2026-07-02.json</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> Today&apos;s <code>chataudit</code> remains incomplete and needs a separate rerun/closeout if required. The 2026-07-02 profile-login-preflight still has Lazada profile <code>82</code> blocked for Lazada82-dependent jobs. Early jobs due before this repair now next run on 2026-07-03; later 2026-07-02 jobs remain scheduled from 11:55 onward.</div>
+  </div>
+</div>
+<!-- ENTRIES_END -->
     <div class="empty-state" id="emptyState" style="display:none;">No entries match your filters.</div>
   </div>
 <script>
