@@ -624,6 +624,34 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-07-03" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerSafety, TT KarlMobel, TT Lovento, TT MurahYa, TT Valuesnap, TT JagerHelmet, TT Kinata, Lazada MurahYa, Laz das.nature, Lazada Lovento" data-platform="TikTok MY/SG + Lazada MY + employee parcel-claim webapp" data-result="ok" data-skill="parcelclaim-auto">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">parcelclaim-auto 2026-07-03 - OK after MurahYa retry, 8 posted</span>
+    <span class="entry-meta">2026-07-03 MYT &middot; 16/16 profiles OK &middot; C2369-C2376 &middot; RM 1345.80 &middot; 8/8 confirmed</span>
+    <span class="tag">parcelclaim-auto</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <div class="field" data-board-log-id="parcelclaim-auto-20260703"><strong>Task:</strong> Scheduled parcelclaim-auto intake for TikTok MY/SG, Lazada MY, and the employee parcel-claim webapp.</div>
+    <div class="field"><strong>Shop:</strong> all configured parcelclaim-auto source shops: TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerSafety, TT KarlMobel, TT Lovento, TT MurahYa, TT Valuesnap, TT JagerHelmet, TT Kinata, Lazada MurahYa, Laz das.nature, and Lazada Lovento.</div>
+    <div class="field"><strong>Platform:</strong> TikTok MY/SG Seller Center, Lazada MY Seller Center, AdsPower, and internal employee parcel-claim webapp.</div>
+    <div class="field"><strong>Reason:</strong> Daily scheduled intake of current/latest failed-delivery and R/R parcel-claim cases with all-state <code>order_id</code> dedupe before every create.</div>
+    <div class="field"><strong>Before -&gt; after values:</strong><ul><li>Profile preflight blockers for profile70/TT54/TT60/TT63/TT66/TT67/Lazada82 -&gt; live run attached profile70 and scanned all 16 source profiles; Lazada82 parsed 7 reverse rows.</li><li>Source coverage <code>0/16 -&gt; 16/16 OK</code> after focused TT MurahYa retry cleared the only FD API page-2 upstream JSON error.</li><li>Webapp parcel-claim rows <code>318 -&gt; 326</code>; unique order IDs <code>316 -&gt; 324</code> by observed row growth and 8 confirmed creates.</li><li>New webapp creates <code>0 -&gt; 8</code>; posted value <code>RM 0.00 -&gt; RM 1345.80</code>; audit remark PATCHes <code>0 -&gt; 8 HTTP 200</code>; crosscheck <code>0/8 -&gt; 8/8 CONFIRMED</code>.</li><li>Messages, WhatsApp/customer contact, stock writes, seller-platform business writes, marketplace changes, and non-parcelclaim writes stayed <code>0 -&gt; 0</code>.</li><li>Profile70 starts/stops <code>0 -&gt; 0</code>; profile70 remained Active; source profile cleanup readback <code>0/16 -&gt; 16/16 Inactive</code>.</li></ul></div>
+    <div class="field"><strong>Posted cases:</strong><ul><li><code>C2369</code> / TT Adelmar / failed_delivery / order <code>584326648723571773</code> / RM 227.48: absent in all-state dedupe -&gt; Pending with parcelclaim-auto audit remark.</li>
+<li><code>C2370</code> / TT Adelmar / failed_delivery / order <code>584216273450665669</code> / RM 244.51: absent in all-state dedupe -&gt; Pending with parcelclaim-auto audit remark.</li>
+<li><code>C2371</code> / TT Hiranai / failed_delivery / order <code>584454394991183644</code> / RM 11.00: absent in all-state dedupe -&gt; Pending with parcelclaim-auto audit remark.</li>
+<li><code>C2372</code> / TT KarlMobel / failed_delivery / order <code>584328929597949439</code> / RM 101.29: absent in all-state dedupe -&gt; Pending with parcelclaim-auto audit remark.</li>
+<li><code>C2373</code> / TT MurahYa / failed_delivery / order <code>584326003185321065</code> / RM 588.42: absent in all-state dedupe -&gt; Pending with parcelclaim-auto audit remark.</li>
+<li><code>C2374</code> / TT MurahYa / failed_delivery / order <code>584322877439182297</code> / RM 20.60: absent in all-state dedupe -&gt; Pending with parcelclaim-auto audit remark.</li>
+<li><code>C2375</code> / TT JagerHelmet / failed_delivery / order <code>584328747504206929</code> / RM 129.00: absent in all-state dedupe -&gt; Pending with parcelclaim-auto audit remark.</li>
+<li><code>C2376</code> / TT MurahYa / failed_delivery / order <code>584790438419268793</code> / RM 23.50: absent in all-state dedupe -&gt; Pending with parcelclaim-auto audit remark.</li></ul></div>
+    <div class="field"><strong>Recovery:</strong> Initial full run posted <code>C2369-C2375</code> and ended partial only because TT MurahYa FD API page 2 returned invalid upstream JSON. Focused profile64 retry used the same runner engine, deduped against live all-state webapp rows, recovered the source gap, posted <code>C2376</code>, and crosschecked it as Pending/confirmed.</div>
+    <div class="field"><strong>Evidence:</strong> report <code>C:/Users/tessf/Documents/parcelclaim-auto-reports/parcelclaim-auto-report-2026-07-03.md</code>; raw <code>C:/Users/tessf/Documents/parcelclaim-auto-reports/_codex_parcelclaim_auto_2026-07-03.json</code>; run log <code>C:/Users/tessf/Documents/parcelclaim-auto-reports/_codex_parcelclaim_auto_2026-07-03.log</code>; MurahYa retry report/raw/log in the same folder; cleanup readback <code>_codex_parcelclaim_auto_profile_cleanup_2026-07-03.json</code>.</div>
+    <div class="field"><strong>Result:</strong> FINAL_STATUS OK. No active parcelclaim-auto source/login/POST/crosscheck blocker remains.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> No active outstanding parcelclaim-auto item was found. Downstream monitor/follow-up handling belongs to the separate ttparcelclaim workflow.</div>
+  </div>
+</div>
 <div class="entry" data-date="2026-07-03" data-shop="20 CS R/R shops" data-platform="Shopee MY, Shopee SG, Shopee wallet, employee claim webapp" data-status="completed" data-board-log-id="csrrcredited-20260703" data-skill="csrrcredited">
   <div class="entry-summary">
     <span class="entry-date">2026-07-03</span>
