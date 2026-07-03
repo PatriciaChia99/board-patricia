@@ -624,6 +624,29 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-07-03" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Patricia board" data-result="warn" data-skill="checkfbsclaims">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checkfbsclaims FBS status sync 2026-07-03 - OK_WITH_ACTION_ITEMS</span>
+    <span class="entry-meta">2026-07-03 MYT; webapp 545 cases; Sheet append 3; actionPlan 0; source discovery action item</span>
+    <span class="tag">checkfbsclaims</span>
+    <span class="tag result-warn">OK_WITH_ACTION_ITEMS</span>
+  </div>
+  <div class="entry-body">
+    <div class="field" data-board-log-id="checkfbsclaims-20260703"><strong>Board log id:</strong> checkfbsclaims-20260703</div>
+      <p><strong>Brief:</strong> Codex completed the 2026-07-03 FBS Claim webapp/Sheet sync, repaired an approved-closure guard miss during the run, appended three missing webapp cases to the FBS Sheet through the Google Drive connector, and left current-day Shopee source-only discovery as the remaining action item because no reusable source-capture helper exists in this checkout.</p>
+      <div class="field"><strong>Date:</strong> 2026-07-03 MYT.</div>
+      <div class="field"><strong>Task:</strong> checkfbsclaims scheduled FBS Claim Sheet/webapp sync and recovery.</div>
+      <div class="field"><strong>Before -&amp;gt; after values:</strong> Sheet rows <code>MurahYa 108 -&gt; 108</code>; <code>KarlMobel 176 -&gt; 177</code>; <code>ValueSnap 210 -&gt; 211</code>; <code>Luxbin 9 -&gt; 10</code>; webapp cases <code>545 -&gt; 545</code>; webapp-not-in-Sheet <code>3 -&gt; 0</code>; action plan <code>4 -&gt; 0</code> after the intended new current-row actions and approved-closure recovery; suspect closures <code>1 -&gt; 0</code>; approved closure regression <code>53 closed -&gt; pending_credited -&gt; closed</code>; final action distribution <code>in_progress=12, pending_fbs=209, closed=233, pending_credited=68, pending_seller=23</code>; wallet/customer/marketplace/stock writes <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Shop:</strong> MurahYa, KarlMobel, ValueSnap, Luxbin. Sheet writes touched KarlMobel, ValueSnap, and Luxbin.</div>
+      <div class="field"><strong>Platform:</strong> Google Sheet FBS Claim, employee FBS Claim webapp, Patricia board.</div>
+      <div class="field"><strong>Reason for change:</strong> The FBS webapp had three active/current cases missing from the Sheet: KarlMobel <code>260626556U4Y76</code>, ValueSnap <code>260620JXBJPQV5</code>, and Luxbin <code>260701FQA75KBP</code>. Internal Action readback also needed the approved-closure list restored after the first apply omitted it.</div>
+      <div class="field"><strong>Result:</strong> OK_WITH_ACTION_ITEMS. Webapp/Sheet sync is clean after connector append: <code>sheetPlan=0</code>, <code>inWebappNotInSheet=0</code>, <code>actionPlan=0</code>, <code>suspectClosures=0</code>. Remaining action item: current-day Shopee source-only discovery was not rerun because no reusable source-capture helper exists in this checkout.</div>
+      <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\fbs-claim-reports\fbs-claim-status-2026-07-03.md</code>; final readback <code>tmp-fbs-claim-20260703\fbs-sync-2026-07-03-final-readback-after-sheet</code>; connector Sheet readback <code>tmp-fbs-claim-20260703\google_sheet_connector_append_readback_20260703.json</code>; accidental apply folder <code>tmp-fbs-claim-20260703\fbs-sync-2026-07-03-action-apply</code>; closure restore folders <code>tmp-fbs-claim-20260703\fbs-sync-2026-07-03-approved-closure-restore</code> and <code>tmp-fbs-claim-20260703\fbs-sync-2026-07-03-approved-closure-restore-400-167</code>.</div>
+      <div class="field"><strong>What Patricia may have missed:</strong> The UI Sheet append failed because Windows clipboard access was denied, so connector appendCells was used and read back. The first FBS Action apply mistakenly downgraded 53 wallet-approved closed cases, but this was caught immediately and restored before closeout. Source-only Shopee discovery remains unrun for today.</div>
+  </div>
+</div>
+
   <div class="entry" data-date="2026-07-03" data-shops="BahEmas, KarlMobel, Laz MurahYa, MurahYa" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
