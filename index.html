@@ -624,6 +624,60 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<div class="entry" data-date="2026-07-03" data-shop="20 CS R/R shops" data-platform="Shopee MY, Shopee SG, Shopee wallet, employee claim webapp" data-status="completed" data-board-log-id="csrrcredited-20260703" data-skill="csrrcredited">
+  <div class="entry-summary">
+    <span class="entry-date">2026-07-03</span>
+    <span class="entry-title">csrrcredited wallet audit 2026-07-03 - completed recovery, 0 unverified</span>
+    <span class="entry-meta">20/20 shops swept; csrrcredited + checkcsrrcredited completed; unverified 0; errors 0</span>
+    <span class="entry-tags"><span class="tag">csrrcredited</span><span class="tag">csrrcreditedcheck</span><span class="tag">Completed</span></span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Logged:</strong> 2026-07-03 11:14 MYT.</p>
+    <p><strong>Date/task:</strong> 2026-07-03 - ran CS R/R credited and independent checkcsrrcredited, including focused recovery for the initially incomplete BahEmas, das.nature2, and Kinata SG rows.</p>
+    <p><strong>Shop:</strong> 20 configured CS R/R shops.</p>
+    <p><strong>Platform:</strong> Shopee MY, Shopee SG, Shopee wallet, and employee claim webapp.</p>
+    <p><strong>Reason for change:</strong> Confirm overdue Shopee R/R compensation against live wallet/R/R pages, apply only crosscheck-confirmed claim remarks, and recover all partial or unverified rows before closeout.</p>
+    <p><strong>Before/after values:</strong></p>
+    <ul>
+      <li>Run status: PARTIAL -&gt; OK_WITH_ACTION_ITEMS after focused recovery.</li>
+<li>Unverified rows: 1 -&gt; 0.</li>
+<li>Independent check live verification: 5/6 -&gt; 6/6.</li>
+<li>Independent check outstanding rows: 2 -&gt; 0.</li>
+<li>Patch/readback evidence: initial verified patches + settlement confirmations -&gt; 8 total patch records / 6 reconciled rows.</li>
+<li>Patricia board log: missing -&gt; posted with guarded private/public readback verification.</li>
+    </ul>
+    <p><strong>Every change and readback:</strong></p>
+    <ul>
+      <li><strong>C18615</strong> - shop das.nature2, platform Shopee MY, before Pending, after Pending, reason non-shipping compensation exists but NET is below refund, result verified.</li>
+<li><strong>C18831</strong> - shop MasonGym, platform Shopee MY, before Pending, after Pending, reason wallet/RR shows negative NET or type 411 clawback, result verified.</li>
+<li><strong>C481860</strong> - shop Kinata SG, platform Shopee SG, before Pending, after Pending, reason SG comp-positive adjustment below refund, result verified.</li>
+<li><strong>C391169</strong> - shop Kinata SG, platform Shopee SG, before Pending, after Pending, reason negative SG order adjustment, result verified.</li>
+<li><strong>C415358</strong> - shop Kinata SG, platform Shopee SG, before Pending, after Pending, reason negative SG order adjustment, result verified.</li>
+<li><strong>C488666</strong> - shop DasNature SG, platform Shopee SG, before Pending, after Pending, reason negative SG order adjustment, result verified.</li>
+<li><strong>C18831</strong> - shop MasonGym, platform Shopee MY, before Pending, after Pending, reason wallet/RR shows negative NET or type 411 clawback, result remark_confirmed.</li>
+<li><strong>C391169</strong> - shop Kinata SG, platform Shopee SG, before Pending, after Pending, reason negative SG order adjustment, result remark_confirmed.</li>
+<li><strong>C415358</strong> - shop Kinata SG, platform Shopee SG, before Pending, after Pending, reason negative SG order adjustment, result remark_confirmed.</li>
+<li><strong>C488666</strong> - shop DasNature SG, platform Shopee SG, before Pending, after Pending, reason negative SG order adjustment, result remark_confirmed.</li>
+<li><strong>C18615</strong> - shop das.nature2, platform Shopee MY, before Pending, after Pending, reason non-shipping compensation exists but NET is below refund, result focused_recovery_confirmed.</li>
+<li><strong>C481860</strong> - shop Kinata SG, platform Shopee SG, before Pending, after Pending, reason SG comp-positive adjustment below refund, result focused_recovery_confirmed.</li>
+    </ul>
+    <p><strong>Result:</strong> FINAL_STATUS OK_WITH_ACTION_ITEMS; independent check status OK_WITH_ACTION_ITEMS; candidate gated rows 6, live verified 6/6, focused recovery 3, approval-gated 6, unverified 0, errors 0, blockers 0.</p>
+    <p><strong>Evidence:</strong></p>
+    <ul>
+      <li>Main report: C:\Users\tessf\Documents\csrrcredited-reports\csrrcredited-report-2026-07-03.md</li>
+<li>Main raw evidence: C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_2026-07-03.json</li>
+<li>Independent check settlement report: C:\Users\tessf\Documents\csrrcredited-reports\csrrcredited-crosscheck-confirmed-settlement-2026-07-03.md</li>
+<li>Independent check settlement raw evidence: C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_crosscheck_confirmed_settlement_2026-07-03.json</li>
+<li>Focused recovery raw evidence: C:\Users\tessf\code\codex-lab\tmp-csrrcredited-20260703\focused-recovery-2026-07-03.json</li>
+<li>Runner log: C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_2026-07-03.log</li>
+<li>Schedule log: C:\Users\tessf\Documents\csrrcredited-reports\schedule-log-2026-07-03.txt</li>
+    </ul>
+    <p><strong>Outstanding / Patricia may have missed:</strong></p>
+    <ul>
+      <li>No Patricia user action required after recovery. The runner still carries SG Pending+Closed monitor notes for 2606252SC4AB3G, 260620JY46D6R2 as claim-state cleanup watch items, not a live execution blocker.</li>
+    </ul>
+  </div>
+</div>
 <!-- checksbvariation-scheduled-20260703 -->
 <div class="entry" data-date="2026-07-03" data-shops="TT Hiranai, KarlMobel, Murahya, e_masgift.sg, KarlMobel SG, ValueSnap, SiteGiant" data-platform="TikTok MY + Shopee MY + Shopee SG + Lazada MY + SiteGiant + employee webapp" data-result="partial">
   <div class="entry-summary">
@@ -902,15 +956,15 @@ header.page::after{
       <div class="field"><strong>Run result:</strong> All-platform checkreturnitems wide search completed. Fresh Return Items rows <code>13914</code>; incomplete/error <code>76 -&gt; 70</code>; active/reportable <code>14 -&gt; 8</code>. Patched and verified <code>6/6</code> rows using <code>18/18</code> one-field PATCH writes; failed writes <code>0</code>; guarded skips <code>0</code>.</div>
       <div class="field"><strong>Every Return Items webapp change before -&gt; after:</strong><ul>
         <li><code>14339</code> / MurahYa / ShopeeMY / Resell / <code>SPXMY064176002676</code>: orderId <code>null</code> -&gt; <code>260623SWQPF658</code>; items <code>null</code> -&gt; <code>Swimming Pool Intex Bestway Kolam Renang Besar Murah Budak Dewasa Intex Pool Family Large</code>; iskus <code>null</code> -&gt; <code>INTX530GPH</code>; stockIds <code>null</code> -&gt; <code>null</code>; evidence <code>tmp-returnitems\returnitems_20260702_sitegiant_single_04_14339.json</code>; result <code>verified</code>.</li>
-        <li><code>14340</code> / KarlMobel / ShopeeMY / Resell / <code>MY265649771059Q</code>: orderId <code>null</code> -&gt; <code>2606251J14BKCE</code>; items <code>null</code> -&gt; <code>LuxbinÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ Dustbin Kitchen Large Tong Sampah Bertutup Dapur Besar 20L 30L 50L Stainless Steel Trash Bin Bilik Air</code>; iskus <code>null</code> -&gt; <code>DUSTBIN-STELLA-SILVER-30L</code>; stockIds <code>null</code> -&gt; <code>null</code>; evidence <code>tmp-returnitems\returnitems_20260702_shopeemy_rr_cs3.json</code>; result <code>verified</code>.</li>
+        <li><code>14340</code> / KarlMobel / ShopeeMY / Resell / <code>MY265649771059Q</code>: orderId <code>null</code> -&gt; <code>2606251J14BKCE</code>; items <code>null</code> -&gt; <code>LuxbinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ Dustbin Kitchen Large Tong Sampah Bertutup Dapur Besar 20L 30L 50L Stainless Steel Trash Bin Bilik Air</code>; iskus <code>null</code> -&gt; <code>DUSTBIN-STELLA-SILVER-30L</code>; stockIds <code>null</code> -&gt; <code>null</code>; evidence <code>tmp-returnitems\returnitems_20260702_shopeemy_rr_cs3.json</code>; result <code>verified</code>.</li>
         <li><code>14341</code> / TT Murahya / TikTok / Resell / <code>680039495692917</code>: orderId <code>null</code> -&gt; <code>584619065151816844</code>; items <code>null</code> -&gt; <code>HOVERBOARD 7&quot;/10&quot; Inch LED Light BLUETOOTH SPEAKER Self Balancing elektrik skuter electric scooter</code>; iskus <code>null</code> -&gt; <code>RDN</code>; stockIds <code>null</code> -&gt; <code>null</code>; evidence <code>tmp-returnitems\returnitems_20260702_sitegiant_single_06_14341.json</code>; result <code>verified</code>.</li>
         <li><code>14343</code> / TT Jager / TikTok / Resell / <code>680084504313115</code>: orderId <code>null</code> -&gt; <code>584678111997364115</code>; items <code>null</code> -&gt; <code>JAGER Helmet motor helmet motorcycle Topi keledar double visor open face motosikal bike helmet moto Stylish dual lens</code>; iskus <code>null</code> -&gt; <code>JG-SRBL-SIRIM</code>; stockIds <code>null</code> -&gt; <code>null</code>; evidence <code>tmp-returnitems\returnitems_20260702_sitegiant_single_07_14343.json</code>; result <code>verified</code>.</li>
-        <li><code>14347</code> / KarlMobel / ShopeeMY / Resell / <code>MY2696590060107</code>: orderId <code>null</code> -&gt; <code>2606252PCSK4DJ</code>; items <code>null</code> -&gt; <code>LuxbinÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ Tong sampah besar Dustbin kitchen large 50L 30L Pedal rubbish bin Sensor cover trash can Stainless steel big</code>; iskus <code>null</code> -&gt; <code>SS50L-M-GREY-D</code>; stockIds <code>null</code> -&gt; <code>null</code>; evidence <code>tmp-returnitems\returnitems_20260702_shopeemy_rr_cs3.json</code>; result <code>verified</code>.</li>
+        <li><code>14347</code> / KarlMobel / ShopeeMY / Resell / <code>MY2696590060107</code>: orderId <code>null</code> -&gt; <code>2606252PCSK4DJ</code>; items <code>null</code> -&gt; <code>LuxbinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ Tong sampah besar Dustbin kitchen large 50L 30L Pedal rubbish bin Sensor cover trash can Stainless steel big</code>; iskus <code>null</code> -&gt; <code>SS50L-M-GREY-D</code>; stockIds <code>null</code> -&gt; <code>null</code>; evidence <code>tmp-returnitems\returnitems_20260702_shopeemy_rr_cs3.json</code>; result <code>verified</code>.</li>
         <li><code>14351</code> / das.nature2 / ShopeeMY / Resell / <code>SPXMY065407033256</code>: orderId <code>null</code> -&gt; <code>2606252SWQYSJ0</code>; items <code>null</code> -&gt; <code>Fishing Box Mancing Set Fishing Tackle Box Pancing Murah Fishing Storage Box large Pole Cup Holder Kotak Pancing | Fishing Box Mancing Set Fishing Tackle Box Pancing Murah Fishing Storage Box large Pole Cup Holder Kotak Pancing | Fishing Box Mancing Set Fishing Tackle Box Pancing Murah Fishing Storage Box large Pole Cup Holder Kotak Pancing</code>; iskus <code>null</code> -&gt; <code>FB-BLK-S | FB-BLK-POL-HLDR | FB-BLK-POL-HLDR</code>; stockIds <code>null</code> -&gt; <code>null</code>; evidence <code>tmp-returnitems\returnitems_20260702_sitegiant_single_13_14351.json</code>; result <code>verified</code>.</li>
       </ul></div>
       <div class="field"><strong>Shop/platform/reason:</strong> Patched verified Resell rows across ShopeeMY and TikTok only when exact SiteGiant or ShopeeMY R/R evidence matched the row shop/platform/tracking. ShopeeMY Error row <code>14222</code> was searched and remains not found; damaged/missing-parts Error boundary row <code>14162</code> was skipped by standing rule.</div>
       <div class="field"><strong>Report-only / held:</strong><ul>
-        <li><code>13354</code> / TT Adelmar / TikTok / Pending Repair &amp; Resell / <code>ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¥ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ10069011401</code>: known duplicate/wrong-shop Adelmar row already patched on row 13514; leave product/iSKU blank to avoid duplicate downstream stock action.</li>
+        <li><code>13354</code> / TT Adelmar / TikTok / Pending Repair &amp; Resell / <code>ÃƒÆ’Ã…Â½Ãƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã…Â½Ãƒâ€šÃ‚Â¥ÃƒÆ’Ã…Â½Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã…Â½Ãƒâ€¦Ã¢â‚¬Å“10069011401</code>: known duplicate/wrong-shop Adelmar row already patched on row 13514; leave product/iSKU blank to avoid duplicate downstream stock action.</li>
         <li><code>14349</code> / TT KarlMobel / TikTok / Resell / <code>MYSP0002245109</code>: wrong platform/shop evidence: Return Items TT KarlMobel/TikTok, SiteGiant KarlMobel/ShopeeMY. Candidate <code>260620JVNDU8U3</code> / <code>SLV-RED-L | SLV-RED-L | SLV-RED-L | SLV-RED-L | SLV-RED-L | SLV-RED-L | SLV-RED-L | SLV-RED-L | SLV-RED-L | SLV-RED-L | SLV-RED-L | SLV-RED-L | SLV-RED-L | SLV-RED-L | SLV-RED-L</code>.</li>
       </ul></div>
       <div class="field"><strong>Not found / blocked:</strong><ul>
