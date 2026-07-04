@@ -648,12 +648,12 @@ header.page::after{
 <div class="entry" data-date="2026-07-04" data-shop="20 CS R/R shops" data-platform="Shopee MY, Shopee SG, Shopee wallet, employee claim webapp" data-status="partial" data-board-log-id="csrrcredited-20260704" data-skill="csrrcredited">
   <div class="entry-summary">
     <span class="entry-date">2026-07-04</span>
-    <span class="entry-title">csrrcredited wallet audit 2026-07-04 - PARTIAL, profile70 relogin needed</span>
+    <span class="entry-title">csrrcredited wallet audit 2026-07-04 - PARTIAL, Profile70 still login-blocked</span>
     <span class="entry-meta">shops swept 6/20; writes 45; terminal action open 44 -&gt; 0; Profile70 blocked</span>
     <span class="entry-tags"><span class="tag">csrrcredited</span><span class="tag">csrrcreditedcheck</span><span class="tag result-warn">Partial</span></span>
   </div>
   <div class="entry-body">
-    <p><strong>Logged:</strong> 2026-07-04 13:14 MYT.</p>
+    <p><strong>Logged:</strong> 2026-07-04 13:34 MYT.</p>
     <p><strong>Date/task:</strong> 2026-07-04 - scheduled CS R/R credited run plus csrrcreditedcheck subset recovery after Profile70 Shopee Seller Center login block.</p>
     <p><strong>Shop:</strong> MurahYa, ValueSnap, Hiranai, KarlMobel, das.nature, das.nature2, Emas Gift, BahEmas, Lovento, Luxbin, MasonGym, Adelmar, JagerHelmet, Kinata SG, HiranaiSG, KarlMobel SG, MurahYa SG, EmasGift SG, DasNature SG, DasNatureSG2.</p>
     <p><strong>Platform:</strong> Shopee MY, Shopee SG, Shopee wallet/R/R, and employee claim webapp.</p>
@@ -665,6 +665,7 @@ header.page::after{
 <li>SG terminal action-open rows: 44 -&gt; 0.</li>
 <li>SG Pending+Closed rows: 4 -&gt; 4 held because Kinata/Profile70 live evidence is blocked.</li>
 <li>Live-money findings: 0 -&gt; 1 flagged; 260611S8PHRJFQ DasNature SG CLAWBACK_FIRED read back and live-crosschecked 1/1.</li>
+<li>Profile70 relogin continuation probe: login-blocked -&gt; still login-blocked; overallOk=False port 64499; startedProfile70=False stoppedProfile70=False.</li>
 <li>chase-rr: not run -&gt; not run, because full CSRR + check did not complete and Saturday is not a chase working-day basis.</li></ul>
     <p><strong>Every change and readback:</strong></p>
     <ul><li><strong>260611S8PHRJFQ</strong> - shop DasNature SG, platform Shopee SG, before refund_state Pending, after refund_state Pending, reason CLAWBACK_FIRED: negative SG order adjustment, evidence total_adjustment=-4.65; amount_after_adjustment=-1.35, result PATCH statuses 200 and csrrcreditedcheck live_ok.</li>
@@ -713,18 +714,22 @@ header.page::after{
 <li><strong>260427VA41V2VH</strong> - shop MurahYa SG, platform Shopee SG employee claim webapp, before action CS Action, after action Closed, reason terminal refund_state row had action still open, evidence full SG include_closed terminal-action audit, result HTTP 200 readback action Closed readback_ok True.</li>
 <li><strong>2604306GCCPHE8</strong> - shop DasNatureSG2, platform Shopee SG employee claim webapp, before action CS Action, after action Closed, reason terminal refund_state row had action still open, evidence full SG include_closed terminal-action audit, result HTTP 200 readback action Closed readback_ok True.</li></ul>
     <p><strong>Profile70 blocker evidence:</strong></p>
-    <ul><li>seller.shopee.com.my ok=False spcPresent=False href=https://accounts.shopee.com.my/seller/login?next=https%3A%2F%2Fseller.shopee.com.my%2Fportal%2Fshop</li>
-<li>seller.shopee.sg ok=False spcPresent=False href=https://accounts.shopee.sg/seller/login?next=https%3A%2F%2Fseller.shopee.sg%2Fportal%2Fshop</li></ul>
+    <ul><li>initial seller.shopee.com.my ok=False spcPresent=False href=https://accounts.shopee.com.my/seller/login?next=https%3A%2F%2Fseller.shopee.com.my%2Fportal%2Fshop</li>
+<li>initial seller.shopee.sg ok=False spcPresent=False href=https://accounts.shopee.sg/seller/login?next=https%3A%2F%2Fseller.shopee.sg%2Fportal%2Fshop</li>
+<li>relogin seller.shopee.com.my ok=False spcPresent=False sigUrlPresent=False href=https://accounts.shopee.com.my/seller/login?next=https%3A%2F%2Fseller.shopee.com.my%2Fportal%2Fshop</li>
+<li>relogin seller.shopee.sg ok=False spcPresent=False sigUrlPresent=False href=https://accounts.shopee.sg/seller/login?next=https%3A%2F%2Fseller.shopee.sg%2Fportal%2Fshop</li></ul>
     <p><strong>Errors/blockers:</strong></p>
-    <ul><li>Profile70 Shopee Seller Center login-blocked for MY shops and Kinata SG; SPC_CDS missing on MY/SG Seller Center login pages.</li></ul>
+    <ul><li>Profile70 Shopee Seller Center login-blocked for MY shops and Kinata SG; SPC_CDS missing on MY/SG Seller Center login pages.</li>
+<li>Profile70 relogin continuation probe still blocked: Shopee MY and SG Seller Center redirect to login pages; SPC_CDS missing; get_sig unavailable.</li></ul>
     <p><strong>Evidence:</strong></p>
     <ul><li>Main report: C:\Users\tessf\Documents\csrrcredited-reports\csrrcredited-report-2026-07-04.md</li>
 <li>Main raw: C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_2026-07-04.json</li>
 <li>Profile84 subset check report: C:\Users\tessf\Documents\csrrcredited-reports\csrrcredited-crosscheck-profile84-subset-2026-07-04.md</li>
 <li>Profile84 subset check raw: C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_crosscheck_profile84_subset_2026-07-04.json</li>
 <li>Profile70 probe: C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_profile_probe_2026-07-04.json</li>
+<li>Profile70 relogin continuation probe: C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_profile70_relogin_probe_2026-07-04.json</li>
 <li>Recovery log: C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_partial_recovery_2026-07-04.log</li></ul>
-    <p><strong>Result:</strong> FINAL_STATUS PARTIAL; Profile84 subset reconciliation 1/1; terminal action cleanup readback 0 remaining; Patricia action required is Profile70 relogin and rerun.</p>
+    <p><strong>Result:</strong> FINAL_STATUS PARTIAL; Profile84 subset reconciliation 1/1; terminal action cleanup readback 0 remaining; latest relogin probe still shows Profile70 Shopee MY/SG login pages, so Patricia action required is Profile70 relogin and rerun.</p>
     <p><strong>Outstanding / Patricia may have missed:</strong></p>
     <ul><li>Patricia must relogin Profile70 for Shopee MY and Shopee SG Seller Center, then rerun csrrcredited + csrrcreditedcheck.</li>
 <li>Do not chase Kinata SG promise/watch rows from stale evidence; 260606BUQNB93N and 2606130EB2KGJK need fresh Profile70 live wallet/R/R proof first.</li>
