@@ -624,6 +624,27 @@ header.page::after{
 <button class="clear-btn" id="clearBtn" type="button">Clear all</button>
     </div>
         <!-- ENTRIES_START -->
+<!-- SG-GAP-MONITOR-2026-07-04 -->
+<div class="entry" data-date="2026-07-04" data-shops="SG gap monitor scope blocked before shop list" data-platform="Shopee MY + SiteGiant" data-result="warn">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">sg-gap-monitor - blocked by Shopee login after Profile70/Profile78 fallback (04/07)</span>
+    <span class="entry-meta">2026-07-04 09:52 MYT &middot; Profile70 k1b44nvg failed, Profile78 k1bh4lmm fallback failed &middot; report <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-07-04.md</code></span>
+    <span class="tag">sg-gap-monitor</span>
+    <span class="tag result-warn">Partial</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Brief:</strong> Daily SiteGiant integration-gap monitor scheduled run. The official Codex runner was used, Profile70 was tried first, and Profile78 fallback was tried after the primary login blocker. Both profiles redirected to Shopee Seller Center login before the shop list loaded.</p>
+    <div class="field"><strong>Shop / platform:</strong> Requested SG gap scope across Shopee MY shops and SiteGiant ShopeeMY links. Platform: Shopee MY + SiteGiant.</div>
+    <div class="field"><strong>Reason for change:</strong> Close out the 2026-07-04 scheduled sg-gap-monitor run with real blocker evidence after both allowed profiles failed the Shopee login gate.</div>
+    <div class="field"><strong>Before -&gt; after values:</strong> sameDayReport: missing -&gt; present PARTIAL closeout; sameDayRaw: missing -&gt; present PARTIAL closeout; profile70: attempted -&gt; Shopee SC login expired before shop list; profile78Fallback: attempted -&gt; Shopee SC login expired before shop list; shopScan: not started -&gt; blocked before Phase 1 shop list; state: present -&gt; unchanged; no last-seen order update because scan did not load shops; boardCard: missing -&gt; present in clean private clone before validation; messages: 0 -&gt; 0; stockWrites: 0 -&gt; 0; marketplaceChanges: 0 -&gt; 0; webappPatches: 0 -&gt; 0; shopeeWrites: 0 -&gt; 0; sitegiantWrites: 0 -&gt; 0.</div>
+    <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-07-04.md</code>; raw evidence <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\_codex_sg_gap_monitor_2026-07-04.json</code>; run log <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\_codex_sg_gap_monitor_2026-07-04.log</code>; state <code>C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json</code>.</div>
+    <div class="field"><strong>Result:</strong> PARTIAL - profile/login blocked after fallback; shop scan completed <code>0/unknown</code>; active order IDs captured <code>0</code> because the Shopee shop list did not load.</div>
+    <div class="field"><strong>Outstanding:</strong> Profile70 k1b44nvg and Profile78 k1bh4lmm both redirected to Shopee Seller Center login before Phase 1 shop-list collection. SG gap monitor cannot scan Shopee MY shops, SiteGiant links, To Ship, or Shipping activity until a logged-in Shopee Seller Center profile is available. No visible Shopee order IDs were available to capture because the shop-list page redirected to login in both profiles.</div>
+  </div>
+</div>
+<!-- /SG-GAP-MONITOR-2026-07-04 -->
+
 <!-- PROFILE-LOGIN-PREFLIGHT-2026-07-04 -->
 <div class="entry" data-date="2026-07-04" data-shops="All scheduled profiles; Profile 70; Profile 84; TikTok 54-67; Lazada 81-83; Shopee CS1-CS5" data-platform="AdsPower + employee webapp + Shopee MY/SG + TikTok Seller Center + Lazada Seller Center + SiteGiant" data-result="warn">
   <div class="entry-summary">
