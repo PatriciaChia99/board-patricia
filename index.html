@@ -2499,6 +2499,42 @@ header.page::after{
 
 
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-07-06" data-shops="multiple" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="partial" data-skill="parcelclaim-auto">
+    <!-- PARCELCLAIM-AUTO-2026-07-06 -->
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">parcelclaim-auto - 2026-07-06 Codex run: 1 new / 1 posted / 3/16 profiles OK / 13 TikTok login blockers</span>
+      <span class="entry-meta">2026-07-06 MYT &middot; report C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-07-06.md &middot; raw _codex_parcelclaim_auto_2026-07-06.json</span>
+      <span class="tag">parcelclaim-auto</span>
+      <span class="tag result-ok">Partial</span>
+    </div>
+    <div class="entry-body">
+      <p><strong>Task:</strong> Daily scheduled parcelclaim-auto intake for 2026-07-06. Scope covered TikTok source profiles 54-67, Lazada MY profiles 81-83, employee profile 70, TikTok R/R current window, TikTok failed-delivery current/latest gate, and Lazada R/R current rows. No Claude or legacy launcher was invoked.</p>
+      <div class="field"><strong>Before -&gt; after values:</strong> webapp rows 274 -&gt; 275; webapp creates 0 -&gt; 1; audit remark PATCHes 0 -&gt; 1; posted value RM 0.00 -&gt; RM 11.46; all-state duplicate order_id matches 3 -&gt; skipped; held current cases 0 -&gt; 0; POST skips/failures 0 -&gt; 0; messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0.</div>
+      <div class="field"><strong>Posted cases:</strong><ul><li>C2393 Laz das.nature Lazada rr order 505836479992291 RM 11.46: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li></ul></div>
+      <div class="field"><strong>Readback/crosscheck:</strong> 1/1 CONFIRMED: C2393 order 505836479992291 amount RM 11.46 state Pending verdict CONFIRMED; posted row read back matching order ID, amount, state Pending, and audit remark token.</div>
+      <div class="field"><strong>Source evidence:</strong><pre>54 TT Adelmar: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+55 TT DasNature: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+56 TT Hiranai: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+58 TT HiranaiMY: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+59 TT Jager: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+60 TT JagerArmor: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+61 TT JagerSafety: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+62 TT KarlMobel: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+63 TT Lovento: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+64 TT MurahYa: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+65 TT Valuesnap: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+66 TT JagerHelmet: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+67 TT Kinata: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-sg.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-sg.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+81 Lazada MurahYa: Lazada 10 rows / 3 in-window / 0 posted
+82 Laz das.nature: Lazada 8 rows / 1 in-window / 1 posted
+83 Lazada Lovento: Lazada 1 rows / 0 in-window / 0 posted</pre></div>
+      <div class="field"><strong>Profile cleanup:</strong> profile70 Active on port 55899 and preserved; source profiles inactive 8/16; active after cleanup []; unknown after cleanup [&#x27;55&#x27;, &#x27;56&#x27;, &#x27;60&#x27;, &#x27;61&#x27;, &#x27;64&#x27;, &#x27;65&#x27;, &#x27;81&#x27;, &#x27;82&#x27;].</div>
+      <div class="field"><strong>Shop/platform/reason/result:</strong> TikTok MY/SG Seller Center profiles 54-67 remained login-expired and were not posted from; Lazada MY profiles 81/82/83 were scanned, one Laz das.nature R/R case was created and confirmed. Reason was scheduled current/latest parcel-claim intake after all-state order_id dedupe. Result FINAL_STATUS PARTIAL due real TikTok login blockers after the safe Lazada subset completed.</div>
+      <div class="field"><strong>Outstanding follow-up:</strong> TikTok Seller Center relogin is required for profiles 54, 55, 56, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67 before TikTok R/R and failed-delivery intake can complete. Lazada source/login/POST/crosscheck scope has no active blocker.</div>
+      <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-07-06.md</code>; raw JSON <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-07-06.json</code>; run logs <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-07-06.log</code>, <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-07-06.run.stdout.log</code>, <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-07-06.run.stderr.log</code>; cleanup JSON <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_profile_cleanup_2026-07-06.json</code>.</div>
+    </div>
+  </div>
 <div class="entry" data-date="2026-07-05" data-log-id="CHATAUDIT-2026-07-05" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="warn">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
