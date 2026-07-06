@@ -2915,42 +2915,72 @@ header.page::after{
 <div class="field"><strong>Result:</strong> FINAL_STATUS PARTIAL. Outstanding: TikTok profiles 54/55/56/58/59/60/61/62/63/64/65/66/67 need Seller Center relogin before source intake/audit coverage can complete, and the 5 discrepancy order IDs need follow-up/fresh Ticket Log or internal API review. No customer, seller-platform, marketplace, stock, refund_state, action, followup, return_status, or webapp remark write was made by this audit.</div>
     </div>
   </div>
-  <div class="entry" data-date="2026-07-06" data-shops="multiple" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="partial" data-skill="parcelclaim-auto">
+  <div class="entry" data-date="2026-07-06" data-shops="multiple" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="ok" data-skill="parcelclaim-auto">
     <!-- PARCELCLAIM-AUTO-2026-07-06 -->
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
-      <span class="entry-title">parcelclaim-auto - 2026-07-06 Codex run: 1 new / 1 posted / 3/16 profiles OK / 13 TikTok login blockers</span>
+      <span class="entry-title">parcelclaim-auto - 2026-07-06 Codex run: 30 new / 30 posted / 16/16 profiles OK / OK_WITH_ACTION_ITEMS</span>
       <span class="entry-meta">2026-07-06 MYT &middot; report C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-07-06.md &middot; raw _codex_parcelclaim_auto_2026-07-06.json</span>
       <span class="tag">parcelclaim-auto</span>
-      <span class="tag result-ok">Partial</span>
+      <span class="tag result-ok">OK with action items</span>
     </div>
     <div class="entry-body">
       <p><strong>Task:</strong> Daily scheduled parcelclaim-auto intake for 2026-07-06. Scope covered TikTok source profiles 54-67, Lazada MY profiles 81-83, employee profile 70, TikTok R/R current window, TikTok failed-delivery current/latest gate, and Lazada R/R current rows. No Claude or legacy launcher was invoked.</p>
-      <div class="field"><strong>Before -&gt; after values:</strong> webapp rows 274 -&gt; 275; webapp creates 0 -&gt; 1; audit remark PATCHes 0 -&gt; 1; posted value RM 0.00 -&gt; RM 11.46; all-state duplicate order_id matches 3 -&gt; skipped; held current cases 0 -&gt; 0; POST skips/failures 0 -&gt; 0; messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0.</div>
-      <div class="field"><strong>Posted cases:</strong><ul><li>C2393 Laz das.nature Lazada rr order 505836479992291 RM 11.46: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li></ul></div>
-      <div class="field"><strong>Readback/crosscheck:</strong> 1/1 CONFIRMED: C2393 order 505836479992291 amount RM 11.46 state Pending verdict CONFIRMED; posted row read back matching order ID, amount, state Pending, and audit remark token.</div>
-      <div class="field"><strong>Source evidence:</strong><pre>54 TT Adelmar: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
-55 TT DasNature: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
-56 TT Hiranai: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
-58 TT HiranaiMY: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
-59 TT Jager: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
-60 TT JagerArmor: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
-61 TT JagerSafety: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
-62 TT KarlMobel: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
-63 TT Lovento: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
-64 TT MurahYa: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
-65 TT Valuesnap: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
-66 TT JagerHelmet: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-my.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-my.tiktok.com%2Forder%2Freturn%3Ftab%3D100
-67 TT Kinata: TikTok BLOCKED - login_expired/unverified seller session probeCode=98001002 msg=You must log in to continue url=https://seller-sg.tiktok.com/account/login?redirect_url=https%3A%2F%2Fseller-sg.tiktok.com%2Forder%2Freturn%3Ftab%3D100
+      <div class="field"><strong>Before -&gt; after values:</strong> webapp rows 275 -&gt; 305; webapp creates 0 -&gt; 30; audit remark PATCHes 0 -&gt; 30; posted value RM 0.00 -&gt; RM 2899.71; all-state duplicate order_id matches 170 -&gt; skipped; held current cases 0 -&gt; 0; POST skips/failures 0 -&gt; 0; messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0.</div>
+      <div class="field"><strong>Posted cases:</strong><ul><li>C2394 TT Adelmar TikTok failed_delivery order 584351507177834092 RM 259.34: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2395 TT DasNature TikTok rr order 584658716710175963 RM 27.41: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2396 TT DasNature TikTok failed_delivery order 584800680226359072 RM 80.04: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2397 TT Hiranai TikTok rr order 584831385851037203 RM 25.81: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2398 TT Hiranai TikTok rr order 584761424718955922 RM 28.90: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2399 TT Hiranai TikTok rr order 584828840461240000 RM 33.00: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2400 TT HiranaiMY TikTok rr order 584820756760659097 RM 22.93: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2401 TT Jager TikTok failed_delivery order 584635160024417712 RM 103.20: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2402 TT Jager TikTok failed_delivery order 584365100429576056 RM 103.19: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2403 TT KarlMobel TikTok rr order 584752155178861988 RM 40.55: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2404 TT KarlMobel TikTok rr order 584794991063107244 RM 90.77: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2405 TT KarlMobel TikTok rr order 584784098230830688 RM 159.42: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2406 TT MurahYa TikTok failed_delivery order 584826137823904995 RM 101.99: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2407 TT MurahYa TikTok failed_delivery order 584819548308997347 RM 102.00: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2408 TT MurahYa TikTok failed_delivery order 584817029047747811 RM 92.54: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2409 TT MurahYa TikTok failed_delivery order 584816815853044963 RM 92.53: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2410 TT MurahYa TikTok failed_delivery order 584788571556316926 RM 356.49: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2411 TT MurahYa TikTok failed_delivery order 584756596399572827 RM 19.98: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2412 TT MurahYa TikTok failed_delivery order 584713910836430366 RM 208.64: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2413 TT MurahYa TikTok failed_delivery order 584356832772785222 RM 639.32: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2414 TT MurahYa TikTok failed_delivery order 584347844777968777 RM 13.40: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2415 TT JagerHelmet TikTok failed_delivery order 584800340039337276 RM 15.68: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2416 TT JagerHelmet TikTok failed_delivery order 584790259996526048 RM 103.20: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2417 TT Valuesnap TikTok failed_delivery order 584835332451632826 RM 33.30: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2418 TT Valuesnap TikTok failed_delivery order 584820905876751818 RM 25.00: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2419 TT Valuesnap TikTok failed_delivery order 584810177165100152 RM 17.40: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2420 TT Valuesnap TikTok failed_delivery order 584799941960303782 RM 30.74: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2421 TT Valuesnap TikTok failed_delivery order 584769449752167498 RM 27.00: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2422 TT Valuesnap TikTok failed_delivery order 584361074587371079 RM 15.90: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li>
+<li>C2423 TT Valuesnap TikTok failed_delivery order 584350269693461614 RM 30.04: absent in all-state dedupe -&gt; Pending with audit remark; remark patch HTTP 200</li></ul></div>
+      <div class="field"><strong>Readback/crosscheck:</strong> 26/30 CONFIRMED: C2394 order 584351507177834092 amount RM 259.34 state Withdrawn verdict RECLASSIFIED; C2395 order 584658716710175963 amount RM 27.41 state Pending verdict CONFIRMED; C2396 order 584800680226359072 amount RM 80.04 state Pending verdict CONFIRMED; C2397 order 584831385851037203 amount RM 25.81 state Pending verdict CONFIRMED; C2398 order 584761424718955922 amount RM 28.90 state Pending verdict CONFIRMED; C2399 order 584828840461240000 amount RM 33.00 state Pending verdict CONFIRMED; C2400 order 584820756760659097 amount RM 22.93 state Pending verdict CONFIRMED; C2401 order 584635160024417712 amount RM 103.20 state Pending verdict CONFIRMED; C2402 order 584365100429576056 amount RM 103.19 state Withdrawn verdict RECLASSIFIED; C2403 order 584752155178861988 amount RM 40.55 state Pending verdict CONFIRMED; C2404 order 584794991063107244 amount RM 90.77 state Pending verdict CONFIRMED; C2405 order 584784098230830688 amount RM 159.42 state Pending verdict CONFIRMED; C2406 order 584826137823904995 amount RM 101.99 state Pending verdict CONFIRMED; C2407 order 584819548308997347 amount RM 102.00 state Pending verdict CONFIRMED; C2408 order 584817029047747811 amount RM 92.54 state Pending verdict CONFIRMED; C2409 order 584816815853044963 amount RM 92.53 state Pending verdict CONFIRMED; C2410 order 584788571556316926 amount RM 356.49 state Pending verdict CONFIRMED; C2411 order 584756596399572827 amount RM 19.98 state Pending verdict CONFIRMED; C2412 order 584713910836430366 amount RM 208.64 state Pending verdict CONFIRMED; C2413 order 584356832772785222 amount RM 639.32 state Withdrawn verdict RECLASSIFIED; C2414 order 584347844777968777 amount RM 13.40 state Withdrawn verdict RECLASSIFIED; C2415 order 584800340039337276 amount RM 15.68 state Pending verdict CONFIRMED; C2416 order 584790259996526048 amount RM 103.20 state Pending verdict CONFIRMED; C2417 order 584835332451632826 amount RM 33.30 state Pending verdict CONFIRMED; C2418 order 584820905876751818 amount RM 25.00 state Pending verdict CONFIRMED; C2419 order 584810177165100152 amount RM 17.40 state Pending verdict CONFIRMED; C2420 order 584799941960303782 amount RM 30.74 state Pending verdict CONFIRMED; C2421 order 584769449752167498 amount RM 27.00 state Pending verdict CONFIRMED; C2422 order 584361074587371079 amount RM 15.90 state Pending verdict CONFIRMED; C2423 order 584350269693461614 amount RM 30.04 state Pending verdict CONFIRMED; posted rows read back with matching order ID, amount, and audit remark token. Reclassified rows are WH-confirmed Withdrawn/resellable action items, not missing creates.</div>
+      <div class="field"><strong>Source evidence:</strong><pre>54 TT Adelmar: TikTok OK - RR 89 cards / 0 in-window / 0 posted; FD 33 API + 3 DOM pages / Returning 0 / 0 posted / DOM-only 0
+55 TT DasNature: TikTok OK - RR 205 cards / 1 in-window / 0 posted; FD 99 API + 3 DOM pages / Returning 0 / 0 posted / DOM-only 0
+56 TT Hiranai: TikTok OK - RR 312 cards / 7 in-window / 0 posted; FD 172 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+58 TT HiranaiMY: TikTok OK - RR 156 cards / 1 in-window / 0 posted; FD 43 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
+59 TT Jager: TikTok OK - RR 0 cards / 0 in-window / 0 posted; FD 70 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+60 TT JagerArmor: TikTok OK - RR 7 cards / 0 in-window / 0 posted; FD 1 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+61 TT JagerSafety: TikTok OK - RR 55 cards / 0 in-window / 0 posted; FD 1 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+62 TT KarlMobel: TikTok OK - RR 50 cards / 3 in-window / 0 posted; FD 297 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
+63 TT Lovento: TikTok OK - RR 0 cards / 0 in-window / 0 posted; FD 0 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+64 TT MurahYa: TikTok OK - RR 0 cards / 0 in-window / 0 posted; FD 441 API + 1 DOM pages / Returning 0 / 0 posted / DOM-only 0
+65 TT Valuesnap: TikTok OK - RR 0 cards / 0 in-window / 0 posted; FD 271 API + 1 DOM pages / Returning 0 / 7 posted / DOM-only 0
+66 TT JagerHelmet: TikTok OK - RR 50 cards / 0 in-window / 0 posted; FD 13 API + 2 DOM pages / Returning 0 / 0 posted / DOM-only 0
+67 TT Kinata: TikTok OK - RR 4 cards / 0 in-window / 0 posted; FD 0 API + 0 DOM pages / Returning 0 / 0 posted / DOM-only 0
 81 Lazada MurahYa: Lazada 10 rows / 3 in-window / 0 posted
-82 Laz das.nature: Lazada 8 rows / 1 in-window / 1 posted
+82 Laz das.nature: Lazada 8 rows / 1 in-window / 0 posted
 83 Lazada Lovento: Lazada 1 rows / 0 in-window / 0 posted</pre></div>
       <div class="field"><strong>Profile cleanup:</strong> profile70 Active on port 55899 and preserved; source profiles inactive 16/16; active after cleanup []; unknown after cleanup [].</div>
-      <div class="field"><strong>Shop/platform/reason/result:</strong> TikTok MY/SG Seller Center profiles 54-67 remained login-expired and were not posted from; Lazada MY profiles 81/82/83 were scanned, one Laz das.nature R/R case was created and confirmed. Reason was scheduled current/latest parcel-claim intake after all-state order_id dedupe. Result FINAL_STATUS PARTIAL due real TikTok login blockers after the safe Lazada subset completed.</div>
-      <div class="field"><strong>Outstanding follow-up:</strong> TikTok Seller Center relogin is required for profiles 54, 55, 56, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67 before TikTok R/R and failed-delivery intake can complete. Lazada source/login/POST/crosscheck scope has no active blocker.</div>
+      <div class="field"><strong>Shop/platform/reason/result:</strong> TikTok MY/SG Seller Center profiles 54-67 and Lazada MY profiles 81-83 were scanned. Reason was scheduled current/latest parcel-claim intake after all-state order_id dedupe. Result FINAL_STATUS OK_WITH_ACTION_ITEMS: no login, scan, POST, patch, held, DOM-only, or cleanup blocker remains; WH-confirmed Withdrawn/resellable rows are listed as action items.</div>
+      <div class="field"><strong>Outstanding follow-up:</strong> No source-login blocker remains. Action items: 4 posted rows read back Withdrawn after WH confirmed resellable; no duplicate repost is needed.</div>
       <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\parcelclaim-auto-report-2026-07-06.md</code>; raw JSON <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-07-06.json</code>; run logs <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-07-06.log</code>, <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-07-06.run.stdout.log</code>, <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_2026-07-06.run.stderr.log</code>; cleanup JSON <code>C:\Users\tessf\Documents\parcelclaim-auto-reports\_codex_parcelclaim_auto_profile_cleanup_2026-07-06.json</code>.</div>
     </div>
   </div>
+
 
 <div class="entry" data-date="2026-07-05" data-log-id="CHATAUDIT-2026-07-05" data-shops="ValueSnap, MasonGym, BahEmas, das.nature, das.nature2, Hiranai, KarlMobel, Lovento, Luxbin, MurahYa, Emas Gift, JagerHelmet, Adelmar, Kinata SG" data-platform="Shopee MY + SG" data-result="warn">
   <div class="entry-summary">
