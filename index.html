@@ -6054,43 +6054,25 @@ header.page::after{
 </div>
 
 <!-- SG-GAP-MONITOR-2026-07-06 -->
-
-<div class="entry" data-date="2026-07-06" data-shops="SG gap monitor scope blocked before shop list" data-platform="Shopee MY + SiteGiant" data-result="warn">
-
+<div class="entry" data-skill="sg-gap-monitor" data-board-log-id="sg-gap-monitor-20260706" data-date="2026-07-06" data-shops="Solaree, Flashree, Gameniture, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok-with-action-items">
   <div class="entry-summary">
-
     <span class="chevron">&#9654;</span>
-
-    <span class="entry-title">sg-gap-monitor - blocked by Shopee login after Profile70/Profile78 fallback (06/07)</span>
-
-    <span class="entry-meta">2026-07-06 10:00 MYT &middot; Profile70 k1b44nvg failed, Profile78 k1bh4lmm fallback failed &middot; report <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-07-06.md</code></span>
-
+    <span class="entry-title">sg-gap-monitor - 6 unlinked, 1 shops with new activity, 1 actively shipping (06/07)</span>
+    <span class="entry-meta">2026-07-06 18:09 MYT &middot; 70 (kmall:patricia) k1b44nvg attached &middot; Shopee MY 11 / SiteGiant ShopeeMY 18 &middot; full scan 6/6 &middot; report <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-07-06.md</code></span>
     <span class="tag">sg-gap-monitor</span>
-
-    <span class="tag result-warn">Partial</span>
-
+    <span class="tag result-warn">Action item</span>
   </div>
-
   <div class="entry-body">
-
-    <p><strong>Brief:</strong> Daily SiteGiant integration-gap monitor scheduled run. The official Codex runner was used, Profile70 was tried first, and Profile78 fallback was tried after the primary login blocker. Both profiles redirected to Shopee Seller Center login before the shop list loaded.</p>
-
-    <div class="field"><strong>Shop / platform:</strong> Requested SG gap scope across Shopee MY shops and SiteGiant ShopeeMY links. Platform: Shopee MY + SiteGiant.</div>
-
-    <div class="field"><strong>Reason for change:</strong> Close out the 2026-07-06 scheduled sg-gap-monitor run with real blocker evidence after both allowed profiles failed the Shopee login gate.</div>
-
-    <div class="field"><strong>Before -&gt; after values:</strong> sameDayReport: missing -&gt; present PARTIAL closeout; sameDayRaw: missing -&gt; present PARTIAL closeout; profile70: attempted -&gt; Shopee SC login expired before shop list; profile78Fallback: attempted -&gt; Shopee SC login expired before shop list; shopScan: not started -&gt; blocked before Phase 1 shop list; state: present -&gt; unchanged; no last-seen order update because scan did not load shops; boardCard: missing -&gt; present in clean private clone before validation; messages: 0 -&gt; 0; stockWrites: 0 -&gt; 0; marketplaceChanges: 0 -&gt; 0; webappPatches: 0 -&gt; 0; shopeeWrites: 0 -&gt; 0; sitegiantWrites: 0 -&gt; 0.</div>
-
-    <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-07-06.md</code>; raw evidence <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\_codex_sg_gap_monitor_2026-07-06.json</code>; run log <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\_codex_sg_gap_monitor_2026-07-06.log</code>; state <code>C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json</code>.</div>
-
-    <div class="field"><strong>Result:</strong> PARTIAL - profile/login blocked after fallback; shop scan completed <code>0/unknown</code>; active order IDs captured <code>0</code> because the Shopee shop list did not load.</div>
-
-    <div class="field"><strong>Outstanding:</strong> Profile70 k1b44nvg and Profile78 k1bh4lmm both redirected to Shopee Seller Center login before Phase 1 shop-list collection. SG gap monitor cannot scan Shopee MY shops, SiteGiant links, To Ship, or Shipping activity until a logged-in Shopee Seller Center profile is available. No visible Shopee order IDs were available to capture because the shop-list page redirected to login in both profiles.</div>
-
+    <p><strong>Brief:</strong> Daily SiteGiant integration-gap monitor run using Codex as the scheduled replacement. Read-only audit over Shopee MY Seller Center and SiteGiant channel list. No Shopee, SiteGiant, customer-message, marketplace, or webapp write endpoint was called.</p>
+    <div class="field"><strong>Shop / platform:</strong> Solaree, Flashree, Gameniture, Stationarylah, KEDAI GARDEN, FynnKoffer. Platform: Shopee MY + SiteGiant. 70 (kmall:patricia) <code>k1b44nvg</code> stayed open; only temporary CDP tabs were closed.</div>
+    <div class="field"><strong>Reason for change:</strong> Run the 2026-07-06 scheduled sg-gap-monitor coverage using Codex as the replacement for the old Claude launcher.</div>
+    <div class="field"><strong>Before -&gt; after values:</strong> Solaree <code>240718V5H3A1KA</code> -> <code>240718V5H3A1KA</code>; To Ship <code>0</code>, Shipping <code>0</code>, status Completed; Flashree <code>2409031DJJWV7T</code> -> <code>2409031DJJWV7T</code>; To Ship <code>0</code>, Shipping <code>0</code>, status Completed; Gameniture <code>(none)</code> -> <code>(no orders)</code>; To Ship <code>0</code>, Shipping <code>0</code>, status No orders; Stationarylah <code>260414QW1M81CQ</code> -> <code>260414QW1M81CQ</code>; To Ship <code>0</code>, Shipping <code>0</code>, status Cancelled; KEDAI GARDEN <code>260703NVY8D6C3</code> -> <code>260704RAT5DRHD</code>; To Ship <code>0</code>, Shipping <code>1</code>, status Shipped; Shipping IDs 260704RAT5DRHD; FynnKoffer <code>260307GC8213CQ</code> -> <code>260307GC8213CQ</code>; To Ship <code>0</code>, Shipping <code>0</code>, status Completed.</div>
+    <div class="field"><strong>Operational counters:</strong> messages <code>0 -&gt; 0</code>, stock writes <code>0 -&gt; 0</code>, marketplace changes <code>0 -&gt; 0</code>, webapp patches <code>0 -&gt; 0</code>, Shopee writes <code>0 -&gt; 0</code>, SiteGiant writes <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\sg-gap-monitor-2026-07-06.md</code>; raw evidence <code>C:\Users\tessf\Documents\sg-gap-monitor-reports\_codex_sg_gap_monitor_2026-07-06.json</code>; state <code>C:\Users\tessf\.claude\skills\sg-gap-monitor\state.json</code>.</div>
+    <div class="field"><strong>Result:</strong> COMPLETE_WITH_ACTION_ITEM - gap 6, new activity 1, active stock-desync risk 1, blockers 0.</div>
+    <div class="field"><strong>Outstanding:</strong> Run completed after full 6/6 scan. Action item / auto-monitor remains: KEDAI GARDEN (garden.mall) has Shipping 1 order 260704RAT5DRHD. No profile/login blocker remains; no Shopee, SiteGiant, stock, customer-message, marketplace, or webapp write was made by this monitor.</div>
   </div>
-
 </div>
-
 <!-- /SG-GAP-MONITOR-2026-07-06 -->
 
 <div class="entry" data-date="2026-07-06" data-shops="TikTok MY/SG rating shops" data-platform="TikTok Seller Center MY/SG, Google Sheet, Patricia board" data-result="ok" data-skill="checkttrating">
@@ -6300,6 +6282,10 @@ header.page::after{
     <div class="field"><strong>Result/outstanding:</strong> report ends <code>FINAL_STATUS: PARTIAL</code>. Outstanding login/profile blockers: <code>profile70, tt55, tt56, tt58, tt59, tt61, tt62, tt64, tt65</code>. Profile78 remains non-blocking fallback/readback context only and is not a replacement for Profile70.</div>
 
 
+
+  
+
+    <div class="field" data-followup-log-id="profile-login-preflight-sg-gap-superseded-20260706"><strong>Follow-up readback 2026-07-06 18:20 MYT:</strong> Profile-login-preflight is a morning readiness diagnostic only, not a business workflow. Its earlier <code>sg-gap-monitor: BLOCKED_BY_PROFILE_LOGIN missing profile70</code> line is superseded: SG gap monitor reran on Profile70 and completed full scan <code>6/6</code> with final <code>OK_WITH_ACTION_ITEMS</code>. Remaining SG gap item is KEDAI GARDEN <code>garden.mall</code> Shipping <code>1</code>, order <code>260704RAT5DRHD</code>, for auto-monitor/action follow-up. Chataudit and CheckSBVariation are intentionally left to their other active sessions.</div>
 
   </div>
 
