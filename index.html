@@ -6350,7 +6350,7 @@ header.page::after{
 
 
 
-    <div class="field"><strong>Affected jobs:</strong> safe to continue <code>profile-login-preflight, chataudit</code>; partial/profile-blocked <code>sg-gap-monitor: BLOCKED_BY_PROFILE_LOGIN missing profile70; shopee-shipping-claim: BLOCKED_BY_PROFILE_LOGIN missing profile70; parcelclaim-auto: PARTIAL_PROFILE_BLOCKED missing profile70, tt55, tt56, tt58, tt59, tt61, tt62, tt64, tt65; tiktokrraudit: BLOCKED_BY_PROFILE_LOGIN missing profile70, tt55, tt56, tt58, tt59, tt61, tt62, tt64, tt65; ttparcelclaim: PARTIAL_PROFILE_BLOCKED missing profile70, tt55, tt56, tt58, tt59, tt61, tt62, tt64, tt65; checkttrating: PARTIAL_PROFILE_BLOCKED missing tt55, tt56, tt58, tt59, tt61, tt62, tt64, tt65; csrrcredited: BLOCKED_BY_PROFILE_LOGIN missing profile70; checksbvariation: PARTIAL_PROFILE_BLOCKED missing profile70; checkfbsclaims: BLOCKED_BY_PROFILE_LOGIN missing profile70; returnitems-lookup: PARTIAL_PROFILE_BLOCKED missing profile70; parcelsplit-contact-crosscheck: PARTIAL_PROFILE_BLOCKED missing profile70</code>.</div>
+    <div class="field"><strong>Affected jobs:</strong> safe/resolved <code>profile-login-preflight, chataudit, sg-gap-monitor (superseded: completed full scan 6/6 OK_WITH_ACTION_ITEMS)</code>; partial/profile-blocked <code>shopee-shipping-claim: BLOCKED_BY_PROFILE_LOGIN missing profile70; parcelclaim-auto: PARTIAL_PROFILE_BLOCKED missing profile70, tt55, tt56, tt58, tt59, tt61, tt62, tt64, tt65; tiktokrraudit: BLOCKED_BY_PROFILE_LOGIN missing profile70, tt55, tt56, tt58, tt59, tt61, tt62, tt64, tt65; ttparcelclaim: PARTIAL_PROFILE_BLOCKED missing profile70, tt55, tt56, tt58, tt59, tt61, tt62, tt64, tt65; checkttrating: PARTIAL_PROFILE_BLOCKED missing tt55, tt56, tt58, tt59, tt61, tt62, tt64, tt65; csrrcredited: BLOCKED_BY_PROFILE_LOGIN missing profile70; checksbvariation: PARTIAL_PROFILE_BLOCKED missing profile70; checkfbsclaims: BLOCKED_BY_PROFILE_LOGIN missing profile70; returnitems-lookup: PARTIAL_PROFILE_BLOCKED missing profile70; parcelsplit-contact-crosscheck: PARTIAL_PROFILE_BLOCKED missing profile70</code>.</div>
 
 
 
@@ -6362,7 +6362,7 @@ header.page::after{
 
 
 
-    <div class="field"><strong>Result/outstanding:</strong> report ends <code>FINAL_STATUS: PARTIAL</code>. Outstanding login/profile blockers: <code>profile70, tt55, tt56, tt58, tt59, tt61, tt62, tt64, tt65</code>. Profile78 remains non-blocking fallback/readback context only and is not a replacement for Profile70.</div>
+    <div class="field"><strong>Result/outstanding:</strong> profile-login-preflight remains a historical readiness diagnostic with <code>FINAL_STATUS: PARTIAL</code> for the 09:59 profile state. The SG gap blocker from that diagnostic is superseded by the later sg-gap-monitor completed scan; remaining preflight readiness blockers were <code>profile70, tt55, tt56, tt58, tt59, tt61, tt62, tt64, tt65</code>. Profile78 remains non-blocking fallback/readback context only and is not a replacement for Profile70.</div>
 
 
 
