@@ -6136,8 +6136,8 @@ header.page::after{
   <div class="entry-summary">
     <span class="entry-date">2026-07-06</span>
     <span class="entry-title">csrrcredited + csrrcreditedcheck 2026-07-06 - Profile78 fallback completed full sweep</span>
-    <span class="entry-meta">20/20 shops swept; check 25/25; final OK_WITH_ACTION_ITEMS</span>
-    <span class="entry-tags"><span class="tag">csrrcredited</span><span class="tag">csrrcreditedcheck</span><span class="tag result-ok">Completed</span></span>
+    <span class="entry-meta">20/20 shops swept; check 25/25; COMPLETE_AUTO_RECHECK</span>
+    <span class="entry-tags"><span class="tag">csrrcredited</span><span class="tag">csrrcreditedcheck</span><span class="tag result-ok">Completed</span><span class="tag result-warn">Auto recheck</span></span>
   </div>
   <div class="entry-body">
     <p><strong>Date/task:</strong> 2026-07-06 MYT CS R/R credited full rerun plus independent check settlement.</p>
@@ -6216,10 +6216,10 @@ header.page::after{
 <li>Check settlement raw: C:\Users\tessf\Documents\csrrcredited-reports\_codex_csrrcredited_crosscheck_confirmed_settlement_2026-07-06.json</li>
 <li>Run wrapper: C:\Users\tessf\code\codex-lab\tmp-csrrcredited-20260706\run_csrrcredited_profile78_20260706.py</li>
 <li>Check wrapper: C:\Users\tessf\code\codex-lab\tmp-csrrcredited-20260706\run_csrrcreditedcheck_profile78_20260706.py</li></ul></div>
-    <div class="field"><strong>Result:</strong> Execution complete; action-item watch list only. Main status OK_WITH_ACTION_ITEMS; check status OK_WITH_ACTION_ITEMS; unverified 0; errors 0; check outstanding 0.</div>
-    <div class="field"><strong>Outstanding / Patricia may have missed:</strong><ul><li>No active CSRR execution/check blocker remains after Profile78 fallback.</li>
-<li>Action-item watch rows remain by design: clawback/partial Pending rows stay monitored instead of closed as wins.</li>
-<li>Four Kinata SG Pending+Closed terminal-cleanup candidates remain visible in the report for future terminalization review: 2606252SC4AB3G Kinata SG Pending / Closed, 260620JY46D6R2 Kinata SG Pending / Closed, 260630DTV4J8KM Kinata SG Pending / Closed, 260624VUCSKN77 Kinata SG Pending / Closed</li></ul></div>
+    <div class="field"><strong>Result:</strong> Execution complete; pending/watch rows auto-recheck on the next CSRR run. Display tag COMPLETE_AUTO_RECHECK; raw audit status OK_WITH_ACTION_ITEMS; check status OK_WITH_ACTION_ITEMS; unverified 0; errors 0; check outstanding 0.</div>
+    <div class="field"><strong>Outstanding / Patricia may have missed:</strong><ul><li>No active CSRR execution/check blocker remains after Profile78 fallback; no Patricia-side action is needed now.</li>
+<li>Auto-recheck watch rows remain by design: clawback/partial Pending rows stay monitored instead of closed as wins.</li>
+<li>Four Kinata SG Pending+Closed terminal-cleanup candidates remain visible for the next scheduled CSRR auto-recheck: 2606252SC4AB3G Kinata SG Pending / Closed, 260620JY46D6R2 Kinata SG Pending / Closed, 260630DTV4J8KM Kinata SG Pending / Closed, 260624VUCSKN77 Kinata SG Pending / Closed</li></ul></div>
   </div>
 </div>
 <div class="entry" data-date="2026-07-06" data-shops="All scheduled profiles; Profile 70; Profile 84; TikTok 54-67; Lazada 81-83; Shopee CS1-CS5" data-platform="AdsPower + employee webapp + Shopee MY/SG + TikTok Seller Center + Lazada Seller Center + SiteGiant" data-result="warn">
