@@ -4999,6 +4999,24 @@ header.page::after{
 
 
         <!-- ENTRIES_START -->
+  <div class="entry" data-date="2026-07-06" data-shops="Shopee FBS inbound planning" data-platform="Codex skill + Excel + Google Sheets" data-result="ok" data-skill="shopee-fbs-inbound-planner">
+    <div class="entry-summary">
+      <span class="chevron">&#9654;</span>
+      <span class="entry-title">shopee-fbs-inbound-planner - skill created and sample Google Sheet verified 2026-07-06</span>
+      <span class="entry-meta">2026-07-06 MYT &middot; repo-local skill created &middot; sample Sheet shared to Patricia &middot; npm test 6/6</span>
+      <span class="tag">shopee-fbs-inbound-planner</span>
+      <span class="tag success">OK</span>
+    </div>
+    <div class="entry-body">
+      <div class="field" data-board-log-id="shopee-fbs-inbound-planner-20260706"><strong>Task:</strong> Build a reusable Codex skill to prepare optimized Shopee FBS inbound planning sheets from incoming container stock lists.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> skill folder <code>missing -&gt; .agents/skills/shopee-fbs-inbound-planner</code>; deterministic workbook generator <code>missing -&gt; scripts/build_fbs_inbound_plan.py</code>; detailed planning rules <code>missing -&gt; references/planning-rules.md</code>; sample review Sheet <code>missing -&gt; native Google Sheet created/shared</code>; repository tests <code>not run -&gt; npm test 6/6 pass</code>.</div>
+      <div class="field"><strong>Planning logic added:</strong> starts from container rows, matches SKU/variation sales and FBS data, calculates normal and stock-out adjusted 45/60-day forecasts, deducts current FBS stock and pending FBS inbound, excludes first-month new and blacklist/dead-stock rows, flags carton/charge/manual-review risk, and optimizes safe recommendations toward the 50% container target without forcing slow-moving stock.</div>
+      <div class="field"><strong>Sample Sheet readback:</strong> <code>Shopee FBS Inbound Planner - Sample Template - 2026-07-06</code> / <code>1dzoX5wLMWnW5u-bWDaDxOVpgWkvvZgSgOfTch9ghS48</code> read back as native Google Sheet. Summary showed incoming <code>540</code>, target <code>270</code>, system/final FBS <code>270</code>, target difference <code>0</code>; Planning rows showed stock-out-adjusted <code>B001</code>, pending/current-FBS-deducted <code>C001</code>, new-item excluded <code>D001</code>, and blacklist excluded <code>E001</code>.</div>
+      <div class="field"><strong>Shop/platform/reason/result:</strong> Shopee FBS inbound planning / Codex skill + Excel + Google Sheets; reason new workflow; result skill created and sample/template Sheet shared to <code>patricia.awesomeree@gmail.com</code>. Shopee marketplace writes <code>0 -&gt; 0</code>, customer messages <code>0 -&gt; 0</code>, SiteGiant writes <code>0 -&gt; 0</code>, warehouse/stock writes <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Validation:</strong> skill validator passed; AST syntax parse passed; <code>PYTHONPYCACHEPREFIX=.tmp/pycache python -m py_compile</code> passed; smoke workbook generated at <code>.tmp/fbs-planner-smoke-planning.xlsx</code>; Google Sheet import/share/readback passed; <code>npm test</code> passed <code>6/6</code>.</div>
+      <div class="field"><strong>Outstanding:</strong> This is a sample/template only because no real incoming container list was provided. Real FBS planning still needs current sales, current FBS stock, pending FBS inbound, stock-out days, optional blacklist/dead-stock list, optional FBS charge/size data, and admin confirmation if carton multiples must be enforced.</div>
+    </div>
+  </div>
 <!-- SCHEDULED-SKILLS-READINESS-20260707 -->
 <div class="entry" data-date="2026-07-06" data-skill="scheduled-readiness" data-board-log-id="scheduled-skills-readiness-20260707" data-shops="All scheduled skills" data-platform="Codex scheduler, Windows Task Scheduler" data-result="ok">
   <div class="entry-summary">
