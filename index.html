@@ -4999,6 +4999,24 @@ header.page::after{
 
 
         <!-- ENTRIES_START -->
+<!-- SHOPEE-SHIPPING-CLAIM-GUARD-2026-07-07 -->
+<div class="entry" data-date="2026-07-07" data-shops="Shopee MY monthly shipping claim guard" data-platform="Shopee MY + Seller Center shipping claim guard" data-result="ok" data-skill="shopee-shipping-claim">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">shopee-shipping-claim - 7/7 monthly guard safe skip / 0 writes</span>
+    <span class="entry-meta">2026-07-07 MYT &middot; day 7 vs claim day 15 &middot; profile70 BLOCKED but not required for safe skip &middot; FINAL_STATUS OK</span>
+    <span class="entry-tags"><span class="tag">shopee-shipping-claim</span><span class="tag">Shopee MY</span><span class="tag result-ok">OK</span></span>
+  </div>
+  <div class="entry-body">
+    <div class="field" data-board-log-id="shopee-shipping-claim-guard-20260707"><strong>Date / task:</strong> 2026-07-07 MYT. Scheduled Codex job <code>shopee-shipping-claim</code>, monthly Shopee MY shipping claim guard.</div>
+    <div class="field"><strong>Shop / platform:</strong> Shopee MY monthly shipping claim lane across all MY shops; Seller Center shipping claim workflow guarded by the monthly day-15 rule.</div>
+    <div class="field"><strong>Reason for change:</strong> The scheduled prompt requires a safe-skip report on non-claim days. 2026-07-07 is day <code>7</code>; the configured claim day is day <code>15</code>, so live Seller Center scraping and Shopee help-webform submission were not entered.</div>
+    <div class="field"><strong>Every change before -&gt; after:</strong><ul><li>Date guard <code>day 7 vs day 15 -&gt; SAFE_SKIP_NON_CLAIM_DAY</code>.</li><li>Same-day preflight for this lane <code>BLOCKED_BY_PROFILE_LOGIN -&gt; not required for non-claim-day safe skip</code>; profile70 <code>BLOCKED -&gt; BLOCKED unchanged</code> and was not opened, attached, started, or stopped by the shipping-claim guard.</li><li>Live Seller Center claim workflow <code>not entered -&gt; not entered</code>; Shopee webform submissions <code>0 -&gt; 0</code>; order SN scrape <code>0 -&gt; 0</code>; claim batches built <code>0 -&gt; 0</code>.</li><li>Business-system, customer-message, stock, marketplace, and webapp writes all stayed <code>0 -&gt; 0</code>.</li><li><code>Stop-Process</code>, <code>taskkill</code>, scheduled-task stop/disable calls, Claude subprocesses, and legacy launcher invocations all stayed <code>0 -&gt; 0</code>.</li><li>Report/raw/profile-cleanup/closeout/final-log artifacts moved from missing or not yet verified to present and verified for 2026-07-07.</li></ul></div>
+    <div class="field"><strong>Evidence:</strong> Report <code>C:\Users\tessf\Documents\shopee-shipping-claim-reports\shopee-shipping-claim-2026-07-07.md</code>; raw guard JSON <code>C:\Users\tessf\Documents\shopee-shipping-claim-reports\_codex_shopee_shipping_claim_guard_2026-07-07.json</code>; profile cleanup/readback note <code>C:\Users\tessf\Documents\shopee-shipping-claim-reports\_codex_shopee_shipping_claim_profile_cleanup_2026-07-07.json</code>; closeout JSON <code>C:\Users\tessf\Documents\shopee-shipping-claim-reports\_codex_shopee_shipping_claim_closeout_2026-07-07.json</code>; final run log <code>C:\Users\tessf\Documents\codex-scheduled-logs\shopee-shipping-claim\shopee-shipping-claim-final-20260707-direct-safe-skip.md</code>; same-day profile preflight state <code>C:\Users\tessf\Documents\codex-scheduled-logs\profile-login-preflight\profile-login-preflight-2026-07-07.json</code>.</div>
+    <div class="field"><strong>Result:</strong> OK safe skip. No shop, order, claim case, stock row, marketplace action, webapp write, or customer message entered live workflow scope.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> No active outstanding item found for this non-claim-day guard run. Future readiness: Profile70 is still blocked for Profile70-dependent Seller Center workflows, and the actual 2026-07-15 live claim filing still needs a Codex-native business runner plus verified source login/preflight if Patricia expects automatic filing.</div>
+  </div>
+</div>
 <!-- SG-GAP-MONITOR-2026-07-07 -->
 <div class="entry" data-date="2026-07-07" data-shops="Solaree, Flashree, Gameniture, Stationarylah, KEDAI GARDEN, FynnKoffer" data-platform="Shopee MY + SiteGiant" data-result="ok-with-action-items" data-skill="sg-gap-monitor" data-board-log-id="sg-gap-monitor-20260707">
   <div class="entry-summary">
