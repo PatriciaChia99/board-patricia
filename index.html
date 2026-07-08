@@ -1109,15 +1109,15 @@ header.page::after{
   <div class="entry-summary">
     <span class="entry-date">2026-07-08</span>
     <span class="entry-title">chatbackup post-send unread marking 2026-07-08</span>
-    <span class="entry-meta">forward-only unread marking implemented; live verification pending next eligible run; old chats untouched</span>
+    <span class="entry-meta">forward-only unread marking and next-run handoff saved; live proof pending; old chats untouched</span>
     <span class="entry-tags"><span class="tag">chatbackup</span><span class="tag">Shopee webchat</span><span class="tag result-warn">OK_WITH_ACTION_ITEMS</span></span>
   </div>
   <div class="entry-body">
-    <p><strong>Logged:</strong> 2026-07-08 16:11 MYT.</p>
+    <p><strong>Logged:</strong> 2026-07-08 16:25 MYT.</p>
     <p><strong>Date/task:</strong> 2026-07-08 - chatbackup forward-only post-send unread marking implementation.</p>
     <p><strong>Shop:</strong> Shopee MY/SG chatbackup shop-main profiles: MurahYa, KarlMobel, BahEmas, das.nature, Das.nature2, Luxbiin, Hiranai, MasonGym, Lovento, ValueSnap, Kinata, BidariMu, ChairSy, AdelmarMY, EncikPlastic, EmasGift, JagerHelmet, SecretRacer, WilmerMobel, Valuesnap SG. FynnKoffer remains inactive until mapped.</p>
     <p><strong>Platform:</strong> Shopee MY and Shopee SG seller webchat; no buyer-side product-page chat fallback enabled.</p>
-    <p><strong>Reason for change:</strong> Patricia asked to ignore older sent chats and, from today onward, keep CS follow-up visible by marking the same newly replied conversation unread after the approved chatbackup reply is verified. Insert reason: inserted new same-day chatbackup card.</p>
+    <p><strong>Reason for change:</strong> Patricia asked to ignore older sent chats and, from today onward, keep CS follow-up visible by marking the same newly replied conversation unread after the approved chatbackup reply is verified. Insert reason: existing unread implementation marker replaced.</p>
     <p><strong>Before/after values:</strong></p>
     <ul><li>Post-send unread handling: not attempted -&gt; enabled by default after exact reply READBACK_OK.</li>
 <li>Conversation scope: any old/yesterday sent chat could be manually opened -&gt; 0 old chats touched; normal run only marks the same conversation just sent in that run.</li>
@@ -1127,6 +1127,9 @@ header.page::after{
 <li>Run summary/reporting: no unread counts -&gt; unreadMarked and unreadMarkFailures included in raw JSON and Markdown report.</li>
 <li>Failure classification: send/readback failures only -&gt; unread mark not verified keeps the run PARTIAL while preserving sent/readback evidence.</li>
 <li>Skill and scheduled prompt: approved reply only -&gt; approved reply plus same-conversation post-send unread mark after READBACK_OK.</li>
+<li>Session continuation prompt: missing -&gt; .agents\continuations\chatbackup-unread-next-run-20260708.md saved for the next schedule window.</li>
+<li>All-scheduled July 8 handoff: old chatbackup caution only -&gt; added 2026-07-08 unread-mark carry-forward and product-page fallback note.</li>
+<li>Durable closeout lesson: implicit -&gt; reinforced in .agents\error-log.md that board/error-log/crosscheck/outstanding must be done after every task without being asked.</li>
 <li>Live Shopee actions during implementation: 0 -&gt; 0; current implementation work happened outside the 17:45-09:00 live-send window.</li>
 <li>Buyer-side shopee.com.my product-page fallback: not implemented -&gt; remains blocked until a safe seller-account readback proves it cannot send from the wrong account context.</li></ul>
     <p><strong>Every code/prompt change:</strong></p>
@@ -1135,12 +1138,19 @@ header.page::after{
 <li>chatbackup_runner.js: changed send path so unread marking runs only after READBACK_OK and records MARK_UNREAD_OK or failure status.</li>
 <li>chatbackup_runner.js: added unreadMark evidence to sent rows, ledger entries, raw JSON, Markdown report, and per-account totals.</li>
 <li>SKILL.md: updated safety/completion rules to require same-conversation unread evidence and classify unread failures as PARTIAL.</li>
-<li>chatbackup-scheduled.md: updated scheduled prompt closeout requirements for unread evidence and no old-chat repair.</li></ul>
+<li>chatbackup-scheduled.md: updated scheduled prompt closeout requirements for unread evidence and no old-chat repair.</li>
+<li>chatbackup-scheduled.md: added Current Carry-Forward section for 2026-07-08 unread proof pending and product-page fallback not enabled.</li>
+<li>all-scheduled-skills-20260708.md: added chatbackup unread-mark carry-forward for the next scheduled skill handoff.</li>
+<li>chatbackup-unread-next-run-20260708.md: saved next-run continuation prompt with safest next action and known outstanding items.</li>
+<li>.agents/error-log.md: added durable session-closeout instruction reminder and saved-prompt evidence.</li></ul>
     <p><strong>Result:</strong> OK_WITH_ACTION_ITEMS. Implementation and local tests passed; no live Shopee send or unread mark was performed during this code change because it was outside the live window.</p>
     <p><strong>Evidence:</strong></p>
     <ul><li>Runner: C:\Users\tessf\code\codex-lab\.agents\skills\chatbackup\scripts\chatbackup_runner.js</li>
 <li>Skill: C:\Users\tessf\code\codex-lab\.agents\skills\chatbackup\SKILL.md</li>
 <li>Scheduled prompt: C:\Users\tessf\code\codex-lab\.agents\scheduled-codex\prompts\chatbackup-scheduled.md</li>
+<li>Continuation prompt: C:\Users\tessf\code\codex-lab\.agents\continuations\chatbackup-unread-next-run-20260708.md</li>
+<li>All-scheduled handoff: C:\Users\tessf\code\codex-lab\.agents\continuations\all-scheduled-skills-20260708.md</li>
+<li>Durable lesson: C:\Users\tessf\code\codex-lab\.agents\error-log.md</li>
 <li>Validation: node --check .agents\skills\chatbackup\scripts\chatbackup_runner.js passed.</li>
 <li>Validation: CHATBACKUP_TEMPLATE_SELFTEST=1 node .agents\skills\chatbackup\scripts\chatbackup_runner.js passed 4/4.</li>
 <li>Validation: npm test passed 6/6; package has no lint script.</li></ul>
