@@ -1166,27 +1166,27 @@ header.page::after{
 <!-- /SG-GAP-MONITOR-2026-07-09 -->
 
 <!-- PROFILE-LOGIN-PREFLIGHT-2026-07-09 -->
-  <div class="entry" data-date="2026-07-09" data-shops="BahEmas, KarlMobel, Laz MurahYa, MurahYa, TT KarlMobel" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="warn">
+  <div class="entry" data-date="2026-07-09" data-shops="BahEmas, KarlMobel, Laz MurahYa, MurahYa, TT KarlMobel" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
       <span class="entry-title">parcelsplit-contact-crosscheck - Codex 9/7 rerun: 51 rows in 7d / 28 active / 0 writes</span>
-      <span class="entry-meta">2026-07-09T10:29:56+08:00 MYT &middot; profile 70 k1b44nvg active &middot; fresh /api/parcel-split 2375 rows &middot; report <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-07-09.md</code></span>
+      <span class="entry-meta">2026-07-09T10:55:01+08:00 MYT &middot; profile 70 k1b44nvg active &middot; fresh /api/parcel-split 2375 rows &middot; report <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-07-09.md</code></span>
       <span class="tag">parcelsplit-contact-crosscheck</span>
-      <span class="tag result-warn">Partial</span>
+      <span class="tag result-ok">Completed</span>
     </div>
     <div class="entry-body">
       <p><strong>Brief:</strong> Codex reran the scheduled Parcel Split contact crosscheck for 2026-07-09 MYT without invoking Claude or the legacy launcher. Fresh dashboard API data had 51 rows in the 7-day MYT window and 28 active unshipped rows.</p>
       <div class="field"><strong>Date:</strong> 2026-07-09 MYT.</div>
       <div class="field"><strong>Task:</strong> Scheduled Parcel Split contact crosscheck for Shopee MY + TikTok + Lazada using Codex.</div>
-      <div class="field"><strong>Before -&gt; after values:</strong> API rows <code>2375 -&gt; 2375</code>; 7-day window rows <code>47 -&gt; 51</code>; active unshipped in-window rows <code>0 -&gt; 28</code>; new today rows <code>0 -&gt; 12</code>; new today active rows <code>0 -&gt; 12</code>; Shopee MY consistency pass/mismatch/manual <code>0/0/0 -&gt; 15/0/0</code>; Shopee MY contacted-pass <code>0 -&gt; 15</code>; Shopee MY uncontacted/no-evidence carry-over <code>0 -&gt; 0</code>; Shopee MY today skipped <code>0 -&gt; 11</code>; TT/Lazada in-window rows <code>4 -&gt; 4</code>; TT/Lazada open rows <code>0 -&gt; 3</code>; TT/Lazada messages <code>0 -&gt; 0</code>; Lazada phone skips <code>0 -&gt; 2</code>; phone updates <code>0 -&gt; 0</code>; icon updates <code>0 -&gt; 0</code>; messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; webapp patches <code>0 -&gt; 0</code>.</div>
+      <div class="field"><strong>Before -&gt; after values:</strong> API rows <code>2375 -&gt; 2375</code>; 7-day window rows <code>51 -&gt; 51</code>; active unshipped in-window rows <code>0 -&gt; 28</code>; new today rows <code>0 -&gt; 12</code>; new today active rows <code>0 -&gt; 12</code>; Shopee MY consistency pass/mismatch/manual <code>0/0/0 -&gt; 15/0/0</code>; Shopee MY contacted-pass <code>0 -&gt; 15</code>; Shopee MY uncontacted/no-evidence carry-over <code>0 -&gt; 0</code>; Shopee MY today skipped <code>0 -&gt; 11</code>; TT/Lazada in-window rows <code>4 -&gt; 4</code>; TT/Lazada open rows <code>0 -&gt; 3</code>; TT/Lazada messages <code>0 -&gt; 1</code>; Lazada phone skips <code>0 -&gt; 3</code>; phone updates <code>0 -&gt; 0</code>; icon updates <code>0 -&gt; 0</code>; messages <code>0 -&gt; 1</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 1</code>; webapp patches <code>0 -&gt; 0</code>.</div>
       <div class="field"><strong>Shop:</strong> BahEmas, KarlMobel, Laz MurahYa, MurahYa, TT KarlMobel.</div>
       <div class="field"><strong>Platform:</strong> Shopee MY + TikTok + Lazada + Parcel Split webapp. Profile 70 <code>k1b44nvg</code> stayed open; marketplace seller profiles were not opened unless an active TT/Lazada row required it.</div>
       <div class="field"><strong>Reason for change:</strong> Manual Codex scheduled-job rerun for Parcel Split contact audit; Patricia confirmed on 2026-06-30 that Lazada phone capture is not required when the number cannot be retrieved after reasonable checks, so verified Lazada sends with no retrievable phone are complete. Patricia corrected on 2026-07-06 that Shopee MY <code>isContacted=false</code> / no phone evidence rows are consistency passes only and must be surfaced as still not contacted.</div>
       
       <div class="field"><strong>Evidence:</strong> Raw API evidence <code>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_raw_2026-07-09.json</code>; fetch metadata <code>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_fetch_meta_2026-07-09.json</code>; report <code>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-07-09.md</code>; state <code>C:\Users\tessf\code\codex-lab\.agents\skills\parcelsplit-contact-crosscheck\state.json</code>.</div>
-      <div class="field"><strong>Result:</strong> partial. Blockers/outstanding: Shopee mismatch/manual rows 0/0; TT/Lazada blocked rows 1.</div>
+      <div class="field"><strong>Result:</strong> completed. Blockers/outstanding: None.</div>
     </div>
-  </div>  <!-- RETURNITEMS-CHECKRETURNITEMS-2026-07-09 -->
+  </div>
   <div class="entry" data-date="2026-07-09" data-shops="Return Items" data-platform="Return Items webapp, Parcel Claim, SiteGiant, ShopeeMY R/R, TikTok, ShopeeSG, Lazada" data-result="ok-with-action-items">
     <div class="entry-summary">
       <span class="entry-date">2026-07-09</span>
