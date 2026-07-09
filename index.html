@@ -2256,13 +2256,14 @@ header.page::after{
     </div>
   </div>
 
-<div class="entry" data-date="2026-07-09" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center source/wallet, Patricia board" data-result="ok" data-skill="checkfbsclaims">
+
+<div class="entry" data-date="2026-07-09" data-shops="MurahYa, KarlMobel, ValueSnap, Luxbin" data-platform="Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center source/wallet, Patricia board" data-result="ok-with-action-items" data-skill="checkfbsclaims">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">checkfbsclaims FBS status sync + pending credited wallet closures 2026-07-09 - OK</span>
+    <span class="entry-title">checkfbsclaims FBS status sync + pending credited wallet closures 2026-07-09 - OK_WITH_ACTION_ITEMS</span>
     <span class="entry-meta">2026-07-09 MYT; Sheet append 1; webapp Action 51; pending_credited 68-&gt;18; final gap 0</span>
     <span class="tag">checkfbsclaims</span>
-    <span class="tag result-ok">OK</span>
+    <span class="tag result-ok">OK_WITH_ACTION_ITEMS</span>
   </div>
   <div class="entry-body">
     <div class="field" data-board-log-id="checkfbsclaims-20260709"><strong>Board log id:</strong> checkfbsclaims-20260709</div>
@@ -2277,7 +2278,7 @@ header.page::after{
       <div class="field"><strong>Platform:</strong> Google Sheet FBS Claim, employee FBS Claim webapp, Shopee MY Seller Center source/wallet evidence, Patricia board.</div>
       <div class="field"><strong>Reason for change:</strong> Original run appended one source-confirmed webapp-only current KarlMobel FBS case and set its blank Action. Follow-up corrected the historical pending_credited bucket after Patricia clarified that similar wallet amount can close the case in the employee webapp.</div>
       <div class="field"><strong>Source and wallet evidence:</strong> Profile70 source probe completed all four shops with final API errors <code>0</code>. Follow-up used current employee webapp wallet adjustment/readback objects, requiring wallet balance_credited_amount or wallet net_amount to meet max(RM2, 10%) product-price tolerance with a small RM0.02 rounding cushion.</div>
-      <div class="field"><strong>Result:</strong> OK. Original final readback: webapp cases <code>553</code>; Sheet rows <code>MurahYa 108 / KarlMobel 183 / ValueSnap 212 / Luxbin 11</code>; sheetPlan/actionPlan/inWebappNotInSheet/suspectClosures <code>0/0/0/0</code>. Follow-up final readback: closed <code>283</code>, pending_credited <code>18</code>, actionPlan <code>0</code>, suspectClosures <code>0</code>.</div>
+      <div class="field"><strong>Result:</strong> OK_WITH_ACTION_ITEMS. Original final readback: webapp cases <code>553</code>; Sheet rows <code>MurahYa 108 / KarlMobel 183 / ValueSnap 212 / Luxbin 11</code>; sheetPlan/actionPlan/inWebappNotInSheet/suspectClosures <code>0/0/0/0</code>. Follow-up final readback: closed <code>283</code>, pending_credited <code>18</code>, actionPlan <code>0</code>, suspectClosures <code>0</code>.</div>
       <div class="field"><strong>Evidence:</strong> Original report <code>C:\Users\tessf\Documents\fbs-claim-reports\fbs-claim-status-2026-07-09.md</code>; follow-up report <code>C:\Users\tessf\Documents\fbs-claim-reports\fbs-pending-credited-wallet-closure-2026-07-09.md</code>; raw evidence <code>C:\Users\tessf\Documents\fbs-claim-reports\raw-2026-07-09</code>; follow-up evidence folder <code>raw-2026-07-09\pending-credited-wallet-closure-20260709</code>; manual closure readback <code>tmp-fbs-claim-20260709\pending-credited-wallet-closure-20260709\manual-closure-apply\manual_patch_results.json</code>; final approved-ID readback <code>tmp-fbs-claim-20260709\pending-credited-wallet-closure-20260709\final-readback-approved\summary.json</code>.</div>
       <div class="field"><strong>Session save / continuation:</strong> Continuation prompt saved as <code>continue-2026-07-09-fbs-pending-credited-wallet-followup.md</code> and copied to the FBS reports folder because 18 rows remain held. Scheduled prompt updated so future FBS runs include this follow-up's approved closure IDs before broad action derivation.</div>
       <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> The earlier closeout did not close the historical pending_credited wallet-matched rows. That is now corrected for 50 rows. Remaining active FBS wallet-credit watch: 18 pending_credited rows are held because wallet/net evidence does not meet threshold or product price is missing. No Google Sheet, customer, marketplace, stock, closure-status field, or non-FBS write was made beyond the listed employee webapp Action patches.</div>
