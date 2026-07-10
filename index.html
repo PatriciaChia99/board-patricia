@@ -2279,6 +2279,10 @@ header.page::after{
 <li>One-off task state: absent -&gt; Ready</li>
 <li>One-off task next run: absent -&gt; 2026-07-10 15:00:00 +08:00</li>
 <li>One-off task command: absent -&gt; powershell.exe -File .agents\scheduled-codex\run-codex-scheduled-fixed.ps1 -JobName parcelsplit-contact-crosscheck</li>
+<li>Fallback checker ParcelSplitCrosscheck_1520_Fallback_20260710: missing -&gt; registered/enabled</li>
+<li>Fallback checker state: absent -&gt; Ready</li>
+<li>Fallback checker next run: absent -&gt; 2026-07-10 15:20:00 +08:00</li>
+<li>Fallback behavior: if 15:00 task did not run or returned nonzero while not running, start the same Parcel Split task once</li>
 <li>Scheduled runner self-test for parcelsplit-contact-crosscheck: not run -&gt; PASS</li>
 <li>Existing ParcelSplitCrosscheck_1000AM daily task: disabled -&gt; unchanged by this one-off setup</li></ul></div>
     <div class="field"><strong>Evidence:</strong><ul><li>C:\Users\tessf\Documents\parcelsplit-reports\parcelsplit-report-2026-07-10.md</li>
@@ -2286,11 +2290,13 @@ header.page::after{
 <li>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_fetch_meta_2026-07-10.json</li>
 <li>C:\Users\tessf\Documents\parcelsplit-reports\_codex_parcelsplit_board_profile_verify_public-readback_2026-07-10.json</li>
 <li>Task Scheduler readback: ParcelSplitCrosscheck_1500_20260710 Ready, TriggerStart 2026-07-10T15:00:00+08:00</li>
+<li>Task Scheduler readback: ParcelSplitCrosscheck_1520_Fallback_20260710 Ready, TriggerStart 2026-07-10T15:20:00+08:00</li>
+<li>Fallback will write tmp-parcelsplit-20260710\fallback-1520-readback-20260710.json after it checks the 15:00 task</li>
 <li>Scheduled runner self-test: Known=True, PromptExists=True, RunnerExists=True</li>
 <li>C:\Users\tessf\code\codex-lab\tmp-parcelsplit-20260710\board-post-result-parcelsplit-1500-schedule-20260710.json</li></ul></div>
     <div class="field"><strong>Result:</strong> Completed. The one-off 15:00 MYT Parcel Split recheck is ready and uses the existing <code>parcelsplit-contact-crosscheck</code> prompt/runner path.</div>
     <div class="field"><strong>Outstanding / Patricia may have missed:</strong><ul><li>No active Parcel Split contact item was found in the 09:28 readback.</li>
-<li>The requested 15:00 one-off recheck is pending; it will catch any cases added after the morning run.</li>
+<li>The requested 15:00 one-off recheck is pending; a 15:20 fallback checker is also ready and will start the same task if the 15:00 run did not happen or failed.</li>
 <li>No customer, marketplace, employee-webapp, stock, or phone write was made by this schedule setup.</li></ul></div>
   </div>
 </div>
