@@ -2211,6 +2211,40 @@ header.page::after{
 
 
 </style> </head><body><div class="wrapper"><header class="page"><div class="brand"><div class="brand-mark">PA</div><div class="brand-text"><h1>PATRICIA<span class="slash">//</span>ACTIVITY BOARD</h1><p>Auto-updated log of tasks completed by Claude Code</p></div></div><div class="quick-stats"><div class="stat-chip today"><span class="num" id="statToday">10</span><span class="lbl">Today</span></div><div class="stat-chip week"><span class="num" id="statWeek">80</span><span class="lbl">7 Days</span></div><div class="stat-chip total"><span class="num" id="statTotal">441</span><span class="lbl">Total</span></div></div></header><div class="now-showing" id="todayCard"><div class="label">Now</div><div class="summary" id="todaySummary"><strong>10</strong> tasks today &middot; 7 completed</div></div><div class="tab-bar-wrap"><div class="tab-bar" id="tabBar"></div></div><div class="filter-bar"><div class="search-wrap"><input type="text" id="searchInput" placeholder="Search tasks, shops, platforms, results&hellip;"></div><div class="filter-dropdown"><button type="button" class="filter-btn" id="shopBtn" data-default-label="Any Shop"><span class="btn-label">Shop</span><span class="btn-value">Any Shop</span><span class="chev">&#9660;</span></button><div class="dropdown-panel" id="shopPanel"><div class="dropdown-search"><input type="text" id="shopSearch" placeholder="Search shops&hellip;"></div><div class="dropdown-options" id="shopList"></div></div></div><div class="filter-dropdown"><button type="button" class="filter-btn" id="platformBtn" data-default-label="Any Platform"><span class="btn-label">Platform</span><span class="btn-value">Any Platform</span><span class="chev">&#9660;</span></button><div class="dropdown-panel" id="platformPanel"><div class="dropdown-options" id="platformList"></div></div></div><div class="filter-dropdown"><button type="button" class="filter-btn" id="resultBtn" data-default-label="Any Result"><span class="btn-label">Result</span><span class="btn-value">Any Result</span><span class="chev">&#9660;</span></button><div class="dropdown-panel" id="resultPanel"><div class="dropdown-options" id="resultList"></div></div></div><button class="clear-btn" id="clearBtn" type="button">Clear all</button></div><!-- ENTRIES_START -->
+<div class="entry" data-date="2026-07-10" data-shop="N/A" data-platform="Static proposal PDFs/PNGs, Codex workspace" data-status="completed" data-result="ok" data-board-log-id="ui-warning-render-refresh-20260710" data-skill="bug-fixer">
+  <div class="entry-summary">
+    <span class="entry-date">2026-07-10</span>
+    <span class="entry-title">ui-warning-render-refresh stale yellow warning preview assets 2026-07-10</span>
+    <span class="entry-meta">rendered stale preview/PDF assets refreshed; git warnings cleared; tests passed</span>
+    <span class="entry-tags"><span class="tag">bug-fixer</span><span class="tag">ui</span><span class="tag result-ok">Completed</span></span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Date/task:</strong> 2026-07-10 MYT fix remaining yellow warning issue by refreshing stale rendered proposal assets and clearing validation warnings.</p>
+    <p><strong>Shop/platform:</strong> N/A; internal Product Video Library and FBS parcel-claim proposal PDF/PNG artifacts in the Codex workspace.</p>
+    <p><strong>Reason for change:</strong> the CSS source already had readable dark warning text, but the exported preview/PDF artifacts were still stale; Git validation also still showed warning output.</p>
+    <div class="field"><strong>Before -&gt; after:</strong><ul><li>Product Video Library Proposal.pdf: 452103 bytes / 2026-06-12 17:36:52 -&gt; 452125 bytes / 2026-07-10 09:23:46</li>
+<li>Product Video Library Proposal - Preview.png: 290904 bytes / 1280x1800 / 2026-06-12 12:13:40 -&gt; 286843 bytes / 1280x1800 / 2026-07-10 09:24:16</li>
+<li>FBS Claim Progress Dashboard Proposal - Revised.pdf: 202289 bytes / 2026-05-26 21:24:16 -&gt; 199985 bytes / 2026-07-10 09:23:59</li>
+<li>FBS Claim Progress Dashboard Proposal - Revised Preview.png: 312173 bytes / 1000x5200 / 2026-05-26 21:24:32 -&gt; 312084 bytes / 1000x5200 / 2026-07-10 09:24:17</li>
+<li>fbs-parcel-claim-dashboard-proposal.pdf: 227844 bytes / 2026-05-26 20:41:24 -&gt; 224913 bytes / 2026-07-10 09:23:59</li>
+<li>fbs-parcel-claim-dashboard-proposal-preview.png: 506889 bytes / 1000x6900 / 2026-05-26 20:43:01 -&gt; 506774 bytes / 1000x6900 / 2026-07-10 09:24:17</li>
+<li>Source HTML warning/amber text colors: already #1d2939 -&gt; unchanged; rendered exports now match source</li>
+<li>git diff --check warnings: AGENTS.md extra EOF blank line and AGENTS.md/index.test.js LF-to-CRLF warnings -&gt; no output after CRLF normalization</li>
+<li>New dependencies 0 -&gt; 0; marketplace/customer/stock/business writes 0 -&gt; 0</li></ul></div>
+    <div class="field"><strong>Evidence:</strong><ul><li>C:\Users\tessf\code\codex-lab\Product Video Library Proposal.pdf</li>
+<li>C:\Users\tessf\code\codex-lab\Product Video Library Proposal - Preview.png</li>
+<li>C:\Users\tessf\code\codex-lab\FBS Claim Progress Dashboard Proposal - Revised.pdf</li>
+<li>C:\Users\tessf\code\codex-lab\FBS Claim Progress Dashboard Proposal - Revised Preview.png</li>
+<li>C:\Users\tessf\code\codex-lab\fbs-parcel-claim-dashboard-proposal.pdf</li>
+<li>C:\Users\tessf\code\codex-lab\fbs-parcel-claim-dashboard-proposal-preview.png</li>
+<li>npm test passed: 6/6 node tests</li>
+<li>git diff --check passed with no output</li>
+<li>C:\Users\tessf\code\codex-lab\tmp-ui-warning-render-refresh-20260710\board-post-result-ui-warning-render-refresh-20260710.json</li></ul></div>
+    <div class="field"><strong>Result:</strong> Completed. Rendered assets were regenerated from the fixed HTML, line-ending warnings were cleared, no dependency changes were made, and <code>npm test</code> passed.</div>
+    <div class="field"><strong>Outstanding / Patricia may have missed:</strong><ul><li>No active yellow warning preview/PDF artifact gap remains for these three static proposal HTML files.</li>
+<li>No customer, marketplace, stock, employee-webapp, or dependency action was performed.</li></ul></div>
+  </div>
+</div>
   <div class="entry" data-date="2026-07-10" data-shops="KarlMobel, Laz MurahYa, MurahYa, TT KarlMobel" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="ok">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
