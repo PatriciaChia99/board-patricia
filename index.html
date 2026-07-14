@@ -1131,6 +1131,32 @@ header.page::after{
 .entry-body .field { margin-bottom: .35rem !important; }
 
 </style> </head><body><div class="wrapper"><header class="page"><div class="brand"><div class="brand-mark">PA</div><div class="brand-text"><h1>PATRICIA<span class="slash">//</span>ACTIVITY BOARD</h1><p>Auto-updated log of tasks completed by Claude Code</p></div></div><div class="quick-stats"><div class="stat-chip today"><span class="num" id="statToday">1</span><span class="lbl">Today</span></div><div class="stat-chip week"><span class="num" id="statWeek">76</span><span class="lbl">7 Days</span></div><div class="stat-chip total"><span class="num" id="statTotal">492</span><span class="lbl">Total</span></div></div></header><div class="now-showing" id="todayCard"><div class="label">Now</div><div class="summary" id="todaySummary"><strong>1</strong> tasks today &middot; 0 completed &middot; 1 partial-warning</div></div><div class="tab-bar-wrap"><div class="tab-bar" id="tabBar"></div></div><div class="filter-bar"><div class="search-wrap"><input type="text" id="searchInput" placeholder="Search tasks, shops, platforms, results&hellip;"></div><div class="filter-dropdown"><button type="button" class="filter-btn" id="shopBtn" data-default-label="Any Shop"><span class="btn-label">Shop</span><span class="btn-value">Any Shop</span><span class="chev">&#9660;</span></button><div class="dropdown-panel" id="shopPanel"><div class="dropdown-search"><input type="text" id="shopSearch" placeholder="Search shops&hellip;"></div><div class="dropdown-options" id="shopList"></div></div></div><div class="filter-dropdown"><button type="button" class="filter-btn" id="platformBtn" data-default-label="Any Platform"><span class="btn-label">Platform</span><span class="btn-value">Any Platform</span><span class="chev">&#9660;</span></button><div class="dropdown-panel" id="platformPanel"><div class="dropdown-options" id="platformList"></div></div></div><div class="filter-dropdown"><button type="button" class="filter-btn" id="resultBtn" data-default-label="Any Result"><span class="btn-label">Result</span><span class="btn-value">Any Result</span><span class="chev">&#9660;</span></button><div class="dropdown-panel" id="resultPanel"><div class="dropdown-options" id="resultList"></div></div></div><button class="clear-btn" id="clearBtn" type="button">Clear all</button></div><!-- ENTRIES_START -->
+<!-- SCHEDULE-HOLD-2026-07-14 -->
+<div class="entry" data-date="2026-07-14" data-shops="All configured Patricia automation shops" data-platform="Windows Task Scheduler + PowerShell" data-status="completed" data-result="ok" data-skill="schedule-hold" data-board-log-id="schedule-hold-20260714">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">All Patricia/Codex scheduled runs stopped and disabled - 2026-07-14</span>
+    <span class="entry-meta">09:21-09:32 MYT &middot; 50/50 Disabled &middot; 1 active runner stopped &middot; 0 runners remain</span>
+    <span class="tag">schedule hold</span>
+    <span class="tag">Task Scheduler</span>
+    <span class="tag result-ok">Completed</span>
+  </div>
+  <div class="entry-body">
+    <div class="field"><strong>Date/task:</strong> 2026-07-14 MYT &mdash; Patricia requested that all scheduled runs be stopped first. Scope was limited to Windows tasks whose name or action belongs to Codex, Claude, Patricia board, or the <code>codex-lab</code> automation workflows; unrelated Windows tasks were left untouched.</div>
+    <div class="field"><strong>Before -&gt; after totals:</strong> matching tasks <code>50 -&gt; 50</code>; state counts <code>45 Disabled + 4 Ready + 1 Running -&gt; 50 Disabled</code>; non-disabled tasks <code>5 -&gt; 0</code>; matching runner processes <code>1 -&gt; 0</code>.</div>
+    <div class="field"><strong>Every changed schedule:</strong> <code>Codex_ReturnItems_Weekend_1030: Running -&gt; stopped -&gt; Ready -&gt; Disabled</code>; <code>BoardMirrorSync_10min: Ready -&gt; Disabled</code>; <code>Codex_FBSClaim_TueFri_1215: Ready -&gt; Disabled</code>; <code>CSRRCredited_1030AM: Ready -&gt; Disabled</code>; <code>TT_RR_Audit_10_15AM: Ready -&gt; Disabled</code>. The other 45 matching schedules stayed <code>Disabled -&gt; Disabled</code>.</div>
+    <div class="field"><strong>Stopped-run readback:</strong> Return Items started at <code>2026-07-14 09:21:27 MYT</code> through <code>run-codex-scheduled-fixed.ps1 -JobName returnitems-lookup</code>. The post-stop Task Scheduler result is <code>267014</code>, consistent with the requested termination, and no matching child runner remains.</div>
+    <div class="field"><strong>Shop:</strong> all configured Patricia automation shops/accounts across Shopee MY/SG, TikTok, Lazada, FBS, returns, chat, internal preflight, and board automation.</div>
+    <div class="field"><strong>Platform:</strong> Windows Task Scheduler and PowerShell scheduled runners.</div>
+    <div class="field"><strong>Reason:</strong> immediate complete schedule hold requested by Patricia before further work.</div>
+    <div class="field"><strong>Business-write safety:</strong> customer messages, marketplace actions, stock writes, wallet actions, employee-webapp writes, and case-status writes all stayed <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Evidence:</strong> <code>tmp-schedule-hold-20260714/schedule-hold-report-2026-07-14.md</code> and <code>tmp-schedule-hold-20260714/schedule-hold-raw-2026-07-14.json</code>; final direct Task Scheduler and process readbacks passed. No code changed, so code tests were not applicable.</div>
+    <div class="field"><strong>Result:</strong> <code>COMPLETED</code> &mdash; all 50 matching schedules are Disabled and no matching scheduled runner is active.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> every matching schedule, including board mirror sync, will remain disabled until Patricia explicitly requests re-enable/resume. Stored next-run metadata may still appear on a disabled trigger, but it cannot fire. No active scheduled run remains.</div>
+  </div>
+</div>
+<!-- /SCHEDULE-HOLD-2026-07-14 -->
+
 <!-- CHATBACKUP-2026-07-13 -->
 <div class="entry" data-date="2026-07-13" data-shops="MurahYa, KarlMobel, BahEmas, das.nature, Das.nature2, Luxbiin, Hiranai, MasonGym, Lovento, ValueSnap, Kinata" data-platform="Shopee MY + Shopee SG" data-result="partial" data-skill="chatbackup" data-board-log-id="chatbackup-20260713-big-holding">
   <div class="entry-summary">
