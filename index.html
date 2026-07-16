@@ -1154,8 +1154,6 @@ header.page::after{
 </div>
 <!-- /PROFILE-LOGIN-PREFLIGHT-2026-07-16 -->
 
-
-
   <div class="entry" data-date="2026-07-16" data-shops="TT Adelmar, TT DasNature, TT Hiranai, TT HiranaiMY, TT Jager, TT JagerArmor, TT JagerSafety, TT KarlMobel, TT Lovento, TT MurahYa, TT Valuesnap" data-platform="TikTok MY + employee Parcel Claim webapp" data-result="warn" data-skill="tiktokrraudit" data-board-log-id="tiktokrraudit-20260716">
     <div class="entry-summary">
       <span class="chevron">&#9654;</span>
@@ -1172,6 +1170,7 @@ header.page::after{
       <div class="field"><strong>Every change:</strong><ul><li>No webapp changes. messages 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace changes 0 -&gt; 0; webapp patches 0 -&gt; 0.</li></ul></div>
       <div class="field"><strong>Money picture:</strong> new loss RM 0.00; new win RM 0.00; same-day Pending intake tagged 0 cases / RM 0.00; prior credited wins reverified 0 / RM 0.00.</div>
       <div class="field"><strong>Coverage:</strong> core TT MY profiles 0/11 alive via same-day parcelclaim-auto; FD DOM-only catches 0.</div>
+      <div class="field"><strong>Closeout dependency readback:</strong> At audit time the same-day parcelclaim-auto report/raw were absent. A final probe found a separate parcelclaim-auto run still active with only an intermediate raw at 2/16 profiles (54 TT Adelmar and 55 TT DasNature), 1 posted row, 1 crosscheck row, and no report. This mid-write raw was not treated as authoritative, and this job did not touch the concurrent run's Profiles 78/85.</div>
       <div class="field"><strong>CROSSCHECK:</strong> Total 26 / Confirmed 25 / Reclassified 0 / Retracted 1 / Discrepancy 0.</div>
       <div class="field"><strong>Reason:</strong> Daily scheduled TikTok R/R overlay after parcelclaim-auto and ttparcelclaim. No seller-platform write and no WhatsApp.</div>
       <div class="field"><strong>Profile access/cleanup:</strong> Coordinator Profile 70 was inactive before the run, opened once, then preserved active and never stopped. The corrected pass attached to that active profile. Fallback Profiles 78 and 85 were not opened because Profile 70 provided the exact required employee access.</div>
