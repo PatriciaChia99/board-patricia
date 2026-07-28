@@ -17,20 +17,21 @@
 <div class="entry" data-date="2026-07-28" data-skill="schedule-control" data-shops="All scheduled Patricia operations" data-platform="Windows Task Scheduler, Codex scheduled runner" data-result="partial">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">schedule-control - 10:04 running: Chataudit, Parcelclaim AM and Shopee Penalty active</span>
+    <span class="entry-title">schedule-control - main run active; FBS tracker verified for 11:00 and 17:30</span>
     <span class="entry-tags"><span class="tag">schedule-control</span><span class="tag platform">Windows Task Scheduler</span><span class="tag result">Partial</span></span>
   </div>
   <div class="entry-body">
-    <div class="field"><strong>Date / task:</strong> 2026-07-28 10:04:26 MYT; read-only check of whether today's scheduled run was active.</div>
+    <div class="field"><strong>Date / task:</strong> 2026-07-28 10:04-10:10 MYT; read-only checks of whether today's scheduled run was active and whether the Shopee FBS update tracker was registered.</div>
     <div class="field"><strong>Shop / platform:</strong> all scheduled Patricia operations; Windows Task Scheduler and the Codex scheduled runner. No seller account or shop was opened.</div>
-    <div class="field"><strong>Reason:</strong> Patricia asked whether today's schedule run was running.</div>
+    <div class="field"><strong>Reason:</strong> Patricia asked whether today's schedule run was running, then whether the FBS tracker/update workflow was listed and requested setup only if absent.</div>
     <div class="field"><strong>Active state before -&gt; after verification:</strong> unknown -&gt; 3 running Codex scheduled tasks and 3 matching scheduled-runner launchers.</div>
     <div class="field"><strong>Preflight before -&gt; after verification:</strong> unknown -&gt; <code>Codex_ProfileLoginPreflight_0900</code> launched at 09:02, returned <code>0x40010004</code>, created only its prompt copy, and produced no dated final log; completion is not verified.</div>
     <div class="field"><strong>Main jobs before -&gt; after verification:</strong> unknown -&gt; Chataudit running from 09:45, Parcelclaim AM chain running from 09:55, and Shopee penalty running from 10:00; later jobs remained queued.</div>
+    <div class="field"><strong>FBS tracker schedule before -&gt; after verification:</strong> unknown -&gt; 2/2 live tasks Ready and enabled for Monday-Friday at 11:00 and 17:30 MYT. Both map to <code>shopee-fbs-update-tracker-scheduled.md</code>, and the scheduled wrapper/runner self-test passed. At 10:10 both had <code>0x41303</code> / not yet run, as expected before the first 11:00 trigger.</div>
     <div class="field"><strong>Configuration gaps:</strong> current-installer preflight retries 09:10/09:25/09:40, FBS claim Tue/Fri 15:20, and Shopee shipping claim 10:05 were missing; <code>SBVariationAudit_930AM</code> was disabled; the old FBS weekday 15:00 definition remained present.</div>
-    <div class="field"><strong>Changes / operational writes:</strong> scheduled-task changes 0 -&gt; 0; processes started 0 -&gt; 0; customer messages 0 -&gt; 0; marketplace actions 0 -&gt; 0; stock/claim/employee writes 0 -&gt; 0; Google actions 0 -&gt; 0.</div>
-    <div class="field"><strong>Evidence:</strong> C:/Users/tessf/code/codex-lab/.tmp-schedule-status-20260728/schedule-status-readback-20260728.json and schedule-status-report-20260728.md; live Get-ScheduledTask/Get-ScheduledTaskInfo and process readbacks.</div>
-    <div class="field"><strong>Result / outstanding:</strong> RUNNING_WITH_PREFLIGHT_GAP. Today's main schedule is active. The 09:00 preflight remains unverified and configuration drift remains. No repair or manual rerun was performed under this status-only request.</div>
+    <div class="field"><strong>Changes / operational writes:</strong> scheduled-task changes 0 -&gt; 0 because FBS was already configured; processes started 0 -&gt; 0; customer messages 0 -&gt; 0; marketplace actions 0 -&gt; 0; stock/claim/employee writes 0 -&gt; 0; Google actions 0 -&gt; 0.</div>
+    <div class="field"><strong>Evidence:</strong> C:/Users/tessf/code/codex-lab/.tmp-schedule-status-20260728/schedule-status-readback-20260728.json and schedule-status-report-20260728.md; .tmp-fbs-schedule-check-20260728/fbs-schedule-readback-20260728.json and fbs-schedule-check-20260728.md; live Get-ScheduledTask/Get-ScheduledTaskInfo and runner self-test readbacks.</div>
+    <div class="field"><strong>Result / outstanding:</strong> RUNNING_WITH_PREFLIGHT_GAP for the overall daily schedule; FBS result OK_ALREADY_CONFIGURED with no setup item. The 09:00 preflight remains unverified and unrelated configuration drift remains. No repair or manual rerun was performed.</div>
   </div>
 </div>
 
