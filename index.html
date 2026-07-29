@@ -162,7 +162,26 @@
     <div class="field"><strong>Evidence:</strong> AM <code>C:/Users/tessf/Documents/parcelclaim-auto-reports/_codex_parcelclaim_auto_2026-07-28.json</code> and <code>parcelclaim-auto-report-2026-07-28.md</code>; PM <code>_codex_parcelclaim_auto_2026-07-28-pm.json</code>, <code>parcelclaim-auto-report-2026-07-28-pm.md</code>, and the PM run log; recovery <code>_codex_parcelclaim_auto_2026-07-28-pm-recovery83.json</code>, <code>_codex_parcelclaim_auto_2026-07-28-pm-recovery83.log</code>, and <code>parcelclaim-auto-report-2026-07-28-pm-recovery83.md</code>.</div>
     <div class="field"><strong>Result / Outstanding / what Patricia may have missed:</strong> <strong>OK / Completed</strong>. AM and PM are both 16/16 complete; all 17 created claims across the day were readback-confirmed. Profile 83 had one Lazada row but none inside the current window, so no new create was required. There is no active ParcelClaim item outstanding; future source monitoring is separate.</div>
   </div>
-</div><div class="entry" data-date="2026-07-28" data-shops="TikTok MY and Lazada MY ParcelClaim source shops" data-platform="ParcelClaim AM dependency chain" data-status="completed" data-result="ok" data-board-log-id="parcelclaim-am-chain-20260728" data-skill="parcelclaim-am-chain">
+</div><!-- PROFILE-LOGIN-PREFLIGHT-2026-07-29 -->
+<div class="entry" data-date="2026-07-29" data-shops="Profile 70; Profile 78; Profile 84; TikTok 54-67; Lazada 81-83; Shopee CS1-CS5" data-platform="AdsPower + employee webapp + Shopee MY/SG + TikTok Seller Center + Lazada Seller Center" data-status="completed" data-result="ok" data-board-log-id="profile-login-preflight-20260729" data-skill="profile-login-preflight">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">profile-login-preflight - READY: all 24 profiles authenticated; 25/25 jobs clear (2026-07-29)</span>
+    <span class="entry-meta">2026-07-29 09:38 MYT · Profile70 active · TikTok 13/13 · Lazada 3/3 · Shopee chat 5/5</span>
+    <span class="entry-tags"><span class="tag">scheduled</span><span class="tag">profile-login-preflight</span><span class="tag result-ok">Completed</span></span>
+  </div>
+  <div class="entry-body">
+    <div class="field"><strong>Task / date:</strong> Weekday 09:00 MYT profile-login preflight for every configured AdsPower profile.</div>
+    <div class="field"><strong>Before -&gt; after readiness:</strong> all profiles/jobs <code>unverified -&gt; 24/24 READY and 25/25 READY</code>. Profile70 <code>Inactive -&gt; authenticated employee dashboard / Active</code>; Profile78 <code>Inactive -&gt; authenticated Shopee Seller Centre -&gt; stopped</code>; Profile84 <code>pre-existing Active -&gt; authenticated Shopee SG -&gt; preserved</code>; TikTok 54-67 and CS1-CS5 <code>Inactive -&gt; authenticated target -&gt; Inactive after cleanup</code>; Lazada81/82/83 <code>pre-existing Active -&gt; authenticated order pages -&gt; preserved</code>.</div>
+    <div class="field"><strong>Shop / platform:</strong> employee webapp, Shopee MY/SG Seller Centre and Chat, TikTok MY/SG Seller Center, and Lazada MY Seller Center.</div>
+    <div class="field"><strong>Reason:</strong> compulsory login/readiness gate before the morning scheduled skills.</div>
+    <div class="field"><strong>Evidence:</strong> state <code>C:\Users\tessf\Documents\codex-scheduled-logs\profile-login-preflight\profile-login-preflight-2026-07-29.json</code>; report <code>C:\Users\tessf\Documents\codex-scheduled-logs\profile-login-preflight\profile-login-preflight-2026-07-29.md</code>; raw profile probes and final sequential AdsPower lifecycle readback in the same directory.</div>
+    <div class="field"><strong>Safety / result:</strong> temporary browser tabs were closed; Profile70 was not stopped. Business-system, marketplace, customer-message, stock, webapp, and scheduled-task writes each remained <code>0 -&gt; 0</code>; password values read/logged/typed remained <code>false -&gt; false</code>. Final state <code>READY</code> / report <code>FINAL_STATUS: OK</code>.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> None. No profile needs Patricia to re-login before the 09:45 jobs.</div>
+  </div>
+</div>
+<!-- /PROFILE-LOGIN-PREFLIGHT-2026-07-29 -->
+<div class="entry" data-date="2026-07-28" data-shops="TikTok MY and Lazada MY ParcelClaim source shops" data-platform="ParcelClaim AM dependency chain" data-status="completed" data-result="ok" data-board-log-id="parcelclaim-am-chain-20260728" data-skill="parcelclaim-am-chain">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">ParcelClaim AM chain 28/7 - all producer and checker stages complete</span>
