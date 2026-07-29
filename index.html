@@ -65,11 +65,6 @@
   </div>
 </div>
 
-
-
-
-
-
 <div class="entry" data-date="2026-07-28" data-skill="shopee-fbs-update-tracker" data-board-log-id="shopee-fbs-update-tracker-20260728" data-shops="ALL, KarlMobel, MurahYa, ValueSnap, Luxbin" data-platform="Shopee FBS MY+SG + FBS Tracker &amp; Update Google Sheets" data-status="completed" data-result="ok">
   <div class="entry-summary"><span class="chevron">&#9654;</span><span class="entry-title">shopee-fbs-update-tracker 2026-07-28 - Completed: Profile 70 tracker and PM readback</span><span class="entry-meta">AM+PM &middot; 12 monitored &middot; 9 no-update &middot; 1 partial reply &middot; 2 verify &middot; current run complete</span><span class="entry-tags"><span class="tag">shopee-fbs-update-tracker</span><span class="tag platform">Shopee FBS</span><span class="tag result-ok">Completed</span></span></div>
   <div class="entry-body">
@@ -206,6 +201,25 @@
   </div>
 </div>
 <!-- /PROFILE-LOGIN-PREFLIGHT-2026-07-29 -->
+<!-- SHOPEE-PENALTY-2026-07-29 -->
+<div class="entry" data-date="2026-07-29" data-shops="28 Patricia MY/SG shops checked; murahya.sg; valuesnap.sg" data-platform="Shopee Seller Centre MY + SG; AdsPower Profiles 78, 70, 64" data-status="partial" data-result="partial" data-board-log-id="shopee-penalty-20260729" data-skill="shopee-penalty">
+  <div class="entry-summary">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">shopee-penalty - PARTIAL: 28/30 shops checked, 13 points, 1 appeal draft (2026-07-29)</span>
+    <span class="entry-meta">2026-07-29 10:29 MYT · Profile78 28 completed + das.nature2 retry · Profile70 preserved · Profile64 mutex busy</span>
+    <span class="entry-tags"><span class="tag">scheduled</span><span class="tag">shopee-penalty</span><span class="tag result-warn">Partial / retry</span></span>
+  </div>
+  <div class="entry-body">
+    <div class="field"><strong>Task / date:</strong> Weekday 10:00 MYT Shopee Seller Centre Account Health / My Penalty sweep; read-only.</div>
+    <div class="field"><strong>Before -&gt; after verified coverage:</strong> current-day coverage <code>not run -&gt; 28/30 expected Patricia MY/SG shops checked</code>; initial Profile78 <code>28/29 + das.nature2 execution-context error -&gt; isolated das.nature2 retry 1/1 at 0 points</code>; current known points <code>not checked -&gt; 13</code>; visible cases <code>not checked -&gt; 27</code>; positive-point cases <code>not checked -&gt; 12</code>; appeal drafts <code>not prepared -&gt; 1</code>; appeal submissions <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Shop / platform / reason:</strong> 28 Patricia shops on Shopee MY/SG were read from Seller Centre with Profile78. Profile70 (pre-existing Active) proved authenticated access but its fresh 29-shop roster did not contain <code>valuesnap.sg</code> or <code>murahya.sg</code>; it was preserved with start/stop <code>0/0</code>. Profile64 is authorized Seller Centre fallback only, but its exact <code>Global\CodexScheduledLock_profile_tt64</code> remained busy across bounded safe checks, so it was never attached.</div>
+    <div class="field"><strong>Penalty result:</strong> positive points are present at EncikPlastic (1), JagerHelmet (2), KEDAI GARDEN (4), MasonGym (2), MurahYa (1), ValueSnap (1), and Wilmermobel (2). ValueSnap case <code>1016173035397315190</code> is available to appeal through 2026-08-10 23:59:59; factual draft prepared, no submission made. Kinata was visible in Profile78 but remains excluded as confirmed external/not Patricia.</div>
+    <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\shopee-penalty-reports\shopee-penalty-report-2026-07-29.md</code>; merged raw <code>C:\Users\tessf\Documents\shopee-penalty-reports\evidence-2026-07-29\shopee-penalty-merged-2026-07-29.json</code>; primary/retry lifecycles and screenshots in the same evidence directory; appeal draft <code>shopee-penalty-appeal-drafts-2026-07-29.md</code>.</div>
+    <div class="field"><strong>Safety / result:</strong> seller, appeal, customer, stock, and employee-webapp writes stayed <code>0 -&gt; 0</code>. Profile78 run-owned sessions finished <code>Inactive -&gt; Active -&gt; Inactive</code>; all 32 recorded temporary targets closed. Final status <code>PARTIAL</code> only because two expected SG shops remain unverified.</div>
+    <div class="field"><strong>Outstanding / what Patricia may have missed:</strong> automatic retry must acquire the Profile64 <code>tt64</code> mutex and read only <code>valuesnap.sg</code> (1897017934) and <code>murahya.sg</code> (1622576161), then merge the two rows into this same-date card/report without replaying the verified 28-shop sweep.</div>
+  </div>
+</div>
+<!-- /SHOPEE-PENALTY-2026-07-29 -->
 <div class="entry" data-date="2026-07-28" data-shops="TikTok MY and Lazada MY ParcelClaim source shops" data-platform="ParcelClaim AM dependency chain" data-status="completed" data-result="ok" data-board-log-id="parcelclaim-am-chain-20260728" data-skill="parcelclaim-am-chain">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
@@ -223,6 +237,7 @@
     <div class="field"><strong>Evidence:</strong> <code>C:/Users/tessf/Documents/parcelclaim-auto-reports/parcelclaim-am-chain-closeout-2026-07-28.json</code>, the three dated report directories, and guarded board readbacks.</div>
     <div class="field"><strong>Result:</strong> <strong>OK / Completed; SCHEDULE_RETRY_REQUIRED: NO</strong>. <strong>Outstanding / what Patricia may have missed:</strong> no active run/report/raw/checker gap; 40 Pending cases and 13 WH handoffs are dated for 2026-07-29 monitoring and do not make the 28/7 run partial.</div>
   </div>
+
 </div><!-- ENTRIES_END --><div class="empty-state" id="emptyState" style="display:none;">No entries match your filters.</div></div><script>
 (function(){
 var entries=Array.from(document.querySelectorAll('.entry'));
