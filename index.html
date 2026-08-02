@@ -44,7 +44,7 @@
     <div class="field"><strong>Operational writes:</strong> Shopee messages 0 -&gt; 0; WhatsApp 0 -&gt; 0; stock writes 0 -&gt; 0; marketplace edits 0 -&gt; 0; SiteGiant writes 0 -&gt; 0; wallet/webapp business writes 0 -&gt; 0.</div>
     <div class="field"><strong>Browser cleanup:</strong> job-owned audited profiles active before final closeout 0 -&gt; 0; inactive or preserved (pre-existing/external) 5/5; externally owned concurrent sessions preserved 0; authenticated Profile 70 ownership preserved.</div>
     <div class="field"><strong>Result:</strong> PARTIAL. Workflow partial; see partialReasons.</div>
-  </div>
+  <div class="field"><strong>Post-closeout board-render correction:</strong> the initial structural Profile70 verifier counted 751 iframe-srcdoc entries, but visual inspection found the employee-wrapper blank while the direct board page was populated. The display payload was safely compacted <code>955,018 -&gt; 871,216 bytes</code>, retaining all <code>751 -&gt; 751</code> cards, summaries, and this marker; private/public commits <code>a208847</code>/<code>2bbdb22</code> passed guard, strict readback, and offline checks. Authenticated visual wrapper recheck remains pending exact Profile70 mutex release; no business write was replayed.</div></div>
 </div>
 
     <div class="entry" data-skill="parcelsplit-contact-crosscheck" data-board-log-id="parcelsplit-contact-crosscheck-20260802" data-date="2026-08-02" data-shops="KarlMobel, MurahYa, Murahya" data-platform="Shopee MY + TikTok + Lazada + Parcel Split webapp" data-result="ok">
