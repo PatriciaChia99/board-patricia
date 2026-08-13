@@ -69,22 +69,23 @@ eports\weekday-goal-scheduler-implementation-2026-08-04.md`.</div><div class="fi
 </div>
 <!-- /PROFILE-LOGIN-PREFLIGHT-WEEKEND-20260813 -->
 <!-- SKILL-CATALOG-CHECK-20260813 -->
-<div class="entry" data-date="2026-08-13" data-shops="N/A" data-platform="Codex local skill catalog; FBS Stock repository assets; Patricia board" data-status="completed" data-result="ok" data-board-log-id="skill-catalog-check-20260813" data-skill="skill-catalog-check">
+<div class="entry" data-date="2026-08-13" data-shops="N/A" data-platform="Codex and legacy Claude skill catalogs; Shopee MY FBS; Patricia board" data-status="completed" data-result="ok" data-board-log-id="skill-catalog-check-20260813" data-skill="skill-catalog-check">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">skill-catalog-check - no dedicated FBS stock-aging skill installed (13/08)</span>
-    <span class="entry-meta">2026-08-13 MYT &middot; 18 skill manifests checked &middot; 0 exact match &middot; 2 related FBS skills</span>
-    <span class="entry-tags"><span class="tag">skill catalog</span><span class="tag">FBS stock aging</span><span class="tag result-ok">Completed</span></span>
+    <span class="entry-title">skill-catalog-check - checkfbsstock found as legacy Claude skill (corrected 13/08)</span>
+    <span class="entry-meta">2026-08-13 MYT &middot; user correction &middot; legacy skill found &middot; checks FBS stock over 60 days &middot; Codex conversion pending</span>
+    <span class="entry-tags"><span class="tag">checkfbsstock</span><span class="tag">FBS stock aging</span><span class="tag result-ok">Corrected</span></span>
   </div>
   <div class="entry-body">
-    <div class="field"><strong>Date/task:</strong> 2026-08-13 MYT read-only check of whether Codex currently has a dedicated skill for Shopee FBS stock aging.</div>
-    <div class="field"><strong>Shop/platform/reason:</strong> No shop-specific scope. Platform: local Codex skill catalog and repository FBS assets. Reason: Patricia asked whether a skill exists to check FBS stock aging.</div>
-    <div class="field"><strong>Before -&gt; after:</strong> installed local skill manifests inspected <code>unknown -&gt; 18/18</code>; dedicated FBS stock-aging skills identified <code>unknown -&gt; 0</code>; related installed FBS skills identified <code>unknown -&gt; 2</code> (<code>shopee-fbs-inbound-planner</code> and <code>shopee-fbs-update-tracker</code>).</div>
-    <div class="field"><strong>Scope distinction:</strong><code>shopee-fbs-inbound-planner</code> uses current FBS stock, pending inbound, sales, and 45-60 day sell-through to recommend replenishment and flag slow/dead-stock risk. It does not calculate receipt-age, aging buckets, days stored, or aging-charge exposure. <code>shopee-fbs-update-tracker</code> tracks warehouse-service follow-ups and is not a stock-aging audit.</div>
-    <div class="field"><strong>Historical/non-skill assets:</strong> The repository contains FBS Outbound proposal/application assets with a <code>Stock Aging</code> screen concept and historical <code>checkfbsstock</code> board naming, but no current runnable <code>.agents/skills/.../SKILL.md</code> implements that workflow.</div>
-    <div class="field"><strong>Operational changes:</strong> skill files <code>0 -&gt; 0</code>; dependencies <code>0 -&gt; 0</code>; FBS data reads <code>0 -&gt; 0</code>; stock, marketplace, customer, employee-webapp, and Google writes each <code>0 -&gt; 0</code>. Only this required Patricia board closeout card was added.</div>
-    <div class="field"><strong>Result:</strong><code>Completed / OK</code>. Answer: there is no dedicated FBS stock-aging skill installed today; the inbound planner is the closest existing skill, and a new skill would be needed for a proper aging report.</div>
-    <div class="field"><strong>Requested artifacts / outstanding / what Patricia may have missed:</strong> No operational run, report, or raw evidence was requested, so those artifacts are not applicable. The board log is present. The only optional next step is to create a dedicated FBS stock-aging skill; there is no active current-task gap.</div>
+    <div class="field"><strong>Date/task:</strong> 2026-08-13 MYT correction to the read-only check of whether a skill exists for Shopee FBS stock aging.</div>
+    <div class="field"><strong>Shop/platform/reason:</strong> No shop-specific live scope. Platform: current Codex skill catalog plus legacy Claude skill catalog. Reason: Patricia correctly prompted <code>checkfbsstock?</code> after the first answer searched only registered Codex <code>SKILL.md</code> manifests.</div>
+    <div class="field"><strong>Correction before -&gt; after:</strong> initial conclusion <code>no dedicated skill -&gt; corrected: checkfbsstock exists</code>. Exact source: <code>C:\Users\tessf\.claude\skills\checkfbsstock.md</code>, version 1.0 dated 2026-01-24. It is a legacy Claude-format skill, not a registered current Codex <code>SKILL.md</code>, which is why the first catalog-only search missed it.</div>
+    <div class="field"><strong>What checkfbsstock covers:</strong> Shopee FBS stock stored for more than 60 days; all pagination pages; <code>61-90</code>, <code>91-120</code>, <code>121-180</code>, and <code>&gt;180</code>-day buckets; the Aging Storage tag; and a result table containing product, variation, warehouse, aging period, quantity, and excess.</div>
+    <div class="field"><strong>Mandatory pre-run gate:</strong> confirm the exact store with Patricia, verify the currently logged-in store, and do not assume a shop. The skill uses the Shopee MY Stock Aging route <code>/portal/fbs/inventory/list/stockAging</code>.</div>
+    <div class="field"><strong>Current Codex availability:</strong><code>legacy skill file present / current Codex registration absent</code>. The file can be preserved as workflow evidence, but it should be converted with the Claude-skill converter before treating it as a native Codex skill.</div>
+    <div class="field"><strong>Operational changes:</strong> FBS data reads <code>0 -&gt; 0</code>; stock, marketplace, customer, employee-webapp, and Google writes each <code>0 -&gt; 0</code>; dependencies and skill files <code>0 -&gt; 0</code>. This was discovery and correction only; no Stock Aging page was opened.</div>
+    <div class="field"><strong>Result:</strong><code>Completed / CORRECTED</code>. Answer: yes, Patricia has <code>checkfbsstock</code>; it is currently stored as a legacy Claude skill rather than an installed Codex skill.</div>
+    <div class="field"><strong>Requested artifacts / outstanding / what Patricia may have missed:</strong> No live run, operational report, or raw FBS evidence was requested, so those artifacts are not applicable. The same board card was folded in place with no duplicate. Optional next step: convert <code>checkfbsstock</code> to Codex format. If Patricia wants it run, the exact store name is still required first. No active current-task gap remains.</div>
   </div>
 </div>
 <!-- /SKILL-CATALOG-CHECK-20260813 -->
