@@ -98,21 +98,22 @@ aw-2026-08-17inal-profile70</code>.</div>
   </div>
 </div><!-- /CHECKFBSSTOCK-2026-08-17 -->
 <!-- SHOPEE-PENALTY-2026-08-17 -->
-<div class="entry" data-date="2026-08-17" data-shops="0 checked; all Patricia Shopee MY + SG shops blocked before live roster read" data-platform="Shopee Seller Centre MY + SG; Patricia board" data-status="partial" data-result="warn" data-board-log-id="shopee-penalty-20260817" data-skill="shopee-penalty">
+<div class="entry" data-date="2026-08-17" data-shops="33/35 Patricia shops checked; hiranai.sg and das.nature2.sg blocked" data-platform="Shopee Seller Centre MY + SG; Patricia board" data-status="partial" data-result="warn" data-board-log-id="shopee-penalty-20260817" data-skill="shopee-penalty">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">shopee-penalty - PARTIAL: 0 shops checked; Seller Centre re-login required (17/08)</span>
-    <span class="entry-meta">2026-08-17 MYT &middot; reporting-only &middot; bounded recovery through Profile 64 &middot; 0 marketplace changes</span>
+    <span class="entry-title">shopee-penalty - PARTIAL: 33/35 shops checked; 2 SG login blockers (17/08)</span>
+    <span class="entry-meta">2026-08-17 MYT &middot; reporting-only &middot; Profile 70 roster recovery &middot; 0 marketplace changes</span>
     <span class="entry-tags"><span class="tag">shopee-penalty</span><span class="tag result-warn">PARTIAL</span></span>
   </div>
   <div class="entry-body">
     <p><strong>Date/task:</strong> 2026-08-17 MYT scheduled read-only Shopee Seller Centre <code>Data &rarr; Account Health &rarr; My Penalty</code> sweep.</p>
-    <p><strong>Shop/platform/reason:</strong> all Patricia MY and SG shops / Shopee Seller Centre. The live roster is required before shop-by-shop reads, but no configured Seller Centre session could expose it.</p>
-    <p><strong>Every change before &rarr; after:</strong> shops checked <code>0/unknown &rarr; 0/unknown</code>; affected-point totals <code>unknown &rarr; unverified</code>; marketplace changes, appeal actions, customer messages, stock changes, employee-webapp writes, Google actions, account switches, and credential actions each <code>0 &rarr; 0</code>.</p>
-    <p><strong>Attempt-4-and-5 recovery:</strong> Profile 78 was active under its exact mutex and was preserved. The permitted Profile 64 fallback first had one disposable target close during bootstrap; its bounded fresh-session retry reached the Shopee Seller login surface and both the live roster and Account Health penalty-season endpoints returned HTTP <code>404</code>. Profile 70 became a pre-existing active, mutex-busy session and was preserved. Profile 64's run-owned session changed <code>Inactive &rarr; Active &rarr; Inactive</code> after mutex-protected cleanup; every temporary target closed and no existing tab changed.</p>
+    <p><strong>Shop/platform/reason:</strong> 35 expected Patricia MY and SG shops / Shopee Seller Centre. Profile 70 recovered the 36-shop live roster; the known non-Patricia extra was excluded, and 33 expected shops returned current totals.</p>
+    <p><strong>Every change before &rarr; after:</strong> Patricia shops checked <code>0/35 &rarr; 33/35</code>; affected totals <code>unverified &rarr; karlmobel.sg 6, valuesnap.sg 3, murahya.sg 3, KEDAI GARDEN 7</code>; marketplace changes, appeal actions, customer messages, stock changes, employee-webapp writes, Google actions, account switches, and credential actions each <code>0 &rarr; 0</code>.</p>
+    <p><strong>Current blockers:</strong> <code>hiranai.sg</code> and <code>das.nature2.sg</code> each redirected to the Shopee SG login surface; their Account Health overview and point endpoints each returned HTTP <code>404</code>. They are explicitly blocked and not called clear.</p>
     <p><strong>Evidence:</strong> report <code>C:Users	essfDocumentsshopee-penalty-reportsshopee-penalty-report-2026-08-17.md</code>; attempt-five raw/lifecycle evidence <code>C:Users	essfDocumentsshopee-penalty-reportsevidence-2026-08-17profile64-attempt5</code>, <code>profile64-attempt5-recovery</code>, and <code>profile70-attempt5-recovery</code>. The authenticated Profile 70 direct/wrapper board render is verified after this card fold.</p>
-    <p><strong>Result:</strong> <code>FINAL_STATUS: PARTIAL</code>; no shop can be called clear today. No appeal work is prepared or submitted.</p>
-    <p><strong>Outstanding / what Patricia may have missed:</strong> restore an authorized Seller Centre session for one configured penalty profile. The dispatcher must rerun only the missing shop sweep after re-login; future monitoring is separate.</p>
+    <p><strong>Current evidence:</strong> report <code>C:\Users\tessf\Documents\shopee-penalty-reports\shopee-penalty-report-2026-08-17.md</code>; raw point-total proof and Profile 70 lifecycle readback <code>C:\Users\tessf\Documents\shopee-penalty-reports\evidence-2026-08-17\profile70-attempt6</code>; Profile 78 login-block and cleanup evidence <code>profile78-attempt6</code>. All disposable targets closed; Profile 70 was pre-existing Active and preserved.</p>
+    <p><strong>Result:</strong> <code>FINAL_STATUS: PARTIAL</code>; 33 shops are verified, while the two named SG shops cannot be called clear. No appeal work is prepared or submitted.</p>
+    <p><strong>Outstanding / what Patricia may have missed:</strong> restore authenticated SG Seller Centre access for <code>hiranai.sg</code> and <code>das.nature2.sg</code>. The dispatcher must rerun only those two shops after re-login; future monitoring is separate.</p>
   </div>
 </div>
 <!-- /SHOPEE-PENALTY-2026-08-17 -->
