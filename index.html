@@ -18,15 +18,15 @@
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">shopee-penalty - PARTIAL: 0 shops checked; Seller Centre re-login required (17/08)</span>
-    <span class="entry-meta">2026-08-17 MYT &middot; reporting-only &middot; Profiles 78, 70, and 64 blocked &middot; 0 marketplace changes</span>
+    <span class="entry-meta">2026-08-17 MYT &middot; reporting-only &middot; Profiles 78, 70, and 64 rechecked; still blocked &middot; 0 marketplace changes</span>
     <span class="entry-tags"><span class="tag">shopee-penalty</span><span class="tag result-warn">PARTIAL</span></span>
   </div>
   <div class="entry-body">
     <p><strong>Date/task:</strong> 2026-08-17 MYT scheduled read-only Shopee Seller Centre Account Health / My Penalty sweep.</p>
     <p><strong>Shop/platform/reason:</strong> all Patricia MY and SG shops / Shopee Seller Centre. The live roster was required before shop-by-shop reads, but no configured Seller Centre session could expose it.</p>
     <p><strong>Every change before -&gt; after:</strong> shops checked <code>0/unknown -&gt; 0/unknown</code>; affected-point totals <code>unknown -&gt; unverified</code>; marketplace changes, appeal actions, customer messages, stock changes, employee-webapp writes, Google actions, account switches, and credential actions each <code>0 -&gt; 0</code>.</p>
-    <p><strong>Access recovery:</strong> Profile 78 temporary-target navigation failure <code>unread -&gt; bounded fresh-session retry</code>; Profiles 78, 70, and the authorized Profile 64 Seller Centre fallback each then returned Seller login plus roster HTTP <code>404</code> and penalty-season HTTP <code>404</code>. Each run-owned profile was used sequentially with its exact mutex and requested cleanup; no pre-existing profile or tab was changed.</p>
-    <p><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\shopee-penalty-reports\shopee-penalty-report-2026-08-17.md</code>; raw and lifecycle evidence <code>C:\Users\tessf\Documents\shopee-penalty-reports\evidence-2026-08-17</code>; authenticated Profile 70 pre-write board render direct/wrapper <code>889/889 OK_RENDERED</code>.</p>
+    <p><strong>Access recovery:</strong> Profile 78 temporary-target navigation failure <code>unread -&gt; bounded fresh-session retry</code>; Profiles 78, 70, and the authorized Profile 64 Seller Centre fallback each then returned Seller login plus roster HTTP <code>404</code> and penalty-season HTTP <code>404</code>. Attempt 2 rechecked those same three profiles sequentially with the same result: coverage stayed <code>0 -&gt; 0</code> shops checked. Each run-owned profile was used only with its exact mutex and was confirmed inactive after cleanup; no pre-existing profile or tab was changed.</p>
+    <p><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\shopee-penalty-reports\shopee-penalty-report-2026-08-17.md</code>; raw and lifecycle evidence <code>C:\Users\tessf\Documents\shopee-penalty-reports\evidence-2026-08-17</code>, including <code>profile78-attempt3</code>, <code>profile70-attempt2</code>, <code>profile64-attempt2</code>, and <code>recovery-attempt2-cleanup.json</code>; authenticated Profile 70 board rendering is revalidated at closeout.</p>
     <p><strong>Result:</strong> <code>FINAL_STATUS: PARTIAL</code>; no shop can be called clear today.</p>
     <p><strong>Outstanding / what Patricia may have missed:</strong> restore an authorized Seller Centre session for one configured penalty profile. The dispatcher must rerun only the missing shop sweep after re-login; no appeal work is prepared or submitted.</p>
   </div>
