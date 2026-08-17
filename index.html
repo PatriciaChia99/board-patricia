@@ -886,4 +886,5 @@ bindCollapsibles();
 document.documentElement.classList.add('js-ready');
 })();
 </script>
+<script>(function(){var all=Array.from(document.querySelectorAll('.entry'));var today=all.filter(function(e){return e.dataset.date==='2026-08-17'});var ok=today.filter(function(e){return e.dataset.result==='ok'}).length;var warn=today.filter(function(e){return e.dataset.result==='warn'}).length;var fail=today.filter(function(e){return e.dataset.result==='fail'}).length;document.getElementById('statTotal').textContent=all.length;document.getElementById('statToday').textContent=today.length;document.getElementById('todaySummary').innerHTML='<strong>'+today.length+'</strong> tasks today &middot; '+ok+' completed'+(warn?' &middot; '+warn+' partial':'')+(fail?' &middot; '+fail+' failed':'');})();</script>
 </body></html>
