@@ -4,8 +4,8 @@
 <div class="entry" data-date="2026-08-24" data-shops="Patricia" data-platform="Patricia board publishers, private/public board repositories, direct endpoint, and employee wrapper/iframe" data-status="completed" data-result="ok" data-board-log-id="patricia-board-date-groups-20260824" data-skill="patricia-board-date-groups" g="y" d="24 Aug 2026" y="24 Aug 2026">
   <div class="entry-summary">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">Patricia board date grouping - now enforced for every skill (24/08)</span>
-    <span class="entry-meta">2026-08-24 MYT &middot; recurring new-card regression fixed &middot; shared normalizer + fail-closed guard &middot; card count preserved</span>
+    <span class="entry-title">Patricia board date grouping + duplicate prevention - enforced for every skill (24/08)</span>
+    <span class="entry-meta">2026-08-24 MYT &middot; recurring date + duplicate regressions blocked &middot; shared normalizer + fail-closed guard &middot; card count preserved</span>
     <span class="entry-tags"><span class="tag">Patricia board</span><span class="tag">all skill publishers</span><span class="tag result-ok">Completed</span></span>
   </div>
   <div class="entry-body">
@@ -14,11 +14,14 @@
     <div class="field"><strong>Live board before -&gt; after:</strong> top <code>shopee-fbs-update-tracker</code> card date divider missing and the next same-date card retaining the divider -&gt; the first visible card owns the single 24 Aug divider in All and each filtered view. Board cards <code>770 -&gt; 770</code>; card bodies and source order are preserved.</div>
     <div class="field"><strong>FBS classification before -&gt; after:</strong> the new tracker card and historical tracker cards without an explicit group fell into Other -&gt; all <code>shopee-fbs-update-tracker</code> cards are normalized to Stock &amp; Listings with <code>g=&quot;s&quot;</code>; no case facts or operational results changed.</div>
     <div class="field"><strong>Shared tooling before -&gt; after:</strong> date-marker repair existed only as a one-off transform -&gt; reusable <code>scripts/patricia_board_date_groups.py</code>; common guarded publisher normalization <code>absent -&gt; automatic after each final card move</code>; guard static-marker checks <code>0 -&gt; exact fail-closed validation</code>; durable publishing skill <code>absent -&gt; patricia-board-publisher</code>; repository-wide instruction <code>absent -&gt; mandatory for every skill board write</code>.</div>
-    <div class="field"><strong>Validation before -&gt; after:</strong> focused regression coverage <code>0 -&gt; 4/4 passed</code>; full repository suite <code>54 passed, 2 skipped, 0 failed</code>; new publishing skill validation <code>unrun -&gt; valid</code>. No dependency was added and no lint script exists.</div>
+    <div class="field"><strong>Duplicate prevention before -&gt; after:</strong> the old guard inferred skill identity from title prefixes and did not check repeated log IDs, so differently titled cards for a new skill could pass -&gt; exact <code>data-date + data-skill</code> uniqueness and global non-empty <code>data-board-log-id</code> uniqueness are mandatory. The reproduced fixture changed <code>incorrectly accepted -&gt; rejected with both exact duplicate errors</code>; current live board duplicates stayed <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>Validation before -&gt; after:</strong> focused date regressions <code>0 -&gt; 4/4 passed</code>; focused duplicate regressions <code>0 -&gt; 3/3 passed</code>; full repository suite <code>56 passed, 2 skipped, 0 failed</code>; publishing skill validation <code>unrun -&gt; valid</code>. No dependency was added and no lint script exists.</div>
     <div class="field"><strong>Every operational change:</strong> customer messages, marketplace actions, claims, stock, warehouse state, employee-webapp data, and Google data each stayed <code>0 -&gt; 0</code>. Only board presentation metadata, this folded audit text, and repository safeguards changed.</div>
-    <div class="field"><strong>Result / outstanding:</strong> <strong>Completed</strong>. Future writers now either normalize date groups automatically or fail before publication; no active date-grouping item remains after private/public and authenticated Profile 70 readback.</div>
+    <div class="field"><strong>Result / outstanding:</strong> <strong>Completed</strong>. Future writers now either normalize date groups and fold the same-date skill card automatically or fail before publication on stale dates, duplicate skills, or repeated log IDs; no active date-grouping or duplicate-card item remains after private/public and authenticated Profile 70 readback.</div>
   </div>
 </div>
+
+
 
 <div class="entry" data-date="2026-08-24" data-shops="Full Patricia CS R/R roster" data-platform="Shopee MY/SG; employee claim webapp; Google Sheets" data-status="completed" data-result="ok" data-board-log-id="csrr-chain-20260824" data-skill="csrr-chain" o="24 Aug 2026">
   <div class="entry-summary">
