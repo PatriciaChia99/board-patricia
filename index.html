@@ -5,23 +5,25 @@
   <div class="entry-summary" tabindex="0">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">csrrcredited — PARTIAL: 819/819 verified; settlement mapping retry required</span>
-    <span class="entry-meta">2026-08-27 MYT &middot; 22/22 shop groups &middot; 2 SG terminal readbacks &middot; Chase queue 0</span>
+    <span class="entry-meta">2026-08-27 MYT &middot; 22/22 groups + 4/4 Profile 84 legacy SG &middot; 2 SG terminal readbacks &middot; Chase queue 0</span>
     <span class="tag">csrrcredited</span>
     <span class="tag">Shopee MY + SG</span>
     <span class="tag result-warn">PARTIAL</span>
   </div>
   <div class="entry-body">
     <p><strong>Date/task:</strong> 2026-08-27 scheduled CS R/R credited verification, independent check, settlement/readback attempt, SG terminal audit, and manual-assisted Chase qualification.</p>
-    <p><strong>Coverage:</strong> employee-webapp source MY Pending/Credited <code>460/325</code>, SG Pending/Credited <code>17/17</code>; parent and independent live wallet/R/R evidence <code>0 -&gt; 819/819</code> orders across <code>0 -&gt; 22/22</code> shop groups. Independent check unverified sweeps <code>0</code>.</p>
+    <p><strong>Coverage:</strong> employee-webapp source MY Pending/Credited <code>460/325</code>, SG Pending/Credited <code>17/17</code>; parent and independent live wallet/R/R evidence <code>0 -&gt; 819/819</code> orders across <code>0 -&gt; 22/22</code> shop groups. Mandatory Profile 84 SG-subaccount parent/check proof added <code>0 -&gt; 4/4</code> exact legacy orders; all independent sweeps unverified <code>0</code>.</p>
     <p><strong>Every business change/readback:</strong> Kinata SG <code>260818N5VAYCU6</code> and <code>260820T9HE9327</code>, both <code>Pending / Closed -&gt; Withdrawn / Closed</code>; reason: current <code>In Validation</code> with existing <code>[RESELL 26/8]</code> evidence, so a terminal SG case cannot remain Pending/Closed. Patch/readback result <code>2/2 OK</code>; full SG audit Pending+Closed <code>2 -&gt; 0</code>, terminal action-open <code>0 -&gt; 0</code>.</p>
     <p><strong>Settlement/holds:</strong> reconciliation candidates <code>40</code>; MY status/action/remark patches <code>0 -&gt; 0</code>. Thirty-nine MY candidates are held as <code>current_live_roster_mapping_missing</code> because Profile 70 had the employee-webapp session but no Seller Centre roster, while Profiles 78 and 82 had Seller Centre access but employee-app <code>401</code>. Kinata SG <code>260806N0CDDN6S</code> is independently <code>FULL_WIN</code> but held because the supported settlement writer is MY-only. No speculative patch was applied.</p>
-    <p><strong>Independent correction:</strong> parent-only AbortError holds <code>260611S8PHRJFQ</code> (DasNature SG) and <code>260711CG6ANYGA</code> (DasNatureSG2) independently read <code>NO_ADJUSTMENT / hold</code>, wallet net <code>0.00</code>; neither was treated as paid.</p>
-    <p><strong>Chase R/R:</strong> Malaysia working day true; promise-signal rows <code>61</code>; independently proven eligible overdue unpaid/underpaid cases <code>0</code>. Manual drafts, live CS chats, customer messages, and Chase-log writes <code>0 -&gt; 0</code>.</p>
-    <p><strong>Profile lifecycle:</strong> Profile 82 run-owned <code>Inactive -&gt; Active -&gt; Inactive</code>; Profile 78 and Profile 70 were pre-existing Active and restored <code>Active -&gt; Active</code>. All scheduler-created temporary targets closed; no pre-existing profile was stopped.</p>
-    <p><strong>Evidence:</strong> <code>csrrcredited-report-2026-08-27.md</code>, parent/check wallet-RR raws and receipts, <code>csrrcredited-apply-readback-2026-08-27.json</code>, <code>csrrcredited-sg-terminal-audit-2026-08-27.json</code>, and <code>chase-rr-report-2026-08-27.md</code>.</p>
+    <p><strong>Required Profile 84 legacy subaccount evidence:</strong> parent/check agree <code>4/4</code>: DasNature SG <code>260611S8PHRJFQ</code> and DasNatureSG2 <code>260711CG6ANYGA</code> <code>FULL_WIN</code> with paired zero-net compensation/refund entries; KarlMobel SG <code>2607098XBRQKRP</code> <code>FULL_WIN</code> SGD <code>+2.84</code> vs refund <code>1.91</code>; EmasGift SG <code>260622RFC8B8YD</code> terminal Dispute Rejected <code>PARTIAL_WIN</code> SGD <code>+3.42</code> vs refund <code>9.77</code>. No safe status/remark write was needed.</p>
+    <p><strong>Chase R/R:</strong> Malaysia working day true; promise-signal rows <code>61</code>; independently proven eligible overdue unpaid/underpaid cases <code>0</code>. The Profile 84 slice adds no eligible case because all four rows are terminal Credited/Rejected, not a fresh unpaid promise. Manual drafts, live CS chats, customer messages, and Chase-log writes <code>0 -&gt; 0</code>.</p>
+    <p><strong>Profile lifecycle:</strong> Profile 82 run-owned <code>Inactive -&gt; Active -&gt; Inactive</code>; Profile 78 and Profile 70 were pre-existing Active and restored <code>Active -&gt; Active</code>; Profile 84 completed two run-owned passes, each <code>Inactive -&gt; Active -&gt; Inactive</code>. All scheduler-created temporary targets closed; no pre-existing profile was stopped.</p>
+    <p><strong>Evidence:</strong> <code>csrrcredited-report-2026-08-27.md</code>, Profile 82 and Profile 84 parent/check wallet-RR raws and receipts, <code>csrrcredited-apply-readback-2026-08-27.json</code>, <code>csrrcredited-sg-terminal-audit-2026-08-27.json</code>, and <code>chase-rr-report-2026-08-27.md</code>.</p>
     <p><strong>Result/outstanding:</strong> <strong>PARTIAL — automatic isolated retry required.</strong> Preserve the completed 819-row proof, SG readbacks, and zero Chase gate. Retry only the 39 MY mapping holds and Kinata SG <code>260806N0CDDN6S</code> when one authorized profile proves both current employee-webapp and exact Seller Centre shop context; do not replay completed sweeps, terminal cleanup, or Chase.</p>
   </div>
 </div>
+
+
 
 
 
