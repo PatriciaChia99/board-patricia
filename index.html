@@ -3,23 +3,23 @@
 <input class=sf type=radio name=v id=fa checked><input class=sf type=radio name=v id=fc><input class=sf type=radio name=v id=fs><input class=sf type=radio name=v id=fu><input class=sf type=radio name=v id=fy><input class=sf type=radio name=v id=fo><div class="activity-tools"><div class="tool-copy"><strong>Filter skills</strong><span>Click a metric card</span></div><div class="skill-metrics" role="group" aria-label="Filter activity by skill group"><label class="metric-filter" for=fa><span class=num id=statTotal>793</span><span class=lbl>All logs</span></label><label class="metric-filter" for=fc><span class=num>128</span><span class=lbl>Claims</span></label><label class="metric-filter" for=fs><span class=num>92</span><span class=lbl>Stock &amp; listings</span></label><label class="metric-filter" for=fu><span class=num>78</span><span class=lbl>Customer</span></label><label class="metric-filter" for=fy><span class=num>62</span><span class=lbl>System</span></label><label class="metric-filter" for=fo><span class=num>404</span><span class=lbl>Other skills</span></label></div><details class="search-native"><summary>Search logs</summary><div class="search-hint"><strong>Search every activity</strong><span>Press <kbd>Ctrl</kbd> + <kbd>F</kbd>, then type a skill, shop, order ID, or result.</span></div></details></div><div class="entry-list">
 <div class="entry" g="c" data-date="2026-08-27" data-shops="No shop surface entered" data-platform="Shopee MY" data-status="completed" data-result="ok" data-board-log-id="shopee-shipping-claim-guard-20260827" data-skill="shopee-shipping-claim" d="27 Aug 2026" c="27 Aug 2026">
   <div class="entry-summary">
-    <span class="chevron">&#9654;</span>
     <span class="entry-title">Shopee Shipping Claim — SAFE SKIP (non-claim day)</span>
-    <span class="entry-meta">2026-08-27 MYT &middot; configured day 15 &middot; no claim action</span>
-    <span class="tag">shopee-shipping-claim</span>
-    <span class="tag">Shopee MY</span>
-    <span class="tag result-ok">OK</span>
+    <span class="entry-meta">27 Aug 2026 · Shopee MY · completed</span>
   </div>
   <div class="entry-body">
-    <div class="field"><strong>Date/task:</strong> 2026-08-27 Shopee MY monthly change-of-mind return shipping-fee claim guard.</div>
-    <div class="field"><strong>Shop/platform:</strong> Shopee MY shipping-claim lane; no Seller Centre or shop surface entered.</div>
-    <div class="field"><strong>Reason for change:</strong> configured monthly claim day is <code>15</code>; actual MYT day is <code>27</code>, so the permitted action is a safe skip.</div>
-    <div class="field"><strong>Before -&gt; after:</strong> date gate <code>day 27 vs day 15 -&gt; SAFE_SKIP_NON_CLAIM_DAY</code>; Seller Centre claim workflow <code>0 -&gt; 0</code>; Shopee help-form submissions <code>0 -&gt; 0</code>; order SNs scraped <code>0 -&gt; 0</code>; batches built/submitted <code>0/0 -&gt; 0/0</code>; customer messages <code>0 -&gt; 0</code>; stock writes <code>0 -&gt; 0</code>; marketplace changes <code>0 -&gt; 0</code>; employee-webapp and business-system writes <code>0 -&gt; 0</code>; scheduler-opened seller profiles <code>0 -&gt; 0</code>.</div>
-    <div class="field"><strong>Preserved verified prior work:</strong> 2026-08-14 two-cycle catch-up remains <code>55/55</code> acknowledged batches and <code>549/549</code> individually attributable order SNs; it was not replayed.</div>
-    <div class="field"><strong>Evidence:</strong> <code>C:\Users\tessf\Documents\shopee-shipping-claim-reports\shopee-shipping-claim-2026-08-27.md</code>, <code>_codex_shopee_shipping_claim_guard_2026-08-27.json</code>, and its artifact readback.</div>
-    <div class="field"><strong>Result/outstanding:</strong> <strong>OK</strong>. No active Shipping Claim business item is outstanding. The next configured claim day, <code>2026-09-15</code>, is future monitoring only.</div>
+    <p><strong>Monthly gate:</strong> configured claim day <code>15</code>; MYT date <code>2026-08-27</code> (Thursday). Decision: <code>SAFE_SKIP_NON_CLAIM_DAY</code>.</p>
+    <ul>
+      <li><strong>Business scope:</strong> no shop surface entered. Seller Centre, help-form submissions, order-SN capture, claim batches, customers, stock, marketplace, employee-webapp, and business-system writes each remained <code>0 → 0</code>.</li>
+      <li><strong>Preserved live work:</strong> the 2026-08-14 two-cycle catch-up remains <code>55/55</code> acknowledged batches and <code>549/549</code> attributable order SNs; it was not replayed.</li>
+      <li><strong>Artifact readback:</strong> the report, raw guard, and readback remain present with result <code>OK</code> and the raw decision <code>SAFE_SKIP_NON_CLAIM_DAY</code>.</li>
+      <li><strong>Board verification:</strong> this one same-date card was folded (not duplicated). Private and public readbacks match at SHA-256 <code>31175302992EBA7B6C11420C3F4C2C540E865633643E9B0ABA966B70753D1B1B</code>; guards and offline verification pass, and the authenticated Profile 70 direct/wrapper render is <code>793/793</code>.</li>
+      <li><strong>Durable lesson:</strong> when counting JSON object-backed request IDs in PowerShell, count <code>@($value.psobject.Properties).Count</code>; wrapping the object in <code>@(...)</code> counts the object itself and misleadingly reports <code>1</code>.</li>
+    </ul>
+    <p><strong>Outstanding:</strong> no active Shipping Claim item remains. The next claim day, 2026-09-15, is future monitoring only.</p>
   </div>
 </div>
+
+
 
 <div class="entry" data-date="2026-08-27" data-board-log-id="jobstreet-prescreen-interview-tracker-20260827" data-skill="jobstreet-prescreen-interview-tracker" data-shops="Awesomeree AI" data-platform="JobStreet / SEEK Malaysia + Google Sheets" data-result="ok" o="27 Aug 2026">
   <div class="entry-summary"><span class="chevron">&#9654;</span><span class="entry-title">JobStreet PA - 1 Prescreen application added; tracker now 51</span><span class="entry-meta">27 Aug 2026 MYT &middot; Interview Tracker A52:P52 &middot; Saved to Drive</span><span class="entry-tags"><span class="tag result-ok">Completed</span></span></div>
