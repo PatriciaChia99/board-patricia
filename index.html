@@ -12,14 +12,16 @@
     <div class="field"><strong>Date / task:</strong> 2026-08-31 weekday read-only Shopee Seller Centre Data &rarr; Account Health &rarr; My Penalty audit.</div>
     <div class="field"><strong>Shop / platform:</strong> expected Patricia MY + SG roster <code>35</code>, based on the latest verified 36-shop live roster with external Kinata excluded. Current live roster <code>unknown</code> because Seller Centre authentication failed before roster enumeration.</div>
     <div class="field"><strong>Reason for change:</strong> daily verification of current point totals only. No appeal review, drafting, recommendation, or submission is within scope.</div>
-    <div class="field"><strong>Before &rarr; after:</strong> shops checked <code>unknown &rarr; 0/35</code>; current affected point totals <code>unknown &rarr; unavailable</code>; shops explicitly blocked before roster read <code>0 &rarr; 35 expected</code>.</div>
+    <div class="field"><strong>Before &rarr; after:</strong> shops checked <code>unknown &rarr; 0/35</code>; current affected point totals <code>unknown &rarr; unavailable</code>; shops explicitly blocked before roster read <code>0 &rarr; 35 expected</code>; isolated Profile 78 rescreen at 12:58 MYT <code>blocked &rarr; same two-proof block confirmed</code>.</div>
     <div class="field"><strong>Exact blocker:</strong> <code>LOGIN_REQUIRED_TWO_PROOFS</code>. Profiles 78, 70, 82, and permitted Seller-Centre-only fallback 64 each reached its seller-login route, while the exact Shop List and penalty-season endpoints each returned HTTP <code>404</code>. Profile 82 was probed through its required SG unified roster route.</div>
-    <div class="field"><strong>Profile lifecycle:</strong> run-owned Profiles 78, 82, and 64 each changed <code>Inactive &rarr; temporary read-only target &rarr; Inactive</code>, with temporary targets closed. Pre-existing Profile 70 stayed <code>Active &rarr; Active</code> and was never stopped.</div>
+    <div class="field"><strong>Profile lifecycle:</strong> run-owned Profiles 78, 82, and 64 each changed <code>Inactive &rarr; temporary read-only target &rarr; Inactive</code>, with temporary targets closed. Profile 78's 12:58 rescreen also changed <code>Inactive &rarr; temporary read-only target &rarr; Inactive</code> and its cleanup readback is <code>OK</code>. Pre-existing Profile 70 stayed <code>Active &rarr; Active</code> and was never stopped.</div>
     <div class="field"><strong>Business changes:</strong> Seller Centre, appeal, marketplace, customer, stock, account, credential, and Google writes each remained <code>0 &rarr; 0</code>.</div>
-    <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\shopee-penalty-reports\shopee-penalty-report-2026-08-31.md</code>; raw profile evidence, cleanup readbacks, and consolidated crosscheck <code>C:\Users\tessf\Documents\shopee-penalty-reports\evidence-2026-08-31</code>.</div>
+    <div class="field"><strong>Evidence:</strong> report <code>C:\Users\tessf\Documents\shopee-penalty-reports\shopee-penalty-report-2026-08-31.md</code>; raw profile evidence, cleanup readbacks, and consolidated crosscheck <code>C:\Users\tessf\Documents\shopee-penalty-reports\evidence-2026-08-31</code>, including <code>profile78-attempt2</code>.</div>
     <div class="field"><strong>Result / outstanding:</strong> <strong>PARTIAL</strong>. An isolated automatic retry is required only for a fresh read-only roster and point-total sweep after Seller Centre re-authentication; retain this same-date card and fold the later result into it.</div>
   </div>
 </div>
+
+
 
 <div class="entry" g="c" data-date="2026-08-31" data-shops="No shop surface entered" data-platform="Shopee MY" data-status="completed" data-result="ok" data-board-log-id="shopee-shipping-claim-guard-20260831" data-skill="shopee-shipping-claim" c="31 Aug 2026">
   <div class="entry-summary" tabindex="0">
