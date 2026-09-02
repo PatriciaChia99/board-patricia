@@ -4,21 +4,23 @@
 <div class="entry" data-date="2026-09-02" data-skill="schedule-status" data-board-log-id="schedule-status-20260902" data-shops="None" data-platform="Windows Task Scheduler + Codex weekday dispatcher" data-result="ok" g="y" d="2 Sep 2026" y="2 Sep 2026">
   <div class="entry-summary" tabindex="0">
     <span class="chevron">&#9654;</span>
-    <span class="entry-title">Schedule status — CSRR queued for 10:30; dispatcher running</span>
-    <span class="entry-meta">2026-09-02 10:16 MYT · read-only status check</span>
+    <span class="entry-title">Schedule status — CSRR launched at 10:30 and running</span>
+    <span class="entry-meta">2026-09-02 10:31 MYT · read-only launch verification</span>
     <span class="tag">schedule-status</span>
     <span class="tag result-ok">OK</span>
   </div>
   <div class="entry-body">
     <div class="field"><strong>Task/date:</strong> 2026-09-02 MYT status check for today’s scheduled <code>csrrcredited</code> chain.</div>
-    <div class="field"><strong>Before -&gt; after:</strong> scheduler state <code>unchecked -&gt; Codex_WeekdayGoalDispatcher_0910 Running</code>; CSRR chain state <code>unchecked -&gt; QUEUED</code>; due time <code>unknown -&gt; 10:30 MYT</code>; CSRR worker PID <code>unchecked -&gt; none</code>.</div>
+    <div class="field"><strong>Before -&gt; after:</strong> scheduler state <code>unchecked -&gt; Codex_WeekdayGoalDispatcher_0910 Running</code>; CSRR chain state <code>QUEUED -&gt; RUNNING</code>; due/launch time <code>10:30 MYT -&gt; 10:30:17 MYT</code>; attempt <code>0 -&gt; 1</code>; CSRR worker PID <code>none -&gt; 34404</code>.</div>
     <div class="field"><strong>Shop/platform:</strong> shop <code>N/A</code>; platform <code>Windows Task Scheduler + Codex weekday-goal ledger</code>.</div>
     <div class="field"><strong>Reason:</strong> Patricia asked whether today’s <code>csrrcredited</code> scheduled run was running.</div>
-    <div class="field"><strong>Evidence/result:</strong> at 10:16 MYT the dispatcher task and PID <code>9124</code> were live; the current scheduled child was <code>parcelclaim-am-chain</code> PID <code>26200</code>. Ledger entries <code>csrrcredited</code>, <code>csrrcreditedcheck</code>, and <code>chase-rr-pack</code> were all <code>QUEUED</code> with zero attempts and no worker PID. Result: status check completed; CSRR had not started yet and remained scheduled for 10:30 MYT.</div>
+    <div class="field"><strong>Evidence/result:</strong> dispatcher PID <code>9124</code> remained live and launched worker PID <code>34404</code> at <code>10:30:17</code>. At 10:31 MYT ledger entries <code>csrrcredited</code>, <code>csrrcreditedcheck</code>, and <code>chase-rr-pack</code> were all <code>RUNNING</code> on attempt 1. The worker had active <code>node.exe -&gt; codex.exe -&gt; MCP/code-mode</code> descendants, proving actual execution rather than a ledger-only transition.</div>
     <div class="field"><strong>Changes:</strong> no scheduler, marketplace, claim, shop, customer, login, or business-data write was performed.</div>
-    <div class="field"><strong>Outstanding:</strong> the CSRR business run, reports, raw evidence, independent check, and run-specific board closeout are not expected until the 10:30 scheduled chain starts and finishes.</div>
+    <div class="field"><strong>Outstanding:</strong> the CSRR business run is active, not complete. Its reports, raw evidence, independent-check result, any qualified Chase R/R pack, readbacks, and run-specific <code>csrrcredited</code> board closeout are expected from worker PID <code>34404</code> when it finishes.</div>
   </div>
 </div>
+
+
 
 <div class="entry" data-date="2026-09-02" data-board-log-id="jobstreet-prescreen-interview-tracker-20260902" data-skill="jobstreet-prescreen-interview-tracker" data-shops="Awesomeree AI" data-platform="JobStreet / SEEK Malaysia + Google Sheets" data-result="ok" o="2 Sep 2026">
   <div class="entry-summary" tabindex="0"><span class="chevron">&#9654;</span><span class="entry-title">JobStreet PA - 1 contacted candidate added; tracker now 56</span><span class="entry-meta">2 Sep 2026 MYT &middot; A57:P57 &middot; Contacted / Whatsapp &middot; Saved to Drive</span><span class="entry-tags"><span class="tag result-ok">Completed</span></span></div>
