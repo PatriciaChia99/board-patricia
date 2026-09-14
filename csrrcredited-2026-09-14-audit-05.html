@@ -1,0 +1,1180 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CS R/R exact change audit - 14 September 2026</title><style>body{font:16px system-ui;max-width:1200px;margin:32px auto;padding:0 20px;color:#17243b}p{line-height:1.5}details{border:1px solid #ccd3dc;border-radius:8px;margin:12px 0;padding:14px}summary{cursor:pointer;font-weight:600}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;background:#f4f6fa;padding:16px}a{color:#165cbe}table{width:100%;border-collapse:collapse}td,th{text-align:left;border:1px solid #ccd3dc;padding:8px}</style><h1>CS R/R exact change audit - 14 September 2026</h1>
+<p>Status: PARTIAL. MY 1902/1902, SG 45/58 and FBS 1634/1634 have paired financial evidence. Fifteen SG wallet lookups remain unverified: 13 Pending cases and two additional Rejected terminal-action reviews. No new chase message was sent by this continuation.</p>
+<p>This audit includes earlier verified actions and sequential corrections. Later verified current states supersede earlier events. Counts represent changes, not unique orders or recovered money. Full raw evidence remains in the local report archive.</p>
+<p>Frozen source cutoff: 14 September 2026, 18:12:30 MYT.</p><p><a href="/api/board/patricia/file/csrrcredited-2026-09-14-audit.html">Audit index</a></p><details id="change-1394"><summary>25110761DG2543 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25110761DG2543. Case 109944. Expected RM 84.50. Net RM 68.45. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109944; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25110761DG2543. Case 109944. Expected RM 84.50. Net RM 68.45. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25110761DG2543. Case 109944. Expected RM 84.50. Net RM 68.45. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:12:26.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109944; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 25110761DG2543. Case 109944. Expected RM 84.50. Net RM 68.45. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 25110761DG2543. Case 109944. Expected RM 84.50. Net RM 68.45. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109944; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25110761DG2543. Case 109944. Expected RM 84.50. Net RM 68.45. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25110761DG2543. Case 109944. Expected RM 84.50. Net RM 68.45. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109944; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 25110761DG2543. Case 109944. Expected RM 84.50. Net RM 68.45. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 25110761DG2543. Case 109944. Expected RM 84.50. Net RM 68.45. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:43:59.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109944; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25110761DG2543. Case 109944. Expected RM 84.50. Net RM 68.45. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25110761DG2543. Case 109944. Expected RM 84.50. Net RM 68.45. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109944; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 25110761DG2543. Case 109944. Expected RM 84.50. Net RM 68.45. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 25110761DG2543. Case 109944. Expected RM 84.50. Net RM 68.45. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1395"><summary>251109B6QUHVW1 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251109B6QUHVW1. Case 109945. Expected RM 179.50. Net RM 145.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109945; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251109B6QUHVW1. Case 109945. Expected RM 179.50. Net RM 145.52. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251109B6QUHVW1. Case 109945. Expected RM 179.50. Net RM 145.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:12:20.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109945; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251109B6QUHVW1. Case 109945. Expected RM 179.50. Net RM 145.52. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251109B6QUHVW1. Case 109945. Expected RM 179.50. Net RM 145.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109945; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251109B6QUHVW1. Case 109945. Expected RM 179.50. Net RM 145.52. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251109B6QUHVW1. Case 109945. Expected RM 179.50. Net RM 145.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109945; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251109B6QUHVW1. Case 109945. Expected RM 179.50. Net RM 145.52. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251109B6QUHVW1. Case 109945. Expected RM 179.50. Net RM 145.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:44:05.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109945; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251109B6QUHVW1. Case 109945. Expected RM 179.50. Net RM 145.52. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251109B6QUHVW1. Case 109945. Expected RM 179.50. Net RM 145.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109945; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251109B6QUHVW1. Case 109945. Expected RM 179.50. Net RM 145.52. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251109B6QUHVW1. Case 109945. Expected RM 179.50. Net RM 145.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1396"><summary>251116UYR6NUDJ | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251116UYR6NUDJ. Case 109933. Expected RM 52.07. Net RM 51.28. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109933; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251116UYR6NUDJ. Case 109933. Expected RM 52.07. Net RM 51.28. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:41:07.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109933; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251116UYR6NUDJ. Case 109933. Expected RM 52.07. Net RM 51.28. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109933; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251116UYR6NUDJ. Case 109933. Expected RM 52.07. Net RM 51.28. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109933; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251116UYR6NUDJ. Case 109933. Expected RM 52.07. Net RM 51.28. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:44:11.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109933; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251116UYR6NUDJ. Case 109933. Expected RM 52.07. Net RM 51.28. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109933; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251116UYR6NUDJ. Case 109933. Expected RM 52.07. Net RM 51.28. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1397"><summary>251124K9J1ETS3 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251124K9J1ETS3. Case 109938. Expected RM 48.80. Net RM 36.04. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109938; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251124K9J1ETS3. Case 109938. Expected RM 48.80. Net RM 36.04. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251124K9J1ETS3. Case 109938. Expected RM 48.80. Net RM 36.04. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:12:32.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109938; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251124K9J1ETS3. Case 109938. Expected RM 48.80. Net RM 36.04. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251124K9J1ETS3. Case 109938. Expected RM 48.80. Net RM 36.04. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109938; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251124K9J1ETS3. Case 109938. Expected RM 48.80. Net RM 36.04. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251124K9J1ETS3. Case 109938. Expected RM 48.80. Net RM 36.04. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109938; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251124K9J1ETS3. Case 109938. Expected RM 48.80. Net RM 36.04. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251124K9J1ETS3. Case 109938. Expected RM 48.80. Net RM 36.04. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:44:16.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109938; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251124K9J1ETS3. Case 109938. Expected RM 48.80. Net RM 36.04. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251124K9J1ETS3. Case 109938. Expected RM 48.80. Net RM 36.04. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109938; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251124K9J1ETS3. Case 109938. Expected RM 48.80. Net RM 36.04. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251124K9J1ETS3. Case 109938. Expected RM 48.80. Net RM 36.04. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1398"><summary>251124KQC84GVE | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251124KQC84GVE. Case 109935. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109935; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251124KQC84GVE. Case 109935. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:40:58.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109935; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251124KQC84GVE. Case 109935. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109935; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251124KQC84GVE. Case 109935. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109935; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251124KQC84GVE. Case 109935. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:44:21.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109935; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251124KQC84GVE. Case 109935. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109935; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251124KQC84GVE. Case 109935. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1399"><summary>251126PWA3SGEC | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251126PWA3SGEC. Case 109936. Expected RM 179.50. Net RM 131.00. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109936; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251126PWA3SGEC. Case 109936. Expected RM 179.50. Net RM 131.00. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251126PWA3SGEC. Case 109936. Expected RM 179.50. Net RM 131.00. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:12:42.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109936; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251126PWA3SGEC. Case 109936. Expected RM 179.50. Net RM 131.00. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251126PWA3SGEC. Case 109936. Expected RM 179.50. Net RM 131.00. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109936; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251126PWA3SGEC. Case 109936. Expected RM 179.50. Net RM 131.00. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251126PWA3SGEC. Case 109936. Expected RM 179.50. Net RM 131.00. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109936; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251126PWA3SGEC. Case 109936. Expected RM 179.50. Net RM 131.00. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251126PWA3SGEC. Case 109936. Expected RM 179.50. Net RM 131.00. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:44:25.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109936; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251126PWA3SGEC. Case 109936. Expected RM 179.50. Net RM 131.00. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251126PWA3SGEC. Case 109936. Expected RM 179.50. Net RM 131.00. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109936; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251126PWA3SGEC. Case 109936. Expected RM 179.50. Net RM 131.00. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251126PWA3SGEC. Case 109936. Expected RM 179.50. Net RM 131.00. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1400"><summary>2511280MQ87064 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2511280MQ87064. Case 109932. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109932; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2511280MQ87064. Case 109932. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:41:18.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109932; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2511280MQ87064. Case 109932. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109932; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2511280MQ87064. Case 109932. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109932; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2511280MQ87064. Case 109932. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:44:29.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109932; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2511280MQ87064. Case 109932. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109932; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2511280MQ87064. Case 109932. Expected RM 179.50. Net RM 147.15. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1401"><summary>25121141D70MQ1 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25121141D70MQ1. Case 109928. Expected RM 32.00. Net RM 25.57. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109928; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25121141D70MQ1. Case 109928. Expected RM 32.00. Net RM 25.57. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25121141D70MQ1. Case 109928. Expected RM 32.00. Net RM 25.57. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:12:48.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109928; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 25121141D70MQ1. Case 109928. Expected RM 32.00. Net RM 25.57. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 25121141D70MQ1. Case 109928. Expected RM 32.00. Net RM 25.57. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109928; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25121141D70MQ1. Case 109928. Expected RM 32.00. Net RM 25.57. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25121141D70MQ1. Case 109928. Expected RM 32.00. Net RM 25.57. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109928; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 25121141D70MQ1. Case 109928. Expected RM 32.00. Net RM 25.57. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 25121141D70MQ1. Case 109928. Expected RM 32.00. Net RM 25.57. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:44:33.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109928; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25121141D70MQ1. Case 109928. Expected RM 32.00. Net RM 25.57. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 25121141D70MQ1. Case 109928. Expected RM 32.00. Net RM 25.57. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109928; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 25121141D70MQ1. Case 109928. Expected RM 32.00. Net RM 25.57. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 25121141D70MQ1. Case 109928. Expected RM 32.00. Net RM 25.57. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1402"><summary>2512139KWENUVV | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2512139KWENUVV. Case 109927. Expected RM 51.29. Net RM 49.44. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109927; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2512139KWENUVV. Case 109927. Expected RM 51.29. Net RM 49.44. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:41:38.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109927; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2512139KWENUVV. Case 109927. Expected RM 51.29. Net RM 49.44. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109927; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2512139KWENUVV. Case 109927. Expected RM 51.29. Net RM 49.44. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109927; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2512139KWENUVV. Case 109927. Expected RM 51.29. Net RM 49.44. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:44:49.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109927; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2512139KWENUVV. Case 109927. Expected RM 51.29. Net RM 49.44. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109927; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2512139KWENUVV. Case 109927. Expected RM 51.29. Net RM 49.44. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1403"><summary>251215DTDYKMGK | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251215DTDYKMGK. Case 109926. Expected RM 88.50. Net RM 60.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109926; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251215DTDYKMGK. Case 109926. Expected RM 88.50. Net RM 60.83. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251215DTDYKMGK. Case 109926. Expected RM 88.50. Net RM 60.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:12:55.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109926; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251215DTDYKMGK. Case 109926. Expected RM 88.50. Net RM 60.83. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251215DTDYKMGK. Case 109926. Expected RM 88.50. Net RM 60.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109926; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251215DTDYKMGK. Case 109926. Expected RM 88.50. Net RM 60.83. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251215DTDYKMGK. Case 109926. Expected RM 88.50. Net RM 60.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109926; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251215DTDYKMGK. Case 109926. Expected RM 88.50. Net RM 60.83. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251215DTDYKMGK. Case 109926. Expected RM 88.50. Net RM 60.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:44:54.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109926; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251215DTDYKMGK. Case 109926. Expected RM 88.50. Net RM 60.83. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 251215DTDYKMGK. Case 109926. Expected RM 88.50. Net RM 60.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109926; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251215DTDYKMGK. Case 109926. Expected RM 88.50. Net RM 60.83. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 251215DTDYKMGK. Case 109926. Expected RM 88.50. Net RM 60.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1404"><summary>260102VKE97HM7 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260102VKE97HM7. Case 109918. Expected RM 51.04. Net RM 159.74. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109918; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260102VKE97HM7. Case 109918. Expected RM 51.04. Net RM 159.74. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:42:10.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109918; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260102VKE97HM7. Case 109918. Expected RM 51.04. Net RM 159.74. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109918; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260102VKE97HM7. Case 109918. Expected RM 51.04. Net RM 159.74. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109918; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260102VKE97HM7. Case 109918. Expected RM 51.04. Net RM 159.74. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:44:59.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109918; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260102VKE97HM7. Case 109918. Expected RM 51.04. Net RM 159.74. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109918; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260102VKE97HM7. Case 109918. Expected RM 51.04. Net RM 159.74. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1405"><summary>260108EKFMGACN | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260108EKFMGACN. Case 109919. Expected RM 204.00. Net RM 165.02. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109919; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260108EKFMGACN. Case 109919. Expected RM 204.00. Net RM 165.02. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:41:59.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109919; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260108EKFMGACN. Case 109919. Expected RM 204.00. Net RM 165.02. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109919; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260108EKFMGACN. Case 109919. Expected RM 204.00. Net RM 165.02. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109919; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260108EKFMGACN. Case 109919. Expected RM 204.00. Net RM 165.02. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:45:04.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109919; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260108EKFMGACN. Case 109919. Expected RM 204.00. Net RM 165.02. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109919; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260108EKFMGACN. Case 109919. Expected RM 204.00. Net RM 165.02. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1406"><summary>260111RJWH7R39 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260111RJWH7R39. Case 109916. Expected RM 145.89. Net RM 254.85. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109916; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260111RJWH7R39. Case 109916. Expected RM 145.89. Net RM 254.85. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:42:20.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109916; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260111RJWH7R39. Case 109916. Expected RM 145.89. Net RM 254.85. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109916; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260111RJWH7R39. Case 109916. Expected RM 145.89. Net RM 254.85. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109916; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260111RJWH7R39. Case 109916. Expected RM 145.89. Net RM 254.85. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:45:10.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109916; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260111RJWH7R39. Case 109916. Expected RM 145.89. Net RM 254.85. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109916; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260111RJWH7R39. Case 109916. Expected RM 145.89. Net RM 254.85. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1407"><summary>260118CCCF3VQ5 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260118CCCF3VQ5. Case 109913. Expected RM 51.00. Net RM 49.72. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109913; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260118CCCF3VQ5. Case 109913. Expected RM 51.00. Net RM 49.72. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:42:30.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109913; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260118CCCF3VQ5. Case 109913. Expected RM 51.00. Net RM 49.72. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109913; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260118CCCF3VQ5. Case 109913. Expected RM 51.00. Net RM 49.72. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109913; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260118CCCF3VQ5. Case 109913. Expected RM 51.00. Net RM 49.72. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:45:14.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109913; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260118CCCF3VQ5. Case 109913. Expected RM 51.00. Net RM 49.72. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109913; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260118CCCF3VQ5. Case 109913. Expected RM 51.00. Net RM 49.72. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1408"><summary>2601275JMFD7PP | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601275JMFD7PP. Case 109908. Expected RM 59.99. Net RM 147.28. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109908; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601275JMFD7PP. Case 109908. Expected RM 59.99. Net RM 147.28. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601275JMFD7PP. Case 109908. Expected RM 59.99. Net RM 147.28. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:13:09.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109908; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2601275JMFD7PP. Case 109908. Expected RM 59.99. Net RM 147.28. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2601275JMFD7PP. Case 109908. Expected RM 59.99. Net RM 147.28. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109908; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601275JMFD7PP. Case 109908. Expected RM 59.99. Net RM 147.28. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601275JMFD7PP. Case 109908. Expected RM 59.99. Net RM 147.28. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109908; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2601275JMFD7PP. Case 109908. Expected RM 59.99. Net RM 147.28. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2601275JMFD7PP. Case 109908. Expected RM 59.99. Net RM 147.28. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:45:20.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109908; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601275JMFD7PP. Case 109908. Expected RM 59.99. Net RM 147.28. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601275JMFD7PP. Case 109908. Expected RM 59.99. Net RM 147.28. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109908; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2601275JMFD7PP. Case 109908. Expected RM 59.99. Net RM 147.28. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2601275JMFD7PP. Case 109908. Expected RM 59.99. Net RM 147.28. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1409"><summary>2601276M3S3V4J | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601276M3S3V4J. Case 109909. Expected RM 84.50. Net RM 92.37. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109909; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601276M3S3V4J. Case 109909. Expected RM 84.50. Net RM 92.37. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601276M3S3V4J. Case 109909. Expected RM 84.50. Net RM 92.37. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:13:02.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109909; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2601276M3S3V4J. Case 109909. Expected RM 84.50. Net RM 92.37. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2601276M3S3V4J. Case 109909. Expected RM 84.50. Net RM 92.37. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109909; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601276M3S3V4J. Case 109909. Expected RM 84.50. Net RM 92.37. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601276M3S3V4J. Case 109909. Expected RM 84.50. Net RM 92.37. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109909; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2601276M3S3V4J. Case 109909. Expected RM 84.50. Net RM 92.37. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2601276M3S3V4J. Case 109909. Expected RM 84.50. Net RM 92.37. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:45:24.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109909; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601276M3S3V4J. Case 109909. Expected RM 84.50. Net RM 92.37. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2601276M3S3V4J. Case 109909. Expected RM 84.50. Net RM 92.37. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109909; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2601276M3S3V4J. Case 109909. Expected RM 84.50. Net RM 92.37. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2601276M3S3V4J. Case 109909. Expected RM 84.50. Net RM 92.37. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1410"><summary>260130DC7VGC9H | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260130DC7VGC9H. Case 109904. Expected RM 200.42. Net RM 160.78. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109904; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260130DC7VGC9H. Case 109904. Expected RM 200.42. Net RM 160.78. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:43:03.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109904; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260130DC7VGC9H. Case 109904. Expected RM 200.42. Net RM 160.78. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109904; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260130DC7VGC9H. Case 109904. Expected RM 200.42. Net RM 160.78. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109904; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260130DC7VGC9H. Case 109904. Expected RM 200.42. Net RM 160.78. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:45:28.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109904; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260130DC7VGC9H. Case 109904. Expected RM 200.42. Net RM 160.78. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109904; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260130DC7VGC9H. Case 109904. Expected RM 200.42. Net RM 160.78. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1411"><summary>260202N2FQRPR5 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260202N2FQRPR5. Case 109901. Expected RM 88.50. Net RM 70.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109901; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260202N2FQRPR5. Case 109901. Expected RM 88.50. Net RM 70.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:43:22.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109901; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260202N2FQRPR5. Case 109901. Expected RM 88.50. Net RM 70.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109901; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260202N2FQRPR5. Case 109901. Expected RM 88.50. Net RM 70.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109901; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260202N2FQRPR5. Case 109901. Expected RM 88.50. Net RM 70.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:45:35.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109901; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260202N2FQRPR5. Case 109901. Expected RM 88.50. Net RM 70.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109901; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260202N2FQRPR5. Case 109901. Expected RM 88.50. Net RM 70.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1412"><summary>260203PT6CR8FV | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260203PT6CR8FV. Case 109903. Expected RM 52.07. Net RM 47.22. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109903; live status dispute_approved; Seller sent wrong item (e.g. wrong size, model); action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260203PT6CR8FV. Case 109903. Expected RM 52.07. Net RM 47.22. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:43:12.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109903; live status dispute_approved; Seller sent wrong item (e.g. wrong size, model); action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260203PT6CR8FV. Case 109903. Expected RM 52.07. Net RM 47.22. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109903; live status dispute_approved; Seller sent wrong item (e.g. wrong size, model); action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260203PT6CR8FV. Case 109903. Expected RM 52.07. Net RM 47.22. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109903; live status dispute_approved; Seller sent wrong item (e.g. wrong size, model); action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260203PT6CR8FV. Case 109903. Expected RM 52.07. Net RM 47.22. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:45:40.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109903; live status dispute_approved; Seller sent wrong item (e.g. wrong size, model); action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260203PT6CR8FV. Case 109903. Expected RM 52.07. Net RM 47.22. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109903; live status dispute_approved; Seller sent wrong item (e.g. wrong size, model); action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260203PT6CR8FV. Case 109903. Expected RM 52.07. Net RM 47.22. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1413"><summary>260205VTVB5PWG | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260205VTVB5PWG. Case 109896. Expected RM 218.93. Net RM 333.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109896; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260205VTVB5PWG. Case 109896. Expected RM 218.93. Net RM 333.52. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260205VTVB5PWG. Case 109896. Expected RM 218.93. Net RM 333.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:13:21.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109896; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260205VTVB5PWG. Case 109896. Expected RM 218.93. Net RM 333.52. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260205VTVB5PWG. Case 109896. Expected RM 218.93. Net RM 333.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109896; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260205VTVB5PWG. Case 109896. Expected RM 218.93. Net RM 333.52. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260205VTVB5PWG. Case 109896. Expected RM 218.93. Net RM 333.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109896; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260205VTVB5PWG. Case 109896. Expected RM 218.93. Net RM 333.52. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260205VTVB5PWG. Case 109896. Expected RM 218.93. Net RM 333.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:45:45.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109896; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260205VTVB5PWG. Case 109896. Expected RM 218.93. Net RM 333.52. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260205VTVB5PWG. Case 109896. Expected RM 218.93. Net RM 333.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109896; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260205VTVB5PWG. Case 109896. Expected RM 218.93. Net RM 333.52. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260205VTVB5PWG. Case 109896. Expected RM 218.93. Net RM 333.52. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1414"><summary>2602097VKX9FGN | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2602097VKX9FGN. Case 109899. Expected RM 32.96. Net RM 110.12. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109899; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2602097VKX9FGN. Case 109899. Expected RM 32.96. Net RM 110.12. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2602097VKX9FGN. Case 109899. Expected RM 32.96. Net RM 110.12. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:13:15.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109899; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2602097VKX9FGN. Case 109899. Expected RM 32.96. Net RM 110.12. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2602097VKX9FGN. Case 109899. Expected RM 32.96. Net RM 110.12. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109899; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2602097VKX9FGN. Case 109899. Expected RM 32.96. Net RM 110.12. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2602097VKX9FGN. Case 109899. Expected RM 32.96. Net RM 110.12. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109899; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2602097VKX9FGN. Case 109899. Expected RM 32.96. Net RM 110.12. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2602097VKX9FGN. Case 109899. Expected RM 32.96. Net RM 110.12. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:45:50.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109899; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2602097VKX9FGN. Case 109899. Expected RM 32.96. Net RM 110.12. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2602097VKX9FGN. Case 109899. Expected RM 32.96. Net RM 110.12. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109899; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2602097VKX9FGN. Case 109899. Expected RM 32.96. Net RM 110.12. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2602097VKX9FGN. Case 109899. Expected RM 32.96. Net RM 110.12. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1415"><summary>260213KTV2A0UA | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260213KTV2A0UA. Case 109894. Expected RM 32.96. Net RM 25.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109894; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260213KTV2A0UA. Case 109894. Expected RM 32.96. Net RM 25.83. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260213KTV2A0UA. Case 109894. Expected RM 32.96. Net RM 25.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:13:28.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109894; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260213KTV2A0UA. Case 109894. Expected RM 32.96. Net RM 25.83. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260213KTV2A0UA. Case 109894. Expected RM 32.96. Net RM 25.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109894; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260213KTV2A0UA. Case 109894. Expected RM 32.96. Net RM 25.83. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260213KTV2A0UA. Case 109894. Expected RM 32.96. Net RM 25.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109894; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260213KTV2A0UA. Case 109894. Expected RM 32.96. Net RM 25.83. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260213KTV2A0UA. Case 109894. Expected RM 32.96. Net RM 25.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:45:55.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109894; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260213KTV2A0UA. Case 109894. Expected RM 32.96. Net RM 25.83. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260213KTV2A0UA. Case 109894. Expected RM 32.96. Net RM 25.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109894; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260213KTV2A0UA. Case 109894. Expected RM 32.96. Net RM 25.83. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260213KTV2A0UA. Case 109894. Expected RM 32.96. Net RM 25.83. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1416"><summary>260308J8U1X64G | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260308J8U1X64G. Case 109881. Expected RM 58.22. Net RM 45.92. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109881; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260308J8U1X64G. Case 109881. Expected RM 58.22. Net RM 45.92. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260308J8U1X64G. Case 109881. Expected RM 58.22. Net RM 45.92. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:13:34.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109881; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260308J8U1X64G. Case 109881. Expected RM 58.22. Net RM 45.92. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260308J8U1X64G. Case 109881. Expected RM 58.22. Net RM 45.92. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109881; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260308J8U1X64G. Case 109881. Expected RM 58.22. Net RM 45.92. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260308J8U1X64G. Case 109881. Expected RM 58.22. Net RM 45.92. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109881; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260308J8U1X64G. Case 109881. Expected RM 58.22. Net RM 45.92. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260308J8U1X64G. Case 109881. Expected RM 58.22. Net RM 45.92. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:46:00.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109881; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260308J8U1X64G. Case 109881. Expected RM 58.22. Net RM 45.92. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260308J8U1X64G. Case 109881. Expected RM 58.22. Net RM 45.92. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109881; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260308J8U1X64G. Case 109881. Expected RM 58.22. Net RM 45.92. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260308J8U1X64G. Case 109881. Expected RM 58.22. Net RM 45.92. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1417"><summary>260311THYN6HVC | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260311THYN6HVC. Case 109879. Expected RM 88.50. Net RM 70.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109879; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260311THYN6HVC. Case 109879. Expected RM 88.50. Net RM 70.27. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260311THYN6HVC. Case 109879. Expected RM 88.50. Net RM 70.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:13:41.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109879; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260311THYN6HVC. Case 109879. Expected RM 88.50. Net RM 70.27. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260311THYN6HVC. Case 109879. Expected RM 88.50. Net RM 70.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109879; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260311THYN6HVC. Case 109879. Expected RM 88.50. Net RM 70.27. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260311THYN6HVC. Case 109879. Expected RM 88.50. Net RM 70.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109879; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260311THYN6HVC. Case 109879. Expected RM 88.50. Net RM 70.27. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260311THYN6HVC. Case 109879. Expected RM 88.50. Net RM 70.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:46:05.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109879; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260311THYN6HVC. Case 109879. Expected RM 88.50. Net RM 70.27. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260311THYN6HVC. Case 109879. Expected RM 88.50. Net RM 70.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109879; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260311THYN6HVC. Case 109879. Expected RM 88.50. Net RM 70.27. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260311THYN6HVC. Case 109879. Expected RM 88.50. Net RM 70.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1418"><summary>260321PSG1GQBC | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260321PSG1GQBC. Case 109875. Expected RM 176.50. Net RM 140.55. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109875; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260321PSG1GQBC. Case 109875. Expected RM 176.50. Net RM 140.55. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:44:32.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109875; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260321PSG1GQBC. Case 109875. Expected RM 176.50. Net RM 140.55. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109875; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260321PSG1GQBC. Case 109875. Expected RM 176.50. Net RM 140.55. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109875; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260321PSG1GQBC. Case 109875. Expected RM 176.50. Net RM 140.55. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:46:09.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109875; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260321PSG1GQBC. Case 109875. Expected RM 176.50. Net RM 140.55. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109875; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260321PSG1GQBC. Case 109875. Expected RM 176.50. Net RM 140.55. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1419"><summary>260324VPR7HM8K | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260324VPR7HM8K. Case 109872. Expected RM 206.62. Net RM 169.26. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109872; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260324VPR7HM8K. Case 109872. Expected RM 206.62. Net RM 169.26. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:44:44.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109872; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260324VPR7HM8K. Case 109872. Expected RM 206.62. Net RM 169.26. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109872; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260324VPR7HM8K. Case 109872. Expected RM 206.62. Net RM 169.26. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109872; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260324VPR7HM8K. Case 109872. Expected RM 206.62. Net RM 169.26. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:46:14.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109872; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260324VPR7HM8K. Case 109872. Expected RM 206.62. Net RM 169.26. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109872; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260324VPR7HM8K. Case 109872. Expected RM 206.62. Net RM 169.26. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1420"><summary>260403TRS535GJ | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260403TRS535GJ. Case 109870. Expected RM 206.62. Net RM 167.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109870; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260403TRS535GJ. Case 109870. Expected RM 206.62. Net RM 167.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:44:58.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109870; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260403TRS535GJ. Case 109870. Expected RM 206.62. Net RM 167.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109870; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260403TRS535GJ. Case 109870. Expected RM 206.62. Net RM 167.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109870; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260403TRS535GJ. Case 109870. Expected RM 206.62. Net RM 167.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:46:19.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109870; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260403TRS535GJ. Case 109870. Expected RM 206.62. Net RM 167.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109870; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260403TRS535GJ. Case 109870. Expected RM 206.62. Net RM 167.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1421"><summary>260404VTUFJX2D | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260404VTUFJX2D. Case 109866. Expected RM 175.56. Net RM 162.36. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109866; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260404VTUFJX2D. Case 109866. Expected RM 175.56. Net RM 162.36. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:45:18.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109866; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260404VTUFJX2D. Case 109866. Expected RM 175.56. Net RM 162.36. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109866; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260404VTUFJX2D. Case 109866. Expected RM 175.56. Net RM 162.36. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109866; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260404VTUFJX2D. Case 109866. Expected RM 175.56. Net RM 162.36. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:46:25.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109866; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260404VTUFJX2D. Case 109866. Expected RM 175.56. Net RM 162.36. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109866; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260404VTUFJX2D. Case 109866. Expected RM 175.56. Net RM 162.36. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1422"><summary>26040885JSCRC1 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 26040885JSCRC1. Case 109865. Expected RM 150.48. Net RM 128.75. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109865; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 26040885JSCRC1. Case 109865. Expected RM 150.48. Net RM 128.75. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:45:31.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109865; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 26040885JSCRC1. Case 109865. Expected RM 150.48. Net RM 128.75. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109865; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 26040885JSCRC1. Case 109865. Expected RM 150.48. Net RM 128.75. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109865; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 26040885JSCRC1. Case 109865. Expected RM 150.48. Net RM 128.75. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:46:31.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109865; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 26040885JSCRC1. Case 109865. Expected RM 150.48. Net RM 128.75. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109865; live status dispute_approved; I want to return item in original; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 26040885JSCRC1. Case 109865. Expected RM 150.48. Net RM 128.75. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1423"><summary>2604160PW2PRAV | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2604160PW2PRAV. Case 109858. Expected RM 84.50. Net RM 223.36. Full qualifying wallet recovery confirmed by both live passes.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109858; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2604160PW2PRAV. Case 109858. Expected RM 84.50. Net RM 223.36. Full qualifying wallet recovery confirmed by both live passes.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:48:05.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109858; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2604160PW2PRAV. Case 109858. Expected RM 84.50. Net RM 223.36. Full qualifying wallet recovery confirmed by both live passes.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109858; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2604160PW2PRAV. Case 109858. Expected RM 84.50. Net RM 223.36. Full qualifying wallet recovery confirmed by both live passes.&quot;,
+    &quot;FBS webapp case 109858; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2604160PW2PRAV. Case 109858. Expected RM 84.50. Net RM 223.36. Full qualifying wallet recovery confirmed by both live passes.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:46:36.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109858; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2604160PW2PRAV. Case 109858. Expected RM 84.50. Net RM 223.36. Full qualifying wallet recovery confirmed by both live passes.&quot;,
+  &quot;FBS webapp case 109858; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2604160PW2PRAV. Case 109858. Expected RM 84.50. Net RM 223.36. Full qualifying wallet recovery confirmed by both live passes.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1424"><summary>260504GB0N8E7W | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260504GB0N8E7W. Case 109843. Expected RM 105.96. Net RM 88.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109843; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260504GB0N8E7W. Case 109843. Expected RM 105.96. Net RM 88.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:45:43.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109843; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260504GB0N8E7W. Case 109843. Expected RM 105.96. Net RM 88.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109843; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260504GB0N8E7W. Case 109843. Expected RM 105.96. Net RM 88.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109843; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260504GB0N8E7W. Case 109843. Expected RM 105.96. Net RM 88.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:46:42.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109843; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260504GB0N8E7W. Case 109843. Expected RM 105.96. Net RM 88.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109843; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260504GB0N8E7W. Case 109843. Expected RM 105.96. Net RM 88.13. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1425"><summary>260505JGR4HGFU | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260505JGR4HGFU. Case 109840. Expected RM 176.50. Net RM 119.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109840; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260505JGR4HGFU. Case 109840. Expected RM 176.50. Net RM 119.27. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260505JGR4HGFU. Case 109840. Expected RM 176.50. Net RM 119.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:13:48.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109840; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260505JGR4HGFU. Case 109840. Expected RM 176.50. Net RM 119.27. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260505JGR4HGFU. Case 109840. Expected RM 176.50. Net RM 119.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109840; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260505JGR4HGFU. Case 109840. Expected RM 176.50. Net RM 119.27. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260505JGR4HGFU. Case 109840. Expected RM 176.50. Net RM 119.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109840; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260505JGR4HGFU. Case 109840. Expected RM 176.50. Net RM 119.27. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260505JGR4HGFU. Case 109840. Expected RM 176.50. Net RM 119.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:46:57.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109840; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260505JGR4HGFU. Case 109840. Expected RM 176.50. Net RM 119.27. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260505JGR4HGFU. Case 109840. Expected RM 176.50. Net RM 119.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109840; live status dispute_approved; Product is defective or does not work; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260505JGR4HGFU. Case 109840. Expected RM 176.50. Net RM 119.27. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260505JGR4HGFU. Case 109840. Expected RM 176.50. Net RM 119.27. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1426"><summary>260508SBMCWSB9 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260508SBMCWSB9. Case 109836. Expected RM 52.24. Net RM 51.16. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109836; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260508SBMCWSB9. Case 109836. Expected RM 52.24. Net RM 51.16. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260508SBMCWSB9. Case 109836. Expected RM 52.24. Net RM 51.16. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:13:55.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109836; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260508SBMCWSB9. Case 109836. Expected RM 52.24. Net RM 51.16. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260508SBMCWSB9. Case 109836. Expected RM 52.24. Net RM 51.16. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109836; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260508SBMCWSB9. Case 109836. Expected RM 52.24. Net RM 51.16. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260508SBMCWSB9. Case 109836. Expected RM 52.24. Net RM 51.16. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+    &quot;FBS webapp case 109836; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260508SBMCWSB9. Case 109836. Expected RM 52.24. Net RM 51.16. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260508SBMCWSB9. Case 109836. Expected RM 52.24. Net RM 51.16. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:47:03.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109836; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260508SBMCWSB9. Case 109836. Expected RM 52.24. Net RM 51.16. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260508SBMCWSB9. Case 109836. Expected RM 52.24. Net RM 51.16. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;,
+  &quot;FBS webapp case 109836; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260508SBMCWSB9. Case 109836. Expected RM 52.24. Net RM 51.16. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260508SBMCWSB9. Case 109836. Expected RM 52.24. Net RM 51.16. Correction to earlier audit wording. This is retained order income. No approved shipping adjustment is recorded or claimed as paid. All matching returns are terminal with no buyer refund debit or clawback.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1427"><summary>2605090TWKWSHK | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2605090TWKWSHK. Case 109835. Expected RM 43.88. Net RM 43.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109835; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2605090TWKWSHK. Case 109835. Expected RM 43.88. Net RM 43.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:46:32.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109835; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2605090TWKWSHK. Case 109835. Expected RM 43.88. Net RM 43.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109835; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2605090TWKWSHK. Case 109835. Expected RM 43.88. Net RM 43.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109835; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2605090TWKWSHK. Case 109835. Expected RM 43.88. Net RM 43.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:47:08.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109835; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 2605090TWKWSHK. Case 109835. Expected RM 43.88. Net RM 43.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109835; live status dispute_approved; Other types of damage; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 2605090TWKWSHK. Case 109835. Expected RM 43.88. Net RM 43.40. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1428"><summary>260525C0KMVB57 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260525C0KMVB57. Case 109827. Expected RM 84.92. Net RM 126.37. Full qualifying wallet recovery confirmed by both live passes.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109827; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260525C0KMVB57. Case 109827. Expected RM 84.92. Net RM 126.37. Full qualifying wallet recovery confirmed by both live passes.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:48:06.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109827; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260525C0KMVB57. Case 109827. Expected RM 84.92. Net RM 126.37. Full qualifying wallet recovery confirmed by both live passes.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109827; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260525C0KMVB57. Case 109827. Expected RM 84.92. Net RM 126.37. Full qualifying wallet recovery confirmed by both live passes.&quot;,
+    &quot;FBS webapp case 109827; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260525C0KMVB57. Case 109827. Expected RM 84.92. Net RM 126.37. Full qualifying wallet recovery confirmed by both live passes.&quot;
+  ],
+  &quot;claim_status&quot;: null,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:47:13.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109827; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260525C0KMVB57. Case 109827. Expected RM 84.92. Net RM 126.37. Full qualifying wallet recovery confirmed by both live passes.&quot;,
+  &quot;FBS webapp case 109827; live status dispute_approved; Scratch/dents; action pending_fbs as of 2026-07-27\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260525C0KMVB57. Case 109827. Expected RM 84.92. Net RM 126.37. Full qualifying wallet recovery confirmed by both live passes.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1429"><summary>260606D2H0QDUN | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260606D2H0QDUN. Case 109821. Expected RM 51.29. Net RM 48.14. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109821; Shopee case 2606090MPDBB9Y5; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+    &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 260606D2H0QDUN. Case 109821. Expected RM 51.29. Net RM 48.14. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260606D2H0QDUN. Case 109821. Expected RM 51.29. Net RM 48.14. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: &quot;pending_rr_submit_compensation&quot;,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:48:06.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109821; Shopee case 2606090MPDBB9Y5; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 260606D2H0QDUN. Case 109821. Expected RM 51.29. Net RM 48.14. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260606D2H0QDUN. Case 109821. Expected RM 51.29. Net RM 48.14. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109821; Shopee case 2606090MPDBB9Y5; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+    &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 260606D2H0QDUN. Case 109821. Expected RM 51.29. Net RM 48.14. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260606D2H0QDUN. Case 109821. Expected RM 51.29. Net RM 48.14. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109821; Shopee case 2606090MPDBB9Y5; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 260606D2H0QDUN. Case 109821. Expected RM 51.29. Net RM 48.14. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260606D2H0QDUN. Case 109821. Expected RM 51.29. Net RM 48.14. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: &quot;pending_rr_submit_compensation&quot;,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:47:18.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109821; Shopee case 2606090MPDBB9Y5; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+  &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 260606D2H0QDUN. Case 109821. Expected RM 51.29. Net RM 48.14. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260606D2H0QDUN. Case 109821. Expected RM 51.29. Net RM 48.14. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109821; Shopee case 2606090MPDBB9Y5; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 260606D2H0QDUN. Case 109821. Expected RM 51.29. Net RM 48.14. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260606D2H0QDUN. Case 109821. Expected RM 51.29. Net RM 48.14. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1430"><summary>260608G2F1K852 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260608G2F1K852. Case 109817. Expected RM 52.84. Net RM 50.19. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109817; Shopee case 2606180DPK0S2NV; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+    &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 260608G2F1K852. Case 109817. Expected RM 52.84. Net RM 50.19. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260608G2F1K852. Case 109817. Expected RM 52.84. Net RM 50.19. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: &quot;pending_rr_submit_compensation&quot;,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:48:06.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109817; Shopee case 2606180DPK0S2NV; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 260608G2F1K852. Case 109817. Expected RM 52.84. Net RM 50.19. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260608G2F1K852. Case 109817. Expected RM 52.84. Net RM 50.19. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109817; Shopee case 2606180DPK0S2NV; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+    &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 260608G2F1K852. Case 109817. Expected RM 52.84. Net RM 50.19. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260608G2F1K852. Case 109817. Expected RM 52.84. Net RM 50.19. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109817; Shopee case 2606180DPK0S2NV; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 260608G2F1K852. Case 109817. Expected RM 52.84. Net RM 50.19. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260608G2F1K852. Case 109817. Expected RM 52.84. Net RM 50.19. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: &quot;pending_rr_submit_compensation&quot;,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:47:24.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109817; Shopee case 2606180DPK0S2NV; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+  &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 260608G2F1K852. Case 109817. Expected RM 52.84. Net RM 50.19. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260608G2F1K852. Case 109817. Expected RM 52.84. Net RM 50.19. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109817; Shopee case 2606180DPK0S2NV; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 260608G2F1K852. Case 109817. Expected RM 52.84. Net RM 50.19. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260608G2F1K852. Case 109817. Expected RM 52.84. Net RM 50.19. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1431"><summary>260621M26MMFAY | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260621M26MMFAY. Case 109813. Expected RM 43.88. Net RM 43.37. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109813; Shopee case 2606220RA7VUS6R; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+    &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 260621M26MMFAY. Case 109813. Expected RM 43.88. Net RM 43.37. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260621M26MMFAY. Case 109813. Expected RM 43.88. Net RM 43.37. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: &quot;pending_rr_submit_compensation&quot;,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:48:07.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109813; Shopee case 2606220RA7VUS6R; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 260621M26MMFAY. Case 109813. Expected RM 43.88. Net RM 43.37. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260621M26MMFAY. Case 109813. Expected RM 43.88. Net RM 43.37. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109813; Shopee case 2606220RA7VUS6R; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+    &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 260621M26MMFAY. Case 109813. Expected RM 43.88. Net RM 43.37. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260621M26MMFAY. Case 109813. Expected RM 43.88. Net RM 43.37. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109813; Shopee case 2606220RA7VUS6R; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 260621M26MMFAY. Case 109813. Expected RM 43.88. Net RM 43.37. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260621M26MMFAY. Case 109813. Expected RM 43.88. Net RM 43.37. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: &quot;pending_rr_submit_compensation&quot;,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:47:32.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109813; Shopee case 2606220RA7VUS6R; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+  &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 260621M26MMFAY. Case 109813. Expected RM 43.88. Net RM 43.37. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260621M26MMFAY. Case 109813. Expected RM 43.88. Net RM 43.37. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109813; Shopee case 2606220RA7VUS6R; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 260621M26MMFAY. Case 109813. Expected RM 43.88. Net RM 43.37. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260621M26MMFAY. Case 109813. Expected RM 43.88. Net RM 43.37. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1432"><summary>260623T3V9T9R5 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260623T3V9T9R5. Case 109812. Expected RM 175.55. Net RM 147.48. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109812; Shopee case 26062501RTYQ6EQ; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+    &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 260623T3V9T9R5. Case 109812. Expected RM 175.55. Net RM 147.48. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260623T3V9T9R5. Case 109812. Expected RM 175.55. Net RM 147.48. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: &quot;pending_rr_submit_compensation&quot;,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:48:07.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;closed&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109812; Shopee case 26062501RTYQ6EQ; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 260623T3V9T9R5. Case 109812. Expected RM 175.55. Net RM 147.48. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260623T3V9T9R5. Case 109812. Expected RM 175.55. Net RM 147.48. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109812; Shopee case 26062501RTYQ6EQ; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+    &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 260623T3V9T9R5. Case 109812. Expected RM 175.55. Net RM 147.48. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+    &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260623T3V9T9R5. Case 109812. Expected RM 175.55. Net RM 147.48. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+    &quot;FBS webapp case 109812; Shopee case 26062501RTYQ6EQ; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 260623T3V9T9R5. Case 109812. Expected RM 175.55. Net RM 147.48. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260623T3V9T9R5. Case 109812. Expected RM 175.55. Net RM 147.48. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+  ],
+  &quot;claim_status&quot;: &quot;pending_rr_submit_compensation&quot;,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:47:37.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109812; Shopee case 26062501RTYQ6EQ; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+  &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 260623T3V9T9R5. Case 109812. Expected RM 175.55. Net RM 147.48. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+  &quot;CSRR FBS WALLET PAID 2026-09-14. Order 260623T3V9T9R5. Case 109812. Expected RM 175.55. Net RM 147.48. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;,
+  &quot;FBS webapp case 109812; Shopee case 26062501RTYQ6EQ; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 260623T3V9T9R5. Case 109812. Expected RM 175.55. Net RM 147.48. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.\r\nCSRR FBS WALLET PAID 2026-09-14. Order 260623T3V9T9R5. Case 109812. Expected RM 175.55. Net RM 147.48. Retained income and paid approved shipping adjustment are independently verified with no refund debit and terminal returns.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details>
+<details id="change-1433"><summary>2606252R00WKE0 | Luxbin | Shopee MY FBS | canonical_sheet_reconciliation</summary><p>Reason: Exact routine Sheet to webapp reconciliation with preserved history. Result: verified.</p><p>Before</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;pending_credited&quot;,
+  &quot;last_remark&quot;: &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 2606252R00WKE0. Case 109810. Expected RM 175.55. Net RM 153.55. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109810; Shopee case 2606300DVX50QDN; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+    &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 2606252R00WKE0. Case 109810. Expected RM 175.55. Net RM 153.55. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;
+  ],
+  &quot;claim_status&quot;: &quot;pending_rr_submit_compensation&quot;,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T12:48:08.000Z&quot;
+}</pre><p>After</p><pre>{
+  &quot;refund_state&quot;: null,
+  &quot;action&quot;: &quot;pending_credited&quot;,
+  &quot;last_remark&quot;: &quot;FBS webapp case 109810; Shopee case 2606300DVX50QDN; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 2606252R00WKE0. Case 109810. Expected RM 175.55. Net RM 153.55. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+  &quot;parsed_remarks&quot;: [
+    &quot;FBS webapp case 109810; Shopee case 2606300DVX50QDN; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+    &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 2606252R00WKE0. Case 109810. Expected RM 175.55. Net RM 153.55. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+    &quot;FBS webapp case 109810; Shopee case 2606300DVX50QDN; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 2606252R00WKE0. Case 109810. Expected RM 175.55. Net RM 153.55. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;
+  ],
+  &quot;claim_status&quot;: &quot;pending_rr_submit_compensation&quot;,
+  &quot;resolution_version&quot;: null,
+  &quot;updated_at&quot;: &quot;2026-09-14T13:47:42.000Z&quot;
+}</pre><p>Added or restored value</p><pre>[
+  &quot;FBS webapp case 109810; Shopee case 2606300DVX50QDN; status dispute_approved; not in FBS RR tab as of 2026-07-24&quot;,
+  &quot;CSRR FBS WALLET HOLD 2026-09-14. Order 2606252R00WKE0. Case 109810. Expected RM 175.55. Net RM 153.55. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;,
+  &quot;FBS webapp case 109810; Shopee case 2606300DVX50QDN; status dispute_approved; not in FBS RR tab as of 2026-07-24\r\nCSRR FBS WALLET HOLD 2026-09-14. Order 2606252R00WKE0. Case 109810. Expected RM 175.55. Net RM 153.55. Recorded product value is not fully recovered after all wallet deductions. Review the difference. No unpaid promise is inferred from this difference alone.&quot;
+]</pre><p>Evidence: C:\Users\tessf\code\codex-lab\.tmp-csrr-completion-20260914\fbs-patch-readback.json</p></details></html>
