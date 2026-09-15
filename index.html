@@ -12,13 +12,6 @@
     <span class="tag result-warn">PARTIAL</span>
   </div>
   <div class="entry-body">
-    <p><strong>ParcelClaim AM dependency chain:</strong> Stage 1 remains partial after attempt 11; Stages 2&ndash;5 were not started because the source hard gate is not met.</p>
-    <div class="field"><strong>Stage table:</strong> ParcelClaimAuto PARTIAL (17/18); TTParcelClaim NOT_RUN; TTParcelClaimCheck NOT_RUN; TikTok R/R Audit NOT_RUN; TikTok R/R Audit Check NOT_RUN.</div>
-    <div class="field"><strong>Before &rarr; after:</strong> source coverage 17/18 &rarr; 17/18; TikTok 15/15 &rarr; 15/15; Lazada 2/3 &rarr; 2/3; employee all-state dedupe 350 rows / 347 unique order IDs &rarr; 350 / 347; new creates 5 / RM645.81 &rarr; 5 / RM645.81; audit-remark PATCHes 5 HTTP 200 &rarr; 5 HTTP 200; customer messages, stock writes, marketplace writes, credentials, and Google actions 0 &rarr; 0.</div>
-    <div class="field"><strong>Shop / platform:</strong> TikTok MY/SG coverage complete across 15 canonical shops; Lazada das.nature/Profile 82 and Lovento/Profile 83 complete with zero candidates; Lazada MurahYa/Profile 81 remains unscanned on Lazada MY.</div>
-    <div class="field"><strong>Reason:</strong> Profile 81 remained on the Lazada Seller Center Login &amp; Sign up page after saved-password presence, four permitted alternating Enter/mouse Login submissions, and an exact Reverse Orders revisit.</div>
-    <div class="field"><strong>Evidence:</strong> parcelclaim-auto-report-2026-09-15.md; _codex_parcelclaim_auto_2026-09-15.json; attempt-11 fresh Profile 70 all-state preflight recorded at 18:59:54 MYT; runner log records Profile 81 lifecycle Inactive &rarr; Active &rarr; Inactive and all exact operational-lock releases at 19:01:46 MYT.</div>
-    <div class="field"><strong>Result / outstanding:</strong> LOGIN_REQUIRED_TWO_PROOFS on Profile 81/MurahYa. Preserve the five existing creates and resume only Profile 81 after fresh authenticated Reverse Orders proof; then run Stages 2&ndash;5 in order. No completed business write is to be replayed.</div>
 <!-- parcelclaim-chain:2026-09-15:start -->
 <section class="chain-day" data-chain-date="2026-09-15">
   <p><strong>15 September MYT &mdash; weekday ParcelClaim dependency chain:</strong> ParcelClaimAuto <code>PARTIAL</code>; TTParcelClaim <code>NOT_RUN</code>; TTParcelClaimCheck <code>NOT_RUN</code>; TikTok R/R Audit <code>NOT_RUN</code>; TikTok R/R Audit Check <code>NOT_RUN</code>. The Stage 1 hard gate did not pass, so no downstream settlement or audit ran.</p>
