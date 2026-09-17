@@ -1,0 +1,815 @@
+<!doctype html><html><meta charset="utf-8"><title>CheckSBVariation - 4 messages sent; 12 stock adjustments verified</title><style>body{font:15px system-ui;max-width:1400px;margin:30px auto;padding:0 20px;color:#17202a}table{border-collapse:collapse;width:100%;margin:20px 0}td,th{padding:9px;border:1px solid #bbb;text-align:left;vertical-align:top}pre{white-space:pre-wrap;overflow-wrap:anywhere}details{border:1px solid #ddd;padding:12px;margin:8px 0}summary{cursor:pointer;font-weight:600}</style><body><h1>CheckSBVariation - 4 messages sent; 12 stock adjustments verified</h1><pre># CheckSBVariation — 17 September 2026
+
+Completed operational scope: 50 exact orders, 108 exact inventory SKUs, 170 total webapp rows. 23 webapp rows changed and reloaded; CS Action 8 → 3, all remaining rows classified.
+
+- Four approved messages sent once and verified after reopening: two Kinata SG gold arches, TT Hiranai recovery, Lazada MurahYa umbrella.
+- Twelve verified stock adjustments SA-24046–SA-24057: 17 cleanup units and1 shipped accepted replacement. Nine cancellations reconciled. Protected quantities preserved.
+- MurahYa new holds BTDW-180CM Reserved4 and FTL-HH-5STEPS-BLK Reserved1 explicitly preserved for WH, alongside four earlier holds.
+- MY VM: three former pending rows are now contactSent=true; Luxbin actual bot contact, buyer WAIT and CS acknowledgement verified. 16Sep18:00 cycle MISSED, later22:12 SUCCESS has no per-order metrics. Six new rows await17Sep18:00; current eligible misses0.
+- Luxbin missing affected15L line restored alongside available20L line. TT restocked original OOS true→false; no false packing completion.
+
+Future monitoring
+- TT Hiranai 586027845275715329: original black striped top restored (9 sellable); WH must confirm packing and courier handover before 17 Sep23:59 platform deadline. Recovery message is sent; no replacement deduction is due.
+- Lazada umbrella 510027600453131: approved message sent; await buyer decision. Chess set stays available.
+- Two Kinata SG gold-arch buyers: contact completed; await replies.
+- Luxbin 260915346TF3BT: buyer chose WAIT; restock wait recorded on the affected15L dustbin line.
+- Six exact reserved holds remain preserved for WH checking; no repeat clearance prompt or current clearance action.
+- Existing Lazada chair509176846824141 remains on Patricia explicit hold; no follow-up action.
+- Kinata SG sweater26091428K446AS is shipped; no buyer acceptance proved. Reopen replacement review only if WH supplies actual packing evidence.
+- Six new Shopee MY rows are BOT_NOT_YET_DUE for17Sep18:00MYT. VM5 nightly cycle is future monitoring; current eligible missed contacts0.
+
+No active task action outstanding. No skipped required shop or login blocker. The existing Lazada chair and six reserved holds are explicit instructions, not missing work.
+
+Validation: all stock receipts, exact-message readbacks and final webapp differences verified. npm test results in npm-test.log; one unrelated missing WhatsApp watcher file fails the repository suite. Publication receipts are separate; closeout requires guarded private/public board and Profile70 direct/wrapper/asset readbacks.
+
+Every exact before/after value, reason, shop and platform is in final-audit.json, webapp-all-changes.json and checksbvariation-2026-09-17-audit.html. Raw evidence remains in this directory.
+</pre><h2>Stock changes</h2><table><thead><tr><th>Order / shop / platform</th><th>SKU @ warehouse</th><th>Before → after (SOH/Sellable/Reserved/Allocated/NonSellable/NSAllocated)</th><th>Reason / reference / result</th></tr></thead><tbody><tr><td>260913VVM3HTD8 / MasonGym / Shopee MY</td><td>GOLF-SWING-BAG-BLACK @2699</td><td>1/1/0/0/0/0 → 0/0/0/0/0/0; out_of_stock</td><td>cancellation-return; SA-24046; VERIFIED</td></tr><tr><td>260912T62S9237 / ValueSnap / Shopee MY</td><td>DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN @2699</td><td>2/1/1/0/0/0 → 1/0/1/0/0/0; out_of_stock</td><td>cancellation-return; SA-24047; VERIFIED</td></tr><tr><td>260913W11NGPUW / Hiranai / Shopee MY</td><td>SUIT-JACKET-WOMEN-BLACK-XL @2699</td><td>1/1/0/0/0/0 → 0/0/0/0/0/0; out_of_stock</td><td>cancellation-return; SA-24048; VERIFIED</td></tr><tr><td>260912S9U11MF7 / ValueSnap / Shopee MY</td><td>FOLDABLE-CLOTHES-RACK-NATURAL-50-44-90 @2699</td><td>2/2/0/0/0/0 → 0/0/0/0/0/0; out_of_stock</td><td>cancellation-return; SA-24049; VERIFIED</td></tr><tr><td>586021997827359994, 586017931314890654 / TT DasNature, TT Murahya / TikTok, TikTok</td><td>FFB-YELLOW @2699</td><td>8/3/5/0/0/0 → 5/0/5/0/0/0; out_of_stock</td><td>no-stock; SA-24050; VERIFIED</td></tr><tr><td>586001939757499616 / TT Hiranai / TikTok</td><td>KHK-CROPPED-LONGSLEEVE-2XL @2699</td><td>1/1/0/0/0/0 → 0/0/0/0/0/0; out_of_stock</td><td>cancellation-return; SA-24051; VERIFIED</td></tr><tr><td>586001939757499616 / TT Hiranai / TikTok</td><td>SHORT-TOP-LONGBLK @2699</td><td>85/85/0/0/0/0 → 84/84/0/0/0/0; available</td><td>cancellation-return; SA-24052; VERIFIED</td></tr><tr><td>260911QG2S2DGW / HiranaiSG / Shopee SG</td><td>MENS-CHELSEA-BOOTS-BRN-42 @2699</td><td>1/1/0/0/0/0 → 0/0/0/0/0/0; out_of_stock</td><td>cancellation-return; SA-24053; VERIFIED</td></tr><tr><td>510027600453131 / Laz MurahYa / Lazada</td><td>MINI-UPFU-BLK @2699</td><td>1/1/0/0/0/0 → 0/0/0/0/0/0; out_of_stock</td><td>no-stock; SA-24054; VERIFIED</td></tr><tr><td>260913VY36J1R5 / Murahya / Shopee MY</td><td>BTDW-180CM @2699</td><td>8/4/4/0/0/0 → 4/0/4/0/0/0; out_of_stock</td><td>no-stock; SA-24055; VERIFIED</td></tr><tr><td>260913VY36J1R5 / Murahya / Shopee MY</td><td>BTLW-180CM @2699</td><td>7/7/0/0/0/0 → 6/6/0/0/0/0; available</td><td>accepted-change; SA-24056; VERIFIED</td></tr><tr><td>260911P5YWP9XB / Karlmobel / Shopee MY</td><td>SPV-55W-2.8MPC @2699</td><td>2/1/1/0/0/0 → 1/0/1/0/0/0; out_of_stock</td><td>no-stock; SA-24057; VERIFIED</td></tr></tbody></table><h2>Exact reserved holds</h2><table><thead><tr><th>SKU</th><th>Reserved</th><th>Six buckets</th><th>Result</th></tr></thead><tbody><tr><td>FFB-YELLOW</td><td>5</td><td>5/0/5/0/0/0</td><td>PRESERVED_FOR_WH_CHECK</td></tr><tr><td>SPV-55W-2.8MPC</td><td>1</td><td>1/0/1/0/0/0</td><td>PRESERVED_FOR_WH_CHECK</td></tr><tr><td>FC-WHTM-CHNUP</td><td>1</td><td>1/0/1/0/0/0</td><td>PRESERVED_FOR_WH_CHECK</td></tr><tr><td>DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN</td><td>1</td><td>1/0/1/0/0/0</td><td>PRESERVED_FOR_WH_CHECK</td></tr><tr><td>BTDW-180CM</td><td>4</td><td>4/0/4/0/0/0</td><td>PRESERVED_FOR_WH_CHECK</td></tr><tr><td>FTL-HH-5STEPS-BLK</td><td>1</td><td>1/0/1/0/0/0</td><td>PRESERVED_FOR_WH_CHECK</td></tr></tbody></table><h2>Buyer messages</h2><details><summary>Kinata SG / 2609177YJ5RY1W — SENT_ONCE_REOPENED_VERIFIED</summary><pre>Hi Boss, gold arch backdrop stand, 1.5M x 2M Restock is estimated in about 1 month. If you&#39;re okay to wait, reply WAIT and we&#39;ll ship once it&#39;s available. If you&#39;d like to change to another variation, just let us know and we&#39;ll help arrange it. Otherwise, please manage the order from your Order Details. Once a request comes through, I&#39;ll handle it immediately.
+
+Hi boss, st0k untuk gold arch backdrop stand, 1.5M x 2M dijangka rest0ck dalam lebih kurang 1 bulan. Jika boss okay untuk tunggu, reply WAIT/TUNGGU dan kami akan h4ntar selepas stok tersedia. Jika boss nak tuk4r kepada variation lain, boleh maklumkan kepada kami dan kami akan bantu arrange. Jika tidak, boss boleh uruskan pesanan melalui Order Details . Bila request sudah masuk, saya akan proses segera.</pre><p>sg-reopened-2609177YJ5RY1W.json</p></details><details><summary>Kinata SG / 2609167PX2036H — SENT_ONCE_REOPENED_VERIFIED</summary><pre>Hi Boss, gold arch backdrop stand, 1.5M x 2M Restock is estimated in about 1 month. If you&#39;re okay to wait, reply WAIT and we&#39;ll ship once it&#39;s available. If you&#39;d like to change to another variation, just let us know and we&#39;ll help arrange it. Otherwise, please manage the order from your Order Details. Once a request comes through, I&#39;ll handle it immediately.
+
+Hi boss, st0k untuk gold arch backdrop stand, 1.5M x 2M dijangka rest0ck dalam lebih kurang 1 bulan. Jika boss okay untuk tunggu, reply WAIT/TUNGGU dan kami akan h4ntar selepas stok tersedia. Jika boss nak tuk4r kepada variation lain, boleh maklumkan kepada kami dan kami akan bantu arrange. Jika tidak, boss boleh uruskan pesanan melalui Order Details . Bila request sudah masuk, saya akan proses segera.</pre><p>sg-reopened-2609167PX2036H.json</p></details><details><summary>TT Hiranai / 586027845275715329 — SENT_ONCE_REOPENED_VERIFIED</summary><pre>Hi boss, ignore message above, got st0ck, we will s3nt.</pre><p>tiktok65-send/verified.json</p></details><details><summary>Laz MurahYa / 510027600453131 — SENT_ONCE_REOPENED_VERIFIED</summary><pre>Hi Boss, black mini umbrella (MINI-UPFU-BLK), 1 unit Restock is estimated in about 1 month. If you&#39;re okay to wait, reply WAIT and we&#39;ll ship once it&#39;s available. If you&#39;d like to change to another variation, just let us know and we&#39;ll help arrange it. Otherwise, please manage the order from your Order Details. Once a request comes through, I&#39;ll handle it immediately.
+
+Hi boss, st0k untuk black mini umbrella (MINI-UPFU-BLK), 1 unit dijangka rest0ck dalam lebih kurang 1 bulan. Jika boss okay untuk tunggu, reply WAIT/TUNGGU dan kami akan h4ntar selepas stok tersedia. Jika boss nak tuk4r kepada variation lain, boleh maklumkan kepada kami dan kami akan bantu arrange. Jika tidak, boss boleh uruskan pesanan melalui Order Details . Bila request sudah masuk, saya akan proses segera.</pre><p>lazada-send-verified.json</p></details><h2>All webapp changes with exact before and after</h2><details><summary>Kinata SG / Shopee SG / 2609177YJ5RY1W</summary><p>17 Sep2026 CURRENT: CUSTOMER CONTACT SENT: exact approved bilingual no-stock message for gold arch backdrop stand1.5M x2M sent once17Sep and verified in reopened Kinata SG buyer thread. Await buyer response. Original WEDDING-ARCH-FRAME-GLD-1-5M-2M-SG remains0/0/0/0/0/0 OOS atWH6664. Proof: sg-reopened-2609177YJ5RY1W.json.</p><pre>{
+  &quot;sku&quot;: {
+    &quot;before&quot;: [],
+    &quot;after&quot;: [
+      &quot;WEDDING-ARCH-FRAME-GLD-1-5M-2M-SG&quot;
+    ]
+  },
+  &quot;productName&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Arch Backdrop Stand Metal Wedding Birthday Decoration Flower Stand Outdoor Balloon Arch Party Decoration Square Gold&quot;
+    ]
+  },
+  &quot;stockSetOos&quot;: {
+    &quot;before&quot;: false,
+    &quot;after&quot;: true
+  },
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: CUSTOMER CONTACT SENT: exact approved bilingual no-stock message for gold arch backdrop stand1.5M x2M sent once17Sep and verified in reopened Kinata SG buyer thread. Await buyer response. Original WEDDING-ARCH-FRAME-GLD-1-5M-2M-SG remains0/0/0/0/0/0 OOS atWH6664. Proof: sg-reopened-2609177YJ5RY1W.json.\n\nPrior audit:\n17 Sep2026 CURRENT: Exact ordered products/variations recovered from live SiteGiant marketplace order: WEDDING-ARCH-FRAME-GLD-1-5M-2M-SG x1 (Variation : 1.5M x 2M Gold). Customer contact check pending exact shop/order thread. contactSent remains false until prior contact or an approved send is verified. WEDDING-ARCH-FRAME-GLD-1-5M-2M-SG @WH6664 0/0/0/0/0/0 out_of_stock.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;whConfirmStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Pending WH Confirm&quot;
+    ]
+  },
+  &quot;stockAdjustmentStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Not Required&quot;
+    ]
+  },
+  &quot;contactSent&quot;: {
+    &quot;before&quot;: false,
+    &quot;after&quot;: true
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>Kinata SG / Shopee SG / 2609167PX2036H</summary><p>17 Sep2026 CURRENT: CUSTOMER CONTACT SENT: exact approved bilingual no-stock message for gold arch backdrop stand1.5M x2M sent once17Sep and verified in reopened Kinata SG buyer thread. Await buyer response. Original WEDDING-ARCH-FRAME-GLD-1-5M-2M-SG remains0/0/0/0/0/0 OOS atWH6664. Proof: sg-reopened-2609167PX2036H.json.</p><pre>{
+  &quot;sku&quot;: {
+    &quot;before&quot;: [],
+    &quot;after&quot;: [
+      &quot;WEDDING-ARCH-FRAME-GLD-1-5M-2M-SG&quot;
+    ]
+  },
+  &quot;productName&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Arch Backdrop Stand Metal Wedding Birthday Decoration Flower Stand Outdoor Balloon Arch Party Decoration Square Gold&quot;
+    ]
+  },
+  &quot;stockSetOos&quot;: {
+    &quot;before&quot;: false,
+    &quot;after&quot;: true
+  },
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: CUSTOMER CONTACT SENT: exact approved bilingual no-stock message for gold arch backdrop stand1.5M x2M sent once17Sep and verified in reopened Kinata SG buyer thread. Await buyer response. Original WEDDING-ARCH-FRAME-GLD-1-5M-2M-SG remains0/0/0/0/0/0 OOS atWH6664. Proof: sg-reopened-2609167PX2036H.json.\n\nPrior audit:\n17 Sep2026 CURRENT: Exact ordered products/variations recovered from live SiteGiant marketplace order: WEDDING-ARCH-FRAME-GLD-1-5M-2M-SG x1 (Variation : 1.5M x 2M Gold). Customer contact check pending exact shop/order thread. contactSent remains false until prior contact or an approved send is verified. WEDDING-ARCH-FRAME-GLD-1-5M-2M-SG @WH6664 0/0/0/0/0/0 out_of_stock.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;whConfirmStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Pending WH Confirm&quot;
+    ]
+  },
+  &quot;stockAdjustmentStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Not Required&quot;
+    ]
+  },
+  &quot;contactSent&quot;: {
+    &quot;before&quot;: false,
+    &quot;after&quot;: true
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>Laz MurahYa / Lazada / 510027600453131</summary><p>17 Sep2026 CURRENT: CUSTOMER CONTACT SENT: black mini umbrella MINI-UPFU-BLK x1 no stock. Exact approved bilingual message sent once17Sep13:22 to Lazada buyer1053131/Richa Chouksey; fresh reopened chat verifies full message once. Await buyer response. Umbrella0/0/0/0/0/0 OOS afterSA-24054. The later WH no-stock case17Sep supersedes the earlier platform Packed event16Sep; no false completion inferred.
+17 Sep2026 CURRENT: CHESS SET AVAILABLE: CHESS-SET-W29CM x1 is the unaffected order line. Buyer message refers only to the black mini umbrella. No inventory deduction or no-stock flag applied to the chess set.</p><pre>{
+  &quot;sku&quot;: {
+    &quot;before&quot;: [],
+    &quot;after&quot;: [
+      &quot;MINI-UPFU-BLK&quot;,
+      &quot;CHESS-SET-W29CM&quot;
+    ]
+  },
+  &quot;productName&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Mini Umbrella Payung Mini Flat Sun Proof Umbrella Black Glue Sunscreen Anti-Ultraviolet Umbrella Payung Beg Mulut Lipat&quot;,
+      &quot;Papan Catur Wooden Chess Board Set Premium Magnetic Folding Potable Chess Board Papan Catur Kayu Chess Set Tournament Size Magnet&quot;
+    ]
+  },
+  &quot;stockSetOos&quot;: {
+    &quot;before&quot;: false,
+    &quot;after&quot;: [
+      true,
+      false
+    ]
+  },
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: CUSTOMER CONTACT SENT: black mini umbrella MINI-UPFU-BLK x1 no stock. Exact approved bilingual message sent once17Sep13:22 to Lazada buyer1053131/Richa Chouksey; fresh reopened chat verifies full message once. Await buyer response. Umbrella0/0/0/0/0/0 OOS afterSA-24054. The later WH no-stock case17Sep supersedes the earlier platform Packed event16Sep; no false completion inferred.\n\nPrior audit:\n17 Sep2026 CURRENT: Exact ordered products/variations recovered from live SiteGiant marketplace order: MINI-UPFU-BLK x1 (Color : Black); CHESS-SET-W29CM x1 (Color : Wooden (29 x 29cm)). Customer contact check pending exact shop/order thread. contactSent remains false until prior contact or an approved send is verified. MINI-UPFU-BLK @WH2699 0/0/0/0/0/0 out_of_stock. no-stock: MINI-UPFU-BLK 1/1/0/0/0/0 -&gt; 0/0/0/0/0/0; SA-24054 exact saved readback verified.\n\nPrior audit:&quot;,
+      &quot;17 Sep2026 CURRENT: CHESS SET AVAILABLE: CHESS-SET-W29CM x1 is the unaffected order line. Buyer message refers only to the black mini umbrella. No inventory deduction or no-stock flag applied to the chess set.\n\nPrior audit:\n17 Sep2026 CURRENT: Exact ordered products/variations recovered from live SiteGiant marketplace order: MINI-UPFU-BLK x1 (Color : Black); CHESS-SET-W29CM x1 (Color : Wooden (29 x 29cm)). Customer contact check pending exact shop/order thread. contactSent remains false until prior contact or an approved send is verified. CHESS-SET-W29CM @WH2699 102/99/2/0/1/0 available.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;caseType&quot;: {
+    &quot;before&quot;: &quot;No Stock&quot;,
+    &quot;after&quot;: [
+      &quot;No Stock&quot;,
+      &quot;Available&quot;
+    ]
+  },
+  &quot;stockId&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;SA-24054&quot;,
+      &quot;&quot;
+    ]
+  },
+  &quot;stockUrl&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/10797926/edit&quot;,
+      &quot;&quot;
+    ]
+  },
+  &quot;whConfirmStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Pending WH Confirm&quot;,
+      &quot;Not Required&quot;
+    ]
+  },
+  &quot;stockAdjustmentStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Not Required&quot;,
+      &quot;Not Required&quot;
+    ]
+  },
+  &quot;contactSent&quot;: {
+    &quot;before&quot;: false,
+    &quot;after&quot;: true
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>ValueSnap / Shopee MY / 26091553AGY3AC</summary><p>17 Sep2026 CURRENT: Exact ordered products/variations recovered from live SiteGiant marketplace order: DIGITAL-CAMERA-PINK x1 (Variation : Pixel Pro - Pink). BOT_NOT_YET_DUE: this case was created17Sep after the last scheduled18:00MYT cycle16Sep. VM5 enabled; next cycle17Sep18:00MYT. No manual MY message. DIGITAL-CAMERA-PINK @WH2699 0/0/0/0/0/0 out_of_stock.</p><pre>{
+  &quot;sku&quot;: {
+    &quot;before&quot;: [],
+    &quot;after&quot;: [
+      &quot;DIGITAL-CAMERA-PINK&quot;
+    ]
+  },
+  &quot;productName&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Digital Camera 4K 48MP Photography Camera Rechargeable Cameras 2.4 inch 180° Flip Screen Selfile Camera&quot;
+    ]
+  },
+  &quot;stockSetOos&quot;: {
+    &quot;before&quot;: false,
+    &quot;after&quot;: true
+  },
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: Exact ordered products/variations recovered from live SiteGiant marketplace order: DIGITAL-CAMERA-PINK x1 (Variation : Pixel Pro - Pink). BOT_NOT_YET_DUE: this case was created17Sep after the last scheduled18:00MYT cycle16Sep. VM5 enabled; next cycle17Sep18:00MYT. No manual MY message. DIGITAL-CAMERA-PINK @WH2699 0/0/0/0/0/0 out_of_stock.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;whConfirmStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Pending WH Confirm&quot;
+    ]
+  },
+  &quot;stockAdjustmentStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Not Adjusted&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>MurahYa / Shopee MY / 2609142CDPJM37</summary><p>17 Sep2026 CURRENT: PATRICIA EXPLICIT HOLD: Keep reserved units for WH check. FTL-HH-5STEPS-BLK Reserved1, SOH1, Sellable0. The held SKU quantity is shared across the three cases, not one reserved unit per order. Preserve the reserved quantity; no all-zero clearance. Exclude this hold from current clearance actions and repeated approval requests. Reopen only on new WH-check evidence and Patricia&#39;s exact clearance instruction.</p><pre>{
+  &quot;sku&quot;: {
+    &quot;before&quot;: [],
+    &quot;after&quot;: [
+      &quot;FTL-HH-5STEPS-BLK&quot;
+    ]
+  },
+  &quot;productName&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Tangga Lipat Ladder Heavy Duty Foldable Ladder Stool 2 in 1 Household 3/4/5 Steps Carbon Steel ladder tahan lama&quot;
+    ]
+  },
+  &quot;stockSetOos&quot;: {
+    &quot;before&quot;: false,
+    &quot;after&quot;: true
+  },
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: PATRICIA EXPLICIT HOLD: Keep reserved units for WH check. FTL-HH-5STEPS-BLK Reserved1, SOH1, Sellable0. The held SKU quantity is shared across the three cases, not one reserved unit per order. Preserve the reserved quantity; no all-zero clearance. Exclude this hold from current clearance actions and repeated approval requests. Reopen only on new WH-check evidence and Patricia&#39;s exact clearance instruction.\n\nPrior audit:\n17 Sep2026 CURRENT: Exact ordered products/variations recovered from live SiteGiant marketplace order: FTL-HH-5STEPS-BLK x1 (Variation : Black - 5 steps). BOT_NOT_YET_DUE: this case was created17Sep after the last scheduled18:00MYT cycle16Sep. VM5 enabled; next cycle17Sep18:00MYT. No manual MY message. FTL-HH-5STEPS-BLK remains1/0/1/0/0/0 OOS: Sellable0; Reserved1 preserved pending WH check and exact clearance approval. FTL-HH-5STEPS-BLK @WH2699 1/0/1/0/0/0 out_of_stock.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;whConfirmStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Pending WH Confirm&quot;
+    ]
+  },
+  &quot;stockAdjustmentStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Not Required&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>MurahYa / Shopee MY / 260914212F4MB6</summary><p>17 Sep2026 CURRENT: PATRICIA EXPLICIT HOLD: Keep reserved units for WH check. FTL-HH-5STEPS-BLK Reserved1, SOH1, Sellable0. The held SKU quantity is shared across the three cases, not one reserved unit per order. Preserve the reserved quantity; no all-zero clearance. Exclude this hold from current clearance actions and repeated approval requests. Reopen only on new WH-check evidence and Patricia&#39;s exact clearance instruction.</p><pre>{
+  &quot;sku&quot;: {
+    &quot;before&quot;: [],
+    &quot;after&quot;: [
+      &quot;FTL-HH-5STEPS-BLK&quot;
+    ]
+  },
+  &quot;productName&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Tangga Lipat Ladder Heavy Duty Foldable Ladder Stool 2 in 1 Household 3/4/5 Steps Carbon Steel ladder tahan lama&quot;
+    ]
+  },
+  &quot;stockSetOos&quot;: {
+    &quot;before&quot;: false,
+    &quot;after&quot;: true
+  },
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: PATRICIA EXPLICIT HOLD: Keep reserved units for WH check. FTL-HH-5STEPS-BLK Reserved1, SOH1, Sellable0. The held SKU quantity is shared across the three cases, not one reserved unit per order. Preserve the reserved quantity; no all-zero clearance. Exclude this hold from current clearance actions and repeated approval requests. Reopen only on new WH-check evidence and Patricia&#39;s exact clearance instruction.\n\nPrior audit:\n17 Sep2026 CURRENT: Exact ordered products/variations recovered from live SiteGiant marketplace order: FTL-HH-5STEPS-BLK x1 (Variation : Black - 5 steps). BOT_NOT_YET_DUE: this case was created17Sep after the last scheduled18:00MYT cycle16Sep. VM5 enabled; next cycle17Sep18:00MYT. No manual MY message. FTL-HH-5STEPS-BLK remains1/0/1/0/0/0 OOS: Sellable0; Reserved1 preserved pending WH check and exact clearance approval. FTL-HH-5STEPS-BLK @WH2699 1/0/1/0/0/0 out_of_stock.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;whConfirmStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Pending WH Confirm&quot;
+    ]
+  },
+  &quot;stockAdjustmentStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Not Required&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>MurahYa / Shopee MY / 2609154GD4XC9X</summary><p>17 Sep2026 CURRENT: PATRICIA EXPLICIT HOLD: Keep reserved units for WH check. FTL-HH-5STEPS-BLK Reserved1, SOH1, Sellable0. The held SKU quantity is shared across the three cases, not one reserved unit per order. Preserve the reserved quantity; no all-zero clearance. Exclude this hold from current clearance actions and repeated approval requests. Reopen only on new WH-check evidence and Patricia&#39;s exact clearance instruction.</p><pre>{
+  &quot;sku&quot;: {
+    &quot;before&quot;: [],
+    &quot;after&quot;: [
+      &quot;FTL-HH-5STEPS-BLK&quot;
+    ]
+  },
+  &quot;productName&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Tangga Lipat Ladder Heavy Duty Foldable Ladder Stool 2 in 1 Household 3/4/5 Steps Carbon Steel ladder tahan lama&quot;
+    ]
+  },
+  &quot;stockSetOos&quot;: {
+    &quot;before&quot;: false,
+    &quot;after&quot;: true
+  },
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: PATRICIA EXPLICIT HOLD: Keep reserved units for WH check. FTL-HH-5STEPS-BLK Reserved1, SOH1, Sellable0. The held SKU quantity is shared across the three cases, not one reserved unit per order. Preserve the reserved quantity; no all-zero clearance. Exclude this hold from current clearance actions and repeated approval requests. Reopen only on new WH-check evidence and Patricia&#39;s exact clearance instruction.\n\nPrior audit:\n17 Sep2026 CURRENT: Exact ordered products/variations recovered from live SiteGiant marketplace order: FTL-HH-5STEPS-BLK x1 (Variation : Black - 5 steps). BOT_NOT_YET_DUE: this case was created17Sep after the last scheduled18:00MYT cycle16Sep. VM5 enabled; next cycle17Sep18:00MYT. No manual MY message. FTL-HH-5STEPS-BLK remains1/0/1/0/0/0 OOS: Sellable0; Reserved1 preserved pending WH check and exact clearance approval. FTL-HH-5STEPS-BLK @WH2699 1/0/1/0/0/0 out_of_stock.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;whConfirmStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Pending WH Confirm&quot;
+    ]
+  },
+  &quot;stockAdjustmentStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Not Required&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>ValueSnap / Shopee MY / 26091556FGXAJS</summary><p>17 Sep2026 CURRENT: Exact ordered products/variations recovered from live SiteGiant marketplace order: PORTABLE-ALARM-CLOCK-BLACK x1 (Variation : Black White Upgrade). BOT_NOT_YET_DUE: this case was created17Sep after the last scheduled18:00MYT cycle16Sep. VM5 enabled; next cycle17Sep18:00MYT. No manual MY message. PORTABLE-ALARM-CLOCK-BLACK @WH2699 0/0/0/0/0/0 out_of_stock.</p><pre>{
+  &quot;sku&quot;: {
+    &quot;before&quot;: [],
+    &quot;after&quot;: [
+      &quot;PORTABLE-ALARM-CLOCK-BLACK&quot;
+    ]
+  },
+  &quot;productName&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Alarm Digital Clock Jam Loceng Alarm Kuat Jam Digital Meja Alarm Clock Loud Sound For Kids Jam Tidur Alarm Bunyi Kuat&quot;
+    ]
+  },
+  &quot;stockSetOos&quot;: {
+    &quot;before&quot;: false,
+    &quot;after&quot;: true
+  },
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: Exact ordered products/variations recovered from live SiteGiant marketplace order: PORTABLE-ALARM-CLOCK-BLACK x1 (Variation : Black White Upgrade). BOT_NOT_YET_DUE: this case was created17Sep after the last scheduled18:00MYT cycle16Sep. VM5 enabled; next cycle17Sep18:00MYT. No manual MY message. PORTABLE-ALARM-CLOCK-BLACK @WH2699 0/0/0/0/0/0 out_of_stock.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;whConfirmStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Pending WH Confirm&quot;
+    ]
+  },
+  &quot;stockAdjustmentStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Not Adjusted&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>ValueSnap / Shopee MY / 2609154XJ6PY4Y</summary><p>17 Sep2026 CURRENT: Exact ordered products/variations recovered from live SiteGiant marketplace order: PORTABLE-ALARM-CLOCK-BLACK x1 (Variation : Black White Upgrade). BOT_NOT_YET_DUE: this case was created17Sep after the last scheduled18:00MYT cycle16Sep. VM5 enabled; next cycle17Sep18:00MYT. No manual MY message. PORTABLE-ALARM-CLOCK-BLACK @WH2699 0/0/0/0/0/0 out_of_stock.</p><pre>{
+  &quot;sku&quot;: {
+    &quot;before&quot;: [],
+    &quot;after&quot;: [
+      &quot;PORTABLE-ALARM-CLOCK-BLACK&quot;
+    ]
+  },
+  &quot;productName&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Alarm Digital Clock Jam Loceng Alarm Kuat Jam Digital Meja Alarm Clock Loud Sound For Kids Jam Tidur Alarm Bunyi Kuat&quot;
+    ]
+  },
+  &quot;stockSetOos&quot;: {
+    &quot;before&quot;: false,
+    &quot;after&quot;: true
+  },
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: Exact ordered products/variations recovered from live SiteGiant marketplace order: PORTABLE-ALARM-CLOCK-BLACK x1 (Variation : Black White Upgrade). BOT_NOT_YET_DUE: this case was created17Sep after the last scheduled18:00MYT cycle16Sep. VM5 enabled; next cycle17Sep18:00MYT. No manual MY message. PORTABLE-ALARM-CLOCK-BLACK @WH2699 0/0/0/0/0/0 out_of_stock.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;whConfirmStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Pending WH Confirm&quot;
+    ]
+  },
+  &quot;stockAdjustmentStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Not Adjusted&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>Luxbin / Shopee MY / 260915346TF3BT</summary><p>17 Sep2026 CURRENT: BUYER CHOSE WAIT: Luxbin / Capsule15L black dustbin, affected1 of2 ordered. Exact live buyer jennhao1998 replied Wait16Sep23:32; CS acknowledged17Sep10:04 that restock is about1 month. VM/bot no-stock message visible16Sep14:25. Restored missing original15L line from exact marketplace order and retained affectedQty1. Current order Processed; original0/0/0/0/0/0 OOS. UI has no WAIT buyer-decision option (only Cancelled/Accept Change/Accept Partial/Other), so buyer decision stays empty and truthful wait is recorded here; no Other escalation.
+17 Sep2026 CURRENT: AVAILABLE UNAFFECTED LINE: Capsule20L black dustbin x1. Exact marketplace order contains this line alongside two15L units. SiteGiant item remains Available; preserve its false OOS flag. No no-stock cleanup or replacement deduction applied to this line.</p><pre>{
+  &quot;sku&quot;: {
+    &quot;before&quot;: [
+      &quot;COVERED-ROLLING-TRASH-BIN-BLK-20L&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;COVERED-ROLLING-TRASH-BIN-BLK-15L&quot;,
+      &quot;COVERED-ROLLING-TRASH-BIN-BLK-20L&quot;
+    ]
+  },
+  &quot;productName&quot;: {
+    &quot;before&quot;: [
+      &quot;Dustbin Tong Sampah Dapur 15L 20L Covered Swing Lid Open Top With Wheels Kitchen Dustbin&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;Dustbin Tong Sampah Dapur 15L 20L Covered Swing Lid Open Top With Wheels Kitchen Dustbin&quot;,
+      &quot;Dustbin Tong Sampah Dapur 15L 20L Covered Swing Lid Open Top With Wheels Kitchen Dustbin&quot;
+    ]
+  },
+  &quot;stockSetOos&quot;: {
+    &quot;before&quot;: true,
+    &quot;after&quot;: [
+      true,
+      false
+    ]
+  },
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: BUYER CHOSE WAIT: Luxbin / Capsule15L black dustbin, affected1 of2 ordered. Exact live buyer jennhao1998 replied Wait16Sep23:32; CS acknowledged17Sep10:04 that restock is about1 month. VM/bot no-stock message visible16Sep14:25. Restored missing original15L line from exact marketplace order and retained affectedQty1. Current order Processed; original0/0/0/0/0/0 OOS. UI has no WAIT buyer-decision option (only Cancelled/Accept Change/Accept Partial/Other), so buyer decision stays empty and truthful wait is recorded here; no Other escalation.\n\nPrior audit:&quot;,
+      &quot;17 Sep2026 CURRENT: AVAILABLE UNAFFECTED LINE: Capsule20L black dustbin x1. Exact marketplace order contains this line alongside two15L units. SiteGiant item remains Available; preserve its false OOS flag. No no-stock cleanup or replacement deduction applied to this line.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;caseType&quot;: {
+    &quot;before&quot;: [
+      &quot;Available&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;No Stock&quot;,
+      &quot;Available&quot;
+    ]
+  },
+  &quot;whConfirmStatus&quot;: {
+    &quot;before&quot;: [
+      &quot;Not Required&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;Pending WH Confirm&quot;,
+      &quot;Not Required&quot;
+    ]
+  },
+  &quot;stockAdjustmentStatus&quot;: {
+    &quot;before&quot;: [
+      &quot;Not Required&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;Not Required&quot;,
+      &quot;Not Required&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>Murahya / Shopee MY / 260913VY36J1R5</summary><p>17 Sep2026 CURRENT: PATRICIA EXPLICIT HOLD: Keep reserved units for WH check. BTDW-180CM Reserved4, SOH4, Sellable0. Original sellable cleanup SA-24055 and accepted BTLW-180CM x1 deduction SA-24056 remain verified. Preserve the reserved quantity; no all-zero clearance. Exclude this hold from current clearance actions and repeated approval requests. Reopen only on new WH-check evidence and Patricia&#39;s exact clearance instruction.</p><pre>{
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: PATRICIA EXPLICIT HOLD: Keep reserved units for WH check. BTDW-180CM Reserved4, SOH4, Sellable0. Original sellable cleanup SA-24055 and accepted BTLW-180CM x1 deduction SA-24056 remain verified. Preserve the reserved quantity; no all-zero clearance. Exclude this hold from current clearance actions and repeated approval requests. Reopen only on new WH-check evidence and Patricia&#39;s exact clearance instruction.\n\nPrior audit:\n17 Sep2026 CURRENT: COMPLETED ACCEPTED CHANGE: BTLW-180CM x1 accepted; live order Shipped atWH2699. New Ship By17Sep and exact order-linked SA-24056 prove the deduction; guard passed. Original BTDW-180CM remaining4/0/4/0/0/0 OOS: Reserved4 preserved; exact reserved clearance approval still needed. BTDW-180CM @WH2699 4/0/4/0/0/0 out_of_stock. no-stock: BTDW-180CM 8/4/4/0/0/0 -&gt; 4/0/4/0/0/0; SA-24055 exact saved readback verified. accepted-change: BTLW-180CM 7/7/0/0/0/0 -&gt; 6/6/0/0/0/0; SA-24056 exact saved readback verified.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;stockId&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;SA-24055 | SA-24056&quot;
+    ]
+  },
+  &quot;stockUrl&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/10797927/edit | https://sitegiant.co/inventory-adjustment/stock-adjustment/10797929/edit&quot;
+    ]
+  },
+  &quot;whConfirmStatus&quot;: {
+    &quot;before&quot;: [
+      &quot;Pending WH Confirm&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;WH Confirmed Can Pack&quot;
+    ]
+  },
+  &quot;stockAdjustmentStatus&quot;: {
+    &quot;before&quot;: [
+      &quot;Not Adjusted&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;Adjusted&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>Kinata SG / Shopee SG / 26091428K446AS</summary><p>17 Sep2026 CURRENT: SHIPPED: exact Kinata SG order is Shipped/TO_CONFIRM_RECEIVE. Original MENS-WOOL-SWEATER-HAQ-M165-SG is0/OOS atWH6664 after warehouse SA-24003. Exact buyer thread shows the15Sep navy replacement offer and CS follow-up, but no visible buyer acceptance. No accepted SKU or buyer decision invented; no replacement deduction is proven due from these records. Preserve offer/contact history and await WH packing confirmation if a replacement was actually used.</p><pre>{
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: [
+      &quot;15 Sep 2026 CURRENT: CONTACT SENT ONCE AND REOPENED CHAT VERIFIED at 12:00:47 MYT. Kinata SG / kinnysla / order 26091428K446AS: Round Neck-Ha Blue sweater size M x1 unavailable; offered Round Neck-Navy size M x1 using approved bilingual Offer Change template. No buyer response in the 12:01 MYT reopened transcript; awaiting buyer decision. Exact seller message 2435708649246982513 in Kinata conversation 611186930378550164. SiteGiant evidence checked at 11:57 MYT: order Processed / PROCESSED, shipment warehouse 6664; platform ship-by 15 Sep 2026 14:00 MYT. Original MENS-WOOL-SWEATER-HAQ-M165-SG is Out Of Stock with SOH/Sellable/Reserved/Allocated/Non-sellable/Non-sellable allocated 9/9/0/0/0/0: System Stock Mismatch Found, requires WH check. Alternative MENS-WOOL-SWEATER-NAVY-M165-SG is Available, 2/2/0/0/0/0. No inventory write or accepted-change deduction. Patricia explicitly holds board publication. Evidence: kinata-contact-verified.json, kinata-chat-reopened.json, kinata-order-inventory.json.&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: SHIPPED: exact Kinata SG order is Shipped/TO_CONFIRM_RECEIVE. Original MENS-WOOL-SWEATER-HAQ-M165-SG is0/OOS atWH6664 after warehouse SA-24003. Exact buyer thread shows the15Sep navy replacement offer and CS follow-up, but no visible buyer acceptance. No accepted SKU or buyer decision invented; no replacement deduction is proven due from these records. Preserve offer/contact history and await WH packing confirmation if a replacement was actually used.\n\nPrior audit:\n15 Sep 2026 CURRENT: CONTACT SENT ONCE AND REOPENED CHAT VERIFIED at 12:00:47 MYT. Kinata SG / kinnysla / order 26091428K446AS: Round Neck-Ha Blue sweater size M x1 unavailable; offered Round Neck-Navy size M x1 using approved bilingual Offer Change template. No buyer response in the 12:01 MYT reopened transcript; awaiting buyer decision. Exact seller message 2435708649246982513 in Kinata conversation 611186930378550164. SiteGiant evidence checked at 11:57 MYT: order Processed / PROCESSED, shipment warehouse 6664; platform ship-by 15 Sep 2026 14:00 MYT. Original MENS-WOOL-SWEATER-HAQ-M165-SG is Out Of Stock with SOH/Sellable/Reserved/Allocated/Non-sellable/Non-sellable allocated 9/9/0/0/0/0: System Stock Mismatch Found, requires WH check. Alternative MENS-WOOL-SWEATER-NAVY-M165-SG is Available, 2/2/0/0/0/0. No inventory write or accepted-change deduction. Patricia explicitly holds board publication. Evidence: kinata-contact-verified.json, kinata-chat-reopened.json, kinata-order-inventory.json.&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>MasonGym / Shopee MY / 260913VVM3HTD8</summary><p>17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. GOLF-SWING-BAG-BLACK @WH2699 0/0/0/0/0/0 out_of_stock. cancellation-return: GOLF-SWING-BAG-BLACK 1/1/0/0/0/0 -&gt; 0/0/0/0/0/0; SA-24046 exact saved readback verified.</p><pre>{
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: [
+      &quot;15 Sep2026 CURRENT: Original products and variations verified from the exact live SiteGiant order. GOLF-SWING-BAG-BLACK x1 (Variation : Black). BOT_NOT_YET_DUE: created after14Sep18:00MYT; next VM5 cycle15Sep18:00MYT. The14Sep scheduled cycle was MISSED and Patricia already reported it to IT. Contact remainsfalse; no manual MY send. GOLF-SWING-BAG-BLACK @WH2699 0/0/0/0/0/0 out_of_stock. Fully zero; no inventory write needed.\n\nPrior audit:&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. GOLF-SWING-BAG-BLACK @WH2699 0/0/0/0/0/0 out_of_stock. cancellation-return: GOLF-SWING-BAG-BLACK 1/1/0/0/0/0 -&gt; 0/0/0/0/0/0; SA-24046 exact saved readback verified.\n\nPrior audit:\n15 Sep2026 CURRENT: Original products and variations verified from the exact live SiteGiant order. GOLF-SWING-BAG-BLACK x1 (Variation : Black). BOT_NOT_YET_DUE: created after14Sep18:00MYT; next VM5 cycle15Sep18:00MYT. The14Sep scheduled cycle was MISSED and Patricia already reported it to IT. Contact remainsfalse; no manual MY send. GOLF-SWING-BAG-BLACK @WH2699 0/0/0/0/0/0 out_of_stock. Fully zero; no inventory write needed.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;stockId&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;SA-24046&quot;
+    ]
+  },
+  &quot;stockUrl&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/10797910/edit&quot;
+    ]
+  },
+  &quot;buyerDecision&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Cancelled&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>ValueSnap / Shopee MY / 260912T62S9237</summary><p>17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. LED-NIGHT-LIGHT-PANDA @WH2699 2/2/0/0/0/0 available.
+17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN @WH2699 1/0/1/0/0/0 out_of_stock. cancellation-return: DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN 2/1/1/0/0/0 -&gt; 1/0/1/0/0/0; SA-24047 exact saved readback verified.</p><pre>{
+  &quot;stockSetOos&quot;: {
+    &quot;before&quot;: true,
+    &quot;after&quot;: [
+      false,
+      true
+    ]
+  },
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: [
+      &quot;15 Sep2026 CURRENT: Original products and variations verified from the exact live SiteGiant order. LED-NIGHT-LIGHT-PANDA x1 (Variation : Panda Lamp); DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN x1 (Variation : 12h Avocado Green). BOT_NOT_YET_DUE: created after14Sep18:00MYT; next VM5 cycle15Sep18:00MYT. The14Sep scheduled cycle was MISSED and Patricia already reported it to IT. Contact remainsfalse; no manual MY send. DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN @WH2699 1/0/1/0/0/0 out_of_stock. PATRICIA EXPLICIT HOLD 15 Sep2026: reserved1 preserved; Sellable0. Skip reserved-stock clearance and approval follow-up; do not ask again or include this held unit in outstanding actions unless Patricia reopens it. No inventory write authorized.\n\nPrior audit:&quot;,
+      &quot;15 Sep2026 CURRENT: Original products and variations verified from the exact live SiteGiant order. LED-NIGHT-LIGHT-PANDA x1 (Variation : Panda Lamp); DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN x1 (Variation : 12h Avocado Green). BOT_NOT_YET_DUE: created after14Sep18:00MYT; next VM5 cycle15Sep18:00MYT. The14Sep scheduled cycle was MISSED and Patricia already reported it to IT. Contact remainsfalse; no manual MY send. DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN @WH2699 1/0/1/0/0/0 out_of_stock. PATRICIA EXPLICIT HOLD 15 Sep2026: reserved1 preserved; Sellable0. Skip reserved-stock clearance and approval follow-up; do not ask again or include this held unit in outstanding actions unless Patricia reopens it. No inventory write authorized.\n\nPrior audit:&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. LED-NIGHT-LIGHT-PANDA @WH2699 2/2/0/0/0/0 available.\n\nPrior audit:\n15 Sep2026 CURRENT: Original products and variations verified from the exact live SiteGiant order. LED-NIGHT-LIGHT-PANDA x1 (Variation : Panda Lamp); DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN x1 (Variation : 12h Avocado Green). BOT_NOT_YET_DUE: created after14Sep18:00MYT; next VM5 cycle15Sep18:00MYT. The14Sep scheduled cycle was MISSED and Patricia already reported it to IT. Contact remainsfalse; no manual MY send. DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN @WH2699 1/0/1/0/0/0 out_of_stock. PATRICIA EXPLICIT HOLD 15 Sep2026: reserved1 preserved; Sellable0. Skip reserved-stock clearance and approval follow-up; do not ask again or include this held unit in outstanding actions unless Patricia reopens it. No inventory write authorized.\n\nPrior audit:&quot;,
+      &quot;17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN @WH2699 1/0/1/0/0/0 out_of_stock. cancellation-return: DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN 2/1/1/0/0/0 -&gt; 1/0/1/0/0/0; SA-24047 exact saved readback verified.\n\nPrior audit:\n15 Sep2026 CURRENT: Original products and variations verified from the exact live SiteGiant order. LED-NIGHT-LIGHT-PANDA x1 (Variation : Panda Lamp); DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN x1 (Variation : 12h Avocado Green). BOT_NOT_YET_DUE: created after14Sep18:00MYT; next VM5 cycle15Sep18:00MYT. The14Sep scheduled cycle was MISSED and Patricia already reported it to IT. Contact remainsfalse; no manual MY send. DESKTOP-FLIP-CLOCK-NEW-AVOCADO-GRN @WH2699 1/0/1/0/0/0 out_of_stock. PATRICIA EXPLICIT HOLD 15 Sep2026: reserved1 preserved; Sellable0. Skip reserved-stock clearance and approval follow-up; do not ask again or include this held unit in outstanding actions unless Patricia reopens it. No inventory write authorized.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;stockId&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;&quot;,
+      &quot;SA-24047&quot;
+    ]
+  },
+  &quot;stockUrl&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;&quot;,
+      &quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/10797911/edit&quot;
+    ]
+  },
+  &quot;buyerDecision&quot;: {
+    &quot;before&quot;: &quot;,&quot;,
+    &quot;after&quot;: [
+      &quot;&quot;,
+      &quot;Cancelled&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>Hiranai / Shopee MY / 260913W11NGPUW</summary><p>17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. SUIT-JACKET-WOMEN-BLACK-XL @WH2699 0/0/0/0/0/0 out_of_stock. cancellation-return: SUIT-JACKET-WOMEN-BLACK-XL 1/1/0/0/0/0 -&gt; 0/0/0/0/0/0; SA-24048 exact saved readback verified.</p><pre>{
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: [
+      &quot;15 Sep2026 CURRENT: Original products and variations verified from the exact live SiteGiant order. SUIT-JACKET-WOMEN-BLACK-XL x1 (Variation : Smart Blazer - Black,XL). BOT_NOT_YET_DUE: created after14Sep18:00MYT; next VM5 cycle15Sep18:00MYT. The14Sep scheduled cycle was MISSED and Patricia already reported it to IT. Contact remainsfalse; no manual MY send. SUIT-JACKET-WOMEN-BLACK-XL @WH2699 0/0/0/0/0/0 out_of_stock. Fully zero; no inventory write needed.\n\nPrior audit:&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. SUIT-JACKET-WOMEN-BLACK-XL @WH2699 0/0/0/0/0/0 out_of_stock. cancellation-return: SUIT-JACKET-WOMEN-BLACK-XL 1/1/0/0/0/0 -&gt; 0/0/0/0/0/0; SA-24048 exact saved readback verified.\n\nPrior audit:\n15 Sep2026 CURRENT: Original products and variations verified from the exact live SiteGiant order. SUIT-JACKET-WOMEN-BLACK-XL x1 (Variation : Smart Blazer - Black,XL). BOT_NOT_YET_DUE: created after14Sep18:00MYT; next VM5 cycle15Sep18:00MYT. The14Sep scheduled cycle was MISSED and Patricia already reported it to IT. Contact remainsfalse; no manual MY send. SUIT-JACKET-WOMEN-BLACK-XL @WH2699 0/0/0/0/0/0 out_of_stock. Fully zero; no inventory write needed.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;stockId&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;SA-24048&quot;
+    ]
+  },
+  &quot;stockUrl&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/10797913/edit&quot;
+    ]
+  },
+  &quot;buyerDecision&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Cancelled&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>ValueSnap / Shopee MY / 260912S9U11MF7</summary><p>17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. FOLDABLE-CLOTHES-RACK-NATURAL-50-44-90 @WH2699 0/0/0/0/0/0 out_of_stock. cancellation-return: FOLDABLE-CLOTHES-RACK-NATURAL-50-44-90 2/2/0/0/0/0 -&gt; 0/0/0/0/0/0; SA-24049 exact saved readback verified.</p><pre>{
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. FOLDABLE-CLOTHES-RACK-NATURAL-50-44-90 @WH2699 0/0/0/0/0/0 out_of_stock. cancellation-return: FOLDABLE-CLOTHES-RACK-NATURAL-50-44-90 2/2/0/0/0/0 -&gt; 0/0/0/0/0/0; SA-24049 exact saved readback verified.\n\nPrior audit:&quot;
+    ]
+  },
+  &quot;stockId&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;SA-24049&quot;
+    ]
+  },
+  &quot;stockUrl&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/10797916/edit&quot;
+    ]
+  },
+  &quot;buyerDecision&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Cancelled&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>TT Hiranai / TikTok / 586027845275715329</summary><p>17 Sep2026 CURRENT: GOT STOCK RECOVERY: original STRIPED-SHORT-SLEEVE-T-FS-BLACK restocked underSI-2567 on15Sep; live9/9/0/0/0/0 Available atWH2699. Patricia-approved recovery message sent once17Sep and verified in reopened exact Hiranai/anuprapaa thread: Hi boss, ignore message above, got st0ck, we will s3nt. Original item may be packed; WH must verify packing and courier handover before the live17Sep23:59 auto-cancel deadline. Awaiting collection alone is not proof of actual packing. No buyer acceptance or replacement deduction invented. OOS true -&gt; false.</p><pre>{
+  &quot;stockSetOos&quot;: {
+    &quot;before&quot;: true,
+    &quot;after&quot;: false
+  },
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: [
+      &quot;15 Sep2026 CURRENT: BUYER WAIT: exact Hiranai TikTok thread reopened15Sep;14Sep approved offer message persists and no subsequent buyer reply is visible. No duplicate message, invented acceptance or stock deduction. Marketplace Awaiting collection/printed label alone does not prove replacement packed.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: TT Hiranai / Offer Change exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:tiktok65/hiranai-order1-reopened-readback.json.\n\nHistorical audit:\n14 Sep2026 CURRENT: Recovered exact ordered products and variations from the live SiteGiant marketplace order. STRIPED-SHORT-SLEEVE-T-FS-BLACK x1 (Variation : Black, FREESIZE (35-60KG)).\n\nHistorical audit:&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: GOT STOCK RECOVERY: original STRIPED-SHORT-SLEEVE-T-FS-BLACK restocked underSI-2567 on15Sep; live9/9/0/0/0/0 Available atWH2699. Patricia-approved recovery message sent once17Sep and verified in reopened exact Hiranai/anuprapaa thread: Hi boss, ignore message above, got st0ck, we will s3nt. Original item may be packed; WH must verify packing and courier handover before the live17Sep23:59 auto-cancel deadline. Awaiting collection alone is not proof of actual packing. No buyer acceptance or replacement deduction invented. OOS true -&gt; false.\n\nPrior audit:\n15 Sep2026 CURRENT: BUYER WAIT: exact Hiranai TikTok thread reopened15Sep;14Sep approved offer message persists and no subsequent buyer reply is visible. No duplicate message, invented acceptance or stock deduction. Marketplace Awaiting collection/printed label alone does not prove replacement packed.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: TT Hiranai / Offer Change exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:tiktok65/hiranai-order1-reopened-readback.json.\n\nHistorical audit:\n14 Sep2026 CURRENT: Recovered exact ordered products and variations from the live SiteGiant marketplace order. STRIPED-SHORT-SLEEVE-T-FS-BLACK x1 (Variation : Black, FREESIZE (35-60KG)).\n\nHistorical audit:&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>TT DasNature / TikTok / 586021997827359994</summary><p>17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. FFB-YELLOW @WH2699 5/0/5/0/0/0 out_of_stock. no-stock: FFB-YELLOW 8/3/5/0/0/0 -&gt; 5/0/5/0/0/0; SA-24050 exact saved readback verified.</p><pre>{
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: [
+      &quot;15 Sep 2026 CURRENT: BUYER WAIT - exact TikTok shop and customer thread reopened; the 14 Sep approved no-stock message persists, with no later buyer reply. FFB-YELLOW is OOS at WH2699, 5/0/5/0/0/0. Reserved 5 remains on Patricia&#39;s explicit WH-confirmation hold. Marketplace Awaiting collection is not proof of packing. No duplicate message, stock write or invented buyer decision.\n\nPrior audit:\nCONTACT COMPLETED14Sep2026: DasNature TikTok / Yellow fish feederFFB-YELLOW x1. Exact no-stock template sent once to moqapril and read back after reloading/reopening the exact order thread. Order remains Awaiting collection; await buyer response. Account connection recovered under the approved Profile59 mutex without stopping the pre-existing session. Evidence:tiktok59/dasnature-reopened-readback.json. FFB-YELLOW Reserved5 remains on Patricia hold for WH confirmation.\n\nHistorical audit:\n14Sep2026 CURRENT: PATRICIA EXPLICIT HOLD14Sep2026: Keep FFB-YELLOW Reserved 5 for WH confirmation. Preserved; do not clear these units to zero. This hold overrides the remaining stock-cleanup proposal.\n\nHistorical audit:\n14 Sep2026 CURRENT: Recovered exact ordered products and variations from the live SiteGiant marketplace order. FFB-YELLOW x1 (Variation : Yellow).\n\nHistorical audit:&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. FFB-YELLOW @WH2699 5/0/5/0/0/0 out_of_stock. no-stock: FFB-YELLOW 8/3/5/0/0/0 -&gt; 5/0/5/0/0/0; SA-24050 exact saved readback verified.\n\nPrior audit:\n15 Sep 2026 CURRENT: BUYER WAIT - exact TikTok shop and customer thread reopened; the 14 Sep approved no-stock message persists, with no later buyer reply. FFB-YELLOW is OOS at WH2699, 5/0/5/0/0/0. Reserved 5 remains on Patricia&#39;s explicit WH-confirmation hold. Marketplace Awaiting collection is not proof of packing. No duplicate message, stock write or invented buyer decision.\n\nPrior audit:\nCONTACT COMPLETED14Sep2026: DasNature TikTok / Yellow fish feederFFB-YELLOW x1. Exact no-stock template sent once to moqapril and read back after reloading/reopening the exact order thread. Order remains Awaiting collection; await buyer response. Account connection recovered under the approved Profile59 mutex without stopping the pre-existing session. Evidence:tiktok59/dasnature-reopened-readback.json. FFB-YELLOW Reserved5 remains on Patricia hold for WH confirmation.\n\nHistorical audit:\n14Sep2026 CURRENT: PATRICIA EXPLICIT HOLD14Sep2026: Keep FFB-YELLOW Reserved 5 for WH confirmation. Preserved; do not clear these units to zero. This hold overrides the remaining stock-cleanup proposal.\n\nHistorical audit:\n14 Sep2026 CURRENT: Recovered exact ordered products and variations from the live SiteGiant marketplace order. FFB-YELLOW x1 (Variation : Yellow).\n\nHistorical audit:&quot;
+    ]
+  },
+  &quot;stockId&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;SA-24050&quot;
+    ]
+  },
+  &quot;stockUrl&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/10797917/edit&quot;
+    ]
+  },
+  &quot;buyerDecision&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Cancelled&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>TT Murahya / TikTok / 586017931314890654</summary><p>17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. FFB-YELLOW @WH2699 5/0/5/0/0/0 out_of_stock. no-stock: FFB-YELLOW 8/3/5/0/0/0 -&gt; 5/0/5/0/0/0; SA-24050 exact saved readback verified.</p><pre>{
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: [
+      &quot;15 Sep 2026 CURRENT: BUYER WAIT - exact TikTok shop and customer thread reopened; the 14 Sep approved no-stock message persists, with no later buyer reply. FFB-YELLOW is OOS at WH2699, 5/0/5/0/0/0. Reserved 5 remains on Patricia&#39;s explicit WH-confirmation hold. Marketplace Awaiting collection is not proof of packing. No duplicate message, stock write or invented buyer decision.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: TT MurahYa / No Stock exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:tiktok64/murahya-reopened-readback.json. PATRICIA EXPLICIT HOLD14Sep2026: Keep FFB-YELLOW Reserved 5 for WH confirmation. Preserved; do not clear these units to zero. This hold overrides the remaining stock-cleanup proposal.\n\nHistorical audit:\n14Sep2026 CURRENT: PATRICIA EXPLICIT HOLD14Sep2026: Keep FFB-YELLOW Reserved 5 for WH confirmation. Preserved; do not clear these units to zero. This hold overrides the remaining stock-cleanup proposal.\n\nHistorical audit:\n14 Sep2026 CURRENT: Recovered exact ordered products and variations from the live SiteGiant marketplace order. FFB-YELLOW x1 (Variation : Yellow).\n\nHistorical audit:&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. FFB-YELLOW @WH2699 5/0/5/0/0/0 out_of_stock. no-stock: FFB-YELLOW 8/3/5/0/0/0 -&gt; 5/0/5/0/0/0; SA-24050 exact saved readback verified.\n\nPrior audit:\n15 Sep 2026 CURRENT: BUYER WAIT - exact TikTok shop and customer thread reopened; the 14 Sep approved no-stock message persists, with no later buyer reply. FFB-YELLOW is OOS at WH2699, 5/0/5/0/0/0. Reserved 5 remains on Patricia&#39;s explicit WH-confirmation hold. Marketplace Awaiting collection is not proof of packing. No duplicate message, stock write or invented buyer decision.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: TT MurahYa / No Stock exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:tiktok64/murahya-reopened-readback.json. PATRICIA EXPLICIT HOLD14Sep2026: Keep FFB-YELLOW Reserved 5 for WH confirmation. Preserved; do not clear these units to zero. This hold overrides the remaining stock-cleanup proposal.\n\nHistorical audit:\n14Sep2026 CURRENT: PATRICIA EXPLICIT HOLD14Sep2026: Keep FFB-YELLOW Reserved 5 for WH confirmation. Preserved; do not clear these units to zero. This hold overrides the remaining stock-cleanup proposal.\n\nHistorical audit:\n14 Sep2026 CURRENT: Recovered exact ordered products and variations from the live SiteGiant marketplace order. FFB-YELLOW x1 (Variation : Yellow).\n\nHistorical audit:&quot;
+    ]
+  },
+  &quot;stockId&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;SA-24050&quot;
+    ]
+  },
+  &quot;stockUrl&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/10797917/edit&quot;
+    ]
+  },
+  &quot;buyerDecision&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Cancelled&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>TT Hiranai / TikTok / 586001939757499616</summary><p>17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. KHK-CROPPED-LONGSLEEVE-2XL @WH2699 0/0/0/0/0/0 out_of_stock. cancellation-return: KHK-CROPPED-LONGSLEEVE-2XL 1/1/0/0/0/0 -&gt; 0/0/0/0/0/0; SA-24051 exact saved readback verified.
+17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. SHORT-TOP-LONGBLK @WH2699 84/84/0/0/0/0 available. cancellation-return: SHORT-TOP-LONGBLK 85/85/0/0/0/0 -&gt; 84/84/0/0/0/0; SA-24052 exact saved readback verified.
+17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. SHORT-TOP-LONGGRAY @WH2699 42/41/0/0/1/0 available.
+17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. SHORT-TOP-LONGGRN @WH2699 60/60/0/0/0/0 available.</p><pre>{
+  &quot;stockSetOos&quot;: {
+    &quot;before&quot;: true,
+    &quot;after&quot;: [
+      true,
+      false,
+      false,
+      false
+    ]
+  },
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: [
+      &quot;15 Sep2026 CURRENT: BUYER WAIT: exact Hiranai TikTok thread reopened15Sep;14Sep approved offer message persists and no subsequent buyer reply is visible. No duplicate message, invented acceptance or stock deduction. Marketplace Awaiting collection/printed label alone does not prove replacement packed.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: TT Hiranai / Offer Change exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:tiktok65/hiranai-order2-reopened-readback.json.\n\nHistorical audit:\n14 Sep2026 CURRENT: KHK-CROPPED-LONGSLEEVE-2XL: Recovered exact ordered products and variations from the live SiteGiant marketplace order. KHK-CROPPED-LONGSLEEVE-2XL x1 (Variation : Khaki, 2XL); SHORT-TOP-LONGBLK x1 (Variation : Long Black); SHORT-TOP-LONGGRAY x1 (Variation : Long Gray); SHORT-TOP-LONGGRN x1 (Variation : Long Green).\n\nHistorical audit:&quot;,
+      &quot;15 Sep2026 CURRENT: BUYER WAIT: exact Hiranai TikTok thread reopened15Sep;14Sep approved offer message persists and no subsequent buyer reply is visible. No duplicate message, invented acceptance or stock deduction. Marketplace Awaiting collection/printed label alone does not prove replacement packed.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: TT Hiranai / Offer Change exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:tiktok65/hiranai-order2-reopened-readback.json.\n\nHistorical audit:\n14 Sep2026 CURRENT: SHORT-TOP-LONGBLK: Recovered exact ordered products and variations from the live SiteGiant marketplace order. KHK-CROPPED-LONGSLEEVE-2XL x1 (Variation : Khaki, 2XL); SHORT-TOP-LONGBLK x1 (Variation : Long Black); SHORT-TOP-LONGGRAY x1 (Variation : Long Gray); SHORT-TOP-LONGGRN x1 (Variation : Long Green).\n\nHistorical audit:&quot;,
+      &quot;15 Sep2026 CURRENT: BUYER WAIT: exact Hiranai TikTok thread reopened15Sep;14Sep approved offer message persists and no subsequent buyer reply is visible. No duplicate message, invented acceptance or stock deduction. Marketplace Awaiting collection/printed label alone does not prove replacement packed.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: TT Hiranai / Offer Change exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:tiktok65/hiranai-order2-reopened-readback.json.\n\nHistorical audit:\n14 Sep2026 CURRENT: SHORT-TOP-LONGGRAY: Recovered exact ordered products and variations from the live SiteGiant marketplace order. KHK-CROPPED-LONGSLEEVE-2XL x1 (Variation : Khaki, 2XL); SHORT-TOP-LONGBLK x1 (Variation : Long Black); SHORT-TOP-LONGGRAY x1 (Variation : Long Gray); SHORT-TOP-LONGGRN x1 (Variation : Long Green).\n\nHistorical audit:&quot;,
+      &quot;15 Sep2026 CURRENT: BUYER WAIT: exact Hiranai TikTok thread reopened15Sep;14Sep approved offer message persists and no subsequent buyer reply is visible. No duplicate message, invented acceptance or stock deduction. Marketplace Awaiting collection/printed label alone does not prove replacement packed.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: TT Hiranai / Offer Change exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:tiktok65/hiranai-order2-reopened-readback.json.\n\nHistorical audit:\n14 Sep2026 CURRENT: SHORT-TOP-LONGGRN: Recovered exact ordered products and variations from the live SiteGiant marketplace order. KHK-CROPPED-LONGSLEEVE-2XL x1 (Variation : Khaki, 2XL); SHORT-TOP-LONGBLK x1 (Variation : Long Black); SHORT-TOP-LONGGRAY x1 (Variation : Long Gray); SHORT-TOP-LONGGRN x1 (Variation : Long Green).\n\nHistorical audit:&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. KHK-CROPPED-LONGSLEEVE-2XL @WH2699 0/0/0/0/0/0 out_of_stock. cancellation-return: KHK-CROPPED-LONGSLEEVE-2XL 1/1/0/0/0/0 -&gt; 0/0/0/0/0/0; SA-24051 exact saved readback verified.\n\nPrior audit:\n15 Sep2026 CURRENT: BUYER WAIT: exact Hiranai TikTok thread reopened15Sep;14Sep approved offer message persists and no subsequent buyer reply is visible. No duplicate message, invented acceptance or stock deduction. Marketplace Awaiting collection/printed label alone does not prove replacement packed.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: TT Hiranai / Offer Change exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:tiktok65/hiranai-order2-reopened-readback.json.\n\nHistorical audit:\n14 Sep2026 CURRENT: KHK-CROPPED-LONGSLEEVE-2XL: Recovered exact ordered products and variations from the live SiteGiant marketplace order. KHK-CROPPED-LONGSLEEVE-2XL x1 (Variation : Khaki, 2XL); SHORT-TOP-LONGBLK x1 (Variation : Long Black); SHORT-TOP-LONGGRAY x1 (Variation : Long Gray); SHORT-TOP-LONGGRN x1 (Variation : Long Green).\n\nHistorical audit:&quot;,
+      &quot;17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. SHORT-TOP-LONGBLK @WH2699 84/84/0/0/0/0 available. cancellation-return: SHORT-TOP-LONGBLK 85/85/0/0/0/0 -&gt; 84/84/0/0/0/0; SA-24052 exact saved readback verified.\n\nPrior audit:\n15 Sep2026 CURRENT: BUYER WAIT: exact Hiranai TikTok thread reopened15Sep;14Sep approved offer message persists and no subsequent buyer reply is visible. No duplicate message, invented acceptance or stock deduction. Marketplace Awaiting collection/printed label alone does not prove replacement packed.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: TT Hiranai / Offer Change exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:tiktok65/hiranai-order2-reopened-readback.json.\n\nHistorical audit:\n14 Sep2026 CURRENT: SHORT-TOP-LONGBLK: Recovered exact ordered products and variations from the live SiteGiant marketplace order. KHK-CROPPED-LONGSLEEVE-2XL x1 (Variation : Khaki, 2XL); SHORT-TOP-LONGBLK x1 (Variation : Long Black); SHORT-TOP-LONGGRAY x1 (Variation : Long Gray); SHORT-TOP-LONGGRN x1 (Variation : Long Green).\n\nHistorical audit:&quot;,
+      &quot;17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. SHORT-TOP-LONGGRAY @WH2699 42/41/0/0/1/0 available.\n\nPrior audit:\n15 Sep2026 CURRENT: BUYER WAIT: exact Hiranai TikTok thread reopened15Sep;14Sep approved offer message persists and no subsequent buyer reply is visible. No duplicate message, invented acceptance or stock deduction. Marketplace Awaiting collection/printed label alone does not prove replacement packed.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: TT Hiranai / Offer Change exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:tiktok65/hiranai-order2-reopened-readback.json.\n\nHistorical audit:\n14 Sep2026 CURRENT: SHORT-TOP-LONGGRAY: Recovered exact ordered products and variations from the live SiteGiant marketplace order. KHK-CROPPED-LONGSLEEVE-2XL x1 (Variation : Khaki, 2XL); SHORT-TOP-LONGBLK x1 (Variation : Long Black); SHORT-TOP-LONGGRAY x1 (Variation : Long Gray); SHORT-TOP-LONGGRN x1 (Variation : Long Green).\n\nHistorical audit:&quot;,
+      &quot;17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. SHORT-TOP-LONGGRN @WH2699 60/60/0/0/0/0 available.\n\nPrior audit:\n15 Sep2026 CURRENT: BUYER WAIT: exact Hiranai TikTok thread reopened15Sep;14Sep approved offer message persists and no subsequent buyer reply is visible. No duplicate message, invented acceptance or stock deduction. Marketplace Awaiting collection/printed label alone does not prove replacement packed.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: TT Hiranai / Offer Change exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:tiktok65/hiranai-order2-reopened-readback.json.\n\nHistorical audit:\n14 Sep2026 CURRENT: SHORT-TOP-LONGGRN: Recovered exact ordered products and variations from the live SiteGiant marketplace order. KHK-CROPPED-LONGSLEEVE-2XL x1 (Variation : Khaki, 2XL); SHORT-TOP-LONGBLK x1 (Variation : Long Black); SHORT-TOP-LONGGRAY x1 (Variation : Long Gray); SHORT-TOP-LONGGRN x1 (Variation : Long Green).\n\nHistorical audit:&quot;
+    ]
+  },
+  &quot;stockId&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;SA-24051&quot;,
+      &quot;SA-24052&quot;,
+      &quot;&quot;,
+      &quot;&quot;
+    ]
+  },
+  &quot;stockUrl&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/10797918/edit&quot;,
+      &quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/10797920/edit&quot;,
+      &quot;&quot;,
+      &quot;&quot;
+    ]
+  },
+  &quot;buyerDecision&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Cancelled&quot;,
+      &quot;Cancelled&quot;,
+      &quot;&quot;,
+      &quot;&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>HiranaiSG / Shopee SG / 260911QG2S2DGW</summary><p>17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. MENS-CHELSEA-BOOTS-BRN-42 @WH2699 0/0/0/0/0/0 out_of_stock. cancellation-return: MENS-CHELSEA-BOOTS-BRN-42 1/1/0/0/0/0 -&gt; 0/0/0/0/0/0; SA-24053 exact saved readback verified.</p><pre>{
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: [
+      &quot;15 Sep 2026 CURRENT: BUYER CHOSE WAIT - exact Hiranai SG / jessekhare chat verified. Buyer replied WAIT on 14 Sep 13:15:56 MYT; seller acknowledged Brown Chelsea Boots size 42 restock wait at 13:18:35. Current order remains Processed, MENS-CHELSEA-BOOTS-BRN-42 remains 0/0/0/0/0/0 OOS. This is an agreed buyer restock wait. The webapp has no WAIT buyer-decision option; preserve null rather than invent acceptance or cancellation. No new message or inventory write.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: HiranaiSG / No Stock exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:sg-jessekhare-reopened-readback.json.\n\nHistorical audit:\n14 Sep2026 CURRENT: Recovered exact ordered products and variations from the live SiteGiant marketplace order. MENS-CHELSEA-BOOTS-BRN-42 x1 (Variation : Chelsea Boots Brown,42).\n\nHistorical audit:&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. MENS-CHELSEA-BOOTS-BRN-42 @WH2699 0/0/0/0/0/0 out_of_stock. cancellation-return: MENS-CHELSEA-BOOTS-BRN-42 1/1/0/0/0/0 -&gt; 0/0/0/0/0/0; SA-24053 exact saved readback verified.\n\nPrior audit:\n15 Sep 2026 CURRENT: BUYER CHOSE WAIT - exact Hiranai SG / jessekhare chat verified. Buyer replied WAIT on 14 Sep 13:15:56 MYT; seller acknowledged Brown Chelsea Boots size 42 restock wait at 13:18:35. Current order remains Processed, MENS-CHELSEA-BOOTS-BRN-42 remains 0/0/0/0/0/0 OOS. This is an agreed buyer restock wait. The webapp has no WAIT buyer-decision option; preserve null rather than invent acceptance or cancellation. No new message or inventory write.\n\nPrior audit:\n14Sep2026 CURRENT: CUSTOMER CONTACT SENT14Sep2026: HiranaiSG / No Stock exact approved message sent once and read back from the reopened buyer thread. Original order still active; awaiting buyer response. Evidence:sg-jessekhare-reopened-readback.json.\n\nHistorical audit:\n14 Sep2026 CURRENT: Recovered exact ordered products and variations from the live SiteGiant marketplace order. MENS-CHELSEA-BOOTS-BRN-42 x1 (Variation : Chelsea Boots Brown,42).\n\nHistorical audit:&quot;
+    ]
+  },
+  &quot;stockId&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;SA-24053&quot;
+    ]
+  },
+  &quot;stockUrl&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/10797921/edit&quot;
+    ]
+  },
+  &quot;buyerDecision&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Cancelled&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>Karlmobel / Shopee MY / 260911P5YWP9XB</summary><p>17 Sep2026 CURRENT: CANCELLED order reverified during reserved-hold closeout. New returned Sellable1 under SA-23967 (Returned,15Sep15:45MYT) was separate from earlier cleanup SA-23930. Authorised no-stock sellable cleanup completed once via SA-24057: SPV-55W-2.8MPC @WH2699 2/1/1/0/0/0 -&gt;1/0/1/0/0/0 OOS. Reserved1 remains on Patricia explicit WH hold. No duplicate deduction of prior returned quantity; this receipt addresses the later return.</p><pre>{
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: [
+      &quot;15 Sep2026 CURRENT: CANCELLED: exact marketplace order verified. Cancellation-return cleanup SPV-55W-2.8MPC @WH2699 2/1/1/0/0/0 -&gt; 1/0/1/0/0/0 out_of_stock; SA-23930 exact order/item/quantity/warehouse and saved inventory readback verified. Only returned Sellable1 removed; protected and explicit held units preserved.\n\nPrior audit:\n14Sep2026 CURRENT: PATRICIA EXPLICIT HOLD14Sep2026: Keep SPV-55W-2.8MPC Reserved 1 for WH confirmation. Preserved; do not clear these units to zero. This hold overrides the remaining stock-cleanup proposal.\n\nHistorical audit:\n11 Sep2026 CURRENT: STOCK CLEANUP COMPLETED - SPV-55W-2.8MPC, SA-23792, deducted1 unit(s) on11Sep. Six buckets 2/1/1/0/0/0 -&gt; 1/0/1/0/0/0, Out Of Stock. Exact approval, adjustment and fresh readback verified; do not deduct again. Buyer/contact follow-up is separate; MY contacts remain with the official bot/IT. Existing adjustment label may show Not Adjusted because the API restricts Adjusted to WH Can Pack; this does not mean the approved cleanup is undone.\n\nHistorical audit (earlier pending statements are superseded by CURRENT above):\n2026-09-11 MYT final-batch reconciliation: exact Processed Shopee MY order, SPV-55W-2.8MPC x1 atWH2699 2/1/1/0/0/0 Out Of Stock. Recovered product/iSKU; stockSetOos false -&gt; true records existing OOS only. System Stock Mismatch Found: WH no-stock case but Sellable1. Need WH Check / Stock-To-Zero Approval. Proposed sellable-only cleanup 2/1/1/0/0/0 -&gt; 1/0/1/0/0/0 (-1), preserving all protected buckets; no stock quantity/status write. BOT_NOT_YET_DUE for11Sep18:00; created12:34–12:35. Preserve contactSent false and buyerDecision null.\n\n2026-09-11 MYT Patricia approved ok proceed: SPV-55W-2.8MPC @WH2699 2/1/1/0/0/0 -&gt; 1/0/1/0/0/0 Out Of Stock; SA-23792 deducted exactly 1 sellable unit(s). Exact SA/order/SKU/warehouse and all six after-values verified. Protected buckets preserved. Cleanup COMPLETED; no further authorized deduction required. Webapp Adjusted label is restricted to WH Confirmed Can Pack, so Not Required records no further stock action; do not invent pack confirmation for a no-stock/cancelled case. Buyer decision, prior contact and WH packing decision preserved; no buyer send. Evidence proceed-execute-7660980.json.&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: CANCELLED order reverified during reserved-hold closeout. New returned Sellable1 under SA-23967 (Returned,15Sep15:45MYT) was separate from earlier cleanup SA-23930. Authorised no-stock sellable cleanup completed once via SA-24057: SPV-55W-2.8MPC @WH2699 2/1/1/0/0/0 -&gt;1/0/1/0/0/0 OOS. Reserved1 remains on Patricia explicit WH hold. No duplicate deduction of prior returned quantity; this receipt addresses the later return.\n\nPrior audit:\n15 Sep2026 CURRENT: CANCELLED: exact marketplace order verified. Cancellation-return cleanup SPV-55W-2.8MPC @WH2699 2/1/1/0/0/0 -&gt; 1/0/1/0/0/0 out_of_stock; SA-23930 exact order/item/quantity/warehouse and saved inventory readback verified. Only returned Sellable1 removed; protected and explicit held units preserved.\n\nPrior audit:\n14Sep2026 CURRENT: PATRICIA EXPLICIT HOLD14Sep2026: Keep SPV-55W-2.8MPC Reserved 1 for WH confirmation. Preserved; do not clear these units to zero. This hold overrides the remaining stock-cleanup proposal.\n\nHistorical audit:\n11 Sep2026 CURRENT: STOCK CLEANUP COMPLETED - SPV-55W-2.8MPC, SA-23792, deducted1 unit(s) on11Sep. Six buckets 2/1/1/0/0/0 -&gt; 1/0/1/0/0/0, Out Of Stock. Exact approval, adjustment and fresh readback verified; do not deduct again. Buyer/contact follow-up is separate; MY contacts remain with the official bot/IT. Existing adjustment label may show Not Adjusted because the API restricts Adjusted to WH Can Pack; this does not mean the approved cleanup is undone.\n\nHistorical audit (earlier pending statements are superseded by CURRENT above):\n2026-09-11 MYT final-batch reconciliation: exact Processed Shopee MY order, SPV-55W-2.8MPC x1 atWH2699 2/1/1/0/0/0 Out Of Stock. Recovered product/iSKU; stockSetOos false -&gt; true records existing OOS only. System Stock Mismatch Found: WH no-stock case but Sellable1. Need WH Check / Stock-To-Zero Approval. Proposed sellable-only cleanup 2/1/1/0/0/0 -&gt; 1/0/1/0/0/0 (-1), preserving all protected buckets; no stock quantity/status write. BOT_NOT_YET_DUE for11Sep18:00; created12:34–12:35. Preserve contactSent false and buyerDecision null.\n\n2026-09-11 MYT Patricia approved ok proceed: SPV-55W-2.8MPC @WH2699 2/1/1/0/0/0 -&gt; 1/0/1/0/0/0 Out Of Stock; SA-23792 deducted exactly 1 sellable unit(s). Exact SA/order/SKU/warehouse and all six after-values verified. Protected buckets preserved. Cleanup COMPLETED; no further authorized deduction required. Webapp Adjusted label is restricted to WH Confirmed Can Pack, so Not Required records no further stock action; do not invent pack confirmation for a no-stock/cancelled case. Buyer decision, prior contact and WH packing decision preserved; no buyer send. Evidence proceed-execute-7660980.json.&quot;
+    ]
+  },
+  &quot;stockId&quot;: {
+    &quot;before&quot;: [
+      &quot;SA-23792 | SA-23930&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;SA-23792 | SA-23930 | SA-24057&quot;
+    ]
+  },
+  &quot;stockUrl&quot;: {
+    &quot;before&quot;: [
+      &quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/10740895/edit | https://sitegiant.co/inventory-adjustment/stock-adjustment/10776328/edit&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;https://sitegiant.co/inventory-adjustment/stock-adjustment/10740895/edit | https://sitegiant.co/inventory-adjustment/stock-adjustment/10776328/edit | https://sitegiant.co/inventory-adjustment/stock-adjustment/10798363/edit&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><details><summary>TT ValueSnap / TikTok / 585999561023063830</summary><p>17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. BQueue3m @WH2699 377/333/44/0/0/0 available.</p><pre>{
+  &quot;csRemarks&quot;: {
+    &quot;before&quot;: [
+      &quot;2026-09-11 MYT late-case reconciliation: exact live Processed order; recovered original product/iSKU from exact order lines. BQueue3m @WH2699 463/417/44/0/2/0 available. TikTok ValueSnap oversize, Matte Black 3m Belt x10; exact package AWAITING_COLLECTION. Oversize is not no stock: stockSetOos remains false, all inventory including Reserved44 and Non-Sellable2 is untouched. Contact remains unverified/unsent pending exact Profile65 ValueSnap buyer-thread check and approved final message. No buyer decision, cancellation, contact or stock change inferred.&quot;,
+      &quot;2026-09-11 MYT TikTok contact verification update: Profile65 approved masked email c***p@gmail.com matches csttvaluesnap@gmail.com; exact MY ValueSnap seller7495874398509500630 and buyerfaizsoul_ verified. Order585999561023063830 live Awaiting collection; BQueue3m Matte Black3m x10. Complete thread shows No earlier messages and automatic order confirmation only; no prior oversize explanation. Opening the exact order chat created platform system event Customer Service8922 started the chat at12:42; Codex sent no buyer message. Fully substituted bilingual Oversize script shown to Patricia, pending exact send approval under rule10a. contactSent remains false; buyerDecision null; stockSetOos false and all inventory unchanged. Earlier lookup-pending note superseded by this verified proof.&quot;,
+      &quot;11 Sep 2026 13:56 MYT | TikTok ValueSnap | 585999561023063830 | faizsoul_ | BQueue3m / Matte Black 3m Belt x10 | Patricia explicitly approved the exact message (\&quot;Send this exact message\&quot;). Sent once through Profile 65 / seller 7495874398509500630; exact 754-character bilingual oversize text verified in one outgoing message after reload and reopening the exact buyer/order thread. Order Awaiting collection; buyer decision remains pending. Contact false -&gt; true. Oversize only: stockSetOos stays false; no inventory write. Message SHA256 b801f0bf027d4e3dc2ad86e997f4edf888d42e1042bef3bbfdd0da74c5bdb861. Evidence: tmp-sbvariation-20260911/tiktok65-approved-send/send-receipt.json. Sent text: Hi boss, kindly be informed that we are unable to process Queue Stand Retractable Belt Barrier Divider Pole Queue Up Stand Stanchion Pelaras Barisan Tali Beratur Stainless Steel (Matte Black 3m Belt, 10 units) due to 0verweight limit. We apologize for the inconvenience caused, and kindly, please manage the order from your Order Details Once a request comes through, I&#39;ll handle it immediately.\n\nHi boss, dimaklumkan bahawa kami tidak dapat proses Queue Stand Retractable Belt Barrier Divider Pole Queue Up Stand Stanchion Pelaras Barisan Tali Beratur Stainless Steel (Matte Black 3m Belt, 10 units) kerana melebihi had berat. Maaf atas kesulitan ini. Boss boleh uruskan pesanan melalui Order Details . Bila request sudah masuk, saya akan proses segera.&quot;
+    ],
+    &quot;after&quot;: [
+      &quot;17 Sep2026 CURRENT: CANCELLED: exact live marketplace order now Cancelled. No buyer message is due. Affected no-stock lines checked for cancellation stock return; sellable cleanup receipts below. Unaffected products and oversize inventory remain unchanged. BQueue3m @WH2699 377/333/44/0/0/0 available.\n\nPrior audit:\n2026-09-11 MYT late-case reconciliation: exact live Processed order; recovered original product/iSKU from exact order lines. BQueue3m @WH2699 463/417/44/0/2/0 available. TikTok ValueSnap oversize, Matte Black 3m Belt x10; exact package AWAITING_COLLECTION. Oversize is not no stock: stockSetOos remains false, all inventory including Reserved44 and Non-Sellable2 is untouched. Contact remains unverified/unsent pending exact Profile65 ValueSnap buyer-thread check and approved final message. No buyer decision, cancellation, contact or stock change inferred.\n\n2026-09-11 MYT TikTok contact verification update: Profile65 approved masked email c***p@gmail.com matches csttvaluesnap@gmail.com; exact MY ValueSnap seller7495874398509500630 and buyerfaizsoul_ verified. Order585999561023063830 live Awaiting collection; BQueue3m Matte Black3m x10. Complete thread shows No earlier messages and automatic order confirmation only; no prior oversize explanation. Opening the exact order chat created platform system event Customer Service8922 started the chat at12:42; Codex sent no buyer message. Fully substituted bilingual Oversize script shown to Patricia, pending exact send approval under rule10a. contactSent remains false; buyerDecision null; stockSetOos false and all inventory unchanged. Earlier lookup-pending note superseded by this verified proof.\n\n11 Sep 2026 13:56 MYT | TikTok ValueSnap | 585999561023063830 | faizsoul_ | BQueue3m / Matte Black 3m Belt x10 | Patricia explicitly approved the exact message (\&quot;Send this exact message\&quot;). Sent once through Profile 65 / seller 7495874398509500630; exact 754-character bilingual oversize text verified in one outgoing message after reload and reopening the exact buyer/order thread. Order Awaiting collection; buyer decision remains pending. Contact false -&gt; true. Oversize only: stockSetOos stays false; no inventory write. Message SHA256 b801f0bf027d4e3dc2ad86e997f4edf888d42e1042bef3bbfdd0da74c5bdb861. Evidence: tmp-sbvariation-20260911/tiktok65-approved-send/send-receipt.json. Sent text: Hi boss, kindly be informed that we are unable to process Queue Stand Retractable Belt Barrier Divider Pole Queue Up Stand Stanchion Pelaras Barisan Tali Beratur Stainless Steel (Matte Black 3m Belt, 10 units) due to 0verweight limit. We apologize for the inconvenience caused, and kindly, please manage the order from your Order Details Once a request comes through, I&#39;ll handle it immediately.\n\nHi boss, dimaklumkan bahawa kami tidak dapat proses Queue Stand Retractable Belt Barrier Divider Pole Queue Up Stand Stanchion Pelaras Barisan Tali Beratur Stainless Steel (Matte Black 3m Belt, 10 units) kerana melebihi had berat. Maaf atas kesulitan ini. Boss boleh uruskan pesanan melalui Order Details . Bila request sudah masuk, saya akan proses segera.&quot;
+    ]
+  },
+  &quot;whConfirmStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Not Required&quot;
+    ]
+  },
+  &quot;stockAdjustmentStatus&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Not Required&quot;
+    ]
+  },
+  &quot;buyerDecision&quot;: {
+    &quot;before&quot;: null,
+    &quot;after&quot;: [
+      &quot;Cancelled&quot;
+    ]
+  }
+}</pre><p>EXACT_FINAL_READBACK_VERIFIED</p></details><h2>Accepted replacements</h2><table><thead><tr><th>Order</th><th>Shop</th><th>Accepted SKU / qty</th><th>Status / stock reference</th><th>Result</th></tr></thead><tbody><tr><td>260913VY36J1R5</td><td>Murahya</td><td>[&quot;BTLW-180CM&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-24055 | SA-24056&quot;]</td><td>NEW_EXACT_ORDER_LINKED_DEDUCTION_VERIFIED</td></tr><tr><td>260912T0QQ54F5</td><td>Murahya</td><td>[&quot;BAR-STOOL-FULL-WHITE&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23932&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>260909JPAK6R6K</td><td>Kinata SG</td><td>[&quot;BLKRTNGL-30L-SG&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23699&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>260909K5FGCYWA</td><td>Kinata SG</td><td>[&quot;WHTRTNGL-30L-SG&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23700&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>585969718191031387</td><td>TT Hiranai</td><td>[&quot;MENS-CHELSEA-BOOTS-COFFEE-45&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23789&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>260907DJH7HJS7</td><td>Murahya</td><td>[&quot;LARGE-CAPACITY-TRAVEL-SUITCASE-GRY-EXP-28IN&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23688&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>260907DV44EX11</td><td>Murahya</td><td>[&quot;SPINNER-CARRY-ON-SUITCASE-BLACK-28IN&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23702&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>260906BJ60C9VV</td><td>Karlmobel</td><td>[&quot;LUSB-L-GREN-26INCH&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23551&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>260906AGH696WJ</td><td>das.nature2</td><td>[&quot;LED-BRL-BLACK-UPGRADE+SOLAR&quot;,&quot;&quot;] / [1,null]</td><td>[&quot;Adjusted&quot;,&quot;Not Required&quot;] / [&quot;SA-23508&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>26090328B89GA4</td><td>KarlMobel</td><td>[&quot;GBN&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23491&quot;,&quot;SA-23513&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>2609058C8J337E</td><td>Karlmobel</td><td>[&quot;POOL-TABLE-RED-7FT&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23507&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>2609044HJ4EWV5</td><td>ValueSnap</td><td>[&quot;PST-BLACK&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23492&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>2609032HENCEKJ</td><td>Hiranai</td><td>[&quot;MENS-LEATHER-FORMAL-SHOES-BRN-48&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23493&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>260901UC5QG2X9</td><td>Karlmobel</td><td>[&quot;SLV-ORANGE-M&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23312&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>260830Q325M0K9</td><td>Lovento</td><td>[&quot;FAUX-FLWR-BEAR-BUCKET-21-ROSE-BEAR&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23220&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>260829KXDVAMN9</td><td>Karlmobel</td><td>[&quot;ST140&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23325&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>26082482PRDQ3E</td><td>Murahya</td><td>[&quot;SKATEBOARD-80CM-BLUE-FIRE&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-23052&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr><tr><td>260821UQVX8UNE</td><td>Kinata SG</td><td>[&quot;HANDHELD-RETRO-GAME-CONSOLE-R36S-128G-SG&quot;] / [1]</td><td>[&quot;Adjusted&quot;] / [&quot;SA-22928&quot;]</td><td>EXISTING_ADJUSTED_HISTORY_PRESERVED_NO_REPEAT</td></tr></tbody></table><h2>All scoped case dispositions</h2><table><thead><tr><th>Order</th><th>Shop</th><th>Live order status</th><th>Contact</th><th>Buyer decision</th><th>Stock status</th></tr></thead><tbody><tr><td>2609177YJ5RY1W</td><td>Kinata SG</td><td>Processed</td><td>true</td><td>null</td><td>[&quot;Not Required&quot;]</td></tr><tr><td>2609167PX2036H</td><td>Kinata SG</td><td>Processed</td><td>true</td><td>null</td><td>[&quot;Not Required&quot;]</td></tr><tr><td>510027600453131</td><td>Laz MurahYa</td><td>Ready To Ship</td><td>true</td><td>null</td><td>[&quot;Not Required&quot;,&quot;Not Required&quot;]</td></tr><tr><td>26091553AGY3AC</td><td>ValueSnap</td><td>Processed</td><td>false</td><td>null</td><td>[&quot;Not Adjusted&quot;]</td></tr><tr><td>2609142CDPJM37</td><td>MurahYa</td><td>Processed</td><td>false</td><td>null</td><td>[&quot;Not Required&quot;]</td></tr><tr><td>260914212F4MB6</td><td>MurahYa</td><td>Processed</td><td>false</td><td>null</td><td>[&quot;Not Required&quot;]</td></tr><tr><td>2609154GD4XC9X</td><td>MurahYa</td><td>Processed</td><td>false</td><td>null</td><td>[&quot;Not Required&quot;]</td></tr><tr><td>26091556FGXAJS</td><td>ValueSnap</td><td>Processed</td><td>false</td><td>null</td><td>[&quot;Not Adjusted&quot;]</td></tr><tr><td>2609154XJ6PY4Y</td><td>ValueSnap</td><td>Processed</td><td>false</td><td>null</td><td>[&quot;Not Adjusted&quot;]</td></tr><tr><td>260915346TF3BT</td><td>Luxbin</td><td>Processed</td><td>true</td><td>null</td><td>[&quot;Not Required&quot;,&quot;Not Required&quot;]</td></tr><tr><td>260913VY36J1R5</td><td>Murahya</td><td>Shipped</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>26091428K446AS</td><td>Kinata SG</td><td>Shipped</td><td>true</td><td>null</td><td>[&quot;Not Adjusted&quot;]</td></tr><tr><td>260913VVM3HTD8</td><td>MasonGym</td><td>Cancelled</td><td>true</td><td>[&quot;Cancelled&quot;]</td><td>[&quot;Not Adjusted&quot;]</td></tr><tr><td>260912T62S9237</td><td>ValueSnap</td><td>Cancelled</td><td>true</td><td>[&quot;&quot;,&quot;Cancelled&quot;]</td><td>[&quot;Not Required&quot;,&quot;Not Adjusted&quot;]</td></tr><tr><td>260913W11NGPUW</td><td>Hiranai</td><td>Cancelled</td><td>true</td><td>[&quot;Cancelled&quot;]</td><td>[&quot;Not Required&quot;]</td></tr><tr><td>260912T0QQ54F5</td><td>Murahya</td><td>Shipped</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>260912S9U11MF7</td><td>ValueSnap</td><td>Cancelled</td><td>true</td><td>[&quot;Cancelled&quot;]</td><td>[&quot;Not Required&quot;]</td></tr><tr><td>586027845275715329</td><td>TT Hiranai</td><td>Processed</td><td>true</td><td>null</td><td>[&quot;Not Adjusted&quot;]</td></tr><tr><td>586021997827359994</td><td>TT DasNature</td><td>Cancelled</td><td>true</td><td>[&quot;Cancelled&quot;]</td><td>[&quot;Not Required&quot;]</td></tr><tr><td>586017931314890654</td><td>TT Murahya</td><td>Cancelled</td><td>true</td><td>[&quot;Cancelled&quot;]</td><td>[&quot;Not Required&quot;]</td></tr><tr><td>586001939757499616</td><td>TT Hiranai</td><td>Cancelled</td><td>true</td><td>[&quot;Cancelled&quot;,&quot;Cancelled&quot;,&quot;&quot;,&quot;&quot;]</td><td>[&quot;Not Adjusted&quot;,&quot;Not Adjusted&quot;,&quot;Not Required&quot;,&quot;Not Required&quot;]</td></tr><tr><td>260911QG2S2DGW</td><td>HiranaiSG</td><td>Cancelled</td><td>true</td><td>[&quot;Cancelled&quot;]</td><td>[&quot;Not Required&quot;]</td></tr><tr><td>585999561023063830</td><td>TT ValueSnap</td><td>Cancelled</td><td>true</td><td>[&quot;Cancelled&quot;]</td><td>[&quot;Not Required&quot;]</td></tr><tr><td>260909JMJ5UQ6M</td><td>Hiranai</td><td>Completed</td><td>true</td><td>null</td><td>[&quot;Not Adjusted&quot;]</td></tr><tr><td>260909JPAK6R6K</td><td>Kinata SG</td><td>Shipped</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>260909K5FGCYWA</td><td>Kinata SG</td><td>Shipped</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>585969718191031387</td><td>TT Hiranai</td><td>Shipped</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>260907DJH7HJS7</td><td>Murahya</td><td>Completed</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>260907DV44EX11</td><td>Murahya</td><td>Completed</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>260906BJ60C9VV</td><td>Karlmobel</td><td>Shipped</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>260906AGH696WJ</td><td>das.nature2</td><td>Completed</td><td>true</td><td>[&quot;Accept Change&quot;,&quot;&quot;]</td><td>[&quot;Adjusted&quot;,&quot;Not Required&quot;]</td></tr><tr><td>26090328B89GA4</td><td>KarlMobel</td><td>Completed</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>2609058C8J337E</td><td>Karlmobel</td><td>Completed</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>2609032NV3F1AX</td><td>Karlmobel</td><td>Completed</td><td>true</td><td>null</td><td>[&quot;Manual Review&quot;,&quot;Not Required&quot;]</td></tr><tr><td>2609044HJ4EWV5</td><td>ValueSnap</td><td>Completed</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>2609032HENCEKJ</td><td>Hiranai</td><td>Completed</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>509176846824141</td><td>Laz MurahYa</td><td>Ready To Ship</td><td>true</td><td>null</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>260901UC5QG2X9</td><td>Karlmobel</td><td>Completed</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>260830Q325M0K9</td><td>Lovento</td><td>Completed</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>260829KXDVAMN9</td><td>Karlmobel</td><td>Shipped</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>260825AADDKDG3</td><td>ValueSnap</td><td>Completed</td><td>true</td><td>null</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>260825AF130QC5</td><td>Murahya</td><td>Completed</td><td>true</td><td>null</td><td>[&quot;Adjusted&quot;,&quot;Adjusted&quot;]</td></tr><tr><td>26082482PRDQ3E</td><td>Murahya</td><td>Completed</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>260825AH30HFE6</td><td>Hiranai</td><td>Completed</td><td>true</td><td>null</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>2608235A26P52P</td><td>Hiranai</td><td>Completed</td><td>true</td><td>null</td><td>[&quot;Not Adjusted&quot;]</td></tr><tr><td>260821VTWQ2VPS</td><td>Hiranai</td><td>Completed</td><td>true</td><td>null</td><td>[&quot;Not Required&quot;]</td></tr><tr><td>260821UQVX8UNE</td><td>Kinata SG</td><td>Completed</td><td>true</td><td>[&quot;Accept Change&quot;]</td><td>[&quot;Adjusted&quot;]</td></tr><tr><td>260820U6X9PQ56</td><td>Kinata SG</td><td>Completed</td><td>true</td><td>null</td><td>[&quot;Not Required&quot;]</td></tr><tr><td>260818NPGCXQH5</td><td>Murahya</td><td>Completed</td><td>true</td><td>null</td><td>null</td></tr><tr><td>260911P5YWP9XB</td><td>Karlmobel</td><td>Cancelled</td><td>true</td><td>[&quot;Cancelled&quot;]</td><td>[&quot;Not Required&quot;]</td></tr></tbody></table></body></html>
