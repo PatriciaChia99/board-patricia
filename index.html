@@ -3,7 +3,24 @@
 </style><meta name="patricia-board-date-groups" content="static-v1"></head><body><div class="wrapper"><header class="page"><div class="brand"><div class="brand-mark">C</div><div class="brand-text"><h1>Codex Activity Log</h1><p>Execution history, inputs and outputs</p></div></div></header><div class="now-showing" id="todayCard"><div class="label">Today</div><div class="summary" id="todaySummary"><strong>4</strong> tasks today &middot; 1 completed &middot; 3 partial</div></div><!-- fbs-outbound-proposal-20260724 --><!-- ENTRIES_START -->
 
 <input class=sf type=radio name=v id=fa checked><input class=sf type=radio name=v id=fc><input class=sf type=radio name=v id=fs><input class=sf type=radio name=v id=fu><input class=sf type=radio name=v id=fy><input class=sf type=radio name=v id=fo><div class="activity-tools"><div class="tool-copy"><strong>Filter skills</strong><span>Click a metric card</span></div><div class="skill-metrics" role="group" aria-label="Filter activity by skill group"><label class="metric-filter" for=fa><span class=num id=statTotal>1105</span><span class=lbl>All logs</span></label><label class="metric-filter" for=fc><span class=num>128</span><span class=lbl>Claims</span></label><label class="metric-filter" for=fs><span class=num>93</span><span class=lbl>Stock &amp; listings</span></label><label class="metric-filter" for=fu><span class=num>79</span><span class=lbl>Customer</span></label><label class="metric-filter" for=fy><span class=num>62</span><span class=lbl>System</span></label><label class="metric-filter" for=fo><span class=num>404</span><span class=lbl>Other skills</span></label></div><details class="search-native"><summary>Search logs</summary><div class="search-hint"><strong>Search every activity</strong><span>Press <kbd>Ctrl</kbd> + <kbd>F</kbd>, then type a skill, shop, order ID, or result.</span></div></details></div><div class="entry-list">
-<div class="entry" data-date="2026-09-26" data-shops="KarlMobel SG, ValueSnap MY" data-platform="Shopee SG, Shopee MY, SiteGiant, SB webapp" data-status="partial" data-result="warn" data-board-log-id="checksbvariation-20260926" data-skill="checksbvariation" d="26 Sep 2026" o="26 Sep 2026">
+<div class="entry" data-date="2026-09-26" data-skill="parcelclaim-weekend-chain" data-board-log-id="parcelclaim-weekend-chain-20260926" data-shops="TikTok MY/SG; Lazada MY" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="partial" g="c" d="26 Sep 2026" c="26 Sep 2026">
+  <div class="entry-summary" tabindex="0">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">ParcelClaimWeekend — partial after isolated Lazada retry (26 Sep)</span>
+    <span class="entry-meta">2026-09-26 MYT &middot; 7 verified TikTok claims / RM 706.27 &middot; 2 Lazada login blockers</span>
+    <span class="tag">parcelclaim-weekend-chain</span>
+    <span class="tag result-warn">Partial</span>
+  </div>
+  <div class="entry-body">
+    <p><strong>Result:</strong> ParcelClaimAuto, TTParcelClaim repair, and CheckTTParcelClaim readbacks remain verified. The only unfinished same-day sources are Lazada Profiles 82 and 83.</p>
+    <p><strong>Verified changes:</strong> employee claims 363 &rarr; 370; seven new TikTok claims totalling RM 706.27, each read back; six unsafe terminal updates were restored to non-terminal states and twenty final repair fields were independently confirmed. No customer, marketplace, stock, or message writes occurred.</p>
+    <p><strong>Attempt 2:</strong> 12:03&ndash;12:07 MYT, Profiles 82 (Laz das.nature) and 83 (Lazada Lovento) were retried sequentially. Each retained the exact Lazada login URL and visible Login surface after saved-password autofill was observed, four allowed submits, and a final Return Orders revisit. Employee rows stayed 370 &rarr; 370 and no new claim or remark was posted.</p>
+    <p><strong>Safety/evidence:</strong> Profile 70 was attached as pre-existing and preserved. Both source sessions closed with their operational locks released. Evidence: parcelclaim-weekend-chain-report-2026-09-26.md; _codex_parcelclaim_auto_lazada_rerun_2026-09-26.json; ttparcelclaimcheck-report-2026-09-26.md.</p>
+    <p><strong>Outstanding:</strong> Patricia must re-authenticate Lazada Profiles 82 and 83 and confirm Return Orders loads. Resume only those two source scopes; do not replay the confirmed TikTok claims or TT repair/checker stages.</p>
+  </div>
+</div>
+
+<div class="entry" data-date="2026-09-26" data-shops="KarlMobel SG, ValueSnap MY" data-platform="Shopee SG, Shopee MY, SiteGiant, SB webapp" data-status="partial" data-result="warn" data-board-log-id="checksbvariation-20260926" data-skill="checksbvariation" o="26 Sep 2026">
   <div class="entry-summary" tabindex="0">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">checksbvariation - PARTIAL: weekend OOS and cancellation reconciliation</span>
@@ -25,23 +42,7 @@
   </div>
 </div>
 
-<div class="entry" data-date="2026-09-26" data-skill="parcelclaim-weekend-chain" data-board-log-id="parcelclaim-weekend-chain-20260926" data-result="warn" data-status="partial" g="c" c="26 Sep 2026">
-  <div class="entry-summary" tabindex="0">
-    <span class="chevron">&#9654;</span>
-    <span class="entry-title">ParcelClaimWeekend - partial, safety repair complete</span>
-    <span class="entry-meta">2026-09-26 MYT &middot; 7 claims / RM 706.27 verified &middot; Lazada 82/83 login blocked</span>
-    <span class="tag">ParcelClaimAuto</span>
-    <span class="tag">TTParcelClaim</span>
-    <span class="tag">CheckTTParcelClaim</span>
-    <span class="tag result-warn">Partial</span>
-  </div>
-  <div class="entry-body">
-    <p><strong>Result:</strong> ParcelClaimAuto changed employee rows <code>363 → 370</code>, creating seven TikTok claims totalling <code>RM 706.27</code>; all seven independent employee readbacks passed. TikTok source coverage completed. Lazada 81 completed with no candidate; Lazada 82 and 83 remain at Seller Center login after saved-credential recovery, four submits, and target revisit.</p>
-    <p><strong>Safety correction:</strong> the interrupted TT stage improperly used <code>return_type=resell</code> as terminal proof for C3208, C3215, C3262, C3264, C3284, and C3293. All six <code>Withdrawn / Closed → Pending</code> reversals were read back. C3293 was restored to <code>Preparing / CS Follow Up / 2026-09-28</code>. The runner now requires explicit <code>[[WH PIC: RESELL]]</code> proof; 20 final logical repair fields and all checker health counters were independently confirmed.</p>
-    <p><strong>Outstanding:</strong> re-authenticate Lazada Profiles 82 and 83, then retry only their missing source scopes. Obtain fresh WH evidence before terminal handling of C3262, C3264, or C3284. The checker retained four pre-existing Delivery Done CS-review rows (C2899, C3185, C3209, C3218) for 2026-09-28; no outcome was inferred.</p>
-    <p><strong>Evidence:</strong> <code>parcelclaim-weekend-chain-report-2026-09-26.md</code>, Stage 1 raw, TT repair raw, and independent checker raw in the ParcelClaim report directories. Customer/WhatsApp, marketplace, and stock writes: <code>0 → 0</code>.</p>
-  </div>
-</div>
+
 
 <div class="entry" g="u" data-date="2026-09-26" data-shops="All 15 approved Shopee MY CS shops" data-platform="Shopee MY" data-result="ok" data-board-log-id="shopee-rr-preventive-contact-allshops-20260926" data-skill="shopee-rr-preventive-contact-allshops" u="26 Sep 2026">
   <div class="entry-summary" tabindex="0"><span class="chevron">&#9654;</span><span class="entry-title">check-rr - preventive contact all 15 MY shops - 2026-09-26</span><span class="entry-meta">2026-09-26 MYT &middot; through morning &middot; 9 verified sent &middot; 20 existing discussions &middot; 0 unresolved &middot; OK</span><span class="entry-tags"><span class="tag">shopee-rr-preventive-contact-allshops</span><span class="tag">15 shops</span><span class="tag result-ok">OK</span></span></div>
