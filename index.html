@@ -22,9 +22,12 @@
     <div class="field"><strong>Weekend inventory guard:</strong> SiteGiant quantity changes, SAs, stock-in, accepted-change deductions, reserved releases, cancellation sellable cleanup, and Available/restock changes: <code>0 -&gt; 0</code>. Every verified current item was already Out Of Stock; no status needed changing. Protected Reserved stock remains untouched.</div>
     <div class="field"><strong>CS queue/readback:</strong> visible CS Action remains <code>6</code>. Locked exact-row API readback confirms MY row <code>101831</code> is still <code>contactSent=false</code>, and no contact flag was falsely set.</div>
     <div class="field"><strong>Attempt 2 readback:</strong> exact operational locks <code>profile70 + cs5 + cs-chat + lazada + tiktok</code> held for the entire recheck; two temporary tabs closed. Business writes remained <code>0 -&gt; 0</code>. Evidence: <code>retry2-lock-held-contact-disposition-recheck-20260926.json</code>.</div>
+    <div class="field"><strong>Validation:</strong> retry 2 changed no workflow source or test file. <code>npm test</code> was run after the local artifact updates and failed seven unrelated scheduler/RR/CSRR contracts; the failures are logged for repository maintenance and do not alter the bot-only business retry scope. No lint script exists.</div>
     <div class="field"><strong>Result/outstanding:</strong> <strong>PARTIAL</strong>. Only the official Shopee MY bot miss for <code>260924TQ2G3S16</code> remains for automatic isolated rescreen. KarlMobel SG is complete as a verified no-send shipment disposition. Do not replay verified OOS, cancellation, stock, or customer work.</div>
   </div>
 </div>
+
+
 
 <div class="entry" data-date="2026-09-26" data-skill="parcelclaim-weekend-chain" data-board-log-id="parcelclaim-weekend-chain-20260926" data-shops="TikTok MY/SG; Lazada MY" data-platform="TikTok MY + TikTok SG + Lazada MY" data-result="partial" g="c" c="26 Sep 2026">
   <div class="entry-summary" tabindex="0">
