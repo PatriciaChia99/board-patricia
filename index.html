@@ -3,7 +3,29 @@
 </style><meta name="patricia-board-date-groups" content="static-v1"></head><body><div class="wrapper"><header class="page"><div class="brand"><div class="brand-mark">C</div><div class="brand-text"><h1>Codex Activity Log</h1><p>Execution history, inputs and outputs</p></div></div></header><div class="now-showing" id="todayCard"><div class="label">Today</div><div class="summary" id="todaySummary"><strong>4</strong> tasks today &middot; 1 completed &middot; 3 partial</div></div><!-- fbs-outbound-proposal-20260724 --><!-- ENTRIES_START -->
 
 <input class=sf type=radio name=v id=fa checked><input class=sf type=radio name=v id=fc><input class=sf type=radio name=v id=fs><input class=sf type=radio name=v id=fu><input class=sf type=radio name=v id=fy><input class=sf type=radio name=v id=fo><div class="activity-tools"><div class="tool-copy"><strong>Filter skills</strong><span>Click a metric card</span></div><div class="skill-metrics" role="group" aria-label="Filter activity by skill group"><label class="metric-filter" for=fa><span class=num id=statTotal>1109</span><span class=lbl>All logs</span></label><label class="metric-filter" for=fc><span class=num>128</span><span class=lbl>Claims</span></label><label class="metric-filter" for=fs><span class=num>93</span><span class=lbl>Stock &amp; listings</span></label><label class="metric-filter" for=fu><span class=num>79</span><span class=lbl>Customer</span></label><label class="metric-filter" for=fy><span class=num>62</span><span class=lbl>System</span></label><label class="metric-filter" for=fo><span class=num>404</span><span class=lbl>Other skills</span></label></div><details class="search-native"><summary>Search logs</summary><div class="search-hint"><strong>Search every activity</strong><span>Press <kbd>Ctrl</kbd> + <kbd>F</kbd>, then type a skill, shop, order ID, or result.</span></div></details></div><div class="entry-list">
-<div class="entry" data-date="2026-09-27" data-skill="parcelclaim-weekend-chain" data-board-log-id="parcelclaim-weekend-chain-20260927" data-shops="TT MurahYa, TT DasNature, TT KarlMobel, TT Valuesnap, TT Hiranai, TT HiranaiMY, TT JagerSafety, Lazada MurahYa, Laz das.nature, Lazada Lovento" data-platform="TikTok MY, Lazada MY, employee webapp" data-result="warn" g="c" d="27 Sep 2026" c="27 Sep 2026">
+<div class="entry" data-date="2026-09-27" data-shops="MurahYa, KarlMobel, Luxbin, ValueSnap, KarlMobel SG, Kinata SG" data-platform="Shopee MY/SG, SiteGiant, SB webapp" data-status="partial" data-result="warn" data-board-log-id="checksbvariation-20260927" data-skill="checksbvariation" g="s" d="27 Sep 2026" s="27 Sep 2026">
+  <div class="entry-summary" tabindex="0">
+    <span class="chevron">&#9654;</span>
+    <span class="entry-title">checksbvariation - PARTIAL: attempt 2 roster/order proof exhausted; no business replay</span>
+    <span class="entry-meta">2026-09-27 MYT &middot; 168 SB rows &middot; 11 SiteGiant items &middot; three coordinator probes &middot; no quantity changes</span>
+    <span class="tag">checksbvariation</span>
+    <span class="tag">SiteGiant + Shopee</span>
+    <span class="tag result-warn">PARTIAL</span>
+  </div>
+  <div class="entry-body">
+    <div class="field"><strong>Task/result:</strong> Sunday scheduled CheckSBVariation attempt 2. <strong>PARTIAL</strong> only because exact MY Seller Centre roster/order evidence remains unavailable after the three authorized coordinator probes; the OOS/contact/SB-webapp review and raw evidence are complete.</div>
+    <div class="field"><strong>Before -&gt; after:</strong> ValueSnap MY <code>260924TQ2G3S16</code> changed <code>contactSent=false -&gt; true</code> under the successful official VM5 bot; <code>stockSetOos=true</code> and buyer decision remain unchanged. SiteGiant item status was already OOS for all 11 readbacks and every six-bucket quantity stayed unchanged. Customer/marketplace/SiteGiant/SB writes by this run: <code>0 -&gt; 0</code>.</div>
+    <div class="field"><strong>OOS evidence:</strong> BLUE-SSA-80X150CM, PUR roller shoe 30, burgundy bin, MODEL-20E safe are <code>0/0/0/0/0/0</code> OOS; wheelchair is <code>7/0/7/0/0/0</code> OOS; pickleball, poster stand, DWRB black, and Kinata screen protector have OOS-labelled sellable stock; ES-M4-PRO is <code>5/1/4/0/0/0</code> OOS. Reserved stock is preserved and every quantity write is deferred to weekdays.</div>
+    <div class="field"><strong>Customer and cancellation outcome:</strong> six latest eligible MY rows remain <code>contactSent=true</code>/<code>stockSetOos=true</code>; no duplicate buyer message. <code>260923S020P5DT</code> remains <code>buyerDecision=Cancelled</code>; cancellation sellable cleanup is weekend-deferred. KarlMobel SG shipment-arranged no-send and Kinata SG existing verified contact were preserved.</div>
+    <div class="field"><strong>Accepted-change check:</strong> KarlMobel <code>260923S54SMCQ6</code> retains original DWRB-BLACK-33S OOS <code>1/1/0/0/0/0</code>, accepted DWRB-WHITE-33S Available <code>35/32/3/0/0/0</code>, ship quantity 1, New Ship By 26 Sep, and <code>Not Adjusted</code>. Weekend policy defers the deduction; it was not falsely marked Adjusted.</div>
+    <div class="field"><strong>Attempt-2 access and recovery:</strong> every exact operational mutex was acquired before profile access. Profile70 remained pre-existing Active and returned roster <code>200</code> with zero target shops. Run-owned Profile78 returned no usable roster resource (<code>status=0</code>), then closed <code>Inactive -&gt; Active -&gt; Inactive</code>. Run-owned Profile82 returned roster <code>200</code> with zero target shops, then closed <code>Inactive -&gt; Active -&gt; Inactive</code>. No exact MY context was exposed, so no order status or cancellation was inferred.</div>
+    <div class="field"><strong>Evidence/notification:</strong> raw evidence <code>tmp-sbvariation-20260927/seller-and-bot-readback-*-attempt2-20260927.json</code>; report <code>Documents\sbvariation-reports\sbvariation-scheduled-2026-09-27.md</code>. ntfy server receipts: initial start <code>rryZDoUWAg3j</code>, discovery <code>CvPEU7FznS37</code>, initial partial <code>TEfCrbyOsUUd</code>, attempt-2 start <code>DgccmFKHehej</code>, attempt-2 partial <code>IER8onscbwuu</code>; phone receipt is not observable.</div>
+    <div class="field"><strong>Validation:</strong> temporary reader/runner parser checks passed. <code>npm test</code> completed with the same seven unrelated scheduler/RR/CSRR failures; no CheckSBVariation production source or test changed.</div>
+    <div class="field"><strong>Outstanding:</strong> one final bounded retry may attempt exact MY Seller Centre roster/order verification only, after a coordinator exposes the target shop. No OOS, inventory, buyer contact, cancellation, or webapp field action may be replayed; weekday quantity work is monitoring, not a failed weekend action.</div>
+  </div>
+</div>
+
+<div class="entry" data-date="2026-09-27" data-skill="parcelclaim-weekend-chain" data-board-log-id="parcelclaim-weekend-chain-20260927" data-shops="TT MurahYa, TT DasNature, TT KarlMobel, TT Valuesnap, TT Hiranai, TT HiranaiMY, TT JagerSafety, Lazada MurahYa, Laz das.nature, Lazada Lovento" data-platform="TikTok MY, Lazada MY, employee webapp" data-result="warn" g="c" c="27 Sep 2026">
   <div class="entry-summary" tabindex="0">
     <span class="chevron">&#9654;</span>
     <span class="entry-title">ParcelClaimWeekend — 2026-09-27</span>
@@ -23,27 +45,7 @@
   </div>
 </div>
 
-<div class="entry" data-date="2026-09-27" data-shops="MurahYa, KarlMobel, Luxbin, ValueSnap, KarlMobel SG, Kinata SG" data-platform="Shopee MY/SG, SiteGiant, SB webapp" data-status="partial" data-result="warn" data-board-log-id="checksbvariation-20260927" data-skill="checksbvariation" g="s" s="27 Sep 2026">
-  <div class="entry-summary" tabindex="0">
-    <span class="chevron">&#9654;</span>
-    <span class="entry-title">checksbvariation - PARTIAL: OOS/contact reconciliation complete; MY roster proof retry needed</span>
-    <span class="entry-meta">2026-09-27 MYT &middot; 168 SB rows &middot; 11 SiteGiant items &middot; MY bot miss resolved &middot; no quantity changes</span>
-    <span class="tag">checksbvariation</span>
-    <span class="tag">SiteGiant + Shopee</span>
-    <span class="tag result-warn">PARTIAL</span>
-  </div>
-  <div class="entry-body">
-    <div class="field"><strong>Task/result:</strong> Sunday scheduled CheckSBVariation. <strong>PARTIAL</strong> only because exact MY Seller Centre roster/order evidence was unavailable from all authorized coordinators; the OOS/contact/SB-webapp review and raw evidence are complete.</div>
-    <div class="field"><strong>Before -&gt; after:</strong> ValueSnap MY <code>260924TQ2G3S16</code> changed <code>contactSent=false -&gt; true</code> under the successful official VM5 bot; <code>stockSetOos=true</code> and buyer decision remain unchanged. SiteGiant item status was already OOS for all 11 readbacks and every six-bucket quantity stayed unchanged. Customer/marketplace/SiteGiant/SB writes by this run: <code>0 -&gt; 0</code>.</div>
-    <div class="field"><strong>OOS evidence:</strong> BLUE-SSA-80X150CM, PUR roller shoe 30, burgundy bin, MODEL-20E safe are <code>0/0/0/0/0/0</code> OOS; wheelchair is <code>7/0/7/0/0/0</code> OOS; pickleball, poster stand, DWRB black, and Kinata screen protector have OOS-labelled sellable stock; ES-M4-PRO is <code>5/1/4/0/0/0</code> OOS. Reserved stock is preserved and every quantity write is deferred to weekdays.</div>
-    <div class="field"><strong>Customer and cancellation outcome:</strong> six latest eligible MY rows remain <code>contactSent=true</code>/<code>stockSetOos=true</code>; no duplicate buyer message. <code>260923S020P5DT</code> remains <code>buyerDecision=Cancelled</code>; cancellation sellable cleanup is weekend-deferred. KarlMobel SG shipment-arranged no-send and Kinata SG existing verified contact were preserved.</div>
-    <div class="field"><strong>Accepted-change check:</strong> KarlMobel <code>260923S54SMCQ6</code> retains original DWRB-BLACK-33S OOS <code>1/1/0/0/0/0</code>, accepted DWRB-WHITE-33S Available <code>35/32/3/0/0/0</code>, ship quantity 1, New Ship By 26 Sep, and <code>Not Adjusted</code>. Weekend policy defers the deduction; it was not falsely marked Adjusted.</div>
-    <div class="field"><strong>Access and recovery:</strong> exact operational locks were acquired for every profile access. Profile70 stayed pre-existing Active; Profile78 and Profile82 were run-owned <code>Inactive -&gt; Active -&gt; Inactive</code>. Profiles 70 and 82 returned HTTP 200 roster responses with no exact required MY shop context. Profile 78 recorded status 0, so its roster response is unverified. No order status, cancellation or login failure was inferred. Retry only that read-only surface after shop exposure changes.</div>
-    <div class="field"><strong>Evidence/notification:</strong> raw evidence <code>tmp-sbvariation-20260927</code>; report <code>Documents\sbvariation-reports\sbvariation-scheduled-2026-09-27.md</code>. ntfy server receipts: start <code>rryZDoUWAg3j</code>, discovery <code>CvPEU7FznS37</code>, final partial <code>TEfCrbyOsUUd</code>; phone receipt is not observable.</div>
-    <div class="field"><strong>Validation:</strong> temporary reader/runner parser checks passed. <code>npm test</code> completed with the same seven unrelated scheduler/RR/CSRR failures; no CheckSBVariation production source or test changed.</div>
-    <div class="field"><strong>Outstanding:</strong> retriable exact MY Seller Centre roster/order verification only. No OOS, inventory, buyer contact, cancellation, or webapp field action may be replayed; weekday quantity work is monitoring, not a failed weekend action.</div>
-  </div>
-</div>
+
 
 
 
